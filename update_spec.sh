@@ -1,5 +1,9 @@
 #!/bin/bash
 
+AMP_URL=$1
+AMP_USERNAME=$2
+AMP_PASSWORD=$3
+
 # Function to generate the API Spec files from AMP
 function generate_specs() {
 

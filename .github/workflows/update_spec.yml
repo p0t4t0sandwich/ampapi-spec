@@ -7,12 +7,7 @@
         - main
     schedule:
       - cron: "0 0/4 * * *"
-  
-  env:
-    AMP_URL: ${{ secrets.AMP_URL }}
-    AMP_USERNAME: ${{ secrets.AMP_USERNAME }}
-    AMP_PASSWORD: ${{ secrets.AMP_PASSWORD }}
-  
+
   jobs:
     update_spec:
       name: Update AMP API Spec
@@ -23,13 +18,11 @@
 
         - name: Run the bash script
           id: generate-spec
-          run: bash update_spec.sh
+          run: bash update_spec.sh ${{ secrets.AMP_URL }} ${{ secrets.AMP_USERNAME }} ${{ secrets.AMP_PASSWORD }}
 
         - uses: EndBug/add-and-commit@v9
-          env:
-            AMP_VERSION: ${{ steps.generate-spec.outputs.AMP_VERSION }}
           with:
             author_name: p0t4t0sandwich
             author_email: p0t4t0sandwich@gmail.com
-            message: "Update to v${{ env.AMP_VERSION }}"
+            message: "Update to v${{ steps.generate-spec.outputs.AMP_VERSION }}"
             add: '["APISpec.json", "friendlySpec.txt"]'
