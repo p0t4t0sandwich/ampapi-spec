@@ -14,9 +14,7 @@
       runs-on: ubuntu-latest
 
       steps:
-        - uses: actions/checkout@v1
-          with:
-            fetch-depth: 0
+        - uses: actions/checkout@v3
 
         - name: Run the bash script
           id: generate-spec
@@ -24,8 +22,8 @@
 
         - uses: EndBug/add-and-commit@v9
           with:
-            author_name: p0t4t0sandwich
-            author_email: p0t4t0sandwich@gmail.com
+        #     author_name: p0t4t0sandwich
+        #     author_email: p0t4t0sandwich@gmail.com
             message: "Update to v${{ steps.generate-spec.outputs.AMP_VERSION }}"
             push: origin HEAD:main
             add: '["APISpec.json", "friendlySpec.txt"]'
