@@ -15,6 +15,8 @@
 
       steps:
         - uses: actions/checkout@v1
+          with:
+            fetch-depth: 0
 
         - name: Run the bash script
           id: generate-spec
