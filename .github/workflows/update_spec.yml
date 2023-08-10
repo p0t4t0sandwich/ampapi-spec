@@ -1,0 +1,43 @@
+---
+name: Build new AMP API Spec
+
+on:
+    push:
+        branches:
+            - main
+    schedule:
+        - cron: "0 0/4 * * *"
+
+env:
+    AMP_URL: ${{ secrets.AMP_URL }}
+    AMP_USERNAME: ${{ secrets.AMP_USERNAME }}
+    AMP_PASSWORD: ${{ secrets.AMP_PASSWORD }}
+
+jobs:
+    update_spec:
+        name: Update AMP API Spec
+        runs-on: ubuntu-latest
+
+        steps:
+            - uses: actions/checkout@v1
+
+            - name: Run the bash script
+              run: bash update_spec.sh
+
+            - name: switching from HTTPS to SSH
+              run: git remote set-url origin ${{ secrets.SSH }}
+
+            - name: check for changes
+              run: git status
+
+            - name: stage changed files
+              run: git add .
+
+            - name: commit changed files
+              run: git commit -m "Update to $AMP_VERSION"
+
+            - name: fetch from main
+              run: git fetch origin main
+
+            - name: push code to main
+              run: git push origin HEAD:main
