@@ -44,7 +44,7 @@ UPDATE_AVAILABLE=$(echo "$UPDATE_INFO" | jq -r .result.UpdateAvailable)
 PATCH_ONLY=$(echo "$UPDATE_INFO" | jq -r .result.PatchOnly)
 
 if [ "$UPDATE_AVAILABLE" == "true" ]; then
-    if [ "$PATCH_ONLY" == "false" ]; then
+    if [ "$PATCH_ONLY" == "true" ]; then
         echo "AMP_VERSION=$AMP_VERSION" >> $GITHUB_ENV
 
         # Generate the API Spec
