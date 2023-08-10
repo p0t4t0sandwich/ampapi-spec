@@ -25,5 +25,5 @@
             author_name: p0t4t0sandwich
             author_email: p0t4t0sandwich@gmail.com
             message: "Update to v${{ steps.generate-spec.outputs.AMP_VERSION }}"
-            push: main HEAD:main
+            push: origin HEAD:main
             add: '["APISpec.json", "friendlySpec.txt"]'
