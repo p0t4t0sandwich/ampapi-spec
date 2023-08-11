@@ -59,7 +59,19 @@ fi
 
 AMP_TOKEN=$(echo "$AMP_LOGIN" | jq -r .sessionID)
 
-# TODO: Get the current AMP version via API, then compare with AMP_CURRENT_VERSION in the env file, then send to $GITHUB_OUTPUT
+# Get the current and previous AMP versions, then compare them
+CURRENT_VERSION=$(curl -s -X POST -H "accept: text/javascript" -d "{'SESSIONID':'$AMP_TOKEN'}" $AMP_URL/API/Core/GetUpdateInfo | jq -r .result.Version)
+PREVIOUS_VERSION=$(cat AMPVersion.txt)
 
-# Generate the API Spec
-generate_specs
+if [ "$CURRENT_VERSION" != "$PREVIOUS_VERSION" ]; then
+    echo "AMP version has changed"
+    echo "$CURRENT_VERSION" > AMPVersion.txt
+
+    # Export the AMP version to a github action variable
+    echo "AMP_VERSION=$CURRENT_VERSION" >> $GITHUB_ENV
+
+    # Generate the API Spec
+    generate_specs
+else
+    echo "AMP version has not changed"
+fi
