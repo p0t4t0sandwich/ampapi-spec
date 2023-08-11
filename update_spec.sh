@@ -68,7 +68,7 @@ if [ "$CURRENT_VERSION" != "$PREVIOUS_VERSION" ]; then
     echo "$CURRENT_VERSION" > AMPVersion.txt
 
     # Export the AMP version to a github action variable
-    echo "::set-output name=AMP_VERSION::$CURRENT_VERSION"
+    echo "AMP_VERSION=$CURRENT_VERSION" >> $GITHUB_OUTPUT
 
     # Generate the API Spec
     generate_specs

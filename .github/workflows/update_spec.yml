@@ -20,11 +20,8 @@
           id: generate-spec
           run: bash update_spec.sh ${{ secrets.AMP_URL }} ${{ secrets.AMP_USERNAME }} ${{ secrets.AMP_PASSWORD }}
 
-        - name: Get the output version
-          run: echo "Update to v${{ steps.generate-spec.outputs.AMP_VERSION }}"  
-
         - uses: EndBug/add-and-commit@v9
           with:
             message: "Update to v${{ steps.generate-spec.outputs.AMP_VERSION }}"
             push: origin HEAD:main
-            add: '["APISpec.json", "friendlySpec.txt"]'
+            add: '["APISpec.json", "friendlySpec.txt", "AMPVersion.txt"]'
