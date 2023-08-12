@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import os
 import sys
 
 import requests
@@ -13,6 +14,7 @@ class GenerateSpec:
         self.username = AMP_USERNAME
         self.password = AMP_PASSWORD
         self.sessionId = ""
+        self.type_map = {}
 
     def APICall(self, endpoint: str, data: dict = {}) -> dict:
         """Method to make AMP API calls
@@ -81,10 +83,13 @@ class GenerateSpec:
         if current_version != latest_version:
             # If the versions are different, update the version file
             version_file.seek(0)
-            # version_file.write(latest_version)
-            version_file.write("test")
+            version_file.write(latest_version)
             version_file.truncate()
             version_file.close()
+
+            # Set the github env variable
+            os.environ["GITHUB_OUTPUT"] = "AMP_VERSION=" + latest_version
+
             return True
         else:
             return False
@@ -127,7 +132,6 @@ class GenerateSpec:
         # Loop through the API Spec and write the friendly names to a file
         for module in api_spec["result"]:
             for method in api_spec["result"][module]:
-                # print(self.parse_method(module, method, api_spec["result"][module][method]))
                 friendly_spec.write(self.parse_method(module, method, api_spec["result"][module][method]) + "\n")
 
 
