@@ -87,8 +87,11 @@ class GenerateSpec:
             version_file.truncate()
             version_file.close()
 
-            # Set the github env variable
-            os.environ["GITHUB_OUTPUT"] = "AMP_VERSION=" + latest_version
+            # Set the github actions output
+            github_output = os.getenv('GITHUB_OUTPUT')
+            go_file = open(github_output, "a")
+            go_file.write("AMP_VERSION=" + latest_version)
+            go_file.close()
 
             return True
         else:
