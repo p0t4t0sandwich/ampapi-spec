@@ -234,6 +234,9 @@ class GenerateSpec:
         for submodule in api_spec.keys():
             submodules.append(submodule)
 
+        # Sort the submodules
+        submodules.sort()
+
         print(f"API Submodules for {module}: {submodules}")
         # Add the submodules to the ModuleInheritance
         self.ModuleInheritance[module] = submodules
