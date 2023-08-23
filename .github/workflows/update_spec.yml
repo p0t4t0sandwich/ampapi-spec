@@ -16,7 +16,7 @@
       steps:
         - uses: actions/checkout@v3
 
-        - name: Run the bash script
+        - name: Run the Python script
           id: generate-spec
           run: python3 generate_spec.py ${{ secrets.AMP_URL }} ${{ secrets.AMP_USERNAME }} ${{ secrets.AMP_PASSWORD }}
 
@@ -24,4 +24,4 @@
           with:
             message: "Update to v${{ steps.generate-spec.outputs.AMP_VERSION }}"
             push: origin HEAD:main
-            add: '["APISpec.json", "friendlySpec.txt", "AMPVersion.txt"]'
+            add: '["APISpec.json", "AMPVersion.txt", "FriendlySpec.txt", "ModuleInheritance.json"]'
