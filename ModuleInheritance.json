@@ -1,0 +1,27 @@
+{
+  "ADS": [
+    "ADSModule",
+    "FileManagerPlugin",
+    "EmailSenderPlugin",
+    "LocalFileBackupPlugin",
+    "CommonCorePlugin",
+    "Core"
+  ],
+  "Minecraft": [
+    "MinecraftModule",
+    "FileManagerPlugin",
+    "EmailSenderPlugin",
+    "LocalFileBackupPlugin",
+    "CommonCorePlugin",
+    "Core"
+  ],
+  "GenericModule": [
+    "FileManagerPlugin",
+    "EmailSenderPlugin",
+    "LocalFileBackupPlugin",
+    "CommonCorePlugin",
+    "steamcmdplugin",
+    "RCONPlugin",
+    "Core"
+  ]
+}
