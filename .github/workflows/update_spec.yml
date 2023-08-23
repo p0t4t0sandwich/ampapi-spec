@@ -18,7 +18,7 @@
 
         - name: Run the bash script
           id: generate-spec
-          run: python3 update_spec.py ${{ secrets.AMP_URL }} ${{ secrets.AMP_USERNAME }} ${{ secrets.AMP_PASSWORD }}
+          run: python3 generate_spec.py ${{ secrets.AMP_URL }} ${{ secrets.AMP_USERNAME }} ${{ secrets.AMP_PASSWORD }}
 
         - uses: EndBug/add-and-commit@v9
           with:

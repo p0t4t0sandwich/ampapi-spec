@@ -4,13 +4,17 @@ A program that automagically updates a JSON file and a human readable file with 
 
 ## Usage
 
-For the JSON response of `Core.GetAPISpec`:
+For the JSON response of `API.Core.GetAPISpec`:
 
 <https://raw.githubusercontent.com/p0t4t0sandwich/ampapi-spec/main/APISpec.json>
 
-For the human readable response of Core.GetAPISpec (easier to check for differences):
+For the human readable response of `API.Core.GetAPISpec` (easier to check for differences):
 
-<https://github.com/p0t4t0sandwich/ampapi-spec/blob/main/friendlySpec.txt>
+<https://github.com/p0t4t0sandwich/ampapi-spec/blob/main/FriendlySpec.txt>
+
+API module inheritance for different instance types:
+
+<https://github.com/p0t4t0sandwich/ampapi-spec/blob/main/ModuleInheritance.json>
 
 ## AMP API and Library Info
 
@@ -35,6 +39,3 @@ Go to `http(s)://your.domain.com/API` to see the API docs.
 ## TODO
 
 - Add a way to generate a diff file for easier reading
-- Get different game module API Specs attached to the ADS, sort into some subdir setup
-  - Could rely on this for class inheritance in lib generation
-  - Or use per-module selective multi-inheritance, would be weirder to implement but more flexible
