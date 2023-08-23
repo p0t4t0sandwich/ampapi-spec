@@ -1,0 +1,2884 @@
+{
+  "ADSModule": {
+    "AddDatastore": {
+      "Parameters": [
+        {
+          "Name": "newDatastore",
+          "TypeName": "InstanceDatastore",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "ActionResult",
+      "IsComplexType": false
+    },
+    "ApplyInstanceConfiguration": {
+      "Parameters": [
+        {
+          "Name": "InstanceID",
+          "TypeName": "Guid",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "Args",
+          "TypeName": "Dictionary<String, String>",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "RebuildConfiguration",
+          "TypeName": "Boolean",
+          "Description": "",
+          "Optional": true
+        }
+      ],
+      "ReturnTypeName": "Task<ActionResult>",
+      "IsComplexType": false
+    },
+    "ApplyTemplate": {
+      "Description": "Overlays an existing template on an existing instance. Used to perform package reconfigurations. Do not use this to 'transform' an existing application into another. The instance should be deleted and re-created in that situation.",
+      "Returns": "",
+      "Parameters": [
+        {
+          "Name": "InstanceID",
+          "TypeName": "Guid",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "TemplateID",
+          "TypeName": "Int32",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "NewFriendlyName",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": true
+        },
+        {
+          "Name": "Secret",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": true
+        },
+        {
+          "Name": "RestartIfPreviouslyRunning",
+          "TypeName": "Boolean",
+          "Description": "",
+          "Optional": true
+        }
+      ],
+      "ReturnTypeName": "ActionResult",
+      "IsComplexType": false
+    },
+    "AttachADS": {
+      "Parameters": [
+        {
+          "Name": "Friendly",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "IsHTTPS",
+          "TypeName": "Boolean",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "Host",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "Port",
+          "TypeName": "Int32",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "InstanceID",
+          "TypeName": "Guid",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "ActionResult",
+      "IsComplexType": false
+    },
+    "CloneTemplate": {
+      "Parameters": [
+        {
+          "Name": "Id",
+          "TypeName": "Int32",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "NewName",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "ActionResult",
+      "IsComplexType": false
+    },
+    "ConvertToManaged": {
+      "Parameters": [
+        {
+          "Name": "InstanceName",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "ActionResult",
+      "IsComplexType": false
+    },
+    "CreateDeploymentTemplate": {
+      "Parameters": [
+        {
+          "Name": "Name",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "ActionResult",
+      "IsComplexType": false
+    },
+    "CreateInstance": {
+      "Parameters": [
+        {
+          "Name": "TargetADSInstance",
+          "TypeName": "Guid",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "NewInstanceId",
+          "TypeName": "Guid",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "Module",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "InstanceName",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "FriendlyName",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "IPBinding",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "PortNumber",
+          "TypeName": "Int32",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "AdminUsername",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "AdminPassword",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "ProvisionSettings",
+          "TypeName": "Dictionary<String, String>",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "AutoConfigure",
+          "TypeName": "Boolean",
+          "Description": "When enabled, all settings other than the Module, Target and FriendlyName are ignored and replaced with automatically generated values.",
+          "Optional": true
+        },
+        {
+          "Name": "PostCreate",
+          "TypeName": "PostCreateActions",
+          "Description": "",
+          "Optional": true,
+          "ParamEnumValues": {
+            "DoNothing": 0,
+            "StartInstance": 1,
+            "StartAndUpdate": 2,
+            "FullStartup": 3,
+            "EveryTime": 16
+          }
+        },
+        {
+          "Name": "StartOnBoot",
+          "TypeName": "Boolean",
+          "Description": "",
+          "Optional": true
+        },
+        {
+          "Name": "DisplayImageSource",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": true
+        },
+        {
+          "Name": "TargetDatastore",
+          "TypeName": "Int32",
+          "Description": "",
+          "Optional": true
+        }
+      ],
+      "ReturnTypeName": "ActionResult",
+      "IsComplexType": false
+    },
+    "CreateLocalInstance": {
+      "Parameters": [
+        {
+          "Name": "Instance",
+          "TypeName": "LocalAMPInstance",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "PostCreate",
+          "TypeName": "PostCreateActions",
+          "Description": "",
+          "Optional": true,
+          "ParamEnumValues": {
+            "DoNothing": 0,
+            "StartInstance": 1,
+            "StartAndUpdate": 2,
+            "FullStartup": 3,
+            "EveryTime": 16
+          }
+        }
+      ],
+      "ReturnTypeName": "ActionResult",
+      "IsComplexType": false
+    },
+    "DeleteDatastore": {
+      "Parameters": [
+        {
+          "Name": "id",
+          "TypeName": "Int32",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "ActionResult",
+      "IsComplexType": false
+    },
+    "DeleteDeploymentTemplate": {
+      "Parameters": [
+        {
+          "Name": "Id",
+          "TypeName": "Int32",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "ActionResult",
+      "IsComplexType": false
+    },
+    "DeleteInstance": {
+      "Parameters": [
+        {
+          "Name": "InstanceName",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "RunningTask",
+      "IsComplexType": false
+    },
+    "DeleteInstanceUsers": {
+      "Parameters": [
+        {
+          "Name": "InstanceId",
+          "TypeName": "Guid",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "Task<ActionResult>",
+      "IsComplexType": false
+    },
+    "DeployTemplate": {
+      "Parameters": [
+        {
+          "Name": "TemplateID",
+          "TypeName": "Int32",
+          "Description": "The ID of the template to be deployed, as per the Template Management UI in AMP itself.",
+          "Optional": false
+        },
+        {
+          "Name": "NewUsername",
+          "TypeName": "String",
+          "Description": "If specified, AMP will create a new user with this name for this instance. Must be unique. If this user already exists, this will be ignored but the new instance will be assigned to this user.",
+          "Optional": true
+        },
+        {
+          "Name": "NewPassword",
+          "TypeName": "String",
+          "Description": "If 'NewUsername' is specified and the user doesn't already exist, the password that will be assigned to this user.",
+          "Optional": true
+        },
+        {
+          "Name": "NewEmail",
+          "TypeName": "String",
+          "Description": "If 'NewUsername' is specified and the user doesn't already exist, the email address that will be assigned to this user.",
+          "Optional": true
+        },
+        {
+          "Name": "RequiredTags",
+          "TypeName": "List<String>",
+          "Description": "If specified, AMP will only deploy this template to targets that have every single 'tag' specified in their target configuration. You can adjust this via the controller by clicking 'Edit' on the target settings.",
+          "Optional": true
+        },
+        {
+          "Name": "Tag",
+          "TypeName": "String",
+          "Description": "Unrelated to RequiredTags. This is to uniquely identify this instance to your own systems. It may be something like an order ID or service ID so you can find the associated instance again at a later time. If 'UseTagAsInstanceName' is enabled, then this will also be used as the instance name for the created instance - but it must be unique.",
+          "Optional": true
+        },
+        {
+          "Name": "FriendlyName",
+          "TypeName": "String",
+          "Description": "A friendly name for this instance. If left blank, AMP will generate one for you.",
+          "Optional": true
+        },
+        {
+          "Name": "Secret",
+          "TypeName": "String",
+          "Description": "Must be a non-empty strong in order to get a callback on deployment state change. This secret will be passed back to you in the callback so you can verify the request.",
+          "Optional": true
+        },
+        {
+          "Name": "PostCreate",
+          "TypeName": "PostCreateActions",
+          "Description": "0: Do nothing, 1: Start instance only, 2: Start instance and update application, 3: Full application startup.",
+          "Optional": true,
+          "ParamEnumValues": {
+            "DoNothing": 0,
+            "StartInstance": 1,
+            "StartAndUpdate": 2,
+            "FullStartup": 3,
+            "EveryTime": 16
+          }
+        },
+        {
+          "Name": "ExtraProvisionSettings",
+          "TypeName": "Dictionary<String, String>",
+          "Description": "A dictionary of setting nodes and values to create the new instance with. Identical in function to the provisioning arguments in the template itself.",
+          "Optional": true
+        }
+      ],
+      "ReturnTypeName": "RunningTask",
+      "IsComplexType": false
+    },
+    "DetatchTarget": {
+      "Parameters": [
+        {
+          "Name": "Id",
+          "TypeName": "Guid",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "ActionResult",
+      "IsComplexType": false
+    },
+    "ExtractEverywhere": {
+      "Parameters": [
+        {
+          "Name": "SourceArchive",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "Task<ActionResult>",
+      "IsComplexType": false
+    },
+    "GetApplicationEndpoints": {
+      "Parameters": [
+        {
+          "Name": "instanceId",
+          "TypeName": "Guid",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "IEnumerable<EndpointInfo>",
+      "IsComplexType": false
+    },
+    "GetDatastore": {
+      "Parameters": [
+        {
+          "Name": "id",
+          "TypeName": "Int32",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "InstanceDatastore",
+      "IsComplexType": false
+    },
+    "GetDatastoreInstances": {
+      "Parameters": [
+        {
+          "Name": "datastoreId",
+          "TypeName": "Int32",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "IEnumerable<JObject>",
+      "IsComplexType": true
+    },
+    "GetDatastores": {
+      "Parameters": [],
+      "ReturnTypeName": "IEnumerable<InstanceDatastore>",
+      "IsComplexType": false
+    },
+    "GetDeploymentTemplates": {
+      "Parameters": [],
+      "ReturnTypeName": "IEnumerable<DeploymentTemplate>",
+      "IsComplexType": false
+    },
+    "GetGroup": {
+      "Parameters": [
+        {
+          "Name": "GroupId",
+          "TypeName": "Guid",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "IADSInstance",
+      "IsComplexType": false
+    },
+    "GetInstance": {
+      "Parameters": [
+        {
+          "Name": "InstanceId",
+          "TypeName": "Guid",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "JObject",
+      "IsComplexType": true
+    },
+    "GetInstanceNetworkInfo": {
+      "Parameters": [
+        {
+          "Name": "InstanceName",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "IEnumerable<PortUsage>",
+      "IsComplexType": false
+    },
+    "GetInstanceStatuses": {
+      "Parameters": [],
+      "ReturnTypeName": "IEnumerable<JObject>",
+      "IsComplexType": true
+    },
+    "GetInstances": {
+      "Parameters": [],
+      "ReturnTypeName": "IEnumerable<IADSInstance>",
+      "IsComplexType": false
+    },
+    "GetLocalInstances": {
+      "Parameters": [],
+      "ReturnTypeName": "IEnumerable<JObject>",
+      "IsComplexType": true
+    },
+    "GetProvisionArguments": {
+      "Parameters": [
+        {
+          "Name": "ModuleName",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "IEnumerable<JObject>",
+      "IsComplexType": true
+    },
+    "GetProvisionFitness": {
+      "Parameters": [],
+      "ReturnTypeName": "JObject",
+      "IsComplexType": true
+    },
+    "GetSupportedApplications": {
+      "Parameters": [],
+      "ReturnTypeName": "IEnumerable<ApplicationSpec>",
+      "IsComplexType": false
+    },
+    "GetTargetInfo": {
+      "Parameters": [],
+      "ReturnTypeName": "RemoteTargetInfo",
+      "IsComplexType": false
+    },
+    "HandoutInstanceConfigs": {
+      "Parameters": [
+        {
+          "Name": "ForModule",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "SettingNode",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "Values",
+          "TypeName": "List<String>",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "Task<ActionResult>",
+      "IsComplexType": false
+    },
+    "ManageInstance": {
+      "Parameters": [
+        {
+          "Name": "InstanceId",
+          "TypeName": "Guid",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "ActionResult<String>",
+      "IsComplexType": false
+    },
+    "ModifyCustomFirewallRule": {
+      "Parameters": [
+        {
+          "Name": "instanceId",
+          "TypeName": "Guid",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "PortNumber",
+          "TypeName": "Int32",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "Range",
+          "TypeName": "Int32",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "Protocol",
+          "TypeName": "PortProtocol",
+          "Description": "",
+          "Optional": false,
+          "ParamEnumValues": {
+            "TCP": 0,
+            "UDP": 1,
+            "Both": 2
+          }
+        },
+        {
+          "Name": "Description",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "Open",
+          "TypeName": "Boolean",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "Task<ActionResult>",
+      "IsComplexType": false
+    },
+    "MoveInstanceDatastore": {
+      "Parameters": [
+        {
+          "Name": "instanceId",
+          "TypeName": "Guid",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "datastoreId",
+          "TypeName": "Int32",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "Task<RunningTask>",
+      "IsComplexType": false
+    },
+    "ReactivateLocalInstances": {
+      "Parameters": [],
+      "ReturnTypeName": "RunningTask",
+      "IsComplexType": false
+    },
+    "RefreshAppCache": {
+      "Parameters": [],
+      "ReturnTypeName": "Void",
+      "IsComplexType": false
+    },
+    "RefreshGroup": {
+      "Parameters": [
+        {
+          "Name": "GroupId",
+          "TypeName": "Guid",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "ActionResult",
+      "IsComplexType": false
+    },
+    "RefreshInstanceConfig": {
+      "Parameters": [
+        {
+          "Name": "InstanceId",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "Task<ActionResult>",
+      "IsComplexType": false
+    },
+    "RefreshRemoteConfigStores": {
+      "Parameters": [],
+      "ReturnTypeName": "Void",
+      "IsComplexType": false
+    },
+    "RegisterTarget": {
+      "Parameters": [
+        {
+          "Name": "controllerUrl",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "myUrl",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "username",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "password",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "twoFactorToken",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "friendlyName",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "Task<ActionResult>",
+      "IsComplexType": false
+    },
+    "RepairDatastore": {
+      "Parameters": [
+        {
+          "Name": "id",
+          "TypeName": "Int32",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "RunningTask",
+      "IsComplexType": false
+    },
+    "RequestDatastoreSizeCalculation": {
+      "Parameters": [
+        {
+          "Name": "datastoreId",
+          "TypeName": "Int32",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "RunningTask",
+      "IsComplexType": false
+    },
+    "RestartInstance": {
+      "Parameters": [
+        {
+          "Name": "InstanceName",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "ActionResult",
+      "IsComplexType": false
+    },
+    "Servers": {
+      "Parameters": [
+        {
+          "Name": "id",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "REQ_RAWJSON",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "Task<JObject>",
+      "IsComplexType": true
+    },
+    "SetInstanceConfig": {
+      "Parameters": [
+        {
+          "Name": "InstanceName",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "SettingNode",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "Value",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "Task<ActionResult>",
+      "IsComplexType": false
+    },
+    "SetInstanceNetworkInfo": {
+      "Parameters": [
+        {
+          "Name": "InstanceId",
+          "TypeName": "Guid",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "PortMappings",
+          "TypeName": "Dictionary<String, Int32>",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "Task<ActionResult>",
+      "IsComplexType": false
+    },
+    "SetInstanceSuspended": {
+      "Parameters": [
+        {
+          "Name": "InstanceName",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "Suspended",
+          "TypeName": "Boolean",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "Task<ActionResult>",
+      "IsComplexType": false
+    },
+    "StartAllInstances": {
+      "Parameters": [],
+      "ReturnTypeName": "Task<ActionResult>",
+      "IsComplexType": false
+    },
+    "StartInstance": {
+      "Parameters": [
+        {
+          "Name": "InstanceName",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "Task<ActionResult>",
+      "IsComplexType": false
+    },
+    "StopAllInstances": {
+      "Parameters": [],
+      "ReturnTypeName": "Task<ActionResult>",
+      "IsComplexType": false
+    },
+    "StopInstance": {
+      "Parameters": [
+        {
+          "Name": "InstanceName",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "ActionResult",
+      "IsComplexType": false
+    },
+    "TestADSLoginDetails": {
+      "Parameters": [
+        {
+          "Name": "url",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "username",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "password",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "Task<ActionResult>",
+      "IsComplexType": false
+    },
+    "UpdateDatastore": {
+      "Parameters": [
+        {
+          "Name": "updatedDatastore",
+          "TypeName": "InstanceDatastore",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "ActionResult",
+      "IsComplexType": false
+    },
+    "UpdateDeploymentTemplate": {
+      "Parameters": [
+        {
+          "Name": "templateToUpdate",
+          "TypeName": "DeploymentTemplate",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "ActionResult",
+      "IsComplexType": false
+    },
+    "UpdateInstanceInfo": {
+      "Parameters": [
+        {
+          "Name": "InstanceId",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "FriendlyName",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "Description",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "StartOnBoot",
+          "TypeName": "Boolean",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "Suspended",
+          "TypeName": "Boolean",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "ExcludeFromFirewall",
+          "TypeName": "Boolean",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "RunInContainer",
+          "TypeName": "Boolean",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "ContainerMemory",
+          "TypeName": "Int32",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "MemoryPolicy",
+          "TypeName": "ContainerMemoryPolicy",
+          "Description": "",
+          "Optional": false,
+          "ParamEnumValues": {
+            "NotSpecified": 0,
+            "Reserve": 100,
+            "Restrict": 200
+          }
+        },
+        {
+          "Name": "ContainerMaxCPU",
+          "TypeName": "Single",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "ContainerImage",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "Task<ActionResult>",
+      "IsComplexType": false
+    },
+    "UpdateTarget": {
+      "Parameters": [
+        {
+          "Name": "TargetID",
+          "TypeName": "Guid",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "Void",
+      "IsComplexType": false
+    },
+    "UpdateTargetInfo": {
+      "Parameters": [
+        {
+          "Name": "Id",
+          "TypeName": "Guid",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "FriendlyName",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "Url",
+          "TypeName": "Uri",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "Description",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "Tags",
+          "TypeName": "List<String>",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "ActionResult",
+      "IsComplexType": false
+    },
+    "UpgradeAllInstances": {
+      "Parameters": [
+        {
+          "Name": "RestartRunning",
+          "TypeName": "Boolean",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "Task<ActionResult>",
+      "IsComplexType": false
+    },
+    "UpgradeInstance": {
+      "Parameters": [
+        {
+          "Name": "InstanceName",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "ActionResult",
+      "IsComplexType": false
+    }
+  },
+  "CommonCorePlugin": {},
+  "Core": {
+    "AcknowledgeAMPUpdate": {
+      "Parameters": [],
+      "ReturnTypeName": "Void",
+      "IsComplexType": false
+    },
+    "AddEventTrigger": {
+      "Parameters": [
+        {
+          "Name": "triggerId",
+          "TypeName": "Guid",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "ActionResult",
+      "IsComplexType": false
+    },
+    "AddIntervalTrigger": {
+      "Parameters": [
+        {
+          "Name": "months",
+          "TypeName": "Int32[]",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "days",
+          "TypeName": "Int32[]",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "hours",
+          "TypeName": "Int32[]",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "minutes",
+          "TypeName": "Int32[]",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "daysOfMonth",
+          "TypeName": "Int32[]",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "description",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "ActionResult",
+      "IsComplexType": false
+    },
+    "AddTask": {
+      "Parameters": [
+        {
+          "Name": "TriggerID",
+          "TypeName": "Guid",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "MethodID",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "ParameterMapping",
+          "TypeName": "Dictionary<String, String>",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "ActionResult",
+      "IsComplexType": false
+    },
+    "AsyncTest": {
+      "Description": "DEV: Async test method",
+      "Returns": "",
+      "Parameters": [],
+      "ReturnTypeName": "Task<String>",
+      "IsComplexType": false
+    },
+    "CancelTask": {
+      "Parameters": [
+        {
+          "Name": "TaskId",
+          "TypeName": "Guid",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "ActionResult",
+      "IsComplexType": false
+    },
+    "ChangeTaskOrder": {
+      "Parameters": [
+        {
+          "Name": "TriggerID",
+          "TypeName": "Guid",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "TaskID",
+          "TypeName": "Guid",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "NewOrder",
+          "TypeName": "Int32",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "ActionResult",
+      "IsComplexType": false
+    },
+    "ChangeUserPassword": {
+      "Description": "For a user to change their own password, requires knowing the old password",
+      "Returns": "",
+      "Parameters": [
+        {
+          "Name": "Username",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "OldPassword",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "NewPassword",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "TwoFactorPIN",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "Task<ActionResult>",
+      "IsComplexType": false
+    },
+    "ConfirmTwoFactorSetup": {
+      "Description": "Completes two-factor setup by supplying a valid two factor code based on the secret provided by EnableTwoFactor",
+      "Returns": "",
+      "Parameters": [
+        {
+          "Name": "Username",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "TwoFactorCode",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "Task<ActionResult>",
+      "IsComplexType": false
+    },
+    "CreateRole": {
+      "Parameters": [
+        {
+          "Name": "Name",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "AsCommonRole",
+          "TypeName": "Boolean",
+          "Description": "",
+          "Optional": true
+        }
+      ],
+      "ReturnTypeName": "Task<ActionResult<Guid>>",
+      "IsComplexType": false
+    },
+    "CreateTestTask": {
+      "Description": "DEV: Creates a non-ending task with 50% progress for testing purposes",
+      "Returns": "",
+      "Parameters": [],
+      "ReturnTypeName": "Void",
+      "IsComplexType": false
+    },
+    "CreateUser": {
+      "Parameters": [
+        {
+          "Name": "Username",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "Task<ActionResult<Guid>>",
+      "IsComplexType": false
+    },
+    "CurrentSessionHasPermission": {
+      "Parameters": [
+        {
+          "Name": "PermissionNode",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "Boolean",
+      "IsComplexType": false
+    },
+    "DeleteInstanceUsers": {
+      "Parameters": [
+        {
+          "Name": "InstanceId",
+          "TypeName": "Guid",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "Task<ActionResult>",
+      "IsComplexType": false
+    },
+    "DeleteRole": {
+      "Parameters": [
+        {
+          "Name": "RoleId",
+          "TypeName": "Guid",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "Task<ActionResult>",
+      "IsComplexType": false
+    },
+    "DeleteTask": {
+      "Parameters": [
+        {
+          "Name": "TriggerID",
+          "TypeName": "Guid",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "TaskID",
+          "TypeName": "Guid",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "ActionResult",
+      "IsComplexType": false
+    },
+    "DeleteTrigger": {
+      "Parameters": [
+        {
+          "Name": "TriggerID",
+          "TypeName": "Guid",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "ActionResult",
+      "IsComplexType": false
+    },
+    "DeleteUser": {
+      "Parameters": [
+        {
+          "Name": "Username",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "Task<ActionResult>",
+      "IsComplexType": false
+    },
+    "DisableTwoFactor": {
+      "Parameters": [
+        {
+          "Name": "Password",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "TwoFactorCode",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "Task<ActionResult>",
+      "IsComplexType": false
+    },
+    "DismissAllTasks": {
+      "Parameters": [],
+      "ReturnTypeName": "ActionResult",
+      "IsComplexType": false
+    },
+    "DismissTask": {
+      "Parameters": [
+        {
+          "Name": "TaskId",
+          "TypeName": "Guid",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "ActionResult",
+      "IsComplexType": false
+    },
+    "EditIntervalTrigger": {
+      "Parameters": [
+        {
+          "Name": "Id",
+          "TypeName": "Guid",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "months",
+          "TypeName": "Int32[]",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "days",
+          "TypeName": "Int32[]",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "hours",
+          "TypeName": "Int32[]",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "minutes",
+          "TypeName": "Int32[]",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "daysOfMonth",
+          "TypeName": "Int32[]",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "description",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "ActionResult",
+      "IsComplexType": false
+    },
+    "EditTask": {
+      "Parameters": [
+        {
+          "Name": "TriggerID",
+          "TypeName": "Guid",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "TaskID",
+          "TypeName": "Guid",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "ParameterMapping",
+          "TypeName": "Dictionary<String, String>",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "ActionResult",
+      "IsComplexType": false
+    },
+    "EnableTwoFactor": {
+      "Description": "Sets up two-factor authentication for the given user. ConfirmTwoFactorSetup must be invoked to complete setup.",
+      "Returns": "Data container the URI for a QR code that should be scanned by a mobile authenticator.",
+      "Parameters": [
+        {
+          "Name": "Username",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "Password",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "Task<ActionResult<TwoFactorSetupInfo>>",
+      "IsComplexType": false
+    },
+    "EndUserSession": {
+      "Parameters": [
+        {
+          "Name": "Id",
+          "TypeName": "Guid",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "Void",
+      "IsComplexType": false
+    },
+    "GetAMPRolePermissions": {
+      "Parameters": [
+        {
+          "Name": "RoleId",
+          "TypeName": "Guid",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "Task<IEnumerable<String>>",
+      "IsComplexType": false
+    },
+    "GetAMPUserInfo": {
+      "Parameters": [
+        {
+          "Name": "Username",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "Task<UserInfo>",
+      "IsComplexType": false
+    },
+    "GetAMPUsersSummary": {
+      "Parameters": [],
+      "ReturnTypeName": "Task<IEnumerable<UserInfoSummary>>",
+      "IsComplexType": false
+    },
+    "GetAPISpec": {
+      "Parameters": [],
+      "ReturnTypeName": "Dictionary<String, Dictionary<String, MethodInfoSummary>>",
+      "IsComplexType": false
+    },
+    "GetActiveAMPSessions": {
+      "Parameters": [],
+      "ReturnTypeName": "IEnumerable<WebSessionSummary>",
+      "IsComplexType": false
+    },
+    "GetAllAMPUserInfo": {
+      "Parameters": [],
+      "ReturnTypeName": "Task<IEnumerable<UserInfo>>",
+      "IsComplexType": false
+    },
+    "GetAuditLogEntries": {
+      "Parameters": [
+        {
+          "Name": "Before",
+          "TypeName": "Nullable<DateTime>",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "Count",
+          "TypeName": "Int32",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "IEnumerable<IAuditLogEntry>",
+      "IsComplexType": false
+    },
+    "GetConfig": {
+      "Parameters": [
+        {
+          "Name": "node",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "JObject",
+      "IsComplexType": true
+    },
+    "GetConfigs": {
+      "Parameters": [
+        {
+          "Name": "nodes",
+          "TypeName": "String[]",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "IEnumerable<JObject>",
+      "IsComplexType": true
+    },
+    "GetDiagnosticsInfo": {
+      "Parameters": [],
+      "ReturnTypeName": "Dictionary<String, String>",
+      "IsComplexType": false
+    },
+    "GetModuleInfo": {
+      "Parameters": [],
+      "ReturnTypeName": "ModuleInfo",
+      "IsComplexType": false
+    },
+    "GetNewGuid": {
+      "Parameters": [],
+      "ReturnTypeName": "Guid",
+      "IsComplexType": false
+    },
+    "GetPermissionsSpec": {
+      "Parameters": [],
+      "ReturnTypeName": "IList<IPermissionsTreeNode>",
+      "IsComplexType": false
+    },
+    "GetPortSummaries": {
+      "Parameters": [],
+      "ReturnTypeName": "IEnumerable<ListeningPortSummary>",
+      "IsComplexType": false
+    },
+    "GetProvisionSpec": {
+      "Parameters": [],
+      "ReturnTypeName": "List<JObject>",
+      "IsComplexType": true
+    },
+    "GetRemoteLoginToken": {
+      "Parameters": [
+        {
+          "Name": "Description",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": true
+        },
+        {
+          "Name": "IsTemporary",
+          "TypeName": "Boolean",
+          "Description": "",
+          "Optional": true
+        }
+      ],
+      "ReturnTypeName": "Task<String>",
+      "IsComplexType": false
+    },
+    "GetRole": {
+      "Parameters": [
+        {
+          "Name": "RoleId",
+          "TypeName": "Guid",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "Task<AuthRoleSummary>",
+      "IsComplexType": false
+    },
+    "GetRoleData": {
+      "Parameters": [],
+      "ReturnTypeName": "Task<IEnumerable<AuthRoleSummary>>",
+      "IsComplexType": false
+    },
+    "GetRoleIds": {
+      "Parameters": [],
+      "ReturnTypeName": "Task<IDictionary<Guid, String>>",
+      "IsComplexType": false
+    },
+    "GetScheduleData": {
+      "Parameters": [],
+      "ReturnTypeName": "ScheduleInfo",
+      "IsComplexType": false
+    },
+    "GetSettingValues": {
+      "Parameters": [
+        {
+          "Name": "SettingNode",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "WithRefresh",
+          "TypeName": "Boolean",
+          "Description": "",
+          "Optional": true
+        }
+      ],
+      "ReturnTypeName": "IDictionary<String, String>",
+      "IsComplexType": false
+    },
+    "GetSettingsSpec": {
+      "Parameters": [],
+      "ReturnTypeName": "Dictionary<String, IEnumerable<JObject>>",
+      "IsComplexType": true
+    },
+    "GetStatus": {
+      "Parameters": [],
+      "ReturnTypeName": "JObject",
+      "IsComplexType": true
+    },
+    "GetTasks": {
+      "Parameters": [],
+      "ReturnTypeName": "IEnumerable<RunningTask>",
+      "IsComplexType": false
+    },
+    "GetTimeIntervalTrigger": {
+      "Parameters": [
+        {
+          "Name": "Id",
+          "TypeName": "Guid",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "TimeIntervalTrigger",
+      "IsComplexType": false
+    },
+    "GetUpdateInfo": {
+      "Parameters": [],
+      "ReturnTypeName": "UpdateInfo",
+      "IsComplexType": false
+    },
+    "GetUpdates": {
+      "Description": "Gets changes to the server status, in addition to any notifications or console output that have occured since the last time GetUpdates() was called by the current session.",
+      "Returns": "",
+      "Parameters": [],
+      "ReturnTypeName": "JObject",
+      "IsComplexType": true
+    },
+    "GetUserActionsSpec": {
+      "Parameters": [],
+      "ReturnTypeName": "Object",
+      "IsComplexType": false
+    },
+    "GetUserInfo": {
+      "Description": "Provides information about a given in-application user (as opposed to AMP system users)",
+      "Returns": "",
+      "Parameters": [
+        {
+          "Name": "UID",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "JObject",
+      "IsComplexType": true
+    },
+    "GetUserList": {
+      "Description": "Returns a list of in-application users",
+      "Returns": "",
+      "Parameters": [],
+      "ReturnTypeName": "Dictionary<String, String>",
+      "IsComplexType": false
+    },
+    "GetWebauthnChallenge": {
+      "Parameters": [],
+      "ReturnTypeName": "ActionResult<String>",
+      "IsComplexType": false
+    },
+    "GetWebauthnCredentialIDs": {
+      "Parameters": [
+        {
+          "Name": "username",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "WebauthnLoginInfo",
+      "IsComplexType": false
+    },
+    "GetWebauthnCredentialSummaries": {
+      "Parameters": [],
+      "ReturnTypeName": "IEnumerable<WebauthnCredentialSummary>",
+      "IsComplexType": false
+    },
+    "GetWebserverMetrics": {
+      "Parameters": [],
+      "ReturnTypeName": "Object",
+      "IsComplexType": false
+    },
+    "Kill": {
+      "Parameters": [],
+      "ReturnTypeName": "Void",
+      "IsComplexType": false
+    },
+    "Login": {
+      "Parameters": [
+        {
+          "Name": "username",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "password",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "token",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "rememberMe",
+          "TypeName": "Boolean",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "Task<JObject>",
+      "IsComplexType": true
+    },
+    "Logout": {
+      "Parameters": [],
+      "ReturnTypeName": "Void",
+      "IsComplexType": false
+    },
+    "RefreshSettingValueList": {
+      "Parameters": [
+        {
+          "Name": "Node",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "ActionResult",
+      "IsComplexType": false
+    },
+    "RefreshSettingsSourceCache": {
+      "Parameters": [],
+      "ReturnTypeName": "Void",
+      "IsComplexType": false
+    },
+    "RenameRole": {
+      "Parameters": [
+        {
+          "Name": "RoleId",
+          "TypeName": "Guid",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "NewName",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "Task<ActionResult>",
+      "IsComplexType": false
+    },
+    "ResetUserPassword": {
+      "Description": "For administrative users to alter the password of another user",
+      "Returns": "",
+      "Parameters": [
+        {
+          "Name": "Username",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "NewPassword",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "Task<ActionResult>",
+      "IsComplexType": false
+    },
+    "Restart": {
+      "Parameters": [],
+      "ReturnTypeName": "ActionResult",
+      "IsComplexType": false
+    },
+    "RestartAMP": {
+      "Parameters": [],
+      "ReturnTypeName": "Void",
+      "IsComplexType": false
+    },
+    "Resume": {
+      "Description": "Allows the service to be re-started after previously being suspended.",
+      "Returns": "",
+      "Parameters": [],
+      "ReturnTypeName": "Void",
+      "IsComplexType": false
+    },
+    "RevokeWebauthnCredential": {
+      "Parameters": [
+        {
+          "Name": "ID",
+          "TypeName": "Int32",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "ActionResult",
+      "IsComplexType": false
+    },
+    "RunEventTriggerImmediately": {
+      "Parameters": [
+        {
+          "Name": "triggerId",
+          "TypeName": "Guid",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "ActionResult",
+      "IsComplexType": false
+    },
+    "SendConsoleMessage": {
+      "Parameters": [
+        {
+          "Name": "message",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "Void",
+      "IsComplexType": false
+    },
+    "SetAMPRolePermission": {
+      "Parameters": [
+        {
+          "Name": "RoleId",
+          "TypeName": "Guid",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "PermissionNode",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "Enabled",
+          "TypeName": "Nullable<Boolean>",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "Task<ActionResult>",
+      "IsComplexType": false
+    },
+    "SetAMPUserRoleMembership": {
+      "Parameters": [
+        {
+          "Name": "UserId",
+          "TypeName": "Guid",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "RoleId",
+          "TypeName": "Guid",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "IsMember",
+          "TypeName": "Boolean",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "Task<ActionResult>",
+      "IsComplexType": false
+    },
+    "SetConfig": {
+      "Parameters": [
+        {
+          "Name": "node",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "value",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "ActionResult",
+      "IsComplexType": false
+    },
+    "SetConfigs": {
+      "Parameters": [
+        {
+          "Name": "data",
+          "TypeName": "Dictionary<String, String>",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "Boolean",
+      "IsComplexType": false
+    },
+    "SetTriggerEnabled": {
+      "Parameters": [
+        {
+          "Name": "Id",
+          "TypeName": "Guid",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "Enabled",
+          "TypeName": "Boolean",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "ActionResult",
+      "IsComplexType": false
+    },
+    "Sleep": {
+      "Parameters": [],
+      "ReturnTypeName": "ActionResult",
+      "IsComplexType": false
+    },
+    "Start": {
+      "Parameters": [],
+      "ReturnTypeName": "ActionResult",
+      "IsComplexType": false
+    },
+    "Stop": {
+      "Parameters": [],
+      "ReturnTypeName": "Void",
+      "IsComplexType": false
+    },
+    "Suspend": {
+      "Description": "Prevents the current instance from being started, and stops it if it's currently running.",
+      "Returns": "",
+      "Parameters": [],
+      "ReturnTypeName": "Void",
+      "IsComplexType": false
+    },
+    "UpdateAMPInstance": {
+      "Parameters": [],
+      "ReturnTypeName": "Void",
+      "IsComplexType": false
+    },
+    "UpdateAccountInfo": {
+      "Parameters": [
+        {
+          "Name": "EmailAddress",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "TwoFactorPIN",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "Task<ActionResult>",
+      "IsComplexType": false
+    },
+    "UpdateApplication": {
+      "Parameters": [],
+      "ReturnTypeName": "ActionResult",
+      "IsComplexType": false
+    },
+    "UpdateUserInfo": {
+      "Parameters": [
+        {
+          "Name": "Username",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "Disabled",
+          "TypeName": "Boolean",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "PasswordExpires",
+          "TypeName": "Boolean",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "CannotChangePassword",
+          "TypeName": "Boolean",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "MustChangePassword",
+          "TypeName": "Boolean",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "EmailAddress",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": true
+        }
+      ],
+      "ReturnTypeName": "Task<ActionResult>",
+      "IsComplexType": false
+    },
+    "UpgradeAMP": {
+      "Parameters": [],
+      "ReturnTypeName": "Void",
+      "IsComplexType": false
+    },
+    "WebauthnRegister": {
+      "Parameters": [
+        {
+          "Name": "attestationObject",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "clientDataJSON",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "description",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": true
+        }
+      ],
+      "ReturnTypeName": "ActionResult",
+      "IsComplexType": false
+    }
+  },
+  "EmailSenderPlugin": {
+    "TestSMTPSettings": {
+      "Parameters": [],
+      "ReturnTypeName": "Task<ActionResult>",
+      "IsComplexType": false
+    }
+  },
+  "FileManagerPlugin": {
+    "AppendFileChunk": {
+      "Parameters": [
+        {
+          "Name": "Filename",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "Data",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "Delete",
+          "TypeName": "Boolean",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "Void",
+      "IsComplexType": false
+    },
+    "CalculateFileMD5Sum": {
+      "Parameters": [
+        {
+          "Name": "FilePath",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "ActionResult<String>",
+      "IsComplexType": false
+    },
+    "ChangeExclusion": {
+      "Parameters": [
+        {
+          "Name": "ModifyPath",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "AsDirectory",
+          "TypeName": "Boolean",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "Exclude",
+          "TypeName": "Boolean",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "ActionResult",
+      "IsComplexType": false
+    },
+    "CopyFile": {
+      "Parameters": [
+        {
+          "Name": "Origin",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "TargetDirectory",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "ActionResult",
+      "IsComplexType": false
+    },
+    "CreateArchive": {
+      "Parameters": [
+        {
+          "Name": "PathToArchive",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "ActionResult",
+      "IsComplexType": false
+    },
+    "CreateDirectory": {
+      "Description": "Creates a new directory. The parent directory must already exist.",
+      "Returns": "",
+      "Parameters": [
+        {
+          "Name": "NewPath",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "ActionResult",
+      "IsComplexType": false
+    },
+    "DownloadFileFromURL": {
+      "Parameters": [
+        {
+          "Name": "Source",
+          "TypeName": "Uri",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "TargetDirectory",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "ActionResult",
+      "IsComplexType": false
+    },
+    "Dummy": {
+      "Parameters": [],
+      "ReturnTypeName": "Void",
+      "IsComplexType": false
+    },
+    "EmptyTrash": {
+      "Description": "Empties a trash bin",
+      "Returns": "",
+      "Parameters": [
+        {
+          "Name": "TrashDirectoryName",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "ActionResult",
+      "IsComplexType": false
+    },
+    "ExtractArchive": {
+      "Parameters": [
+        {
+          "Name": "ArchivePath",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "DestinationPath",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": true
+        }
+      ],
+      "ReturnTypeName": "ActionResult",
+      "IsComplexType": false
+    },
+    "GetDirectoryListing": {
+      "Parameters": [
+        {
+          "Name": "Dir",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "IEnumerable<JObject>",
+      "IsComplexType": true
+    },
+    "GetFileChunk": {
+      "Parameters": [
+        {
+          "Name": "Filename",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "Position",
+          "TypeName": "Int64",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "Length",
+          "TypeName": "Int32",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "FileChunkData",
+      "IsComplexType": false
+    },
+    "ReadFileChunk": {
+      "Parameters": [
+        {
+          "Name": "Filename",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "Offset",
+          "TypeName": "Int64",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "ChunkSize",
+          "TypeName": "Int64",
+          "Description": "",
+          "Optional": true
+        }
+      ],
+      "ReturnTypeName": "ActionResult<String>",
+      "IsComplexType": false
+    },
+    "RenameDirectory": {
+      "Description": "Renames a directory",
+      "Returns": "",
+      "Parameters": [
+        {
+          "Name": "oldDirectory",
+          "TypeName": "String",
+          "Description": "The full path to the old directory",
+          "Optional": false
+        },
+        {
+          "Name": "NewDirectoryName",
+          "TypeName": "String",
+          "Description": "The name component of the new directory (not the full path)",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "ActionResult",
+      "IsComplexType": false
+    },
+    "RenameFile": {
+      "Parameters": [
+        {
+          "Name": "Filename",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "NewFilename",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "ActionResult",
+      "IsComplexType": false
+    },
+    "TrashDirectory": {
+      "Description": "Moves a directory to trash, files must be trashed before they can be deleted.",
+      "Returns": "",
+      "Parameters": [
+        {
+          "Name": "DirectoryName",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "ActionResult",
+      "IsComplexType": false
+    },
+    "TrashFile": {
+      "Description": "Moves a file to trash, files must be trashed before they can be deleted.",
+      "Returns": "",
+      "Parameters": [
+        {
+          "Name": "Filename",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "ActionResult",
+      "IsComplexType": false
+    },
+    "WriteFileChunk": {
+      "Parameters": [
+        {
+          "Name": "Filename",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "Data",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "Offset",
+          "TypeName": "Int64",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "FinalChunk",
+          "TypeName": "Boolean",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "ActionResult",
+      "IsComplexType": false
+    }
+  },
+  "LocalFileBackupPlugin": {
+    "DeleteFromS3": {
+      "Parameters": [
+        {
+          "Name": "BackupId",
+          "TypeName": "Guid",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "Task<ActionResult>",
+      "IsComplexType": false
+    },
+    "DeleteLocalBackup": {
+      "Parameters": [
+        {
+          "Name": "BackupId",
+          "TypeName": "Guid",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "Void",
+      "IsComplexType": false
+    },
+    "DownloadFromS3": {
+      "Parameters": [
+        {
+          "Name": "BackupId",
+          "TypeName": "Guid",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "RunningTask",
+      "IsComplexType": false
+    },
+    "GetBackups": {
+      "Parameters": [],
+      "ReturnTypeName": "IEnumerable<BackupManifest>",
+      "IsComplexType": false
+    },
+    "RestoreBackup": {
+      "Parameters": [
+        {
+          "Name": "BackupId",
+          "TypeName": "Guid",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "DeleteExistingData",
+          "TypeName": "Boolean",
+          "Description": "",
+          "Optional": true
+        }
+      ],
+      "ReturnTypeName": "ActionResult",
+      "IsComplexType": false
+    },
+    "SetBackupSticky": {
+      "Parameters": [
+        {
+          "Name": "BackupId",
+          "TypeName": "Guid",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "Sticky",
+          "TypeName": "Boolean",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "Void",
+      "IsComplexType": false
+    },
+    "TakeBackup": {
+      "Parameters": [
+        {
+          "Name": "Title",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "Description",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "Sticky",
+          "TypeName": "Boolean",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "ActionResult",
+      "IsComplexType": false
+    },
+    "UploadToS3": {
+      "Parameters": [
+        {
+          "Name": "BackupId",
+          "TypeName": "Guid",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "RunningTask",
+      "IsComplexType": false
+    }
+  },
+  "MinecraftModule": {
+    "AcceptEULA": {
+      "Parameters": [],
+      "ReturnTypeName": "Boolean",
+      "IsComplexType": false
+    },
+    "AddOPEntry": {
+      "Parameters": [
+        {
+          "Name": "UserOrUUID",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "Task<ActionResult>",
+      "IsComplexType": false
+    },
+    "AddToWhitelist": {
+      "Parameters": [
+        {
+          "Name": "UserOrUUID",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "Task<ActionResult>",
+      "IsComplexType": false
+    },
+    "BanUserByID": {
+      "Parameters": [
+        {
+          "Name": "ID",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "Void",
+      "IsComplexType": false
+    },
+    "BukGetCategories": {
+      "Parameters": [],
+      "ReturnTypeName": "JObject",
+      "IsComplexType": true
+    },
+    "BukGetInstallUpdatePlugin": {
+      "Parameters": [
+        {
+          "Name": "pluginId",
+          "TypeName": "Int32",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "Task<RunningTask>",
+      "IsComplexType": false
+    },
+    "BukGetInstalledPlugins": {
+      "Parameters": [],
+      "ReturnTypeName": "JObject",
+      "IsComplexType": true
+    },
+    "BukGetPluginInfo": {
+      "Parameters": [
+        {
+          "Name": "PluginId",
+          "TypeName": "Int32",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "JObject",
+      "IsComplexType": true
+    },
+    "BukGetPluginsForCategory": {
+      "Parameters": [
+        {
+          "Name": "CategoryId",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "PageNumber",
+          "TypeName": "Int32",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "PageSize",
+          "TypeName": "Int32",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "JObject",
+      "IsComplexType": true
+    },
+    "BukGetPopularPlugins": {
+      "Parameters": [],
+      "ReturnTypeName": "JObject",
+      "IsComplexType": true
+    },
+    "BukGetRemovePlugin": {
+      "Parameters": [
+        {
+          "Name": "PluginId",
+          "TypeName": "Int32",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "Void",
+      "IsComplexType": false
+    },
+    "BukGetSearch": {
+      "Parameters": [
+        {
+          "Name": "Query",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "PageNumber",
+          "TypeName": "Int32",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "PageSize",
+          "TypeName": "Int32",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "JObject",
+      "IsComplexType": true
+    },
+    "ClearInventoryByID": {
+      "Parameters": [
+        {
+          "Name": "ID",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "Void",
+      "IsComplexType": false
+    },
+    "GetFailureReason": {
+      "Parameters": [],
+      "ReturnTypeName": "String",
+      "IsComplexType": false
+    },
+    "GetHeadByUUID": {
+      "Description": "Get a skin as a base64 string",
+      "Returns": "",
+      "Parameters": [
+        {
+          "Name": "id",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "String",
+      "IsComplexType": false
+    },
+    "GetOPWhitelist": {
+      "Parameters": [],
+      "ReturnTypeName": "JObject",
+      "IsComplexType": true
+    },
+    "GetWhitelist": {
+      "Parameters": [],
+      "ReturnTypeName": "IEnumerable<JObject>",
+      "IsComplexType": true
+    },
+    "KickUserByID": {
+      "Parameters": [
+        {
+          "Name": "ID",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "Void",
+      "IsComplexType": false
+    },
+    "KillByID": {
+      "Parameters": [
+        {
+          "Name": "ID",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "Void",
+      "IsComplexType": false
+    },
+    "LoadOPList": {
+      "Parameters": [],
+      "ReturnTypeName": "IEnumerable<JObject>",
+      "IsComplexType": true
+    },
+    "RemoveOPEntry": {
+      "Parameters": [
+        {
+          "Name": "UserOrUUID",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "Void",
+      "IsComplexType": false
+    },
+    "RemoveWhitelistEntry": {
+      "Parameters": [
+        {
+          "Name": "UserOrUUID",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "Void",
+      "IsComplexType": false
+    },
+    "SmiteByID": {
+      "Description": "Strike a player with lightning",
+      "Returns": "",
+      "Parameters": [
+        {
+          "Name": "ID",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "Void",
+      "IsComplexType": false
+    }
+  },
+  "RCONPlugin": {
+    "Dummy": {
+      "Parameters": [],
+      "ReturnTypeName": "Void",
+      "IsComplexType": false
+    }
+  },
+  "steamcmdplugin": {
+    "CancelSteamGuard": {
+      "Parameters": [],
+      "ReturnTypeName": "Void",
+      "IsComplexType": false
+    },
+    "SteamGuardCode": {
+      "Parameters": [
+        {
+          "Name": "code",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "Void",
+      "IsComplexType": false
+    },
+    "SteamUsernamePassword": {
+      "Parameters": [
+        {
+          "Name": "username",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "password",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "Void",
+      "IsComplexType": false
+    }
+  }
+}
