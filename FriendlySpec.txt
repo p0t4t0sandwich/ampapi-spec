@@ -172,3 +172,30 @@ LocalFileBackupPlugin.RestoreBackup(BackupId: Guid, DeleteExistingData: Boolean)
 LocalFileBackupPlugin.SetBackupSticky(BackupId: Guid, Sticky: Boolean) -> Void
 LocalFileBackupPlugin.TakeBackup(Title: String, Description: String, Sticky: Boolean) -> ActionResult
 LocalFileBackupPlugin.UploadToS3(BackupId: Guid) -> RunningTask
+MinecraftModule.AcceptEULA() -> Boolean
+MinecraftModule.AddOPEntry(UserOrUUID: String) -> Task<ActionResult>
+MinecraftModule.AddToWhitelist(UserOrUUID: String) -> Task<ActionResult>
+MinecraftModule.BanUserByID(ID: String) -> Void
+MinecraftModule.BukGetCategories() -> JObject
+MinecraftModule.BukGetInstallUpdatePlugin(pluginId: Int32) -> Task<RunningTask>
+MinecraftModule.BukGetInstalledPlugins() -> JObject
+MinecraftModule.BukGetPluginInfo(PluginId: Int32) -> JObject
+MinecraftModule.BukGetPluginsForCategory(CategoryId: String, PageNumber: Int32, PageSize: Int32) -> JObject
+MinecraftModule.BukGetPopularPlugins() -> JObject
+MinecraftModule.BukGetRemovePlugin(PluginId: Int32) -> Void
+MinecraftModule.BukGetSearch(Query: String, PageNumber: Int32, PageSize: Int32) -> JObject
+MinecraftModule.ClearInventoryByID(ID: String) -> Void
+MinecraftModule.GetFailureReason() -> String
+MinecraftModule.GetHeadByUUID(id: String) -> String
+MinecraftModule.GetOPWhitelist() -> JObject
+MinecraftModule.GetWhitelist() -> IEnumerable<JObject>
+MinecraftModule.KickUserByID(ID: String) -> Void
+MinecraftModule.KillByID(ID: String) -> Void
+MinecraftModule.LoadOPList() -> IEnumerable<JObject>
+MinecraftModule.RemoveOPEntry(UserOrUUID: String) -> Void
+MinecraftModule.RemoveWhitelistEntry(UserOrUUID: String) -> Void
+MinecraftModule.SmiteByID(ID: String) -> Void
+RCONPlugin.Dummy() -> Void
+steamcmdplugin.CancelSteamGuard() -> Void
+steamcmdplugin.SteamGuardCode(code: String) -> Void
+steamcmdplugin.SteamUsernamePassword(username: String, password: String) -> Void

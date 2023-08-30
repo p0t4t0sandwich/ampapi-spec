@@ -2586,5 +2586,299 @@
       "ReturnTypeName": "RunningTask",
       "IsComplexType": false
     }
+  },
+  "MinecraftModule": {
+    "AcceptEULA": {
+      "Parameters": [],
+      "ReturnTypeName": "Boolean",
+      "IsComplexType": false
+    },
+    "AddOPEntry": {
+      "Parameters": [
+        {
+          "Name": "UserOrUUID",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "Task<ActionResult>",
+      "IsComplexType": false
+    },
+    "AddToWhitelist": {
+      "Parameters": [
+        {
+          "Name": "UserOrUUID",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "Task<ActionResult>",
+      "IsComplexType": false
+    },
+    "BanUserByID": {
+      "Parameters": [
+        {
+          "Name": "ID",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "Void",
+      "IsComplexType": false
+    },
+    "BukGetCategories": {
+      "Parameters": [],
+      "ReturnTypeName": "JObject",
+      "IsComplexType": true
+    },
+    "BukGetInstallUpdatePlugin": {
+      "Parameters": [
+        {
+          "Name": "pluginId",
+          "TypeName": "Int32",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "Task<RunningTask>",
+      "IsComplexType": false
+    },
+    "BukGetInstalledPlugins": {
+      "Parameters": [],
+      "ReturnTypeName": "JObject",
+      "IsComplexType": true
+    },
+    "BukGetPluginInfo": {
+      "Parameters": [
+        {
+          "Name": "PluginId",
+          "TypeName": "Int32",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "JObject",
+      "IsComplexType": true
+    },
+    "BukGetPluginsForCategory": {
+      "Parameters": [
+        {
+          "Name": "CategoryId",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "PageNumber",
+          "TypeName": "Int32",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "PageSize",
+          "TypeName": "Int32",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "JObject",
+      "IsComplexType": true
+    },
+    "BukGetPopularPlugins": {
+      "Parameters": [],
+      "ReturnTypeName": "JObject",
+      "IsComplexType": true
+    },
+    "BukGetRemovePlugin": {
+      "Parameters": [
+        {
+          "Name": "PluginId",
+          "TypeName": "Int32",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "Void",
+      "IsComplexType": false
+    },
+    "BukGetSearch": {
+      "Parameters": [
+        {
+          "Name": "Query",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "PageNumber",
+          "TypeName": "Int32",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "PageSize",
+          "TypeName": "Int32",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "JObject",
+      "IsComplexType": true
+    },
+    "ClearInventoryByID": {
+      "Parameters": [
+        {
+          "Name": "ID",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "Void",
+      "IsComplexType": false
+    },
+    "GetFailureReason": {
+      "Parameters": [],
+      "ReturnTypeName": "String",
+      "IsComplexType": false
+    },
+    "GetHeadByUUID": {
+      "Description": "Get a skin as a base64 string",
+      "Returns": "",
+      "Parameters": [
+        {
+          "Name": "id",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "String",
+      "IsComplexType": false
+    },
+    "GetOPWhitelist": {
+      "Parameters": [],
+      "ReturnTypeName": "JObject",
+      "IsComplexType": true
+    },
+    "GetWhitelist": {
+      "Parameters": [],
+      "ReturnTypeName": "IEnumerable<JObject>",
+      "IsComplexType": true
+    },
+    "KickUserByID": {
+      "Parameters": [
+        {
+          "Name": "ID",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "Void",
+      "IsComplexType": false
+    },
+    "KillByID": {
+      "Parameters": [
+        {
+          "Name": "ID",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "Void",
+      "IsComplexType": false
+    },
+    "LoadOPList": {
+      "Parameters": [],
+      "ReturnTypeName": "IEnumerable<JObject>",
+      "IsComplexType": true
+    },
+    "RemoveOPEntry": {
+      "Parameters": [
+        {
+          "Name": "UserOrUUID",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "Void",
+      "IsComplexType": false
+    },
+    "RemoveWhitelistEntry": {
+      "Parameters": [
+        {
+          "Name": "UserOrUUID",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "Void",
+      "IsComplexType": false
+    },
+    "SmiteByID": {
+      "Description": "Strike a player with lightning",
+      "Returns": "",
+      "Parameters": [
+        {
+          "Name": "ID",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "Void",
+      "IsComplexType": false
+    }
+  },
+  "RCONPlugin": {
+    "Dummy": {
+      "Parameters": [],
+      "ReturnTypeName": "Void",
+      "IsComplexType": false
+    }
+  },
+  "steamcmdplugin": {
+    "CancelSteamGuard": {
+      "Parameters": [],
+      "ReturnTypeName": "Void",
+      "IsComplexType": false
+    },
+    "SteamGuardCode": {
+      "Parameters": [
+        {
+          "Name": "code",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "Void",
+      "IsComplexType": false
+    },
+    "SteamUsernamePassword": {
+      "Parameters": [
+        {
+          "Name": "username",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "password",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "Void",
+      "IsComplexType": false
+    }
   }
 }
