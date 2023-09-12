@@ -1,0 +1,49 @@
+public enum ApplicationState : int
+    {
+        Undefined = -1,
+
+        Stopped = 0,
+        PreStart = 5,
+        /// <summary>
+        /// The server is performing some first-time-start configuration.
+        /// </summary>
+        Configuring = 7,
+        Starting = 10,
+        Ready = 20,
+        /// <summary>
+        /// Server is in the middle of stopping, but once shutdown has finished it will automatically restart.
+        /// </summary>
+        Restarting = 30,
+        Stopping = 40,
+
+        PreparingForSleep = 45,
+        /// <summary>
+        /// The application should be able to be resumed quickly if using this state. Otherwise use Stopped.
+        /// </summary>
+        Sleeping = 50,
+
+        /// <summary>
+        /// The application is waiting for some external service/application to respond/become available.
+        /// </summary>
+        Waiting = 60,
+
+        Installing = 70,
+        Updating = 75,
+        /// <summary>
+        /// Used during installation, means that some user input is required to complete setup (authentication etc).
+        /// </summary>
+        AwaitingUserInput = 80,
+
+        /// <summary>
+        /// Something is preventing the application from starting, and the module will not try again without user action
+        /// </summary>
+        Failed = 100,
+
+        Suspended = 200,
+        Maintainence = 250,
+
+        /// <summary>
+        /// The state is unknown, or doesn't apply (for modules that don't start an external process)
+        /// </summary>
+        Indeterminate = 999,
+    }

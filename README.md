@@ -28,13 +28,14 @@ Go to `http(s)://your.domain.com/API` to see the API docs.
 - [NodeJS](https://github.com/CubeCoders/ampapi-node)
 - [Python](https://github.com/p0t4t0sandwich/ampapi-python)
 - [Java](https://github.com/p0t4t0sandwich/ampapi-java)
+- [JavaScript](https://github.com/p0t4t0sandwich/ampapi-js)
+  - includes in-browser-scripts and TypeScript/JSDoc type definitions
 
 ### Work in Progress
 
-- [TypeScript](https://github.com/p0t4t0sandwich/ampapi-typescript)
-- [Bash](https://github.com/p0t4t0sandwich/ampapi-bash)
 - [Go](https://github.com/p0t4t0sandwich/ampapi-go)
   - Need to port my auto-gen script, and needs someone with proper Go know-how to point out any sore spots.
+    - Appears I'm the person with Go know-how now, so I'll take a crack at that
 
 ## TODO
 
