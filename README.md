@@ -1,5 +1,11 @@
 # ampapi-spec
 
+[![License](https://img.shields.io/github/license/p0t4t0sandwich/ampapi-spec?color=blue)](https://img.shields.io/github/downloads/p0t4t0sandwich/ampapi-spec/LICENSE)
+[![Github](https://img.shields.io/github/stars/p0t4t0sandwich/ampapi-spec)](https://github.com/p0t4t0sandwich/ampapi-spec)
+[![Github Issues](https://img.shields.io/github/issues/p0t4t0sandwich/ampapi-spec?label=Issues)](https://github.com/p0t4t0sandwich/ampapi-spec/issues)
+[![Discord](https://img.shields.io/discord/1067482396246683708?color=7289da&logo=discord&logoColor=white)](https://discord.neuralnexus.dev)
+[![wakatime](https://wakatime.com/badge/github/p0t4t0sandwich/ampapi-spec.svg)](https://wakatime.com/badge/github/p0t4t0sandwich/ampapi-spec)
+
 A program that automagically updates a JSON file and a human readable file with the AMP API methods.
 
 ## Usage
@@ -26,16 +32,18 @@ Go to `http(s)://your.domain.com/API` to see the API docs.
 
 - [C#](https://github.com/cubecoders/amp/wiki/Getting-started-with-AMP-developer-licences)
 - [NodeJS](https://github.com/CubeCoders/ampapi-node)
-- [Python](https://github.com/p0t4t0sandwich/ampapi-python)
+- [Python](https://github.com/p0t4t0sandwich/ampapi-py)
 - [Java](https://github.com/p0t4t0sandwich/ampapi-java)
 - [JavaScript/TypeScript](https://github.com/p0t4t0sandwich/ampapi-js)
   - includes TypeScript/JSDoc type definitions
 - [Go](https://github.com/p0t4t0sandwich/ampapi-go)
+- [Rust](https://github.com/p0t4t0sandwich/ampapi-rs)
 
 ### Work in Progress
 
-- [Rust](https://github.com/p0t4t0sandwich/ampapi-rust)
-  - Need to port my auto-gen script
+- [C++](https://github.com/p0t4t0sandwich/ampapi-cpp)
+- [Bash](https://github.com/p0t4t0sandwich/ampapi-bash)
+- [PHP](https://github.com/p0t4t0sandwich/ampapi-php)
 
 ## TODO
 
