@@ -35,7 +35,6 @@ Go to `http(s)://your.domain.com/API` to see the API docs.
 - [Python](https://github.com/p0t4t0sandwich/ampapi-py)
 - [Java](https://github.com/p0t4t0sandwich/ampapi-java)
 - [JavaScript/TypeScript](https://github.com/p0t4t0sandwich/ampapi-js)
-  - includes TypeScript/JSDoc type definitions
 - [Go](https://github.com/p0t4t0sandwich/ampapi-go)
 - [Rust](https://github.com/p0t4t0sandwich/ampapi-rs)
 
@@ -44,7 +43,3 @@ Go to `http(s)://your.domain.com/API` to see the API docs.
 - [C++](https://github.com/p0t4t0sandwich/ampapi-cpp)
 - [Bash](https://github.com/p0t4t0sandwich/ampapi-bash)
 - [PHP](https://github.com/p0t4t0sandwich/ampapi-php)
-
-## TODO
-
-- Add a way to generate a diff file for easier reading
