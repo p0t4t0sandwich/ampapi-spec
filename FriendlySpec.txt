@@ -59,6 +59,7 @@ ADSModule.UpdateTargetInfo(Id: Guid, FriendlyName: String, Url: Uri, Description
 ADSModule.UpgradeAllInstances(RestartRunning: Boolean) -> Task<ActionResult>
 ADSModule.UpgradeInstance(InstanceName: String) -> ActionResult
 Core.AcknowledgeAMPUpdate() -> Void
+Core.ActivateAMPLicence(LicenceKey: String, QueryOnly: Boolean) -> Task<ActionResult<LicenceInfo>>
 Core.AddEventTrigger(triggerId: Guid) -> ActionResult
 Core.AddIntervalTrigger(months: Int32[], days: Int32[], hours: Int32[], minutes: Int32[], daysOfMonth: Int32[], description: String) -> ActionResult
 Core.AddTask(TriggerID: Guid, MethodID: String, ParameterMapping: Dictionary<String, String>) -> ActionResult

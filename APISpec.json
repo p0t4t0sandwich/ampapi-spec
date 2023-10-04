@@ -1084,6 +1084,24 @@
       "ReturnTypeName": "Void",
       "IsComplexType": false
     },
+    "ActivateAMPLicence": {
+      "Parameters": [
+        {
+          "Name": "LicenceKey",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "QueryOnly",
+          "TypeName": "Boolean",
+          "Description": "",
+          "Optional": true
+        }
+      ],
+      "ReturnTypeName": "Task<ActionResult<LicenceInfo>>",
+      "IsComplexType": false
+    },
     "AddEventTrigger": {
       "Parameters": [
         {
