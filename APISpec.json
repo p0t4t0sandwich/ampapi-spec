@@ -685,7 +685,14 @@
       "IsComplexType": false
     },
     "RefreshRemoteConfigStores": {
-      "Parameters": [],
+      "Parameters": [
+        {
+          "Name": "force",
+          "TypeName": "Boolean",
+          "Description": "",
+          "Optional": true
+        }
+      ],
       "ReturnTypeName": "Void",
       "IsComplexType": false
     },
