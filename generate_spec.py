@@ -348,7 +348,7 @@ class GenerateSpec:
 #             return True
 #         else:
 #             return False
-        return False
+        return True
 
 if __name__ == "__main__":
     # Get the arguments
