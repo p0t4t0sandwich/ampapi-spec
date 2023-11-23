@@ -37,7 +37,7 @@ ADSModule.ReactivateLocalInstances() -> RunningTask
 ADSModule.RefreshAppCache() -> Void
 ADSModule.RefreshGroup(GroupId: Guid) -> ActionResult
 ADSModule.RefreshInstanceConfig(InstanceId: String) -> Task<ActionResult>
-ADSModule.RefreshRemoteConfigStores() -> Void
+ADSModule.RefreshRemoteConfigStores(force: Boolean) -> Void
 ADSModule.RegisterTarget(controllerUrl: String, myUrl: String, username: String, password: String, twoFactorToken: String, friendlyName: String) -> Task<ActionResult>
 ADSModule.RepairDatastore(id: Int32) -> RunningTask
 ADSModule.RequestDatastoreSizeCalculation(datastoreId: Int32) -> RunningTask
@@ -53,7 +53,7 @@ ADSModule.StopInstance(InstanceName: String) -> ActionResult
 ADSModule.TestADSLoginDetails(url: String, username: String, password: String) -> Task<ActionResult>
 ADSModule.UpdateDatastore(updatedDatastore: InstanceDatastore) -> ActionResult
 ADSModule.UpdateDeploymentTemplate(templateToUpdate: DeploymentTemplate) -> ActionResult
-ADSModule.UpdateInstanceInfo(InstanceId: String, FriendlyName: String, Description: String, StartOnBoot: Boolean, Suspended: Boolean, ExcludeFromFirewall: Boolean, RunInContainer: Boolean, ContainerMemory: Int32, MemoryPolicy: ContainerMemoryPolicy, ContainerMaxCPU: Single, ContainerImage: String) -> Task<ActionResult>
+ADSModule.UpdateInstanceInfo(InstanceId: String, FriendlyName: String, Description: String, StartOnBoot: Boolean, Suspended: Boolean, ExcludeFromFirewall: Boolean, RunInContainer: Boolean, ContainerMemory: Int32, MemoryPolicy: ContainerMemoryPolicy, ContainerMaxCPU: Single, ContainerImage: String) -> ActionResult
 ADSModule.UpdateTarget(TargetID: Guid) -> Void
 ADSModule.UpdateTargetInfo(Id: Guid, FriendlyName: String, Url: Uri, Description: String, Tags: List<String>) -> ActionResult
 ADSModule.UpgradeAllInstances(RestartRunning: Boolean) -> Task<ActionResult>

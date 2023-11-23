@@ -345,9 +345,10 @@ class GenerateSpec:
             go_file.write("AMP_VERSION=" + latest_version)
             go_file.close()
 
-            return True
-        else:
-            return False
+#             return True
+#         else:
+#             return False
+        return True
 
 if __name__ == "__main__":
     # Get the arguments
