@@ -253,11 +253,11 @@ class GenerateSpec:
 
         # Loop through the API sources
         for api_handler in self.api_handlers:
-            api_spec: dict = api_handler.Core_GetAPISpec()["result"]
+            api_spec: dict = api_handler.Core_GetAPISpec()
             self.merge_api_spec(api_spec)
 
             # Loop through the Instances
-            targets = api_handler.ADSModule_GetInstances()["result"]
+            targets = api_handler.ADSModule_GetInstances()
             for target in targets:
                 for instance in target["AvailableInstances"]:
                     instance_id: str = instance["InstanceID"]
@@ -271,7 +271,7 @@ class GenerateSpec:
 
                         # Check if the instance API is valid
                         if instance_api != None:
-                            instance_api_spec: dict = instance_api.Core_GetAPISpec()["result"]
+                            instance_api_spec: dict = instance_api.Core_GetAPISpec()
                             self.log_game_submodules(instance_module, instance_api_spec)
                             catalogued_modules.append(instance_module)
                             self.merge_api_spec(instance_api_spec)
@@ -329,7 +329,7 @@ class GenerateSpec:
         current_version = version_file.read()
 
         # Get the latest version from the API (Assume the first API source is the latest version)
-        latest_version = self.api_handlers[0].Core_GetUpdateInfo()["result"]["Version"]
+        latest_version = self.api_handlers[0].Core_GetUpdateInfo()["Version"]
 
         # Check if the current version is the same as the latest version
         if current_version != latest_version:
