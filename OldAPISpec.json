@@ -10,7 +10,7 @@
         }
       ],
       "ReturnTypeName": "ActionResult",
-      "IsComplexType": false
+      "IsComplexType": true
     },
     "ApplyInstanceConfiguration": {
       "Parameters": [
@@ -33,8 +33,8 @@
           "Optional": true
         }
       ],
-      "ReturnTypeName": "Task<ActionResult>",
-      "IsComplexType": false
+      "ReturnTypeName": "ActionResult",
+      "IsComplexType": true
     },
     "ApplyTemplate": {
       "Description": "Overlays an existing template on an existing instance. Used to perform package reconfigurations. Do not use this to 'transform' an existing application into another. The instance should be deleted and re-created in that situation.",
@@ -72,7 +72,7 @@
         }
       ],
       "ReturnTypeName": "ActionResult",
-      "IsComplexType": false
+      "IsComplexType": true
     },
     "AttachADS": {
       "Parameters": [
@@ -108,7 +108,7 @@
         }
       ],
       "ReturnTypeName": "ActionResult",
-      "IsComplexType": false
+      "IsComplexType": true
     },
     "CloneTemplate": {
       "Parameters": [
@@ -126,7 +126,7 @@
         }
       ],
       "ReturnTypeName": "ActionResult",
-      "IsComplexType": false
+      "IsComplexType": true
     },
     "ConvertToManaged": {
       "Parameters": [
@@ -138,7 +138,7 @@
         }
       ],
       "ReturnTypeName": "ActionResult",
-      "IsComplexType": false
+      "IsComplexType": true
     },
     "CreateDeploymentTemplate": {
       "Parameters": [
@@ -150,7 +150,7 @@
         }
       ],
       "ReturnTypeName": "ActionResult",
-      "IsComplexType": false
+      "IsComplexType": true
     },
     "CreateInstance": {
       "Parameters": [
@@ -253,7 +253,7 @@
         }
       ],
       "ReturnTypeName": "ActionResult",
-      "IsComplexType": false
+      "IsComplexType": true
     },
     "CreateLocalInstance": {
       "Parameters": [
@@ -278,7 +278,7 @@
         }
       ],
       "ReturnTypeName": "ActionResult",
-      "IsComplexType": false
+      "IsComplexType": true
     },
     "DeleteDatastore": {
       "Parameters": [
@@ -290,7 +290,7 @@
         }
       ],
       "ReturnTypeName": "ActionResult",
-      "IsComplexType": false
+      "IsComplexType": true
     },
     "DeleteDeploymentTemplate": {
       "Parameters": [
@@ -302,7 +302,7 @@
         }
       ],
       "ReturnTypeName": "ActionResult",
-      "IsComplexType": false
+      "IsComplexType": true
     },
     "DeleteInstance": {
       "Parameters": [
@@ -314,7 +314,7 @@
         }
       ],
       "ReturnTypeName": "RunningTask",
-      "IsComplexType": false
+      "IsComplexType": true
     },
     "DeleteInstanceUsers": {
       "Parameters": [
@@ -325,8 +325,8 @@
           "Optional": false
         }
       ],
-      "ReturnTypeName": "Task<ActionResult>",
-      "IsComplexType": false
+      "ReturnTypeName": "ActionResult",
+      "IsComplexType": true
     },
     "DeployTemplate": {
       "Parameters": [
@@ -399,7 +399,7 @@
         }
       ],
       "ReturnTypeName": "RunningTask",
-      "IsComplexType": false
+      "IsComplexType": true
     },
     "DetatchTarget": {
       "Parameters": [
@@ -411,7 +411,7 @@
         }
       ],
       "ReturnTypeName": "ActionResult",
-      "IsComplexType": false
+      "IsComplexType": true
     },
     "ExtractEverywhere": {
       "Parameters": [
@@ -422,8 +422,8 @@
           "Optional": false
         }
       ],
-      "ReturnTypeName": "Task<ActionResult>",
-      "IsComplexType": false
+      "ReturnTypeName": "ActionResult",
+      "IsComplexType": true
     },
     "GetApplicationEndpoints": {
       "Parameters": [
@@ -434,8 +434,8 @@
           "Optional": false
         }
       ],
-      "ReturnTypeName": "IEnumerable<EndpointInfo>",
-      "IsComplexType": false
+      "ReturnTypeName": "IEnumerable<JObject>",
+      "IsComplexType": true
     },
     "GetDatastore": {
       "Parameters": [
@@ -446,8 +446,8 @@
           "Optional": false
         }
       ],
-      "ReturnTypeName": "InstanceDatastore",
-      "IsComplexType": false
+      "ReturnTypeName": "JObject",
+      "IsComplexType": true
     },
     "GetDatastoreInstances": {
       "Parameters": [
@@ -463,13 +463,13 @@
     },
     "GetDatastores": {
       "Parameters": [],
-      "ReturnTypeName": "IEnumerable<InstanceDatastore>",
-      "IsComplexType": false
+      "ReturnTypeName": "IEnumerable<JObject>",
+      "IsComplexType": true
     },
     "GetDeploymentTemplates": {
       "Parameters": [],
-      "ReturnTypeName": "IEnumerable<DeploymentTemplate>",
-      "IsComplexType": false
+      "ReturnTypeName": "IEnumerable<JObject>",
+      "IsComplexType": true
     },
     "GetGroup": {
       "Parameters": [
@@ -480,8 +480,8 @@
           "Optional": false
         }
       ],
-      "ReturnTypeName": "IADSInstance",
-      "IsComplexType": false
+      "ReturnTypeName": "JObject",
+      "IsComplexType": true
     },
     "GetInstance": {
       "Parameters": [
@@ -504,8 +504,8 @@
           "Optional": false
         }
       ],
-      "ReturnTypeName": "IEnumerable<PortUsage>",
-      "IsComplexType": false
+      "ReturnTypeName": "IEnumerable<JObject>",
+      "IsComplexType": true
     },
     "GetInstanceStatuses": {
       "Parameters": [],
@@ -514,8 +514,8 @@
     },
     "GetInstances": {
       "Parameters": [],
-      "ReturnTypeName": "IEnumerable<IADSInstance>",
-      "IsComplexType": false
+      "ReturnTypeName": "IEnumerable<JObject>",
+      "IsComplexType": true
     },
     "GetLocalInstances": {
       "Parameters": [],
@@ -531,7 +531,7 @@
           "Optional": false
         }
       ],
-      "ReturnTypeName": "IEnumerable<JObject>",
+      "ReturnTypeName": "IEnumerable<ProvisionSettingInfo>",
       "IsComplexType": true
     },
     "GetProvisionFitness": {
@@ -541,13 +541,13 @@
     },
     "GetSupportedApplications": {
       "Parameters": [],
-      "ReturnTypeName": "IEnumerable<ApplicationSpec>",
-      "IsComplexType": false
+      "ReturnTypeName": "IEnumerable<JObject>",
+      "IsComplexType": true
     },
     "GetTargetInfo": {
       "Parameters": [],
-      "ReturnTypeName": "RemoteTargetInfo",
-      "IsComplexType": false
+      "ReturnTypeName": "JObject",
+      "IsComplexType": true
     },
     "HandoutInstanceConfigs": {
       "Parameters": [
@@ -570,8 +570,8 @@
           "Optional": false
         }
       ],
-      "ReturnTypeName": "Task<ActionResult>",
-      "IsComplexType": false
+      "ReturnTypeName": "ActionResult",
+      "IsComplexType": true
     },
     "ManageInstance": {
       "Parameters": [
@@ -583,7 +583,7 @@
         }
       ],
       "ReturnTypeName": "ActionResult<String>",
-      "IsComplexType": false
+      "IsComplexType": true
     },
     "ModifyCustomFirewallRule": {
       "Parameters": [
@@ -629,8 +629,8 @@
           "Optional": false
         }
       ],
-      "ReturnTypeName": "Task<ActionResult>",
-      "IsComplexType": false
+      "ReturnTypeName": "ActionResult",
+      "IsComplexType": true
     },
     "MoveInstanceDatastore": {
       "Parameters": [
@@ -647,13 +647,13 @@
           "Optional": false
         }
       ],
-      "ReturnTypeName": "Task<RunningTask>",
-      "IsComplexType": false
+      "ReturnTypeName": "RunningTask",
+      "IsComplexType": true
     },
     "ReactivateLocalInstances": {
       "Parameters": [],
       "ReturnTypeName": "RunningTask",
-      "IsComplexType": false
+      "IsComplexType": true
     },
     "RefreshAppCache": {
       "Parameters": [],
@@ -670,7 +670,7 @@
         }
       ],
       "ReturnTypeName": "ActionResult",
-      "IsComplexType": false
+      "IsComplexType": true
     },
     "RefreshInstanceConfig": {
       "Parameters": [
@@ -681,8 +681,8 @@
           "Optional": false
         }
       ],
-      "ReturnTypeName": "Task<ActionResult>",
-      "IsComplexType": false
+      "ReturnTypeName": "ActionResult",
+      "IsComplexType": true
     },
     "RefreshRemoteConfigStores": {
       "Parameters": [
@@ -735,8 +735,8 @@
           "Optional": false
         }
       ],
-      "ReturnTypeName": "Task<ActionResult>",
-      "IsComplexType": false
+      "ReturnTypeName": "ActionResult",
+      "IsComplexType": true
     },
     "RepairDatastore": {
       "Parameters": [
@@ -748,7 +748,7 @@
         }
       ],
       "ReturnTypeName": "RunningTask",
-      "IsComplexType": false
+      "IsComplexType": true
     },
     "RequestDatastoreSizeCalculation": {
       "Parameters": [
@@ -760,7 +760,7 @@
         }
       ],
       "ReturnTypeName": "RunningTask",
-      "IsComplexType": false
+      "IsComplexType": true
     },
     "RestartInstance": {
       "Parameters": [
@@ -772,7 +772,7 @@
         }
       ],
       "ReturnTypeName": "ActionResult",
-      "IsComplexType": false
+      "IsComplexType": true
     },
     "Servers": {
       "Parameters": [
@@ -789,7 +789,7 @@
           "Optional": false
         }
       ],
-      "ReturnTypeName": "Task<JObject>",
+      "ReturnTypeName": "JSONRawResponse",
       "IsComplexType": true
     },
     "SetInstanceConfig": {
@@ -813,8 +813,8 @@
           "Optional": false
         }
       ],
-      "ReturnTypeName": "Task<ActionResult>",
-      "IsComplexType": false
+      "ReturnTypeName": "ActionResult",
+      "IsComplexType": true
     },
     "SetInstanceNetworkInfo": {
       "Parameters": [
@@ -831,8 +831,8 @@
           "Optional": false
         }
       ],
-      "ReturnTypeName": "Task<ActionResult>",
-      "IsComplexType": false
+      "ReturnTypeName": "ActionResult",
+      "IsComplexType": true
     },
     "SetInstanceSuspended": {
       "Parameters": [
@@ -849,13 +849,13 @@
           "Optional": false
         }
       ],
-      "ReturnTypeName": "Task<ActionResult>",
-      "IsComplexType": false
+      "ReturnTypeName": "ActionResult",
+      "IsComplexType": true
     },
     "StartAllInstances": {
       "Parameters": [],
-      "ReturnTypeName": "Task<ActionResult>",
-      "IsComplexType": false
+      "ReturnTypeName": "ActionResult",
+      "IsComplexType": true
     },
     "StartInstance": {
       "Parameters": [
@@ -866,13 +866,13 @@
           "Optional": false
         }
       ],
-      "ReturnTypeName": "Task<ActionResult>",
-      "IsComplexType": false
+      "ReturnTypeName": "ActionResult",
+      "IsComplexType": true
     },
     "StopAllInstances": {
       "Parameters": [],
-      "ReturnTypeName": "Task<ActionResult>",
-      "IsComplexType": false
+      "ReturnTypeName": "ActionResult",
+      "IsComplexType": true
     },
     "StopInstance": {
       "Parameters": [
@@ -884,7 +884,7 @@
         }
       ],
       "ReturnTypeName": "ActionResult",
-      "IsComplexType": false
+      "IsComplexType": true
     },
     "TestADSLoginDetails": {
       "Parameters": [
@@ -907,8 +907,8 @@
           "Optional": false
         }
       ],
-      "ReturnTypeName": "Task<ActionResult>",
-      "IsComplexType": false
+      "ReturnTypeName": "ActionResult",
+      "IsComplexType": true
     },
     "UpdateDatastore": {
       "Parameters": [
@@ -920,7 +920,7 @@
         }
       ],
       "ReturnTypeName": "ActionResult",
-      "IsComplexType": false
+      "IsComplexType": true
     },
     "UpdateDeploymentTemplate": {
       "Parameters": [
@@ -932,7 +932,7 @@
         }
       ],
       "ReturnTypeName": "ActionResult",
-      "IsComplexType": false
+      "IsComplexType": true
     },
     "UpdateInstanceInfo": {
       "Parameters": [
@@ -1009,7 +1009,7 @@
         }
       ],
       "ReturnTypeName": "ActionResult",
-      "IsComplexType": false
+      "IsComplexType": true
     },
     "UpdateTarget": {
       "Parameters": [
@@ -1057,7 +1057,7 @@
         }
       ],
       "ReturnTypeName": "ActionResult",
-      "IsComplexType": false
+      "IsComplexType": true
     },
     "UpgradeAllInstances": {
       "Parameters": [
@@ -1068,8 +1068,8 @@
           "Optional": false
         }
       ],
-      "ReturnTypeName": "Task<ActionResult>",
-      "IsComplexType": false
+      "ReturnTypeName": "ActionResult",
+      "IsComplexType": true
     },
     "UpgradeInstance": {
       "Parameters": [
@@ -1081,7 +1081,7 @@
         }
       ],
       "ReturnTypeName": "ActionResult",
-      "IsComplexType": false
+      "IsComplexType": true
     }
   },
   "CommonCorePlugin": {},
@@ -1106,8 +1106,8 @@
           "Optional": true
         }
       ],
-      "ReturnTypeName": "Task<ActionResult<LicenceInfo>>",
-      "IsComplexType": false
+      "ReturnTypeName": "ActionResult<JObject>",
+      "IsComplexType": true
     },
     "AddEventTrigger": {
       "Parameters": [
@@ -1119,7 +1119,7 @@
         }
       ],
       "ReturnTypeName": "ActionResult",
-      "IsComplexType": false
+      "IsComplexType": true
     },
     "AddIntervalTrigger": {
       "Parameters": [
@@ -1161,7 +1161,7 @@
         }
       ],
       "ReturnTypeName": "ActionResult",
-      "IsComplexType": false
+      "IsComplexType": true
     },
     "AddTask": {
       "Parameters": [
@@ -1185,13 +1185,13 @@
         }
       ],
       "ReturnTypeName": "ActionResult",
-      "IsComplexType": false
+      "IsComplexType": true
     },
     "AsyncTest": {
       "Description": "DEV: Async test method",
       "Returns": "",
       "Parameters": [],
-      "ReturnTypeName": "Task<String>",
+      "ReturnTypeName": "String",
       "IsComplexType": false
     },
     "CancelTask": {
@@ -1204,7 +1204,7 @@
         }
       ],
       "ReturnTypeName": "ActionResult",
-      "IsComplexType": false
+      "IsComplexType": true
     },
     "ChangeTaskOrder": {
       "Parameters": [
@@ -1228,7 +1228,7 @@
         }
       ],
       "ReturnTypeName": "ActionResult",
-      "IsComplexType": false
+      "IsComplexType": true
     },
     "ChangeUserPassword": {
       "Description": "For a user to change their own password, requires knowing the old password",
@@ -1259,8 +1259,8 @@
           "Optional": false
         }
       ],
-      "ReturnTypeName": "Task<ActionResult>",
-      "IsComplexType": false
+      "ReturnTypeName": "ActionResult",
+      "IsComplexType": true
     },
     "ConfirmTwoFactorSetup": {
       "Description": "Completes two-factor setup by supplying a valid two factor code based on the secret provided by EnableTwoFactor",
@@ -1279,8 +1279,8 @@
           "Optional": false
         }
       ],
-      "ReturnTypeName": "Task<ActionResult>",
-      "IsComplexType": false
+      "ReturnTypeName": "ActionResult",
+      "IsComplexType": true
     },
     "CreateRole": {
       "Parameters": [
@@ -1297,8 +1297,8 @@
           "Optional": true
         }
       ],
-      "ReturnTypeName": "Task<ActionResult<Guid>>",
-      "IsComplexType": false
+      "ReturnTypeName": "ActionResult<Guid>",
+      "IsComplexType": true
     },
     "CreateTestTask": {
       "Description": "DEV: Creates a non-ending task with 50% progress for testing purposes",
@@ -1316,8 +1316,8 @@
           "Optional": false
         }
       ],
-      "ReturnTypeName": "Task<ActionResult<Guid>>",
-      "IsComplexType": false
+      "ReturnTypeName": "ActionResult<Guid>",
+      "IsComplexType": true
     },
     "CurrentSessionHasPermission": {
       "Parameters": [
@@ -1340,8 +1340,8 @@
           "Optional": false
         }
       ],
-      "ReturnTypeName": "Task<ActionResult>",
-      "IsComplexType": false
+      "ReturnTypeName": "ActionResult",
+      "IsComplexType": true
     },
     "DeleteRole": {
       "Parameters": [
@@ -1352,8 +1352,8 @@
           "Optional": false
         }
       ],
-      "ReturnTypeName": "Task<ActionResult>",
-      "IsComplexType": false
+      "ReturnTypeName": "ActionResult",
+      "IsComplexType": true
     },
     "DeleteTask": {
       "Parameters": [
@@ -1371,7 +1371,7 @@
         }
       ],
       "ReturnTypeName": "ActionResult",
-      "IsComplexType": false
+      "IsComplexType": true
     },
     "DeleteTrigger": {
       "Parameters": [
@@ -1383,7 +1383,7 @@
         }
       ],
       "ReturnTypeName": "ActionResult",
-      "IsComplexType": false
+      "IsComplexType": true
     },
     "DeleteUser": {
       "Parameters": [
@@ -1394,8 +1394,8 @@
           "Optional": false
         }
       ],
-      "ReturnTypeName": "Task<ActionResult>",
-      "IsComplexType": false
+      "ReturnTypeName": "ActionResult",
+      "IsComplexType": true
     },
     "DisableTwoFactor": {
       "Parameters": [
@@ -1412,13 +1412,13 @@
           "Optional": false
         }
       ],
-      "ReturnTypeName": "Task<ActionResult>",
-      "IsComplexType": false
+      "ReturnTypeName": "ActionResult",
+      "IsComplexType": true
     },
     "DismissAllTasks": {
       "Parameters": [],
       "ReturnTypeName": "ActionResult",
-      "IsComplexType": false
+      "IsComplexType": true
     },
     "DismissTask": {
       "Parameters": [
@@ -1430,7 +1430,7 @@
         }
       ],
       "ReturnTypeName": "ActionResult",
-      "IsComplexType": false
+      "IsComplexType": true
     },
     "EditIntervalTrigger": {
       "Parameters": [
@@ -1478,7 +1478,7 @@
         }
       ],
       "ReturnTypeName": "ActionResult",
-      "IsComplexType": false
+      "IsComplexType": true
     },
     "EditTask": {
       "Parameters": [
@@ -1502,7 +1502,7 @@
         }
       ],
       "ReturnTypeName": "ActionResult",
-      "IsComplexType": false
+      "IsComplexType": true
     },
     "EnableTwoFactor": {
       "Description": "Sets up two-factor authentication for the given user. ConfirmTwoFactorSetup must be invoked to complete setup.",
@@ -1521,8 +1521,8 @@
           "Optional": false
         }
       ],
-      "ReturnTypeName": "Task<ActionResult<TwoFactorSetupInfo>>",
-      "IsComplexType": false
+      "ReturnTypeName": "ActionResult<TwoFactorSetupInfo>",
+      "IsComplexType": true
     },
     "EndUserSession": {
       "Parameters": [
@@ -1545,7 +1545,7 @@
           "Optional": false
         }
       ],
-      "ReturnTypeName": "Task<IEnumerable<String>>",
+      "ReturnTypeName": "IEnumerable<String>",
       "IsComplexType": false
     },
     "GetAMPUserInfo": {
@@ -1557,28 +1557,28 @@
           "Optional": false
         }
       ],
-      "ReturnTypeName": "Task<UserInfo>",
-      "IsComplexType": false
+      "ReturnTypeName": "UserInfo",
+      "IsComplexType": true
     },
     "GetAMPUsersSummary": {
       "Parameters": [],
-      "ReturnTypeName": "Task<IEnumerable<UserInfoSummary>>",
-      "IsComplexType": false
+      "ReturnTypeName": "IEnumerable<UserInfoSummary>",
+      "IsComplexType": true
     },
     "GetAPISpec": {
       "Parameters": [],
-      "ReturnTypeName": "Dictionary<String, Dictionary<String, MethodInfoSummary>>",
-      "IsComplexType": false
+      "ReturnTypeName": "Dictionary<String, Dictionary<String, JObject>>",
+      "IsComplexType": true
     },
     "GetActiveAMPSessions": {
       "Parameters": [],
-      "ReturnTypeName": "IEnumerable<WebSessionSummary>",
-      "IsComplexType": false
+      "ReturnTypeName": "IEnumerable<JObject>",
+      "IsComplexType": true
     },
     "GetAllAMPUserInfo": {
       "Parameters": [],
-      "ReturnTypeName": "Task<IEnumerable<UserInfo>>",
-      "IsComplexType": false
+      "ReturnTypeName": "IEnumerable<UserInfo>",
+      "IsComplexType": true
     },
     "GetAuditLogEntries": {
       "Parameters": [
@@ -1596,7 +1596,7 @@
         }
       ],
       "ReturnTypeName": "IEnumerable<IAuditLogEntry>",
-      "IsComplexType": false
+      "IsComplexType": true
     },
     "GetConfig": {
       "Parameters": [
@@ -1629,8 +1629,8 @@
     },
     "GetModuleInfo": {
       "Parameters": [],
-      "ReturnTypeName": "ModuleInfo",
-      "IsComplexType": false
+      "ReturnTypeName": "JObject",
+      "IsComplexType": true
     },
     "GetNewGuid": {
       "Parameters": [],
@@ -1640,12 +1640,12 @@
     "GetPermissionsSpec": {
       "Parameters": [],
       "ReturnTypeName": "IList<IPermissionsTreeNode>",
-      "IsComplexType": false
+      "IsComplexType": true
     },
     "GetPortSummaries": {
       "Parameters": [],
       "ReturnTypeName": "IEnumerable<ListeningPortSummary>",
-      "IsComplexType": false
+      "IsComplexType": true
     },
     "GetProvisionSpec": {
       "Parameters": [],
@@ -1667,7 +1667,7 @@
           "Optional": true
         }
       ],
-      "ReturnTypeName": "Task<String>",
+      "ReturnTypeName": "String",
       "IsComplexType": false
     },
     "GetRole": {
@@ -1679,23 +1679,23 @@
           "Optional": false
         }
       ],
-      "ReturnTypeName": "Task<AuthRoleSummary>",
-      "IsComplexType": false
+      "ReturnTypeName": "AuthRoleSummary",
+      "IsComplexType": true
     },
     "GetRoleData": {
       "Parameters": [],
-      "ReturnTypeName": "Task<IEnumerable<AuthRoleSummary>>",
-      "IsComplexType": false
+      "ReturnTypeName": "IEnumerable<AuthRoleSummary>",
+      "IsComplexType": true
     },
     "GetRoleIds": {
       "Parameters": [],
-      "ReturnTypeName": "Task<IDictionary<Guid, String>>",
+      "ReturnTypeName": "IDictionary<Guid, String>",
       "IsComplexType": false
     },
     "GetScheduleData": {
       "Parameters": [],
-      "ReturnTypeName": "ScheduleInfo",
-      "IsComplexType": false
+      "ReturnTypeName": "JObject",
+      "IsComplexType": true
     },
     "GetSettingValues": {
       "Parameters": [
@@ -1728,7 +1728,7 @@
     "GetTasks": {
       "Parameters": [],
       "ReturnTypeName": "IEnumerable<RunningTask>",
-      "IsComplexType": false
+      "IsComplexType": true
     },
     "GetTimeIntervalTrigger": {
       "Parameters": [
@@ -1739,13 +1739,13 @@
           "Optional": false
         }
       ],
-      "ReturnTypeName": "TimeIntervalTrigger",
-      "IsComplexType": false
+      "ReturnTypeName": "JObject",
+      "IsComplexType": true
     },
     "GetUpdateInfo": {
       "Parameters": [],
-      "ReturnTypeName": "UpdateInfo",
-      "IsComplexType": false
+      "ReturnTypeName": "JObject",
+      "IsComplexType": true
     },
     "GetUpdates": {
       "Description": "Gets changes to the server status, in addition to any notifications or console output that have occured since the last time GetUpdates() was called by the current session.",
@@ -1770,7 +1770,7 @@
           "Optional": false
         }
       ],
-      "ReturnTypeName": "JObject",
+      "ReturnTypeName": "SimpleUser",
       "IsComplexType": true
     },
     "GetUserList": {
@@ -1783,7 +1783,7 @@
     "GetWebauthnChallenge": {
       "Parameters": [],
       "ReturnTypeName": "ActionResult<String>",
-      "IsComplexType": false
+      "IsComplexType": true
     },
     "GetWebauthnCredentialIDs": {
       "Parameters": [
@@ -1794,13 +1794,13 @@
           "Optional": false
         }
       ],
-      "ReturnTypeName": "WebauthnLoginInfo",
-      "IsComplexType": false
+      "ReturnTypeName": "JObject",
+      "IsComplexType": true
     },
     "GetWebauthnCredentialSummaries": {
       "Parameters": [],
       "ReturnTypeName": "IEnumerable<WebauthnCredentialSummary>",
-      "IsComplexType": false
+      "IsComplexType": true
     },
     "GetWebserverMetrics": {
       "Parameters": [],
@@ -1839,7 +1839,7 @@
           "Optional": false
         }
       ],
-      "ReturnTypeName": "Task<JObject>",
+      "ReturnTypeName": "JObject",
       "IsComplexType": true
     },
     "Logout": {
@@ -1857,7 +1857,7 @@
         }
       ],
       "ReturnTypeName": "ActionResult",
-      "IsComplexType": false
+      "IsComplexType": true
     },
     "RefreshSettingsSourceCache": {
       "Parameters": [],
@@ -1879,8 +1879,8 @@
           "Optional": false
         }
       ],
-      "ReturnTypeName": "Task<ActionResult>",
-      "IsComplexType": false
+      "ReturnTypeName": "ActionResult",
+      "IsComplexType": true
     },
     "ResetUserPassword": {
       "Description": "For administrative users to alter the password of another user",
@@ -1899,13 +1899,13 @@
           "Optional": false
         }
       ],
-      "ReturnTypeName": "Task<ActionResult>",
-      "IsComplexType": false
+      "ReturnTypeName": "ActionResult",
+      "IsComplexType": true
     },
     "Restart": {
       "Parameters": [],
       "ReturnTypeName": "ActionResult",
-      "IsComplexType": false
+      "IsComplexType": true
     },
     "RestartAMP": {
       "Parameters": [],
@@ -1929,7 +1929,7 @@
         }
       ],
       "ReturnTypeName": "ActionResult",
-      "IsComplexType": false
+      "IsComplexType": true
     },
     "RunEventTriggerImmediately": {
       "Parameters": [
@@ -1941,7 +1941,7 @@
         }
       ],
       "ReturnTypeName": "ActionResult",
-      "IsComplexType": false
+      "IsComplexType": true
     },
     "SendConsoleMessage": {
       "Parameters": [
@@ -1976,8 +1976,8 @@
           "Optional": false
         }
       ],
-      "ReturnTypeName": "Task<ActionResult>",
-      "IsComplexType": false
+      "ReturnTypeName": "ActionResult",
+      "IsComplexType": true
     },
     "SetAMPUserRoleMembership": {
       "Parameters": [
@@ -2000,8 +2000,8 @@
           "Optional": false
         }
       ],
-      "ReturnTypeName": "Task<ActionResult>",
-      "IsComplexType": false
+      "ReturnTypeName": "ActionResult",
+      "IsComplexType": true
     },
     "SetConfig": {
       "Parameters": [
@@ -2019,7 +2019,7 @@
         }
       ],
       "ReturnTypeName": "ActionResult",
-      "IsComplexType": false
+      "IsComplexType": true
     },
     "SetConfigs": {
       "Parameters": [
@@ -2049,17 +2049,17 @@
         }
       ],
       "ReturnTypeName": "ActionResult",
-      "IsComplexType": false
+      "IsComplexType": true
     },
     "Sleep": {
       "Parameters": [],
       "ReturnTypeName": "ActionResult",
-      "IsComplexType": false
+      "IsComplexType": true
     },
     "Start": {
       "Parameters": [],
       "ReturnTypeName": "ActionResult",
-      "IsComplexType": false
+      "IsComplexType": true
     },
     "Stop": {
       "Parameters": [],
@@ -2093,13 +2093,13 @@
           "Optional": false
         }
       ],
-      "ReturnTypeName": "Task<ActionResult>",
-      "IsComplexType": false
+      "ReturnTypeName": "ActionResult",
+      "IsComplexType": true
     },
     "UpdateApplication": {
       "Parameters": [],
       "ReturnTypeName": "ActionResult",
-      "IsComplexType": false
+      "IsComplexType": true
     },
     "UpdateUserInfo": {
       "Parameters": [
@@ -2140,8 +2140,8 @@
           "Optional": true
         }
       ],
-      "ReturnTypeName": "Task<ActionResult>",
-      "IsComplexType": false
+      "ReturnTypeName": "ActionResult",
+      "IsComplexType": true
     },
     "UpgradeAMP": {
       "Parameters": [],
@@ -2170,14 +2170,14 @@
         }
       ],
       "ReturnTypeName": "ActionResult",
-      "IsComplexType": false
+      "IsComplexType": true
     }
   },
   "EmailSenderPlugin": {
     "TestSMTPSettings": {
       "Parameters": [],
-      "ReturnTypeName": "Task<ActionResult>",
-      "IsComplexType": false
+      "ReturnTypeName": "ActionResult",
+      "IsComplexType": true
     }
   },
   "FileManagerPlugin": {
@@ -2215,7 +2215,7 @@
         }
       ],
       "ReturnTypeName": "ActionResult<String>",
-      "IsComplexType": false
+      "IsComplexType": true
     },
     "ChangeExclusion": {
       "Parameters": [
@@ -2239,7 +2239,7 @@
         }
       ],
       "ReturnTypeName": "ActionResult",
-      "IsComplexType": false
+      "IsComplexType": true
     },
     "CopyFile": {
       "Parameters": [
@@ -2257,7 +2257,7 @@
         }
       ],
       "ReturnTypeName": "ActionResult",
-      "IsComplexType": false
+      "IsComplexType": true
     },
     "CreateArchive": {
       "Parameters": [
@@ -2269,7 +2269,7 @@
         }
       ],
       "ReturnTypeName": "ActionResult",
-      "IsComplexType": false
+      "IsComplexType": true
     },
     "CreateDirectory": {
       "Description": "Creates a new directory. The parent directory must already exist.",
@@ -2283,7 +2283,7 @@
         }
       ],
       "ReturnTypeName": "ActionResult",
-      "IsComplexType": false
+      "IsComplexType": true
     },
     "DownloadFileFromURL": {
       "Parameters": [
@@ -2301,7 +2301,7 @@
         }
       ],
       "ReturnTypeName": "ActionResult",
-      "IsComplexType": false
+      "IsComplexType": true
     },
     "Dummy": {
       "Parameters": [],
@@ -2320,7 +2320,7 @@
         }
       ],
       "ReturnTypeName": "ActionResult",
-      "IsComplexType": false
+      "IsComplexType": true
     },
     "ExtractArchive": {
       "Parameters": [
@@ -2338,7 +2338,7 @@
         }
       ],
       "ReturnTypeName": "ActionResult",
-      "IsComplexType": false
+      "IsComplexType": true
     },
     "GetDirectoryListing": {
       "Parameters": [
@@ -2373,8 +2373,8 @@
           "Optional": false
         }
       ],
-      "ReturnTypeName": "FileChunkData",
-      "IsComplexType": false
+      "ReturnTypeName": "JObject",
+      "IsComplexType": true
     },
     "ReadFileChunk": {
       "Parameters": [
@@ -2398,7 +2398,7 @@
         }
       ],
       "ReturnTypeName": "ActionResult<String>",
-      "IsComplexType": false
+      "IsComplexType": true
     },
     "RenameDirectory": {
       "Description": "Renames a directory",
@@ -2418,7 +2418,7 @@
         }
       ],
       "ReturnTypeName": "ActionResult",
-      "IsComplexType": false
+      "IsComplexType": true
     },
     "RenameFile": {
       "Parameters": [
@@ -2436,7 +2436,7 @@
         }
       ],
       "ReturnTypeName": "ActionResult",
-      "IsComplexType": false
+      "IsComplexType": true
     },
     "TrashDirectory": {
       "Description": "Moves a directory to trash, files must be trashed before they can be deleted.",
@@ -2450,7 +2450,7 @@
         }
       ],
       "ReturnTypeName": "ActionResult",
-      "IsComplexType": false
+      "IsComplexType": true
     },
     "TrashFile": {
       "Description": "Moves a file to trash, files must be trashed before they can be deleted.",
@@ -2464,7 +2464,7 @@
         }
       ],
       "ReturnTypeName": "ActionResult",
-      "IsComplexType": false
+      "IsComplexType": true
     },
     "WriteFileChunk": {
       "Parameters": [
@@ -2494,6 +2494,20 @@
         }
       ],
       "ReturnTypeName": "ActionResult",
+      "IsComplexType": true
+    }
+  },
+  "GenericModule": {
+    "ImportConfig": {
+      "Parameters": [
+        {
+          "Name": "filename",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "IDictionary<String, String>",
       "IsComplexType": false
     }
   },
@@ -2507,8 +2521,8 @@
           "Optional": false
         }
       ],
-      "ReturnTypeName": "Task<ActionResult>",
-      "IsComplexType": false
+      "ReturnTypeName": "ActionResult",
+      "IsComplexType": true
     },
     "DeleteLocalBackup": {
       "Parameters": [
@@ -2532,12 +2546,12 @@
         }
       ],
       "ReturnTypeName": "RunningTask",
-      "IsComplexType": false
+      "IsComplexType": true
     },
     "GetBackups": {
       "Parameters": [],
-      "ReturnTypeName": "IEnumerable<BackupManifest>",
-      "IsComplexType": false
+      "ReturnTypeName": "IEnumerable<JObject>",
+      "IsComplexType": true
     },
     "RestoreBackup": {
       "Parameters": [
@@ -2555,7 +2569,7 @@
         }
       ],
       "ReturnTypeName": "ActionResult",
-      "IsComplexType": false
+      "IsComplexType": true
     },
     "SetBackupSticky": {
       "Parameters": [
@@ -2597,7 +2611,7 @@
         }
       ],
       "ReturnTypeName": "ActionResult",
-      "IsComplexType": false
+      "IsComplexType": true
     },
     "UploadToS3": {
       "Parameters": [
@@ -2609,7 +2623,7 @@
         }
       ],
       "ReturnTypeName": "RunningTask",
-      "IsComplexType": false
+      "IsComplexType": true
     }
   },
   "MinecraftModule": {
@@ -2627,8 +2641,8 @@
           "Optional": false
         }
       ],
-      "ReturnTypeName": "Task<ActionResult>",
-      "IsComplexType": false
+      "ReturnTypeName": "ActionResult",
+      "IsComplexType": true
     },
     "AddToWhitelist": {
       "Parameters": [
@@ -2639,8 +2653,8 @@
           "Optional": false
         }
       ],
-      "ReturnTypeName": "Task<ActionResult>",
-      "IsComplexType": false
+      "ReturnTypeName": "ActionResult",
+      "IsComplexType": true
     },
     "BanUserByID": {
       "Parameters": [
@@ -2656,7 +2670,7 @@
     },
     "BukGetCategories": {
       "Parameters": [],
-      "ReturnTypeName": "JObject",
+      "ReturnTypeName": "JSONRawResponse",
       "IsComplexType": true
     },
     "BukGetInstallUpdatePlugin": {
@@ -2668,12 +2682,12 @@
           "Optional": false
         }
       ],
-      "ReturnTypeName": "Task<RunningTask>",
-      "IsComplexType": false
+      "ReturnTypeName": "RunningTask",
+      "IsComplexType": true
     },
     "BukGetInstalledPlugins": {
       "Parameters": [],
-      "ReturnTypeName": "JObject",
+      "ReturnTypeName": "JSONRawResponse",
       "IsComplexType": true
     },
     "BukGetPluginInfo": {
@@ -2685,7 +2699,7 @@
           "Optional": false
         }
       ],
-      "ReturnTypeName": "JObject",
+      "ReturnTypeName": "JSONRawResponse",
       "IsComplexType": true
     },
     "BukGetPluginsForCategory": {
@@ -2709,12 +2723,12 @@
           "Optional": false
         }
       ],
-      "ReturnTypeName": "JObject",
+      "ReturnTypeName": "JSONRawResponse",
       "IsComplexType": true
     },
     "BukGetPopularPlugins": {
       "Parameters": [],
-      "ReturnTypeName": "JObject",
+      "ReturnTypeName": "JSONRawResponse",
       "IsComplexType": true
     },
     "BukGetRemovePlugin": {
@@ -2750,7 +2764,7 @@
           "Optional": false
         }
       ],
-      "ReturnTypeName": "JObject",
+      "ReturnTypeName": "JSONRawResponse",
       "IsComplexType": true
     },
     "ClearInventoryByID": {
