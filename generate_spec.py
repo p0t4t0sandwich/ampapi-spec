@@ -296,9 +296,30 @@ class GenerateSpec:
 
         # Write the friendly spec to a file
         with open("FriendlySpec.txt", "w") as outfile:
+            old_api_spec_file = open("OldAPISpec.json", "r")
+            old_api_spec = json.load(old_api_spec_file)
+            old_api_spec_file.close()
+
+            # Non-destructively add new methods to the old API spec
             for module in self.APISpec:
+                if not module in old_api_spec.keys():
+                    old_api_spec[module] = {}
                 for method in self.APISpec[module]:
-                    outfile.write(self.parse_friendly_method(module, method, self.APISpec[module][method]) + "\n")
+                    if not method in old_api_spec[module].keys():
+                        old_api_spec[module][method] = self.APISpec[module][method]
+
+            # Alphabetize the old API spec and all of the methods
+            old_api_spec = dict(sorted(old_api_spec.items()))
+
+            # Save the old API spec
+            with open("OldAPISpec.json", "w") as old_api_spec_file:
+                json.dump(old_api_spec, old_api_spec_file, indent=2)
+                old_api_spec_file.write("\n")
+                old_api_spec_file.close()
+
+            for module in old_api_spec:
+                for method in old_api_spec[module]:
+                    outfile.write(self.parse_friendly_method(module, method, old_api_spec[module][method]) + "\n")
             outfile.close()
 
     def parse_friendly_method(self, module: str, method_name: str, method: dict) -> str:

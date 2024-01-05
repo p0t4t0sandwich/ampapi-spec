@@ -434,7 +434,7 @@
           "Optional": false
         }
       ],
-      "ReturnTypeName": "IEnumerable<EndpointInfo>",
+      "ReturnTypeName": "IEnumerable<JObject>",
       "IsComplexType": true
     },
     "GetDatastore": {
@@ -446,7 +446,7 @@
           "Optional": false
         }
       ],
-      "ReturnTypeName": "InstanceDatastore",
+      "ReturnTypeName": "JObject",
       "IsComplexType": true
     },
     "GetDatastoreInstances": {
@@ -463,12 +463,12 @@
     },
     "GetDatastores": {
       "Parameters": [],
-      "ReturnTypeName": "IEnumerable<InstanceDatastore>",
+      "ReturnTypeName": "IEnumerable<JObject>",
       "IsComplexType": true
     },
     "GetDeploymentTemplates": {
       "Parameters": [],
-      "ReturnTypeName": "IEnumerable<DeploymentTemplate>",
+      "ReturnTypeName": "IEnumerable<JObject>",
       "IsComplexType": true
     },
     "GetGroup": {
@@ -480,7 +480,7 @@
           "Optional": false
         }
       ],
-      "ReturnTypeName": "IADSInstance",
+      "ReturnTypeName": "JObject",
       "IsComplexType": true
     },
     "GetInstance": {
@@ -492,7 +492,7 @@
           "Optional": false
         }
       ],
-      "ReturnTypeName": "Instance",
+      "ReturnTypeName": "JObject",
       "IsComplexType": true
     },
     "GetInstanceNetworkInfo": {
@@ -504,7 +504,7 @@
           "Optional": false
         }
       ],
-      "ReturnTypeName": "IEnumerable<PortUsage>",
+      "ReturnTypeName": "IEnumerable<JObject>",
       "IsComplexType": true
     },
     "GetInstanceStatuses": {
@@ -514,7 +514,7 @@
     },
     "GetInstances": {
       "Parameters": [],
-      "ReturnTypeName": "IEnumerable<IADSInstance>",
+      "ReturnTypeName": "IEnumerable<JObject>",
       "IsComplexType": true
     },
     "GetLocalInstances": {
@@ -531,7 +531,7 @@
           "Optional": false
         }
       ],
-      "ReturnTypeName": "IEnumerable<JObject>",
+      "ReturnTypeName": "IEnumerable<ProvisionSettingInfo>",
       "IsComplexType": true
     },
     "GetProvisionFitness": {
@@ -541,12 +541,12 @@
     },
     "GetSupportedApplications": {
       "Parameters": [],
-      "ReturnTypeName": "IEnumerable<ApplicationSpec>",
+      "ReturnTypeName": "IEnumerable<JObject>",
       "IsComplexType": true
     },
     "GetTargetInfo": {
       "Parameters": [],
-      "ReturnTypeName": "RemoteTargetInfo",
+      "ReturnTypeName": "JObject",
       "IsComplexType": true
     },
     "HandoutInstanceConfigs": {
@@ -789,7 +789,7 @@
           "Optional": false
         }
       ],
-      "ReturnTypeName": "JObject",
+      "ReturnTypeName": "JSONRawResponse",
       "IsComplexType": true
     },
     "SetInstanceConfig": {
@@ -1106,7 +1106,7 @@
           "Optional": true
         }
       ],
-      "ReturnTypeName": "ActionResult<LicenceInfo>",
+      "ReturnTypeName": "ActionResult<JObject>",
       "IsComplexType": true
     },
     "AddEventTrigger": {
@@ -1546,7 +1546,7 @@
         }
       ],
       "ReturnTypeName": "IEnumerable<String>",
-      "IsComplexType": true
+      "IsComplexType": false
     },
     "GetAMPUserInfo": {
       "Parameters": [
@@ -1567,12 +1567,12 @@
     },
     "GetAPISpec": {
       "Parameters": [],
-      "ReturnTypeName": "Dictionary<String, Dictionary<String, MethodInfoSummary>>",
+      "ReturnTypeName": "Dictionary<String, Dictionary<String, JObject>>",
       "IsComplexType": true
     },
     "GetActiveAMPSessions": {
       "Parameters": [],
-      "ReturnTypeName": "IEnumerable<WebSessionSummary>",
+      "ReturnTypeName": "IEnumerable<JObject>",
       "IsComplexType": true
     },
     "GetAllAMPUserInfo": {
@@ -1629,7 +1629,7 @@
     },
     "GetModuleInfo": {
       "Parameters": [],
-      "ReturnTypeName": "ModuleInfo",
+      "ReturnTypeName": "JObject",
       "IsComplexType": true
     },
     "GetNewGuid": {
@@ -1694,7 +1694,7 @@
     },
     "GetScheduleData": {
       "Parameters": [],
-      "ReturnTypeName": "ScheduleInfo",
+      "ReturnTypeName": "JObject",
       "IsComplexType": true
     },
     "GetSettingValues": {
@@ -1717,12 +1717,12 @@
     },
     "GetSettingsSpec": {
       "Parameters": [],
-      "ReturnTypeName": "Dictionary<String, SettingSpec>",
+      "ReturnTypeName": "Dictionary<String, IEnumerable<JObject>>",
       "IsComplexType": true
     },
     "GetStatus": {
       "Parameters": [],
-      "ReturnTypeName": "Status",
+      "ReturnTypeName": "JObject",
       "IsComplexType": true
     },
     "GetTasks": {
@@ -1739,19 +1739,19 @@
           "Optional": false
         }
       ],
-      "ReturnTypeName": "TimeIntervalTrigger",
+      "ReturnTypeName": "JObject",
       "IsComplexType": true
     },
     "GetUpdateInfo": {
       "Parameters": [],
-      "ReturnTypeName": "UpdateInfo",
+      "ReturnTypeName": "JObject",
       "IsComplexType": true
     },
     "GetUpdates": {
       "Description": "Gets changes to the server status, in addition to any notifications or console output that have occured since the last time GetUpdates() was called by the current session.",
       "Returns": "",
       "Parameters": [],
-      "ReturnTypeName": "Updates",
+      "ReturnTypeName": "JObject",
       "IsComplexType": true
     },
     "GetUserActionsSpec": {
@@ -1794,7 +1794,7 @@
           "Optional": false
         }
       ],
-      "ReturnTypeName": "WebauthnLoginInfo",
+      "ReturnTypeName": "JObject",
       "IsComplexType": true
     },
     "GetWebauthnCredentialSummaries": {
@@ -1839,7 +1839,7 @@
           "Optional": false
         }
       ],
-      "ReturnTypeName": "LoginResult",
+      "ReturnTypeName": "JObject",
       "IsComplexType": true
     },
     "Logout": {
@@ -2373,7 +2373,7 @@
           "Optional": false
         }
       ],
-      "ReturnTypeName": "FileChunkData",
+      "ReturnTypeName": "JObject",
       "IsComplexType": true
     },
     "ReadFileChunk": {
@@ -2494,7 +2494,7 @@
         }
       ],
       "ReturnTypeName": "ActionResult",
-      "IsComplexType": false
+      "IsComplexType": true
     }
   },
   "GenericModule": {
@@ -2550,7 +2550,7 @@
     },
     "GetBackups": {
       "Parameters": [],
-      "ReturnTypeName": "IEnumerable<BackupManifest>",
+      "ReturnTypeName": "IEnumerable<JObject>",
       "IsComplexType": true
     },
     "RestoreBackup": {
@@ -2670,7 +2670,7 @@
     },
     "BukGetCategories": {
       "Parameters": [],
-      "ReturnTypeName": "JObject",
+      "ReturnTypeName": "JSONRawResponse",
       "IsComplexType": true
     },
     "BukGetInstallUpdatePlugin": {
@@ -2687,7 +2687,7 @@
     },
     "BukGetInstalledPlugins": {
       "Parameters": [],
-      "ReturnTypeName": "JObject",
+      "ReturnTypeName": "JSONRawResponse",
       "IsComplexType": true
     },
     "BukGetPluginInfo": {
@@ -2699,7 +2699,7 @@
           "Optional": false
         }
       ],
-      "ReturnTypeName": "JObject",
+      "ReturnTypeName": "JSONRawResponse",
       "IsComplexType": true
     },
     "BukGetPluginsForCategory": {
@@ -2723,12 +2723,12 @@
           "Optional": false
         }
       ],
-      "ReturnTypeName": "JObject",
+      "ReturnTypeName": "JSONRawResponse",
       "IsComplexType": true
     },
     "BukGetPopularPlugins": {
       "Parameters": [],
-      "ReturnTypeName": "JObject",
+      "ReturnTypeName": "JSONRawResponse",
       "IsComplexType": true
     },
     "BukGetRemovePlugin": {
@@ -2764,7 +2764,7 @@
           "Optional": false
         }
       ],
-      "ReturnTypeName": "JObject",
+      "ReturnTypeName": "JSONRawResponse",
       "IsComplexType": true
     },
     "ClearInventoryByID": {
