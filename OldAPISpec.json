@@ -541,7 +541,7 @@
           "Optional": false
         }
       ],
-      "ReturnTypeName": "IEnumerable<JObject>",
+      "ReturnTypeName": "IEnumerable<ProvisionSettingInfo>",
       "IsComplexType": true
     },
     "GetProvisionFitness": {
