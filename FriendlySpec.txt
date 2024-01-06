@@ -14,21 +14,21 @@ ADSModule.DeleteInstanceUsers(InstanceId: Guid) -> ActionResult
 ADSModule.DeployTemplate(TemplateID: Int32, NewUsername: String, NewPassword: String, NewEmail: String, RequiredTags: List<String>, Tag: String, FriendlyName: String, Secret: String, PostCreate: PostCreateActions, ExtraProvisionSettings: Dictionary<String, String>) -> RunningTask
 ADSModule.DetatchTarget(Id: Guid) -> ActionResult
 ADSModule.ExtractEverywhere(SourceArchive: String) -> ActionResult
-ADSModule.GetApplicationEndpoints(instanceId: Guid) -> IEnumerable<JObject>
-ADSModule.GetDatastore(id: Int32) -> JObject
+ADSModule.GetApplicationEndpoints(instanceId: Guid) -> IEnumerable<EndpointInfo>
+ADSModule.GetDatastore(id: Int32) -> InstanceDatastore
 ADSModule.GetDatastoreInstances(datastoreId: Int32) -> IEnumerable<JObject>
-ADSModule.GetDatastores() -> IEnumerable<JObject>
-ADSModule.GetDeploymentTemplates() -> IEnumerable<JObject>
-ADSModule.GetGroup(GroupId: Guid) -> JObject
-ADSModule.GetInstance(InstanceId: Guid) -> JObject
-ADSModule.GetInstanceNetworkInfo(InstanceName: String) -> IEnumerable<JObject>
+ADSModule.GetDatastores() -> IEnumerable<InstanceDatastore>
+ADSModule.GetDeploymentTemplates() -> IEnumerable<DeploymentTemplate>
+ADSModule.GetGroup(GroupId: Guid) -> IADSInstance
+ADSModule.GetInstance(InstanceId: Guid) -> Instance
+ADSModule.GetInstanceNetworkInfo(InstanceName: String) -> IEnumerable<PortUsage>
 ADSModule.GetInstanceStatuses() -> IEnumerable<JObject>
-ADSModule.GetInstances() -> IEnumerable<JObject>
+ADSModule.GetInstances() -> IEnumerable<IADSInstance>
 ADSModule.GetLocalInstances() -> IEnumerable<JObject>
-ADSModule.GetProvisionArguments(ModuleName: String) -> IEnumerable<ProvisionSettingInfo>
+ADSModule.GetProvisionArguments(ModuleName: String) -> IEnumerable<JObject>
 ADSModule.GetProvisionFitness() -> JObject
-ADSModule.GetSupportedApplications() -> IEnumerable<JObject>
-ADSModule.GetTargetInfo() -> JObject
+ADSModule.GetSupportedApplications() -> IEnumerable<ApplicationSpec>
+ADSModule.GetTargetInfo() -> RemoteTargetInfo
 ADSModule.HandoutInstanceConfigs(ForModule: String, SettingNode: String, Values: List<String>) -> ActionResult
 ADSModule.ManageInstance(InstanceId: Guid) -> ActionResult<String>
 ADSModule.ModifyCustomFirewallRule(instanceId: Guid, PortNumber: Int32, Range: Int32, Protocol: PortProtocol, Description: String, Open: Boolean) -> ActionResult
@@ -42,7 +42,7 @@ ADSModule.RegisterTarget(controllerUrl: String, myUrl: String, username: String,
 ADSModule.RepairDatastore(id: Int32) -> RunningTask
 ADSModule.RequestDatastoreSizeCalculation(datastoreId: Int32) -> RunningTask
 ADSModule.RestartInstance(InstanceName: String) -> ActionResult
-ADSModule.Servers(id: String, REQ_RAWJSON: String) -> JSONRawResponse
+ADSModule.Servers(id: String, REQ_RAWJSON: String) -> JObject
 ADSModule.SetInstanceConfig(InstanceName: String, SettingNode: String, Value: String) -> ActionResult
 ADSModule.SetInstanceNetworkInfo(InstanceId: Guid, PortMappings: Dictionary<String, Int32>) -> ActionResult
 ADSModule.SetInstanceSuspended(InstanceName: String, Suspended: Boolean) -> ActionResult
@@ -59,7 +59,7 @@ ADSModule.UpdateTargetInfo(Id: Guid, FriendlyName: String, Url: Uri, Description
 ADSModule.UpgradeAllInstances(RestartRunning: Boolean) -> ActionResult
 ADSModule.UpgradeInstance(InstanceName: String) -> ActionResult
 Core.AcknowledgeAMPUpdate() -> Void
-Core.ActivateAMPLicence(LicenceKey: String, QueryOnly: Boolean) -> ActionResult<JObject>
+Core.ActivateAMPLicence(LicenceKey: String, QueryOnly: Boolean) -> ActionResult<LicenceInfo>
 Core.AddEventTrigger(triggerId: Guid) -> ActionResult
 Core.AddIntervalTrigger(months: Int32[], days: Int32[], hours: Int32[], minutes: Int32[], daysOfMonth: Int32[], description: String) -> ActionResult
 Core.AddTask(TriggerID: Guid, MethodID: String, ParameterMapping: Dictionary<String, String>) -> ActionResult
@@ -87,14 +87,14 @@ Core.EndUserSession(Id: Guid) -> Void
 Core.GetAMPRolePermissions(RoleId: Guid) -> IEnumerable<String>
 Core.GetAMPUserInfo(Username: String) -> UserInfo
 Core.GetAMPUsersSummary() -> IEnumerable<UserInfoSummary>
-Core.GetAPISpec() -> Dictionary<String, Dictionary<String, JObject>>
-Core.GetActiveAMPSessions() -> IEnumerable<JObject>
+Core.GetAPISpec() -> Dictionary<String, Dictionary<String, MethodInfoSummary>>
+Core.GetActiveAMPSessions() -> IEnumerable<WebSessionSummary>
 Core.GetAllAMPUserInfo() -> IEnumerable<UserInfo>
 Core.GetAuditLogEntries(Before: Nullable<DateTime>, Count: Int32) -> IEnumerable<IAuditLogEntry>
 Core.GetConfig(node: String) -> JObject
 Core.GetConfigs(nodes: String[]) -> IEnumerable<JObject>
 Core.GetDiagnosticsInfo() -> Dictionary<String, String>
-Core.GetModuleInfo() -> JObject
+Core.GetModuleInfo() -> ModuleInfo
 Core.GetNewGuid() -> Guid
 Core.GetPermissionsSpec() -> IList<IPermissionsTreeNode>
 Core.GetPortSummaries() -> IEnumerable<ListeningPortSummary>
@@ -103,23 +103,23 @@ Core.GetRemoteLoginToken(Description: String, IsTemporary: Boolean) -> String
 Core.GetRole(RoleId: Guid) -> AuthRoleSummary
 Core.GetRoleData() -> IEnumerable<AuthRoleSummary>
 Core.GetRoleIds() -> IDictionary<Guid, String>
-Core.GetScheduleData() -> JObject
+Core.GetScheduleData() -> ScheduleInfo
 Core.GetSettingValues(SettingNode: String, WithRefresh: Boolean) -> IDictionary<String, String>
-Core.GetSettingsSpec() -> Dictionary<String, IEnumerable<JObject>>
-Core.GetStatus() -> JObject
+Core.GetSettingsSpec() -> Dictionary<String, SettingSpec>
+Core.GetStatus() -> Status
 Core.GetTasks() -> IEnumerable<RunningTask>
-Core.GetTimeIntervalTrigger(Id: Guid) -> JObject
-Core.GetUpdateInfo() -> JObject
-Core.GetUpdates() -> JObject
+Core.GetTimeIntervalTrigger(Id: Guid) -> TimeIntervalTrigger
+Core.GetUpdateInfo() -> UpdateInfo
+Core.GetUpdates() -> Updates
 Core.GetUserActionsSpec() -> Object
 Core.GetUserInfo(UID: String) -> SimpleUser
 Core.GetUserList() -> Dictionary<String, String>
 Core.GetWebauthnChallenge() -> ActionResult<String>
-Core.GetWebauthnCredentialIDs(username: String) -> JObject
+Core.GetWebauthnCredentialIDs(username: String) -> WebauthnLoginInfo
 Core.GetWebauthnCredentialSummaries() -> IEnumerable<WebauthnCredentialSummary>
 Core.GetWebserverMetrics() -> Object
 Core.Kill() -> Void
-Core.Login(username: String, password: String, token: String, rememberMe: Boolean) -> JObject
+Core.Login(username: String, password: String, token: String, rememberMe: Boolean) -> LoginResult
 Core.Logout() -> Void
 Core.RefreshSettingValueList(Node: String) -> ActionResult
 Core.RefreshSettingsSourceCache() -> Void
@@ -158,7 +158,7 @@ FileManagerPlugin.Dummy() -> Void
 FileManagerPlugin.EmptyTrash(TrashDirectoryName: String) -> ActionResult
 FileManagerPlugin.ExtractArchive(ArchivePath: String, DestinationPath: String) -> ActionResult
 FileManagerPlugin.GetDirectoryListing(Dir: String) -> IEnumerable<JObject>
-FileManagerPlugin.GetFileChunk(Filename: String, Position: Int64, Length: Int32) -> JObject
+FileManagerPlugin.GetFileChunk(Filename: String, Position: Int64, Length: Int32) -> FileChunkData
 FileManagerPlugin.ReadFileChunk(Filename: String, Offset: Int64, ChunkSize: Int64) -> ActionResult<String>
 FileManagerPlugin.RenameDirectory(oldDirectory: String, NewDirectoryName: String) -> ActionResult
 FileManagerPlugin.RenameFile(Filename: String, NewFilename: String) -> ActionResult
@@ -169,7 +169,7 @@ GenericModule.ImportConfig(filename: String) -> IDictionary<String, String>
 LocalFileBackupPlugin.DeleteFromS3(BackupId: Guid) -> ActionResult
 LocalFileBackupPlugin.DeleteLocalBackup(BackupId: Guid) -> Void
 LocalFileBackupPlugin.DownloadFromS3(BackupId: Guid) -> RunningTask
-LocalFileBackupPlugin.GetBackups() -> IEnumerable<JObject>
+LocalFileBackupPlugin.GetBackups() -> IEnumerable<BackupManifest>
 LocalFileBackupPlugin.RestoreBackup(BackupId: Guid, DeleteExistingData: Boolean) -> ActionResult
 LocalFileBackupPlugin.SetBackupSticky(BackupId: Guid, Sticky: Boolean) -> Void
 LocalFileBackupPlugin.TakeBackup(Title: String, Description: String, Sticky: Boolean) -> ActionResult
@@ -178,14 +178,14 @@ MinecraftModule.AcceptEULA() -> Boolean
 MinecraftModule.AddOPEntry(UserOrUUID: String) -> ActionResult
 MinecraftModule.AddToWhitelist(UserOrUUID: String) -> ActionResult
 MinecraftModule.BanUserByID(ID: String) -> Void
-MinecraftModule.BukGetCategories() -> JSONRawResponse
+MinecraftModule.BukGetCategories() -> JObject
 MinecraftModule.BukGetInstallUpdatePlugin(pluginId: Int32) -> RunningTask
-MinecraftModule.BukGetInstalledPlugins() -> JSONRawResponse
-MinecraftModule.BukGetPluginInfo(PluginId: Int32) -> JSONRawResponse
-MinecraftModule.BukGetPluginsForCategory(CategoryId: String, PageNumber: Int32, PageSize: Int32) -> JSONRawResponse
-MinecraftModule.BukGetPopularPlugins() -> JSONRawResponse
+MinecraftModule.BukGetInstalledPlugins() -> JObject
+MinecraftModule.BukGetPluginInfo(PluginId: Int32) -> JObject
+MinecraftModule.BukGetPluginsForCategory(CategoryId: String, PageNumber: Int32, PageSize: Int32) -> JObject
+MinecraftModule.BukGetPopularPlugins() -> JObject
 MinecraftModule.BukGetRemovePlugin(PluginId: Int32) -> Void
-MinecraftModule.BukGetSearch(Query: String, PageNumber: Int32, PageSize: Int32) -> JSONRawResponse
+MinecraftModule.BukGetSearch(Query: String, PageNumber: Int32, PageSize: Int32) -> JObject
 MinecraftModule.ClearInventoryByID(ID: String) -> Void
 MinecraftModule.GetFailureReason() -> String
 MinecraftModule.GetHeadByUUID(id: String) -> String
