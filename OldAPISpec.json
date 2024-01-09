@@ -509,7 +509,7 @@
     },
     "GetInstanceStatuses": {
       "Parameters": [],
-      "ReturnTypeName": "IEnumerable<JObject>",
+      "ReturnTypeName": "IEnumerable<InstanceStatus>",
       "IsComplexType": true
     },
     "GetInstances": {
