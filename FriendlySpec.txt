@@ -22,7 +22,7 @@ ADSModule.GetDeploymentTemplates() -> IEnumerable<DeploymentTemplate>
 ADSModule.GetGroup(GroupId: Guid) -> IADSInstance
 ADSModule.GetInstance(InstanceId: Guid) -> Instance
 ADSModule.GetInstanceNetworkInfo(InstanceName: String) -> IEnumerable<PortUsage>
-ADSModule.GetInstanceStatuses() -> IEnumerable<JObject>
+ADSModule.GetInstanceStatuses() -> IEnumerable<InstanceStatus>
 ADSModule.GetInstances() -> IEnumerable<IADSInstance>
 ADSModule.GetLocalInstances() -> IEnumerable<JObject>
 ADSModule.GetProvisionArguments(ModuleName: String) -> IEnumerable<JObject>
