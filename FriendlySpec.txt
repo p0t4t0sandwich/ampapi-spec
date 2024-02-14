@@ -22,7 +22,7 @@ ADSModule.GetDeploymentTemplates() -> IEnumerable<DeploymentTemplate>
 ADSModule.GetGroup(GroupId: Guid) -> IADSInstance
 ADSModule.GetInstance(InstanceId: Guid) -> Instance
 ADSModule.GetInstanceNetworkInfo(InstanceName: String) -> IEnumerable<PortUsage>
-ADSModule.GetInstanceStatuses() -> IEnumerable<JObject>
+ADSModule.GetInstanceStatuses() -> IEnumerable<InstanceStatus>
 ADSModule.GetInstances() -> IEnumerable<IADSInstance>
 ADSModule.GetLocalInstances() -> IEnumerable<JObject>
 ADSModule.GetProvisionArguments(ModuleName: String) -> IEnumerable<JObject>
@@ -157,7 +157,7 @@ FileManagerPlugin.DownloadFileFromURL(Source: Uri, TargetDirectory: String) -> A
 FileManagerPlugin.Dummy() -> Void
 FileManagerPlugin.EmptyTrash(TrashDirectoryName: String) -> ActionResult
 FileManagerPlugin.ExtractArchive(ArchivePath: String, DestinationPath: String) -> ActionResult
-FileManagerPlugin.GetDirectoryListing(Dir: String) -> IEnumerable<JObject>
+FileManagerPlugin.GetDirectoryListing(Dir: String) -> IEnumerable<FileDirectory>
 FileManagerPlugin.GetFileChunk(Filename: String, Position: Int64, Length: Int32) -> FileChunkData
 FileManagerPlugin.ReadFileChunk(Filename: String, Offset: Int64, ChunkSize: Int64) -> ActionResult<String>
 FileManagerPlugin.RenameDirectory(oldDirectory: String, NewDirectoryName: String) -> ActionResult

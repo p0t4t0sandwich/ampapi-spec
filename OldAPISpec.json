@@ -509,7 +509,7 @@
     },
     "GetInstanceStatuses": {
       "Parameters": [],
-      "ReturnTypeName": "IEnumerable<JObject>",
+      "ReturnTypeName": "IEnumerable<InstanceStatus>",
       "IsComplexType": true
     },
     "GetInstances": {
@@ -2349,7 +2349,7 @@
           "Optional": false
         }
       ],
-      "ReturnTypeName": "IEnumerable<JObject>",
+      "ReturnTypeName": "IEnumerable<FileDirectory>",
       "IsComplexType": true
     },
     "GetFileChunk": {
