@@ -157,7 +157,7 @@ FileManagerPlugin.DownloadFileFromURL(Source: Uri, TargetDirectory: String) -> A
 FileManagerPlugin.Dummy() -> Void
 FileManagerPlugin.EmptyTrash(TrashDirectoryName: String) -> ActionResult
 FileManagerPlugin.ExtractArchive(ArchivePath: String, DestinationPath: String) -> ActionResult
-FileManagerPlugin.GetDirectoryListing(Dir: String) -> IEnumerable<JObject>
+FileManagerPlugin.GetDirectoryListing(Dir: String) -> IEnumerable<FileDirectory>
 FileManagerPlugin.GetFileChunk(Filename: String, Position: Int64, Length: Int32) -> FileChunkData
 FileManagerPlugin.ReadFileChunk(Filename: String, Offset: Int64, ChunkSize: Int64) -> ActionResult<String>
 FileManagerPlugin.RenameDirectory(oldDirectory: String, NewDirectoryName: String) -> ActionResult
