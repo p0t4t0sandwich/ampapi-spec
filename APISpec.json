@@ -256,6 +256,56 @@
       "ReturnTypeName": "ActionResult",
       "IsComplexType": true
     },
+    "CreateInstanceFromSpec": {
+      "Parameters": [
+        {
+          "Name": "SpecId",
+          "TypeName": "Guid",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "TargetADSInstance",
+          "TypeName": "Guid",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "FriendlyName",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "PostCreate",
+          "TypeName": "PostCreateAppActions",
+          "Description": "",
+          "Optional": true,
+          "ParamEnumValues": {
+            "DoNothing": 0,
+            "UpdateOnce": 1,
+            "UpdateAlways": 2,
+            "UpdateAndStartOnce": 3,
+            "UpdateAndStartAlways": 4,
+            "StartAlways": 5
+          }
+        },
+        {
+          "Name": "StartOnBoot",
+          "TypeName": "Boolean",
+          "Description": "",
+          "Optional": true
+        },
+        {
+          "Name": "TargetDatastore",
+          "TypeName": "Int32",
+          "Description": "",
+          "Optional": true
+        }
+      ],
+      "ReturnTypeName": "ActionResult",
+      "IsComplexType": true
+    },
     "CreateLocalInstance": {
       "Parameters": [
         {
@@ -542,6 +592,11 @@
       "ReturnTypeName": "JObject",
       "IsComplexType": true
     },
+    "GetSupportedAppSummaries": {
+      "Parameters": [],
+      "ReturnTypeName": "IEnumerable<JObject>",
+      "IsComplexType": true
+    },
     "GetSupportedApplications": {
       "Parameters": [],
       "ReturnTypeName": "IEnumerable<JObject>",
@@ -682,6 +737,12 @@
           "TypeName": "String",
           "Description": "",
           "Optional": false
+        },
+        {
+          "Name": "AndUpdateInstance",
+          "TypeName": "Boolean",
+          "Description": "",
+          "Optional": true
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -983,6 +1044,12 @@
         },
         {
           "Name": "ContainerMemory",
+          "TypeName": "Int32",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "ContainerSWAP",
           "TypeName": "Int32",
           "Description": "",
           "Optional": false
