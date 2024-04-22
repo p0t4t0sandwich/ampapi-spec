@@ -2567,20 +2567,6 @@
       "IsComplexType": true
     }
   },
-  "GenericModule": {
-    "ImportConfig": {
-      "Parameters": [
-        {
-          "Name": "filename",
-          "TypeName": "String",
-          "Description": "",
-          "Optional": false
-        }
-      ],
-      "ReturnTypeName": "IDictionary<String, String>",
-      "IsComplexType": false
-    }
-  },
   "LocalFileBackupPlugin": {
     "DeleteFromS3": {
       "Parameters": [
@@ -2937,50 +2923,6 @@
       "Parameters": [
         {
           "Name": "ID",
-          "TypeName": "String",
-          "Description": "",
-          "Optional": false
-        }
-      ],
-      "ReturnTypeName": "Void",
-      "IsComplexType": false
-    }
-  },
-  "RCONPlugin": {
-    "Dummy": {
-      "Parameters": [],
-      "ReturnTypeName": "Void",
-      "IsComplexType": false
-    }
-  },
-  "steamcmdplugin": {
-    "CancelSteamGuard": {
-      "Parameters": [],
-      "ReturnTypeName": "Void",
-      "IsComplexType": false
-    },
-    "SteamGuardCode": {
-      "Parameters": [
-        {
-          "Name": "code",
-          "TypeName": "String",
-          "Description": "",
-          "Optional": false
-        }
-      ],
-      "ReturnTypeName": "Void",
-      "IsComplexType": false
-    },
-    "SteamUsernamePassword": {
-      "Parameters": [
-        {
-          "Name": "username",
-          "TypeName": "String",
-          "Description": "",
-          "Optional": false
-        },
-        {
-          "Name": "password",
           "TypeName": "String",
           "Description": "",
           "Optional": false
