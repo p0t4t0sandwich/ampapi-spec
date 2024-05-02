@@ -148,6 +148,7 @@ Core.UpdateApplication() -> ActionResult
 Core.UpdateUserInfo(Username: String, Disabled: Boolean, PasswordExpires: Boolean, CannotChangePassword: Boolean, MustChangePassword: Boolean, EmailAddress: String) -> ActionResult
 Core.UpgradeAMP() -> Void
 Core.WebauthnRegister(attestationObject: String, clientDataJSON: String, description: String) -> ActionResult
+Core.GetAuthencationRequirements(username: String) -> IEnumerable<AuthencationRequirement>
 EmailSenderPlugin.TestSMTPSettings() -> ActionResult
 FileManagerPlugin.AppendFileChunk(Filename: String, Data: String, Delete: Boolean) -> Void
 FileManagerPlugin.CalculateFileMD5Sum(FilePath: String) -> ActionResult<String>
