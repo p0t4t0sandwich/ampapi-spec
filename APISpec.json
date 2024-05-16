@@ -851,6 +851,12 @@
           "TypeName": "String",
           "Description": "",
           "Optional": false
+        },
+        {
+          "Name": "RealIP",
+          "TypeName": "IPAddress",
+          "Description": "",
+          "Optional": false
         }
       ],
       "ReturnTypeName": "JSONRawResponse",
@@ -1666,6 +1672,18 @@
         }
       ],
       "ReturnTypeName": "IEnumerable<IAuditLogEntry>",
+      "IsComplexType": true
+    },
+    "GetAuthencationRequirements": {
+      "Parameters": [
+        {
+          "Name": "username",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "IEnumerable<AuthencationRequirement>",
       "IsComplexType": true
     },
     "GetConfig": {
@@ -2678,6 +2696,12 @@
           "TypeName": "Boolean",
           "Description": "",
           "Optional": false
+        },
+        {
+          "Name": "WasCreatedAutomatically",
+          "TypeName": "Boolean",
+          "Description": "",
+          "Optional": true
         }
       ],
       "ReturnTypeName": "ActionResult",
