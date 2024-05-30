@@ -59,6 +59,7 @@ ADSModule.UpdateTargetInfo(Id: Guid, FriendlyName: String, Url: Uri, Description
 ADSModule.UpgradeAllInstances(RestartRunning: Boolean) -> ActionResult
 ADSModule.UpgradeInstance(InstanceName: String) -> ActionResult
 ADSModule.CreateInstanceFromSpec(SpecId: Guid, TargetADSInstance: Guid, FriendlyName: String, PostCreate: PostCreateAppActions, StartOnBoot: Boolean, TargetDatastore: Int32) -> ActionResult
+ADSModule.DetachTarget(Id: Guid) -> ActionResult
 ADSModule.GetSupportedAppSummaries() -> IEnumerable<JObject>
 Core.AcknowledgeAMPUpdate() -> Void
 Core.ActivateAMPLicence(LicenceKey: String, QueryOnly: Boolean) -> ActionResult<LicenceInfo>
@@ -177,6 +178,7 @@ LocalFileBackupPlugin.RestoreBackup(BackupId: Guid, DeleteExistingData: Boolean)
 LocalFileBackupPlugin.SetBackupSticky(BackupId: Guid, Sticky: Boolean) -> Void
 LocalFileBackupPlugin.TakeBackup(Title: String, Description: String, Sticky: Boolean) -> ActionResult
 LocalFileBackupPlugin.UploadToS3(BackupId: Guid) -> RunningTask
+LocalFileBackupPlugin.RefreshBackupList() -> Void
 MinecraftModule.AcceptEULA() -> Boolean
 MinecraftModule.AddOPEntry(UserOrUUID: String) -> ActionResult
 MinecraftModule.AddToWhitelist(UserOrUUID: String) -> ActionResult

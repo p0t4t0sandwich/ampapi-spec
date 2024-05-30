@@ -454,7 +454,7 @@
       "ReturnTypeName": "RunningTask",
       "IsComplexType": true
     },
-    "DetatchTarget": {
+    "DetachTarget": {
       "Parameters": [
         {
           "Name": "Id",
@@ -566,7 +566,14 @@
       "IsComplexType": true
     },
     "GetInstances": {
-      "Parameters": [],
+      "Parameters": [
+        {
+          "Name": "ForceIncludeSelf",
+          "TypeName": "Boolean",
+          "Description": "",
+          "Optional": true
+        }
+      ],
       "ReturnTypeName": "IEnumerable<JObject>",
       "IsComplexType": true
     },
@@ -847,8 +854,8 @@
           "Optional": false
         },
         {
-          "Name": "REQ_RAWJSON",
-          "TypeName": "String",
+          "Name": "Data",
+          "TypeName": "JObject",
           "Description": "",
           "Optional": false
         },
@@ -2641,6 +2648,11 @@
       "ReturnTypeName": "IEnumerable<JObject>",
       "IsComplexType": true
     },
+    "RefreshBackupList": {
+      "Parameters": [],
+      "ReturnTypeName": "Void",
+      "IsComplexType": false
+    },
     "RestoreBackup": {
       "Parameters": [
         {
@@ -2674,8 +2686,8 @@
           "Optional": false
         }
       ],
-      "ReturnTypeName": "Void",
-      "IsComplexType": false
+      "ReturnTypeName": "ActionResult",
+      "IsComplexType": true
     },
     "TakeBackup": {
       "Parameters": [
