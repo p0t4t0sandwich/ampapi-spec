@@ -1167,6 +1167,32 @@
       "IsComplexType": true
     }
   },
+  "AnalyticsPlugin": {
+    "GetAnalyticsSummary": {
+      "Parameters": [
+        {
+          "Name": "PeriodDays",
+          "TypeName": "Int32",
+          "Description": "",
+          "Optional": true
+        },
+        {
+          "Name": "StartDate",
+          "TypeName": "Nullable<DateTime>",
+          "Description": "",
+          "Optional": true
+        },
+        {
+          "Name": "Filters",
+          "TypeName": "Dictionary<String, String>",
+          "Description": "",
+          "Optional": true
+        }
+      ],
+      "ReturnTypeName": "Object",
+      "IsComplexType": false
+    }
+  },
   "CommonCorePlugin": {},
   "Core": {
     "AcknowledgeAMPUpdate": {
