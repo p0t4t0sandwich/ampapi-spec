@@ -151,6 +151,7 @@ Core.UpdateUserInfo(Username: String, Disabled: Boolean, PasswordExpires: Boolea
 Core.UpgradeAMP() -> Void
 Core.WebauthnRegister(attestationObject: String, clientDataJSON: String, description: String) -> ActionResult
 Core.GetAuthencationRequirements(username: String) -> IEnumerable<AuthencationRequirement>
+Core.RunSecurityCheck() -> IEnumerable<JObject>
 EmailSenderPlugin.TestSMTPSettings() -> ActionResult
 FileManagerPlugin.AppendFileChunk(Filename: String, Data: String, Delete: Boolean) -> Void
 FileManagerPlugin.CalculateFileMD5Sum(FilePath: String) -> ActionResult<String>
@@ -171,6 +172,7 @@ FileManagerPlugin.TrashDirectory(DirectoryName: String) -> ActionResult
 FileManagerPlugin.TrashFile(Filename: String) -> ActionResult
 FileManagerPlugin.WriteFileChunk(Filename: String, Data: String, Offset: Int64, FinalChunk: Boolean) -> ActionResult
 GenericModule.ImportConfig(filename: String) -> IDictionary<String, String>
+GenericModule.ReloadGenericConfig() -> Void
 LocalFileBackupPlugin.DeleteFromS3(BackupId: Guid) -> ActionResult
 LocalFileBackupPlugin.DeleteLocalBackup(BackupId: Guid) -> Void
 LocalFileBackupPlugin.DownloadFromS3(BackupId: Guid) -> RunningTask

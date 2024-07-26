@@ -982,6 +982,12 @@
           "TypeName": "String",
           "Description": "",
           "Optional": false
+        },
+        {
+          "Name": "twoFactorToken",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -1089,6 +1095,12 @@
           "TypeName": "String",
           "Description": "",
           "Optional": false
+        },
+        {
+          "Name": "WelcomeMessage",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": true
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -2064,6 +2076,11 @@
       "ReturnTypeName": "ActionResult",
       "IsComplexType": true
     },
+    "RunSecurityCheck": {
+      "Parameters": [],
+      "ReturnTypeName": "IEnumerable<JObject>",
+      "IsComplexType": true
+    },
     "SendConsoleMessage": {
       "Parameters": [
         {
@@ -2629,6 +2646,11 @@
         }
       ],
       "ReturnTypeName": "IDictionary<String, String>",
+      "IsComplexType": false
+    },
+    "ReloadGenericConfig": {
+      "Parameters": [],
+      "ReturnTypeName": "Void",
       "IsComplexType": false
     }
   },
