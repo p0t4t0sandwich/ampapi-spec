@@ -5,13 +5,13 @@ ADSModule.AttachADS(Friendly: String, IsHTTPS: Boolean, Host: String, Port: Int3
 ADSModule.CloneTemplate(Id: Int32, NewName: String) -> ActionResult
 ADSModule.ConvertToManaged(InstanceName: String) -> ActionResult
 ADSModule.CreateDeploymentTemplate(Name: String) -> ActionResult
-ADSModule.CreateInstance(TargetADSInstance: Guid, NewInstanceId: Guid, Module: String, InstanceName: String, FriendlyName: String, IPBinding: String, PortNumber: Int32, AdminUsername: String, AdminPassword: String, ProvisionSettings: Dictionary<String, String>, AutoConfigure: Boolean, PostCreate: PostCreateActions, StartOnBoot: Boolean, DisplayImageSource: String, TargetDatastore: Int32) -> ActionResult
-ADSModule.CreateLocalInstance(Instance: LocalAMPInstance, PostCreate: PostCreateActions) -> ActionResult
+ADSModule.CreateInstance(TargetADSInstance: Guid, NewInstanceId: Guid, Module: String, InstanceName: String, FriendlyName: String, IPBinding: String, PortNumber: Int32, AdminUsername: String, AdminPassword: String, ProvisionSettings: Dictionary<String, String>, AutoConfigure: Boolean, StartOnBoot: Boolean, DisplayImageSource: String, TargetDatastore: Int32, PostCreate: PostCreateAppActions) -> ActionResult
+ADSModule.CreateLocalInstance(Instance: LocalAMPInstance, PostCreate: PostCreateAppActions) -> ActionResult
 ADSModule.DeleteDatastore(id: Int32) -> ActionResult
 ADSModule.DeleteDeploymentTemplate(Id: Int32) -> ActionResult
 ADSModule.DeleteInstance(InstanceName: String) -> RunningTask
 ADSModule.DeleteInstanceUsers(InstanceId: Guid) -> ActionResult
-ADSModule.DeployTemplate(TemplateID: Int32, NewUsername: String, NewPassword: String, NewEmail: String, RequiredTags: List<String>, Tag: String, FriendlyName: String, Secret: String, PostCreate: PostCreateActions, ExtraProvisionSettings: Dictionary<String, String>) -> RunningTask
+ADSModule.DeployTemplate(TemplateID: Int32, NewUsername: String, NewPassword: String, NewEmail: String, RequiredTags: List<String>, Tag: String, FriendlyName: String, Secret: String, ExtraProvisionSettings: Dictionary<String, String>, PostCreate: PostCreateAppActions) -> RunningTask
 ADSModule.DetatchTarget(Id: Guid) -> ActionResult
 ADSModule.ExtractEverywhere(SourceArchive: String) -> ActionResult
 ADSModule.GetApplicationEndpoints(instanceId: Guid) -> IEnumerable<EndpointInfo>
@@ -23,7 +23,7 @@ ADSModule.GetGroup(GroupId: Guid) -> IADSInstance
 ADSModule.GetInstance(InstanceId: Guid) -> Instance
 ADSModule.GetInstanceNetworkInfo(InstanceName: String) -> IEnumerable<PortUsage>
 ADSModule.GetInstanceStatuses() -> IEnumerable<InstanceStatus>
-ADSModule.GetInstances() -> IEnumerable<IADSInstance>
+ADSModule.GetInstances(ForceIncludeSelf: Boolean) -> IEnumerable<IADSInstance>
 ADSModule.GetLocalInstances() -> IEnumerable<JObject>
 ADSModule.GetProvisionArguments(ModuleName: String) -> IEnumerable<JObject>
 ADSModule.GetProvisionFitness() -> JObject
@@ -36,27 +36,27 @@ ADSModule.MoveInstanceDatastore(instanceId: Guid, datastoreId: Int32) -> Running
 ADSModule.ReactivateLocalInstances() -> RunningTask
 ADSModule.RefreshAppCache() -> Void
 ADSModule.RefreshGroup(GroupId: Guid) -> ActionResult
-ADSModule.RefreshInstanceConfig(InstanceId: String) -> ActionResult
+ADSModule.RefreshInstanceConfig(InstanceId: String, AndUpdateInstance: Boolean) -> ActionResult
 ADSModule.RefreshRemoteConfigStores(force: Boolean) -> Void
 ADSModule.RegisterTarget(controllerUrl: String, myUrl: String, username: String, password: String, twoFactorToken: String, friendlyName: String) -> ActionResult
 ADSModule.RepairDatastore(id: Int32) -> RunningTask
 ADSModule.RequestDatastoreSizeCalculation(datastoreId: Int32) -> RunningTask
 ADSModule.RestartInstance(InstanceName: String) -> ActionResult
-ADSModule.Servers(id: String, REQ_RAWJSON: String) -> JObject
+ADSModule.Servers(id: String, Data: JObject, RealIP: IPAddress) -> JObject
 ADSModule.SetInstanceConfig(InstanceName: String, SettingNode: String, Value: String) -> ActionResult
 ADSModule.SetInstanceNetworkInfo(InstanceId: Guid, PortMappings: Dictionary<String, Int32>) -> ActionResult
 ADSModule.SetInstanceSuspended(InstanceName: String, Suspended: Boolean) -> ActionResult
-ADSModule.StartAllInstances() -> ActionResult
+ADSModule.StartAllInstances(TargetADSInstance: Guid) -> ActionResult
 ADSModule.StartInstance(InstanceName: String) -> ActionResult
-ADSModule.StopAllInstances() -> ActionResult
+ADSModule.StopAllInstances(TargetADSInstance: Guid) -> ActionResult
 ADSModule.StopInstance(InstanceName: String) -> ActionResult
-ADSModule.TestADSLoginDetails(url: String, username: String, password: String) -> ActionResult
+ADSModule.TestADSLoginDetails(url: String, username: String, password: String, twoFactorToken: String) -> ActionResult
 ADSModule.UpdateDatastore(updatedDatastore: InstanceDatastore) -> ActionResult
 ADSModule.UpdateDeploymentTemplate(templateToUpdate: DeploymentTemplate) -> ActionResult
-ADSModule.UpdateInstanceInfo(InstanceId: String, FriendlyName: String, Description: String, StartOnBoot: Boolean, Suspended: Boolean, ExcludeFromFirewall: Boolean, RunInContainer: Boolean, ContainerMemory: Int32, MemoryPolicy: ContainerMemoryPolicy, ContainerMaxCPU: Single, ContainerImage: String) -> ActionResult
+ADSModule.UpdateInstanceInfo(InstanceId: String, FriendlyName: String, Description: String, StartOnBoot: Boolean, Suspended: Boolean, ExcludeFromFirewall: Boolean, RunInContainer: Boolean, ContainerMemory: Int32, MemoryPolicy: ContainerMemoryPolicy, ContainerMaxCPU: Single, ContainerImage: String, ContainerSwap: Int32, WelcomeMessage: String) -> ActionResult
 ADSModule.UpdateTarget(TargetID: Guid) -> Void
 ADSModule.UpdateTargetInfo(Id: Guid, FriendlyName: String, Url: Uri, Description: String, Tags: List<String>) -> ActionResult
-ADSModule.UpgradeAllInstances(RestartRunning: Boolean) -> ActionResult
+ADSModule.UpgradeAllInstances(RestartRunning: Boolean, TargetADSInstance: Guid) -> ActionResult
 ADSModule.UpgradeInstance(InstanceName: String) -> ActionResult
 ADSModule.CreateInstanceFromSpec(SpecId: Guid, TargetADSInstance: Guid, FriendlyName: String, PostCreate: PostCreateAppActions, StartOnBoot: Boolean, TargetDatastore: Int32) -> ActionResult
 ADSModule.DetachTarget(Id: Guid) -> ActionResult
@@ -182,7 +182,7 @@ LocalFileBackupPlugin.DownloadFromS3(BackupId: Guid) -> RunningTask
 LocalFileBackupPlugin.GetBackups() -> IEnumerable<BackupManifest>
 LocalFileBackupPlugin.RestoreBackup(BackupId: Guid, DeleteExistingData: Boolean) -> ActionResult
 LocalFileBackupPlugin.SetBackupSticky(BackupId: Guid, Sticky: Boolean) -> Void
-LocalFileBackupPlugin.TakeBackup(Title: String, Description: String, Sticky: Boolean) -> ActionResult
+LocalFileBackupPlugin.TakeBackup(Title: String, Description: String, Sticky: Boolean, WasCreatedAutomatically: Boolean) -> ActionResult
 LocalFileBackupPlugin.UploadToS3(BackupId: Guid) -> RunningTask
 LocalFileBackupPlugin.RefreshBackupList() -> Void
 MinecraftModule.AcceptEULA() -> Boolean
