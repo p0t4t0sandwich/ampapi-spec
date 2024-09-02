@@ -2337,18 +2337,6 @@
       "ReturnTypeName": "ActionResult",
       "IsComplexType": true
     },
-    "GetAuthencationRequirements": {
-      "Parameters": [
-        {
-          "Name": "username",
-          "TypeName": "String",
-          "Description": "",
-          "Optional": false
-        }
-      ],
-      "ReturnTypeName": "IEnumerable<AuthencationRequirement>",
-      "IsComplexType": true
-    },
     "GetAuthenticationRequirements": {
       "Parameters": [
         {
