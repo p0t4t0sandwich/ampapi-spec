@@ -4,10 +4,10 @@
     "CommonCorePlugin",
     "Core",
     "EmailSenderPlugin",
-    "FileManagerPlugin",
-    "LocalFileBackupPlugin"
+    "FileManagerPlugin"
   ],
   "Minecraft": [
+    "AnalyticsPlugin",
     "CommonCorePlugin",
     "Core",
     "EmailSenderPlugin",
@@ -16,6 +16,7 @@
     "MinecraftModule"
   ],
   "GenericModule": [
+    "AnalyticsPlugin",
     "CommonCorePlugin",
     "Core",
     "EmailSenderPlugin",

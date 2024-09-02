@@ -308,6 +308,15 @@ class GenerateSpec:
                     if not method in old_api_spec[module].keys():
                         old_api_spec[module][method] = self.APISpec[module][method]
 
+                    # Now to update any new or removed Parameters
+                    else:
+                        for parameter in self.APISpec[module][method]["Parameters"]:
+                            if not parameter in old_api_spec[module][method]["Parameters"]:
+                                old_api_spec[module][method]["Parameters"].append(parameter)
+                        for parameter in old_api_spec[module][method]["Parameters"]:
+                            if not parameter in self.APISpec[module][method]["Parameters"]:
+                                old_api_spec[module][method]["Parameters"].remove(parameter)
+
             # Alphabetize the old API spec and all of the methods
             old_api_spec = dict(sorted(old_api_spec.items()))
 
@@ -321,6 +330,21 @@ class GenerateSpec:
                 for method in old_api_spec[module]:
                     outfile.write(self.parse_friendly_method(module, method, old_api_spec[module][method]) + "\n")
             outfile.close()
+
+        # Save any new methods to the OldAPISpec.json file
+        with open("OldAPISpec.json", "w") as old_api_spec_file:
+            for module in self.APISpec:
+                for method in self.APISpec[module]:
+                    if not module in old_api_spec.keys():
+                        old_api_spec[module] = {}
+                    if not method in old_api_spec[module].keys():
+                        old_api_spec[module][method] = self.APISpec[module][method]
+
+            # Alphabetize the old API spec and all of the methods
+            old_api_spec = dict(sorted(old_api_spec.items()))
+
+            # Save the old API spec
+            json.dump(old_api_spec, old_api_spec_file, indent=2)
 
     def parse_friendly_method(self, module: str, method_name: str, method: dict) -> str:
         """Method to parse the method
