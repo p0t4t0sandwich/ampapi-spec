@@ -715,6 +715,18 @@
       "ReturnTypeName": "RunningTask",
       "IsComplexType": true
     },
+    "ReactivateInstance": {
+      "Parameters": [
+        {
+          "Name": "instanceId",
+          "TypeName": "Guid",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "RunningTask",
+      "IsComplexType": true
+    },
     "ReactivateLocalInstances": {
       "Parameters": [],
       "ReturnTypeName": "RunningTask",
@@ -930,7 +942,14 @@
       "IsComplexType": true
     },
     "StartAllInstances": {
-      "Parameters": [],
+      "Parameters": [
+        {
+          "Name": "TargetADSInstance",
+          "TypeName": "Guid",
+          "Description": "",
+          "Optional": false
+        }
+      ],
       "ReturnTypeName": "ActionResult",
       "IsComplexType": true
     },
@@ -947,7 +966,14 @@
       "IsComplexType": true
     },
     "StopAllInstances": {
-      "Parameters": [],
+      "Parameters": [
+        {
+          "Name": "TargetADSInstance",
+          "TypeName": "Guid",
+          "Description": "",
+          "Optional": false
+        }
+      ],
       "ReturnTypeName": "ActionResult",
       "IsComplexType": true
     },
@@ -979,6 +1005,12 @@
         },
         {
           "Name": "password",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "twoFactorToken",
           "TypeName": "String",
           "Description": "",
           "Optional": false
@@ -1089,6 +1121,12 @@
           "TypeName": "String",
           "Description": "",
           "Optional": false
+        },
+        {
+          "Name": "WelcomeMessage",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": true
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -1144,6 +1182,12 @@
     },
     "UpgradeAllInstances": {
       "Parameters": [
+        {
+          "Name": "TargetADSInstance",
+          "TypeName": "Guid",
+          "Description": "",
+          "Optional": false
+        },
         {
           "Name": "RestartRunning",
           "TypeName": "Boolean",
@@ -1719,6 +1763,18 @@
       "ReturnTypeName": "IEnumerable<AuthencationRequirement>",
       "IsComplexType": true
     },
+    "GetAuthenticationRequirements": {
+      "Parameters": [
+        {
+          "Name": "username",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "IEnumerable<AuthenticationRequirement>",
+      "IsComplexType": true
+    },
     "GetConfig": {
       "Parameters": [
         {
@@ -2062,6 +2118,11 @@
         }
       ],
       "ReturnTypeName": "ActionResult",
+      "IsComplexType": true
+    },
+    "RunSecurityCheck": {
+      "Parameters": [],
+      "ReturnTypeName": "IEnumerable<JObject>",
       "IsComplexType": true
     },
     "SendConsoleMessage": {
@@ -2521,6 +2582,18 @@
       "ReturnTypeName": "ActionResult<String>",
       "IsComplexType": true
     },
+    "ReleaseFileUploadLock": {
+      "Parameters": [
+        {
+          "Name": "Filename",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "ActionResult",
+      "IsComplexType": true
+    },
     "RenameDirectory": {
       "Description": "Renames a directory",
       "Returns": "",
@@ -2629,6 +2702,11 @@
         }
       ],
       "ReturnTypeName": "IDictionary<String, String>",
+      "IsComplexType": false
+    },
+    "ReloadGenericConfig": {
+      "Parameters": [],
+      "ReturnTypeName": "Void",
       "IsComplexType": false
     }
   },
