@@ -221,19 +221,6 @@
           "Optional": true
         },
         {
-          "Name": "PostCreate",
-          "TypeName": "PostCreateActions",
-          "Description": "",
-          "Optional": true,
-          "ParamEnumValues": {
-            "DoNothing": 0,
-            "StartInstance": 1,
-            "StartAndUpdate": 2,
-            "FullStartup": 3,
-            "EveryTime": 16
-          }
-        },
-        {
           "Name": "StartOnBoot",
           "TypeName": "Boolean",
           "Description": "",
@@ -250,6 +237,20 @@
           "TypeName": "Int32",
           "Description": "",
           "Optional": true
+        },
+        {
+          "Name": "PostCreate",
+          "TypeName": "PostCreateAppActions",
+          "Description": "",
+          "Optional": true,
+          "ParamEnumValues": {
+            "DoNothing": 0,
+            "UpdateOnce": 1,
+            "UpdateAlways": 2,
+            "UpdateAndStartOnce": 3,
+            "UpdateAndStartAlways": 4,
+            "StartAlways": 5
+          }
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -265,15 +266,16 @@
         },
         {
           "Name": "PostCreate",
-          "TypeName": "PostCreateActions",
+          "TypeName": "PostCreateAppActions",
           "Description": "",
           "Optional": true,
           "ParamEnumValues": {
             "DoNothing": 0,
-            "StartInstance": 1,
-            "StartAndUpdate": 2,
-            "FullStartup": 3,
-            "EveryTime": 16
+            "UpdateOnce": 1,
+            "UpdateAlways": 2,
+            "UpdateAndStartOnce": 3,
+            "UpdateAndStartAlways": 4,
+            "StartAlways": 5
           }
         }
       ],
@@ -379,23 +381,24 @@
           "Optional": true
         },
         {
-          "Name": "PostCreate",
-          "TypeName": "PostCreateActions",
-          "Description": "0: Do nothing, 1: Start instance only, 2: Start instance and update application, 3: Full application startup.",
-          "Optional": true,
-          "ParamEnumValues": {
-            "DoNothing": 0,
-            "StartInstance": 1,
-            "StartAndUpdate": 2,
-            "FullStartup": 3,
-            "EveryTime": 16
-          }
-        },
-        {
           "Name": "ExtraProvisionSettings",
           "TypeName": "Dictionary<String, String>",
           "Description": "A dictionary of setting nodes and values to create the new instance with. Identical in function to the provisioning arguments in the template itself.",
           "Optional": true
+        },
+        {
+          "Name": "PostCreate",
+          "TypeName": "PostCreateAppActions",
+          "Description": "0: Do Nothing, 1: Update Once, 2: Update Always, 3: Update and Start Once, 4: Update and Start Always, 5. Start Always",
+          "Optional": true,
+          "ParamEnumValues": {
+            "DoNothing": 0,
+            "UpdateOnce": 1,
+            "UpdateAlways": 2,
+            "UpdateAndStartOnce": 3,
+            "UpdateAndStartAlways": 4,
+            "StartAlways": 5
+          }
         }
       ],
       "ReturnTypeName": "RunningTask",
@@ -513,7 +516,14 @@
       "IsComplexType": true
     },
     "GetInstances": {
-      "Parameters": [],
+      "Parameters": [
+        {
+          "Name": "ForceIncludeSelf",
+          "TypeName": "Boolean",
+          "Description": "",
+          "Optional": true
+        }
+      ],
       "ReturnTypeName": "IEnumerable<IADSInstance>",
       "IsComplexType": true
     },
@@ -679,6 +689,12 @@
           "TypeName": "String",
           "Description": "",
           "Optional": false
+        },
+        {
+          "Name": "AndUpdateInstance",
+          "TypeName": "Boolean",
+          "Description": "",
+          "Optional": true
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -783,8 +799,14 @@
           "Optional": false
         },
         {
-          "Name": "REQ_RAWJSON",
-          "TypeName": "String",
+          "Name": "Data",
+          "TypeName": "JObject",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "RealIP",
+          "TypeName": "IPAddress",
           "Description": "",
           "Optional": false
         }
@@ -853,7 +875,14 @@
       "IsComplexType": true
     },
     "StartAllInstances": {
-      "Parameters": [],
+      "Parameters": [
+        {
+          "Name": "TargetADSInstance",
+          "TypeName": "Guid",
+          "Description": "",
+          "Optional": false
+        }
+      ],
       "ReturnTypeName": "ActionResult",
       "IsComplexType": true
     },
@@ -870,7 +899,14 @@
       "IsComplexType": true
     },
     "StopAllInstances": {
-      "Parameters": [],
+      "Parameters": [
+        {
+          "Name": "TargetADSInstance",
+          "TypeName": "Guid",
+          "Description": "",
+          "Optional": false
+        }
+      ],
       "ReturnTypeName": "ActionResult",
       "IsComplexType": true
     },
@@ -902,6 +938,12 @@
         },
         {
           "Name": "password",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "twoFactorToken",
           "TypeName": "String",
           "Description": "",
           "Optional": false
@@ -1006,6 +1048,18 @@
           "TypeName": "String",
           "Description": "",
           "Optional": false
+        },
+        {
+          "Name": "ContainerSwap",
+          "TypeName": "Int32",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "WelcomeMessage",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": true
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -1066,6 +1120,12 @@
           "TypeName": "Boolean",
           "Description": "",
           "Optional": false
+        },
+        {
+          "Name": "TargetADSInstance",
+          "TypeName": "Guid",
+          "Description": "",
+          "Optional": false
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -1082,6 +1142,111 @@
       ],
       "ReturnTypeName": "ActionResult",
       "IsComplexType": true
+    },
+    "CreateInstanceFromSpec": {
+      "Parameters": [
+        {
+          "Name": "SpecId",
+          "TypeName": "Guid",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "TargetADSInstance",
+          "TypeName": "Guid",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "FriendlyName",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "PostCreate",
+          "TypeName": "PostCreateAppActions",
+          "Description": "",
+          "Optional": true,
+          "ParamEnumValues": {
+            "DoNothing": 0,
+            "UpdateOnce": 1,
+            "UpdateAlways": 2,
+            "UpdateAndStartOnce": 3,
+            "UpdateAndStartAlways": 4,
+            "StartAlways": 5
+          }
+        },
+        {
+          "Name": "StartOnBoot",
+          "TypeName": "Boolean",
+          "Description": "",
+          "Optional": true
+        },
+        {
+          "Name": "TargetDatastore",
+          "TypeName": "Int32",
+          "Description": "",
+          "Optional": true
+        }
+      ],
+      "ReturnTypeName": "ActionResult",
+      "IsComplexType": true
+    },
+    "DetachTarget": {
+      "Parameters": [
+        {
+          "Name": "Id",
+          "TypeName": "Guid",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "ActionResult",
+      "IsComplexType": true
+    },
+    "GetSupportedAppSummaries": {
+      "Parameters": [],
+      "ReturnTypeName": "IEnumerable<JObject>",
+      "IsComplexType": true
+    },
+    "ReactivateInstance": {
+      "Parameters": [
+        {
+          "Name": "instanceId",
+          "TypeName": "Guid",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "RunningTask",
+      "IsComplexType": true
+    }
+  },
+  "AnalyticsPlugin": {
+    "GetAnalyticsSummary": {
+      "Parameters": [
+        {
+          "Name": "PeriodDays",
+          "TypeName": "Int32",
+          "Description": "",
+          "Optional": true
+        },
+        {
+          "Name": "StartDate",
+          "TypeName": "Nullable<DateTime>",
+          "Description": "",
+          "Optional": true
+        },
+        {
+          "Name": "Filters",
+          "TypeName": "Dictionary<String, String>",
+          "Description": "",
+          "Optional": true
+        }
+      ],
+      "ReturnTypeName": "Object",
+      "IsComplexType": false
     }
   },
   "CommonCorePlugin": {},
@@ -2171,6 +2336,35 @@
       ],
       "ReturnTypeName": "ActionResult",
       "IsComplexType": true
+    },
+    "GetAuthencationRequirements": {
+      "Parameters": [
+        {
+          "Name": "username",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "IEnumerable<AuthencationRequirement>",
+      "IsComplexType": true
+    },
+    "GetAuthenticationRequirements": {
+      "Parameters": [
+        {
+          "Name": "username",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "IEnumerable<AuthenticationRequirement>",
+      "IsComplexType": true
+    },
+    "RunSecurityCheck": {
+      "Parameters": [],
+      "ReturnTypeName": "IEnumerable<JObject>",
+      "IsComplexType": true
     }
   },
   "EmailSenderPlugin": {
@@ -2495,6 +2689,18 @@
       ],
       "ReturnTypeName": "ActionResult",
       "IsComplexType": false
+    },
+    "ReleaseFileUploadLock": {
+      "Parameters": [
+        {
+          "Name": "Filename",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "ActionResult",
+      "IsComplexType": true
     }
   },
   "GenericModule": {
@@ -2508,6 +2714,11 @@
         }
       ],
       "ReturnTypeName": "IDictionary<String, String>",
+      "IsComplexType": false
+    },
+    "ReloadGenericConfig": {
+      "Parameters": [],
+      "ReturnTypeName": "Void",
       "IsComplexType": false
     }
   },
@@ -2608,6 +2819,12 @@
           "TypeName": "Boolean",
           "Description": "",
           "Optional": false
+        },
+        {
+          "Name": "WasCreatedAutomatically",
+          "TypeName": "Boolean",
+          "Description": "",
+          "Optional": true
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -2624,6 +2841,11 @@
       ],
       "ReturnTypeName": "RunningTask",
       "IsComplexType": true
+    },
+    "RefreshBackupList": {
+      "Parameters": [],
+      "ReturnTypeName": "Void",
+      "IsComplexType": false
     }
   },
   "MinecraftModule": {
