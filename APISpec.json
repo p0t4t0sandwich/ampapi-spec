@@ -756,12 +756,6 @@
           "TypeName": "String",
           "Description": "",
           "Optional": false
-        },
-        {
-          "Name": "AndUpdateInstance",
-          "TypeName": "Boolean",
-          "Description": "",
-          "Optional": true
         }
       ],
       "ReturnTypeName": "ActionResult",

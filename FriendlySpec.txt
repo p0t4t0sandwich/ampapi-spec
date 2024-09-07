@@ -36,7 +36,7 @@ ADSModule.MoveInstanceDatastore(instanceId: Guid, datastoreId: Int32) -> Running
 ADSModule.ReactivateLocalInstances() -> RunningTask
 ADSModule.RefreshAppCache() -> Void
 ADSModule.RefreshGroup(GroupId: Guid) -> ActionResult
-ADSModule.RefreshInstanceConfig(InstanceId: String, AndUpdateInstance: Boolean) -> ActionResult
+ADSModule.RefreshInstanceConfig(InstanceId: String) -> ActionResult
 ADSModule.RefreshRemoteConfigStores(force: Boolean) -> Void
 ADSModule.RegisterTarget(controllerUrl: String, myUrl: String, username: String, password: String, twoFactorToken: String, friendlyName: String) -> ActionResult
 ADSModule.RepairDatastore(id: Int32) -> RunningTask
