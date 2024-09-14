@@ -209,7 +209,7 @@ MinecraftModule.RemoveOPEntry(UserOrUUID: String) -> Void
 MinecraftModule.RemoveWhitelistEntry(UserOrUUID: String) -> Void
 MinecraftModule.SmiteByID(ID: String) -> Void
 RCONPlugin.Dummy() -> Void
-SchematicCopyPlugin.CopySchematic(sourceInstanceId: Guid, destinationInstanceId: Guid, schematicName: String) -> ActionResult
+SchematicCopyPlugin.CopySchematic(sourceInstanceName: String, destInstanceName: String, schematicName: String, isModded: Boolean) -> ActionResult
 steamcmdplugin.CancelSteamGuard() -> Void
 steamcmdplugin.SteamGuardCode(code: String) -> Void
 steamcmdplugin.SteamUsernamePassword(username: String, password: String) -> Void

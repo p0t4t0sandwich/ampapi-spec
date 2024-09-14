@@ -3081,20 +3081,26 @@
       "Returns": "An ActionResult dictating whether the file operation was successful.",
       "Parameters": [
         {
-          "Name": "sourceInstanceId",
-          "TypeName": "Guid",
+          "Name": "sourceInstanceName",
+          "TypeName": "String",
           "Description": "",
           "Optional": false
         },
         {
-          "Name": "destinationInstanceId",
-          "TypeName": "Guid",
+          "Name": "destInstanceName",
+          "TypeName": "String",
           "Description": "",
           "Optional": false
         },
         {
           "Name": "schematicName",
           "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "isModded",
+          "TypeName": "Boolean",
           "Description": "",
           "Optional": false
         }
