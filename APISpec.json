@@ -128,18 +128,6 @@
       "ReturnTypeName": "ActionResult",
       "IsComplexType": true
     },
-    "ConvertToManaged": {
-      "Parameters": [
-        {
-          "Name": "InstanceName",
-          "TypeName": "String",
-          "Description": "",
-          "Optional": false
-        }
-      ],
-      "ReturnTypeName": "ActionResult",
-      "IsComplexType": true
-    },
     "CreateDeploymentTemplate": {
       "Parameters": [
         {
@@ -3085,6 +3073,34 @@
       "Parameters": [],
       "ReturnTypeName": "Void",
       "IsComplexType": false
+    }
+  },
+  "SchematicCopyPlugin": {
+    "CopySchematic": {
+      "Description": "Copies a schematic file from one server to another, searching first in the WorldEdit folder, then in the FastAsyncWorldEdit folder.",
+      "Returns": "An ActionResult dictating whether the file operation was successful.",
+      "Parameters": [
+        {
+          "Name": "sourceInstanceId",
+          "TypeName": "Guid",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "destinationInstanceId",
+          "TypeName": "Guid",
+          "Description": "",
+          "Optional": false
+        },
+        {
+          "Name": "schematicName",
+          "TypeName": "String",
+          "Description": "",
+          "Optional": false
+        }
+      ],
+      "ReturnTypeName": "ActionResult",
+      "IsComplexType": true
     }
   },
   "steamcmdplugin": {
