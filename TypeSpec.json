@@ -269,80 +269,116 @@
         "SpecialType": "Enum",
         "SerializesAs": "Int32",
         "Description": "Represents the state of an instance's application",
-        "Fields": {
-            "Undefined": {
+        "Fields": [
+            {
+                "Name": "Undefined",
+                "TypeName": "Int32",
                 "Description": "Undefined",
                 "Value": -1
             },
-            "Stopped": {
+            {
+                "Name": "Stopped",
+                "TypeName": "Int32",
                 "Description": "Stopped",
                 "Value": 0
             },
-            "PreStart": {
+            {
+                "Name": "PreStart",
+                "TypeName": "Int32",
                 "Description": "The server is performing some first-time-start configuration.",
                 "Value": 5
             },
-            "Configuring": {
+            {
+                "Name": "Configuring",
+                "TypeName": "Int32",
                 "Description": "The server is performing some first-time-start configuration.",
                 "Value": 7
             },
-            "Starting": {
+            {
+                "Name": "Starting",
+                "TypeName": "Int32",
                 "Description": "Starting",
                 "Value": 10
             },
-            "Ready": {
+            {
+                "Name": "Ready",
+                "TypeName": "Int32",
                 "Description": "Ready",
                 "Value": 20
             },
-            "Restarting": {
+            {
+                "Name": "Restarting",
+                "TypeName": "Int32",
                 "Description": "Server is in the middle of stopping, but once shutdown has finished it will automatically restart.",
                 "Value": 30
             },
-            "Stopping": {
+            {
+                "Name": "Stopping",
+                "TypeName": "Int32",
                 "Description": "Stopping",
                 "Value": 40
             },
-            "PreparingForSleep": {
+            {
+                "Name": "PreparingForSleep",
+                "TypeName": "Int32",
                 "Description": "Preparing for sleep",
                 "Value": 45
             },
-            "Sleeping": {
+            {
+                "Name": "Sleeping",
+                "TypeName": "Int32",
                 "Description": "The application should be able to be resumed quickly if using this state. Otherwise use Stopped.",
                 "Value": 50
             },
-            "Waiting": {
+            {
+                "Name": "Waiting",
+                "TypeName": "Int32",
                 "Description": "The application is waiting for some external service/application to respond/become available.",
                 "Value": 60
             },
-            "Installing": {
+            {
+                "Name": "Installing",
+                "TypeName": "Int32",
                 "Description": "Installing",
                 "Value": 70
             },
-            "Updating": {
+            {
+                "Name": "Updating",
+                "TypeName": "Int32",
                 "Description": "Updating",
                 "Value": 75
             },
-            "AwaitingUserInput": {
+            {
+                "Name": "AwaitingUserInput",
+                "TypeName": "Int32",
                 "Description": "Used during installation, means that some user input is required to complete setup (authentication etc).",
                 "Value": 80
             },
-            "Failed": {
+            {
+                "Name": "Failed",
+                "TypeName": "Int32",
                 "Description": "Failed",
                 "Value": 100
             },
-            "Suspended": {
+            {
+                "Name": "Suspended",
+                "TypeName": "Int32",
                 "Description": "Suspended",
                 "Value": 200
             },
-            "Maintainence": {
+            {
+                "Name": "Maintainence",
+                "TypeName": "Int32",
                 "Description": "Maintainence",
                 "Value": 250
             },
-            "Indeterminate": {
+            {
+                "Name": "Indeterminate",
+                "TypeName": "Int32",
                 "Description": "The state is unknown, or doesn't apply (for modules that don't start an external process)",
                 "Value": 999
             }
-        }
+        ]
     },
     "MetricInfo": {
         "Description": "A metric info object",
@@ -598,118 +634,166 @@
         "SpecialType": "Enum",
         "SerializesAs": "Int32",
         "Description": "Represents the supported OS",
-        "Fields": {
-            "None": {
+        "Fields": [
+            {
+                "Name": "None",
+                "TypeName": "Int32",
                 "Description": "None",
                 "Value": 0
             },
-            "Windows": {
+            {
+                "Name": "Windows",
+                "TypeName": "Int32",
                 "Description": "Windows",
                 "Value": 1
             },
-            "Linux": {
+            {
+                "Name": "Linux",
+                "TypeName": "Int32",
                 "Description": "Linux",
                 "Value": 2
             },
-            "MacOS": {
+            {
+                "Name": "MacOS",
+                "TypeName": "Int32",
                 "Description": "MacOS",
                 "Value": 4
             },
-            "BSD": {
+            {
+                "Name": "BSD",
+                "TypeName": "Int32",
                 "Description": "BSD",
                 "Value": 8
             },
-            "Other": {
+            {
+                "Name": "Other",
+                "TypeName": "Int32",
                 "Description": "Other",
                 "Value": 16
             },
-            "All": {
+            {
+                "Name": "All",
+                "TypeName": "Int32",
                 "Description": "All",
                 "Value": 31
             }
-        }
+        ]
     },
     "Architecture": {
         "SpecialType": "Enum",
         "SerializesAs": "Int32",
         "Description": "Represents the architecture",
-        "Fields": {
-            "Unknown": {
+        "Fields": [
+            {
+                "Name": "Unknown",
+                "TypeName": "Int32",
                 "Description": "Unknown",
                 "Value": 0
             },
-            "x86_64": {
+            {
+                "Name": "x86_64",
+                "TypeName": "Int32",
                 "Description": "x86_64",
                 "Value": 1
             },
-            "aarch64": {
+            {
+                "Name": "aarch64",
+                "TypeName": "Int32",
                 "Description": "aarch64",
                 "Value": 2
             },
-            "All": {
+            {
+                "Name": "All",
+                "TypeName": "Int32",
                 "Description": "All",
                 "Value": 3
             }
-        }
+        ]
     },
     "VirtualizationType": {
         "SpecialType": "Enum",
         "SerializesAs": "Int32",
         "Description": "Represents the virtualization type",
-        "Fields": {
-            "None": {
+        "Fields": [
+            {
+                "Name": "None",
+                "TypeName": "Int32",
                 "Description": "None/Bare Metal",
                 "Value": 0
             },
-            "VMware": {
+            {
+                "Name": "VMware",
+                "TypeName": "Int32",
                 "Description": "VMware",
                 "Value": 1
             },
-            "VMwareESX": {
+            {
+                "Name": "VMwareESX",
+                "TypeName": "Int32",
                 "Description": "VMware ESX",
                 "Value": 2
             },
-            "VirtualBox": {
+            {
+                "Name": "VirtualBox",
+                "TypeName": "Int32",
                 "Description": "VirtualBox",
                 "Value": 3
             },
-            "Xen": {
+            {
+                "Name": "Xen",
+                "TypeName": "Int32",
                 "Description": "Xen",
                 "Value": 4
             },
-            "QEMU_KVM": {
+            {
+                "Name": "QEMU_KVM",
+                "TypeName": "Int32",
                 "Description": "QEMU KVM",
                 "Value": 5
             },
-            "OpenVZ": {
+            {
+                "Name": "OpenVZ",
+                "TypeName": "Int32",
                 "Description": "OpenVZ",
                 "Value": 6
             },
-            "HyperV": {
+            {
+                "Name": "HyperV",
+                "TypeName": "Int32",
                 "Description": "HyperV",
                 "Value": 7
             },
-            "Docker": {
+            {
+                "Name": "Docker",
+                "TypeName": "Int32",
                 "Description": "Docker",
                 "Value": 8
             },
-            "LXC": {
+            {
+                "Name": "LXC",
+                "TypeName": "Int32",
                 "Description": "LXC",
                 "Value": 9
             },
-            "WSL": {
+            {
+                "Name": "WSL",
+                "TypeName": "Int32",
                 "Description": "Windows Subsystem for Linux",
                 "Value": 10
             },
-            "ProxmoxVM": {
+            {
+                "Name": "ProxmoxVM",
+                "TypeName": "Int32",
                 "Description": "ProxmoxVM",
                 "Value": 11
             },
-            "ProxmoxLXC": {
+            {
+                "Name": "ProxmoxLXC",
+                "TypeName": "Int32",
                 "Description": "Proxmox LXC Container",
                 "Value": 12
             }
-        }
+        ]
     },
     "IPlatformInfo": {
         "AlternateNames": [
@@ -863,40 +947,56 @@
         "SpecialType": "Enum",
         "SerializesAs": "Int32",
         "Description": "Represents the state of a remote instance",
-        "Fields": {
-            "Pending": {
+        "Fields": [
+            {
+                "Name": "Pending",
+                "TypeName": "Int32",
                 "Description": "Pending",
                 "Value": 0
             },
-            "Connecting": {
+            {
+                "Name": "Connecting",
+                "TypeName": "Int32",
                 "Description": "Connecting",
                 "Value": 5
             },
-            "Offline": {
+            {
+                "Name": "Offline",
+                "TypeName": "Int32",
                 "Description": "Offline",
                 "Value": 10
             },
-            "Unavailable": {
+            {
+                "Name": "Unavailable",
+                "TypeName": "Int32",
                 "Description": "Unavailable",
                 "Value": 15
             },
-            "AuthFailure": {
+            {
+                "Name": "AuthFailure",
+                "TypeName": "Int32",
                 "Description": "Authentication failure",
                 "Value": 16
             },
-            "Online": {
+            {
+                "Name": "Online",
+                "TypeName": "Int32",
                 "Description": "Online",
                 "Value": 20
             },
-            "Disabled": {
+            {
+                "Name": "Disabled",
+                "TypeName": "Int32",
                 "Description": "Disabled",
                 "Value": 30
             },
-            "UpdateInProgress": {
+            {
+                "Name": "UpdateInProgress",
+                "TypeName": "Int32",
                 "Description": "Update in progress",
                 "Value": 100
             }
-        }
+        ]
     },
     "IADSInstance": {
         "Description": "An ADS instance object",
@@ -1114,68 +1214,98 @@
         "SpecialType": "Enum",
         "SerializesAs": "Int32",
         "Description": "Represents the authentication result",
-        "Fields": {
-            "Failure": {
+        "Fields": [
+            {
+                "Name": "Failure",
+                "TypeName": "Int32",
                 "Description": "Failure",
                 "Value": 0
             },
-            "TokenRejected": {
+            {
+                "Name": "TokenRejected",
+                "TypeName": "Int32",
                 "Description": "Token rejected",
                 "Value": 1
             },
-            "FullLoginRequired": {
+            {
+                "Name": "FullLoginRequired",
+                "TypeName": "Int32",
                 "Description": "Full login required",
                 "Value": 2
             },
-            "NoInstanceAccess": {
+            {
+                "Name": "NoInstanceAccess",
+                "TypeName": "Int32",
                 "Description": "No instance access",
                 "Value": 5
             },
-            "InstanceSuspended": {
+            {
+                "Name": "InstanceSuspended",
+                "TypeName": "Int32",
                 "Description": "Instance suspended",
                 "Value": 6
             },
-            "Success": {
+            {
+                "Name": "Success",
+                "TypeName": "Int32",
                 "Description": "Success",
                 "Value": 10
             },
-            "PasswordChangeRequired": {
+            {
+                "Name": "PasswordChangeRequired",
+                "TypeName": "Int32",
                 "Description": "Password change required",
                 "Value": 20
             },
-            "AccountDisabled": {
+            {
+                "Name": "AccountDisabled",
+                "TypeName": "Int32",
                 "Description": "Account disabled",
                 "Value": 25
             },
-            "Ignored": {
+            {
+                "Name": "Ignored",
+                "TypeName": "Int32",
                 "Description": "Ignored",
                 "Value": 30
             },
-            "TwoFactorChallenge": {
+            {
+                "Name": "TwoFactorChallenge",
+                "TypeName": "Int32",
                 "Description": "Two-factor challenge",
                 "Value": 40
             },
-            "TwoFactorSetupRequired": {
+            {
+                "Name": "TwoFactorSetupRequired",
+                "TypeName": "Int32",
                 "Description": "Two-factor setup required",
                 "Value": 45
             },
-            "TwoFactorFailed": {
+            {
+                "Name": "TwoFactorFailed",
+                "TypeName": "Int32",
                 "Description": "Two-factor failed",
                 "Value": 50
             },
-            "PassthruDisabled": {
+            {
+                "Name": "PassthruDisabled",
+                "TypeName": "Int32",
                 "Description": "Passthru disabled",
                 "Value": 100
             },
-            "PassthruRejected": {
+            {
+                "Name": "PassthruRejected",
+                "TypeName": "Int32",
                 "Description": "Passthru rejected",
                 "Value": 110
             },
-            "LoginServerUnavailable": {
+            {
+                "Name": "LoginServerUnavailable",
+                "TypeName": "Int32",
                 "Description": "Login server unavailable",
                 "Value": 500
             }
-        }
+        ]
     },
     "LoginResponse": {
         "Description": "Type for the result of Core.Login",
@@ -1271,48 +1401,68 @@
         "SpecialType": "Enum",
         "SerializesAs": "Int32",
         "Description": "Represents the state of a task",
-        "Fields": {
-            "Running": {
+        "Fields": [
+            {
+                "Name": "Running",
+                "TypeName": "Int32",
                 "Description": "Running",
                 "Value": 0
             },
-            "Waiting": {
+            {
+                "Name": "Waiting",
+                "TypeName": "Int32",
                 "Description": "Waiting",
                 "Value": 1
             },
-            "Queued": {
+            {
+                "Name": "Queued",
+                "TypeName": "Int32",
                 "Description": "Queued",
                 "Value": 2
             },
-            "Failed": {
+            {
+                "Name": "Failed",
+                "TypeName": "Int32",
                 "Description": "Failed",
                 "Value": 3
             },
-            "Finished": {
+            {
+                "Name": "Finished",
+                "TypeName": "Int32",
                 "Description": "Finished",
                 "Value": 4
             },
-            "PendingCancellation": {
+            {
+                "Name": "PendingCancellation",
+                "TypeName": "Int32",
                 "Description": "Pending cancellation",
                 "Value": 5
             },
-            "Cancelled": {
+            {
+                "Name": "Cancelled",
+                "TypeName": "Int32",
                 "Description": "Cancelled",
                 "Value": 6
             },
-            "Acknowledged": {
+            {
+                "Name": "Acknowledged",
+                "TypeName": "Int32",
                 "Description": "Acknowledged",
                 "Value": 7
             },
-            "UserActionRequired": {
+            {
+                "Name": "UserActionRequired",
+                "TypeName": "Int32",
                 "Description": "User action required",
                 "Value": 100
             },
-            "TimedOut": {
+            {
+                "Name": "TimedOut",
+                "TypeName": "Int32",
                 "Description": "Timed out",
                 "Value": 254
             }
-        }
+        ]
     },
     "RunningTask": {
         "Description": "A running task object",
@@ -1419,22 +1569,28 @@
     },
     "PortProtocol": {
         "SpecialType": "Enum",
-        "SerializesAs": "String",
+        "SerializesAs": "Int32",
         "Description": "Represents the port protocol",
-        "Fields": {
-            "TCP": {
+        "Fields": [
+            {
+                "Name": "TCP",
+                "TypeName": "Int32",
                 "Description": "TCP",
-                "Value": "TCP"
+                "Value": 0
             },
-            "UDP": {
+            {
+                "Name": "UDP",
+                "TypeName": "Int32",
                 "Description": "UDP",
-                "Value": "UDP"
+                "Value": 1
             },
-            "Both": {
+            {
+                "Name": "Both",
+                "TypeName": "Int32",
                 "Description": "Both",
-                "Value": "Both"
+                "Value": 2
             }
-        }
+        ]
     },
     "PortSummary": {
         "Description": "A port object",
