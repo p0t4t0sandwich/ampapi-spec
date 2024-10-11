@@ -161,7 +161,8 @@
             {
                 "Name": "SourceId",
                 "TypeName": "String",
-                "Description": "The source ID of the console entry"
+                "Description": "The ID of the message's source, eg from a player/user",
+                "Optional": true
             },
             {
                 "Name": "Type",
@@ -395,7 +396,7 @@
             },
             {
                 "Name": "Percent",
-                "TypeName": "Single",
+                "TypeName": "Int32",
                 "Description": "The percentage"
             },
             {
@@ -422,6 +423,105 @@
                 "Name": "ShortName",
                 "TypeName": "String",
                 "Description": "The short name"
+            }
+        ]
+    },
+    "AMPReleaseStreams": {
+        "SpecialType": "Enum",
+        "SerializesAs": "Int32",
+        "Description": "Represents the AMP release streams",
+        "Fields": [
+            {
+                "Name": "NotSpecified",
+                "TypeName": "Int32",
+                "Description": "Not specified",
+                "Value": 0
+            },
+            {
+                "Name": "LTS",
+                "TypeName": "Int32",
+                "Description": "LTS",
+                "Value": 5
+            },
+            {
+                "Name": "Mainline",
+                "TypeName": "Int32",
+                "Description": "Mainline",
+                "Value": 10
+            },
+            {
+                "Name": "Preview",
+                "TypeName": "Int32",
+                "Description": "Preview",
+                "Value": 15
+            },
+            {
+                "Name": "Development",
+                "TypeName": "Int32",
+                "Description": "Development",
+                "Value": 20
+            },
+            {
+                "Name": "FastTrack",
+                "TypeName": "Int32",
+                "Description": "Fast track",
+                "Value": 100
+            },
+            {
+                "Name": "Nightly",
+                "TypeName": "Int32",
+                "Description": "Nightly",
+                "Value": 1000
+            },
+            {
+                "Name": "Bleeding",
+                "TypeName": "Int32",
+                "Description": "Bleeding",
+                "Value": 10000
+            }
+        ]
+    },
+    "ManagementModes": {
+        "SpecialType": "Enum",
+        "SerializesAs": "Int32",
+        "Description": "Represents the management modes",
+        "Fields": [
+            {
+                "Name": "Standalone",
+                "TypeName": "Int32",
+                "Description": "Standalone",
+                "Value": 0
+            },
+            {
+                "Name": "ViaADS",
+                "TypeName": "Int32",
+                "Description": "Via ADS",
+                "Value": 10
+            }
+        ]
+    },
+    "ContainerMemoryPolicy": {
+        "SpecialType": "Enum",
+        "SerializesAs": "Int32",
+        "Description": "Represents the container memory policy",
+        "Fields": [
+            {
+                "Name": "NotSpecified",
+                "TypeName": "Int32",
+                "Description": "Not specified",
+                "Value": 0
+            },
+            {
+                "Name": "Reserve",
+                "TypeName": "Int32",
+                "Description": "Reserve",
+                "Value": 100
+            },
+            {
+                "Name": "Restrict",
+                "TypeName": "Int32",
+                "Description": "Restrict",
+                "Value": 200
             }
         ]
     },
@@ -505,7 +605,7 @@
             },
             {
                 "Name": "AppState",
-                "TypeName": "State",
+                "TypeName": "ApplicationState",
                 "Description": "The application state"
             },
             {
@@ -520,12 +620,12 @@
             },
             {
                 "Name": "ReleaseStream",
-                "TypeName": "String",
+                "TypeName": "AMPReleaseStreams",
                 "Description": "The release stream"
             },
             {
                 "Name": "ManagementMode",
-                "TypeName": "String",
+                "TypeName": "ManagementModes",
                 "Description": "The management mode"
             },
             {
@@ -545,12 +645,12 @@
             },
             {
                 "Name": "ContainerMemoryPolicy",
-                "TypeName": "String",
+                "TypeName": "ContainerMemoryPolicy",
                 "Description": "The container memory policy"
             },
             {
                 "Name": "ContainerCPUs",
-                "TypeName": "Int32",
+                "TypeName": "Float",
                 "Description": "The container CPUs"
             },
             {

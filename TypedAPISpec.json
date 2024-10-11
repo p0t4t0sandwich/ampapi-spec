@@ -4,7 +4,7 @@
       "Parameters": [
         {
           "Name": "newDatastore",
-          "TypeName": "InstanceDatastore",
+          "TypeName": "DatastoreSummary",
           "Description": "",
           "Optional": false
         }
@@ -437,7 +437,7 @@
           "Optional": false
         }
       ],
-      "ReturnTypeName": "IEnumerable<EndpointInfo>",
+      "ReturnTypeName": "List<EndpointInfo>",
       "IsComplexType": true
     },
     "GetDatastore": {
@@ -449,7 +449,7 @@
           "Optional": false
         }
       ],
-      "ReturnTypeName": "InstanceDatastore",
+      "ReturnTypeName": "DatastoreSummary",
       "IsComplexType": true
     },
     "GetDatastoreInstances": {
@@ -466,7 +466,7 @@
     },
     "GetDatastores": {
       "Parameters": [],
-      "ReturnTypeName": "IEnumerable<InstanceDatastore>",
+      "ReturnTypeName": "IEnumerable<DatastoreSummary>",
       "IsComplexType": true
     },
     "GetDeploymentTemplates": {
@@ -524,7 +524,7 @@
           "Optional": true
         }
       ],
-      "ReturnTypeName": "IEnumerable<IADSInstance>",
+      "ReturnTypeName": "List<IADSInstance>",
       "IsComplexType": true
     },
     "GetLocalInstances": {
@@ -956,7 +956,7 @@
       "Parameters": [
         {
           "Name": "updatedDatastore",
-          "TypeName": "InstanceDatastore",
+          "TypeName": "DatastoreSummary",
           "Description": "",
           "Optional": false
         }
@@ -1887,7 +1887,7 @@
     },
     "GetStatus": {
       "Parameters": [],
-      "ReturnTypeName": "Status",
+      "ReturnTypeName": "StatusResponse",
       "IsComplexType": true
     },
     "GetTasks": {
@@ -1916,7 +1916,7 @@
       "Description": "Gets changes to the server status, in addition to any notifications or console output that have occured since the last time GetUpdates() was called by the current session.",
       "Returns": "",
       "Parameters": [],
-      "ReturnTypeName": "Updates",
+      "ReturnTypeName": "UpdateResponse",
       "IsComplexType": true
     },
     "GetUserActionsSpec": {
