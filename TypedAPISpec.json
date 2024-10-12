@@ -461,17 +461,17 @@
           "Optional": false
         }
       ],
-      "ReturnTypeName": "IEnumerable<JObject>",
+      "ReturnTypeName": "List<InstanceSummary>",
       "IsComplexType": true
     },
     "GetDatastores": {
       "Parameters": [],
-      "ReturnTypeName": "IEnumerable<DatastoreSummary>",
+      "ReturnTypeName": "List<DatastoreSummary>",
       "IsComplexType": true
     },
     "GetDeploymentTemplates": {
       "Parameters": [],
-      "ReturnTypeName": "IEnumerable<DeploymentTemplate>",
+      "ReturnTypeName": "List<DeploymentTemplate>",
       "IsComplexType": true
     },
     "GetGroup": {
@@ -495,7 +495,7 @@
           "Optional": false
         }
       ],
-      "ReturnTypeName": "Instance",
+      "ReturnTypeName": "InstanceSummary",
       "IsComplexType": true
     },
     "GetInstanceNetworkInfo": {
@@ -507,12 +507,12 @@
           "Optional": false
         }
       ],
-      "ReturnTypeName": "IEnumerable<PortUsage>",
+      "ReturnTypeName": "List<PortUsage>",
       "IsComplexType": true
     },
     "GetInstanceStatuses": {
       "Parameters": [],
-      "ReturnTypeName": "IEnumerable<InstanceStatus>",
+      "ReturnTypeName": "List<InstanceStatus>",
       "IsComplexType": true
     },
     "GetInstances": {
@@ -529,7 +529,7 @@
     },
     "GetLocalInstances": {
       "Parameters": [],
-      "ReturnTypeName": "IEnumerable<JObject>",
+      "ReturnTypeName": "List<InstanceSummary>",
       "IsComplexType": true
     },
     "GetProvisionArguments": {
@@ -541,17 +541,17 @@
           "Optional": false
         }
       ],
-      "ReturnTypeName": "IEnumerable<ProvisionSettingInfo>",
+      "ReturnTypeName": "List<ProvisionSettingInfo>",
       "IsComplexType": true
     },
     "GetProvisionFitness": {
       "Parameters": [],
-      "ReturnTypeName": "JObject",
+      "ReturnTypeName": "ProvisionFitness",
       "IsComplexType": true
     },
     "GetSupportedApplications": {
       "Parameters": [],
-      "ReturnTypeName": "IEnumerable<ApplicationSpec>",
+      "ReturnTypeName": "List<ApplicationSpec>",
       "IsComplexType": true
     },
     "GetTargetInfo": {
@@ -811,7 +811,7 @@
           "Optional": false
         }
       ],
-      "ReturnTypeName": "JObject",
+      "ReturnTypeName": "JSONRawResponse",
       "IsComplexType": true
     },
     "SetInstanceConfig": {
@@ -1207,7 +1207,7 @@
     },
     "GetSupportedAppSummaries": {
       "Parameters": [],
-      "ReturnTypeName": "IEnumerable<JObject>",
+      "ReturnTypeName": "List<ApplicationSpecSummary>",
       "IsComplexType": true
     },
     "ReactivateInstance": {
@@ -1710,7 +1710,7 @@
           "Optional": false
         }
       ],
-      "ReturnTypeName": "IEnumerable<String>",
+      "ReturnTypeName": "List<String>",
       "IsComplexType": true
     },
     "GetAMPUserInfo": {
@@ -1727,7 +1727,7 @@
     },
     "GetAMPUsersSummary": {
       "Parameters": [],
-      "ReturnTypeName": "IEnumerable<UserInfoSummary>",
+      "ReturnTypeName": "List<UserInfoSummary>",
       "IsComplexType": true
     },
     "GetAPISpec": {
@@ -1737,12 +1737,12 @@
     },
     "GetActiveAMPSessions": {
       "Parameters": [],
-      "ReturnTypeName": "IEnumerable<WebSessionSummary>",
+      "ReturnTypeName": "List<WebSessionSummary>",
       "IsComplexType": true
     },
     "GetAllAMPUserInfo": {
       "Parameters": [],
-      "ReturnTypeName": "IEnumerable<UserInfo>",
+      "ReturnTypeName": "List<UserInfo>",
       "IsComplexType": true
     },
     "GetAuditLogEntries": {
@@ -1760,7 +1760,7 @@
           "Optional": false
         }
       ],
-      "ReturnTypeName": "IEnumerable<IAuditLogEntry>",
+      "ReturnTypeName": "List<IAuditLogEntry>",
       "IsComplexType": true
     },
     "GetConfig": {
@@ -1772,7 +1772,7 @@
           "Optional": false
         }
       ],
-      "ReturnTypeName": "JObject",
+      "ReturnTypeName": "SettingSpec",
       "IsComplexType": true
     },
     "GetConfigs": {
@@ -1784,7 +1784,7 @@
           "Optional": false
         }
       ],
-      "ReturnTypeName": "IEnumerable<JObject>",
+      "ReturnTypeName": "List<SettingSpec>",
       "IsComplexType": true
     },
     "GetDiagnosticsInfo": {

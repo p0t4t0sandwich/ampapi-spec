@@ -660,7 +660,7 @@
             },
             {
                 "Name": "Metrics",
-                "TypeName": "Dictionary<String, Metric>",
+                "TypeName": "Dictionary<String, MetricInfo>",
                 "Description": "The metrics"
             },
             {
@@ -958,7 +958,7 @@
             },
             {
                 "Name": "SizeBytes",
-                "TypeName": "Single",
+                "TypeName": "Int32",
                 "Description": "The size in bytes"
             },
             {
@@ -1032,7 +1032,7 @@
                 "Description": "Load average"
             },
             {
-                "Name": "ReminaingInstanceSlots",
+                "Name": "RemainingInstanceSlots",
                 "TypeName": "Int32",
                 "Description": "Remaining instance slots"
             },
@@ -2200,13 +2200,15 @@
             },
             {
                 "Name": "MinValue",
-                "TypeName": "Single",
-                "Description": "The min value"
+                "TypeName": "Float",
+                "Description": "The min value",
+                "Optional": true
             },
             {
                 "Name": "MaxValue",
-                "TypeName": "Single",
-                "Description": "The max value"
+                "TypeName": "Float",
+                "Description": "The max value",
+                "Optional": true
             },
             {
                 "Name": "MaxLength",
@@ -2247,6 +2249,618 @@
                 "Name": "Order",
                 "TypeName": "Int32",
                 "Description": "The order"
+            }
+        ]
+    },
+    "DeploymentTemplate": {
+        "Description": "A deployment template object",
+        "Fields": [
+            {
+                "Name": "Id",
+                "TypeName": "Int32",
+                "Description": "The ID"
+            },
+            {
+                "Name": "Name",
+                "TypeName": "String",
+                "Description": "The name"
+            },
+            {
+                "Name": "Description",
+                "TypeName": "String",
+                "Description": "The description"
+            },
+            {
+                "Name": "Module",
+                "TypeName": "String",
+                "Description": "The module"
+            },
+            {
+                "Name": "TemplateInstance",
+                "TypeName": "Guid",
+                "Description": "The template instance",
+                "Optional": true
+            },
+            {
+                "Name": "TemplateRole",
+                "TypeName": "Guid",
+                "Description": "The template role",
+                "Optional": true
+            },
+            {
+                "Name": "TemplateBaseApp",
+                "TypeName": "String",
+                "Description": "The template base app"
+            },
+            {
+                "Name": "CloneRoleIntoUser",
+                "TypeName": "Boolean",
+                "Description": "Whether to clone the role into the user"
+            },
+            {
+                "Name": "SettingMappings",
+                "TypeName": "Dictionary<String, String>",
+                "Description": "The setting mappings"
+            },
+            {
+                "Name": "ZipOverlayPath",
+                "TypeName": "String",
+                "Description": "The zip overlay path"
+            },
+            {
+                "Name": "StartOnBoot",
+                "TypeName": "Boolean",
+                "Description": "Whether to start on boot"
+            },
+            {
+                "Name": "MatchDatastoreTags",
+                "TypeName": "Boolean",
+                "Description": "Whether to match datastore tags"
+            },
+            {
+                "Name": "Tags",
+                "TypeName": "List<String>",
+                "Description": "The tags"
+            }
+        ]
+    },
+    "PortUsage": {
+        "Description": "A port usage object",
+        "Fields": [
+            {
+                "Name": "PortNumber",
+                "TypeName": "Int32",
+                "Description": "The port number"
+            },
+            {
+                "Name": "Protocol",
+                "TypeName": "PortProtocol",
+                "Description": "The protocol"
+            },
+            {
+                "Name": "ProvisionNodeName",
+                "TypeName": "String",
+                "Description": "The provision node name"
+            },
+            {
+                "Name": "Verified",
+                "TypeName": "Boolean",
+                "Description": "Whether the port is verified"
+            },
+            {
+                "Name": "Description",
+                "TypeName": "String",
+                "Description": "The description"
+            },
+            {
+                "Name": "Range",
+                "TypeName": "Int32",
+                "Description": "The range"
+            },
+            {
+                "Name": "IsUserDefined",
+                "TypeName": "Boolean",
+                "Description": "Whether the port is user-defined"
+            }
+        ]
+    },
+    "ProvisionSettingInfo": {
+        "Description": "A provision setting object",
+        "Fields": [
+            {
+                "Name": "Node",
+                "TypeName": "String",
+                "Description": "The node"
+            },
+            {
+                "Name": "Type",
+                "TypeName": "String",
+                "Description": "The type"
+            },
+            {
+                "Name": "Description",
+                "TypeName": "String",
+                "Description": "The description"
+            },
+            {
+                "Name": "DefaultValue",
+                "TypeName": "Object",
+                "Description": "The default value"
+            },
+            {
+                "Name": "ValueRange",
+                "TypeName": "Int32",
+                "Description": "The value range"
+            },
+            {
+                "Name": "CustomFieldType",
+                "TypeName": "String",
+                "Description": "The custom field type"
+            },
+            {
+                "Name": "RelatedSetting",
+                "TypeName": "String",
+                "Description": "The related setting"
+            },
+            {
+                "Name": "EndpointName",
+                "TypeName": "String",
+                "Description": "The endpoint name"
+            },
+            {
+                "Name": "EndpointFormat",
+                "TypeName": "String",
+                "Description": "The endpoint format"
+            }
+        ]
+    },
+    "ContainerSupport": {
+        "SpecialType": "Enum",
+        "SerializesAs": "Int32",
+        "Description": "Represents the container support",
+        "Fields": [
+            {
+                "Name": "NoPreference",
+                "TypeName": "Int32",
+                "Description": "No preference",
+                "Value": 0
+            },
+            {
+                "Name": "NotSupported",
+                "TypeName": "Int32",
+                "Description": "Not supported",
+                "Value": 1
+            },
+            {
+                "Name": "SupportedOnLinux",
+                "TypeName": "Int32",
+                "Description": "Supported on Linux",
+                "Value": 2
+            },
+            {
+                "Name": "SupportedOnWindows",
+                "TypeName": "Int32",
+                "Description": "Supported on Windows",
+                "Value": 4
+            },
+            {
+                "Name": "Supported",
+                "TypeName": "Int32",
+                "Description": "Supported",
+                "Value": 6
+            },
+            {
+                "Name": "RecommendedOnLinux",
+                "TypeName": "Int32",
+                "Description": "Recommended on Linux",
+                "Value": 8
+            },
+            {
+                "Name": "RecommendedOnWindows",
+                "TypeName": "Int32",
+                "Description": "Recommended on Windows",
+                "Value": 16
+            },
+            {
+                "Name": "Recommended",
+                "TypeName": "Int32",
+                "Description": "Recommended",
+                "Value": 24
+            },
+            {
+                "Name": "RequiredOnLinux",
+                "TypeName": "Int32",
+                "Description": "Required on Linux",
+                "Value": 32
+            },
+            {
+                "Name": "RequiredOnWindows",
+                "TypeName": "Int32",
+                "Description": "Required on Windows",
+                "Value": 64
+            },
+            {
+                "Name": "Required",
+                "TypeName": "Int32",
+                "Description": "Required",
+                "Value": 96
+            }
+        ]
+    },
+    "ApplicationSpec": {
+        "Description": "A specification for an application",
+        "Fields": [
+            {
+                "Name": "Id",
+                "TypeName": "Guid",
+                "Description": "The ID"
+            },
+            {
+                "Name": "FriendlyName",
+                "TypeName": "String",
+                "Description": "The friendly name"
+            },
+            {
+                "Name": "Description",
+                "TypeName": "String",
+                "Description": "The description"
+            },
+            {
+                "Name": "ModuleName",
+                "TypeName": "String",
+                "Description": "The module name"
+            },
+            {
+                "Name": "Settings",
+                "TypeName": "Dictionary<String, String>",
+                "Description": "The settings"
+            },
+            {
+                "Name": "SupportedPlatforms",
+                "TypeName": "SupportedOS",
+                "Description": "The supported platforms"
+            },
+            {
+                "Name": "ContainerSupport",
+                "TypeName": "ContainerSupport",
+                "Description": "The container support"
+            },
+            {
+                "Name": "ContainerReason",
+                "TypeName": "String",
+                "Description": "The container reason"
+            },
+            {
+                "Name": "ExtraSetupStepsURI",
+                "TypeName": "String",
+                "Description": "The extra setup steps URI"
+            },
+            {
+                "Name": "DisplayImageSource",
+                "TypeName": "String",
+                "Description": "The display image source"
+            },
+            {
+                "Name": "Author",
+                "TypeName": "String",
+                "Description": "The author"
+            },
+            {
+                "Name": "NoCommercialUsage",
+                "TypeName": "Boolean",
+                "Description": "Whether commercial usage is allowed"
+            },
+            {
+                "Name": "Origin",
+                "TypeName": "String",
+                "Description": "The origin"
+            },
+            {
+                "Name": "DeprecatedReason",
+                "TypeName": "String",
+                "Description": "The deprecated reason"
+            },
+            {
+                "Name": "IsServiceSpec",
+                "TypeName": "Boolean",
+                "Description": "Whether the spec is a service spec"
+            }
+        ]
+    },
+    "ApplicationSpecSummary": {
+        "Description": "A summary of an application spec",
+        "Fields": [
+            {
+                "Name": "Id",
+                "TypeName": "Guid",
+                "Description": "The ID"
+            },
+            {
+                "Name": "FriendlyName",
+                "TypeName": "String",
+                "Description": "The friendly name"
+            },
+            {
+                "Name": "Description",
+                "TypeName": "String",
+                "Description": "The description"
+            },
+            {
+                "Name": "SupportedPlatforms",
+                "TypeName": "SupportedOS",
+                "Description": "The supported platforms"
+            },
+            {
+                "Name": "ContainerSupport",
+                "TypeName": "ContainerSupport",
+                "Description": "The container support"
+            },
+            {
+                "Name": "ContainerReason",
+                "TypeName": "String",
+                "Description": "The container reason"
+            },
+            {
+                "Name": "ExtraSetupStepsURI",
+                "TypeName": "String",
+                "Description": "The extra setup steps URI"
+            },
+            {
+                "Name": "DisplayImageSource",
+                "TypeName": "String",
+                "Description": "The display image source"
+            },
+            {
+                "Name": "Author",
+                "TypeName": "String",
+                "Description": "The author"
+            },
+            {
+                "Name": "NoCommercialUsage",
+                "TypeName": "Boolean",
+                "Description": "Whether commercial usage is allowed"
+            },
+            {
+                "Name": "Origin",
+                "TypeName": "String",
+                "Description": "The origin"
+            },
+            {
+                "Name": "DeprecatedReason",
+                "TypeName": "String",
+                "Description": "The deprecated reason"
+            },
+            {
+                "Name": "IsServiceSpec",
+                "TypeName": "Boolean",
+                "Description": "Whether the spec is a service spec"
+            }
+        ]
+    },
+    "TwoFactorSetupInfo": {
+        "Description": "Information about two-factor setup",
+        "Fields": [
+            {
+                "Name": "Url",
+                "TypeName": "String",
+                "Description": "The URL"
+            },
+            {
+                "Name": "ManualKey",
+                "TypeName": "String",
+                "Description": "The manual key"
+            }
+        ]
+    },
+    "UserInfo": {
+        "Description": "Information about a user",
+        "Fields": [
+            {
+                "Name": "ID",
+                "TypeName": "Guid",
+                "Description": "The ID"
+            },
+            {
+                "Name": "Name",
+                "TypeName": "String",
+                "Description": "The name"
+            },
+            {
+                "Name": "EmailAddress",
+                "TypeName": "String",
+                "Description": "The email address"
+            },
+            {
+                "Name": "Disabled",
+                "TypeName": "Boolean",
+                "Description": "Whether the user is disabled"
+            },
+            {
+                "Name": "Permissions",
+                "TypeName": "List<String>",
+                "Description": "The permissions"
+            },
+            {
+                "Name": "IsSuperUser",
+                "TypeName": "Boolean",
+                "Description": "Whether the user is a super user"
+            },
+            {
+                "Name": "LastLogin",
+                "TypeName": "String",
+                "Description": "The last login"
+            },
+            {
+                "Name": "PasswordExpires",
+                "TypeName": "Boolean",
+                "Description": "Whether the password expires"
+            },
+            {
+                "Name": "CannotChangePassword",
+                "TypeName": "Boolean",
+                "Description": "Whether the password cannot be changed"
+            },
+            {
+                "Name": "MustChangePassword",
+                "TypeName": "Boolean",
+                "Description": "Whether the password must be changed"
+            },
+            {
+                "Name": "IsTwoFactorEnabled",
+                "TypeName": "Boolean",
+                "Description": "Whether two-factor is enabled"
+            },
+            {
+                "Name": "Roles",
+                "TypeName": "List<Guid>",
+                "Description": "The roles"
+            },
+            {
+                "Name": "IsLDAPUser",
+                "TypeName": "Boolean",
+                "Description": "Whether the user is an LDAP user"
+            },
+            {
+                "Name": "GravatarHash",
+                "TypeName": "String",
+                "Description": "The gravatar hash"
+            },
+            {
+                "Name": "AvatarBase64",
+                "TypeName": "String",
+                "Description": "The avatar base64"
+            }
+        ]
+    },
+    "MethodParameterSummary": {
+        "Description": "A summary of a method parameter",
+        "Fields": [
+            {
+                "Name": "Name",
+                "TypeName": "String",
+                "Description": "The name"
+            },
+            {
+                "Name": "TypeName",
+                "TypeName": "String",
+                "Description": "The type name"
+            },
+            {
+                "Name": "Description",
+                "TypeName": "String",
+                "Description": "The description"
+            },
+            {
+                "Name": "Optional",
+                "TypeName": "Boolean",
+                "Description": "Whether the parameter is optional"
+            },
+            {
+                "Name": "ParamEnumValues",
+                "TypeName": "Dictionary<String, Object>",
+                "Description": "The parameter enum values",
+                "Optional": true
+            }
+        ]
+    },
+    "MethodInfoSummary": {
+        "Description": "A summary of a method",
+        "Fields": [
+            {
+                "Name": "Description",
+                "TypeName": "String",
+                "Description": "The description"
+            },
+            {
+                "Name": "Returns",
+                "TypeName": "String",
+                "Description": "The returns",
+                "Optional": true
+            },
+            {
+                "Name": "Parameters",
+                "TypeName": "List<MethodParameterSummary>",
+                "Description": "The parameters"
+            },
+            {
+                "Name": "ReturnTypeName",
+                "TypeName": "String",
+                "Description": "The return type name"
+            },
+            {
+                "Name": "IsComplexType",
+                "TypeName": "Boolean",
+                "Description": "Whether the method is a complex type"
+            }
+        ]
+    },
+    "WebSessionSummary": {
+        "Description": "A summary of a web session",
+        "Fields": [
+            {
+                "Name": "Source",
+                "TypeName": "String",
+                "Description": "The source"
+            },
+            {
+                "Name": "SessionID",
+                "TypeName": "String",
+                "Description": "The session ID"
+            },
+            {
+                "Name": "LastActivity",
+                "TypeName": "DateTime",
+                "Description": "The last activity"
+            },
+            {
+                "Name": "StartTime",
+                "TypeName": "DateTime",
+                "Description": "The start time"
+            },
+            {
+                "Name": "Username",
+                "TypeName": "String",
+                "Description": "The username"
+            },
+            {
+                "Name": "SessionType",
+                "TypeName": "String",
+                "Description": "The session type"
+            }
+        ]
+    },
+    "IAuditLogEntry": {
+        "Description": "An audit log entry",
+        "Fields": [
+            {
+                "Name": "Category",
+                "TypeName": "String",
+                "Description": "The category"
+            },
+            {
+                "Name": "Id",
+                "TypeName": "Int32",
+                "Description": "The ID"
+            },
+            {
+                "Name": "Message",
+                "TypeName": "String",
+                "Description": "The message"
+            },
+            {
+                "Name": "Source",
+                "TypeName": "String",
+                "Description": "The source"
+            },
+            {
+                "Name": "Timestamp",
+                "TypeName": "DateTime",
+                "Description": "The timestamp"
+            },
+            {
+                "Name": "User",
+                "TypeName": "String",
+                "Description": "The user"
             }
         ]
     }

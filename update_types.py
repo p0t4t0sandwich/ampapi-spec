@@ -4,6 +4,22 @@ from dataclasses import dataclass, field
 import json
 import requests
 
+cs_to_py = { # C# to Python
+        "Int32": "int",
+        "String": "str",
+        "Boolean": "bool",
+        "DateTime": "str",
+        "Guid": "str",
+        "List": "list",
+        "Dictionary": "dict",
+        "Object": "Any",
+        "Int64": "int",
+        "Double": "float",
+        "Float": "float",
+        "Void": "None",
+        "JSONRawResponse": "Any",
+    }
+
 class AMPAPI():
     """Class for interacting with the AMP API"""
     def __init__(self, baseUri: str) -> None:
@@ -135,8 +151,8 @@ class UpdateTypes():
                         print(f"    EnumValues: {param.ParamEnumValues}")
 
     def convert_type(self, type_name: str) -> str:
-        if type_name in type_converter:
-            return type_converter[type_name]
+        if type_name in cs_to_py:
+            return cs_to_py[type_name]
         return type_name
 
     def lookup_type(self, type_name: str) -> str | dict:
@@ -159,8 +175,11 @@ class UpdateTypes():
             return {self.convert_type(key_type): self.lookup_type(value_type)}
         elif "List" in type_name:
             return [self.lookup_type(type_name.split("<")[1].split(">")[0])]
-        else:
+        elif type_name in cs_to_py:
             return self.convert_type(type_name)
+        else:
+            print(f"Type {type_name} not found in TypeSpec")
+            return type_name
 
     def validate_response_obj(self, response: dict, type_graph: dict | list) -> bool:
         if isinstance(type_graph, list):
@@ -170,14 +189,16 @@ class UpdateTypes():
             return isinstance(response, str)
         for key, value in type_graph.items():
             optional = False
-            if key[-1] == "?":
+            if type(value) == str and value[-1] == "?":
                 optional = True
-                key = key[:-1]
+                value = value[:-1]
             if key not in response:
-                if optional:
+                if not optional:
                     print(f"Key {key} not found in: [" + ", ".join(response.keys()) + "]")
                 continue
-            if isinstance(value, dict):
+            if value == "Any":
+                continue
+            elif isinstance(value, dict):
                 if not self.validate_response_obj(response[key], value):
                     return False
             elif isinstance(value, list):
@@ -204,11 +225,31 @@ class UpdateTypes():
         if isinstance(type_graph, list):
             if not all(self.validate_response_obj(item, type_graph[0]) for item in response):
                 valid = False
+        elif return_type == "str" or type_graph == "str":
+            if not isinstance(response, str):
+                print(f"Expected str but got {response}")
+                valid = False
+        elif return_type == "bool" or type_graph == "bool":
+            if not isinstance(response, bool):
+                print(f"Expected bool but got {response}")
+                valid = False
+        elif type_graph == "None":
+            if response != None:
+                print(f"Expected None but got {response}")
+                valid = False
+        elif type_graph == "Any":
+            pass
         else:
             for key, value in type_graph.items():
+                optional = False
+                if type(value) == str and value[-1] == "?":
+                    optional = True
+                    value = value[:-1]
+                if value == "Any":
+                    continue
                 if key not in response:
-                    if key != "str":
-                        print(f"Key {key} not found in response")
+                    if not optional:
+                        print(f"Field {key} not found in type {return_type}: [" + ", ".join(response.keys()) + "]")
                         valid = False
                     continue
                 if isinstance(value, dict):
@@ -229,41 +270,63 @@ if __name__ == "__main__":
     api = AMPAPI("http://localhost:8080")
     api.Login("api_user", "api_user123!")
 
-    type_converter = { # C# to Python
-        "Int32": "int",
-        "String": "str",
-        "Boolean": "bool",
-        "DateTime": "str",
-        "Guid": "str",
-        "List": "list",
-        "Dictionary": "dict",
-        "Object": "dict",
-        "Int64": "int",
-        "Double": "float",
-        "Float": "float"
-    }
-
-
-    module = "Core"
-    method = "GetStatus"
-
     spec = {
         "ADSModule": {
-            "GetApplicationEndpoints": {},
-            "GetInstances": {}
+            # "GetApplicationEndpoints": {"instanceId": "5fba16ec-9475-40f9-a517-33b4176c6def"},
+            # "GetDatastore": {"id": 1}
+            # "GetDatastoreInstances": {"datastoreId": 1}
+            # "GetDatastores": {},
+            # "GetDeploymentTemplates": {},
+            # "GetGroup": {"GroupId": "5fba16ec-9475-40f9-a517-33b4176c6def"}, # Missing fields, needs further testing
+            # "GetInstance": {"InstanceId": "5fba16ec-9475-40f9-a517-33b4176c6def"}, # Missing fields, needs further testing
+            # "GetInstanceNetworkInfo": {"InstanceName": "ADS01"},
+            # "GetInstanceStatuses": {},
+            # "GetInstances": {"ForceIncludeSelf": True},
+            # "GetLocalInstances": {}, # Missing fields, needs further testing
+            # "GetProvisionArguments": {"ModuleName": "Minecraft"}, # Missing fields, needs further testing
+            # "GetProvisionFitness": {}
+            # "GetSupportedApplications": {} # Missing fields, needs further testing
+            # "GetTargetInfo": {}
+            # "ManageInstance": {"InstanceId": "5fba16ec-9475-40f9-a517-33b4176c6def"} # ActionResult<String> generic needs some more parsing
+            # "RefreshAppCache": {}
+            # "GetSupportedAppSummaries": {} # Missing fields, needs further testing
+        },
+        "AnalyticsPlugin": {
+            # "GetAnalyticsSummary": {}
+        },
+        "Core": {
+            # "AcknowledgeAMPUpdate": {}
+            # "ActivateAMPLicence": {"LicenceKey": "0000-0000-0000-0000-0000-0000-0000-0000", "QueryOnly": True}, # ActionResult<LicenceInfo> generic needs some more parsing
+            # "AsyncTest": {}
+            # "CreateRole": {"Name": "TestRole", "AsCommonRole": False}, # ActionResult<Guid> generic needs some more parsing
+            # "CreateUser": {"Username": "testuser"} # ActionResult<Guid> generic needs some more parsing
+            # "CurrentSessionHasPermission": {"PermissionNode": "thing.test"}
+            # "EnableTwoFactor": {"Username": "api_user", "Password": "api_user123!"}, # ActionResult<TwoFactorSetupInfo> generic needs some more parsing
+            # "GetAMPRolePermissions": {"RoleId": "57e8d684-88c1-43ab-9cae-48c795a7e012"}
+            # "GetAMPUserInfo": {"Username": "api_user"} # Missing fields, needs further testing
+            # "GetAMPUsersSummary": {} # Missing fields, needs further testing
+            # "GetAPISpec": {} # Cannot handle nested Dictionary<> types
+            # "GetActiveAMPSessions": {}
+            # "GetAllAMPUserInfo": {} # Missing fields, needs further testing
+            # "GetAuditLogEntries": {"Before": "2024-10-12T00:00:00Z", "Count": 10}
+            # "GetConfig": {"node": "ADSModule.Network.DefaultAppIPBinding"} # Missing fields, needs further testing
+            # "GetConfigs": {"nodes": ["ADSModule.Network.DefaultAppIPBinding"]} # Missing fields, needs further testing
+            # "GetDiagnosticsInfo": {} # Apparently Dictionary<String, String> converted to {str: str} is a bit weird
+            # "GetModuleInfo": {}
+            # "GetNewGuid": {}
+
+        #     "GetStatus": {},
+        #     "GetUpdates": {}
         }
-        # "Core": [
-        #     "GetStatus",
-        #     "GetUpdates"
-        # ]
     }
 
     for module, methods in spec.items():
         for method in methods:
             print("----------------------------------------")
             print(f"Method: {module}.{method}")
-            response = api.APICall(f"{module}/{method}")
-            if "Title" in response and "Message" in response and "StackTrace" in response:
+            response = api.APICall(f"{module}/{method}", methods[method])
+            # print(json.dumps(response, indent=2))
+            if response != None and not isinstance(response, bool) and "Title" in response and "Message" in response and "StackTrace" in response:
                 print(f"Error: {response['Title']}")
                 print(f"Message: {response['Message']}")
                 print(f"StackTrace: {response['StackTrace']}")
