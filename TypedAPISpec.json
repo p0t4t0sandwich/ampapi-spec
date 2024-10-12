@@ -1804,17 +1804,17 @@
     },
     "GetPermissionsSpec": {
       "Parameters": [],
-      "ReturnTypeName": "IList<IPermissionsTreeNode>",
+      "ReturnTypeName": "List<IPermissionsTreeNode>",
       "IsComplexType": true
     },
     "GetPortSummaries": {
       "Parameters": [],
-      "ReturnTypeName": "IEnumerable<ListeningPortSummary>",
+      "ReturnTypeName": "List<ListeningPortSummary>",
       "IsComplexType": true
     },
     "GetProvisionSpec": {
       "Parameters": [],
-      "ReturnTypeName": "List<JObject>",
+      "ReturnTypeName": "List<SettingSpec>",
       "IsComplexType": true
     },
     "GetRemoteLoginToken": {
@@ -1849,12 +1849,12 @@
     },
     "GetRoleData": {
       "Parameters": [],
-      "ReturnTypeName": "IEnumerable<AuthRoleSummary>",
+      "ReturnTypeName": "List<AuthRoleSummary>",
       "IsComplexType": true
     },
     "GetRoleIds": {
       "Parameters": [],
-      "ReturnTypeName": "IDictionary<Guid, String>",
+      "ReturnTypeName": "Dictionary<Guid, String>",
       "IsComplexType": false
     },
     "GetScheduleData": {
@@ -1877,7 +1877,7 @@
           "Optional": true
         }
       ],
-      "ReturnTypeName": "IDictionary<String, String>",
+      "ReturnTypeName": "Dictionary<String, String>",
       "IsComplexType": false
     },
     "GetSettingsSpec": {
@@ -1892,7 +1892,7 @@
     },
     "GetTasks": {
       "Parameters": [],
-      "ReturnTypeName": "IEnumerable<RunningTask>",
+      "ReturnTypeName": "List<RunningTask>",
       "IsComplexType": true
     },
     "GetTimeIntervalTrigger": {

@@ -2146,7 +2146,8 @@
             {
                 "Name": "EnumValues",
                 "TypeName": "Dictionary<String, String>",
-                "Description": "The enum values"
+                "Description": "The enum values",
+                "Optional": true
             },
             {
                 "Name": "EnumValuesAreDeferred",
@@ -2861,6 +2862,446 @@
                 "Name": "User",
                 "TypeName": "String",
                 "Description": "The user"
+            }
+        ]
+    },
+    "IPermissionsTreeNode": {
+        "Description": "A permissions tree node",
+        "Fields": [
+            {
+                "Name": "Children",
+                "TypeName": "List<IPermissionsTreeNode>",
+                "Description": "The children"
+            },
+            {
+                "Name": "Description",
+                "TypeName": "String",
+                "Description": "The description"
+            },
+            {
+                "Name": "Name",
+                "TypeName": "String",
+                "Description": "The name"
+            },
+            {
+                "Name": "DisplayName",
+                "TypeName": "String",
+                "Description": "The display name"
+            },
+            {
+                "Name": "Node",
+                "TypeName": "String",
+                "Description": "The node"
+            }
+        ]
+    },
+    "AuthUserSummary": {
+        "Description": "A summary of an authenticated user",
+        "Fields": [
+            {
+                "Name": "ID",
+                "TypeName": "Guid",
+                "Description": "The ID"
+            },
+            {
+                "Name": "Name",
+                "TypeName": "String",
+                "Description": "The name"
+            }
+        ]
+    },
+    "AuthRoleSummary": {
+        "Description": "A summary of an authenticated role",
+        "Fields": [
+            {
+                "Name": "ID",
+                "TypeName": "Guid",
+                "Description": "The ID"
+            },
+            {
+                "Name": "IsDefault",
+                "TypeName": "Boolean",
+                "Description": "Whether the role is default"
+            },
+            {
+                "Name": "Name",
+                "TypeName": "String",
+                "Description": "The name"
+            },
+            {
+                "Name": "Description",
+                "TypeName": "String",
+                "Description": "The description"
+            },
+            {
+                "Name": "Hidden",
+                "TypeName": "Boolean",
+                "Description": "Whether the role is hidden"
+            },
+            {
+                "Name": "Permissions",
+                "TypeName": "List<String>",
+                "Description": "The permissions"
+            },
+            {
+                "Name": "Members",
+                "TypeName": "List<AuthUserSummary>",
+                "Description": "The members"
+            },
+            {
+                "Name": "IsInstanceSpecific",
+                "TypeName": "Boolean",
+                "Description": "Whether the role is instance specific"
+            },
+            {
+                "Name": "IsCommonRole",
+                "TypeName": "Boolean",
+                "Description": "Whether the role is common"
+            },
+            {
+                "Name": "DisableEdits",
+                "TypeName": "Boolean",
+                "Description": "Whether edits are disabled"
+            }
+        ]
+    },
+    "ScheduleTaskParameter": {
+        "Description": "A parameter for a scheduled task",
+        "Fields": [
+            {
+                "Name": "Name",
+                "TypeName": "String",
+                "Description": "The name"
+            },
+            {
+                "Name": "DisplayName",
+                "TypeName": "String",
+                "Description": "The display name"
+            },
+            {
+                "Name": "Description",
+                "TypeName": "String",
+                "Description": "The description"
+            },
+            {
+                "Name": "ValueType",
+                "TypeName": "String",
+                "Description": "The value type"
+            },
+            {
+                "Name": "EnumValues",
+                "TypeName": "Dictionary<String, String>",
+                "Description": "The enum values",
+                "Optional": true
+            },
+            {
+                "Name": "SelectionSource",
+                "TypeName": "StringSelectionSourceAttribute",
+                "Description": "The selection source"
+            },
+            {
+                "Name": "InputType",
+                "TypeName": "String",
+                "Description": "The input type"
+            }
+        ]
+    },
+    "APIMethodInfo": {
+        "Description": "Information about an API method",
+        "Fields": [
+            {
+                "Name": "Id",
+                "TypeName": "String",
+                "Description": "The ID"
+            },
+            {
+                "Name": "Name",
+                "TypeName": "String",
+                "Description": "The name"
+            },
+            {
+                "Name": "Description",
+                "TypeName": "String",
+                "Description": "The description"
+            },
+            {
+                "Name": "DisplayFormat",
+                "TypeName": "String",
+                "Description": "The display format"
+            },
+            {
+                "Name": "Consumes",
+                "TypeName": "List<ScheduleTaskParameter>",
+                "Description": "The parameters"
+            }
+        ]
+    },
+    "ScheduleErrorBehaviour": {
+        "SpecialType": "Enum",
+        "SerializesAs": "Int32",
+        "Description": "Represents the schedule error behaviour",
+        "Fields": [
+            {
+                "Name": "Normal",
+                "TypeName": "Int32",
+                "Description": "Normal",
+                "Value": 0
+            },
+            {
+                "Name": "ContinueSilently",
+                "TypeName": "Int32",
+                "Description": "Continue silently",
+                "Value": 1
+            }
+        ]
+    },
+    "ScheduleEnabledState": {
+        "SpecialType": "Enum",
+        "SerializesAs": "Int32",
+        "Description": "Represents the schedule enabled state",
+        "Fields": [
+            {
+                "Name": "Disabled",
+                "TypeName": "Int32",
+                "Description": "Disabled",
+                "Value": 0
+            },
+            {
+                "Name": "Enabled",
+                "TypeName": "Int32",
+                "Description": "Enabled",
+                "Value": 1
+            },
+            {
+                "Name": "RunOnce",
+                "TypeName": "Int32",
+                "Description": "Run once",
+                "Value": 2
+            },
+            {
+                "Name": "DeleteOnRun",
+                "TypeName": "Int32",
+                "Description": "Delete on run",
+                "Value": 4
+            }
+        ]
+    },
+    "ScheduleEntryDefinition": {
+        "Description": "A schedule entry definition",
+        "Fields": [
+            {
+                "Name": "Id",
+                "TypeName": "Guid",
+                "Description": "The ID"
+            },
+            {
+                "Name": "TaskMethodName",
+                "TypeName": "String",
+                "Description": "The task method name"
+            },
+            {
+                "Name": "ParameterMapping",
+                "TypeName": "Dictionary<String, String>",
+                "Description": "The parameter mapping"
+            },
+            {
+                "Name": "EnabledState",
+                "TypeName": "ScheduleEnabledState",
+                "Description": "The enabled state"
+            },
+            {
+                "Name": "ErrorBehaviour",
+                "TypeName": "ScheduleErrorBehaviour",
+                "Description": "The error behaviour"
+            },
+            {
+                "Name": "Locked",
+                "TypeName": "Boolean",
+                "Description": "Whether the entry is locked"
+            },
+            {
+                "Name": "CreatedBy",
+                "TypeName": "Guid",
+                "Description": "The creator",
+                "Optional": true
+            },
+            {
+                "Name": "Order",
+                "TypeName": "Int32",
+                "Description": "The order"
+            },
+            {
+                "Name": "WaitForComplete",
+                "TypeName": "Boolean",
+                "Description": "Whether to wait for completion"
+            },
+            {
+                "Name": "LastExecuteError",
+                "TypeName": "Boolean",
+                "Description": "Whether the last execution had an error"
+            },
+            {
+                "Name": "LastErrorReason",
+                "TypeName": "String",
+                "Description": "The last error reason"
+            }
+        ]
+    },
+    "TriggerInfo": {
+        "Description": "Information about a trigger",
+        "Fields": [
+            {
+                "Name": "Id",
+                "TypeName": "String",
+                "Description": "The ID"
+            },
+            {
+                "Name": "Type",
+                "TypeName": "String",
+                "Description": "The type"
+            },
+            {
+                "Name": "Description",
+                "TypeName": "String",
+                "Description": "The description"
+            },
+            {
+                "Name": "Emits",
+                "TypeName": "List<String>",
+                "Description": "The emits"
+            },
+            {
+                "Name": "Tasks",
+                "TypeName": "List<ScheduleEntryDefinition>",
+                "Description": "The tasks"
+            },
+            {
+                "Name": "TriggerType",
+                "TypeName": "String",
+                "Description": "The trigger type"
+            },
+            {
+                "Name": "EnabledState",
+                "TypeName": "ScheduleEnabledState",
+                "Description": "The enabled state"
+            }
+        ]
+    },
+    "ScheduleInfo": {
+        "Description": "Information about a schedule",
+        "Fields": [
+            {
+                "Name": "AvailableMethods",
+                "TypeName": "List<APIMethodInfo>",
+                "Description": "The available methods"
+            },
+            {
+                "Name": "AvailableTriggers",
+                "TypeName": "List<TriggerInfo>",
+                "Description": "The available triggers"
+            },
+            {
+                "Name": "PopulatedTriggers",
+                "TypeName": "List<TriggerInfo>",
+                "Description": "The populated triggers"
+            }
+        ]
+    },
+    "ScheduleTrigger": {
+        "Description": "A time interval trigger",
+        "Fields": [
+            {
+                "Name": "Id",
+                "TypeName": "Guid",
+                "Description": "The ID"
+            },
+            {
+                "Name": "Name",
+                "TypeName": "String",
+                "Description": "The name"
+            },
+            {
+                "Name": "Description",
+                "TypeName": "String",
+                "Description": "The description"
+            },
+            {
+                "Name": "Order",
+                "TypeName": "Int32",
+                "Description": "The order"
+            },
+            {
+                "Name": "LastExecuted",
+                "TypeName": "DateTime",
+                "Description": "The last executed",
+                "Optional": true
+            },
+            {
+                "Name": "EnabledState",
+                "TypeName": "ScheduleEnabledState",
+                "Description": "The enabled state"
+            }
+        ]
+    },
+    "TimeIntervalTrigger": {
+        "SpecialNote": "Extends ScheduleTrigger",
+        "Description": "A time interval trigger",
+        "Fields": [
+            {
+                "Name": "Id",
+                "TypeName": "Guid",
+                "Description": "The ID"
+            },
+            {
+                "Name": "Name",
+                "TypeName": "String",
+                "Description": "The name"
+            },
+            {
+                "Name": "Description",
+                "TypeName": "String",
+                "Description": "The description"
+            },
+            {
+                "Name": "Order",
+                "TypeName": "Int32",
+                "Description": "The order"
+            },
+            {
+                "Name": "LastExecuted",
+                "TypeName": "DateTime",
+                "Description": "The last executed",
+                "Optional": true
+            },
+            {
+                "Name": "EnabledState",
+                "TypeName": "ScheduleEnabledState",
+                "Description": "The enabled state"
+            },
+            {
+                "Name": "MatchMonths",
+                "TypeName": "List<Int32>",
+                "Description": "The match months"
+            },
+            {
+                "Name": "MatchDays",
+                "TypeName": "List<Int32>",
+                "Description": "The match days"
+            },
+            {
+                "Name": "MatchHours",
+                "TypeName": "List<Int32>",
+                "Description": "The match hours"
+            },
+            {
+                "Name": "MatchMinutes",
+                "TypeName": "List<Int32>",
+                "Description": "The match minutes"
+            },
+            {
+                "Name": "MatchDaysOfMonth",
+                "TypeName": "List<Int32>",
+                "Description": "The match days of month"
             }
         ]
     }

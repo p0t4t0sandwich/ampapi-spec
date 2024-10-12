@@ -164,7 +164,7 @@ class UpdateTypes():
                 return_val = {}
                 for field in updater.TypeSpec[type_name].Fields:
                     if field.Optional:
-                        return_val[field.Name] = self.lookup_type(field.TypeName) + "?"
+                        return_val[field.Name] = str(self.lookup_type(field.TypeName)) + "?"
                     else:
                         return_val[field.Name] = self.lookup_type(field.TypeName)
                 return return_val
@@ -187,6 +187,8 @@ class UpdateTypes():
                 return False
         if type_graph == "str":
             return isinstance(response, str)
+        if type_graph == "Any":
+            return True
         for key, value in type_graph.items():
             optional = False
             if type(value) == str and value[-1] == "?":
@@ -198,6 +200,9 @@ class UpdateTypes():
                 continue
             if value == "Any":
                 continue
+            if value == "{'str': 'str'}":
+                if not all(isinstance(key, str) and isinstance(value, str) for key, value in response[key].items()):
+                    return False
             elif isinstance(value, dict):
                 if not self.validate_response_obj(response[key], value):
                     return False
@@ -217,7 +222,7 @@ class UpdateTypes():
         type_graph: dict | list = self.lookup_type(return_type)
 
         # Pretty json
-        # print(json.dumps(type_graph, indent=2))
+        print(json.dumps(type_graph, indent=2))
 
         print(f"Return Type: {return_type}")
 
@@ -314,9 +319,22 @@ if __name__ == "__main__":
             # "GetDiagnosticsInfo": {} # Apparently Dictionary<String, String> converted to {str: str} is a bit weird
             # "GetModuleInfo": {}
             # "GetNewGuid": {}
-
-        #     "GetStatus": {},
-        #     "GetUpdates": {}
+            # "GetPermissionsSpec": {} # Recursive type, needs to be reworked. Could maybe just turn the inner value into Object?
+            # "GetPortSummaries": {}
+            # "GetProvisionSpec": {}
+            # "GetRemoteLoginToken": {"Description": "Test", "IsTemporary": True}
+            # "GetRole": {"RoleId": "57e8d684-88c1-43ab-9cae-48c795a7e012"}
+            # "GetRoleData": {}
+            # "GetRoleIds": {} # Needs some work to convert Dictionary<Guid, String> to {str: str}
+            # "GetScheduleData": {}
+            # "GetSettingValues": {"SettingNode": "ADSModule.Network.DefaultAppIPBinding", "WithRefresh": True} # Apparently Dictionary<String, String> converted to {str: str} is a bit weird
+            # "GetSettingsSpec": {} # Dictionary<String, SettingSpec> needs some work
+            # "GetStatus": {},
+            # "GetTasks": {}
+            # "GetTimeIntervalTrigger": {"Id": "bd0ce7c3-ab80-48ac-b134-174b63acb04b"} # Needs some tinkering
+            # "GetUpdateInfo": {}
+            # "GetUpdates": {}
+            # "GetUserActionsSpec": {}
         }
     }
 
