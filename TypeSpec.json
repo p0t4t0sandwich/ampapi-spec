@@ -938,7 +938,7 @@
             }
         ]
     },
-    "FileDirectory": {
+    "DirectoryListing": {
         "Description": "A file directory object",
         "Fields": [
             {
@@ -958,17 +958,17 @@
             },
             {
                 "Name": "SizeBytes",
-                "TypeName": "Int32",
+                "TypeName": "Int64",
                 "Description": "The size in bytes"
             },
             {
                 "Name": "Created",
-                "TypeName": "String",
+                "TypeName": "DateTime",
                 "Description": "The creation date"
             },
             {
                 "Name": "Modified",
-                "TypeName": "String",
+                "TypeName": "DateTime",
                 "Description": "The modification date"
             },
             {
@@ -3302,6 +3302,324 @@
                 "Name": "MatchDaysOfMonth",
                 "TypeName": "List<Int32>",
                 "Description": "The match days of month"
+            }
+        ]
+    },
+    "SimpleUser": {
+        "Description": "A simple user object",
+        "Fields": [
+            {
+                "Name": "Id",
+                "TypeName": "String",
+                "Description": "The ID"
+            },
+            {
+                "Name": "UserSessionId",
+                "TypeName": "Guid",
+                "Description": "The user session ID"
+            },
+            {
+                "Name": "SessionID",
+                "TypeName": "String",
+                "Description": "The session ID"
+            },
+            {
+                "Name": "Name",
+                "TypeName": "String",
+                "Description": "The name"
+            },
+            {
+                "Name": "JoinTime",
+                "TypeName": "DateTime",
+                "Description": "The join time"
+            },
+            {
+                "Name": "Tags",
+                "TypeName": "List<String>",
+                "Description": "The tags"
+            },
+            {
+                "Name": "UID",
+                "TypeName": "String",
+                "Description": "The UID"
+            },
+            {
+                "Name": "IPAddress",
+                "TypeName": "String",
+                "Description": "The IP address"
+            },
+            {
+                "Name": "Port",
+                "TypeName": "Int32",
+                "Description": "The port"
+            },
+            {
+                "Name": "TimeLoggedIn",
+                "TypeName": "TimeSpan",
+                "Description": "The time logged in"
+            }
+        ]
+    },
+    "WebauthnLoginInfo": {
+        "Description": "Information about a WebAuthn login",
+        "Fields": [
+            {
+                "Name": "Ids",
+                "TypeName": "List<String>",
+                "Description": "The IDs"
+            },
+            {
+                "Name": "Challenge",
+                "TypeName": "String",
+                "Description": "The challenge"
+            }
+        ]
+    },
+    "WebauthnCredentialSummary": {
+        "Description": "A summary of a WebAuthn credential",
+        "Fields": [
+            {
+                "Name": "ID",
+                "TypeName": "Int32",
+                "Description": "The ID"
+            },
+            {
+                "Name": "Description",
+                "TypeName": "String",
+                "Description": "The description"
+            },
+            {
+                "Name": "CreatedUTC",
+                "TypeName": "DateTime",
+                "Description": "The created time"
+            },
+            {
+                "Name": "LastUsedUTC",
+                "TypeName": "DateTime",
+                "Description": "The last used time"
+            }
+        ]
+    },
+    "AuthenticationRequirement": {
+        "SpecialType": "Enum",
+        "SerializesAs": "Int32",
+        "Description": "Represents the authentication requirement",
+        "Fields": [
+            {
+                "Name": "None",
+                "TypeName": "Int32",
+                "Description": "None",
+                "Value": 0
+            },
+            {
+                "Name": "Username",
+                "TypeName": "Int32",
+                "Description": "Username",
+                "Value": 1
+            },
+            {
+                "Name": "Password",
+                "TypeName": "Int32",
+                "Description": "Password",
+                "Value": 2
+            },
+            {
+                "Name": "TOTP",
+                "TypeName": "Int32",
+                "Description": "TOTP",
+                "Value": 4
+            },
+            {
+                "Name": "Passkeys",
+                "TypeName": "Int32",
+                "Description": "Passkeys",
+                "Value": 8
+            }
+        ]
+    },
+    "SecurityCheckResult": {
+        "Description": "A security check result",
+        "Fields": [
+            {
+                "Name": "Title",
+                "TypeName": "String",
+                "Description": "The title"
+            },
+            {
+                "Name": "Description",
+                "TypeName": "String",
+                "Description": "The description"
+            },
+            {
+                "Name": "Resolution",
+                "TypeName": "String",
+                "Description": "The resolution"
+            },
+            {
+                "Name": "Severity",
+                "TypeName": "Int32",
+                "Description": "The severity"
+            },
+            {
+                "Name": "Pass",
+                "TypeName": "Boolean",
+                "Description": "Whether the check passed"
+            },
+            {
+                "Name": "Hidden",
+                "TypeName": "Boolean",
+                "Description": "Whether the check is hidden"
+            }
+        ]
+    },
+    "FileChunkData": {
+        "Description": "A chunk of file data",
+        "Fields": [
+            {
+                "Name": "Base64Data",
+                "TypeName": "String",
+                "Description": "The base64 data"
+            },
+            {
+                "Name": "BytesLength",
+                "TypeName": "Int32",
+                "Description": "The length of the data in bytes"
+            }
+        ]
+    },
+    "BackupManifest": {
+        "Description": "A backup manifest",
+        "Fields": [
+            {
+                "Name": "Id",
+                "TypeName": "Guid",
+                "Description": "The ID"
+            },
+            {
+                "Name": "ParentManifest",
+                "TypeName": "Guid",
+                "Description": "The parent manifest",
+                "Optional": true
+            },
+            {
+                "Name": "Timestamp",
+                "TypeName": "DateTime",
+                "Description": "The timestamp"
+            },
+            {
+                "Name": "ModuleName",
+                "TypeName": "String",
+                "Description": "The module name"
+            },
+            {
+                "Name": "TakenBy",
+                "TypeName": "String",
+                "Description": "The user who took the backup"
+            },
+            {
+                "Name": "CreatedAutomatically",
+                "TypeName": "Boolean",
+                "Description": "Whether the backup was created automatically"
+            },
+            {
+                "Name": "Name",
+                "TypeName": "String",
+                "Description": "The name"
+            },
+            {
+                "Name": "Description",
+                "TypeName": "String",
+                "Description": "The description"
+            },
+            {
+                "Name": "META",
+                "TypeName": "String",
+                "Description": "The meta"
+            },
+            {
+                "Name": "TotalSizeBytes",
+                "TypeName": "Int64",
+                "Description": "The total size in bytes"
+            },
+            {
+                "Name": "Sticky",
+                "TypeName": "Boolean",
+                "Description": "Whether the backup is sticky"
+            },
+            {
+                "Name": "SourceOS",
+                "TypeName": "SupportedOS",
+                "Description": "The source OS"
+            },
+            {
+                "Name": "StoredLocally",
+                "TypeName": "Boolean",
+                "Description": "Whether the backup is stored locally"
+            },
+            {
+                "Name": "StoredRemotely",
+                "TypeName": "Boolean",
+                "Description": "Whether the backup is stored remotely"
+            },
+            {
+                "Name": "RemoteStoreId",
+                "TypeName": "String",
+                "Description": "The remote store ID"
+            },
+            {
+                "Name": "HashSHA1",
+                "TypeName": "String",
+                "Description": "The SHA1 hash"
+            }
+        ]
+    },
+    "OPEntry": {
+        "Description": "An OP entry",
+        "Fields": [
+            {
+                "Name": "Name",
+                "TypeName": "String",
+                "Description": "The name"
+            },
+            {
+                "Name": "UUID",
+                "TypeName": "String",
+                "Description": "The UUID"
+            },
+            {
+                "Name": "Level",
+                "TypeName": "Int32",
+                "Description": "The level"
+            }
+        ]
+    },
+    "WhitelistEntry": {
+        "Description": "A whitelist entry",
+        "Fields": [
+            {
+                "Name": "Name",
+                "TypeName": "String",
+                "Description": "The name"
+            },
+            {
+                "Name": "UUID",
+                "TypeName": "String",
+                "Description": "The UUID"
+            }
+        ]
+    },
+    "UserAccessData": {
+        "Description": "User access data",
+        "Fields": [
+            {
+                "Name": "Whitelist",
+                "TypeName": "List<WhitelistEntry>",
+                "Description": "The whitelist"
+            },
+            {
+                "Name": "OPList",
+                "TypeName": "List<OPEntry>",
+                "Description": "The OP list"
             }
         ]
     }

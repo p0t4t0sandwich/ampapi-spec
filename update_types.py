@@ -335,6 +335,20 @@ if __name__ == "__main__":
             # "GetUpdateInfo": {}
             # "GetUpdates": {}
             # "GetUserActionsSpec": {}
+            # "GetUserList": {} # Apparently Dictionary<String, String> converted to {str: str} is a bit weird
+            # "GetWebauthnChallenge": {} # ActionResult<String> generic needs some more parsing
+            # "GetWebauthnCredentialIDs": {"username": "api_user"}
+            # "GetWebauthnCredentialSummaries": {}
+            # "Login": {"username": "api_user", "password": "api_user123!", "token": "", "rememberMe": False}
+            # "SetConfigs": {"data": {"ADSModule.Network.DefaultAppIPBinding": "0.0.0.0"}}
+            # "GetAuthenticationRequirements": {"username": "api_user"}
+        },
+        "FileManagerPlugin": {
+            # "GetDirectoryListing": {"Dir": "./"}
+            # "GetFileChunk": {"Filename": "__VDS__ADS01/WebRoot/Scripts/API.js", "Position": 0, "Length": 100}
+        },
+        "LocalFileBackupPlugin": {
+            # "GetBackups": {} # Some serialization issue
         }
     }
 

@@ -1964,7 +1964,7 @@
     },
     "GetWebauthnCredentialSummaries": {
       "Parameters": [],
-      "ReturnTypeName": "IEnumerable<WebauthnCredentialSummary>",
+      "ReturnTypeName": "List<WebauthnCredentialSummary>",
       "IsComplexType": true
     },
     "GetWebserverMetrics": {
@@ -2004,7 +2004,7 @@
           "Optional": false
         }
       ],
-      "ReturnTypeName": "LoginResult",
+      "ReturnTypeName": "LoginResponse",
       "IsComplexType": true
     },
     "Logout": {
@@ -2346,12 +2346,12 @@
           "Optional": false
         }
       ],
-      "ReturnTypeName": "IEnumerable<AuthenticationRequirement>",
+      "ReturnTypeName": "List<AuthenticationRequirement>",
       "IsComplexType": true
     },
     "RunSecurityCheck": {
       "Parameters": [],
-      "ReturnTypeName": "IEnumerable<JObject>",
+      "ReturnTypeName": "List<SecurityCheckResult>",
       "IsComplexType": true
     }
   },
@@ -2531,7 +2531,7 @@
           "Optional": false
         }
       ],
-      "ReturnTypeName": "IEnumerable<FileDirectory>",
+      "ReturnTypeName": "List<DirectoryListing>",
       "IsComplexType": true
     },
     "GetFileChunk": {
@@ -2749,7 +2749,7 @@
     },
     "GetBackups": {
       "Parameters": [],
-      "ReturnTypeName": "IEnumerable<BackupManifest>",
+      "ReturnTypeName": "List<BackupManifest>",
       "IsComplexType": true
     },
     "RestoreBackup": {
@@ -2880,7 +2880,7 @@
     },
     "BukGetCategories": {
       "Parameters": [],
-      "ReturnTypeName": "JObject",
+      "ReturnTypeName": "JSONRawResponse",
       "IsComplexType": true
     },
     "BukGetInstallUpdatePlugin": {
@@ -2897,7 +2897,7 @@
     },
     "BukGetInstalledPlugins": {
       "Parameters": [],
-      "ReturnTypeName": "JObject",
+      "ReturnTypeName": "JSONRawResponse",
       "IsComplexType": true
     },
     "BukGetPluginInfo": {
@@ -2909,7 +2909,7 @@
           "Optional": false
         }
       ],
-      "ReturnTypeName": "JObject",
+      "ReturnTypeName": "JSONRawResponse",
       "IsComplexType": true
     },
     "BukGetPluginsForCategory": {
@@ -2933,12 +2933,12 @@
           "Optional": false
         }
       ],
-      "ReturnTypeName": "JObject",
+      "ReturnTypeName": "JSONRawResponse",
       "IsComplexType": true
     },
     "BukGetPopularPlugins": {
       "Parameters": [],
-      "ReturnTypeName": "JObject",
+      "ReturnTypeName": "JSONRawResponse",
       "IsComplexType": true
     },
     "BukGetRemovePlugin": {
@@ -2974,7 +2974,7 @@
           "Optional": false
         }
       ],
-      "ReturnTypeName": "JObject",
+      "ReturnTypeName": "JSONRawResponse",
       "IsComplexType": true
     },
     "ClearInventoryByID": {
@@ -3010,12 +3010,12 @@
     },
     "GetOPWhitelist": {
       "Parameters": [],
-      "ReturnTypeName": "JObject",
+      "ReturnTypeName": "UserAccessData",
       "IsComplexType": true
     },
     "GetWhitelist": {
       "Parameters": [],
-      "ReturnTypeName": "IEnumerable<JObject>",
+      "ReturnTypeName": "List<WhitelistEntry>",
       "IsComplexType": true
     },
     "KickUserByID": {
@@ -3044,7 +3044,7 @@
     },
     "LoadOPList": {
       "Parameters": [],
-      "ReturnTypeName": "IEnumerable<JObject>",
+      "ReturnTypeName": "List<OPEntry>",
       "IsComplexType": true
     },
     "RemoveOPEntry": {
