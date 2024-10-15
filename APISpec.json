@@ -3,10 +3,10 @@
     "AddDatastore": {
       "Parameters": [
         {
-          "Name": "newDatastore",
-          "TypeName": "InstanceDatastore",
           "Description": "",
-          "Optional": false
+          "Name": "newDatastore",
+          "Optional": false,
+          "TypeName": "InstanceDatastore"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -15,22 +15,22 @@
     "ApplyInstanceConfiguration": {
       "Parameters": [
         {
+          "Description": "",
           "Name": "InstanceID",
-          "TypeName": "Guid",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "Guid"
         },
         {
+          "Description": "",
           "Name": "Args",
-          "TypeName": "Dictionary<String, String>",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "Dictionary<String, String>"
         },
         {
-          "Name": "RebuildConfiguration",
-          "TypeName": "Boolean",
           "Description": "",
-          "Optional": true
+          "Name": "RebuildConfiguration",
+          "Optional": true,
+          "TypeName": "Boolean"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -41,34 +41,34 @@
       "Returns": "",
       "Parameters": [
         {
+          "Description": "",
           "Name": "InstanceID",
-          "TypeName": "Guid",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "Guid"
         },
         {
+          "Description": "",
           "Name": "TemplateID",
-          "TypeName": "Int32",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "Int32"
         },
         {
+          "Description": "",
           "Name": "NewFriendlyName",
-          "TypeName": "String",
-          "Description": "",
-          "Optional": true
+          "Optional": true,
+          "TypeName": "String"
         },
         {
+          "Description": "",
           "Name": "Secret",
-          "TypeName": "String",
-          "Description": "",
-          "Optional": true
+          "Optional": true,
+          "TypeName": "String"
         },
         {
-          "Name": "RestartIfPreviouslyRunning",
-          "TypeName": "Boolean",
           "Description": "",
-          "Optional": true
+          "Name": "RestartIfPreviouslyRunning",
+          "Optional": true,
+          "TypeName": "Boolean"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -77,34 +77,34 @@
     "AttachADS": {
       "Parameters": [
         {
+          "Description": "",
           "Name": "Friendly",
-          "TypeName": "String",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "String"
         },
         {
+          "Description": "",
           "Name": "IsHTTPS",
-          "TypeName": "Boolean",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "Boolean"
         },
         {
+          "Description": "",
           "Name": "Host",
-          "TypeName": "String",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "String"
         },
         {
+          "Description": "",
           "Name": "Port",
-          "TypeName": "Int32",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "Int32"
         },
         {
-          "Name": "InstanceID",
-          "TypeName": "Guid",
           "Description": "",
-          "Optional": false
+          "Name": "InstanceID",
+          "Optional": false,
+          "TypeName": "Guid"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -113,16 +113,16 @@
     "CloneTemplate": {
       "Parameters": [
         {
-          "Name": "Id",
-          "TypeName": "Int32",
           "Description": "",
-          "Optional": false
+          "Name": "Id",
+          "Optional": false,
+          "TypeName": "Int32"
         },
         {
-          "Name": "NewName",
-          "TypeName": "String",
           "Description": "",
-          "Optional": false
+          "Name": "NewName",
+          "Optional": false,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -131,10 +131,10 @@
     "CreateDeploymentTemplate": {
       "Parameters": [
         {
-          "Name": "Name",
-          "TypeName": "String",
           "Description": "",
-          "Optional": false
+          "Name": "Name",
+          "Optional": false,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -143,75 +143,74 @@
     "CreateInstance": {
       "Parameters": [
         {
+          "Description": "",
           "Name": "TargetADSInstance",
-          "TypeName": "Guid",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "Guid"
         },
         {
+          "Description": "",
           "Name": "NewInstanceId",
-          "TypeName": "Guid",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "Guid"
         },
         {
+          "Description": "",
           "Name": "Module",
-          "TypeName": "String",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "String"
         },
         {
+          "Description": "",
           "Name": "InstanceName",
-          "TypeName": "String",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "String"
         },
         {
+          "Description": "",
           "Name": "FriendlyName",
-          "TypeName": "String",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "String"
         },
         {
+          "Description": "",
           "Name": "IPBinding",
-          "TypeName": "String",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "String"
         },
         {
+          "Description": "",
           "Name": "PortNumber",
-          "TypeName": "Int32",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "Int32"
         },
         {
+          "Description": "",
           "Name": "AdminUsername",
-          "TypeName": "String",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "String"
         },
         {
+          "Description": "",
           "Name": "AdminPassword",
-          "TypeName": "String",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "String"
         },
         {
+          "Description": "",
           "Name": "ProvisionSettings",
-          "TypeName": "Dictionary<String, String>",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "Dictionary<String, String>"
         },
         {
-          "Name": "AutoConfigure",
-          "TypeName": "Boolean",
           "Description": "When enabled, all settings other than the Module, Target and FriendlyName are ignored and replaced with automatically generated values.",
-          "Optional": true
+          "Name": "AutoConfigure",
+          "Optional": true,
+          "TypeName": "Boolean"
         },
         {
-          "Name": "PostCreate",
-          "TypeName": "PostCreateAppActions",
           "Description": "",
+          "Name": "PostCreate",
           "Optional": true,
           "ParamEnumValues": {
             "DoNothing": 0,
@@ -220,25 +219,26 @@
             "UpdateAndStartOnce": 3,
             "UpdateAndStartAlways": 4,
             "StartAlways": 5
-          }
+          },
+          "TypeName": "PostCreateAppActions"
         },
         {
+          "Description": "",
           "Name": "StartOnBoot",
-          "TypeName": "Boolean",
-          "Description": "",
-          "Optional": true
+          "Optional": true,
+          "TypeName": "Boolean"
         },
         {
+          "Description": "",
           "Name": "DisplayImageSource",
-          "TypeName": "String",
-          "Description": "",
-          "Optional": true
+          "Optional": true,
+          "TypeName": "String"
         },
         {
-          "Name": "TargetDatastore",
-          "TypeName": "Int32",
           "Description": "",
-          "Optional": true
+          "Name": "TargetDatastore",
+          "Optional": true,
+          "TypeName": "Int32"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -247,27 +247,26 @@
     "CreateInstanceFromSpec": {
       "Parameters": [
         {
+          "Description": "",
           "Name": "SpecId",
-          "TypeName": "Guid",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "Guid"
         },
         {
+          "Description": "",
           "Name": "TargetADSInstance",
-          "TypeName": "Guid",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "Guid"
         },
         {
+          "Description": "",
           "Name": "FriendlyName",
-          "TypeName": "String",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "String"
         },
         {
-          "Name": "PostCreate",
-          "TypeName": "PostCreateAppActions",
           "Description": "",
+          "Name": "PostCreate",
           "Optional": true,
           "ParamEnumValues": {
             "DoNothing": 0,
@@ -276,19 +275,20 @@
             "UpdateAndStartOnce": 3,
             "UpdateAndStartAlways": 4,
             "StartAlways": 5
-          }
+          },
+          "TypeName": "PostCreateAppActions"
         },
         {
+          "Description": "",
           "Name": "StartOnBoot",
-          "TypeName": "Boolean",
-          "Description": "",
-          "Optional": true
+          "Optional": true,
+          "TypeName": "Boolean"
         },
         {
-          "Name": "TargetDatastore",
-          "TypeName": "Int32",
           "Description": "",
-          "Optional": true
+          "Name": "TargetDatastore",
+          "Optional": true,
+          "TypeName": "Int32"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -297,15 +297,14 @@
     "CreateLocalInstance": {
       "Parameters": [
         {
-          "Name": "Instance",
-          "TypeName": "LocalAMPInstance",
           "Description": "",
-          "Optional": false
+          "Name": "Instance",
+          "Optional": false,
+          "TypeName": "LocalAMPInstance"
         },
         {
-          "Name": "PostCreate",
-          "TypeName": "PostCreateAppActions",
           "Description": "",
+          "Name": "PostCreate",
           "Optional": true,
           "ParamEnumValues": {
             "DoNothing": 0,
@@ -314,7 +313,8 @@
             "UpdateAndStartOnce": 3,
             "UpdateAndStartAlways": 4,
             "StartAlways": 5
-          }
+          },
+          "TypeName": "PostCreateAppActions"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -323,10 +323,10 @@
     "DeleteDatastore": {
       "Parameters": [
         {
-          "Name": "id",
-          "TypeName": "Int32",
           "Description": "",
-          "Optional": false
+          "Name": "id",
+          "Optional": false,
+          "TypeName": "Int32"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -335,10 +335,10 @@
     "DeleteDeploymentTemplate": {
       "Parameters": [
         {
-          "Name": "Id",
-          "TypeName": "Int32",
           "Description": "",
-          "Optional": false
+          "Name": "Id",
+          "Optional": false,
+          "TypeName": "Int32"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -347,10 +347,10 @@
     "DeleteInstance": {
       "Parameters": [
         {
-          "Name": "InstanceName",
-          "TypeName": "String",
           "Description": "",
-          "Optional": false
+          "Name": "InstanceName",
+          "Optional": false,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "RunningTask",
@@ -359,10 +359,10 @@
     "DeleteInstanceUsers": {
       "Parameters": [
         {
-          "Name": "InstanceId",
-          "TypeName": "Guid",
           "Description": "",
-          "Optional": false
+          "Name": "InstanceId",
+          "Optional": false,
+          "TypeName": "Guid"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -371,57 +371,56 @@
     "DeployTemplate": {
       "Parameters": [
         {
-          "Name": "TemplateID",
-          "TypeName": "Int32",
           "Description": "The ID of the template to be deployed, as per the Template Management UI in AMP itself.",
-          "Optional": false
+          "Name": "TemplateID",
+          "Optional": false,
+          "TypeName": "Int32"
         },
         {
-          "Name": "NewUsername",
-          "TypeName": "String",
           "Description": "If specified, AMP will create a new user with this name for this instance. Must be unique. If this user already exists, this will be ignored but the new instance will be assigned to this user.",
-          "Optional": true
+          "Name": "NewUsername",
+          "Optional": true,
+          "TypeName": "String"
         },
         {
-          "Name": "NewPassword",
-          "TypeName": "String",
           "Description": "If 'NewUsername' is specified and the user doesn't already exist, the password that will be assigned to this user.",
-          "Optional": true
+          "Name": "NewPassword",
+          "Optional": true,
+          "TypeName": "String"
         },
         {
-          "Name": "NewEmail",
-          "TypeName": "String",
           "Description": "If 'NewUsername' is specified and the user doesn't already exist, the email address that will be assigned to this user.",
-          "Optional": true
+          "Name": "NewEmail",
+          "Optional": true,
+          "TypeName": "String"
         },
         {
-          "Name": "RequiredTags",
-          "TypeName": "List<String>",
           "Description": "If specified, AMP will only deploy this template to targets that have every single 'tag' specified in their target configuration. You can adjust this via the controller by clicking 'Edit' on the target settings.",
-          "Optional": true
+          "Name": "RequiredTags",
+          "Optional": true,
+          "TypeName": "List<String>"
         },
         {
-          "Name": "Tag",
-          "TypeName": "String",
           "Description": "Unrelated to RequiredTags. This is to uniquely identify this instance to your own systems. It may be something like an order ID or service ID so you can find the associated instance again at a later time. If 'UseTagAsInstanceName' is enabled, then this will also be used as the instance name for the created instance - but it must be unique.",
-          "Optional": true
+          "Name": "Tag",
+          "Optional": true,
+          "TypeName": "String"
         },
         {
-          "Name": "FriendlyName",
-          "TypeName": "String",
           "Description": "A friendly name for this instance. If left blank, AMP will generate one for you.",
-          "Optional": true
+          "Name": "FriendlyName",
+          "Optional": true,
+          "TypeName": "String"
         },
         {
-          "Name": "Secret",
-          "TypeName": "String",
           "Description": "Must be a non-empty strong in order to get a callback on deployment state change. This secret will be passed back to you in the callback so you can verify the request.",
-          "Optional": true
+          "Name": "Secret",
+          "Optional": true,
+          "TypeName": "String"
         },
         {
-          "Name": "PostCreate",
-          "TypeName": "PostCreateAppActions",
           "Description": "0: Do Nothing, 1: Update Once, 2: Update Always, 3: Update and Start Once, 4: Update and Start Always, 5. Start Always",
+          "Name": "PostCreate",
           "Optional": true,
           "ParamEnumValues": {
             "DoNothing": 0,
@@ -430,13 +429,14 @@
             "UpdateAndStartOnce": 3,
             "UpdateAndStartAlways": 4,
             "StartAlways": 5
-          }
+          },
+          "TypeName": "PostCreateAppActions"
         },
         {
-          "Name": "ExtraProvisionSettings",
-          "TypeName": "Dictionary<String, String>",
           "Description": "A dictionary of setting nodes and values to create the new instance with. Identical in function to the provisioning arguments in the template itself.",
-          "Optional": true
+          "Name": "ExtraProvisionSettings",
+          "Optional": true,
+          "TypeName": "Dictionary<String, String>"
         }
       ],
       "ReturnTypeName": "RunningTask",
@@ -445,10 +445,10 @@
     "DetachTarget": {
       "Parameters": [
         {
-          "Name": "Id",
-          "TypeName": "Guid",
           "Description": "",
-          "Optional": false
+          "Name": "Id",
+          "Optional": false,
+          "TypeName": "Guid"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -457,10 +457,10 @@
     "ExtractEverywhere": {
       "Parameters": [
         {
-          "Name": "SourceArchive",
-          "TypeName": "String",
           "Description": "",
-          "Optional": false
+          "Name": "SourceArchive",
+          "Optional": false,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -469,10 +469,10 @@
     "GetApplicationEndpoints": {
       "Parameters": [
         {
-          "Name": "instanceId",
-          "TypeName": "Guid",
           "Description": "",
-          "Optional": false
+          "Name": "instanceId",
+          "Optional": false,
+          "TypeName": "Guid"
         }
       ],
       "ReturnTypeName": "IEnumerable<JObject>",
@@ -481,10 +481,10 @@
     "GetDatastore": {
       "Parameters": [
         {
-          "Name": "id",
-          "TypeName": "Int32",
           "Description": "",
-          "Optional": false
+          "Name": "id",
+          "Optional": false,
+          "TypeName": "Int32"
         }
       ],
       "ReturnTypeName": "JObject",
@@ -493,10 +493,10 @@
     "GetDatastoreInstances": {
       "Parameters": [
         {
-          "Name": "datastoreId",
-          "TypeName": "Int32",
           "Description": "",
-          "Optional": false
+          "Name": "datastoreId",
+          "Optional": false,
+          "TypeName": "Int32"
         }
       ],
       "ReturnTypeName": "IEnumerable<JObject>",
@@ -515,10 +515,10 @@
     "GetGroup": {
       "Parameters": [
         {
-          "Name": "GroupId",
-          "TypeName": "Guid",
           "Description": "",
-          "Optional": false
+          "Name": "GroupId",
+          "Optional": false,
+          "TypeName": "Guid"
         }
       ],
       "ReturnTypeName": "JObject",
@@ -527,10 +527,10 @@
     "GetInstance": {
       "Parameters": [
         {
-          "Name": "InstanceId",
-          "TypeName": "Guid",
           "Description": "",
-          "Optional": false
+          "Name": "InstanceId",
+          "Optional": false,
+          "TypeName": "Guid"
         }
       ],
       "ReturnTypeName": "JObject",
@@ -539,10 +539,10 @@
     "GetInstanceNetworkInfo": {
       "Parameters": [
         {
-          "Name": "InstanceName",
-          "TypeName": "String",
           "Description": "",
-          "Optional": false
+          "Name": "InstanceName",
+          "Optional": false,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "IEnumerable<JObject>",
@@ -556,10 +556,10 @@
     "GetInstances": {
       "Parameters": [
         {
-          "Name": "ForceIncludeSelf",
-          "TypeName": "Boolean",
           "Description": "",
-          "Optional": true
+          "Name": "ForceIncludeSelf",
+          "Optional": true,
+          "TypeName": "Boolean"
         }
       ],
       "ReturnTypeName": "IEnumerable<JObject>",
@@ -573,10 +573,10 @@
     "GetProvisionArguments": {
       "Parameters": [
         {
-          "Name": "ModuleName",
-          "TypeName": "String",
           "Description": "",
-          "Optional": false
+          "Name": "ModuleName",
+          "Optional": false,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "IEnumerable<ProvisionSettingInfo>",
@@ -605,22 +605,22 @@
     "HandoutInstanceConfigs": {
       "Parameters": [
         {
+          "Description": "",
           "Name": "ForModule",
-          "TypeName": "String",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "String"
         },
         {
+          "Description": "",
           "Name": "SettingNode",
-          "TypeName": "String",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "String"
         },
         {
-          "Name": "Values",
-          "TypeName": "List<String>",
           "Description": "",
-          "Optional": false
+          "Name": "Values",
+          "Optional": false,
+          "TypeName": "List<String>"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -629,10 +629,10 @@
     "ManageInstance": {
       "Parameters": [
         {
-          "Name": "InstanceId",
-          "TypeName": "Guid",
           "Description": "",
-          "Optional": false
+          "Name": "InstanceId",
+          "Optional": false,
+          "TypeName": "Guid"
         }
       ],
       "ReturnTypeName": "ActionResult<String>",
@@ -641,45 +641,45 @@
     "ModifyCustomFirewallRule": {
       "Parameters": [
         {
+          "Description": "",
           "Name": "instanceId",
-          "TypeName": "Guid",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "Guid"
         },
         {
+          "Description": "",
           "Name": "PortNumber",
-          "TypeName": "Int32",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "Int32"
         },
         {
+          "Description": "",
           "Name": "Range",
-          "TypeName": "Int32",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "Int32"
         },
         {
-          "Name": "Protocol",
-          "TypeName": "PortProtocol",
           "Description": "",
+          "Name": "Protocol",
           "Optional": false,
           "ParamEnumValues": {
             "TCP": 0,
             "UDP": 1,
             "Both": 2
-          }
+          },
+          "TypeName": "PortProtocol"
         },
         {
+          "Description": "",
           "Name": "Description",
-          "TypeName": "String",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "String"
         },
         {
-          "Name": "Open",
-          "TypeName": "Boolean",
           "Description": "",
-          "Optional": false
+          "Name": "Open",
+          "Optional": false,
+          "TypeName": "Boolean"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -688,16 +688,16 @@
     "MoveInstanceDatastore": {
       "Parameters": [
         {
-          "Name": "instanceId",
-          "TypeName": "Guid",
           "Description": "",
-          "Optional": false
+          "Name": "instanceId",
+          "Optional": false,
+          "TypeName": "Guid"
         },
         {
-          "Name": "datastoreId",
-          "TypeName": "Int32",
           "Description": "",
-          "Optional": false
+          "Name": "datastoreId",
+          "Optional": false,
+          "TypeName": "Int32"
         }
       ],
       "ReturnTypeName": "RunningTask",
@@ -706,10 +706,10 @@
     "ReactivateInstance": {
       "Parameters": [
         {
-          "Name": "instanceId",
-          "TypeName": "Guid",
           "Description": "",
-          "Optional": false
+          "Name": "instanceId",
+          "Optional": false,
+          "TypeName": "Guid"
         }
       ],
       "ReturnTypeName": "RunningTask",
@@ -728,10 +728,10 @@
     "RefreshGroup": {
       "Parameters": [
         {
-          "Name": "GroupId",
-          "TypeName": "Guid",
           "Description": "",
-          "Optional": false
+          "Name": "GroupId",
+          "Optional": false,
+          "TypeName": "Guid"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -740,10 +740,10 @@
     "RefreshInstanceConfig": {
       "Parameters": [
         {
-          "Name": "InstanceId",
-          "TypeName": "String",
           "Description": "",
-          "Optional": false
+          "Name": "InstanceId",
+          "Optional": false,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -752,10 +752,10 @@
     "RefreshRemoteConfigStores": {
       "Parameters": [
         {
-          "Name": "force",
-          "TypeName": "Boolean",
           "Description": "",
-          "Optional": true
+          "Name": "force",
+          "Optional": true,
+          "TypeName": "Boolean"
         }
       ],
       "ReturnTypeName": "Void",
@@ -764,40 +764,40 @@
     "RegisterTarget": {
       "Parameters": [
         {
+          "Description": "",
           "Name": "controllerUrl",
-          "TypeName": "String",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "String"
         },
         {
+          "Description": "",
           "Name": "myUrl",
-          "TypeName": "String",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "String"
         },
         {
+          "Description": "",
           "Name": "username",
-          "TypeName": "String",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "String"
         },
         {
+          "Description": "",
           "Name": "password",
-          "TypeName": "String",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "String"
         },
         {
+          "Description": "",
           "Name": "twoFactorToken",
-          "TypeName": "String",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "String"
         },
         {
-          "Name": "friendlyName",
-          "TypeName": "String",
           "Description": "",
-          "Optional": false
+          "Name": "friendlyName",
+          "Optional": false,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -806,10 +806,10 @@
     "RepairDatastore": {
       "Parameters": [
         {
-          "Name": "id",
-          "TypeName": "Int32",
           "Description": "",
-          "Optional": false
+          "Name": "id",
+          "Optional": false,
+          "TypeName": "Int32"
         }
       ],
       "ReturnTypeName": "RunningTask",
@@ -818,10 +818,10 @@
     "RequestDatastoreSizeCalculation": {
       "Parameters": [
         {
-          "Name": "datastoreId",
-          "TypeName": "Int32",
           "Description": "",
-          "Optional": false
+          "Name": "datastoreId",
+          "Optional": false,
+          "TypeName": "Int32"
         }
       ],
       "ReturnTypeName": "RunningTask",
@@ -830,10 +830,10 @@
     "RestartInstance": {
       "Parameters": [
         {
-          "Name": "InstanceName",
-          "TypeName": "String",
           "Description": "",
-          "Optional": false
+          "Name": "InstanceName",
+          "Optional": false,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -842,22 +842,22 @@
     "Servers": {
       "Parameters": [
         {
+          "Description": "",
           "Name": "id",
-          "TypeName": "String",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "String"
         },
         {
+          "Description": "",
           "Name": "Data",
-          "TypeName": "JObject",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "JObject"
         },
         {
-          "Name": "RealIP",
-          "TypeName": "IPAddress",
           "Description": "",
-          "Optional": false
+          "Name": "RealIP",
+          "Optional": false,
+          "TypeName": "IPAddress"
         }
       ],
       "ReturnTypeName": "JSONRawResponse",
@@ -866,22 +866,22 @@
     "SetInstanceConfig": {
       "Parameters": [
         {
+          "Description": "",
           "Name": "InstanceName",
-          "TypeName": "String",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "String"
         },
         {
+          "Description": "",
           "Name": "SettingNode",
-          "TypeName": "String",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "String"
         },
         {
-          "Name": "Value",
-          "TypeName": "String",
           "Description": "",
-          "Optional": false
+          "Name": "Value",
+          "Optional": false,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -890,16 +890,16 @@
     "SetInstanceNetworkInfo": {
       "Parameters": [
         {
-          "Name": "InstanceId",
-          "TypeName": "Guid",
           "Description": "",
-          "Optional": false
+          "Name": "InstanceId",
+          "Optional": false,
+          "TypeName": "Guid"
         },
         {
-          "Name": "PortMappings",
-          "TypeName": "Dictionary<String, Int32>",
           "Description": "",
-          "Optional": false
+          "Name": "PortMappings",
+          "Optional": false,
+          "TypeName": "Dictionary<String, Int32>"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -908,16 +908,16 @@
     "SetInstanceSuspended": {
       "Parameters": [
         {
-          "Name": "InstanceName",
-          "TypeName": "String",
           "Description": "",
-          "Optional": false
+          "Name": "InstanceName",
+          "Optional": false,
+          "TypeName": "String"
         },
         {
-          "Name": "Suspended",
-          "TypeName": "Boolean",
           "Description": "",
-          "Optional": false
+          "Name": "Suspended",
+          "Optional": false,
+          "TypeName": "Boolean"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -926,10 +926,10 @@
     "StartAllInstances": {
       "Parameters": [
         {
-          "Name": "TargetADSInstance",
-          "TypeName": "Guid",
           "Description": "",
-          "Optional": false
+          "Name": "TargetADSInstance",
+          "Optional": false,
+          "TypeName": "Guid"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -938,10 +938,10 @@
     "StartInstance": {
       "Parameters": [
         {
-          "Name": "InstanceName",
-          "TypeName": "String",
           "Description": "",
-          "Optional": false
+          "Name": "InstanceName",
+          "Optional": false,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -950,10 +950,10 @@
     "StopAllInstances": {
       "Parameters": [
         {
-          "Name": "TargetADSInstance",
-          "TypeName": "Guid",
           "Description": "",
-          "Optional": false
+          "Name": "TargetADSInstance",
+          "Optional": false,
+          "TypeName": "Guid"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -962,10 +962,10 @@
     "StopInstance": {
       "Parameters": [
         {
-          "Name": "InstanceName",
-          "TypeName": "String",
           "Description": "",
-          "Optional": false
+          "Name": "InstanceName",
+          "Optional": false,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -974,28 +974,28 @@
     "TestADSLoginDetails": {
       "Parameters": [
         {
+          "Description": "",
           "Name": "url",
-          "TypeName": "String",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "String"
         },
         {
+          "Description": "",
           "Name": "username",
-          "TypeName": "String",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "String"
         },
         {
+          "Description": "",
           "Name": "password",
-          "TypeName": "String",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "String"
         },
         {
-          "Name": "twoFactorToken",
-          "TypeName": "String",
           "Description": "",
-          "Optional": false
+          "Name": "twoFactorToken",
+          "Optional": false,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -1004,10 +1004,10 @@
     "UpdateDatastore": {
       "Parameters": [
         {
-          "Name": "updatedDatastore",
-          "TypeName": "InstanceDatastore",
           "Description": "",
-          "Optional": false
+          "Name": "updatedDatastore",
+          "Optional": false,
+          "TypeName": "InstanceDatastore"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -1016,10 +1016,10 @@
     "UpdateDeploymentTemplate": {
       "Parameters": [
         {
-          "Name": "templateToUpdate",
-          "TypeName": "DeploymentTemplate",
           "Description": "",
-          "Optional": false
+          "Name": "templateToUpdate",
+          "Optional": false,
+          "TypeName": "DeploymentTemplate"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -1028,87 +1028,87 @@
     "UpdateInstanceInfo": {
       "Parameters": [
         {
+          "Description": "",
           "Name": "InstanceId",
-          "TypeName": "String",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "String"
         },
         {
+          "Description": "",
           "Name": "FriendlyName",
-          "TypeName": "String",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "String"
         },
         {
+          "Description": "",
           "Name": "Description",
-          "TypeName": "String",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "String"
         },
         {
+          "Description": "",
           "Name": "StartOnBoot",
-          "TypeName": "Boolean",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "Boolean"
         },
         {
+          "Description": "",
           "Name": "Suspended",
-          "TypeName": "Boolean",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "Boolean"
         },
         {
+          "Description": "",
           "Name": "ExcludeFromFirewall",
-          "TypeName": "Boolean",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "Boolean"
         },
         {
+          "Description": "",
           "Name": "RunInContainer",
-          "TypeName": "Boolean",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "Boolean"
         },
         {
+          "Description": "",
           "Name": "ContainerMemory",
-          "TypeName": "Int32",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "Int32"
         },
         {
+          "Description": "",
           "Name": "ContainerSwap",
-          "TypeName": "Int32",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "Int32"
         },
         {
-          "Name": "MemoryPolicy",
-          "TypeName": "ContainerMemoryPolicy",
           "Description": "",
+          "Name": "MemoryPolicy",
           "Optional": false,
           "ParamEnumValues": {
             "NotSpecified": 0,
             "Reserve": 100,
             "Restrict": 200
-          }
+          },
+          "TypeName": "ContainerMemoryPolicy"
         },
         {
+          "Description": "",
           "Name": "ContainerMaxCPU",
-          "TypeName": "Single",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "Single"
         },
         {
+          "Description": "",
           "Name": "ContainerImage",
-          "TypeName": "String",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "String"
         },
         {
-          "Name": "WelcomeMessage",
-          "TypeName": "String",
           "Description": "",
-          "Optional": true
+          "Name": "WelcomeMessage",
+          "Optional": true,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -1117,10 +1117,10 @@
     "UpdateTarget": {
       "Parameters": [
         {
-          "Name": "TargetID",
-          "TypeName": "Guid",
           "Description": "",
-          "Optional": false
+          "Name": "TargetID",
+          "Optional": false,
+          "TypeName": "Guid"
         }
       ],
       "ReturnTypeName": "Void",
@@ -1129,34 +1129,34 @@
     "UpdateTargetInfo": {
       "Parameters": [
         {
+          "Description": "",
           "Name": "Id",
-          "TypeName": "Guid",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "Guid"
         },
         {
+          "Description": "",
           "Name": "FriendlyName",
-          "TypeName": "String",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "String"
         },
         {
+          "Description": "",
           "Name": "Url",
-          "TypeName": "Uri",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "Uri"
         },
         {
+          "Description": "",
           "Name": "Description",
-          "TypeName": "String",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "String"
         },
         {
-          "Name": "Tags",
-          "TypeName": "List<String>",
           "Description": "",
-          "Optional": false
+          "Name": "Tags",
+          "Optional": false,
+          "TypeName": "List<String>"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -1165,16 +1165,16 @@
     "UpgradeAllInstances": {
       "Parameters": [
         {
-          "Name": "TargetADSInstance",
-          "TypeName": "Guid",
           "Description": "",
-          "Optional": false
+          "Name": "TargetADSInstance",
+          "Optional": false,
+          "TypeName": "Guid"
         },
         {
-          "Name": "RestartRunning",
-          "TypeName": "Boolean",
           "Description": "",
-          "Optional": false
+          "Name": "RestartRunning",
+          "Optional": false,
+          "TypeName": "Boolean"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -1183,10 +1183,10 @@
     "UpgradeInstance": {
       "Parameters": [
         {
-          "Name": "InstanceName",
-          "TypeName": "String",
           "Description": "",
-          "Optional": false
+          "Name": "InstanceName",
+          "Optional": false,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -1197,22 +1197,22 @@
     "GetAnalyticsSummary": {
       "Parameters": [
         {
+          "Description": "",
           "Name": "PeriodDays",
-          "TypeName": "Int32",
-          "Description": "",
-          "Optional": true
+          "Optional": true,
+          "TypeName": "Int32"
         },
         {
+          "Description": "",
           "Name": "StartDate",
-          "TypeName": "Nullable<DateTime>",
-          "Description": "",
-          "Optional": true
+          "Optional": true,
+          "TypeName": "Nullable<DateTime>"
         },
         {
-          "Name": "Filters",
-          "TypeName": "Dictionary<String, String>",
           "Description": "",
-          "Optional": true
+          "Name": "Filters",
+          "Optional": true,
+          "TypeName": "Dictionary<String, String>"
         }
       ],
       "ReturnTypeName": "Object",
@@ -1229,16 +1229,16 @@
     "ActivateAMPLicence": {
       "Parameters": [
         {
-          "Name": "LicenceKey",
-          "TypeName": "String",
           "Description": "",
-          "Optional": false
+          "Name": "LicenceKey",
+          "Optional": false,
+          "TypeName": "String"
         },
         {
-          "Name": "QueryOnly",
-          "TypeName": "Boolean",
           "Description": "",
-          "Optional": true
+          "Name": "QueryOnly",
+          "Optional": true,
+          "TypeName": "Boolean"
         }
       ],
       "ReturnTypeName": "ActionResult<JObject>",
@@ -1247,10 +1247,10 @@
     "AddEventTrigger": {
       "Parameters": [
         {
-          "Name": "triggerId",
-          "TypeName": "Guid",
           "Description": "",
-          "Optional": false
+          "Name": "triggerId",
+          "Optional": false,
+          "TypeName": "Guid"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -1259,40 +1259,40 @@
     "AddIntervalTrigger": {
       "Parameters": [
         {
+          "Description": "",
           "Name": "months",
-          "TypeName": "Int32[]",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "Int32[]"
         },
         {
+          "Description": "",
           "Name": "days",
-          "TypeName": "Int32[]",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "Int32[]"
         },
         {
+          "Description": "",
           "Name": "hours",
-          "TypeName": "Int32[]",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "Int32[]"
         },
         {
+          "Description": "",
           "Name": "minutes",
-          "TypeName": "Int32[]",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "Int32[]"
         },
         {
+          "Description": "",
           "Name": "daysOfMonth",
-          "TypeName": "Int32[]",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "Int32[]"
         },
         {
-          "Name": "description",
-          "TypeName": "String",
           "Description": "",
-          "Optional": false
+          "Name": "description",
+          "Optional": false,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -1301,22 +1301,22 @@
     "AddTask": {
       "Parameters": [
         {
+          "Description": "",
           "Name": "TriggerID",
-          "TypeName": "Guid",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "Guid"
         },
         {
+          "Description": "",
           "Name": "MethodID",
-          "TypeName": "String",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "String"
         },
         {
-          "Name": "ParameterMapping",
-          "TypeName": "Dictionary<String, String>",
           "Description": "",
-          "Optional": false
+          "Name": "ParameterMapping",
+          "Optional": false,
+          "TypeName": "Dictionary<String, String>"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -1332,10 +1332,10 @@
     "CancelTask": {
       "Parameters": [
         {
-          "Name": "TaskId",
-          "TypeName": "Guid",
           "Description": "",
-          "Optional": false
+          "Name": "TaskId",
+          "Optional": false,
+          "TypeName": "Guid"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -1344,22 +1344,22 @@
     "ChangeTaskOrder": {
       "Parameters": [
         {
+          "Description": "",
           "Name": "TriggerID",
-          "TypeName": "Guid",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "Guid"
         },
         {
+          "Description": "",
           "Name": "TaskID",
-          "TypeName": "Guid",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "Guid"
         },
         {
-          "Name": "NewOrder",
-          "TypeName": "Int32",
           "Description": "",
-          "Optional": false
+          "Name": "NewOrder",
+          "Optional": false,
+          "TypeName": "Int32"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -1370,28 +1370,28 @@
       "Returns": "",
       "Parameters": [
         {
+          "Description": "",
           "Name": "Username",
-          "TypeName": "String",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "String"
         },
         {
+          "Description": "",
           "Name": "OldPassword",
-          "TypeName": "String",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "String"
         },
         {
+          "Description": "",
           "Name": "NewPassword",
-          "TypeName": "String",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "String"
         },
         {
-          "Name": "TwoFactorPIN",
-          "TypeName": "String",
           "Description": "",
-          "Optional": false
+          "Name": "TwoFactorPIN",
+          "Optional": false,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -1402,16 +1402,16 @@
       "Returns": "",
       "Parameters": [
         {
-          "Name": "Username",
-          "TypeName": "String",
           "Description": "",
-          "Optional": false
+          "Name": "Username",
+          "Optional": false,
+          "TypeName": "String"
         },
         {
-          "Name": "TwoFactorCode",
-          "TypeName": "String",
           "Description": "",
-          "Optional": false
+          "Name": "TwoFactorCode",
+          "Optional": false,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -1420,16 +1420,16 @@
     "CreateRole": {
       "Parameters": [
         {
-          "Name": "Name",
-          "TypeName": "String",
           "Description": "",
-          "Optional": false
+          "Name": "Name",
+          "Optional": false,
+          "TypeName": "String"
         },
         {
-          "Name": "AsCommonRole",
-          "TypeName": "Boolean",
           "Description": "",
-          "Optional": true
+          "Name": "AsCommonRole",
+          "Optional": true,
+          "TypeName": "Boolean"
         }
       ],
       "ReturnTypeName": "ActionResult<Guid>",
@@ -1445,10 +1445,10 @@
     "CreateUser": {
       "Parameters": [
         {
-          "Name": "Username",
-          "TypeName": "String",
           "Description": "",
-          "Optional": false
+          "Name": "Username",
+          "Optional": false,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "ActionResult<Guid>",
@@ -1457,10 +1457,10 @@
     "CurrentSessionHasPermission": {
       "Parameters": [
         {
-          "Name": "PermissionNode",
-          "TypeName": "String",
           "Description": "",
-          "Optional": false
+          "Name": "PermissionNode",
+          "Optional": false,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "Boolean",
@@ -1469,10 +1469,10 @@
     "DeleteInstanceUsers": {
       "Parameters": [
         {
-          "Name": "InstanceId",
-          "TypeName": "Guid",
           "Description": "",
-          "Optional": false
+          "Name": "InstanceId",
+          "Optional": false,
+          "TypeName": "Guid"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -1481,10 +1481,10 @@
     "DeleteRole": {
       "Parameters": [
         {
-          "Name": "RoleId",
-          "TypeName": "Guid",
           "Description": "",
-          "Optional": false
+          "Name": "RoleId",
+          "Optional": false,
+          "TypeName": "Guid"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -1493,16 +1493,16 @@
     "DeleteTask": {
       "Parameters": [
         {
-          "Name": "TriggerID",
-          "TypeName": "Guid",
           "Description": "",
-          "Optional": false
+          "Name": "TriggerID",
+          "Optional": false,
+          "TypeName": "Guid"
         },
         {
-          "Name": "TaskID",
-          "TypeName": "Guid",
           "Description": "",
-          "Optional": false
+          "Name": "TaskID",
+          "Optional": false,
+          "TypeName": "Guid"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -1511,10 +1511,10 @@
     "DeleteTrigger": {
       "Parameters": [
         {
-          "Name": "TriggerID",
-          "TypeName": "Guid",
           "Description": "",
-          "Optional": false
+          "Name": "TriggerID",
+          "Optional": false,
+          "TypeName": "Guid"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -1523,10 +1523,10 @@
     "DeleteUser": {
       "Parameters": [
         {
-          "Name": "Username",
-          "TypeName": "String",
           "Description": "",
-          "Optional": false
+          "Name": "Username",
+          "Optional": false,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -1535,16 +1535,16 @@
     "DisableTwoFactor": {
       "Parameters": [
         {
-          "Name": "Password",
-          "TypeName": "String",
           "Description": "",
-          "Optional": false
+          "Name": "Password",
+          "Optional": false,
+          "TypeName": "String"
         },
         {
-          "Name": "TwoFactorCode",
-          "TypeName": "String",
           "Description": "",
-          "Optional": false
+          "Name": "TwoFactorCode",
+          "Optional": false,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -1558,10 +1558,10 @@
     "DismissTask": {
       "Parameters": [
         {
-          "Name": "TaskId",
-          "TypeName": "Guid",
           "Description": "",
-          "Optional": false
+          "Name": "TaskId",
+          "Optional": false,
+          "TypeName": "Guid"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -1570,46 +1570,46 @@
     "EditIntervalTrigger": {
       "Parameters": [
         {
+          "Description": "",
           "Name": "Id",
-          "TypeName": "Guid",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "Guid"
         },
         {
+          "Description": "",
           "Name": "months",
-          "TypeName": "Int32[]",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "Int32[]"
         },
         {
+          "Description": "",
           "Name": "days",
-          "TypeName": "Int32[]",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "Int32[]"
         },
         {
+          "Description": "",
           "Name": "hours",
-          "TypeName": "Int32[]",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "Int32[]"
         },
         {
+          "Description": "",
           "Name": "minutes",
-          "TypeName": "Int32[]",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "Int32[]"
         },
         {
+          "Description": "",
           "Name": "daysOfMonth",
-          "TypeName": "Int32[]",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "Int32[]"
         },
         {
-          "Name": "description",
-          "TypeName": "String",
           "Description": "",
-          "Optional": false
+          "Name": "description",
+          "Optional": false,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -1618,22 +1618,22 @@
     "EditTask": {
       "Parameters": [
         {
+          "Description": "",
           "Name": "TriggerID",
-          "TypeName": "Guid",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "Guid"
         },
         {
+          "Description": "",
           "Name": "TaskID",
-          "TypeName": "Guid",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "Guid"
         },
         {
-          "Name": "ParameterMapping",
-          "TypeName": "Dictionary<String, String>",
           "Description": "",
-          "Optional": false
+          "Name": "ParameterMapping",
+          "Optional": false,
+          "TypeName": "Dictionary<String, String>"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -1644,16 +1644,16 @@
       "Returns": "Data container the URI for a QR code that should be scanned by a mobile authenticator.",
       "Parameters": [
         {
-          "Name": "Username",
-          "TypeName": "String",
           "Description": "",
-          "Optional": false
+          "Name": "Username",
+          "Optional": false,
+          "TypeName": "String"
         },
         {
-          "Name": "Password",
-          "TypeName": "String",
           "Description": "",
-          "Optional": false
+          "Name": "Password",
+          "Optional": false,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "ActionResult<TwoFactorSetupInfo>",
@@ -1662,10 +1662,10 @@
     "EndUserSession": {
       "Parameters": [
         {
-          "Name": "Id",
-          "TypeName": "Guid",
           "Description": "",
-          "Optional": false
+          "Name": "Id",
+          "Optional": false,
+          "TypeName": "Guid"
         }
       ],
       "ReturnTypeName": "Void",
@@ -1674,10 +1674,10 @@
     "GetAMPRolePermissions": {
       "Parameters": [
         {
-          "Name": "RoleId",
-          "TypeName": "Guid",
           "Description": "",
-          "Optional": false
+          "Name": "RoleId",
+          "Optional": false,
+          "TypeName": "Guid"
         }
       ],
       "ReturnTypeName": "IEnumerable<String>",
@@ -1686,10 +1686,10 @@
     "GetAMPUserInfo": {
       "Parameters": [
         {
-          "Name": "Username",
-          "TypeName": "String",
           "Description": "",
-          "Optional": false
+          "Name": "Username",
+          "Optional": false,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "UserInfo",
@@ -1718,16 +1718,16 @@
     "GetAuditLogEntries": {
       "Parameters": [
         {
-          "Name": "Before",
-          "TypeName": "Nullable<DateTime>",
           "Description": "",
-          "Optional": false
+          "Name": "Before",
+          "Optional": false,
+          "TypeName": "Nullable<DateTime>"
         },
         {
-          "Name": "Count",
-          "TypeName": "Int32",
           "Description": "",
-          "Optional": false
+          "Name": "Count",
+          "Optional": false,
+          "TypeName": "Int32"
         }
       ],
       "ReturnTypeName": "IEnumerable<IAuditLogEntry>",
@@ -1736,10 +1736,10 @@
     "GetAuthenticationRequirements": {
       "Parameters": [
         {
-          "Name": "username",
-          "TypeName": "String",
           "Description": "",
-          "Optional": false
+          "Name": "username",
+          "Optional": false,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "IEnumerable<AuthenticationRequirement>",
@@ -1748,10 +1748,10 @@
     "GetConfig": {
       "Parameters": [
         {
-          "Name": "node",
-          "TypeName": "String",
           "Description": "",
-          "Optional": false
+          "Name": "node",
+          "Optional": false,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "JObject",
@@ -1760,10 +1760,10 @@
     "GetConfigs": {
       "Parameters": [
         {
-          "Name": "nodes",
-          "TypeName": "String[]",
           "Description": "",
-          "Optional": false
+          "Name": "nodes",
+          "Optional": false,
+          "TypeName": "String[]"
         }
       ],
       "ReturnTypeName": "IEnumerable<JObject>",
@@ -1802,16 +1802,16 @@
     "GetRemoteLoginToken": {
       "Parameters": [
         {
-          "Name": "Description",
-          "TypeName": "String",
           "Description": "",
-          "Optional": true
+          "Name": "Description",
+          "Optional": true,
+          "TypeName": "String"
         },
         {
-          "Name": "IsTemporary",
-          "TypeName": "Boolean",
           "Description": "",
-          "Optional": true
+          "Name": "IsTemporary",
+          "Optional": true,
+          "TypeName": "Boolean"
         }
       ],
       "ReturnTypeName": "String",
@@ -1820,10 +1820,10 @@
     "GetRole": {
       "Parameters": [
         {
-          "Name": "RoleId",
-          "TypeName": "Guid",
           "Description": "",
-          "Optional": false
+          "Name": "RoleId",
+          "Optional": false,
+          "TypeName": "Guid"
         }
       ],
       "ReturnTypeName": "AuthRoleSummary",
@@ -1847,16 +1847,16 @@
     "GetSettingValues": {
       "Parameters": [
         {
-          "Name": "SettingNode",
-          "TypeName": "String",
           "Description": "",
-          "Optional": false
+          "Name": "SettingNode",
+          "Optional": false,
+          "TypeName": "String"
         },
         {
-          "Name": "WithRefresh",
-          "TypeName": "Boolean",
           "Description": "",
-          "Optional": true
+          "Name": "WithRefresh",
+          "Optional": true,
+          "TypeName": "Boolean"
         }
       ],
       "ReturnTypeName": "IDictionary<String, String>",
@@ -1880,10 +1880,10 @@
     "GetTimeIntervalTrigger": {
       "Parameters": [
         {
-          "Name": "Id",
-          "TypeName": "Guid",
           "Description": "",
-          "Optional": false
+          "Name": "Id",
+          "Optional": false,
+          "TypeName": "Guid"
         }
       ],
       "ReturnTypeName": "JObject",
@@ -1911,10 +1911,10 @@
       "Returns": "",
       "Parameters": [
         {
-          "Name": "UID",
-          "TypeName": "String",
           "Description": "",
-          "Optional": false
+          "Name": "UID",
+          "Optional": false,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "SimpleUser",
@@ -1935,10 +1935,10 @@
     "GetWebauthnCredentialIDs": {
       "Parameters": [
         {
-          "Name": "username",
-          "TypeName": "String",
           "Description": "",
-          "Optional": false
+          "Name": "username",
+          "Optional": false,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "JObject",
@@ -1962,28 +1962,28 @@
     "Login": {
       "Parameters": [
         {
+          "Description": "",
           "Name": "username",
-          "TypeName": "String",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "String"
         },
         {
+          "Description": "",
           "Name": "password",
-          "TypeName": "String",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "String"
         },
         {
+          "Description": "",
           "Name": "token",
-          "TypeName": "String",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "String"
         },
         {
-          "Name": "rememberMe",
-          "TypeName": "Boolean",
           "Description": "",
-          "Optional": false
+          "Name": "rememberMe",
+          "Optional": false,
+          "TypeName": "Boolean"
         }
       ],
       "ReturnTypeName": "JObject",
@@ -1997,10 +1997,10 @@
     "RefreshSettingValueList": {
       "Parameters": [
         {
-          "Name": "Node",
-          "TypeName": "String",
           "Description": "",
-          "Optional": false
+          "Name": "Node",
+          "Optional": false,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -2014,16 +2014,16 @@
     "RenameRole": {
       "Parameters": [
         {
-          "Name": "RoleId",
-          "TypeName": "Guid",
           "Description": "",
-          "Optional": false
+          "Name": "RoleId",
+          "Optional": false,
+          "TypeName": "Guid"
         },
         {
-          "Name": "NewName",
-          "TypeName": "String",
           "Description": "",
-          "Optional": false
+          "Name": "NewName",
+          "Optional": false,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -2034,16 +2034,16 @@
       "Returns": "",
       "Parameters": [
         {
-          "Name": "Username",
-          "TypeName": "String",
           "Description": "",
-          "Optional": false
+          "Name": "Username",
+          "Optional": false,
+          "TypeName": "String"
         },
         {
-          "Name": "NewPassword",
-          "TypeName": "String",
           "Description": "",
-          "Optional": false
+          "Name": "NewPassword",
+          "Optional": false,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -2069,10 +2069,10 @@
     "RevokeWebauthnCredential": {
       "Parameters": [
         {
-          "Name": "ID",
-          "TypeName": "Int32",
           "Description": "",
-          "Optional": false
+          "Name": "ID",
+          "Optional": false,
+          "TypeName": "Int32"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -2081,10 +2081,10 @@
     "RunEventTriggerImmediately": {
       "Parameters": [
         {
-          "Name": "triggerId",
-          "TypeName": "Guid",
           "Description": "",
-          "Optional": false
+          "Name": "triggerId",
+          "Optional": false,
+          "TypeName": "Guid"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -2098,10 +2098,10 @@
     "SendConsoleMessage": {
       "Parameters": [
         {
-          "Name": "message",
-          "TypeName": "String",
           "Description": "",
-          "Optional": false
+          "Name": "message",
+          "Optional": false,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "Void",
@@ -2110,22 +2110,22 @@
     "SetAMPRolePermission": {
       "Parameters": [
         {
+          "Description": "",
           "Name": "RoleId",
-          "TypeName": "Guid",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "Guid"
         },
         {
+          "Description": "",
           "Name": "PermissionNode",
-          "TypeName": "String",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "String"
         },
         {
-          "Name": "Enabled",
-          "TypeName": "Nullable<Boolean>",
           "Description": "",
-          "Optional": false
+          "Name": "Enabled",
+          "Optional": false,
+          "TypeName": "Nullable<Boolean>"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -2134,22 +2134,22 @@
     "SetAMPUserRoleMembership": {
       "Parameters": [
         {
+          "Description": "",
           "Name": "UserId",
-          "TypeName": "Guid",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "Guid"
         },
         {
+          "Description": "",
           "Name": "RoleId",
-          "TypeName": "Guid",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "Guid"
         },
         {
-          "Name": "IsMember",
-          "TypeName": "Boolean",
           "Description": "",
-          "Optional": false
+          "Name": "IsMember",
+          "Optional": false,
+          "TypeName": "Boolean"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -2158,16 +2158,16 @@
     "SetConfig": {
       "Parameters": [
         {
-          "Name": "node",
-          "TypeName": "String",
           "Description": "",
-          "Optional": false
+          "Name": "node",
+          "Optional": false,
+          "TypeName": "String"
         },
         {
-          "Name": "value",
-          "TypeName": "String",
           "Description": "",
-          "Optional": false
+          "Name": "value",
+          "Optional": false,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -2176,10 +2176,10 @@
     "SetConfigs": {
       "Parameters": [
         {
-          "Name": "data",
-          "TypeName": "Dictionary<String, String>",
           "Description": "",
-          "Optional": false
+          "Name": "data",
+          "Optional": false,
+          "TypeName": "Dictionary<String, String>"
         }
       ],
       "ReturnTypeName": "Boolean",
@@ -2188,16 +2188,16 @@
     "SetTriggerEnabled": {
       "Parameters": [
         {
-          "Name": "Id",
-          "TypeName": "Guid",
           "Description": "",
-          "Optional": false
+          "Name": "Id",
+          "Optional": false,
+          "TypeName": "Guid"
         },
         {
-          "Name": "Enabled",
-          "TypeName": "Boolean",
           "Description": "",
-          "Optional": false
+          "Name": "Enabled",
+          "Optional": false,
+          "TypeName": "Boolean"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -2233,16 +2233,16 @@
     "UpdateAccountInfo": {
       "Parameters": [
         {
-          "Name": "EmailAddress",
-          "TypeName": "String",
           "Description": "",
-          "Optional": false
+          "Name": "EmailAddress",
+          "Optional": false,
+          "TypeName": "String"
         },
         {
-          "Name": "TwoFactorPIN",
-          "TypeName": "String",
           "Description": "",
-          "Optional": false
+          "Name": "TwoFactorPIN",
+          "Optional": false,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -2256,40 +2256,40 @@
     "UpdateUserInfo": {
       "Parameters": [
         {
+          "Description": "",
           "Name": "Username",
-          "TypeName": "String",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "String"
         },
         {
+          "Description": "",
           "Name": "Disabled",
-          "TypeName": "Boolean",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "Boolean"
         },
         {
+          "Description": "",
           "Name": "PasswordExpires",
-          "TypeName": "Boolean",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "Boolean"
         },
         {
+          "Description": "",
           "Name": "CannotChangePassword",
-          "TypeName": "Boolean",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "Boolean"
         },
         {
+          "Description": "",
           "Name": "MustChangePassword",
-          "TypeName": "Boolean",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "Boolean"
         },
         {
-          "Name": "EmailAddress",
-          "TypeName": "String",
           "Description": "",
-          "Optional": true
+          "Name": "EmailAddress",
+          "Optional": true,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -2303,22 +2303,22 @@
     "WebauthnRegister": {
       "Parameters": [
         {
+          "Description": "",
           "Name": "attestationObject",
-          "TypeName": "String",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "String"
         },
         {
+          "Description": "",
           "Name": "clientDataJSON",
-          "TypeName": "String",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "String"
         },
         {
-          "Name": "description",
-          "TypeName": "String",
           "Description": "",
-          "Optional": true
+          "Name": "description",
+          "Optional": true,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -2336,22 +2336,22 @@
     "AppendFileChunk": {
       "Parameters": [
         {
+          "Description": "",
           "Name": "Filename",
-          "TypeName": "String",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "String"
         },
         {
+          "Description": "",
           "Name": "Data",
-          "TypeName": "String",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "String"
         },
         {
-          "Name": "Delete",
-          "TypeName": "Boolean",
           "Description": "",
-          "Optional": false
+          "Name": "Delete",
+          "Optional": false,
+          "TypeName": "Boolean"
         }
       ],
       "ReturnTypeName": "Void",
@@ -2360,10 +2360,10 @@
     "CalculateFileMD5Sum": {
       "Parameters": [
         {
-          "Name": "FilePath",
-          "TypeName": "String",
           "Description": "",
-          "Optional": false
+          "Name": "FilePath",
+          "Optional": false,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "ActionResult<String>",
@@ -2372,22 +2372,22 @@
     "ChangeExclusion": {
       "Parameters": [
         {
+          "Description": "",
           "Name": "ModifyPath",
-          "TypeName": "String",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "String"
         },
         {
+          "Description": "",
           "Name": "AsDirectory",
-          "TypeName": "Boolean",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "Boolean"
         },
         {
-          "Name": "Exclude",
-          "TypeName": "Boolean",
           "Description": "",
-          "Optional": false
+          "Name": "Exclude",
+          "Optional": false,
+          "TypeName": "Boolean"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -2396,16 +2396,16 @@
     "CopyFile": {
       "Parameters": [
         {
-          "Name": "Origin",
-          "TypeName": "String",
           "Description": "",
-          "Optional": false
+          "Name": "Origin",
+          "Optional": false,
+          "TypeName": "String"
         },
         {
-          "Name": "TargetDirectory",
-          "TypeName": "String",
           "Description": "",
-          "Optional": false
+          "Name": "TargetDirectory",
+          "Optional": false,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -2414,10 +2414,10 @@
     "CreateArchive": {
       "Parameters": [
         {
-          "Name": "PathToArchive",
-          "TypeName": "String",
           "Description": "",
-          "Optional": false
+          "Name": "PathToArchive",
+          "Optional": false,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -2428,10 +2428,10 @@
       "Returns": "",
       "Parameters": [
         {
-          "Name": "NewPath",
-          "TypeName": "String",
           "Description": "",
-          "Optional": false
+          "Name": "NewPath",
+          "Optional": false,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -2440,16 +2440,16 @@
     "DownloadFileFromURL": {
       "Parameters": [
         {
-          "Name": "Source",
-          "TypeName": "Uri",
           "Description": "",
-          "Optional": false
+          "Name": "Source",
+          "Optional": false,
+          "TypeName": "Uri"
         },
         {
-          "Name": "TargetDirectory",
-          "TypeName": "String",
           "Description": "",
-          "Optional": false
+          "Name": "TargetDirectory",
+          "Optional": false,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -2465,10 +2465,10 @@
       "Returns": "",
       "Parameters": [
         {
-          "Name": "TrashDirectoryName",
-          "TypeName": "String",
           "Description": "",
-          "Optional": false
+          "Name": "TrashDirectoryName",
+          "Optional": false,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -2477,16 +2477,16 @@
     "ExtractArchive": {
       "Parameters": [
         {
-          "Name": "ArchivePath",
-          "TypeName": "String",
           "Description": "",
-          "Optional": false
+          "Name": "ArchivePath",
+          "Optional": false,
+          "TypeName": "String"
         },
         {
-          "Name": "DestinationPath",
-          "TypeName": "String",
           "Description": "",
-          "Optional": true
+          "Name": "DestinationPath",
+          "Optional": true,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -2495,10 +2495,10 @@
     "GetDirectoryListing": {
       "Parameters": [
         {
-          "Name": "Dir",
-          "TypeName": "String",
           "Description": "",
-          "Optional": false
+          "Name": "Dir",
+          "Optional": false,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "IEnumerable<JObject>",
@@ -2507,22 +2507,22 @@
     "GetFileChunk": {
       "Parameters": [
         {
+          "Description": "",
           "Name": "Filename",
-          "TypeName": "String",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "String"
         },
         {
+          "Description": "",
           "Name": "Position",
-          "TypeName": "Int64",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "Int64"
         },
         {
-          "Name": "Length",
-          "TypeName": "Int32",
           "Description": "",
-          "Optional": false
+          "Name": "Length",
+          "Optional": false,
+          "TypeName": "Int32"
         }
       ],
       "ReturnTypeName": "JObject",
@@ -2531,22 +2531,22 @@
     "ReadFileChunk": {
       "Parameters": [
         {
+          "Description": "",
           "Name": "Filename",
-          "TypeName": "String",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "String"
         },
         {
+          "Description": "",
           "Name": "Offset",
-          "TypeName": "Int64",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "Int64"
         },
         {
-          "Name": "ChunkSize",
-          "TypeName": "Int64",
           "Description": "",
-          "Optional": true
+          "Name": "ChunkSize",
+          "Optional": true,
+          "TypeName": "Int64"
         }
       ],
       "ReturnTypeName": "ActionResult<String>",
@@ -2555,10 +2555,10 @@
     "ReleaseFileUploadLock": {
       "Parameters": [
         {
-          "Name": "Filename",
-          "TypeName": "String",
           "Description": "",
-          "Optional": false
+          "Name": "Filename",
+          "Optional": false,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -2569,16 +2569,16 @@
       "Returns": "",
       "Parameters": [
         {
-          "Name": "oldDirectory",
-          "TypeName": "String",
           "Description": "The full path to the old directory",
-          "Optional": false
+          "Name": "oldDirectory",
+          "Optional": false,
+          "TypeName": "String"
         },
         {
-          "Name": "NewDirectoryName",
-          "TypeName": "String",
           "Description": "The name component of the new directory (not the full path)",
-          "Optional": false
+          "Name": "NewDirectoryName",
+          "Optional": false,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -2587,16 +2587,16 @@
     "RenameFile": {
       "Parameters": [
         {
-          "Name": "Filename",
-          "TypeName": "String",
           "Description": "",
-          "Optional": false
+          "Name": "Filename",
+          "Optional": false,
+          "TypeName": "String"
         },
         {
-          "Name": "NewFilename",
-          "TypeName": "String",
           "Description": "",
-          "Optional": false
+          "Name": "NewFilename",
+          "Optional": false,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -2607,10 +2607,10 @@
       "Returns": "",
       "Parameters": [
         {
-          "Name": "DirectoryName",
-          "TypeName": "String",
           "Description": "",
-          "Optional": false
+          "Name": "DirectoryName",
+          "Optional": false,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -2621,10 +2621,10 @@
       "Returns": "",
       "Parameters": [
         {
-          "Name": "Filename",
-          "TypeName": "String",
           "Description": "",
-          "Optional": false
+          "Name": "Filename",
+          "Optional": false,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -2633,28 +2633,28 @@
     "WriteFileChunk": {
       "Parameters": [
         {
+          "Description": "",
           "Name": "Filename",
-          "TypeName": "String",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "String"
         },
         {
+          "Description": "",
           "Name": "Data",
-          "TypeName": "String",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "String"
         },
         {
+          "Description": "",
           "Name": "Offset",
-          "TypeName": "Int64",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "Int64"
         },
         {
-          "Name": "FinalChunk",
-          "TypeName": "Boolean",
           "Description": "",
-          "Optional": false
+          "Name": "FinalChunk",
+          "Optional": false,
+          "TypeName": "Boolean"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -2665,10 +2665,10 @@
     "ImportConfig": {
       "Parameters": [
         {
-          "Name": "filename",
-          "TypeName": "String",
           "Description": "",
-          "Optional": false
+          "Name": "filename",
+          "Optional": false,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "IDictionary<String, String>",
@@ -2684,10 +2684,10 @@
     "DeleteFromS3": {
       "Parameters": [
         {
-          "Name": "BackupId",
-          "TypeName": "Guid",
           "Description": "",
-          "Optional": false
+          "Name": "BackupId",
+          "Optional": false,
+          "TypeName": "Guid"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -2696,10 +2696,10 @@
     "DeleteLocalBackup": {
       "Parameters": [
         {
-          "Name": "BackupId",
-          "TypeName": "Guid",
           "Description": "",
-          "Optional": false
+          "Name": "BackupId",
+          "Optional": false,
+          "TypeName": "Guid"
         }
       ],
       "ReturnTypeName": "Void",
@@ -2708,10 +2708,10 @@
     "DownloadFromS3": {
       "Parameters": [
         {
-          "Name": "BackupId",
-          "TypeName": "Guid",
           "Description": "",
-          "Optional": false
+          "Name": "BackupId",
+          "Optional": false,
+          "TypeName": "Guid"
         }
       ],
       "ReturnTypeName": "RunningTask",
@@ -2730,16 +2730,16 @@
     "RestoreBackup": {
       "Parameters": [
         {
-          "Name": "BackupId",
-          "TypeName": "Guid",
           "Description": "",
-          "Optional": false
+          "Name": "BackupId",
+          "Optional": false,
+          "TypeName": "Guid"
         },
         {
-          "Name": "DeleteExistingData",
-          "TypeName": "Boolean",
           "Description": "",
-          "Optional": true
+          "Name": "DeleteExistingData",
+          "Optional": true,
+          "TypeName": "Boolean"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -2748,16 +2748,16 @@
     "SetBackupSticky": {
       "Parameters": [
         {
-          "Name": "BackupId",
-          "TypeName": "Guid",
           "Description": "",
-          "Optional": false
+          "Name": "BackupId",
+          "Optional": false,
+          "TypeName": "Guid"
         },
         {
-          "Name": "Sticky",
-          "TypeName": "Boolean",
           "Description": "",
-          "Optional": false
+          "Name": "Sticky",
+          "Optional": false,
+          "TypeName": "Boolean"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -2766,28 +2766,28 @@
     "TakeBackup": {
       "Parameters": [
         {
+          "Description": "",
           "Name": "Title",
-          "TypeName": "String",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "String"
         },
         {
+          "Description": "",
           "Name": "Description",
-          "TypeName": "String",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "String"
         },
         {
+          "Description": "",
           "Name": "Sticky",
-          "TypeName": "Boolean",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "Boolean"
         },
         {
-          "Name": "WasCreatedAutomatically",
-          "TypeName": "Boolean",
           "Description": "",
-          "Optional": true
+          "Name": "WasCreatedAutomatically",
+          "Optional": true,
+          "TypeName": "Boolean"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -2796,10 +2796,10 @@
     "UploadToS3": {
       "Parameters": [
         {
-          "Name": "BackupId",
-          "TypeName": "Guid",
           "Description": "",
-          "Optional": false
+          "Name": "BackupId",
+          "Optional": false,
+          "TypeName": "Guid"
         }
       ],
       "ReturnTypeName": "RunningTask",
@@ -2815,10 +2815,10 @@
     "AddOPEntry": {
       "Parameters": [
         {
-          "Name": "UserOrUUID",
-          "TypeName": "String",
           "Description": "",
-          "Optional": false
+          "Name": "UserOrUUID",
+          "Optional": false,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -2827,10 +2827,10 @@
     "AddToWhitelist": {
       "Parameters": [
         {
-          "Name": "UserOrUUID",
-          "TypeName": "String",
           "Description": "",
-          "Optional": false
+          "Name": "UserOrUUID",
+          "Optional": false,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -2839,10 +2839,10 @@
     "BanUserByID": {
       "Parameters": [
         {
-          "Name": "ID",
-          "TypeName": "String",
           "Description": "",
-          "Optional": false
+          "Name": "ID",
+          "Optional": false,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "Void",
@@ -2856,10 +2856,10 @@
     "BukGetInstallUpdatePlugin": {
       "Parameters": [
         {
-          "Name": "pluginId",
-          "TypeName": "Int32",
           "Description": "",
-          "Optional": false
+          "Name": "pluginId",
+          "Optional": false,
+          "TypeName": "Int32"
         }
       ],
       "ReturnTypeName": "RunningTask",
@@ -2873,10 +2873,10 @@
     "BukGetPluginInfo": {
       "Parameters": [
         {
-          "Name": "PluginId",
-          "TypeName": "Int32",
           "Description": "",
-          "Optional": false
+          "Name": "PluginId",
+          "Optional": false,
+          "TypeName": "Int32"
         }
       ],
       "ReturnTypeName": "JSONRawResponse",
@@ -2885,22 +2885,22 @@
     "BukGetPluginsForCategory": {
       "Parameters": [
         {
+          "Description": "",
           "Name": "CategoryId",
-          "TypeName": "String",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "String"
         },
         {
+          "Description": "",
           "Name": "PageNumber",
-          "TypeName": "Int32",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "Int32"
         },
         {
-          "Name": "PageSize",
-          "TypeName": "Int32",
           "Description": "",
-          "Optional": false
+          "Name": "PageSize",
+          "Optional": false,
+          "TypeName": "Int32"
         }
       ],
       "ReturnTypeName": "JSONRawResponse",
@@ -2914,10 +2914,10 @@
     "BukGetRemovePlugin": {
       "Parameters": [
         {
-          "Name": "PluginId",
-          "TypeName": "Int32",
           "Description": "",
-          "Optional": false
+          "Name": "PluginId",
+          "Optional": false,
+          "TypeName": "Int32"
         }
       ],
       "ReturnTypeName": "Void",
@@ -2926,22 +2926,22 @@
     "BukGetSearch": {
       "Parameters": [
         {
+          "Description": "",
           "Name": "Query",
-          "TypeName": "String",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "String"
         },
         {
+          "Description": "",
           "Name": "PageNumber",
-          "TypeName": "Int32",
-          "Description": "",
-          "Optional": false
+          "Optional": false,
+          "TypeName": "Int32"
         },
         {
-          "Name": "PageSize",
-          "TypeName": "Int32",
           "Description": "",
-          "Optional": false
+          "Name": "PageSize",
+          "Optional": false,
+          "TypeName": "Int32"
         }
       ],
       "ReturnTypeName": "JSONRawResponse",
@@ -2950,10 +2950,10 @@
     "ClearInventoryByID": {
       "Parameters": [
         {
-          "Name": "ID",
-          "TypeName": "String",
           "Description": "",
-          "Optional": false
+          "Name": "ID",
+          "Optional": false,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "Void",
@@ -2969,10 +2969,10 @@
       "Returns": "",
       "Parameters": [
         {
-          "Name": "id",
-          "TypeName": "String",
           "Description": "",
-          "Optional": false
+          "Name": "id",
+          "Optional": false,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "String",
@@ -2991,10 +2991,10 @@
     "KickUserByID": {
       "Parameters": [
         {
-          "Name": "ID",
-          "TypeName": "String",
           "Description": "",
-          "Optional": false
+          "Name": "ID",
+          "Optional": false,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "Void",
@@ -3003,10 +3003,10 @@
     "KillByID": {
       "Parameters": [
         {
-          "Name": "ID",
-          "TypeName": "String",
           "Description": "",
-          "Optional": false
+          "Name": "ID",
+          "Optional": false,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "Void",
@@ -3020,10 +3020,10 @@
     "RemoveOPEntry": {
       "Parameters": [
         {
-          "Name": "UserOrUUID",
-          "TypeName": "String",
           "Description": "",
-          "Optional": false
+          "Name": "UserOrUUID",
+          "Optional": false,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "Void",
@@ -3032,10 +3032,10 @@
     "RemoveWhitelistEntry": {
       "Parameters": [
         {
-          "Name": "UserOrUUID",
-          "TypeName": "String",
           "Description": "",
-          "Optional": false
+          "Name": "UserOrUUID",
+          "Optional": false,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "Void",
@@ -3046,10 +3046,10 @@
       "Returns": "",
       "Parameters": [
         {
-          "Name": "ID",
-          "TypeName": "String",
           "Description": "",
-          "Optional": false
+          "Name": "ID",
+          "Optional": false,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "Void",
@@ -3063,40 +3063,6 @@
       "IsComplexType": false
     }
   },
-  "SchematicCopyPlugin": {
-    "CopySchematic": {
-      "Description": "Copies a schematic file from one server to another, searching first in the WorldEdit folder, then in the FastAsyncWorldEdit folder.",
-      "Returns": "An ActionResult dictating whether the file operation was successful.",
-      "Parameters": [
-        {
-          "Name": "sourceInstanceName",
-          "TypeName": "String",
-          "Description": "",
-          "Optional": false
-        },
-        {
-          "Name": "destInstanceName",
-          "TypeName": "String",
-          "Description": "",
-          "Optional": false
-        },
-        {
-          "Name": "schematicName",
-          "TypeName": "String",
-          "Description": "",
-          "Optional": false
-        },
-        {
-          "Name": "isModded",
-          "TypeName": "Boolean",
-          "Description": "",
-          "Optional": false
-        }
-      ],
-      "ReturnTypeName": "ActionResult",
-      "IsComplexType": true
-    }
-  },
   "steamcmdplugin": {
     "CancelSteamGuard": {
       "Parameters": [],
@@ -3106,10 +3072,10 @@
     "SteamGuardCode": {
       "Parameters": [
         {
-          "Name": "code",
-          "TypeName": "String",
           "Description": "",
-          "Optional": false
+          "Name": "code",
+          "Optional": false,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "Void",
@@ -3118,16 +3084,16 @@
     "SteamUsernamePassword": {
       "Parameters": [
         {
-          "Name": "username",
-          "TypeName": "String",
           "Description": "",
-          "Optional": false
+          "Name": "username",
+          "Optional": false,
+          "TypeName": "String"
         },
         {
-          "Name": "password",
-          "TypeName": "String",
           "Description": "",
-          "Optional": false
+          "Name": "password",
+          "Optional": false,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "Void",

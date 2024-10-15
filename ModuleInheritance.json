@@ -6,15 +6,6 @@
     "EmailSenderPlugin",
     "FileManagerPlugin"
   ],
-  "Minecraft": [
-    "AnalyticsPlugin",
-    "CommonCorePlugin",
-    "Core",
-    "EmailSenderPlugin",
-    "FileManagerPlugin",
-    "LocalFileBackupPlugin",
-    "MinecraftModule"
-  ],
   "GenericModule": [
     "AnalyticsPlugin",
     "CommonCorePlugin",
@@ -25,5 +16,14 @@
     "LocalFileBackupPlugin",
     "RCONPlugin",
     "steamcmdplugin"
+  ],
+  "Minecraft": [
+    "AnalyticsPlugin",
+    "CommonCorePlugin",
+    "Core",
+    "EmailSenderPlugin",
+    "FileManagerPlugin",
+    "LocalFileBackupPlugin",
+    "MinecraftModule"
   ]
 }
