@@ -2,8 +2,8 @@
 
 from __future__ import annotations
 
-import json
-import requests
+from json import dumps, loads
+from requests import post
 from typing import Any, Union
 
 class AMPAPI:
@@ -22,14 +22,14 @@ class AMPAPI:
         headers = {'Accept': 'text/javascript',}
         session = {"SESSIONID": self.sessionId}
         data_added = dict(session, **data)
-        data_json = json.dumps(data_added)
+        data_json = dumps(data_added)
 
-        res = requests.post(
+        res = post(
             url=f"{self.dataSource}/{endpoint}",
             headers=headers,
             data=data_json
         )
-        res_json = json.loads(res.content)
+        res_json = loads(res.content)
 
         return res_json
 

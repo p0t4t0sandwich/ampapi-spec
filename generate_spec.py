@@ -2,12 +2,12 @@
 
 from __future__ import annotations
 
-import os
-import sys
-import json
+from json import dump, dumps, loads
+from os import getenv
+from sys import argv
 from typing import Any
 
-from ampapi import AMPAPI
+from ampapi_simple import AMPAPI
 
 class GenerateSpec:
     NewAPISpec: dict[str, dict[str, Any]] = {}
@@ -43,7 +43,7 @@ class GenerateSpec:
     def _load_typed_api_spec(self) -> None:
         with open("./TypedAPISpec.json") as f:
             json_str: str = f.read()
-            self.TypedAPISpec = json.loads(json_str)
+            self.TypedAPISpec = loads(json_str)
             f.close()
 
     def _load_api_spec(self) -> None:
@@ -78,7 +78,7 @@ class GenerateSpec:
             version_file.close()
 
             # Set the github actions output
-            github_output = os.getenv('GITHUB_OUTPUT')
+            github_output = getenv('GITHUB_OUTPUT')
             go_file = open(github_output, "a")
             go_file.write("AMP_VERSION=" + latest_version)
             go_file.close()
@@ -146,7 +146,7 @@ class GenerateSpec:
                         sorted_params.append(dict(sorted(param.items())))
                     self.NewAPISpec[module][method]["Parameters"] = sorted_params
 
-            json.dump(self.NewAPISpec, outfile, indent=2)
+            dump(self.NewAPISpec, outfile, indent=2)
             outfile.write("\n")
             outfile.close()
 
@@ -161,7 +161,7 @@ class GenerateSpec:
                         sorted_params.append(dict(sorted(param.items())))
                     self.TypedAPISpec[module][method]["Parameters"] = sorted_params
 
-            json.dump(self.TypedAPISpec, outfile, indent=2)
+            dump(self.TypedAPISpec, outfile, indent=2)
             outfile.write("\n")
             outfile.close()
 
@@ -171,7 +171,7 @@ class GenerateSpec:
             for module in self.ModuleInheritance:
                 self.ModuleInheritance[module].sort()
 
-            outfile.write(json.dumps(self.ModuleInheritance, indent=2))
+            outfile.write(dumps(self.ModuleInheritance, indent=2))
             outfile.write("\n")
             outfile.close()
 
@@ -190,7 +190,7 @@ class GenerateSpec:
 
 if __name__ == "__main__":
     # Get the arguments
-    args = sys.argv[1:]
+    args = argv[1:]
 
     # Create the GenerateSpec object
     gs = GenerateSpec(args)

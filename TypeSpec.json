@@ -122,6 +122,26 @@
             }
         ]
     },
+    "APIError": {
+        "Description": "An error object",
+        "Fields": [
+            {
+                "Description": "The title of the error",
+                "Name": "Title",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The error message",
+                "Name": "Message",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The stack trace of the error",
+                "Name": "StackTrace",
+                "TypeName": "String"
+            }
+        ]
+    },
     "APIMethodInfo": {
         "Description": "Information about an API method",
         "Fields": [

@@ -3,10 +3,10 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-import json
+from json import dumps, loads
 from typing import Any
 
-from ampapi import AMPAPI
+from ampapi_simple import AMPAPI
 
 # C# to Python
 cs_to_py = {
@@ -48,13 +48,13 @@ class UpdateTypes:
     def _load_api_spec(self) -> None:
         with open("./TypedAPISpec.json") as f:
             json_str: str = f.read()
-            self.APISpec = json.loads(json_str)
+            self.APISpec = loads(json_str)
             f.close()
 
     def _load_type_spec(self) -> None:
         with open("./TypeSpec.json") as f:
             json_str: str = f.read()
-            for type_name, type_def in json.loads(json_str).items():
+            for type_name, type_def in loads(json_str).items():
                 self.TypeSpec[type_name] = TypeDef(
                     Description=type_def["Description"],
                     Fields=[TypeField(**field) for field in type_def["Fields"]],
@@ -139,7 +139,7 @@ class UpdateTypes:
         type_graph: dict | list = self.lookup_type(return_type)
 
         # Pretty json
-        print(json.dumps(type_graph, indent=2))
+        print(dumps(type_graph, indent=2))
 
         print(f"Return Type: {return_type}")
 
