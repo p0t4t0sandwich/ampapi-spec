@@ -1304,11 +1304,11 @@ class Core(AMPAPI):
         """
         return self.api_call("Core/GetAMPUsersSummary", {})
 
-    def GetAPISpec(self, ) -> dict[str, str]:
+    def GetAPISpec(self, ) -> dict[str, dict[str, MethodInfoSummary]]:
         """
         Name Description Optional
 
-        :returns: dict[str, str]
+        :returns: dict[str, dict[str, MethodInfoSummary]]
         """
         return self.api_call("Core/GetAPISpec", {})
 

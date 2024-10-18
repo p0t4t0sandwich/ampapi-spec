@@ -11,3 +11,16 @@ class AMPAPI():
 
     def api_call(self, endpoint: str, args: dict) -> dict[str, Any]:
         return self._authprovider.api_call(endpoint, args)
+
+class AMPAPIAsync():
+    """
+    Class for interacting with the AMP API asynchronously
+    Note: This class assumes that the AuthProvider is also async
+    """
+    _authprovider: AuthProvider
+
+    def __init__(self, authprovider: AuthProvider) -> None:
+        self._authprovider = authprovider
+
+    async def api_call(self, endpoint: str, args: dict) -> dict[str, Any]:
+        return await self._authprovider.api_call(endpoint, args)

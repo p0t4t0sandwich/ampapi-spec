@@ -10,7 +10,7 @@ class ActionResult(Generic[T]):
     :param Reason: Reason for failure
     :type Reason: str
     :param Result: Result of the call
-    :type Result: T
+    :type Result: T | None
     :param SupportURL: Support URL
     :type SupportURL: str
     :param SupportTitle: Support title
@@ -19,7 +19,7 @@ class ActionResult(Generic[T]):
     :type Status: bool
     """
     Reason: 'str'
-    Result: 'T' | None
+    Result: 'T | None'
     SupportURL: 'str'
     SupportTitle: 'str'
     Status: 'bool'
@@ -71,7 +71,7 @@ class AMPInstanceBase:
     :param InstanceName: The instance name
     :type InstanceName: str
     :param LastReactivationAttempt: The last reactivation attempt
-    :type LastReactivationAttempt: str
+    :type LastReactivationAttempt: str | None
     :param ManagementMode: The management mode
     :type ManagementMode: ManagementModes
     :param MetricsPublishingHMAC: The metrics publishing HMAC
@@ -154,7 +154,7 @@ class AMPInstanceBase:
     Group: 'str'
     InstanceID: 'str'
     InstanceName: 'str'
-    LastReactivationAttempt: 'str' | None
+    LastReactivationAttempt: 'str | None'
     ManagementMode: 'ManagementModes'
     MetricsPublishingHMAC: 'str'
     ModuleDisplayName: 'str'
@@ -426,8 +426,8 @@ class Architecture(Enum):
 class AuthenticationRequirement(Enum):
     """
     Represents the authentication requirement
-    :param None: None
-    :type None: Int32
+    :param None_: None
+    :type None_: Int32
     :param Username: Username
     :type Username: Int32
     :param Password: Password
@@ -437,7 +437,7 @@ class AuthenticationRequirement(Enum):
     :param Passkeys: Passkeys
     :type Passkeys: Int32
     """
-    None = 0
+    None_ = 0
     Username = 1
     Password = 2
     TOTP = 4
@@ -558,7 +558,7 @@ class BackupManifest:
     :param Name: The name
     :type Name: str
     :param ParentManifest: The parent manifest
-    :type ParentManifest: str
+    :type ParentManifest: str | None
     :param RemoteStoreId: The remote store ID
     :type RemoteStoreId: str
     :param SourceOS: The source OS
@@ -584,7 +584,7 @@ class BackupManifest:
     META: 'str'
     ModuleName: 'str'
     Name: 'str'
-    ParentManifest: 'str' | None
+    ParentManifest: 'str | None'
     RemoteStoreId: 'str'
     SourceOS: 'SupportedOS'
     Timestamp: 'str'
@@ -795,9 +795,9 @@ class DeploymentTemplate:
     :param TemplateBaseApp: The template base app
     :type TemplateBaseApp: str
     :param TemplateInstance: The template instance
-    :type TemplateInstance: str
+    :type TemplateInstance: str | None
     :param TemplateRole: The template role
-    :type TemplateRole: str
+    :type TemplateRole: str | None
     :param ZipOverlayPath: The zip overlay path
     :type ZipOverlayPath: str
     :param CloneRoleIntoUser: Whether to clone the role into the user
@@ -814,8 +814,8 @@ class DeploymentTemplate:
     SettingMappings: 'dict[str, str]'
     Tags: 'list[str]'
     TemplateBaseApp: 'str'
-    TemplateInstance: 'str' | None
-    TemplateRole: 'str' | None
+    TemplateInstance: 'str | None'
+    TemplateRole: 'str | None'
     ZipOverlayPath: 'str'
     CloneRoleIntoUser: 'bool'
     MatchDatastoreTags: 'bool'
@@ -1333,7 +1333,7 @@ class LocalAMPInstance:
     :param InstanceName: The instance name
     :type InstanceName: str
     :param LastReactivationAttempt: The last reactivation attempt
-    :type LastReactivationAttempt: str
+    :type LastReactivationAttempt: str | None
     :param ManagementMode: The management mode
     :type ManagementMode: ManagementModes
     :param MetricsPublishingHMAC: The metrics publishing HMAC
@@ -1424,7 +1424,7 @@ class LocalAMPInstance:
     Group: 'str'
     InstanceID: 'str'
     InstanceName: 'str'
-    LastReactivationAttempt: 'str' | None
+    LastReactivationAttempt: 'str | None'
     ManagementMode: 'ManagementModes'
     MetricsPublishingHMAC: 'str'
     ModuleDisplayName: 'str'
@@ -1509,14 +1509,14 @@ class MethodInfoSummary:
     :param ReturnTypeName: The return type name
     :type ReturnTypeName: str
     :param Returns: The methods return value (deprecated)
-    :type Returns: str
+    :type Returns: str | None
     :param IsComplexType: Whether the method is a complex type
     :type IsComplexType: bool
     """
     Description: 'str'
     Parameters: 'list[MethodParameterSummary]'
     ReturnTypeName: 'str'
-    Returns: 'str' | None
+    Returns: 'str | None'
     IsComplexType: 'bool'
 
 @dataclass
@@ -1528,7 +1528,7 @@ class MethodParameterSummary:
     :param Name: The name
     :type Name: str
     :param ParamEnumValues: The parameter enum values
-    :type ParamEnumValues: dict[str, Any]
+    :type ParamEnumValues: dict[str, Any] | None
     :param TypeName: The type name
     :type TypeName: str
     :param Optional: Whether the parameter is optional
@@ -1536,7 +1536,7 @@ class MethodParameterSummary:
     """
     Description: 'str'
     Name: 'str'
-    ParamEnumValues: 'dict[str, Any]' | None
+    ParamEnumValues: 'dict[str, Any] | None'
     TypeName: 'str'
     Optional: 'bool'
 
@@ -1922,7 +1922,7 @@ class RunningTask:
     :param Description: The description
     :type Description: str
     :param EndTime: The end time
-    :type EndTime: str
+    :type EndTime: str | None
     :param LastUpdatePushed: The last update pushed
     :type LastUpdatePushed: str
     :param Name: The name
@@ -1930,11 +1930,11 @@ class RunningTask:
     :param Origin: The origin
     :type Origin: str
     :param ParentTaskId: The parent task ID
-    :type ParentTaskId: str
+    :type ParentTaskId: str | None
     :param ProgressPercent: The progress percentage
     :type ProgressPercent: int
     :param RemoteInstanceId: The remote instance ID
-    :type RemoteInstanceId: str
+    :type RemoteInstanceId: str | None
     :param Speed: The speed
     :type Speed: str
     :param StartTime: The start time
@@ -1959,13 +1959,13 @@ class RunningTask:
     :type DontPropagate: bool
     """
     Description: 'str'
-    EndTime: 'str' | None
+    EndTime: 'str | None'
     LastUpdatePushed: 'str'
     Name: 'str'
     Origin: 'str'
-    ParentTaskId: 'str' | None
+    ParentTaskId: 'str | None'
     ProgressPercent: 'int'
-    RemoteInstanceId: 'str' | None
+    RemoteInstanceId: 'str | None'
     Speed: 'str'
     StartTime: 'str'
     StateMessage: 'str'
@@ -2002,7 +2002,7 @@ class ScheduleEntryDefinition:
     :param Id: The ID
     :type Id: str
     :param CreatedBy: The creator
-    :type CreatedBy: str
+    :type CreatedBy: str | None
     :param EnabledState: The enabled state
     :type EnabledState: ScheduleEnabledState
     :param ErrorBehaviour: The error behaviour
@@ -2023,7 +2023,7 @@ class ScheduleEntryDefinition:
     :type WaitForComplete: bool
     """
     Id: 'str'
-    CreatedBy: 'str' | None
+    CreatedBy: 'str | None'
     EnabledState: 'ScheduleEnabledState'
     ErrorBehaviour: 'ScheduleErrorBehaviour'
     LastErrorReason: 'str'
@@ -2069,7 +2069,7 @@ class ScheduleTaskParameter:
     :param DisplayName: The display name
     :type DisplayName: str
     :param EnumValues: The enum values
-    :type EnumValues: dict[str, str]
+    :type EnumValues: dict[str, str] | None
     :param InputType: The input type
     :type InputType: str
     :param Name: The name
@@ -2081,7 +2081,7 @@ class ScheduleTaskParameter:
     """
     Description: 'str'
     DisplayName: 'str'
-    EnumValues: 'dict[str, str]' | None
+    EnumValues: 'dict[str, str] | None'
     InputType: 'str'
     Name: 'str'
     SelectionSource: 'StringSelectionSourceAttribute'
@@ -2098,7 +2098,7 @@ class ScheduleTrigger:
     :param EnabledState: The enabled state
     :type EnabledState: ScheduleEnabledState
     :param LastExecuted: The last executed
-    :type LastExecuted: str
+    :type LastExecuted: str | None
     :param Name: The name
     :type Name: str
     :param Order: The order
@@ -2107,7 +2107,7 @@ class ScheduleTrigger:
     Id: 'str'
     Description: 'str'
     EnabledState: 'ScheduleEnabledState'
-    LastExecuted: 'str' | None
+    LastExecuted: 'str | None'
     Name: 'str'
     Order: 'int'
 
@@ -2150,7 +2150,7 @@ class SettingSpec:
     :param Description: The description
     :type Description: str
     :param EnumValues: The enum values
-    :type EnumValues: dict[str, str]
+    :type EnumValues: dict[str, str] | None
     :param InputType: The input type
     :type InputType: str
     :param Keywords: The keywords
@@ -2158,11 +2158,11 @@ class SettingSpec:
     :param MaxLength: The max length
     :type MaxLength: int
     :param MaxValue: The max value
-    :type MaxValue: float
+    :type MaxValue: float | None
     :param Meta: The meta
     :type Meta: str
     :param MinValue: The min value
-    :type MinValue: float
+    :type MinValue: float | None
     :param Name: The name
     :type Name: str
     :param Node: The node
@@ -2201,13 +2201,13 @@ class SettingSpec:
     Category: 'str'
     CurrentValue: 'Any'
     Description: 'str'
-    EnumValues: 'dict[str, str]' | None
+    EnumValues: 'dict[str, str] | None'
     InputType: 'str'
     Keywords: 'str'
     MaxLength: 'int'
-    MaxValue: 'float' | None
+    MaxValue: 'float | None'
     Meta: 'str'
-    MinValue: 'float' | None
+    MinValue: 'float | None'
     Name: 'str'
     Node: 'str'
     Order: 'int'
@@ -2291,8 +2291,8 @@ class StringSelectionSourceAttribute:
 class SupportedOS(Enum):
     """
     Represents the supported OS
-    :param None: None
-    :type None: Int32
+    :param None_: None
+    :type None_: Int32
     :param Windows: Windows
     :type Windows: Int32
     :param Linux: Linux
@@ -2306,7 +2306,7 @@ class SupportedOS(Enum):
     :param All: All
     :type All: Int32
     """
-    None = 0
+    None_ = 0
     Windows = 1
     Linux = 2
     MacOS = 4
@@ -2360,7 +2360,7 @@ class TimeIntervalTrigger:
     :param EnabledState: The enabled state
     :type EnabledState: ScheduleEnabledState
     :param LastExecuted: The last executed
-    :type LastExecuted: str
+    :type LastExecuted: str | None
     :param MatchDaysOfMonth: The match days of month
     :type MatchDaysOfMonth: list[int]
     :param MatchDays: The match days
@@ -2379,7 +2379,7 @@ class TimeIntervalTrigger:
     Id: 'str'
     Description: 'str'
     EnabledState: 'ScheduleEnabledState'
-    LastExecuted: 'str' | None
+    LastExecuted: 'str | None'
     MatchDaysOfMonth: 'list[int]'
     MatchDays: 'list[int]'
     MatchHours: 'list[int]'
@@ -2595,8 +2595,8 @@ class Version:
 class VirtualizationType(Enum):
     """
     Represents the virtualization type
-    :param None: None/Bare Metal
-    :type None: Int32
+    :param None_: None/Bare Metal
+    :type None_: Int32
     :param VMware: VMware
     :type VMware: Int32
     :param VMwareESX: VMware ESX
@@ -2622,7 +2622,7 @@ class VirtualizationType(Enum):
     :param ProxmoxLXC: Proxmox LXC Container
     :type ProxmoxLXC: Int32
     """
-    None = 0
+    None_ = 0
     VMware = 1
     VMwareESX = 2
     VirtualBox = 3

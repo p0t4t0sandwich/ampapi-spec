@@ -1,26 +1,10 @@
 #!/bin/python3
-from json import dumps, loads
+from json import loads
 from typing import Any
 
 import sys
 sys.path.append("../../../")
 from validate_types import TypeDef, TypeField
-
-# @dataclass
-# class TypeField:
-#     Name: str
-#     TypeName: str
-#     Description: str
-#     Optional: bool = None
-#     Value: int = None
-
-# @dataclass
-# class TypeDef:
-#     Description: str
-#     Fields: list[TypeField]
-#     SpecialNote: str = None
-#     SpecialType: str = None
-#     SerializesAs: str = None
 
 # C# to Python
 cs_to_py = {
@@ -77,33 +61,38 @@ class CodeGen:
         self._load_type_spec()
         self._load_module_inheritance()
 
-    def _convert_type(self, type_name: str) -> str:
-        if "List<" in type_name:
-            t = type_name.replace("List<", "").replace(">", "")
-            if t in cs_to_py:
-                t = cs_to_py[t]
-            return f"list[{t}]"
-        if "Dictionary<" in type_name:
-            t = type_name.replace("Dictionary<", "").replace(">", "")
-            types = t.split(", ")
-            if types[0] in cs_to_py:
-                types[0] = cs_to_py[types[0]]
-            if types[1] in cs_to_py:
-                types[1] = cs_to_py[types[1]]
-            return f"dict[{types[0]}, {types[1]}]"
-        if "Nullable<" in type_name:
+    def _convert_type(self, type_name: str, optional: bool = False) -> str:
+        converted_type = ""
+        if type_name.startswith("List<"):
+            inner = type_name.replace("List<", "").replace(">", "")
+            t = self._convert_type(inner)
+            converted_type = f"list[{t}]"
+        elif type_name.startswith("Dictionary<"):
+            stripped = type_name[11:-1]
+            split = stripped.split(", ", 1)
+            left = self._convert_type(split[0])
+            right = self._convert_type(split[1])
+            converted_type = f"dict[{left}, {right}]"
+        elif "Nullable<" in type_name:
             t = type_name.replace("Nullable<", "").replace(">", "")
             if t in cs_to_py:
                 t = cs_to_py[t]
-            return f"{t} | None"
-        if "ActionResult<" in type_name:
+            converted_type = f"{t} | None"
+        elif "ActionResult<" in type_name:
             t = type_name.replace("ActionResult<", "").replace(">", "")
             if t in cs_to_py:
                 t = cs_to_py[t]
-            return f"ActionResult[{t}]"
-        if type_name in cs_to_py:
-            return cs_to_py[type_name]
-        return type_name
+            converted_type = f"ActionResult[{t}]"
+        else:
+            if type_name in cs_to_py:
+                converted_type = cs_to_py[type_name]
+            else:
+                converted_type = type_name
+
+        if optional:
+            converted_type += " | None"
+
+        return converted_type
 
     def generate_types(self) -> None:
         text = ""
@@ -128,11 +117,12 @@ class CodeGen:
             generic_text = generic_text_template
 
             fields = ""
+            type_def_description = type_def.Description
 
             if type_def.SpecialType == "Enum":
-                type_def_description = type_def.Description
-
                 for field in type_def.Fields:
+                    if field.Name == "None":
+                        field.Name = "None_"
                     field_text = f"    {field.Name} = {field.Value}\n"
                     fields += field_text
 
@@ -145,18 +135,10 @@ class CodeGen:
                 text += enum_text
 
             elif type_def.SpecialType == "Generic":
-                type_def_description = type_def.Description
-
                 for field in type_def.Fields:
-                    if field.TypeName in cs_to_py:
-                        field_text = f"    {field.Name}: '{cs_to_py[field.TypeName]}'"
-                        type_def_description += f"\n    :param {field.Name}: {field.Description}\n    :type {field.Name}: {cs_to_py[field.TypeName]}"
-                    else:
-                        field_text = f"    {field.Name}: '{field.TypeName}'"
-                        type_def_description += f"\n    :param {field.Name}: {field.Description}\n    :type {field.Name}: {field.TypeName}"
-
-                    if field.Optional:
-                        field_text += " | None"
+                    field.TypeName = self._convert_type(field.TypeName, field.Optional)
+                    field_text = f"    {field.Name}: '{field.TypeName}'"
+                    type_def_description += f"\n    :param {field.Name}: {field.Description}\n    :type {field.Name}: {field.TypeName}"
 
                     field_text += "\n"
                     fields += field_text
@@ -168,40 +150,13 @@ class CodeGen:
                 text += generic_text
 
             else:
-                type_def_description = type_def.Description
-
                 for field in type_def.Fields:
-                    if "List<" in field.TypeName:
-                        t = field.TypeName.replace("List<", "").replace(">", "")
-                        if t in cs_to_py:
-                            t = cs_to_py[t]
-                        field_text = f"    {field.Name}: 'list[{t}]'"
+                    field.TypeName = self._convert_type(field.TypeName, field.Optional)
 
-                        type_def_description += f"\n    :param {field.Name}: {field.Description}\n    :type {field.Name}: list[{t}]"
-
-                    elif "Dictionary<" in field.TypeName:
-                        t = field.TypeName.replace("Dictionary<", "").replace(">", "")
-                        types = t.split(", ")
-                        if types[0] in cs_to_py:
-                            types[0] = cs_to_py[types[0]]
-                        if types[1] in cs_to_py:
-                            types[1] = cs_to_py[types[1]]
-                        field_text = f"    {field.Name}: 'dict[{types[0]}, {types[1]}]'"
-
-                        type_def_description += f"\n    :param {field.Name}: {field.Description}\n    :type {field.Name}: dict[{types[0]}, {types[1]}]"
-
-                    else:
-                        if field.TypeName in cs_to_py:
-                            field_text = f"    {field.Name}: '{cs_to_py[field.TypeName]}'"
-                            type_def_description += f"\n    :param {field.Name}: {field.Description}\n    :type {field.Name}: {cs_to_py[field.TypeName]}"
-                        else:
-                            field_text = f"    {field.Name}: '{field.TypeName}'"
-                            type_def_description += f"\n    :param {field.Name}: {field.Description}\n    :type {field.Name}: {field.TypeName}"
-
-                    if field.Optional:
-                        field_text += " | None"
-
+                    field_text = f"    {field.Name}: '{field.TypeName}'"
+                    type_def_description += f"\n    :param {field.Name}: {field.Description}\n    :type {field.Name}: {field.TypeName}"
                     field_text += "\n"
+
                     fields += field_text
 
                 class_text = class_text.replace("{TypeFields}", fields)
@@ -354,5 +309,4 @@ class CodeGen:
         self.generate_modules()
 
 if __name__ == "__main__":
-    code_gen = CodeGen()
-    code_gen.generate()
+    CodeGen().generate()

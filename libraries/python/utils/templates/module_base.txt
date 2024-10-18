@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from typing import Final
 
-from .ampapi import AMPAPI
+from .ampapi import AMPAPI, AMPAPIAsync
 from .auth import AuthProvider
 from .plugins import *
 

@@ -1,5 +1,7 @@
 # ampapi-py
 
+## Note: This library is 95% generated code with no soul whatsoever. If you're more interested in a nicer developer experience, check out k8thekat's [AMPAPI_Python](<https://github.com/k8thekat/AMPAPI_Python>)
+
 [![License](https://img.shields.io/github/license/p0t4t0sandwich/ampapi-py?color=blue)](https://img.shields.io/github/downloads/p0t4t0sandwich/ampapi-py/LICENSE)
 [![Github](https://img.shields.io/github/stars/p0t4t0sandwich/ampapi-py)](https://github.com/p0t4t0sandwich/ampapi-py)
 [![Github Issues](https://img.shields.io/github/issues/p0t4t0sandwich/ampapi-py?label=Issues)](https://github.com/p0t4t0sandwich/ampapi-py/issues)
