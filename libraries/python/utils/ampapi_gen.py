@@ -48,6 +48,7 @@ cs_to_py = {
 class CodeGen:
     APISpec: dict[str, dict[str, Any]] = {}
     TypeSpec: dict[str, TypeDef] = {}
+    ModuleInheritance: dict[str, list[str]] = {}
 
     def _load_api_spec(self) -> None:
         with open("../../../TypedAPISpec.json") as f:
@@ -66,9 +67,15 @@ class CodeGen:
                     SerializesAs=type_def.get("SerializesAs")
                 )
 
+    def _load_module_inheritance(self) -> None:
+        with open("../../../ModuleInheritance.json") as f:
+            json_str: str = f.read()
+            self.ModuleInheritance = loads(json_str)
+
     def __init__(self) -> None:
         self._load_api_spec()
         self._load_type_spec()
+        self._load_module_inheritance()
 
     def _convert_type(self, type_name: str) -> str:
         if "List<" in type_name:
@@ -220,6 +227,9 @@ class CodeGen:
             plugin_method_template = f.read()
 
         for plugin_name, method_spec in self.APISpec.items():
+            if plugin_name == "CommonCorePlugin":
+                continue
+
             plugin_class = plugin_class_template
             plugin_methods = ""
 
@@ -269,13 +279,80 @@ class CodeGen:
 
             plugin_class = plugin_class.replace("{PluginMethods}", plugin_methods)
             plugin_class = plugin_class.replace("{PluginName}", plugin_name)
+            plugin_class = plugin_class[:-1]
 
             text += plugin_class
         
         with open(f"../ampapi/plugins.py", "w") as f:
             f.write(text)
 
+    def generate_modules(self) -> None:
+        text = ""
+        with open("./templates/module_base.txt") as f:
+            text = f.read()
+
+        module_class_template = ""
+        with open("./templates/module_class.txt") as f:
+            module_class_template = f.read()
+
+        common_plugins = []
+        for plugin_list in self.ModuleInheritance.values():
+            for plugin in plugin_list:
+                if plugin == "CommonCorePlugin":
+                    continue
+                for plugin_list2 in self.ModuleInheritance.values():
+                    if plugin not in plugin_list2:
+                        break
+                else:
+                    if plugin not in common_plugins:
+                        common_plugins.append(plugin)
+
+        for plugin_list in self.ModuleInheritance.values():
+            for plugin in common_plugins:
+                if plugin in plugin_list:
+                    plugin_list.remove(plugin)
+            plugin_list.remove("CommonCorePlugin")
+
+        # Generate CommonAPI
+        common_loaded_plugins = ""
+        common_plugin_init = ""
+        for plugin in common_plugins:
+            common_loaded_plugins += f"    {plugin} = Final[{plugin}]\n"
+            common_plugin_init += f"        self.{plugin} = {plugin}(self)\n"
+        common_loaded_plugins = common_loaded_plugins[:-1]
+
+        text = text.replace("{LoadedPlugins}", common_loaded_plugins)
+        text = text.replace("{PluginInit}", common_plugin_init)
+
+        # Generate module classes
+        for module_name, plugin_list in self.ModuleInheritance.items():
+            module_class = module_class_template
+
+            module_loaded_plugins = ""
+            module_plugin_init = ""
+            for plugin in plugin_list:
+                module_loaded_plugins += f"    {plugin} = Final[{plugin}]\n"
+                module_plugin_init += f"        self.{plugin} = {plugin}(self)\n"
+
+            module_loaded_plugins = module_loaded_plugins[:-1]
+
+            module_class = module_class.replace("{LoadedPlugins}", module_loaded_plugins)
+            module_class = module_class.replace("{PluginInit}", module_plugin_init)
+            module_class = module_class.replace("{ModuleName}", module_name)
+            module_class = module_class[:-1]
+
+            text += module_class + "\n"
+
+        text = text[:-1]
+
+        with open(f"../ampapi/modules.py", "w") as f:
+            f.write(text)
+
+    def generate(self) -> None:
+        self.generate_types()
+        self.generate_plugins()
+        self.generate_modules()
+
 if __name__ == "__main__":
     code_gen = CodeGen()
-    code_gen.generate_types()
-    code_gen.generate_plugins()
+    code_gen.generate()

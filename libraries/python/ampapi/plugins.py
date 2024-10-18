@@ -897,7 +897,6 @@ class ADSModule(AMPAPI):
             'InstanceName': InstanceName
         })
 
-
 class AnalyticsPlugin(AMPAPI):
     def __init__(self, authprovider: AuthProvider) -> None:
         super().__init__(authprovider)
@@ -918,12 +917,6 @@ class AnalyticsPlugin(AMPAPI):
             'StartDate': StartDate,
             'Filters': Filters
         })
-
-
-class CommonCorePlugin(AMPAPI):
-    def __init__(self, authprovider: AuthProvider) -> None:
-        super().__init__(authprovider)
-
 
 class Core(AMPAPI):
     def __init__(self, authprovider: AuthProvider) -> None:
@@ -1940,7 +1933,6 @@ class Core(AMPAPI):
             'description': description
         })
 
-
 class EmailSenderPlugin(AMPAPI):
     def __init__(self, authprovider: AuthProvider) -> None:
         super().__init__(authprovider)
@@ -1952,7 +1944,6 @@ class EmailSenderPlugin(AMPAPI):
         :returns: ActionResult
         """
         return self.api_call("EmailSenderPlugin/TestSMTPSettings", {})
-
 
 class FileManagerPlugin(AMPAPI):
     def __init__(self, authprovider: AuthProvider) -> None:
@@ -2212,7 +2203,6 @@ class FileManagerPlugin(AMPAPI):
             'FinalChunk': FinalChunk
         })
 
-
 class GenericModule(AMPAPI):
     def __init__(self, authprovider: AuthProvider) -> None:
         super().__init__(authprovider)
@@ -2235,7 +2225,6 @@ class GenericModule(AMPAPI):
         :returns: None
         """
         return self.api_call("GenericModule/ReloadGenericConfig", {})
-
 
 class LocalFileBackupPlugin(AMPAPI):
     def __init__(self, authprovider: AuthProvider) -> None:
@@ -2348,7 +2337,6 @@ class LocalFileBackupPlugin(AMPAPI):
         return self.api_call("LocalFileBackupPlugin/UploadToS3", {
             'BackupId': BackupId
         })
-
 
 class MinecraftModule(AMPAPI):
     def __init__(self, authprovider: AuthProvider) -> None:
@@ -2595,7 +2583,6 @@ class MinecraftModule(AMPAPI):
             'ID': ID
         })
 
-
 class RCONPlugin(AMPAPI):
     def __init__(self, authprovider: AuthProvider) -> None:
         super().__init__(authprovider)
@@ -2607,7 +2594,6 @@ class RCONPlugin(AMPAPI):
         :returns: None
         """
         return self.api_call("RCONPlugin/Dummy", {})
-
 
 class steamcmdplugin(AMPAPI):
     def __init__(self, authprovider: AuthProvider) -> None:
@@ -2645,5 +2631,4 @@ class steamcmdplugin(AMPAPI):
             'username': username,
             'password': password
         })
-
 
