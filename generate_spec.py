@@ -1,7 +1,4 @@
 #!/bin/python3
-
-from __future__ import annotations
-
 from json import dump, dumps, loads
 from os import getenv
 from sys import argv

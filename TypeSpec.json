@@ -32,6 +32,272 @@
         "SpecialNote": "Can also be used in non-generic form, in such it uses SupportURL and SupportTitle",
         "SpecialType": "Generic"
     },
+    "AMPInstanceBase": {
+        "Description": "Base class for an AMP instance",
+        "Fields": [
+            {
+                "Description": "The AMP build",
+                "Name": "AMPBuild",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The AMP version",
+                "Name": "AMPVersion",
+                "TypeName": "Version"
+            },
+            {
+                "Description": "The IP",
+                "Name": "IP",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The OS",
+                "Name": "OS",
+                "TypeName": "SupportedOS"
+            },
+            {
+                "Description": "The container CPUs",
+                "Name": "ContainerCPUs",
+                "TypeName": "Float"
+            },
+            {
+                "Description": "The container memory in MB",
+                "Name": "ContainerMemoryMB",
+                "TypeName": "Int32"
+            },
+            {
+                "Description": "The container memory policy",
+                "Name": "ContainerMemoryPolicy",
+                "TypeName": "ContainerMemoryPolicy"
+            },
+            {
+                "Description": "The container swap in MB",
+                "Name": "ContainerSwapMB",
+                "TypeName": "Int32"
+            },
+            {
+                "Description": "The creator ID",
+                "Name": "CreatedBy",
+                "TypeName": "Guid"
+            },
+            {
+                "Description": "The custom mount binds",
+                "Name": "CustomMountBinds",
+                "TypeName": "Dictionary<String, String>"
+            },
+            {
+                "Description": "The custom ports",
+                "Name": "CustomPorts",
+                "TypeName": "List<PortUsage>"
+            },
+            {
+                "Description": "The datastore ID",
+                "Name": "DatastoreId",
+                "TypeName": "Int32"
+            },
+            {
+                "Description": "The deployment arguments",
+                "Name": "DeploymentArgs",
+                "TypeName": "Dictionary<String, String>"
+            },
+            {
+                "Description": "The description",
+                "Name": "Description",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The disk usage in MB",
+                "Name": "DiskUsageMB",
+                "TypeName": "Int32"
+            },
+            {
+                "Description": "The display image source",
+                "Name": "DisplayImageSource",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The extra container packages",
+                "Name": "ExtraContainerPackages",
+                "TypeName": "List<String>"
+            },
+            {
+                "Description": "The friendly name",
+                "Name": "FriendlyName",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The group",
+                "Name": "Group",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The instance ID",
+                "Name": "InstanceID",
+                "TypeName": "Guid"
+            },
+            {
+                "Description": "The instance name",
+                "Name": "InstanceName",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The last reactivation attempt",
+                "Name": "LastReactivationAttempt",
+                "Optional": true,
+                "TypeName": "DateTime"
+            },
+            {
+                "Description": "The management mode",
+                "Name": "ManagementMode",
+                "TypeName": "ManagementModes"
+            },
+            {
+                "Description": "The metrics publishing HMAC",
+                "Name": "MetricsPublishingHMAC",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The module display name",
+                "Name": "ModuleDisplayName",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The module",
+                "Name": "Module",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The overlay path",
+                "Name": "OverlayPath",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The path",
+                "Name": "Path",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The pending setting changes",
+                "Name": "PendingSettingChanges",
+                "TypeName": "Dictionary<String, String>"
+            },
+            {
+                "Description": "The plugins",
+                "Name": "Plugins",
+                "TypeName": "List<String>"
+            },
+            {
+                "Description": "The port",
+                "Name": "Port",
+                "TypeName": "Int32"
+            },
+            {
+                "Description": "The previous build",
+                "Name": "PreviousBuild",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The previous version",
+                "Name": "PreviousVersion",
+                "TypeName": "Version"
+            },
+            {
+                "Description": "The release stream",
+                "Name": "ReleaseStream",
+                "TypeName": "AMPReleaseStreams"
+            },
+            {
+                "Description": "The specific Docker image",
+                "Name": "SpecificDockerImage",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The tag",
+                "Name": "Tag",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The tags",
+                "Name": "Tags",
+                "TypeName": "List<String>"
+            },
+            {
+                "Description": "The target ID",
+                "Name": "TargetID",
+                "TypeName": "Guid"
+            },
+            {
+                "Description": "The user",
+                "Name": "User",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The welcome message",
+                "Name": "WelcomeMessage",
+                "TypeName": "String"
+            },
+            {
+                "Description": "Whether tags are used for configuration",
+                "Name": "TagsUsedForConfiguration",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "Whether the Docker base is read-only",
+                "Name": "DockerBaseReadOnly",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "Whether the daemon should autostart",
+                "Name": "DaemonAutostart",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "Whether the instance is HTTPS",
+                "Name": "IsHTTPS",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "Whether the instance is a container",
+                "Name": "IsContainerInstance",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "Whether the instance is a daemon",
+                "Name": "Daemon",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "Whether the instance is suspended",
+                "Name": "Suspended",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "Whether to exclude from the firewall",
+                "Name": "ExcludeFromFirewall",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "Whether to force Docker",
+                "Name": "ForceDocker",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "Whether to match the version",
+                "Name": "MatchVersion",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "Whether to use automatic UPnP",
+                "Name": "AutomaticUPnP",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "Whether to use host mode networking",
+                "Name": "UseHostModeNetwork",
+                "TypeName": "Boolean"
+            }
+        ]
+    },
     "AMPReleaseStreams": {
         "Description": "Represents the AMP release streams",
         "Fields": [
@@ -86,41 +352,6 @@
         ],
         "SerializesAs": "Int32",
         "SpecialType": "Enum"
-    },
-    "AMPVersion": {
-        "Description": "AMP version information",
-        "Fields": [
-            {
-                "Description": "The build number",
-                "Name": "Build",
-                "TypeName": "Int32"
-            },
-            {
-                "Description": "The major revision number",
-                "Name": "MajorRevision",
-                "TypeName": "Int32"
-            },
-            {
-                "Description": "The major version number",
-                "Name": "Major",
-                "TypeName": "Int32"
-            },
-            {
-                "Description": "The minor revision number",
-                "Name": "MinorRevision",
-                "TypeName": "Int32"
-            },
-            {
-                "Description": "The minor version number",
-                "Name": "Minor",
-                "TypeName": "Int32"
-            },
-            {
-                "Description": "The revision number",
-                "Name": "Revision",
-                "TypeName": "Int32"
-            }
-        ]
     },
     "APIError": {
         "Description": "An error object",
@@ -1519,7 +1750,7 @@
             {
                 "Description": "The AMP version",
                 "Name": "AMPVersion",
-                "TypeName": "AMPVersion"
+                "TypeName": "Version"
             },
             {
                 "Description": "The IP address",
@@ -1681,7 +1912,8 @@
                 "Name": "Suspended",
                 "TypeName": "Boolean"
             }
-        ]
+        ],
+        "SpecialNote": "Summarizes AMPInstanceBase"
     },
     "IPermissionsTreeNode": {
         "Description": "A permissions tree node",
@@ -1833,6 +2065,293 @@
                 "TypeName": "Boolean"
             }
         ]
+    },
+    "LocalAMPInstance": {
+        "Description": "A local AMP instance object",
+        "Fields": [
+            {
+                "Description": "The AMP build",
+                "Name": "AMPBuild",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The AMP version",
+                "Name": "AMPVersion",
+                "TypeName": "Version"
+            },
+            {
+                "Description": "The IP",
+                "Name": "IP",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The OS",
+                "Name": "OS",
+                "TypeName": "SupportedOS"
+            },
+            {
+                "Description": "The container CPUs",
+                "Name": "ContainerCPUs",
+                "TypeName": "Float"
+            },
+            {
+                "Description": "The container memory in MB",
+                "Name": "ContainerMemoryMB",
+                "TypeName": "Int32"
+            },
+            {
+                "Description": "The container memory policy",
+                "Name": "ContainerMemoryPolicy",
+                "TypeName": "ContainerMemoryPolicy"
+            },
+            {
+                "Description": "The container swap in MB",
+                "Name": "ContainerSwapMB",
+                "TypeName": "Int32"
+            },
+            {
+                "Description": "The creator ID",
+                "Name": "CreatedBy",
+                "TypeName": "Guid"
+            },
+            {
+                "Description": "The custom mount binds",
+                "Name": "CustomMountBinds",
+                "TypeName": "Dictionary<String, String>"
+            },
+            {
+                "Description": "The custom ports",
+                "Name": "CustomPorts",
+                "TypeName": "List<PortUsage>"
+            },
+            {
+                "Description": "The datastore ID",
+                "Name": "DatastoreId",
+                "TypeName": "Int32"
+            },
+            {
+                "Description": "The deployment arguments",
+                "Name": "DeploymentArgs",
+                "TypeName": "Dictionary<String, String>"
+            },
+            {
+                "Description": "The description",
+                "Name": "Description",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The disk usage in MB",
+                "Name": "DiskUsageMB",
+                "TypeName": "Int32"
+            },
+            {
+                "Description": "The display image source",
+                "Name": "DisplayImageSource",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The extra container packages",
+                "Name": "ExtraContainerPackages",
+                "TypeName": "List<String>"
+            },
+            {
+                "Description": "The friendly name",
+                "Name": "FriendlyName",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The group",
+                "Name": "Group",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The instance ID",
+                "Name": "InstanceID",
+                "TypeName": "Guid"
+            },
+            {
+                "Description": "The instance name",
+                "Name": "InstanceName",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The last reactivation attempt",
+                "Name": "LastReactivationAttempt",
+                "Optional": true,
+                "TypeName": "DateTime"
+            },
+            {
+                "Description": "The management mode",
+                "Name": "ManagementMode",
+                "TypeName": "ManagementModes"
+            },
+            {
+                "Description": "The metrics publishing HMAC",
+                "Name": "MetricsPublishingHMAC",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The module display name",
+                "Name": "ModuleDisplayName",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The module",
+                "Name": "Module",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The overlay URL",
+                "Name": "OverlayURL",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The overlay path",
+                "Name": "OverlayPath",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The path",
+                "Name": "Path",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The pending setting changes",
+                "Name": "PendingSettingChanges",
+                "TypeName": "Dictionary<String, String>"
+            },
+            {
+                "Description": "The plugins",
+                "Name": "Plugins",
+                "TypeName": "List<String>"
+            },
+            {
+                "Description": "The port",
+                "Name": "Port",
+                "TypeName": "Int32"
+            },
+            {
+                "Description": "The previous build",
+                "Name": "PreviousBuild",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The previous version",
+                "Name": "PreviousVersion",
+                "TypeName": "Version"
+            },
+            {
+                "Description": "The release stream",
+                "Name": "ReleaseStream",
+                "TypeName": "AMPReleaseStreams"
+            },
+            {
+                "Description": "The specific Docker image",
+                "Name": "SpecificDockerImage",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The tag",
+                "Name": "Tag",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The tags",
+                "Name": "Tags",
+                "TypeName": "List<String>"
+            },
+            {
+                "Description": "The target ID",
+                "Name": "TargetID",
+                "TypeName": "Guid"
+            },
+            {
+                "Description": "The user",
+                "Name": "User",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The welcome message",
+                "Name": "WelcomeMessage",
+                "TypeName": "String"
+            },
+            {
+                "Description": "Whether tags are used for configuration",
+                "Name": "TagsUsedForConfiguration",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "Whether the Docker base is read-only",
+                "Name": "DockerBaseReadOnly",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "Whether the daemon should autostart",
+                "Name": "DaemonAutostart",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "Whether the instance has an overlay applied",
+                "Name": "HasOverlayApplied",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "Whether the instance is HTTPS",
+                "Name": "IsHTTPS",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "Whether the instance is a container",
+                "Name": "IsContainerInstance",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "Whether the instance is a daemon user managed",
+                "Name": "IsDaemonUserManaged",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "Whether the instance is a daemon",
+                "Name": "Daemon",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "Whether the instance is a shared instance",
+                "Name": "IsSharedInstance",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "Whether the instance is suspended",
+                "Name": "Suspended",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "Whether to exclude from the firewall",
+                "Name": "ExcludeFromFirewall",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "Whether to force Docker",
+                "Name": "ForceDocker",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "Whether to match the version",
+                "Name": "MatchVersion",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "Whether to use automatic UPnP",
+                "Name": "AutomaticUPnP",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "Whether to use host mode networking",
+                "Name": "UseHostModeNetwork",
+                "TypeName": "Boolean"
+            }
+        ],
+        "SpecialNote": "Extends AMPInstanceBase"
     },
     "LoginResponse": {
         "Description": "Type for the result of Core.Login",
@@ -2249,6 +2768,49 @@
                 "TypeName": "Boolean"
             }
         ]
+    },
+    "PostCreateAppActions": {
+        "Description": "Represents the post create app actions",
+        "Fields": [
+            {
+                "Description": "Do nothing",
+                "Name": "DoNothing",
+                "TypeName": "Int32",
+                "Value": 0
+            },
+            {
+                "Description": "Update once",
+                "Name": "UpdateOnce",
+                "TypeName": "Int32",
+                "Value": 1
+            },
+            {
+                "Description": "Update always",
+                "Name": "UpdateAlways",
+                "TypeName": "Int32",
+                "Value": 2
+            },
+            {
+                "Description": "Update and start once",
+                "Name": "UpdateAndStartOnce",
+                "TypeName": "Int32",
+                "Value": 3
+            },
+            {
+                "Description": "Update and start always",
+                "Name": "UpdateAndStartAlways",
+                "TypeName": "Int32",
+                "Value": 4
+            },
+            {
+                "Description": "Start always",
+                "Name": "StartAlways",
+                "TypeName": "Int32",
+                "Value": 5
+            }
+        ],
+        "SerializesAs": "Int32",
+        "SpecialType": "Enum"
     },
     "ProcessorInfo": {
         "Description": "CPU information object",
@@ -3524,6 +4086,41 @@
                 "Description": "Whether the user is disabled",
                 "Name": "Disabled",
                 "TypeName": "Boolean"
+            }
+        ]
+    },
+    "Version": {
+        "Description": "AMP version information",
+        "Fields": [
+            {
+                "Description": "The build number",
+                "Name": "Build",
+                "TypeName": "Int32"
+            },
+            {
+                "Description": "The major revision number",
+                "Name": "MajorRevision",
+                "TypeName": "Int32"
+            },
+            {
+                "Description": "The major version number",
+                "Name": "Major",
+                "TypeName": "Int32"
+            },
+            {
+                "Description": "The minor revision number",
+                "Name": "MinorRevision",
+                "TypeName": "Int32"
+            },
+            {
+                "Description": "The minor version number",
+                "Name": "Minor",
+                "TypeName": "Int32"
+            },
+            {
+                "Description": "The revision number",
+                "Name": "Revision",
+                "TypeName": "Int32"
             }
         ]
     },

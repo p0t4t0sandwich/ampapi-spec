@@ -1090,7 +1090,7 @@
           "Description": "",
           "Name": "ContainerMaxCPU",
           "Optional": false,
-          "TypeName": "Single"
+          "TypeName": "Float"
         },
         {
           "Description": "",
@@ -1262,31 +1262,31 @@
           "Description": "",
           "Name": "months",
           "Optional": false,
-          "TypeName": "Int32[]"
+          "TypeName": "List<Int32>"
         },
         {
           "Description": "",
           "Name": "days",
           "Optional": false,
-          "TypeName": "Int32[]"
+          "TypeName": "List<Int32>"
         },
         {
           "Description": "",
           "Name": "hours",
           "Optional": false,
-          "TypeName": "Int32[]"
+          "TypeName": "List<Int32>"
         },
         {
           "Description": "",
           "Name": "minutes",
           "Optional": false,
-          "TypeName": "Int32[]"
+          "TypeName": "List<Int32>"
         },
         {
           "Description": "",
           "Name": "daysOfMonth",
           "Optional": false,
-          "TypeName": "Int32[]"
+          "TypeName": "List<Int32>"
         },
         {
           "Description": "",
@@ -1579,31 +1579,31 @@
           "Description": "",
           "Name": "months",
           "Optional": false,
-          "TypeName": "Int32[]"
+          "TypeName": "List<Int32>"
         },
         {
           "Description": "",
           "Name": "days",
           "Optional": false,
-          "TypeName": "Int32[]"
+          "TypeName": "List<Int32>"
         },
         {
           "Description": "",
           "Name": "hours",
           "Optional": false,
-          "TypeName": "Int32[]"
+          "TypeName": "List<Int32>"
         },
         {
           "Description": "",
           "Name": "minutes",
           "Optional": false,
-          "TypeName": "Int32[]"
+          "TypeName": "List<Int32>"
         },
         {
           "Description": "",
           "Name": "daysOfMonth",
           "Optional": false,
-          "TypeName": "Int32[]"
+          "TypeName": "List<Int32>"
         },
         {
           "Description": "",
@@ -1763,7 +1763,7 @@
           "Description": "",
           "Name": "nodes",
           "Optional": false,
-          "TypeName": "String[]"
+          "TypeName": "List<String>"
         }
       ],
       "ReturnTypeName": "List<SettingSpec>",
@@ -2671,7 +2671,7 @@
           "TypeName": "String"
         }
       ],
-      "ReturnTypeName": "IDictionary<String, String>",
+      "ReturnTypeName": "Dictionary<String, String>",
       "IsComplexType": false
     },
     "ReloadGenericConfig": {

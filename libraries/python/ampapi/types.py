@@ -24,6 +24,168 @@ class ActionResult(Generic[T]):
     SupportTitle: 'str'
     Status: 'bool'
 
+@dataclass
+class AMPInstanceBase:
+    """
+    Base class for an AMP instance
+    :param AMPBuild: The AMP build
+    :type AMPBuild: str
+    :param AMPVersion: The AMP version
+    :type AMPVersion: Version
+    :param IP: The IP
+    :type IP: str
+    :param OS: The OS
+    :type OS: SupportedOS
+    :param ContainerCPUs: The container CPUs
+    :type ContainerCPUs: float
+    :param ContainerMemoryMB: The container memory in MB
+    :type ContainerMemoryMB: int
+    :param ContainerMemoryPolicy: The container memory policy
+    :type ContainerMemoryPolicy: ContainerMemoryPolicy
+    :param ContainerSwapMB: The container swap in MB
+    :type ContainerSwapMB: int
+    :param CreatedBy: The creator ID
+    :type CreatedBy: str
+    :param CustomMountBinds: The custom mount binds
+    :type CustomMountBinds: dict[str, str]
+    :param CustomPorts: The custom ports
+    :type CustomPorts: list[PortUsage]
+    :param DatastoreId: The datastore ID
+    :type DatastoreId: int
+    :param DeploymentArgs: The deployment arguments
+    :type DeploymentArgs: dict[str, str]
+    :param Description: The description
+    :type Description: str
+    :param DiskUsageMB: The disk usage in MB
+    :type DiskUsageMB: int
+    :param DisplayImageSource: The display image source
+    :type DisplayImageSource: str
+    :param ExtraContainerPackages: The extra container packages
+    :type ExtraContainerPackages: list[str]
+    :param FriendlyName: The friendly name
+    :type FriendlyName: str
+    :param Group: The group
+    :type Group: str
+    :param InstanceID: The instance ID
+    :type InstanceID: str
+    :param InstanceName: The instance name
+    :type InstanceName: str
+    :param LastReactivationAttempt: The last reactivation attempt
+    :type LastReactivationAttempt: str
+    :param ManagementMode: The management mode
+    :type ManagementMode: ManagementModes
+    :param MetricsPublishingHMAC: The metrics publishing HMAC
+    :type MetricsPublishingHMAC: str
+    :param ModuleDisplayName: The module display name
+    :type ModuleDisplayName: str
+    :param Module: The module
+    :type Module: str
+    :param OverlayPath: The overlay path
+    :type OverlayPath: str
+    :param Path: The path
+    :type Path: str
+    :param PendingSettingChanges: The pending setting changes
+    :type PendingSettingChanges: dict[str, str]
+    :param Plugins: The plugins
+    :type Plugins: list[str]
+    :param Port: The port
+    :type Port: int
+    :param PreviousBuild: The previous build
+    :type PreviousBuild: str
+    :param PreviousVersion: The previous version
+    :type PreviousVersion: Version
+    :param ReleaseStream: The release stream
+    :type ReleaseStream: AMPReleaseStreams
+    :param SpecificDockerImage: The specific Docker image
+    :type SpecificDockerImage: str
+    :param Tag: The tag
+    :type Tag: str
+    :param Tags: The tags
+    :type Tags: list[str]
+    :param TargetID: The target ID
+    :type TargetID: str
+    :param User: The user
+    :type User: str
+    :param WelcomeMessage: The welcome message
+    :type WelcomeMessage: str
+    :param TagsUsedForConfiguration: Whether tags are used for configuration
+    :type TagsUsedForConfiguration: bool
+    :param DockerBaseReadOnly: Whether the Docker base is read-only
+    :type DockerBaseReadOnly: bool
+    :param DaemonAutostart: Whether the daemon should autostart
+    :type DaemonAutostart: bool
+    :param IsHTTPS: Whether the instance is HTTPS
+    :type IsHTTPS: bool
+    :param IsContainerInstance: Whether the instance is a container
+    :type IsContainerInstance: bool
+    :param Daemon: Whether the instance is a daemon
+    :type Daemon: bool
+    :param Suspended: Whether the instance is suspended
+    :type Suspended: bool
+    :param ExcludeFromFirewall: Whether to exclude from the firewall
+    :type ExcludeFromFirewall: bool
+    :param ForceDocker: Whether to force Docker
+    :type ForceDocker: bool
+    :param MatchVersion: Whether to match the version
+    :type MatchVersion: bool
+    :param AutomaticUPnP: Whether to use automatic UPnP
+    :type AutomaticUPnP: bool
+    :param UseHostModeNetwork: Whether to use host mode networking
+    :type UseHostModeNetwork: bool
+    """
+    AMPBuild: 'str'
+    AMPVersion: 'Version'
+    IP: 'str'
+    OS: 'SupportedOS'
+    ContainerCPUs: 'float'
+    ContainerMemoryMB: 'int'
+    ContainerMemoryPolicy: 'ContainerMemoryPolicy'
+    ContainerSwapMB: 'int'
+    CreatedBy: 'str'
+    CustomMountBinds: 'dict[str, str]'
+    CustomPorts: 'list[PortUsage]'
+    DatastoreId: 'int'
+    DeploymentArgs: 'dict[str, str]'
+    Description: 'str'
+    DiskUsageMB: 'int'
+    DisplayImageSource: 'str'
+    ExtraContainerPackages: 'list[str]'
+    FriendlyName: 'str'
+    Group: 'str'
+    InstanceID: 'str'
+    InstanceName: 'str'
+    LastReactivationAttempt: 'str' | None
+    ManagementMode: 'ManagementModes'
+    MetricsPublishingHMAC: 'str'
+    ModuleDisplayName: 'str'
+    Module: 'str'
+    OverlayPath: 'str'
+    Path: 'str'
+    PendingSettingChanges: 'dict[str, str]'
+    Plugins: 'list[str]'
+    Port: 'int'
+    PreviousBuild: 'str'
+    PreviousVersion: 'Version'
+    ReleaseStream: 'AMPReleaseStreams'
+    SpecificDockerImage: 'str'
+    Tag: 'str'
+    Tags: 'list[str]'
+    TargetID: 'str'
+    User: 'str'
+    WelcomeMessage: 'str'
+    TagsUsedForConfiguration: 'bool'
+    DockerBaseReadOnly: 'bool'
+    DaemonAutostart: 'bool'
+    IsHTTPS: 'bool'
+    IsContainerInstance: 'bool'
+    Daemon: 'bool'
+    Suspended: 'bool'
+    ExcludeFromFirewall: 'bool'
+    ForceDocker: 'bool'
+    MatchVersion: 'bool'
+    AutomaticUPnP: 'bool'
+    UseHostModeNetwork: 'bool'
+
 class AMPReleaseStreams(Enum):
     """
     Represents the AMP release streams
@@ -52,30 +214,6 @@ class AMPReleaseStreams(Enum):
     FastTrack = 100
     Nightly = 1000
     Bleeding = 10000
-
-@dataclass
-class AMPVersion:
-    """
-    AMP version information
-    :param Build: The build number
-    :type Build: int
-    :param MajorRevision: The major revision number
-    :type MajorRevision: int
-    :param Major: The major version number
-    :type Major: int
-    :param MinorRevision: The minor revision number
-    :type MinorRevision: int
-    :param Minor: The minor version number
-    :type Minor: int
-    :param Revision: The revision number
-    :type Revision: int
-    """
-    Build: 'int'
-    MajorRevision: 'int'
-    Major: 'int'
-    MinorRevision: 'int'
-    Minor: 'int'
-    Revision: 'int'
 
 @dataclass
 class APIError:
@@ -949,7 +1087,7 @@ class InstanceSummary:
     """
     An instance object
     :param AMPVersion: The AMP version
-    :type AMPVersion: AMPVersion
+    :type AMPVersion: Version
     :param IP: The IP address
     :type IP: str
     :param ApplicationEndpoints: The application endpoints
@@ -1015,7 +1153,7 @@ class InstanceSummary:
     :param Suspended: Whether the instance is suspended
     :type Suspended: bool
     """
-    AMPVersion: 'AMPVersion'
+    AMPVersion: 'Version'
     IP: 'str'
     ApplicationEndpoints: 'list[EndpointInfo]'
     AppState: 'ApplicationState'
@@ -1147,6 +1285,180 @@ class ListeningPortSummary:
     IsDelayedOpen: 'bool'
     Listening: 'bool'
     Required: 'bool'
+
+@dataclass
+class LocalAMPInstance:
+    """
+    A local AMP instance object
+    :param AMPBuild: The AMP build
+    :type AMPBuild: str
+    :param AMPVersion: The AMP version
+    :type AMPVersion: Version
+    :param IP: The IP
+    :type IP: str
+    :param OS: The OS
+    :type OS: SupportedOS
+    :param ContainerCPUs: The container CPUs
+    :type ContainerCPUs: float
+    :param ContainerMemoryMB: The container memory in MB
+    :type ContainerMemoryMB: int
+    :param ContainerMemoryPolicy: The container memory policy
+    :type ContainerMemoryPolicy: ContainerMemoryPolicy
+    :param ContainerSwapMB: The container swap in MB
+    :type ContainerSwapMB: int
+    :param CreatedBy: The creator ID
+    :type CreatedBy: str
+    :param CustomMountBinds: The custom mount binds
+    :type CustomMountBinds: dict[str, str]
+    :param CustomPorts: The custom ports
+    :type CustomPorts: list[PortUsage]
+    :param DatastoreId: The datastore ID
+    :type DatastoreId: int
+    :param DeploymentArgs: The deployment arguments
+    :type DeploymentArgs: dict[str, str]
+    :param Description: The description
+    :type Description: str
+    :param DiskUsageMB: The disk usage in MB
+    :type DiskUsageMB: int
+    :param DisplayImageSource: The display image source
+    :type DisplayImageSource: str
+    :param ExtraContainerPackages: The extra container packages
+    :type ExtraContainerPackages: list[str]
+    :param FriendlyName: The friendly name
+    :type FriendlyName: str
+    :param Group: The group
+    :type Group: str
+    :param InstanceID: The instance ID
+    :type InstanceID: str
+    :param InstanceName: The instance name
+    :type InstanceName: str
+    :param LastReactivationAttempt: The last reactivation attempt
+    :type LastReactivationAttempt: str
+    :param ManagementMode: The management mode
+    :type ManagementMode: ManagementModes
+    :param MetricsPublishingHMAC: The metrics publishing HMAC
+    :type MetricsPublishingHMAC: str
+    :param ModuleDisplayName: The module display name
+    :type ModuleDisplayName: str
+    :param Module: The module
+    :type Module: str
+    :param OverlayURL: The overlay URL
+    :type OverlayURL: str
+    :param OverlayPath: The overlay path
+    :type OverlayPath: str
+    :param Path: The path
+    :type Path: str
+    :param PendingSettingChanges: The pending setting changes
+    :type PendingSettingChanges: dict[str, str]
+    :param Plugins: The plugins
+    :type Plugins: list[str]
+    :param Port: The port
+    :type Port: int
+    :param PreviousBuild: The previous build
+    :type PreviousBuild: str
+    :param PreviousVersion: The previous version
+    :type PreviousVersion: Version
+    :param ReleaseStream: The release stream
+    :type ReleaseStream: AMPReleaseStreams
+    :param SpecificDockerImage: The specific Docker image
+    :type SpecificDockerImage: str
+    :param Tag: The tag
+    :type Tag: str
+    :param Tags: The tags
+    :type Tags: list[str]
+    :param TargetID: The target ID
+    :type TargetID: str
+    :param User: The user
+    :type User: str
+    :param WelcomeMessage: The welcome message
+    :type WelcomeMessage: str
+    :param TagsUsedForConfiguration: Whether tags are used for configuration
+    :type TagsUsedForConfiguration: bool
+    :param DockerBaseReadOnly: Whether the Docker base is read-only
+    :type DockerBaseReadOnly: bool
+    :param DaemonAutostart: Whether the daemon should autostart
+    :type DaemonAutostart: bool
+    :param HasOverlayApplied: Whether the instance has an overlay applied
+    :type HasOverlayApplied: bool
+    :param IsHTTPS: Whether the instance is HTTPS
+    :type IsHTTPS: bool
+    :param IsContainerInstance: Whether the instance is a container
+    :type IsContainerInstance: bool
+    :param IsDaemonUserManaged: Whether the instance is a daemon user managed
+    :type IsDaemonUserManaged: bool
+    :param Daemon: Whether the instance is a daemon
+    :type Daemon: bool
+    :param IsSharedInstance: Whether the instance is a shared instance
+    :type IsSharedInstance: bool
+    :param Suspended: Whether the instance is suspended
+    :type Suspended: bool
+    :param ExcludeFromFirewall: Whether to exclude from the firewall
+    :type ExcludeFromFirewall: bool
+    :param ForceDocker: Whether to force Docker
+    :type ForceDocker: bool
+    :param MatchVersion: Whether to match the version
+    :type MatchVersion: bool
+    :param AutomaticUPnP: Whether to use automatic UPnP
+    :type AutomaticUPnP: bool
+    :param UseHostModeNetwork: Whether to use host mode networking
+    :type UseHostModeNetwork: bool
+    """
+    AMPBuild: 'str'
+    AMPVersion: 'Version'
+    IP: 'str'
+    OS: 'SupportedOS'
+    ContainerCPUs: 'float'
+    ContainerMemoryMB: 'int'
+    ContainerMemoryPolicy: 'ContainerMemoryPolicy'
+    ContainerSwapMB: 'int'
+    CreatedBy: 'str'
+    CustomMountBinds: 'dict[str, str]'
+    CustomPorts: 'list[PortUsage]'
+    DatastoreId: 'int'
+    DeploymentArgs: 'dict[str, str]'
+    Description: 'str'
+    DiskUsageMB: 'int'
+    DisplayImageSource: 'str'
+    ExtraContainerPackages: 'list[str]'
+    FriendlyName: 'str'
+    Group: 'str'
+    InstanceID: 'str'
+    InstanceName: 'str'
+    LastReactivationAttempt: 'str' | None
+    ManagementMode: 'ManagementModes'
+    MetricsPublishingHMAC: 'str'
+    ModuleDisplayName: 'str'
+    Module: 'str'
+    OverlayURL: 'str'
+    OverlayPath: 'str'
+    Path: 'str'
+    PendingSettingChanges: 'dict[str, str]'
+    Plugins: 'list[str]'
+    Port: 'int'
+    PreviousBuild: 'str'
+    PreviousVersion: 'Version'
+    ReleaseStream: 'AMPReleaseStreams'
+    SpecificDockerImage: 'str'
+    Tag: 'str'
+    Tags: 'list[str]'
+    TargetID: 'str'
+    User: 'str'
+    WelcomeMessage: 'str'
+    TagsUsedForConfiguration: 'bool'
+    DockerBaseReadOnly: 'bool'
+    DaemonAutostart: 'bool'
+    HasOverlayApplied: 'bool'
+    IsHTTPS: 'bool'
+    IsContainerInstance: 'bool'
+    IsDaemonUserManaged: 'bool'
+    Daemon: 'bool'
+    IsSharedInstance: 'bool'
+    Suspended: 'bool'
+    ExcludeFromFirewall: 'bool'
+    ForceDocker: 'bool'
+    MatchVersion: 'bool'
+    AutomaticUPnP: 'bool'
+    UseHostModeNetwork: 'bool'
 
 @dataclass
 class LoginResponse:
@@ -1418,6 +1730,29 @@ class PortUsage:
     Range: 'int'
     IsUserDefined: 'bool'
     Verified: 'bool'
+
+class PostCreateAppActions(Enum):
+    """
+    Represents the post create app actions
+    :param DoNothing: Do nothing
+    :type DoNothing: Int32
+    :param UpdateOnce: Update once
+    :type UpdateOnce: Int32
+    :param UpdateAlways: Update always
+    :type UpdateAlways: Int32
+    :param UpdateAndStartOnce: Update and start once
+    :type UpdateAndStartOnce: Int32
+    :param UpdateAndStartAlways: Update and start always
+    :type UpdateAndStartAlways: Int32
+    :param StartAlways: Start always
+    :type StartAlways: Int32
+    """
+    DoNothing = 0
+    UpdateOnce = 1
+    UpdateAlways = 2
+    UpdateAndStartOnce = 3
+    UpdateAndStartAlways = 4
+    StartAlways = 5
 
 @dataclass
 class ProcessorInfo:
@@ -2232,6 +2567,30 @@ class UserInfoSummary:
     IsTwoFactorEnabled: 'bool'
     IsLDAPUser: 'bool'
     Disabled: 'bool'
+
+@dataclass
+class Version:
+    """
+    AMP version information
+    :param Build: The build number
+    :type Build: int
+    :param MajorRevision: The major revision number
+    :type MajorRevision: int
+    :param Major: The major version number
+    :type Major: int
+    :param MinorRevision: The minor revision number
+    :type MinorRevision: int
+    :param Minor: The minor version number
+    :type Minor: int
+    :param Revision: The revision number
+    :type Revision: int
+    """
+    Build: 'int'
+    MajorRevision: 'int'
+    Major: 'int'
+    MinorRevision: 'int'
+    Minor: 'int'
+    Revision: 'int'
 
 class VirtualizationType(Enum):
     """

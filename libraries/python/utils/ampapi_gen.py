@@ -1,6 +1,4 @@
 #!/bin/python3
-from __future__ import annotations
-
 from json import dumps, loads
 from typing import Any
 
@@ -34,11 +32,14 @@ cs_to_py = {
     "Guid": "str",
     "Int32": "int",
     "Int64": "int",
-    "JSONRawResponse": "Any",
+    "IPAddress": "str",
+    "JSONRawResponse": "dict[str, Any]",
+    "JObject": "dict[str, Any]",
     "List": "list",
     "Object": "Any",
     "String": "str",
     "TimeSpan": "str",
+    "Uri": "str",
     "Void": "None",
 
     "Generic": "T",
@@ -52,7 +53,6 @@ class CodeGen:
         with open("../../../TypedAPISpec.json") as f:
             json_str: str = f.read()
             self.APISpec = loads(json_str)
-            f.close()
 
     def _load_type_spec(self) -> None:
         with open("../../../TypeSpec.json") as f:
@@ -70,26 +70,50 @@ class CodeGen:
         self._load_api_spec()
         self._load_type_spec()
 
+    def _convert_type(self, type_name: str) -> str:
+        if "List<" in type_name:
+            t = type_name.replace("List<", "").replace(">", "")
+            if t in cs_to_py:
+                t = cs_to_py[t]
+            return f"list[{t}]"
+        if "Dictionary<" in type_name:
+            t = type_name.replace("Dictionary<", "").replace(">", "")
+            types = t.split(", ")
+            if types[0] in cs_to_py:
+                types[0] = cs_to_py[types[0]]
+            if types[1] in cs_to_py:
+                types[1] = cs_to_py[types[1]]
+            return f"dict[{types[0]}, {types[1]}]"
+        if "Nullable<" in type_name:
+            t = type_name.replace("Nullable<", "").replace(">", "")
+            if t in cs_to_py:
+                t = cs_to_py[t]
+            return f"{t} | None"
+        if "ActionResult<" in type_name:
+            t = type_name.replace("ActionResult<", "").replace(">", "")
+            if t in cs_to_py:
+                t = cs_to_py[t]
+            return f"ActionResult[{t}]"
+        if type_name in cs_to_py:
+            return cs_to_py[type_name]
+        return type_name
+
     def generate_types(self) -> None:
         text = ""
         with open("./templates/type_base.txt") as f:
             text = f.read()
-            f.close()
 
         class_text_template = ""
         with open("./templates/type_class.txt") as f:
             class_text_template = f.read()
-            f.close()
 
         enum_text_template = ""
         with open("./templates/type_enum.txt") as f:
             enum_text_template = f.read()
-            f.close()
 
         generic_text_template = ""
         with open("./templates/type_generic.txt") as f:
             generic_text_template = f.read()
-            f.close()
 
         for type_name, type_def in self.TypeSpec.items():
             class_text = class_text_template
@@ -181,8 +205,77 @@ class CodeGen:
 
         with open(f"../ampapi/types.py", "w") as f:
             f.write(text)
-            f.close()
+
+    def generate_plugins(self) -> None:
+        text = ""
+        with open("./templates/plugin_base.txt") as f:
+            text = f.read()
+
+        plugin_class_template = ""
+        with open("./templates/plugin_class.txt") as f:
+            plugin_class_template = f.read()
+
+        plugin_method_template = ""
+        with open("./templates/plugin_method.txt") as f:
+            plugin_method_template = f.read()
+
+        for plugin_name, method_spec in self.APISpec.items():
+            plugin_class = plugin_class_template
+            plugin_methods = ""
+
+            for method_name, method_def in method_spec.items():
+                method_text = plugin_method_template
+
+                parameter_text = ""
+                for param in method_def["Parameters"]:
+                    param_text = f"{param['Name']}: '{self._convert_type(param['TypeName'])}'"
+
+                    param_text += ", "
+                    parameter_text += param_text
+
+                if parameter_text != "":
+                    parameter_text = parameter_text[:-2]
+
+                parameter_args = ""
+                for param in method_def["Parameters"]:
+                    param_text = f"'{param['Name']}': {param['Name']}"
+
+                    param_text += ", "
+                    parameter_args += param_text
+
+                if parameter_args != "":
+                    parameter_args = "\n            " + parameter_args[:-2]
+                    parameter_args = parameter_args.replace(", ", ",\n            ")
+                    parameter_args += "\n        "
+
+                parameter_docs = ""
+                for param in method_def["Parameters"]:
+                    doc = f"        :param {param['Name']}: {param['Description']}\n"
+                    doc += f"        :type {param['Name']}: {self._convert_type(param['TypeName'])}\n"
+                    parameter_docs += doc
+
+                if parameter_docs != "":
+                    parameter_docs = parameter_docs[:-1]
+                parameter_docs = parameter_docs + "\n        "
+
+                method_text = method_text.replace("{MethodParameters}", parameter_text)
+                method_text = method_text.replace("{MethodParameterArgs}", parameter_args)
+                method_text = method_text.replace("{MethodParameterDocs}", parameter_docs)
+                method_text = method_text.replace("{MethodName}", method_name)
+                method_text = method_text.replace("{MethodDescription}", method_def.get("Description", ""))
+                method_text = method_text.replace("{ReturnType}", self._convert_type(method_def["ReturnTypeName"]))
+
+                plugin_methods += method_text
+
+            plugin_class = plugin_class.replace("{PluginMethods}", plugin_methods)
+            plugin_class = plugin_class.replace("{PluginName}", plugin_name)
+
+            text += plugin_class
+        
+        with open(f"../ampapi/plugins.py", "w") as f:
+            f.write(text)
 
 if __name__ == "__main__":
     code_gen = CodeGen()
     code_gen.generate_types()
+    code_gen.generate_plugins()

@@ -1,14 +1,17 @@
 from abc import ABCMeta, abstractmethod
-from collections import namedtuple
+from aiohttp import ClientSession as async_request
 from typing import Any, Final, overload
-
 from requests import request as sync_request
 
 from .types import APIError, LoginResponse
 
-class AMPAPIException(Exception):
+class APIException(Exception):
     def __init__(self, error: APIError) -> None:
         super().__init__(f"{error.Title}: {error.Message}\n{error.StackTrace}")
+
+class LoginException(Exception):
+    def __init__(self, login_response: LoginResponse) -> None:
+        super().__init__(login_response.resultReason + ": " + login_response.result + "\n" + login_response)
 
 _headers: dict = {
     "Content-Type": "application/json",
@@ -27,10 +30,29 @@ def api_call(endpoint: str, requestMethod: str, args: dict) -> dict[str, Any]:
     :type args: dict
     :returns: json dict with the result of the API call
     """
-    response: dict[str, Any] = sync_request(requestMethod, endpoint, headers=_headers, json=args)
-    if isinstance(response, dict) and "StackTrace" in response.keys():
-        raise AMPAPIException(APIError(**response))
-    return response
+    response = sync_request(requestMethod, endpoint, headers=_headers, json=args)
+    response_json: dict[str, Any] = response.json()
+    if isinstance(response_json, dict) and "StackTrace" in response_json.keys():
+        raise APIException(APIError(**response_json))
+    return response_json
+
+async def api_call_async(endpoint: str, requestMethod: str, args: dict) -> dict[str, Any]:
+    """
+    Top-level function to make AMP API calls
+    :param endpoint: The endpoint to call
+    :type endpoint: str
+    :param requestMethod: The request method to use
+    :type requestMethod: str
+    :param data: The data to send to the endpoint
+    :type args: dict
+    :returns: json dict with the result of the API call
+    """
+    async with async_request() as session:
+        response = await session.request(requestMethod, endpoint, headers=_headers, json=args)
+        response_json: dict[str, Any] = await response.json()
+        if isinstance(response_json, dict) and "StackTrace" in response_json.keys():
+            raise APIException(APIError(**response_json))
+        return response_json
 
 class AuthProvider(metaclass=ABCMeta):
     """
@@ -121,6 +143,46 @@ class BasicAuthProvider(AuthProvider):
             "rememberMe": False
         }
         response: dict[str, Any] = api_call(self.dataSource + "Core/Login", self.requestMethod, args)
-        loginResponse = LoginResponse(**response)
-        self.sessionId = loginResponse.sessionID
-        return loginResponse
+        login_response = LoginResponse(**response)
+        if not login_response.success:
+            raise LoginException(login_response)
+        self.sessionId = login_response.sessionID
+        return login_response
+
+class BasicAuthProviderAsync(AuthProvider):
+    def __init__(self, panelUrl: str = "", requestMethod: str = "POST", username: str = "", password: str = "", token: str = "", rememberMe: bool = False, sessionId: str = "") -> None:
+        if panelUrl == "":
+            raise ValueError("Panel URL must be defined")
+        if username == "" and sessionId == "":
+            raise ValueError("Username must be defined")
+        if password == "" and token == "" and sessionId == "":
+            raise ValueError("You must provide a Password, Token, or a SessionId")
+        if not panelUrl.endswith("/"):
+            panelUrl += "/"
+        self.dataSource = panelUrl + "API/"
+        self.requestMethod = requestMethod
+        self.username = username
+        self.password = password
+        self.token = token
+        self.rememberMe = rememberMe
+        self.sessionId = sessionId
+
+    async def api_call(self, endpoint: str, args: dict = {}) -> dict[str, Any]:
+        if self.sessionId == "":
+            await self.Login()
+        args.set("SESSIONID", self.sessionId)
+        return await api_call_async(self.dataSource + endpoint, self.requestMethod, args)
+
+    async def Login(self, rememberMe: bool = False) -> LoginResponse:
+        args: dict[str, Any] = {
+            "username": self.username,
+            "password": self.password,
+            "token": self.token,
+            "rememberMe": False
+        }
+        response: dict[str, Any] = await api_call_async(self.dataSource + "Core/Login", self.requestMethod, args)
+        login_response = LoginResponse(**response)
+        if not login_response.success:
+            raise LoginException(login_response)
+        self.sessionId = login_response.sessionID
+        return login_response

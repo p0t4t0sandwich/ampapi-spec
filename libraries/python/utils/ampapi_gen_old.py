@@ -204,7 +204,7 @@ def generate_apimodule(module: str, methods: dict):
         tf.close()
 
     # Create a new file called f{module}.java
-    f = open(f"../ampapi/apimodules/{module}.py","w+")
+    f = open(f"../ampapi/plugins/{module}.py","w+")
     f.write(api_module_template.replace("%MODULE_NAME%", module))
 
     for method in methods.keys():
