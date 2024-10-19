@@ -230,6 +230,10 @@ class CodeGen:
                 method_text = method_text.replace("{MethodDescription}", method_def.get("Description", ""))
                 method_text = method_text.replace("{ReturnType}", self._convert_type(method_def["ReturnTypeName"]))
 
+                # TODO: Find a nicer way to handle this?
+                if "return None(**" in method_text:
+                    method_text = method_text.replace("return None(**", "").replace("}))", "})")
+
                 plugin_methods += method_text
 
             plugin_class = plugin_class.replace("{PluginMethods}", plugin_methods)
@@ -237,7 +241,7 @@ class CodeGen:
             plugin_class = plugin_class[:-1]
 
             text += plugin_class
-        
+
         with open(f"../ampapi/plugins.py", "w") as f:
             f.write(text)
 

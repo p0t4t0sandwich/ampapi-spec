@@ -1,7 +1,7 @@
 from abc import ABCMeta, abstractmethod
 from types import SimpleNamespace
 from aiohttp import ClientSession as async_request
-from typing import Any, Final, overload
+from typing import Any, Final, Mapping, overload
 from requests import request as sync_request
 
 from .types import APIError, LoginResponse
@@ -14,6 +14,25 @@ class LoginException(Exception):
     def __init__(self, login_response: LoginResponse) -> None:
         super().__init__(login_response.resultReason + ": " + login_response.result + "\n" + login_response)
 
+class JsonObj(SimpleNamespace, Mapping):
+    def __getitem__(self, key: str) -> Any:
+        return self.__getattribute__(key)
+
+    def __setitem__(self, key: str, value: Any) -> None:
+        self.__setattr__(key, value)
+
+    def __delitem__(self, key: str) -> None:
+        self.__delattr__(key)
+
+    def __repr__(self) -> str:
+        return self.__dict__.__repr__()
+
+    def __iter__(self):
+        return self.__dict__.__iter__()
+
+    def __len__(self) -> int:
+        return self.__dict__.__len__()
+
 def json_object_hook(dct: dict[Any, Any]) -> Any:
     new_dct = {}
     for key, value in dct.items():
@@ -23,7 +42,7 @@ def json_object_hook(dct: dict[Any, Any]) -> Any:
             new_dct[key] = [json_object_hook(item) if isinstance(item, dict) else item for item in value]
         else:
             new_dct[key] = value
-    return SimpleNamespace(**new_dct)
+    return JsonObj(**new_dct)
 
 _headers: dict = {
     "Content-Type": "application/json",
@@ -61,7 +80,7 @@ async def api_call_async(endpoint: str, requestMethod: str, args: dict) -> dict[
     """
     async with async_request() as session:
         response = await session.request(requestMethod, endpoint, headers=_headers, json=args)
-        response_json: dict[str, Any] = await response.json()
+        response_json: dict[str, Any] = await response.json(object_hook=json_object_hook)
         if isinstance(response_json, dict) and "StackTrace" in response_json.keys():
             raise APIException(APIError(**response_json))
         return response_json
@@ -155,7 +174,7 @@ class BasicAuthProvider(AuthProvider):
             "rememberMe": False
         }
         response: dict[str, Any] = api_call(self.dataSource + "Core/Login", self.requestMethod, args)
-        login_response = response # LoginResponse(**response)
+        login_response = LoginResponse(**response)
         if not login_response.success:
             raise LoginException(login_response)
         self.sessionId = login_response.sessionID

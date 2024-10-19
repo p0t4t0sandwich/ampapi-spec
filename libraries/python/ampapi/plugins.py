@@ -15,9 +15,9 @@ class ADSModule(AMPAPI):
         :type newDatastore: InstanceDatastore
         :returns: ActionResult
         """
-        return self.api_call("ADSModule/AddDatastore", {
+        return ActionResult(**self.api_call("ADSModule/AddDatastore", {
             'newDatastore': newDatastore
-        })
+        }))
 
     def ApplyInstanceConfiguration(self, InstanceID: 'str', Args: 'dict[str, str]', RebuildConfiguration: 'bool') -> ActionResult:
         """
@@ -30,11 +30,11 @@ class ADSModule(AMPAPI):
         :type RebuildConfiguration: bool
         :returns: ActionResult
         """
-        return self.api_call("ADSModule/ApplyInstanceConfiguration", {
+        return ActionResult(**self.api_call("ADSModule/ApplyInstanceConfiguration", {
             'InstanceID': InstanceID,
             'Args': Args,
             'RebuildConfiguration': RebuildConfiguration
-        })
+        }))
 
     def ApplyTemplate(self, InstanceID: 'str', TemplateID: 'int', NewFriendlyName: 'str', Secret: 'str', RestartIfPreviouslyRunning: 'bool') -> ActionResult:
         """Overlays an existing template on an existing instance. Used to perform package reconfigurations. Do not use this to 'transform' an existing application into another. The instance should be deleted and re-created in that situation.
@@ -51,13 +51,13 @@ class ADSModule(AMPAPI):
         :type RestartIfPreviouslyRunning: bool
         :returns: ActionResult
         """
-        return self.api_call("ADSModule/ApplyTemplate", {
+        return ActionResult(**self.api_call("ADSModule/ApplyTemplate", {
             'InstanceID': InstanceID,
             'TemplateID': TemplateID,
             'NewFriendlyName': NewFriendlyName,
             'Secret': Secret,
             'RestartIfPreviouslyRunning': RestartIfPreviouslyRunning
-        })
+        }))
 
     def AttachADS(self, Friendly: 'str', IsHTTPS: 'bool', Host: 'str', Port: 'int', InstanceID: 'str') -> ActionResult:
         """
@@ -74,13 +74,13 @@ class ADSModule(AMPAPI):
         :type InstanceID: str
         :returns: ActionResult
         """
-        return self.api_call("ADSModule/AttachADS", {
+        return ActionResult(**self.api_call("ADSModule/AttachADS", {
             'Friendly': Friendly,
             'IsHTTPS': IsHTTPS,
             'Host': Host,
             'Port': Port,
             'InstanceID': InstanceID
-        })
+        }))
 
     def CloneTemplate(self, Id: 'int', NewName: 'str') -> ActionResult:
         """
@@ -91,10 +91,10 @@ class ADSModule(AMPAPI):
         :type NewName: str
         :returns: ActionResult
         """
-        return self.api_call("ADSModule/CloneTemplate", {
+        return ActionResult(**self.api_call("ADSModule/CloneTemplate", {
             'Id': Id,
             'NewName': NewName
-        })
+        }))
 
     def CreateDeploymentTemplate(self, Name: 'str') -> ActionResult:
         """
@@ -103,9 +103,9 @@ class ADSModule(AMPAPI):
         :type Name: str
         :returns: ActionResult
         """
-        return self.api_call("ADSModule/CreateDeploymentTemplate", {
+        return ActionResult(**self.api_call("ADSModule/CreateDeploymentTemplate", {
             'Name': Name
-        })
+        }))
 
     def CreateInstance(self, TargetADSInstance: 'str', NewInstanceId: 'str', Module: 'str', InstanceName: 'str', FriendlyName: 'str', IPBinding: 'str', PortNumber: 'int', AdminUsername: 'str', AdminPassword: 'str', ProvisionSettings: 'dict[str, str]', AutoConfigure: 'bool', StartOnBoot: 'bool', DisplayImageSource: 'str', TargetDatastore: 'int', PostCreate: 'PostCreateAppActions') -> ActionResult:
         """
@@ -142,7 +142,7 @@ class ADSModule(AMPAPI):
         :type PostCreate: PostCreateAppActions
         :returns: ActionResult
         """
-        return self.api_call("ADSModule/CreateInstance", {
+        return ActionResult(**self.api_call("ADSModule/CreateInstance", {
             'TargetADSInstance': TargetADSInstance,
             'NewInstanceId': NewInstanceId,
             'Module': Module,
@@ -158,7 +158,7 @@ class ADSModule(AMPAPI):
             'DisplayImageSource': DisplayImageSource,
             'TargetDatastore': TargetDatastore,
             'PostCreate': PostCreate
-        })
+        }))
 
     def CreateInstanceFromSpec(self, SpecId: 'str', TargetADSInstance: 'str', FriendlyName: 'str', PostCreate: 'PostCreateAppActions', StartOnBoot: 'bool', TargetDatastore: 'int') -> ActionResult:
         """
@@ -177,14 +177,14 @@ class ADSModule(AMPAPI):
         :type TargetDatastore: int
         :returns: ActionResult
         """
-        return self.api_call("ADSModule/CreateInstanceFromSpec", {
+        return ActionResult(**self.api_call("ADSModule/CreateInstanceFromSpec", {
             'SpecId': SpecId,
             'TargetADSInstance': TargetADSInstance,
             'FriendlyName': FriendlyName,
             'PostCreate': PostCreate,
             'StartOnBoot': StartOnBoot,
             'TargetDatastore': TargetDatastore
-        })
+        }))
 
     def CreateLocalInstance(self, Instance: 'LocalAMPInstance', PostCreate: 'PostCreateAppActions') -> ActionResult:
         """
@@ -195,10 +195,10 @@ class ADSModule(AMPAPI):
         :type PostCreate: PostCreateAppActions
         :returns: ActionResult
         """
-        return self.api_call("ADSModule/CreateLocalInstance", {
+        return ActionResult(**self.api_call("ADSModule/CreateLocalInstance", {
             'Instance': Instance,
             'PostCreate': PostCreate
-        })
+        }))
 
     def DeleteDatastore(self, id: 'int') -> ActionResult:
         """
@@ -207,9 +207,9 @@ class ADSModule(AMPAPI):
         :type id: int
         :returns: ActionResult
         """
-        return self.api_call("ADSModule/DeleteDatastore", {
+        return ActionResult(**self.api_call("ADSModule/DeleteDatastore", {
             'id': id
-        })
+        }))
 
     def DeleteDeploymentTemplate(self, Id: 'int') -> ActionResult:
         """
@@ -218,9 +218,9 @@ class ADSModule(AMPAPI):
         :type Id: int
         :returns: ActionResult
         """
-        return self.api_call("ADSModule/DeleteDeploymentTemplate", {
+        return ActionResult(**self.api_call("ADSModule/DeleteDeploymentTemplate", {
             'Id': Id
-        })
+        }))
 
     def DeleteInstance(self, InstanceName: 'str') -> RunningTask:
         """
@@ -229,9 +229,9 @@ class ADSModule(AMPAPI):
         :type InstanceName: str
         :returns: RunningTask
         """
-        return self.api_call("ADSModule/DeleteInstance", {
+        return RunningTask(**self.api_call("ADSModule/DeleteInstance", {
             'InstanceName': InstanceName
-        })
+        }))
 
     def DeleteInstanceUsers(self, InstanceId: 'str') -> ActionResult:
         """
@@ -240,9 +240,9 @@ class ADSModule(AMPAPI):
         :type InstanceId: str
         :returns: ActionResult
         """
-        return self.api_call("ADSModule/DeleteInstanceUsers", {
+        return ActionResult(**self.api_call("ADSModule/DeleteInstanceUsers", {
             'InstanceId': InstanceId
-        })
+        }))
 
     def DeployTemplate(self, TemplateID: 'int', NewUsername: 'str', NewPassword: 'str', NewEmail: 'str', RequiredTags: 'list[str]', Tag: 'str', FriendlyName: 'str', Secret: 'str', ExtraProvisionSettings: 'dict[str, str]', PostCreate: 'PostCreateAppActions') -> RunningTask:
         """
@@ -269,7 +269,7 @@ class ADSModule(AMPAPI):
         :type PostCreate: PostCreateAppActions
         :returns: RunningTask
         """
-        return self.api_call("ADSModule/DeployTemplate", {
+        return RunningTask(**self.api_call("ADSModule/DeployTemplate", {
             'TemplateID': TemplateID,
             'NewUsername': NewUsername,
             'NewPassword': NewPassword,
@@ -280,7 +280,7 @@ class ADSModule(AMPAPI):
             'Secret': Secret,
             'ExtraProvisionSettings': ExtraProvisionSettings,
             'PostCreate': PostCreate
-        })
+        }))
 
     def DetachTarget(self, Id: 'str') -> ActionResult:
         """
@@ -289,9 +289,9 @@ class ADSModule(AMPAPI):
         :type Id: str
         :returns: ActionResult
         """
-        return self.api_call("ADSModule/DetachTarget", {
+        return ActionResult(**self.api_call("ADSModule/DetachTarget", {
             'Id': Id
-        })
+        }))
 
     def ExtractEverywhere(self, SourceArchive: 'str') -> ActionResult:
         """
@@ -300,9 +300,9 @@ class ADSModule(AMPAPI):
         :type SourceArchive: str
         :returns: ActionResult
         """
-        return self.api_call("ADSModule/ExtractEverywhere", {
+        return ActionResult(**self.api_call("ADSModule/ExtractEverywhere", {
             'SourceArchive': SourceArchive
-        })
+        }))
 
     def GetApplicationEndpoints(self, instanceId: 'str') -> list[EndpointInfo]:
         """
@@ -311,9 +311,9 @@ class ADSModule(AMPAPI):
         :type instanceId: str
         :returns: list[EndpointInfo]
         """
-        return self.api_call("ADSModule/GetApplicationEndpoints", {
+        return list[EndpointInfo](**self.api_call("ADSModule/GetApplicationEndpoints", {
             'instanceId': instanceId
-        })
+        }))
 
     def GetDatastore(self, id: 'int') -> InstanceDatastore:
         """
@@ -322,9 +322,9 @@ class ADSModule(AMPAPI):
         :type id: int
         :returns: InstanceDatastore
         """
-        return self.api_call("ADSModule/GetDatastore", {
+        return InstanceDatastore(**self.api_call("ADSModule/GetDatastore", {
             'id': id
-        })
+        }))
 
     def GetDatastoreInstances(self, datastoreId: 'int') -> list[InstanceSummary]:
         """
@@ -333,9 +333,9 @@ class ADSModule(AMPAPI):
         :type datastoreId: int
         :returns: list[InstanceSummary]
         """
-        return self.api_call("ADSModule/GetDatastoreInstances", {
+        return list[InstanceSummary](**self.api_call("ADSModule/GetDatastoreInstances", {
             'datastoreId': datastoreId
-        })
+        }))
 
     def GetDatastores(self, ) -> list[InstanceDatastore]:
         """
@@ -343,7 +343,7 @@ class ADSModule(AMPAPI):
 
         :returns: list[InstanceDatastore]
         """
-        return self.api_call("ADSModule/GetDatastores", {})
+        return list[InstanceDatastore](**self.api_call("ADSModule/GetDatastores", {}))
 
     def GetDeploymentTemplates(self, ) -> list[DeploymentTemplate]:
         """
@@ -351,7 +351,7 @@ class ADSModule(AMPAPI):
 
         :returns: list[DeploymentTemplate]
         """
-        return self.api_call("ADSModule/GetDeploymentTemplates", {})
+        return list[DeploymentTemplate](**self.api_call("ADSModule/GetDeploymentTemplates", {}))
 
     def GetGroup(self, GroupId: 'str') -> IADSInstance:
         """
@@ -360,9 +360,9 @@ class ADSModule(AMPAPI):
         :type GroupId: str
         :returns: IADSInstance
         """
-        return self.api_call("ADSModule/GetGroup", {
+        return IADSInstance(**self.api_call("ADSModule/GetGroup", {
             'GroupId': GroupId
-        })
+        }))
 
     def GetInstance(self, InstanceId: 'str') -> InstanceSummary:
         """
@@ -371,9 +371,9 @@ class ADSModule(AMPAPI):
         :type InstanceId: str
         :returns: InstanceSummary
         """
-        return self.api_call("ADSModule/GetInstance", {
+        return InstanceSummary(**self.api_call("ADSModule/GetInstance", {
             'InstanceId': InstanceId
-        })
+        }))
 
     def GetInstanceNetworkInfo(self, InstanceName: 'str') -> list[PortUsage]:
         """
@@ -382,9 +382,9 @@ class ADSModule(AMPAPI):
         :type InstanceName: str
         :returns: list[PortUsage]
         """
-        return self.api_call("ADSModule/GetInstanceNetworkInfo", {
+        return list[PortUsage](**self.api_call("ADSModule/GetInstanceNetworkInfo", {
             'InstanceName': InstanceName
-        })
+        }))
 
     def GetInstanceStatuses(self, ) -> list[InstanceStatus]:
         """
@@ -392,7 +392,7 @@ class ADSModule(AMPAPI):
 
         :returns: list[InstanceStatus]
         """
-        return self.api_call("ADSModule/GetInstanceStatuses", {})
+        return list[InstanceStatus](**self.api_call("ADSModule/GetInstanceStatuses", {}))
 
     def GetInstances(self, ForceIncludeSelf: 'bool') -> list[IADSInstance]:
         """
@@ -401,9 +401,9 @@ class ADSModule(AMPAPI):
         :type ForceIncludeSelf: bool
         :returns: list[IADSInstance]
         """
-        return self.api_call("ADSModule/GetInstances", {
+        return list[IADSInstance](**self.api_call("ADSModule/GetInstances", {
             'ForceIncludeSelf': ForceIncludeSelf
-        })
+        }))
 
     def GetLocalInstances(self, ) -> list[InstanceSummary]:
         """
@@ -411,7 +411,7 @@ class ADSModule(AMPAPI):
 
         :returns: list[InstanceSummary]
         """
-        return self.api_call("ADSModule/GetLocalInstances", {})
+        return list[InstanceSummary](**self.api_call("ADSModule/GetLocalInstances", {}))
 
     def GetProvisionArguments(self, ModuleName: 'str') -> list[ProvisionSettingInfo]:
         """
@@ -420,9 +420,9 @@ class ADSModule(AMPAPI):
         :type ModuleName: str
         :returns: list[ProvisionSettingInfo]
         """
-        return self.api_call("ADSModule/GetProvisionArguments", {
+        return list[ProvisionSettingInfo](**self.api_call("ADSModule/GetProvisionArguments", {
             'ModuleName': ModuleName
-        })
+        }))
 
     def GetProvisionFitness(self, ) -> ProvisionFitness:
         """
@@ -430,7 +430,7 @@ class ADSModule(AMPAPI):
 
         :returns: ProvisionFitness
         """
-        return self.api_call("ADSModule/GetProvisionFitness", {})
+        return ProvisionFitness(**self.api_call("ADSModule/GetProvisionFitness", {}))
 
     def GetSupportedAppSummaries(self, ) -> list[ApplicationSpecSummary]:
         """
@@ -438,7 +438,7 @@ class ADSModule(AMPAPI):
 
         :returns: list[ApplicationSpecSummary]
         """
-        return self.api_call("ADSModule/GetSupportedAppSummaries", {})
+        return list[ApplicationSpecSummary](**self.api_call("ADSModule/GetSupportedAppSummaries", {}))
 
     def GetSupportedApplications(self, ) -> list[ApplicationSpec]:
         """
@@ -446,7 +446,7 @@ class ADSModule(AMPAPI):
 
         :returns: list[ApplicationSpec]
         """
-        return self.api_call("ADSModule/GetSupportedApplications", {})
+        return list[ApplicationSpec](**self.api_call("ADSModule/GetSupportedApplications", {}))
 
     def GetTargetInfo(self, ) -> RemoteTargetInfo:
         """
@@ -454,7 +454,7 @@ class ADSModule(AMPAPI):
 
         :returns: RemoteTargetInfo
         """
-        return self.api_call("ADSModule/GetTargetInfo", {})
+        return RemoteTargetInfo(**self.api_call("ADSModule/GetTargetInfo", {}))
 
     def HandoutInstanceConfigs(self, ForModule: 'str', SettingNode: 'str', Values: 'list[str]') -> ActionResult:
         """
@@ -467,11 +467,11 @@ class ADSModule(AMPAPI):
         :type Values: list[str]
         :returns: ActionResult
         """
-        return self.api_call("ADSModule/HandoutInstanceConfigs", {
+        return ActionResult(**self.api_call("ADSModule/HandoutInstanceConfigs", {
             'ForModule': ForModule,
             'SettingNode': SettingNode,
             'Values': Values
-        })
+        }))
 
     def ManageInstance(self, InstanceId: 'str') -> ActionResult[str]:
         """
@@ -480,9 +480,9 @@ class ADSModule(AMPAPI):
         :type InstanceId: str
         :returns: ActionResult[str]
         """
-        return self.api_call("ADSModule/ManageInstance", {
+        return ActionResult[str](**self.api_call("ADSModule/ManageInstance", {
             'InstanceId': InstanceId
-        })
+        }))
 
     def ModifyCustomFirewallRule(self, instanceId: 'str', PortNumber: 'int', Range: 'int', Protocol: 'PortProtocol', Description: 'str', Open: 'bool') -> ActionResult:
         """
@@ -501,14 +501,14 @@ class ADSModule(AMPAPI):
         :type Open: bool
         :returns: ActionResult
         """
-        return self.api_call("ADSModule/ModifyCustomFirewallRule", {
+        return ActionResult(**self.api_call("ADSModule/ModifyCustomFirewallRule", {
             'instanceId': instanceId,
             'PortNumber': PortNumber,
             'Range': Range,
             'Protocol': Protocol,
             'Description': Description,
             'Open': Open
-        })
+        }))
 
     def MoveInstanceDatastore(self, instanceId: 'str', datastoreId: 'int') -> RunningTask:
         """
@@ -519,10 +519,10 @@ class ADSModule(AMPAPI):
         :type datastoreId: int
         :returns: RunningTask
         """
-        return self.api_call("ADSModule/MoveInstanceDatastore", {
+        return RunningTask(**self.api_call("ADSModule/MoveInstanceDatastore", {
             'instanceId': instanceId,
             'datastoreId': datastoreId
-        })
+        }))
 
     def ReactivateInstance(self, instanceId: 'str') -> RunningTask:
         """
@@ -531,9 +531,9 @@ class ADSModule(AMPAPI):
         :type instanceId: str
         :returns: RunningTask
         """
-        return self.api_call("ADSModule/ReactivateInstance", {
+        return RunningTask(**self.api_call("ADSModule/ReactivateInstance", {
             'instanceId': instanceId
-        })
+        }))
 
     def ReactivateLocalInstances(self, ) -> RunningTask:
         """
@@ -541,7 +541,7 @@ class ADSModule(AMPAPI):
 
         :returns: RunningTask
         """
-        return self.api_call("ADSModule/ReactivateLocalInstances", {})
+        return RunningTask(**self.api_call("ADSModule/ReactivateLocalInstances", {}))
 
     def RefreshAppCache(self, ) -> None:
         """
@@ -549,7 +549,7 @@ class ADSModule(AMPAPI):
 
         :returns: None
         """
-        return self.api_call("ADSModule/RefreshAppCache", {})
+        self.api_call("ADSModule/RefreshAppCache", {})
 
     def RefreshGroup(self, GroupId: 'str') -> ActionResult:
         """
@@ -558,9 +558,9 @@ class ADSModule(AMPAPI):
         :type GroupId: str
         :returns: ActionResult
         """
-        return self.api_call("ADSModule/RefreshGroup", {
+        return ActionResult(**self.api_call("ADSModule/RefreshGroup", {
             'GroupId': GroupId
-        })
+        }))
 
     def RefreshInstanceConfig(self, InstanceId: 'str') -> ActionResult:
         """
@@ -569,9 +569,9 @@ class ADSModule(AMPAPI):
         :type InstanceId: str
         :returns: ActionResult
         """
-        return self.api_call("ADSModule/RefreshInstanceConfig", {
+        return ActionResult(**self.api_call("ADSModule/RefreshInstanceConfig", {
             'InstanceId': InstanceId
-        })
+        }))
 
     def RefreshRemoteConfigStores(self, force: 'bool') -> None:
         """
@@ -580,7 +580,7 @@ class ADSModule(AMPAPI):
         :type force: bool
         :returns: None
         """
-        return self.api_call("ADSModule/RefreshRemoteConfigStores", {
+        self.api_call("ADSModule/RefreshRemoteConfigStores", {
             'force': force
         })
 
@@ -601,14 +601,14 @@ class ADSModule(AMPAPI):
         :type friendlyName: str
         :returns: ActionResult
         """
-        return self.api_call("ADSModule/RegisterTarget", {
+        return ActionResult(**self.api_call("ADSModule/RegisterTarget", {
             'controllerUrl': controllerUrl,
             'myUrl': myUrl,
             'username': username,
             'password': password,
             'twoFactorToken': twoFactorToken,
             'friendlyName': friendlyName
-        })
+        }))
 
     def RepairDatastore(self, id: 'int') -> RunningTask:
         """
@@ -617,9 +617,9 @@ class ADSModule(AMPAPI):
         :type id: int
         :returns: RunningTask
         """
-        return self.api_call("ADSModule/RepairDatastore", {
+        return RunningTask(**self.api_call("ADSModule/RepairDatastore", {
             'id': id
-        })
+        }))
 
     def RequestDatastoreSizeCalculation(self, datastoreId: 'int') -> RunningTask:
         """
@@ -628,9 +628,9 @@ class ADSModule(AMPAPI):
         :type datastoreId: int
         :returns: RunningTask
         """
-        return self.api_call("ADSModule/RequestDatastoreSizeCalculation", {
+        return RunningTask(**self.api_call("ADSModule/RequestDatastoreSizeCalculation", {
             'datastoreId': datastoreId
-        })
+        }))
 
     def RestartInstance(self, InstanceName: 'str') -> ActionResult:
         """
@@ -639,9 +639,9 @@ class ADSModule(AMPAPI):
         :type InstanceName: str
         :returns: ActionResult
         """
-        return self.api_call("ADSModule/RestartInstance", {
+        return ActionResult(**self.api_call("ADSModule/RestartInstance", {
             'InstanceName': InstanceName
-        })
+        }))
 
     def Servers(self, id: 'str', Data: 'dict[str, Any]', RealIP: 'str') -> dict[str, Any]:
         """
@@ -654,11 +654,11 @@ class ADSModule(AMPAPI):
         :type RealIP: str
         :returns: dict[str, Any]
         """
-        return self.api_call("ADSModule/Servers", {
+        return dict[str, Any](**self.api_call("ADSModule/Servers", {
             'id': id,
             'Data': Data,
             'RealIP': RealIP
-        })
+        }))
 
     def SetInstanceConfig(self, InstanceName: 'str', SettingNode: 'str', Value: 'str') -> ActionResult:
         """
@@ -671,11 +671,11 @@ class ADSModule(AMPAPI):
         :type Value: str
         :returns: ActionResult
         """
-        return self.api_call("ADSModule/SetInstanceConfig", {
+        return ActionResult(**self.api_call("ADSModule/SetInstanceConfig", {
             'InstanceName': InstanceName,
             'SettingNode': SettingNode,
             'Value': Value
-        })
+        }))
 
     def SetInstanceNetworkInfo(self, InstanceId: 'str', PortMappings: 'dict[str, int]') -> ActionResult:
         """
@@ -686,10 +686,10 @@ class ADSModule(AMPAPI):
         :type PortMappings: dict[str, int]
         :returns: ActionResult
         """
-        return self.api_call("ADSModule/SetInstanceNetworkInfo", {
+        return ActionResult(**self.api_call("ADSModule/SetInstanceNetworkInfo", {
             'InstanceId': InstanceId,
             'PortMappings': PortMappings
-        })
+        }))
 
     def SetInstanceSuspended(self, InstanceName: 'str', Suspended: 'bool') -> ActionResult:
         """
@@ -700,10 +700,10 @@ class ADSModule(AMPAPI):
         :type Suspended: bool
         :returns: ActionResult
         """
-        return self.api_call("ADSModule/SetInstanceSuspended", {
+        return ActionResult(**self.api_call("ADSModule/SetInstanceSuspended", {
             'InstanceName': InstanceName,
             'Suspended': Suspended
-        })
+        }))
 
     def StartAllInstances(self, TargetADSInstance: 'str') -> ActionResult:
         """
@@ -712,9 +712,9 @@ class ADSModule(AMPAPI):
         :type TargetADSInstance: str
         :returns: ActionResult
         """
-        return self.api_call("ADSModule/StartAllInstances", {
+        return ActionResult(**self.api_call("ADSModule/StartAllInstances", {
             'TargetADSInstance': TargetADSInstance
-        })
+        }))
 
     def StartInstance(self, InstanceName: 'str') -> ActionResult:
         """
@@ -723,9 +723,9 @@ class ADSModule(AMPAPI):
         :type InstanceName: str
         :returns: ActionResult
         """
-        return self.api_call("ADSModule/StartInstance", {
+        return ActionResult(**self.api_call("ADSModule/StartInstance", {
             'InstanceName': InstanceName
-        })
+        }))
 
     def StopAllInstances(self, TargetADSInstance: 'str') -> ActionResult:
         """
@@ -734,9 +734,9 @@ class ADSModule(AMPAPI):
         :type TargetADSInstance: str
         :returns: ActionResult
         """
-        return self.api_call("ADSModule/StopAllInstances", {
+        return ActionResult(**self.api_call("ADSModule/StopAllInstances", {
             'TargetADSInstance': TargetADSInstance
-        })
+        }))
 
     def StopInstance(self, InstanceName: 'str') -> ActionResult:
         """
@@ -745,9 +745,9 @@ class ADSModule(AMPAPI):
         :type InstanceName: str
         :returns: ActionResult
         """
-        return self.api_call("ADSModule/StopInstance", {
+        return ActionResult(**self.api_call("ADSModule/StopInstance", {
             'InstanceName': InstanceName
-        })
+        }))
 
     def TestADSLoginDetails(self, url: 'str', username: 'str', password: 'str', twoFactorToken: 'str') -> ActionResult:
         """
@@ -762,12 +762,12 @@ class ADSModule(AMPAPI):
         :type twoFactorToken: str
         :returns: ActionResult
         """
-        return self.api_call("ADSModule/TestADSLoginDetails", {
+        return ActionResult(**self.api_call("ADSModule/TestADSLoginDetails", {
             'url': url,
             'username': username,
             'password': password,
             'twoFactorToken': twoFactorToken
-        })
+        }))
 
     def UpdateDatastore(self, updatedDatastore: 'InstanceDatastore') -> ActionResult:
         """
@@ -776,9 +776,9 @@ class ADSModule(AMPAPI):
         :type updatedDatastore: InstanceDatastore
         :returns: ActionResult
         """
-        return self.api_call("ADSModule/UpdateDatastore", {
+        return ActionResult(**self.api_call("ADSModule/UpdateDatastore", {
             'updatedDatastore': updatedDatastore
-        })
+        }))
 
     def UpdateDeploymentTemplate(self, templateToUpdate: 'DeploymentTemplate') -> ActionResult:
         """
@@ -787,9 +787,9 @@ class ADSModule(AMPAPI):
         :type templateToUpdate: DeploymentTemplate
         :returns: ActionResult
         """
-        return self.api_call("ADSModule/UpdateDeploymentTemplate", {
+        return ActionResult(**self.api_call("ADSModule/UpdateDeploymentTemplate", {
             'templateToUpdate': templateToUpdate
-        })
+        }))
 
     def UpdateInstanceInfo(self, InstanceId: 'str', FriendlyName: 'str', Description: 'str', StartOnBoot: 'bool', Suspended: 'bool', ExcludeFromFirewall: 'bool', RunInContainer: 'bool', ContainerMemory: 'int', MemoryPolicy: 'ContainerMemoryPolicy', ContainerMaxCPU: 'float', ContainerImage: 'str', ContainerSwap: 'int', WelcomeMessage: 'str') -> ActionResult:
         """
@@ -822,7 +822,7 @@ class ADSModule(AMPAPI):
         :type WelcomeMessage: str
         :returns: ActionResult
         """
-        return self.api_call("ADSModule/UpdateInstanceInfo", {
+        return ActionResult(**self.api_call("ADSModule/UpdateInstanceInfo", {
             'InstanceId': InstanceId,
             'FriendlyName': FriendlyName,
             'Description': Description,
@@ -836,7 +836,7 @@ class ADSModule(AMPAPI):
             'ContainerImage': ContainerImage,
             'ContainerSwap': ContainerSwap,
             'WelcomeMessage': WelcomeMessage
-        })
+        }))
 
     def UpdateTarget(self, TargetID: 'str') -> None:
         """
@@ -845,7 +845,7 @@ class ADSModule(AMPAPI):
         :type TargetID: str
         :returns: None
         """
-        return self.api_call("ADSModule/UpdateTarget", {
+        self.api_call("ADSModule/UpdateTarget", {
             'TargetID': TargetID
         })
 
@@ -864,13 +864,13 @@ class ADSModule(AMPAPI):
         :type Tags: list[str]
         :returns: ActionResult
         """
-        return self.api_call("ADSModule/UpdateTargetInfo", {
+        return ActionResult(**self.api_call("ADSModule/UpdateTargetInfo", {
             'Id': Id,
             'FriendlyName': FriendlyName,
             'Url': Url,
             'Description': Description,
             'Tags': Tags
-        })
+        }))
 
     def UpgradeAllInstances(self, RestartRunning: 'bool', TargetADSInstance: 'str') -> ActionResult:
         """
@@ -881,10 +881,10 @@ class ADSModule(AMPAPI):
         :type TargetADSInstance: str
         :returns: ActionResult
         """
-        return self.api_call("ADSModule/UpgradeAllInstances", {
+        return ActionResult(**self.api_call("ADSModule/UpgradeAllInstances", {
             'RestartRunning': RestartRunning,
             'TargetADSInstance': TargetADSInstance
-        })
+        }))
 
     def UpgradeInstance(self, InstanceName: 'str') -> ActionResult:
         """
@@ -893,9 +893,9 @@ class ADSModule(AMPAPI):
         :type InstanceName: str
         :returns: ActionResult
         """
-        return self.api_call("ADSModule/UpgradeInstance", {
+        return ActionResult(**self.api_call("ADSModule/UpgradeInstance", {
             'InstanceName': InstanceName
-        })
+        }))
 
 class AnalyticsPlugin(AMPAPI):
     def __init__(self, authprovider: AuthProvider) -> None:
@@ -912,11 +912,11 @@ class AnalyticsPlugin(AMPAPI):
         :type Filters: dict[str, str]
         :returns: Any
         """
-        return self.api_call("AnalyticsPlugin/GetAnalyticsSummary", {
+        return Any(**self.api_call("AnalyticsPlugin/GetAnalyticsSummary", {
             'PeriodDays': PeriodDays,
             'StartDate': StartDate,
             'Filters': Filters
-        })
+        }))
 
 class Core(AMPAPI):
     def __init__(self, authprovider: AuthProvider) -> None:
@@ -928,7 +928,7 @@ class Core(AMPAPI):
 
         :returns: None
         """
-        return self.api_call("Core/AcknowledgeAMPUpdate", {})
+        self.api_call("Core/AcknowledgeAMPUpdate", {})
 
     def ActivateAMPLicence(self, LicenceKey: 'str', QueryOnly: 'bool') -> ActionResult[LicenceInfo]:
         """
@@ -939,10 +939,10 @@ class Core(AMPAPI):
         :type QueryOnly: bool
         :returns: ActionResult[LicenceInfo]
         """
-        return self.api_call("Core/ActivateAMPLicence", {
+        return ActionResult[LicenceInfo](**self.api_call("Core/ActivateAMPLicence", {
             'LicenceKey': LicenceKey,
             'QueryOnly': QueryOnly
-        })
+        }))
 
     def AddEventTrigger(self, triggerId: 'str') -> ActionResult:
         """
@@ -951,9 +951,9 @@ class Core(AMPAPI):
         :type triggerId: str
         :returns: ActionResult
         """
-        return self.api_call("Core/AddEventTrigger", {
+        return ActionResult(**self.api_call("Core/AddEventTrigger", {
             'triggerId': triggerId
-        })
+        }))
 
     def AddIntervalTrigger(self, months: 'list[int]', days: 'list[int]', hours: 'list[int]', minutes: 'list[int]', daysOfMonth: 'list[int]', description: 'str') -> ActionResult:
         """
@@ -972,14 +972,14 @@ class Core(AMPAPI):
         :type description: str
         :returns: ActionResult
         """
-        return self.api_call("Core/AddIntervalTrigger", {
+        return ActionResult(**self.api_call("Core/AddIntervalTrigger", {
             'months': months,
             'days': days,
             'hours': hours,
             'minutes': minutes,
             'daysOfMonth': daysOfMonth,
             'description': description
-        })
+        }))
 
     def AddTask(self, TriggerID: 'str', MethodID: 'str', ParameterMapping: 'dict[str, str]') -> ActionResult:
         """
@@ -992,11 +992,11 @@ class Core(AMPAPI):
         :type ParameterMapping: dict[str, str]
         :returns: ActionResult
         """
-        return self.api_call("Core/AddTask", {
+        return ActionResult(**self.api_call("Core/AddTask", {
             'TriggerID': TriggerID,
             'MethodID': MethodID,
             'ParameterMapping': ParameterMapping
-        })
+        }))
 
     def AsyncTest(self, ) -> str:
         """DEV: Async test method
@@ -1004,7 +1004,7 @@ class Core(AMPAPI):
 
         :returns: str
         """
-        return self.api_call("Core/AsyncTest", {})
+        return str(**self.api_call("Core/AsyncTest", {}))
 
     def CancelTask(self, TaskId: 'str') -> ActionResult:
         """
@@ -1013,9 +1013,9 @@ class Core(AMPAPI):
         :type TaskId: str
         :returns: ActionResult
         """
-        return self.api_call("Core/CancelTask", {
+        return ActionResult(**self.api_call("Core/CancelTask", {
             'TaskId': TaskId
-        })
+        }))
 
     def ChangeTaskOrder(self, TriggerID: 'str', TaskID: 'str', NewOrder: 'int') -> ActionResult:
         """
@@ -1028,11 +1028,11 @@ class Core(AMPAPI):
         :type NewOrder: int
         :returns: ActionResult
         """
-        return self.api_call("Core/ChangeTaskOrder", {
+        return ActionResult(**self.api_call("Core/ChangeTaskOrder", {
             'TriggerID': TriggerID,
             'TaskID': TaskID,
             'NewOrder': NewOrder
-        })
+        }))
 
     def ChangeUserPassword(self, Username: 'str', OldPassword: 'str', NewPassword: 'str', TwoFactorPIN: 'str') -> ActionResult:
         """For a user to change their own password, requires knowing the old password
@@ -1047,12 +1047,12 @@ class Core(AMPAPI):
         :type TwoFactorPIN: str
         :returns: ActionResult
         """
-        return self.api_call("Core/ChangeUserPassword", {
+        return ActionResult(**self.api_call("Core/ChangeUserPassword", {
             'Username': Username,
             'OldPassword': OldPassword,
             'NewPassword': NewPassword,
             'TwoFactorPIN': TwoFactorPIN
-        })
+        }))
 
     def ConfirmTwoFactorSetup(self, Username: 'str', TwoFactorCode: 'str') -> ActionResult:
         """Completes two-factor setup by supplying a valid two factor code based on the secret provided by EnableTwoFactor
@@ -1063,10 +1063,10 @@ class Core(AMPAPI):
         :type TwoFactorCode: str
         :returns: ActionResult
         """
-        return self.api_call("Core/ConfirmTwoFactorSetup", {
+        return ActionResult(**self.api_call("Core/ConfirmTwoFactorSetup", {
             'Username': Username,
             'TwoFactorCode': TwoFactorCode
-        })
+        }))
 
     def CreateRole(self, Name: 'str', AsCommonRole: 'bool') -> ActionResult[str]:
         """
@@ -1077,10 +1077,10 @@ class Core(AMPAPI):
         :type AsCommonRole: bool
         :returns: ActionResult[str]
         """
-        return self.api_call("Core/CreateRole", {
+        return ActionResult[str](**self.api_call("Core/CreateRole", {
             'Name': Name,
             'AsCommonRole': AsCommonRole
-        })
+        }))
 
     def CreateTestTask(self, ) -> None:
         """DEV: Creates a non-ending task with 50% progress for testing purposes
@@ -1088,7 +1088,7 @@ class Core(AMPAPI):
 
         :returns: None
         """
-        return self.api_call("Core/CreateTestTask", {})
+        self.api_call("Core/CreateTestTask", {})
 
     def CreateUser(self, Username: 'str') -> ActionResult[str]:
         """
@@ -1097,9 +1097,9 @@ class Core(AMPAPI):
         :type Username: str
         :returns: ActionResult[str]
         """
-        return self.api_call("Core/CreateUser", {
+        return ActionResult[str](**self.api_call("Core/CreateUser", {
             'Username': Username
-        })
+        }))
 
     def CurrentSessionHasPermission(self, PermissionNode: 'str') -> bool:
         """
@@ -1108,9 +1108,9 @@ class Core(AMPAPI):
         :type PermissionNode: str
         :returns: bool
         """
-        return self.api_call("Core/CurrentSessionHasPermission", {
+        return bool(**self.api_call("Core/CurrentSessionHasPermission", {
             'PermissionNode': PermissionNode
-        })
+        }))
 
     def DeleteInstanceUsers(self, InstanceId: 'str') -> ActionResult:
         """
@@ -1119,9 +1119,9 @@ class Core(AMPAPI):
         :type InstanceId: str
         :returns: ActionResult
         """
-        return self.api_call("Core/DeleteInstanceUsers", {
+        return ActionResult(**self.api_call("Core/DeleteInstanceUsers", {
             'InstanceId': InstanceId
-        })
+        }))
 
     def DeleteRole(self, RoleId: 'str') -> ActionResult:
         """
@@ -1130,9 +1130,9 @@ class Core(AMPAPI):
         :type RoleId: str
         :returns: ActionResult
         """
-        return self.api_call("Core/DeleteRole", {
+        return ActionResult(**self.api_call("Core/DeleteRole", {
             'RoleId': RoleId
-        })
+        }))
 
     def DeleteTask(self, TriggerID: 'str', TaskID: 'str') -> ActionResult:
         """
@@ -1143,10 +1143,10 @@ class Core(AMPAPI):
         :type TaskID: str
         :returns: ActionResult
         """
-        return self.api_call("Core/DeleteTask", {
+        return ActionResult(**self.api_call("Core/DeleteTask", {
             'TriggerID': TriggerID,
             'TaskID': TaskID
-        })
+        }))
 
     def DeleteTrigger(self, TriggerID: 'str') -> ActionResult:
         """
@@ -1155,9 +1155,9 @@ class Core(AMPAPI):
         :type TriggerID: str
         :returns: ActionResult
         """
-        return self.api_call("Core/DeleteTrigger", {
+        return ActionResult(**self.api_call("Core/DeleteTrigger", {
             'TriggerID': TriggerID
-        })
+        }))
 
     def DeleteUser(self, Username: 'str') -> ActionResult:
         """
@@ -1166,9 +1166,9 @@ class Core(AMPAPI):
         :type Username: str
         :returns: ActionResult
         """
-        return self.api_call("Core/DeleteUser", {
+        return ActionResult(**self.api_call("Core/DeleteUser", {
             'Username': Username
-        })
+        }))
 
     def DisableTwoFactor(self, Password: 'str', TwoFactorCode: 'str') -> ActionResult:
         """
@@ -1179,10 +1179,10 @@ class Core(AMPAPI):
         :type TwoFactorCode: str
         :returns: ActionResult
         """
-        return self.api_call("Core/DisableTwoFactor", {
+        return ActionResult(**self.api_call("Core/DisableTwoFactor", {
             'Password': Password,
             'TwoFactorCode': TwoFactorCode
-        })
+        }))
 
     def DismissAllTasks(self, ) -> ActionResult:
         """
@@ -1190,7 +1190,7 @@ class Core(AMPAPI):
 
         :returns: ActionResult
         """
-        return self.api_call("Core/DismissAllTasks", {})
+        return ActionResult(**self.api_call("Core/DismissAllTasks", {}))
 
     def DismissTask(self, TaskId: 'str') -> ActionResult:
         """
@@ -1199,9 +1199,9 @@ class Core(AMPAPI):
         :type TaskId: str
         :returns: ActionResult
         """
-        return self.api_call("Core/DismissTask", {
+        return ActionResult(**self.api_call("Core/DismissTask", {
             'TaskId': TaskId
-        })
+        }))
 
     def EditIntervalTrigger(self, Id: 'str', months: 'list[int]', days: 'list[int]', hours: 'list[int]', minutes: 'list[int]', daysOfMonth: 'list[int]', description: 'str') -> ActionResult:
         """
@@ -1222,7 +1222,7 @@ class Core(AMPAPI):
         :type description: str
         :returns: ActionResult
         """
-        return self.api_call("Core/EditIntervalTrigger", {
+        return ActionResult(**self.api_call("Core/EditIntervalTrigger", {
             'Id': Id,
             'months': months,
             'days': days,
@@ -1230,7 +1230,7 @@ class Core(AMPAPI):
             'minutes': minutes,
             'daysOfMonth': daysOfMonth,
             'description': description
-        })
+        }))
 
     def EditTask(self, TriggerID: 'str', TaskID: 'str', ParameterMapping: 'dict[str, str]') -> ActionResult:
         """
@@ -1243,11 +1243,11 @@ class Core(AMPAPI):
         :type ParameterMapping: dict[str, str]
         :returns: ActionResult
         """
-        return self.api_call("Core/EditTask", {
+        return ActionResult(**self.api_call("Core/EditTask", {
             'TriggerID': TriggerID,
             'TaskID': TaskID,
             'ParameterMapping': ParameterMapping
-        })
+        }))
 
     def EnableTwoFactor(self, Username: 'str', Password: 'str') -> ActionResult[TwoFactorSetupInfo]:
         """Sets up two-factor authentication for the given user. ConfirmTwoFactorSetup must be invoked to complete setup.
@@ -1258,10 +1258,10 @@ class Core(AMPAPI):
         :type Password: str
         :returns: ActionResult[TwoFactorSetupInfo]
         """
-        return self.api_call("Core/EnableTwoFactor", {
+        return ActionResult[TwoFactorSetupInfo](**self.api_call("Core/EnableTwoFactor", {
             'Username': Username,
             'Password': Password
-        })
+        }))
 
     def EndUserSession(self, Id: 'str') -> None:
         """
@@ -1270,7 +1270,7 @@ class Core(AMPAPI):
         :type Id: str
         :returns: None
         """
-        return self.api_call("Core/EndUserSession", {
+        self.api_call("Core/EndUserSession", {
             'Id': Id
         })
 
@@ -1281,9 +1281,9 @@ class Core(AMPAPI):
         :type RoleId: str
         :returns: list[str]
         """
-        return self.api_call("Core/GetAMPRolePermissions", {
+        return list[str](**self.api_call("Core/GetAMPRolePermissions", {
             'RoleId': RoleId
-        })
+        }))
 
     def GetAMPUserInfo(self, Username: 'str') -> UserInfo:
         """
@@ -1292,9 +1292,9 @@ class Core(AMPAPI):
         :type Username: str
         :returns: UserInfo
         """
-        return self.api_call("Core/GetAMPUserInfo", {
+        return UserInfo(**self.api_call("Core/GetAMPUserInfo", {
             'Username': Username
-        })
+        }))
 
     def GetAMPUsersSummary(self, ) -> list[UserInfoSummary]:
         """
@@ -1302,7 +1302,7 @@ class Core(AMPAPI):
 
         :returns: list[UserInfoSummary]
         """
-        return self.api_call("Core/GetAMPUsersSummary", {})
+        return list[UserInfoSummary](**self.api_call("Core/GetAMPUsersSummary", {}))
 
     def GetAPISpec(self, ) -> dict[str, dict[str, MethodInfoSummary]]:
         """
@@ -1310,7 +1310,7 @@ class Core(AMPAPI):
 
         :returns: dict[str, dict[str, MethodInfoSummary]]
         """
-        return self.api_call("Core/GetAPISpec", {})
+        return dict[str, dict[str, MethodInfoSummary]](**self.api_call("Core/GetAPISpec", {}))
 
     def GetActiveAMPSessions(self, ) -> list[WebSessionSummary]:
         """
@@ -1318,7 +1318,7 @@ class Core(AMPAPI):
 
         :returns: list[WebSessionSummary]
         """
-        return self.api_call("Core/GetActiveAMPSessions", {})
+        return list[WebSessionSummary](**self.api_call("Core/GetActiveAMPSessions", {}))
 
     def GetAllAMPUserInfo(self, ) -> list[UserInfo]:
         """
@@ -1326,7 +1326,7 @@ class Core(AMPAPI):
 
         :returns: list[UserInfo]
         """
-        return self.api_call("Core/GetAllAMPUserInfo", {})
+        return list[UserInfo](**self.api_call("Core/GetAllAMPUserInfo", {}))
 
     def GetAuditLogEntries(self, Before: 'str | None', Count: 'int') -> list[IAuditLogEntry]:
         """
@@ -1337,10 +1337,10 @@ class Core(AMPAPI):
         :type Count: int
         :returns: list[IAuditLogEntry]
         """
-        return self.api_call("Core/GetAuditLogEntries", {
+        return list[IAuditLogEntry](**self.api_call("Core/GetAuditLogEntries", {
             'Before': Before,
             'Count': Count
-        })
+        }))
 
     def GetAuthenticationRequirements(self, username: 'str') -> list[AuthenticationRequirement]:
         """
@@ -1349,9 +1349,9 @@ class Core(AMPAPI):
         :type username: str
         :returns: list[AuthenticationRequirement]
         """
-        return self.api_call("Core/GetAuthenticationRequirements", {
+        return list[AuthenticationRequirement](**self.api_call("Core/GetAuthenticationRequirements", {
             'username': username
-        })
+        }))
 
     def GetConfig(self, node: 'str') -> SettingSpec:
         """
@@ -1360,9 +1360,9 @@ class Core(AMPAPI):
         :type node: str
         :returns: SettingSpec
         """
-        return self.api_call("Core/GetConfig", {
+        return SettingSpec(**self.api_call("Core/GetConfig", {
             'node': node
-        })
+        }))
 
     def GetConfigs(self, nodes: 'list[str]') -> list[SettingSpec]:
         """
@@ -1371,9 +1371,9 @@ class Core(AMPAPI):
         :type nodes: list[str]
         :returns: list[SettingSpec]
         """
-        return self.api_call("Core/GetConfigs", {
+        return list[SettingSpec](**self.api_call("Core/GetConfigs", {
             'nodes': nodes
-        })
+        }))
 
     def GetDiagnosticsInfo(self, ) -> dict[str, str]:
         """
@@ -1381,7 +1381,7 @@ class Core(AMPAPI):
 
         :returns: dict[str, str]
         """
-        return self.api_call("Core/GetDiagnosticsInfo", {})
+        return dict[str, str](**self.api_call("Core/GetDiagnosticsInfo", {}))
 
     def GetModuleInfo(self, ) -> ModuleInfo:
         """
@@ -1389,7 +1389,7 @@ class Core(AMPAPI):
 
         :returns: ModuleInfo
         """
-        return self.api_call("Core/GetModuleInfo", {})
+        return ModuleInfo(**self.api_call("Core/GetModuleInfo", {}))
 
     def GetNewGuid(self, ) -> str:
         """
@@ -1397,7 +1397,7 @@ class Core(AMPAPI):
 
         :returns: str
         """
-        return self.api_call("Core/GetNewGuid", {})
+        return str(**self.api_call("Core/GetNewGuid", {}))
 
     def GetPermissionsSpec(self, ) -> list[IPermissionsTreeNode]:
         """
@@ -1405,7 +1405,7 @@ class Core(AMPAPI):
 
         :returns: list[IPermissionsTreeNode]
         """
-        return self.api_call("Core/GetPermissionsSpec", {})
+        return list[IPermissionsTreeNode](**self.api_call("Core/GetPermissionsSpec", {}))
 
     def GetPortSummaries(self, ) -> list[ListeningPortSummary]:
         """
@@ -1413,7 +1413,7 @@ class Core(AMPAPI):
 
         :returns: list[ListeningPortSummary]
         """
-        return self.api_call("Core/GetPortSummaries", {})
+        return list[ListeningPortSummary](**self.api_call("Core/GetPortSummaries", {}))
 
     def GetProvisionSpec(self, ) -> list[SettingSpec]:
         """
@@ -1421,7 +1421,7 @@ class Core(AMPAPI):
 
         :returns: list[SettingSpec]
         """
-        return self.api_call("Core/GetProvisionSpec", {})
+        return list[SettingSpec](**self.api_call("Core/GetProvisionSpec", {}))
 
     def GetRemoteLoginToken(self, Description: 'str', IsTemporary: 'bool') -> str:
         """
@@ -1432,10 +1432,10 @@ class Core(AMPAPI):
         :type IsTemporary: bool
         :returns: str
         """
-        return self.api_call("Core/GetRemoteLoginToken", {
+        return str(**self.api_call("Core/GetRemoteLoginToken", {
             'Description': Description,
             'IsTemporary': IsTemporary
-        })
+        }))
 
     def GetRole(self, RoleId: 'str') -> AuthRoleSummary:
         """
@@ -1444,9 +1444,9 @@ class Core(AMPAPI):
         :type RoleId: str
         :returns: AuthRoleSummary
         """
-        return self.api_call("Core/GetRole", {
+        return AuthRoleSummary(**self.api_call("Core/GetRole", {
             'RoleId': RoleId
-        })
+        }))
 
     def GetRoleData(self, ) -> list[AuthRoleSummary]:
         """
@@ -1454,7 +1454,7 @@ class Core(AMPAPI):
 
         :returns: list[AuthRoleSummary]
         """
-        return self.api_call("Core/GetRoleData", {})
+        return list[AuthRoleSummary](**self.api_call("Core/GetRoleData", {}))
 
     def GetRoleIds(self, ) -> dict[str, str]:
         """
@@ -1462,7 +1462,7 @@ class Core(AMPAPI):
 
         :returns: dict[str, str]
         """
-        return self.api_call("Core/GetRoleIds", {})
+        return dict[str, str](**self.api_call("Core/GetRoleIds", {}))
 
     def GetScheduleData(self, ) -> ScheduleInfo:
         """
@@ -1470,7 +1470,7 @@ class Core(AMPAPI):
 
         :returns: ScheduleInfo
         """
-        return self.api_call("Core/GetScheduleData", {})
+        return ScheduleInfo(**self.api_call("Core/GetScheduleData", {}))
 
     def GetSettingValues(self, SettingNode: 'str', WithRefresh: 'bool') -> dict[str, str]:
         """
@@ -1481,10 +1481,10 @@ class Core(AMPAPI):
         :type WithRefresh: bool
         :returns: dict[str, str]
         """
-        return self.api_call("Core/GetSettingValues", {
+        return dict[str, str](**self.api_call("Core/GetSettingValues", {
             'SettingNode': SettingNode,
             'WithRefresh': WithRefresh
-        })
+        }))
 
     def GetSettingsSpec(self, ) -> dict[str, SettingSpec]:
         """
@@ -1492,7 +1492,7 @@ class Core(AMPAPI):
 
         :returns: dict[str, SettingSpec]
         """
-        return self.api_call("Core/GetSettingsSpec", {})
+        return dict[str, SettingSpec](**self.api_call("Core/GetSettingsSpec", {}))
 
     def GetStatus(self, ) -> StatusResponse:
         """
@@ -1500,7 +1500,7 @@ class Core(AMPAPI):
 
         :returns: StatusResponse
         """
-        return self.api_call("Core/GetStatus", {})
+        return StatusResponse(**self.api_call("Core/GetStatus", {}))
 
     def GetTasks(self, ) -> list[RunningTask]:
         """
@@ -1508,7 +1508,7 @@ class Core(AMPAPI):
 
         :returns: list[RunningTask]
         """
-        return self.api_call("Core/GetTasks", {})
+        return list[RunningTask](**self.api_call("Core/GetTasks", {}))
 
     def GetTimeIntervalTrigger(self, Id: 'str') -> TimeIntervalTrigger:
         """
@@ -1517,9 +1517,9 @@ class Core(AMPAPI):
         :type Id: str
         :returns: TimeIntervalTrigger
         """
-        return self.api_call("Core/GetTimeIntervalTrigger", {
+        return TimeIntervalTrigger(**self.api_call("Core/GetTimeIntervalTrigger", {
             'Id': Id
-        })
+        }))
 
     def GetUpdateInfo(self, ) -> UpdateInfo:
         """
@@ -1527,7 +1527,7 @@ class Core(AMPAPI):
 
         :returns: UpdateInfo
         """
-        return self.api_call("Core/GetUpdateInfo", {})
+        return UpdateInfo(**self.api_call("Core/GetUpdateInfo", {}))
 
     def GetUpdates(self, ) -> UpdateResponse:
         """Gets changes to the server status, in addition to any notifications or console output that have occured since the last time GetUpdates() was called by the current session.
@@ -1535,7 +1535,7 @@ class Core(AMPAPI):
 
         :returns: UpdateResponse
         """
-        return self.api_call("Core/GetUpdates", {})
+        return UpdateResponse(**self.api_call("Core/GetUpdates", {}))
 
     def GetUserActionsSpec(self, ) -> Any:
         """
@@ -1543,7 +1543,7 @@ class Core(AMPAPI):
 
         :returns: Any
         """
-        return self.api_call("Core/GetUserActionsSpec", {})
+        return Any(**self.api_call("Core/GetUserActionsSpec", {}))
 
     def GetUserInfo(self, UID: 'str') -> SimpleUser:
         """Provides information about a given in-application user (as opposed to AMP system users)
@@ -1552,9 +1552,9 @@ class Core(AMPAPI):
         :type UID: str
         :returns: SimpleUser
         """
-        return self.api_call("Core/GetUserInfo", {
+        return SimpleUser(**self.api_call("Core/GetUserInfo", {
             'UID': UID
-        })
+        }))
 
     def GetUserList(self, ) -> dict[str, str]:
         """Returns a list of in-application users
@@ -1562,7 +1562,7 @@ class Core(AMPAPI):
 
         :returns: dict[str, str]
         """
-        return self.api_call("Core/GetUserList", {})
+        return dict[str, str](**self.api_call("Core/GetUserList", {}))
 
     def GetWebauthnChallenge(self, ) -> ActionResult[str]:
         """
@@ -1570,7 +1570,7 @@ class Core(AMPAPI):
 
         :returns: ActionResult[str]
         """
-        return self.api_call("Core/GetWebauthnChallenge", {})
+        return ActionResult[str](**self.api_call("Core/GetWebauthnChallenge", {}))
 
     def GetWebauthnCredentialIDs(self, username: 'str') -> WebauthnLoginInfo:
         """
@@ -1579,9 +1579,9 @@ class Core(AMPAPI):
         :type username: str
         :returns: WebauthnLoginInfo
         """
-        return self.api_call("Core/GetWebauthnCredentialIDs", {
+        return WebauthnLoginInfo(**self.api_call("Core/GetWebauthnCredentialIDs", {
             'username': username
-        })
+        }))
 
     def GetWebauthnCredentialSummaries(self, ) -> list[WebauthnCredentialSummary]:
         """
@@ -1589,7 +1589,7 @@ class Core(AMPAPI):
 
         :returns: list[WebauthnCredentialSummary]
         """
-        return self.api_call("Core/GetWebauthnCredentialSummaries", {})
+        return list[WebauthnCredentialSummary](**self.api_call("Core/GetWebauthnCredentialSummaries", {}))
 
     def GetWebserverMetrics(self, ) -> Any:
         """
@@ -1597,7 +1597,7 @@ class Core(AMPAPI):
 
         :returns: Any
         """
-        return self.api_call("Core/GetWebserverMetrics", {})
+        return Any(**self.api_call("Core/GetWebserverMetrics", {}))
 
     def Kill(self, ) -> None:
         """
@@ -1605,7 +1605,7 @@ class Core(AMPAPI):
 
         :returns: None
         """
-        return self.api_call("Core/Kill", {})
+        self.api_call("Core/Kill", {})
 
     def Login(self, username: 'str', password: 'str', token: 'str', rememberMe: 'bool') -> LoginResponse:
         """
@@ -1620,12 +1620,12 @@ class Core(AMPAPI):
         :type rememberMe: bool
         :returns: LoginResponse
         """
-        return self.api_call("Core/Login", {
+        return LoginResponse(**self.api_call("Core/Login", {
             'username': username,
             'password': password,
             'token': token,
             'rememberMe': rememberMe
-        })
+        }))
 
     def Logout(self, ) -> None:
         """
@@ -1633,7 +1633,7 @@ class Core(AMPAPI):
 
         :returns: None
         """
-        return self.api_call("Core/Logout", {})
+        self.api_call("Core/Logout", {})
 
     def RefreshSettingValueList(self, Node: 'str') -> ActionResult:
         """
@@ -1642,9 +1642,9 @@ class Core(AMPAPI):
         :type Node: str
         :returns: ActionResult
         """
-        return self.api_call("Core/RefreshSettingValueList", {
+        return ActionResult(**self.api_call("Core/RefreshSettingValueList", {
             'Node': Node
-        })
+        }))
 
     def RefreshSettingsSourceCache(self, ) -> None:
         """
@@ -1652,7 +1652,7 @@ class Core(AMPAPI):
 
         :returns: None
         """
-        return self.api_call("Core/RefreshSettingsSourceCache", {})
+        self.api_call("Core/RefreshSettingsSourceCache", {})
 
     def RenameRole(self, RoleId: 'str', NewName: 'str') -> ActionResult:
         """
@@ -1663,10 +1663,10 @@ class Core(AMPAPI):
         :type NewName: str
         :returns: ActionResult
         """
-        return self.api_call("Core/RenameRole", {
+        return ActionResult(**self.api_call("Core/RenameRole", {
             'RoleId': RoleId,
             'NewName': NewName
-        })
+        }))
 
     def ResetUserPassword(self, Username: 'str', NewPassword: 'str') -> ActionResult:
         """For administrative users to alter the password of another user
@@ -1677,10 +1677,10 @@ class Core(AMPAPI):
         :type NewPassword: str
         :returns: ActionResult
         """
-        return self.api_call("Core/ResetUserPassword", {
+        return ActionResult(**self.api_call("Core/ResetUserPassword", {
             'Username': Username,
             'NewPassword': NewPassword
-        })
+        }))
 
     def Restart(self, ) -> ActionResult:
         """
@@ -1688,7 +1688,7 @@ class Core(AMPAPI):
 
         :returns: ActionResult
         """
-        return self.api_call("Core/Restart", {})
+        return ActionResult(**self.api_call("Core/Restart", {}))
 
     def RestartAMP(self, ) -> None:
         """
@@ -1696,7 +1696,7 @@ class Core(AMPAPI):
 
         :returns: None
         """
-        return self.api_call("Core/RestartAMP", {})
+        self.api_call("Core/RestartAMP", {})
 
     def Resume(self, ) -> None:
         """Allows the service to be re-started after previously being suspended.
@@ -1704,7 +1704,7 @@ class Core(AMPAPI):
 
         :returns: None
         """
-        return self.api_call("Core/Resume", {})
+        self.api_call("Core/Resume", {})
 
     def RevokeWebauthnCredential(self, ID: 'int') -> ActionResult:
         """
@@ -1713,9 +1713,9 @@ class Core(AMPAPI):
         :type ID: int
         :returns: ActionResult
         """
-        return self.api_call("Core/RevokeWebauthnCredential", {
+        return ActionResult(**self.api_call("Core/RevokeWebauthnCredential", {
             'ID': ID
-        })
+        }))
 
     def RunEventTriggerImmediately(self, triggerId: 'str') -> ActionResult:
         """
@@ -1724,9 +1724,9 @@ class Core(AMPAPI):
         :type triggerId: str
         :returns: ActionResult
         """
-        return self.api_call("Core/RunEventTriggerImmediately", {
+        return ActionResult(**self.api_call("Core/RunEventTriggerImmediately", {
             'triggerId': triggerId
-        })
+        }))
 
     def RunSecurityCheck(self, ) -> list[SecurityCheckResult]:
         """
@@ -1734,7 +1734,7 @@ class Core(AMPAPI):
 
         :returns: list[SecurityCheckResult]
         """
-        return self.api_call("Core/RunSecurityCheck", {})
+        return list[SecurityCheckResult](**self.api_call("Core/RunSecurityCheck", {}))
 
     def SendConsoleMessage(self, message: 'str') -> None:
         """
@@ -1743,7 +1743,7 @@ class Core(AMPAPI):
         :type message: str
         :returns: None
         """
-        return self.api_call("Core/SendConsoleMessage", {
+        self.api_call("Core/SendConsoleMessage", {
             'message': message
         })
 
@@ -1758,11 +1758,11 @@ class Core(AMPAPI):
         :type Enabled: bool | None
         :returns: ActionResult
         """
-        return self.api_call("Core/SetAMPRolePermission", {
+        return ActionResult(**self.api_call("Core/SetAMPRolePermission", {
             'RoleId': RoleId,
             'PermissionNode': PermissionNode,
             'Enabled': Enabled
-        })
+        }))
 
     def SetAMPUserRoleMembership(self, UserId: 'str', RoleId: 'str', IsMember: 'bool') -> ActionResult:
         """
@@ -1775,11 +1775,11 @@ class Core(AMPAPI):
         :type IsMember: bool
         :returns: ActionResult
         """
-        return self.api_call("Core/SetAMPUserRoleMembership", {
+        return ActionResult(**self.api_call("Core/SetAMPUserRoleMembership", {
             'UserId': UserId,
             'RoleId': RoleId,
             'IsMember': IsMember
-        })
+        }))
 
     def SetConfig(self, node: 'str', value: 'str') -> ActionResult:
         """
@@ -1790,10 +1790,10 @@ class Core(AMPAPI):
         :type value: str
         :returns: ActionResult
         """
-        return self.api_call("Core/SetConfig", {
+        return ActionResult(**self.api_call("Core/SetConfig", {
             'node': node,
             'value': value
-        })
+        }))
 
     def SetConfigs(self, data: 'dict[str, str]') -> bool:
         """
@@ -1802,9 +1802,9 @@ class Core(AMPAPI):
         :type data: dict[str, str]
         :returns: bool
         """
-        return self.api_call("Core/SetConfigs", {
+        return bool(**self.api_call("Core/SetConfigs", {
             'data': data
-        })
+        }))
 
     def SetTriggerEnabled(self, Id: 'str', Enabled: 'bool') -> ActionResult:
         """
@@ -1815,10 +1815,10 @@ class Core(AMPAPI):
         :type Enabled: bool
         :returns: ActionResult
         """
-        return self.api_call("Core/SetTriggerEnabled", {
+        return ActionResult(**self.api_call("Core/SetTriggerEnabled", {
             'Id': Id,
             'Enabled': Enabled
-        })
+        }))
 
     def Sleep(self, ) -> ActionResult:
         """
@@ -1826,7 +1826,7 @@ class Core(AMPAPI):
 
         :returns: ActionResult
         """
-        return self.api_call("Core/Sleep", {})
+        return ActionResult(**self.api_call("Core/Sleep", {}))
 
     def Start(self, ) -> ActionResult:
         """
@@ -1834,7 +1834,7 @@ class Core(AMPAPI):
 
         :returns: ActionResult
         """
-        return self.api_call("Core/Start", {})
+        return ActionResult(**self.api_call("Core/Start", {}))
 
     def Stop(self, ) -> None:
         """
@@ -1842,7 +1842,7 @@ class Core(AMPAPI):
 
         :returns: None
         """
-        return self.api_call("Core/Stop", {})
+        self.api_call("Core/Stop", {})
 
     def Suspend(self, ) -> None:
         """Prevents the current instance from being started, and stops it if it's currently running.
@@ -1850,7 +1850,7 @@ class Core(AMPAPI):
 
         :returns: None
         """
-        return self.api_call("Core/Suspend", {})
+        self.api_call("Core/Suspend", {})
 
     def UpdateAMPInstance(self, ) -> None:
         """
@@ -1858,7 +1858,7 @@ class Core(AMPAPI):
 
         :returns: None
         """
-        return self.api_call("Core/UpdateAMPInstance", {})
+        self.api_call("Core/UpdateAMPInstance", {})
 
     def UpdateAccountInfo(self, EmailAddress: 'str', TwoFactorPIN: 'str') -> ActionResult:
         """
@@ -1869,10 +1869,10 @@ class Core(AMPAPI):
         :type TwoFactorPIN: str
         :returns: ActionResult
         """
-        return self.api_call("Core/UpdateAccountInfo", {
+        return ActionResult(**self.api_call("Core/UpdateAccountInfo", {
             'EmailAddress': EmailAddress,
             'TwoFactorPIN': TwoFactorPIN
-        })
+        }))
 
     def UpdateApplication(self, ) -> ActionResult:
         """
@@ -1880,7 +1880,7 @@ class Core(AMPAPI):
 
         :returns: ActionResult
         """
-        return self.api_call("Core/UpdateApplication", {})
+        return ActionResult(**self.api_call("Core/UpdateApplication", {}))
 
     def UpdateUserInfo(self, Username: 'str', Disabled: 'bool', PasswordExpires: 'bool', CannotChangePassword: 'bool', MustChangePassword: 'bool', EmailAddress: 'str') -> ActionResult:
         """
@@ -1899,14 +1899,14 @@ class Core(AMPAPI):
         :type EmailAddress: str
         :returns: ActionResult
         """
-        return self.api_call("Core/UpdateUserInfo", {
+        return ActionResult(**self.api_call("Core/UpdateUserInfo", {
             'Username': Username,
             'Disabled': Disabled,
             'PasswordExpires': PasswordExpires,
             'CannotChangePassword': CannotChangePassword,
             'MustChangePassword': MustChangePassword,
             'EmailAddress': EmailAddress
-        })
+        }))
 
     def UpgradeAMP(self, ) -> None:
         """
@@ -1914,7 +1914,7 @@ class Core(AMPAPI):
 
         :returns: None
         """
-        return self.api_call("Core/UpgradeAMP", {})
+        self.api_call("Core/UpgradeAMP", {})
 
     def WebauthnRegister(self, attestationObject: 'str', clientDataJSON: 'str', description: 'str') -> ActionResult:
         """
@@ -1927,11 +1927,11 @@ class Core(AMPAPI):
         :type description: str
         :returns: ActionResult
         """
-        return self.api_call("Core/WebauthnRegister", {
+        return ActionResult(**self.api_call("Core/WebauthnRegister", {
             'attestationObject': attestationObject,
             'clientDataJSON': clientDataJSON,
             'description': description
-        })
+        }))
 
 class EmailSenderPlugin(AMPAPI):
     def __init__(self, authprovider: AuthProvider) -> None:
@@ -1943,7 +1943,7 @@ class EmailSenderPlugin(AMPAPI):
 
         :returns: ActionResult
         """
-        return self.api_call("EmailSenderPlugin/TestSMTPSettings", {})
+        return ActionResult(**self.api_call("EmailSenderPlugin/TestSMTPSettings", {}))
 
 class FileManagerPlugin(AMPAPI):
     def __init__(self, authprovider: AuthProvider) -> None:
@@ -1960,7 +1960,7 @@ class FileManagerPlugin(AMPAPI):
         :type Delete: bool
         :returns: None
         """
-        return self.api_call("FileManagerPlugin/AppendFileChunk", {
+        self.api_call("FileManagerPlugin/AppendFileChunk", {
             'Filename': Filename,
             'Data': Data,
             'Delete': Delete
@@ -1973,9 +1973,9 @@ class FileManagerPlugin(AMPAPI):
         :type FilePath: str
         :returns: ActionResult[str]
         """
-        return self.api_call("FileManagerPlugin/CalculateFileMD5Sum", {
+        return ActionResult[str](**self.api_call("FileManagerPlugin/CalculateFileMD5Sum", {
             'FilePath': FilePath
-        })
+        }))
 
     def ChangeExclusion(self, ModifyPath: 'str', AsDirectory: 'bool', Exclude: 'bool') -> ActionResult:
         """
@@ -1988,11 +1988,11 @@ class FileManagerPlugin(AMPAPI):
         :type Exclude: bool
         :returns: ActionResult
         """
-        return self.api_call("FileManagerPlugin/ChangeExclusion", {
+        return ActionResult(**self.api_call("FileManagerPlugin/ChangeExclusion", {
             'ModifyPath': ModifyPath,
             'AsDirectory': AsDirectory,
             'Exclude': Exclude
-        })
+        }))
 
     def CopyFile(self, Origin: 'str', TargetDirectory: 'str') -> ActionResult:
         """
@@ -2003,10 +2003,10 @@ class FileManagerPlugin(AMPAPI):
         :type TargetDirectory: str
         :returns: ActionResult
         """
-        return self.api_call("FileManagerPlugin/CopyFile", {
+        return ActionResult(**self.api_call("FileManagerPlugin/CopyFile", {
             'Origin': Origin,
             'TargetDirectory': TargetDirectory
-        })
+        }))
 
     def CreateArchive(self, PathToArchive: 'str') -> ActionResult:
         """
@@ -2015,9 +2015,9 @@ class FileManagerPlugin(AMPAPI):
         :type PathToArchive: str
         :returns: ActionResult
         """
-        return self.api_call("FileManagerPlugin/CreateArchive", {
+        return ActionResult(**self.api_call("FileManagerPlugin/CreateArchive", {
             'PathToArchive': PathToArchive
-        })
+        }))
 
     def CreateDirectory(self, NewPath: 'str') -> ActionResult:
         """Creates a new directory. The parent directory must already exist.
@@ -2026,9 +2026,9 @@ class FileManagerPlugin(AMPAPI):
         :type NewPath: str
         :returns: ActionResult
         """
-        return self.api_call("FileManagerPlugin/CreateDirectory", {
+        return ActionResult(**self.api_call("FileManagerPlugin/CreateDirectory", {
             'NewPath': NewPath
-        })
+        }))
 
     def DownloadFileFromURL(self, Source: 'str', TargetDirectory: 'str') -> ActionResult:
         """
@@ -2039,10 +2039,10 @@ class FileManagerPlugin(AMPAPI):
         :type TargetDirectory: str
         :returns: ActionResult
         """
-        return self.api_call("FileManagerPlugin/DownloadFileFromURL", {
+        return ActionResult(**self.api_call("FileManagerPlugin/DownloadFileFromURL", {
             'Source': Source,
             'TargetDirectory': TargetDirectory
-        })
+        }))
 
     def Dummy(self, ) -> None:
         """
@@ -2050,7 +2050,7 @@ class FileManagerPlugin(AMPAPI):
 
         :returns: None
         """
-        return self.api_call("FileManagerPlugin/Dummy", {})
+        self.api_call("FileManagerPlugin/Dummy", {})
 
     def EmptyTrash(self, TrashDirectoryName: 'str') -> ActionResult:
         """Empties a trash bin
@@ -2059,9 +2059,9 @@ class FileManagerPlugin(AMPAPI):
         :type TrashDirectoryName: str
         :returns: ActionResult
         """
-        return self.api_call("FileManagerPlugin/EmptyTrash", {
+        return ActionResult(**self.api_call("FileManagerPlugin/EmptyTrash", {
             'TrashDirectoryName': TrashDirectoryName
-        })
+        }))
 
     def ExtractArchive(self, ArchivePath: 'str', DestinationPath: 'str') -> ActionResult:
         """
@@ -2072,10 +2072,10 @@ class FileManagerPlugin(AMPAPI):
         :type DestinationPath: str
         :returns: ActionResult
         """
-        return self.api_call("FileManagerPlugin/ExtractArchive", {
+        return ActionResult(**self.api_call("FileManagerPlugin/ExtractArchive", {
             'ArchivePath': ArchivePath,
             'DestinationPath': DestinationPath
-        })
+        }))
 
     def GetDirectoryListing(self, Dir: 'str') -> list[DirectoryListing]:
         """
@@ -2084,9 +2084,9 @@ class FileManagerPlugin(AMPAPI):
         :type Dir: str
         :returns: list[DirectoryListing]
         """
-        return self.api_call("FileManagerPlugin/GetDirectoryListing", {
+        return list[DirectoryListing](**self.api_call("FileManagerPlugin/GetDirectoryListing", {
             'Dir': Dir
-        })
+        }))
 
     def GetFileChunk(self, Filename: 'str', Position: 'int', Length: 'int') -> FileChunkData:
         """
@@ -2099,11 +2099,11 @@ class FileManagerPlugin(AMPAPI):
         :type Length: int
         :returns: FileChunkData
         """
-        return self.api_call("FileManagerPlugin/GetFileChunk", {
+        return FileChunkData(**self.api_call("FileManagerPlugin/GetFileChunk", {
             'Filename': Filename,
             'Position': Position,
             'Length': Length
-        })
+        }))
 
     def ReadFileChunk(self, Filename: 'str', Offset: 'int', ChunkSize: 'int') -> ActionResult[str]:
         """
@@ -2116,11 +2116,11 @@ class FileManagerPlugin(AMPAPI):
         :type ChunkSize: int
         :returns: ActionResult[str]
         """
-        return self.api_call("FileManagerPlugin/ReadFileChunk", {
+        return ActionResult[str](**self.api_call("FileManagerPlugin/ReadFileChunk", {
             'Filename': Filename,
             'Offset': Offset,
             'ChunkSize': ChunkSize
-        })
+        }))
 
     def ReleaseFileUploadLock(self, Filename: 'str') -> ActionResult:
         """
@@ -2129,9 +2129,9 @@ class FileManagerPlugin(AMPAPI):
         :type Filename: str
         :returns: ActionResult
         """
-        return self.api_call("FileManagerPlugin/ReleaseFileUploadLock", {
+        return ActionResult(**self.api_call("FileManagerPlugin/ReleaseFileUploadLock", {
             'Filename': Filename
-        })
+        }))
 
     def RenameDirectory(self, oldDirectory: 'str', NewDirectoryName: 'str') -> ActionResult:
         """Renames a directory
@@ -2142,10 +2142,10 @@ class FileManagerPlugin(AMPAPI):
         :type NewDirectoryName: str
         :returns: ActionResult
         """
-        return self.api_call("FileManagerPlugin/RenameDirectory", {
+        return ActionResult(**self.api_call("FileManagerPlugin/RenameDirectory", {
             'oldDirectory': oldDirectory,
             'NewDirectoryName': NewDirectoryName
-        })
+        }))
 
     def RenameFile(self, Filename: 'str', NewFilename: 'str') -> ActionResult:
         """
@@ -2156,10 +2156,10 @@ class FileManagerPlugin(AMPAPI):
         :type NewFilename: str
         :returns: ActionResult
         """
-        return self.api_call("FileManagerPlugin/RenameFile", {
+        return ActionResult(**self.api_call("FileManagerPlugin/RenameFile", {
             'Filename': Filename,
             'NewFilename': NewFilename
-        })
+        }))
 
     def TrashDirectory(self, DirectoryName: 'str') -> ActionResult:
         """Moves a directory to trash, files must be trashed before they can be deleted.
@@ -2168,9 +2168,9 @@ class FileManagerPlugin(AMPAPI):
         :type DirectoryName: str
         :returns: ActionResult
         """
-        return self.api_call("FileManagerPlugin/TrashDirectory", {
+        return ActionResult(**self.api_call("FileManagerPlugin/TrashDirectory", {
             'DirectoryName': DirectoryName
-        })
+        }))
 
     def TrashFile(self, Filename: 'str') -> ActionResult:
         """Moves a file to trash, files must be trashed before they can be deleted.
@@ -2179,9 +2179,9 @@ class FileManagerPlugin(AMPAPI):
         :type Filename: str
         :returns: ActionResult
         """
-        return self.api_call("FileManagerPlugin/TrashFile", {
+        return ActionResult(**self.api_call("FileManagerPlugin/TrashFile", {
             'Filename': Filename
-        })
+        }))
 
     def WriteFileChunk(self, Filename: 'str', Data: 'str', Offset: 'int', FinalChunk: 'bool') -> ActionResult:
         """
@@ -2196,12 +2196,12 @@ class FileManagerPlugin(AMPAPI):
         :type FinalChunk: bool
         :returns: ActionResult
         """
-        return self.api_call("FileManagerPlugin/WriteFileChunk", {
+        return ActionResult(**self.api_call("FileManagerPlugin/WriteFileChunk", {
             'Filename': Filename,
             'Data': Data,
             'Offset': Offset,
             'FinalChunk': FinalChunk
-        })
+        }))
 
 class GenericModule(AMPAPI):
     def __init__(self, authprovider: AuthProvider) -> None:
@@ -2214,9 +2214,9 @@ class GenericModule(AMPAPI):
         :type filename: str
         :returns: dict[str, str]
         """
-        return self.api_call("GenericModule/ImportConfig", {
+        return dict[str, str](**self.api_call("GenericModule/ImportConfig", {
             'filename': filename
-        })
+        }))
 
     def ReloadGenericConfig(self, ) -> None:
         """
@@ -2224,7 +2224,7 @@ class GenericModule(AMPAPI):
 
         :returns: None
         """
-        return self.api_call("GenericModule/ReloadGenericConfig", {})
+        self.api_call("GenericModule/ReloadGenericConfig", {})
 
 class LocalFileBackupPlugin(AMPAPI):
     def __init__(self, authprovider: AuthProvider) -> None:
@@ -2237,9 +2237,9 @@ class LocalFileBackupPlugin(AMPAPI):
         :type BackupId: str
         :returns: ActionResult
         """
-        return self.api_call("LocalFileBackupPlugin/DeleteFromS3", {
+        return ActionResult(**self.api_call("LocalFileBackupPlugin/DeleteFromS3", {
             'BackupId': BackupId
-        })
+        }))
 
     def DeleteLocalBackup(self, BackupId: 'str') -> None:
         """
@@ -2248,7 +2248,7 @@ class LocalFileBackupPlugin(AMPAPI):
         :type BackupId: str
         :returns: None
         """
-        return self.api_call("LocalFileBackupPlugin/DeleteLocalBackup", {
+        self.api_call("LocalFileBackupPlugin/DeleteLocalBackup", {
             'BackupId': BackupId
         })
 
@@ -2259,9 +2259,9 @@ class LocalFileBackupPlugin(AMPAPI):
         :type BackupId: str
         :returns: RunningTask
         """
-        return self.api_call("LocalFileBackupPlugin/DownloadFromS3", {
+        return RunningTask(**self.api_call("LocalFileBackupPlugin/DownloadFromS3", {
             'BackupId': BackupId
-        })
+        }))
 
     def GetBackups(self, ) -> list[BackupManifest]:
         """
@@ -2269,7 +2269,7 @@ class LocalFileBackupPlugin(AMPAPI):
 
         :returns: list[BackupManifest]
         """
-        return self.api_call("LocalFileBackupPlugin/GetBackups", {})
+        return list[BackupManifest](**self.api_call("LocalFileBackupPlugin/GetBackups", {}))
 
     def RefreshBackupList(self, ) -> None:
         """
@@ -2277,7 +2277,7 @@ class LocalFileBackupPlugin(AMPAPI):
 
         :returns: None
         """
-        return self.api_call("LocalFileBackupPlugin/RefreshBackupList", {})
+        self.api_call("LocalFileBackupPlugin/RefreshBackupList", {})
 
     def RestoreBackup(self, BackupId: 'str', DeleteExistingData: 'bool') -> ActionResult:
         """
@@ -2288,10 +2288,10 @@ class LocalFileBackupPlugin(AMPAPI):
         :type DeleteExistingData: bool
         :returns: ActionResult
         """
-        return self.api_call("LocalFileBackupPlugin/RestoreBackup", {
+        return ActionResult(**self.api_call("LocalFileBackupPlugin/RestoreBackup", {
             'BackupId': BackupId,
             'DeleteExistingData': DeleteExistingData
-        })
+        }))
 
     def SetBackupSticky(self, BackupId: 'str', Sticky: 'bool') -> None:
         """
@@ -2302,7 +2302,7 @@ class LocalFileBackupPlugin(AMPAPI):
         :type Sticky: bool
         :returns: None
         """
-        return self.api_call("LocalFileBackupPlugin/SetBackupSticky", {
+        self.api_call("LocalFileBackupPlugin/SetBackupSticky", {
             'BackupId': BackupId,
             'Sticky': Sticky
         })
@@ -2320,12 +2320,12 @@ class LocalFileBackupPlugin(AMPAPI):
         :type WasCreatedAutomatically: bool
         :returns: ActionResult
         """
-        return self.api_call("LocalFileBackupPlugin/TakeBackup", {
+        return ActionResult(**self.api_call("LocalFileBackupPlugin/TakeBackup", {
             'Title': Title,
             'Description': Description,
             'Sticky': Sticky,
             'WasCreatedAutomatically': WasCreatedAutomatically
-        })
+        }))
 
     def UploadToS3(self, BackupId: 'str') -> RunningTask:
         """
@@ -2334,9 +2334,9 @@ class LocalFileBackupPlugin(AMPAPI):
         :type BackupId: str
         :returns: RunningTask
         """
-        return self.api_call("LocalFileBackupPlugin/UploadToS3", {
+        return RunningTask(**self.api_call("LocalFileBackupPlugin/UploadToS3", {
             'BackupId': BackupId
-        })
+        }))
 
 class MinecraftModule(AMPAPI):
     def __init__(self, authprovider: AuthProvider) -> None:
@@ -2348,7 +2348,7 @@ class MinecraftModule(AMPAPI):
 
         :returns: bool
         """
-        return self.api_call("MinecraftModule/AcceptEULA", {})
+        return bool(**self.api_call("MinecraftModule/AcceptEULA", {}))
 
     def AddOPEntry(self, UserOrUUID: 'str') -> ActionResult:
         """
@@ -2357,9 +2357,9 @@ class MinecraftModule(AMPAPI):
         :type UserOrUUID: str
         :returns: ActionResult
         """
-        return self.api_call("MinecraftModule/AddOPEntry", {
+        return ActionResult(**self.api_call("MinecraftModule/AddOPEntry", {
             'UserOrUUID': UserOrUUID
-        })
+        }))
 
     def AddToWhitelist(self, UserOrUUID: 'str') -> ActionResult:
         """
@@ -2368,9 +2368,9 @@ class MinecraftModule(AMPAPI):
         :type UserOrUUID: str
         :returns: ActionResult
         """
-        return self.api_call("MinecraftModule/AddToWhitelist", {
+        return ActionResult(**self.api_call("MinecraftModule/AddToWhitelist", {
             'UserOrUUID': UserOrUUID
-        })
+        }))
 
     def BanUserByID(self, ID: 'str') -> None:
         """
@@ -2379,7 +2379,7 @@ class MinecraftModule(AMPAPI):
         :type ID: str
         :returns: None
         """
-        return self.api_call("MinecraftModule/BanUserByID", {
+        self.api_call("MinecraftModule/BanUserByID", {
             'ID': ID
         })
 
@@ -2389,7 +2389,7 @@ class MinecraftModule(AMPAPI):
 
         :returns: dict[str, Any]
         """
-        return self.api_call("MinecraftModule/BukGetCategories", {})
+        return dict[str, Any](**self.api_call("MinecraftModule/BukGetCategories", {}))
 
     def BukGetInstallUpdatePlugin(self, pluginId: 'int') -> RunningTask:
         """
@@ -2398,9 +2398,9 @@ class MinecraftModule(AMPAPI):
         :type pluginId: int
         :returns: RunningTask
         """
-        return self.api_call("MinecraftModule/BukGetInstallUpdatePlugin", {
+        return RunningTask(**self.api_call("MinecraftModule/BukGetInstallUpdatePlugin", {
             'pluginId': pluginId
-        })
+        }))
 
     def BukGetInstalledPlugins(self, ) -> dict[str, Any]:
         """
@@ -2408,7 +2408,7 @@ class MinecraftModule(AMPAPI):
 
         :returns: dict[str, Any]
         """
-        return self.api_call("MinecraftModule/BukGetInstalledPlugins", {})
+        return dict[str, Any](**self.api_call("MinecraftModule/BukGetInstalledPlugins", {}))
 
     def BukGetPluginInfo(self, PluginId: 'int') -> dict[str, Any]:
         """
@@ -2417,9 +2417,9 @@ class MinecraftModule(AMPAPI):
         :type PluginId: int
         :returns: dict[str, Any]
         """
-        return self.api_call("MinecraftModule/BukGetPluginInfo", {
+        return dict[str, Any](**self.api_call("MinecraftModule/BukGetPluginInfo", {
             'PluginId': PluginId
-        })
+        }))
 
     def BukGetPluginsForCategory(self, CategoryId: 'str', PageNumber: 'int', PageSize: 'int') -> dict[str, Any]:
         """
@@ -2432,11 +2432,11 @@ class MinecraftModule(AMPAPI):
         :type PageSize: int
         :returns: dict[str, Any]
         """
-        return self.api_call("MinecraftModule/BukGetPluginsForCategory", {
+        return dict[str, Any](**self.api_call("MinecraftModule/BukGetPluginsForCategory", {
             'CategoryId': CategoryId,
             'PageNumber': PageNumber,
             'PageSize': PageSize
-        })
+        }))
 
     def BukGetPopularPlugins(self, ) -> dict[str, Any]:
         """
@@ -2444,7 +2444,7 @@ class MinecraftModule(AMPAPI):
 
         :returns: dict[str, Any]
         """
-        return self.api_call("MinecraftModule/BukGetPopularPlugins", {})
+        return dict[str, Any](**self.api_call("MinecraftModule/BukGetPopularPlugins", {}))
 
     def BukGetRemovePlugin(self, PluginId: 'int') -> None:
         """
@@ -2453,7 +2453,7 @@ class MinecraftModule(AMPAPI):
         :type PluginId: int
         :returns: None
         """
-        return self.api_call("MinecraftModule/BukGetRemovePlugin", {
+        self.api_call("MinecraftModule/BukGetRemovePlugin", {
             'PluginId': PluginId
         })
 
@@ -2468,11 +2468,11 @@ class MinecraftModule(AMPAPI):
         :type PageSize: int
         :returns: dict[str, Any]
         """
-        return self.api_call("MinecraftModule/BukGetSearch", {
+        return dict[str, Any](**self.api_call("MinecraftModule/BukGetSearch", {
             'Query': Query,
             'PageNumber': PageNumber,
             'PageSize': PageSize
-        })
+        }))
 
     def ClearInventoryByID(self, ID: 'str') -> None:
         """
@@ -2481,7 +2481,7 @@ class MinecraftModule(AMPAPI):
         :type ID: str
         :returns: None
         """
-        return self.api_call("MinecraftModule/ClearInventoryByID", {
+        self.api_call("MinecraftModule/ClearInventoryByID", {
             'ID': ID
         })
 
@@ -2491,7 +2491,7 @@ class MinecraftModule(AMPAPI):
 
         :returns: str
         """
-        return self.api_call("MinecraftModule/GetFailureReason", {})
+        return str(**self.api_call("MinecraftModule/GetFailureReason", {}))
 
     def GetHeadByUUID(self, id: 'str') -> str:
         """Get a skin as a base64 string
@@ -2500,9 +2500,9 @@ class MinecraftModule(AMPAPI):
         :type id: str
         :returns: str
         """
-        return self.api_call("MinecraftModule/GetHeadByUUID", {
+        return str(**self.api_call("MinecraftModule/GetHeadByUUID", {
             'id': id
-        })
+        }))
 
     def GetOPWhitelist(self, ) -> UserAccessData:
         """
@@ -2510,7 +2510,7 @@ class MinecraftModule(AMPAPI):
 
         :returns: UserAccessData
         """
-        return self.api_call("MinecraftModule/GetOPWhitelist", {})
+        return UserAccessData(**self.api_call("MinecraftModule/GetOPWhitelist", {}))
 
     def GetWhitelist(self, ) -> list[WhitelistEntry]:
         """
@@ -2518,7 +2518,7 @@ class MinecraftModule(AMPAPI):
 
         :returns: list[WhitelistEntry]
         """
-        return self.api_call("MinecraftModule/GetWhitelist", {})
+        return list[WhitelistEntry](**self.api_call("MinecraftModule/GetWhitelist", {}))
 
     def KickUserByID(self, ID: 'str') -> None:
         """
@@ -2527,7 +2527,7 @@ class MinecraftModule(AMPAPI):
         :type ID: str
         :returns: None
         """
-        return self.api_call("MinecraftModule/KickUserByID", {
+        self.api_call("MinecraftModule/KickUserByID", {
             'ID': ID
         })
 
@@ -2538,7 +2538,7 @@ class MinecraftModule(AMPAPI):
         :type ID: str
         :returns: None
         """
-        return self.api_call("MinecraftModule/KillByID", {
+        self.api_call("MinecraftModule/KillByID", {
             'ID': ID
         })
 
@@ -2548,7 +2548,7 @@ class MinecraftModule(AMPAPI):
 
         :returns: list[OPEntry]
         """
-        return self.api_call("MinecraftModule/LoadOPList", {})
+        return list[OPEntry](**self.api_call("MinecraftModule/LoadOPList", {}))
 
     def RemoveOPEntry(self, UserOrUUID: 'str') -> None:
         """
@@ -2557,7 +2557,7 @@ class MinecraftModule(AMPAPI):
         :type UserOrUUID: str
         :returns: None
         """
-        return self.api_call("MinecraftModule/RemoveOPEntry", {
+        self.api_call("MinecraftModule/RemoveOPEntry", {
             'UserOrUUID': UserOrUUID
         })
 
@@ -2568,7 +2568,7 @@ class MinecraftModule(AMPAPI):
         :type UserOrUUID: str
         :returns: None
         """
-        return self.api_call("MinecraftModule/RemoveWhitelistEntry", {
+        self.api_call("MinecraftModule/RemoveWhitelistEntry", {
             'UserOrUUID': UserOrUUID
         })
 
@@ -2579,7 +2579,7 @@ class MinecraftModule(AMPAPI):
         :type ID: str
         :returns: None
         """
-        return self.api_call("MinecraftModule/SmiteByID", {
+        self.api_call("MinecraftModule/SmiteByID", {
             'ID': ID
         })
 
@@ -2593,7 +2593,7 @@ class RCONPlugin(AMPAPI):
 
         :returns: None
         """
-        return self.api_call("RCONPlugin/Dummy", {})
+        self.api_call("RCONPlugin/Dummy", {})
 
 class steamcmdplugin(AMPAPI):
     def __init__(self, authprovider: AuthProvider) -> None:
@@ -2605,7 +2605,7 @@ class steamcmdplugin(AMPAPI):
 
         :returns: None
         """
-        return self.api_call("steamcmdplugin/CancelSteamGuard", {})
+        self.api_call("steamcmdplugin/CancelSteamGuard", {})
 
     def SteamGuardCode(self, code: 'str') -> None:
         """
@@ -2614,7 +2614,7 @@ class steamcmdplugin(AMPAPI):
         :type code: str
         :returns: None
         """
-        return self.api_call("steamcmdplugin/SteamGuardCode", {
+        self.api_call("steamcmdplugin/SteamGuardCode", {
             'code': code
         })
 
@@ -2627,7 +2627,7 @@ class steamcmdplugin(AMPAPI):
         :type password: str
         :returns: None
         """
-        return self.api_call("steamcmdplugin/SteamUsernamePassword", {
+        self.api_call("steamcmdplugin/SteamUsernamePassword", {
             'username': username,
             'password': password
         })

@@ -10,4 +10,4 @@ authProvider = BasicAuthProvider(
 
 api = CommonAPI(authProvider)
 
-print(api.Core.GetStatus().Metrics)
+print(api.Core.GetStatus())
