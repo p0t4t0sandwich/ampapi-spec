@@ -236,9 +236,13 @@ class CodeGen:
 
                 plugin_methods += method_text
 
+            async_plugin_methods = plugin_methods.replace("def ", "async def ").replace("(**", "(**await ")
+
             plugin_class = plugin_class.replace("{PluginMethods}", plugin_methods)
+            plugin_class = plugin_class.replace("{AsyncPluginMethods}", async_plugin_methods)
             plugin_class = plugin_class.replace("{PluginName}", plugin_name)
             plugin_class = plugin_class[:-1]
+            plugin_class = plugin_class.replace("\n\n\n", "\n")
 
             text += plugin_class
 
@@ -275,13 +279,19 @@ class CodeGen:
         # Generate CommonAPI
         common_loaded_plugins = ""
         common_plugin_init = ""
+        common_async_loaded_plugins = ""
+        common_async_plugin_init = ""
         for plugin in common_plugins:
             common_loaded_plugins += f"    {plugin} = Final[{plugin}]\n"
             common_plugin_init += f"        self.{plugin} = {plugin}(self)\n"
+            common_async_loaded_plugins += f"    {plugin} = Final[{plugin}Async]\n"
+            common_async_plugin_init += f"        self.{plugin} = {plugin}Async(self)\n"
         common_loaded_plugins = common_loaded_plugins[:-1]
 
         text = text.replace("{LoadedPlugins}", common_loaded_plugins)
         text = text.replace("{PluginInit}", common_plugin_init)
+        text = text.replace("{LoadedPluginsAsync}", common_async_loaded_plugins)
+        text = text.replace("{PluginInitAsync}", common_async_plugin_init)
 
         # Generate module classes
         for module_name, plugin_list in self.ModuleInheritance.items():
@@ -289,14 +299,20 @@ class CodeGen:
 
             module_loaded_plugins = ""
             module_plugin_init = ""
+            async_module_loaded_plugins = ""
+            async_module_plugin_init = ""
             for plugin in plugin_list:
                 module_loaded_plugins += f"    {plugin} = Final[{plugin}]\n"
                 module_plugin_init += f"        self.{plugin} = {plugin}(self)\n"
+                async_module_loaded_plugins += f"    {plugin} = Final[{plugin}Async]\n"
+                async_module_plugin_init += f"        self.{plugin} = {plugin}Async(self)\n"
 
             module_loaded_plugins = module_loaded_plugins[:-1]
 
             module_class = module_class.replace("{LoadedPlugins}", module_loaded_plugins)
             module_class = module_class.replace("{PluginInit}", module_plugin_init)
+            module_class = module_class.replace("{LoadedPluginsAsync}", async_module_loaded_plugins)
+            module_class = module_class.replace("{PluginInitAsync}", async_module_plugin_init)
             module_class = module_class.replace("{ModuleName}", module_name)
             module_class = module_class[:-1]
 

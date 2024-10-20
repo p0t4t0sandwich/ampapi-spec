@@ -1,4 +1,5 @@
 from abc import ABCMeta, abstractmethod
+from json import loads
 from types import SimpleNamespace
 from aiohttp import ClientSession as async_request
 from typing import Any, Final, Mapping, overload
@@ -44,6 +45,8 @@ def json_object_hook(dct: dict[Any, Any]) -> Any:
             new_dct[key] = value
     return JsonObj(**new_dct)
 
+ASYNC_JSON_DECODER = lambda x: loads(x, object_hook=json_object_hook)
+
 _headers: dict = {
     "Content-Type": "application/json",
     "Accept": "text/javascript",
@@ -80,7 +83,7 @@ async def api_call_async(endpoint: str, requestMethod: str, args: dict) -> dict[
     """
     async with async_request() as session:
         response = await session.request(requestMethod, endpoint, headers=_headers, json=args)
-        response_json: dict[str, Any] = await response.json(object_hook=json_object_hook)
+        response_json: dict[str, Any] = await response.json(loads=ASYNC_JSON_DECODER)
         if isinstance(response_json, dict) and "StackTrace" in response_json.keys():
             raise APIException(APIError(**response_json))
         return response_json
@@ -201,7 +204,7 @@ class BasicAuthProviderAsync(AuthProvider):
     async def api_call(self, endpoint: str, args: dict = {}) -> dict[str, Any]:
         if self.sessionId == "":
             await self.Login()
-        args.set("SESSIONID", self.sessionId)
+        args["SESSIONID"] = self.sessionId
         return await api_call_async(self.dataSource + endpoint, self.requestMethod, args)
 
     async def Login(self, rememberMe: bool = False) -> LoginResponse:

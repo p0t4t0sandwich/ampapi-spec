@@ -11,3 +11,8 @@ class CommonAPI(AMPAPI):
     def __init__(self, auth: AuthProvider):
         super().__init__(auth)
 {PluginInit}
+class CommonAPIAsync(AMPAPIAsync):
+{LoadedPluginsAsync}
+    def __init__(self, auth: AuthProvider):
+        super().__init__(auth)
+{PluginInitAsync}

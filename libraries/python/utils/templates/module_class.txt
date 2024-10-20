@@ -3,3 +3,8 @@ class {ModuleName}(CommonAPI):
     def __init__(self, auth: AuthProvider):
         super().__init__(auth)
 {PluginInit}
+class {ModuleName}Async(CommonAPIAsync):
+{LoadedPluginsAsync}
+    def __init__(self, auth: AuthProvider):
+        super().__init__(auth)
+{PluginInitAsync}

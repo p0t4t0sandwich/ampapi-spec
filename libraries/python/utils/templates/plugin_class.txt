@@ -3,3 +3,9 @@ class {PluginName}(AMPAPI):
         super().__init__(authprovider)
 
 {PluginMethods}
+
+class {PluginName}Async(AMPAPI):
+    def __init__(self, authprovider: AuthProvider) -> None:
+        super().__init__(authprovider)
+
+{AsyncPluginMethods}
