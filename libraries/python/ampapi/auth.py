@@ -1,11 +1,13 @@
 from abc import ABCMeta, abstractmethod
-from json import loads
-from types import SimpleNamespace
 from aiohttp import ClientSession as async_request
-from typing import Any, Final, Mapping, overload
+from dataclass_wizard import fromdict, fromlist
+from json import loads
 from requests import request as sync_request
+from sys import modules
+from types import SimpleNamespace
+from typing import Any, Final, Mapping, overload
 
-from .types import APIError, LoginResponse
+from .types import *
 
 class APIException(Exception):
     def __init__(self, error: APIError) -> None:
@@ -47,7 +49,19 @@ def json_object_hook(dct: dict[Any, Any]) -> Any:
 
 ASYNC_JSON_DECODER = lambda x: loads(x, object_hook=json_object_hook)
 
-_headers: dict = {
+# getattr(modules[__name__], ret_class.__annotations__[key])
+def json_to_obj(json: dict[str, Any] | list[Any] | Any, ret_class: type) -> Any:
+    if ret_class in [str, int, float, bool]:
+        return ret_class(json)
+    if isinstance(json, dict):
+        for key, value in json.items():
+            if key in ret_class.__annotations__.keys():
+                json[key] = json_to_obj(value, ret_class.__annotations__[key])
+    elif isinstance(json, list):
+        json = fromlist(json, getattr(modules[__name__], ret_class.__args__[0]))
+    return fromdict(json, ret_class)
+
+_headers: dict[str, str] = {
     "Content-Type": "application/json",
     "Accept": "text/javascript",
     "User-Agent": "ampapi-py/1.4.0"
@@ -65,7 +79,7 @@ def api_call(endpoint: str, requestMethod: str, args: dict) -> dict[str, Any]:
     :returns: json dict with the result of the API call
     """
     response = sync_request(requestMethod, endpoint, headers=_headers, json=args)
-    response_json: dict[str, Any] = response.json(object_hook=json_object_hook)
+    response_json: dict[str, Any] = response.json() # response.json(object_hook=json_object_hook)
     if isinstance(response_json, dict) and "StackTrace" in response_json.keys():
         raise APIException(APIError(**response_json))
     return response_json
@@ -83,7 +97,7 @@ async def api_call_async(endpoint: str, requestMethod: str, args: dict) -> dict[
     """
     async with async_request() as session:
         response = await session.request(requestMethod, endpoint, headers=_headers, json=args)
-        response_json: dict[str, Any] = await response.json(loads=ASYNC_JSON_DECODER)
+        response_json: dict[str, Any] = await response.json() # response.json(loads=ASYNC_JSON_DECODER)
         if isinstance(response_json, dict) and "StackTrace" in response_json.keys():
             raise APIException(APIError(**response_json))
         return response_json

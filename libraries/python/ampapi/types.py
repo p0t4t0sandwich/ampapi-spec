@@ -1,4 +1,4 @@
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from enum import Enum
 from typing import Any, Generic, TypeVar
 
@@ -133,58 +133,58 @@ class AMPInstanceBase:
     :param UseHostModeNetwork: Whether to use host mode networking
     :type UseHostModeNetwork: bool
     """
-    AMPBuild: 'str'
-    AMPVersion: 'Version'
-    IP: 'str'
-    OS: 'SupportedOS'
-    ContainerCPUs: 'float'
-    ContainerMemoryMB: 'int'
-    ContainerMemoryPolicy: 'ContainerMemoryPolicy'
-    ContainerSwapMB: 'int'
-    CreatedBy: 'str'
-    CustomMountBinds: 'dict[str, str]'
-    CustomPorts: 'list[PortUsage]'
-    DatastoreId: 'int'
-    DeploymentArgs: 'dict[str, str]'
-    Description: 'str'
-    DiskUsageMB: 'int'
-    DisplayImageSource: 'str'
-    ExtraContainerPackages: 'list[str]'
-    FriendlyName: 'str'
-    Group: 'str'
-    InstanceID: 'str'
-    InstanceName: 'str'
-    LastReactivationAttempt: 'str | None'
-    ManagementMode: 'ManagementModes'
-    MetricsPublishingHMAC: 'str'
-    ModuleDisplayName: 'str'
-    Module: 'str'
-    OverlayPath: 'str'
-    Path: 'str'
-    PendingSettingChanges: 'dict[str, str]'
-    Plugins: 'list[str]'
-    Port: 'int'
-    PreviousBuild: 'str'
-    PreviousVersion: 'Version'
-    ReleaseStream: 'AMPReleaseStreams'
-    SpecificDockerImage: 'str'
-    Tag: 'str'
-    Tags: 'list[str]'
-    TargetID: 'str'
-    User: 'str'
-    WelcomeMessage: 'str'
-    TagsUsedForConfiguration: 'bool'
-    DockerBaseReadOnly: 'bool'
-    DaemonAutostart: 'bool'
-    IsHTTPS: 'bool'
-    IsContainerInstance: 'bool'
-    Daemon: 'bool'
-    Suspended: 'bool'
-    ExcludeFromFirewall: 'bool'
-    ForceDocker: 'bool'
-    MatchVersion: 'bool'
-    AutomaticUPnP: 'bool'
-    UseHostModeNetwork: 'bool'
+    AMPBuild: 'str' = ""
+    AMPVersion: 'Version' = None
+    IP: 'str' = ""
+    OS: 'SupportedOS' = None
+    ContainerCPUs: 'float' = 0.0
+    ContainerMemoryMB: 'int' = 0
+    ContainerMemoryPolicy: 'ContainerMemoryPolicy' = None
+    ContainerSwapMB: 'int' = 0
+    CreatedBy: 'str' = ""
+    CustomMountBinds: 'dict[str, str]' = field(default_factory=dict)
+    CustomPorts: 'list[PortUsage]' = field(default_factory=list)
+    DatastoreId: 'int' = 0
+    DeploymentArgs: 'dict[str, str]' = field(default_factory=dict)
+    Description: 'str' = ""
+    DiskUsageMB: 'int' = 0
+    DisplayImageSource: 'str' = ""
+    ExtraContainerPackages: 'list[str]' = field(default_factory=list)
+    FriendlyName: 'str' = ""
+    Group: 'str' = ""
+    InstanceID: 'str' = ""
+    InstanceName: 'str' = ""
+    LastReactivationAttempt: 'str | None' = None
+    ManagementMode: 'ManagementModes' = None
+    MetricsPublishingHMAC: 'str' = ""
+    ModuleDisplayName: 'str' = ""
+    Module: 'str' = ""
+    OverlayPath: 'str' = ""
+    Path: 'str' = ""
+    PendingSettingChanges: 'dict[str, str]' = field(default_factory=dict)
+    Plugins: 'list[str]' = field(default_factory=list)
+    Port: 'int' = 0
+    PreviousBuild: 'str' = ""
+    PreviousVersion: 'Version' = None
+    ReleaseStream: 'AMPReleaseStreams' = None
+    SpecificDockerImage: 'str' = ""
+    Tag: 'str' = ""
+    Tags: 'list[str]' = field(default_factory=list)
+    TargetID: 'str' = ""
+    User: 'str' = ""
+    WelcomeMessage: 'str' = ""
+    TagsUsedForConfiguration: 'bool' = False
+    DockerBaseReadOnly: 'bool' = False
+    DaemonAutostart: 'bool' = False
+    IsHTTPS: 'bool' = False
+    IsContainerInstance: 'bool' = False
+    Daemon: 'bool' = False
+    Suspended: 'bool' = False
+    ExcludeFromFirewall: 'bool' = False
+    ForceDocker: 'bool' = False
+    MatchVersion: 'bool' = False
+    AutomaticUPnP: 'bool' = False
+    UseHostModeNetwork: 'bool' = False
 
 class AMPReleaseStreams(Enum):
     """
@@ -226,9 +226,9 @@ class APIError:
     :param StackTrace: The stack trace of the error
     :type StackTrace: str
     """
-    Title: 'str'
-    Message: 'str'
-    StackTrace: 'str'
+    Title: 'str' = ""
+    Message: 'str' = ""
+    StackTrace: 'str' = ""
 
 @dataclass
 class APIMethodInfo:
@@ -245,11 +245,11 @@ class APIMethodInfo:
     :param Consumes: The parameters
     :type Consumes: list[ScheduleTaskParameter]
     """
-    Id: 'str'
-    Description: 'str'
-    DisplayFormat: 'str'
-    Name: 'str'
-    Consumes: 'list[ScheduleTaskParameter]'
+    Id: 'str' = ""
+    Description: 'str' = ""
+    DisplayFormat: 'str' = ""
+    Name: 'str' = ""
+    Consumes: 'list[ScheduleTaskParameter]' = field(default_factory=list)
 
 @dataclass
 class ApplicationSpec:
@@ -286,21 +286,21 @@ class ApplicationSpec:
     :param IsServiceSpec: Whether the spec is a service spec
     :type IsServiceSpec: bool
     """
-    Id: 'str'
-    Author: 'str'
-    ContainerReason: 'str'
-    ContainerSupport: 'ContainerSupport'
-    DeprecatedReason: 'str'
-    Description: 'str'
-    DisplayImageSource: 'str'
-    ExtraSetupStepsURI: 'str'
-    FriendlyName: 'str'
-    ModuleName: 'str'
-    Origin: 'str'
-    Settings: 'dict[str, str]'
-    SupportedPlatforms: 'SupportedOS'
-    NoCommercialUsage: 'bool'
-    IsServiceSpec: 'bool'
+    Id: 'str' = ""
+    Author: 'str' = ""
+    ContainerReason: 'str' = ""
+    ContainerSupport: 'ContainerSupport' = None
+    DeprecatedReason: 'str' = ""
+    Description: 'str' = ""
+    DisplayImageSource: 'str' = ""
+    ExtraSetupStepsURI: 'str' = ""
+    FriendlyName: 'str' = ""
+    ModuleName: 'str' = ""
+    Origin: 'str' = ""
+    Settings: 'dict[str, str]' = field(default_factory=dict)
+    SupportedPlatforms: 'SupportedOS' = None
+    NoCommercialUsage: 'bool' = False
+    IsServiceSpec: 'bool' = False
 
 @dataclass
 class ApplicationSpecSummary:
@@ -333,19 +333,19 @@ class ApplicationSpecSummary:
     :param IsServiceSpec: Whether the spec is a service spec
     :type IsServiceSpec: bool
     """
-    Id: 'str'
-    Author: 'str'
-    ContainerReason: 'str'
-    ContainerSupport: 'ContainerSupport'
-    DeprecatedReason: 'str'
-    Description: 'str'
-    DisplayImageSource: 'str'
-    ExtraSetupStepsURI: 'str'
-    FriendlyName: 'str'
-    Origin: 'str'
-    SupportedPlatforms: 'SupportedOS'
-    NoCommercialUsage: 'bool'
-    IsServiceSpec: 'bool'
+    Id: 'str' = ""
+    Author: 'str' = ""
+    ContainerReason: 'str' = ""
+    ContainerSupport: 'ContainerSupport' = None
+    DeprecatedReason: 'str' = ""
+    Description: 'str' = ""
+    DisplayImageSource: 'str' = ""
+    ExtraSetupStepsURI: 'str' = ""
+    FriendlyName: 'str' = ""
+    Origin: 'str' = ""
+    SupportedPlatforms: 'SupportedOS' = None
+    NoCommercialUsage: 'bool' = False
+    IsServiceSpec: 'bool' = False
 
 class ApplicationState(Enum):
     """
@@ -518,16 +518,16 @@ class AuthRoleSummary:
     :param IsInstanceSpecific: Whether the role is instance specific
     :type IsInstanceSpecific: bool
     """
-    ID: 'str'
-    Description: 'str'
-    Members: 'list[AuthUserSummary]'
-    Name: 'str'
-    Permissions: 'list[str]'
-    DisableEdits: 'bool'
-    IsCommonRole: 'bool'
-    IsDefault: 'bool'
-    Hidden: 'bool'
-    IsInstanceSpecific: 'bool'
+    ID: 'str' = ""
+    Description: 'str' = ""
+    Members: 'list[AuthUserSummary]' = field(default_factory=list)
+    Name: 'str' = ""
+    Permissions: 'list[str]' = field(default_factory=list)
+    DisableEdits: 'bool' = False
+    IsCommonRole: 'bool' = False
+    IsDefault: 'bool' = False
+    Hidden: 'bool' = False
+    IsInstanceSpecific: 'bool' = False
 
 @dataclass
 class AuthUserSummary:
@@ -538,8 +538,8 @@ class AuthUserSummary:
     :param Name: The name
     :type Name: str
     """
-    ID: 'str'
-    Name: 'str'
+    ID: 'str' = ""
+    Name: 'str' = ""
 
 @dataclass
 class BackupManifest:
@@ -578,22 +578,22 @@ class BackupManifest:
     :param CreatedAutomatically: Whether the backup was created automatically
     :type CreatedAutomatically: bool
     """
-    Id: 'str'
-    HashSHA1: 'str'
-    Description: 'str'
-    META: 'str'
-    ModuleName: 'str'
-    Name: 'str'
-    ParentManifest: 'str | None'
-    RemoteStoreId: 'str'
-    SourceOS: 'SupportedOS'
-    Timestamp: 'str'
-    TotalSizeBytes: 'int'
-    TakenBy: 'str'
-    Sticky: 'bool'
-    StoredLocally: 'bool'
-    StoredRemotely: 'bool'
-    CreatedAutomatically: 'bool'
+    Id: 'str' = ""
+    HashSHA1: 'str' = ""
+    Description: 'str' = ""
+    META: 'str' = ""
+    ModuleName: 'str' = ""
+    Name: 'str' = ""
+    ParentManifest: 'str | None' = None
+    RemoteStoreId: 'str' = ""
+    SourceOS: 'SupportedOS' = None
+    Timestamp: 'str' = ""
+    TotalSizeBytes: 'int' = 0
+    TakenBy: 'str' = ""
+    Sticky: 'bool' = False
+    StoredLocally: 'bool' = False
+    StoredRemotely: 'bool' = False
+    CreatedAutomatically: 'bool' = False
 
 @dataclass
 class Branding:
@@ -628,20 +628,20 @@ class Branding:
     :param DisplayBranding: Whether to display branding
     :type DisplayBranding: bool
     """
-    URL: 'str'
-    BackgroundURL: 'str'
-    BrandingMessage: 'str'
-    CompanyName: 'str'
-    ForgotPasswordURL: 'str'
-    LogoURL: 'str'
-    PageTitle: 'str'
-    ShortBrandingMessage: 'str'
-    SplashFrameURL: 'str'
-    SubmitTicketURL: 'str'
-    SupportURL: 'str'
-    SupportText: 'str'
-    WelcomeMessage: 'str'
-    DisplayBranding: 'bool'
+    URL: 'str' = ""
+    BackgroundURL: 'str' = ""
+    BrandingMessage: 'str' = ""
+    CompanyName: 'str' = ""
+    ForgotPasswordURL: 'str' = ""
+    LogoURL: 'str' = ""
+    PageTitle: 'str' = ""
+    ShortBrandingMessage: 'str' = ""
+    SplashFrameURL: 'str' = ""
+    SubmitTicketURL: 'str' = ""
+    SupportURL: 'str' = ""
+    SupportText: 'str' = ""
+    WelcomeMessage: 'str' = ""
+    DisplayBranding: 'bool' = False
 
 @dataclass
 class BrandingSettings:
@@ -676,20 +676,20 @@ class BrandingSettings:
     :param DisplayBranding: Whether to display branding
     :type DisplayBranding: bool
     """
-    URL: 'str'
-    BackgroundURL: 'str'
-    BrandingMessage: 'str'
-    CompanyName: 'str'
-    ForgotPasswordURL: 'str'
-    LogoURL: 'str'
-    PageTitle: 'str'
-    ShortBrandingMessage: 'str'
-    SplashFrameURL: 'str'
-    SubmitTicketURL: 'str'
-    SupportURL: 'str'
-    SupportText: 'str'
-    WelcomeMessage: 'str'
-    DisplayBranding: 'bool'
+    URL: 'str' = ""
+    BackgroundURL: 'str' = ""
+    BrandingMessage: 'str' = ""
+    CompanyName: 'str' = ""
+    ForgotPasswordURL: 'str' = ""
+    LogoURL: 'str' = ""
+    PageTitle: 'str' = ""
+    ShortBrandingMessage: 'str' = ""
+    SplashFrameURL: 'str' = ""
+    SubmitTicketURL: 'str' = ""
+    SupportURL: 'str' = ""
+    SupportText: 'str' = ""
+    WelcomeMessage: 'str' = ""
+    DisplayBranding: 'bool' = False
 
 @dataclass
 class ConsoleEntry:
@@ -706,11 +706,11 @@ class ConsoleEntry:
     :param Type: The type of the console entry
     :type Type: str
     """
-    SourceId: 'str'
-    Contents: 'str'
-    Source: 'str'
-    Timestamp: 'str'
-    Type: 'str'
+    SourceId: 'str' = ""
+    Contents: 'str' = ""
+    Source: 'str' = ""
+    Timestamp: 'str' = ""
+    Type: 'str' = ""
 
 class ContainerMemoryPolicy(Enum):
     """
@@ -773,8 +773,8 @@ class DatastoreSummary:
     :param FriendlyName: The friendly name
     :type FriendlyName: str
     """
-    Id: 'int'
-    FriendlyName: 'str'
+    Id: 'int' = 0
+    FriendlyName: 'str' = ""
 
 @dataclass
 class DeploymentTemplate:
@@ -807,19 +807,19 @@ class DeploymentTemplate:
     :param StartOnBoot: Whether to start on boot
     :type StartOnBoot: bool
     """
-    Id: 'int'
-    Description: 'str'
-    Module: 'str'
-    Name: 'str'
-    SettingMappings: 'dict[str, str]'
-    Tags: 'list[str]'
-    TemplateBaseApp: 'str'
-    TemplateInstance: 'str | None'
-    TemplateRole: 'str | None'
-    ZipOverlayPath: 'str'
-    CloneRoleIntoUser: 'bool'
-    MatchDatastoreTags: 'bool'
-    StartOnBoot: 'bool'
+    Id: 'int' = 0
+    Description: 'str' = ""
+    Module: 'str' = ""
+    Name: 'str' = ""
+    SettingMappings: 'dict[str, str]' = field(default_factory=dict)
+    Tags: 'list[str]' = field(default_factory=list)
+    TemplateBaseApp: 'str' = ""
+    TemplateInstance: 'str | None' = None
+    TemplateRole: 'str | None' = None
+    ZipOverlayPath: 'str' = ""
+    CloneRoleIntoUser: 'bool' = False
+    MatchDatastoreTags: 'bool' = False
+    StartOnBoot: 'bool' = False
 
 @dataclass
 class DirectoryListing:
@@ -846,16 +846,16 @@ class DirectoryListing:
     :param IsExcludedFromBackups: Whether the file is excluded from backups
     :type IsExcludedFromBackups: bool
     """
-    Created: 'str'
-    Filename: 'str'
-    Modified: 'str'
-    SizeBytes: 'int'
-    IsDirectory: 'bool'
-    IsVirtualDirectory: 'bool'
-    IsArchive: 'bool'
-    IsDownloadable: 'bool'
-    IsEditable: 'bool'
-    IsExcludedFromBackups: 'bool'
+    Created: 'str' = ""
+    Filename: 'str' = ""
+    Modified: 'str' = ""
+    SizeBytes: 'int' = 0
+    IsDirectory: 'bool' = False
+    IsVirtualDirectory: 'bool' = False
+    IsArchive: 'bool' = False
+    IsDownloadable: 'bool' = False
+    IsEditable: 'bool' = False
+    IsExcludedFromBackups: 'bool' = False
 
 @dataclass
 class EndpointInfo:
@@ -868,9 +868,9 @@ class EndpointInfo:
     :param Endpoint: The endpoint address
     :type Endpoint: str
     """
-    Uri: 'str'
-    DisplayName: 'str'
-    Endpoint: 'str'
+    Uri: 'str' = ""
+    DisplayName: 'str' = ""
+    Endpoint: 'str' = ""
 
 @dataclass
 class FileChunkData:
@@ -881,8 +881,8 @@ class FileChunkData:
     :param BytesLength: The length of the data in bytes
     :type BytesLength: int
     """
-    Base64Data: 'str'
-    BytesLength: 'int'
+    Base64Data: 'str' = ""
+    BytesLength: 'int' = 0
 
 @dataclass
 class GlibcInfo:
@@ -901,12 +901,12 @@ class GlibcInfo:
     :param Revision: The revision number
     :type Revision: int
     """
-    Build: 'int'
-    MajorRevision: 'int'
-    Major: 'int'
-    MinorRevision: 'int'
-    Minor: 'int'
-    Revision: 'int'
+    Build: 'int' = 0
+    MajorRevision: 'int' = 0
+    Major: 'int' = 0
+    MinorRevision: 'int' = 0
+    Minor: 'int' = 0
+    Revision: 'int' = 0
 
 @dataclass
 class IADSInstance:
@@ -959,29 +959,29 @@ class IADSInstance:
     :param IsRemote: Whether the instance is remote
     :type IsRemote: bool
     """
-    AvailableIPs: 'list[str]'
-    AvailableInstances: 'list[InstanceSummary]'
-    Id: 'int'
-    URL: 'str'
-    Datastores: 'list[DatastoreSummary]'
-    Description: 'str'
-    Fitness: 'ProvisionFitness'
-    FriendlyName: 'str'
-    Host: 'str'
-    InstanceId: 'str'
-    Instances: 'list[InstanceSummary]'
-    LastUpdated: 'str'
-    Platform: 'IPlatformInfo'
-    Port: 'int'
-    StateReason: 'str'
-    State: 'RemoteInstanceState'
-    TagsList: 'str'
-    Tags: 'list[str]'
-    IsHTTPS: 'bool'
-    CanCreate: 'bool'
-    CreatesInContainers: 'bool'
-    Disabled: 'bool'
-    IsRemote: 'bool'
+    AvailableIPs: 'list[str]' = field(default_factory=list)
+    AvailableInstances: 'list[InstanceSummary]' = field(default_factory=list)
+    Id: 'int' = 0
+    URL: 'str' = ""
+    Datastores: 'list[DatastoreSummary]' = field(default_factory=list)
+    Description: 'str' = ""
+    Fitness: 'ProvisionFitness' = None
+    FriendlyName: 'str' = ""
+    Host: 'str' = ""
+    InstanceId: 'str' = ""
+    Instances: 'list[InstanceSummary]' = field(default_factory=list)
+    LastUpdated: 'str' = ""
+    Platform: 'IPlatformInfo' = None
+    Port: 'int' = 0
+    StateReason: 'str' = ""
+    State: 'RemoteInstanceState' = None
+    TagsList: 'str' = ""
+    Tags: 'list[str]' = field(default_factory=list)
+    IsHTTPS: 'bool' = False
+    CanCreate: 'bool' = False
+    CreatesInContainers: 'bool' = False
+    Disabled: 'bool' = False
+    IsRemote: 'bool' = False
 
 @dataclass
 class IAuditLogEntry:
@@ -1000,12 +1000,12 @@ class IAuditLogEntry:
     :param User: The user
     :type User: str
     """
-    Id: 'int'
-    Category: 'str'
-    Message: 'str'
-    Source: 'str'
-    Timestamp: 'str'
-    User: 'str'
+    Id: 'int' = 0
+    Category: 'str' = ""
+    Message: 'str' = ""
+    Source: 'str' = ""
+    Timestamp: 'str' = ""
+    User: 'str' = ""
 
 @dataclass
 class InlineActionAttribute:
@@ -1022,11 +1022,11 @@ class InlineActionAttribute:
     :param IsClientSide: Whether the action is client-side
     :type IsClientSide: bool
     """
-    Argument: 'str'
-    Caption: 'str'
-    Method: 'str'
-    Module: 'str'
-    IsClientSide: 'bool'
+    Argument: 'str' = ""
+    Caption: 'str' = ""
+    Method: 'str' = ""
+    Module: 'str' = ""
+    IsClientSide: 'bool' = False
 
 @dataclass
 class InstanceDatastore:
@@ -1057,18 +1057,18 @@ class InstanceDatastore:
     :param IsInternal: Whether the datastore is internal
     :type IsInternal: bool
     """
-    CurrentUsageMB: 'int'
-    Id: 'int'
-    Description: 'str'
-    Directory: 'str'
-    FriendlyName: 'str'
-    InstanceLimit: 'int'
-    Priority: 'int'
-    SanitisedName: 'str'
-    SoftLimitMB: 'int'
-    Tags: 'list[str]'
-    Active: 'bool'
-    IsInternal: 'bool'
+    CurrentUsageMB: 'int' = 0
+    Id: 'int' = 0
+    Description: 'str' = ""
+    Directory: 'str' = ""
+    FriendlyName: 'str' = ""
+    InstanceLimit: 'int' = 0
+    Priority: 'int' = 0
+    SanitisedName: 'str' = ""
+    SoftLimitMB: 'int' = 0
+    Tags: 'list[str]' = field(default_factory=list)
+    Active: 'bool' = False
+    IsInternal: 'bool' = False
 
 @dataclass
 class InstanceStatus:
@@ -1079,8 +1079,8 @@ class InstanceStatus:
     :param Running: Whether the instance is running
     :type Running: bool
     """
-    InstanceID: 'str'
-    Running: 'bool'
+    InstanceID: 'str' = ""
+    Running: 'bool' = False
 
 @dataclass
 class InstanceSummary:
@@ -1153,39 +1153,39 @@ class InstanceSummary:
     :param Suspended: Whether the instance is suspended
     :type Suspended: bool
     """
-    AMPVersion: 'Version'
-    IP: 'str'
-    ApplicationEndpoints: 'list[EndpointInfo]'
-    AppState: 'ApplicationState'
-    ContainerCPUs: 'float'
-    ContainerMemoryMB: 'int'
-    ContainerMemoryPolicy: 'ContainerMemoryPolicy'
-    ContainerSwapMB: 'int'
-    DeploymentArgs: 'dict[str, str]'
-    Description: 'str'
-    DiskUsageMB: 'int'
-    DisplayImageSource: 'str'
-    FriendlyName: 'str'
-    InstanceID: 'str'
-    InstanceName: 'str'
-    WelcomeMessage: 'str'
-    ManagementMode: 'ManagementModes'
-    Metrics: 'dict[str, MetricInfo]'
-    ModuleDisplayName: 'str'
-    Module: 'str'
-    Port: 'int'
-    ReleaseStream: 'AMPReleaseStreams'
-    SpecificDockerImage: 'str'
-    Tags: 'list[str]'
-    TargetID: 'str'
-    IsHTTPS: 'bool'
-    UseHostModeNetwork: 'bool'
-    DaemonAutostart: 'bool'
-    IsContainerInstance: 'bool'
-    Daemon: 'bool'
-    ExcludeFromFirewall: 'bool'
-    Running: 'bool'
-    Suspended: 'bool'
+    AMPVersion: 'Version' = None
+    IP: 'str' = ""
+    ApplicationEndpoints: 'list[EndpointInfo]' = field(default_factory=list)
+    AppState: 'ApplicationState' = None
+    ContainerCPUs: 'float' = 0.0
+    ContainerMemoryMB: 'int' = 0
+    ContainerMemoryPolicy: 'ContainerMemoryPolicy' = None
+    ContainerSwapMB: 'int' = 0
+    DeploymentArgs: 'dict[str, str]' = field(default_factory=dict)
+    Description: 'str' = ""
+    DiskUsageMB: 'int' = 0
+    DisplayImageSource: 'str' = ""
+    FriendlyName: 'str' = ""
+    InstanceID: 'str' = ""
+    InstanceName: 'str' = ""
+    WelcomeMessage: 'str' = ""
+    ManagementMode: 'ManagementModes' = None
+    Metrics: 'dict[str, MetricInfo]' = field(default_factory=dict)
+    ModuleDisplayName: 'str' = ""
+    Module: 'str' = ""
+    Port: 'int' = 0
+    ReleaseStream: 'AMPReleaseStreams' = None
+    SpecificDockerImage: 'str' = ""
+    Tags: 'list[str]' = field(default_factory=list)
+    TargetID: 'str' = ""
+    IsHTTPS: 'bool' = False
+    UseHostModeNetwork: 'bool' = False
+    DaemonAutostart: 'bool' = False
+    IsContainerInstance: 'bool' = False
+    Daemon: 'bool' = False
+    ExcludeFromFirewall: 'bool' = False
+    Running: 'bool' = False
+    Suspended: 'bool' = False
 
 @dataclass
 class IPermissionsTreeNode:
@@ -1202,11 +1202,11 @@ class IPermissionsTreeNode:
     :param Node: The node
     :type Node: str
     """
-    Children: 'list[IPermissionsTreeNode]'
-    Description: 'str'
-    DisplayName: 'str'
-    Name: 'str'
-    Node: 'str'
+    Children: 'list[IPermissionsTreeNode]' = field(default_factory=list)
+    Description: 'str' = ""
+    DisplayName: 'str' = ""
+    Name: 'str' = ""
+    Node: 'str' = ""
 
 @dataclass
 class IPlatformInfo:
@@ -1227,13 +1227,13 @@ class IPlatformInfo:
     :param DockerNetworkIsHostMode: Whether the Docker network is in host mode
     :type DockerNetworkIsHostMode: bool
     """
-    CPUInfo: 'ProcessorInfo'
-    OS: 'SupportedOS'
-    InstalledRAMMB: 'int'
-    PlatformName: 'str'
-    SystemType: 'Architecture'
-    Virtualization: 'VirtualizationType'
-    DockerNetworkIsHostMode: 'bool'
+    CPUInfo: 'ProcessorInfo' = None
+    OS: 'SupportedOS' = None
+    InstalledRAMMB: 'int' = 0
+    PlatformName: 'str' = ""
+    SystemType: 'Architecture' = None
+    Virtualization: 'VirtualizationType' = None
+    DockerNetworkIsHostMode: 'bool' = False
 
 @dataclass
 class LicenceInfo:
@@ -1254,13 +1254,13 @@ class LicenceInfo:
     :param Usage: The usage
     :type Usage: int
     """
-    Expires: 'str'
-    GradeName: 'str'
-    Grade: 'str'
-    LicenceKey: 'str'
-    ProductName: 'str'
-    Product: 'str'
-    Usage: 'int'
+    Expires: 'str' = ""
+    GradeName: 'str' = ""
+    Grade: 'str' = ""
+    LicenceKey: 'str' = ""
+    ProductName: 'str' = ""
+    Product: 'str' = ""
+    Usage: 'int' = 0
 
 @dataclass
 class ListeningPortSummary:
@@ -1279,12 +1279,12 @@ class ListeningPortSummary:
     :param Required: Whether the port is required
     :type Required: bool
     """
-    Name: 'str'
-    Port: 'int'
-    Protocol: 'PortProtocol'
-    IsDelayedOpen: 'bool'
-    Listening: 'bool'
-    Required: 'bool'
+    Name: 'str' = ""
+    Port: 'int' = 0
+    Protocol: 'PortProtocol' = None
+    IsDelayedOpen: 'bool' = False
+    Listening: 'bool' = False
+    Required: 'bool' = False
 
 @dataclass
 class LocalAMPInstance:
@@ -1403,62 +1403,62 @@ class LocalAMPInstance:
     :param UseHostModeNetwork: Whether to use host mode networking
     :type UseHostModeNetwork: bool
     """
-    AMPBuild: 'str'
-    AMPVersion: 'Version'
-    IP: 'str'
-    OS: 'SupportedOS'
-    ContainerCPUs: 'float'
-    ContainerMemoryMB: 'int'
-    ContainerMemoryPolicy: 'ContainerMemoryPolicy'
-    ContainerSwapMB: 'int'
-    CreatedBy: 'str'
-    CustomMountBinds: 'dict[str, str]'
-    CustomPorts: 'list[PortUsage]'
-    DatastoreId: 'int'
-    DeploymentArgs: 'dict[str, str]'
-    Description: 'str'
-    DiskUsageMB: 'int'
-    DisplayImageSource: 'str'
-    ExtraContainerPackages: 'list[str]'
-    FriendlyName: 'str'
-    Group: 'str'
-    InstanceID: 'str'
-    InstanceName: 'str'
-    LastReactivationAttempt: 'str | None'
-    ManagementMode: 'ManagementModes'
-    MetricsPublishingHMAC: 'str'
-    ModuleDisplayName: 'str'
-    Module: 'str'
-    OverlayURL: 'str'
-    OverlayPath: 'str'
-    Path: 'str'
-    PendingSettingChanges: 'dict[str, str]'
-    Plugins: 'list[str]'
-    Port: 'int'
-    PreviousBuild: 'str'
-    PreviousVersion: 'Version'
-    ReleaseStream: 'AMPReleaseStreams'
-    SpecificDockerImage: 'str'
-    Tag: 'str'
-    Tags: 'list[str]'
-    TargetID: 'str'
-    User: 'str'
-    WelcomeMessage: 'str'
-    TagsUsedForConfiguration: 'bool'
-    DockerBaseReadOnly: 'bool'
-    DaemonAutostart: 'bool'
-    HasOverlayApplied: 'bool'
-    IsHTTPS: 'bool'
-    IsContainerInstance: 'bool'
-    IsDaemonUserManaged: 'bool'
-    Daemon: 'bool'
-    IsSharedInstance: 'bool'
-    Suspended: 'bool'
-    ExcludeFromFirewall: 'bool'
-    ForceDocker: 'bool'
-    MatchVersion: 'bool'
-    AutomaticUPnP: 'bool'
-    UseHostModeNetwork: 'bool'
+    AMPBuild: 'str' = ""
+    AMPVersion: 'Version' = None
+    IP: 'str' = ""
+    OS: 'SupportedOS' = None
+    ContainerCPUs: 'float' = 0.0
+    ContainerMemoryMB: 'int' = 0
+    ContainerMemoryPolicy: 'ContainerMemoryPolicy' = None
+    ContainerSwapMB: 'int' = 0
+    CreatedBy: 'str' = ""
+    CustomMountBinds: 'dict[str, str]' = field(default_factory=dict)
+    CustomPorts: 'list[PortUsage]' = field(default_factory=list)
+    DatastoreId: 'int' = 0
+    DeploymentArgs: 'dict[str, str]' = field(default_factory=dict)
+    Description: 'str' = ""
+    DiskUsageMB: 'int' = 0
+    DisplayImageSource: 'str' = ""
+    ExtraContainerPackages: 'list[str]' = field(default_factory=list)
+    FriendlyName: 'str' = ""
+    Group: 'str' = ""
+    InstanceID: 'str' = ""
+    InstanceName: 'str' = ""
+    LastReactivationAttempt: 'str | None' = None
+    ManagementMode: 'ManagementModes' = None
+    MetricsPublishingHMAC: 'str' = ""
+    ModuleDisplayName: 'str' = ""
+    Module: 'str' = ""
+    OverlayURL: 'str' = ""
+    OverlayPath: 'str' = ""
+    Path: 'str' = ""
+    PendingSettingChanges: 'dict[str, str]' = field(default_factory=dict)
+    Plugins: 'list[str]' = field(default_factory=list)
+    Port: 'int' = 0
+    PreviousBuild: 'str' = ""
+    PreviousVersion: 'Version' = None
+    ReleaseStream: 'AMPReleaseStreams' = None
+    SpecificDockerImage: 'str' = ""
+    Tag: 'str' = ""
+    Tags: 'list[str]' = field(default_factory=list)
+    TargetID: 'str' = ""
+    User: 'str' = ""
+    WelcomeMessage: 'str' = ""
+    TagsUsedForConfiguration: 'bool' = False
+    DockerBaseReadOnly: 'bool' = False
+    DaemonAutostart: 'bool' = False
+    HasOverlayApplied: 'bool' = False
+    IsHTTPS: 'bool' = False
+    IsContainerInstance: 'bool' = False
+    IsDaemonUserManaged: 'bool' = False
+    Daemon: 'bool' = False
+    IsSharedInstance: 'bool' = False
+    Suspended: 'bool' = False
+    ExcludeFromFirewall: 'bool' = False
+    ForceDocker: 'bool' = False
+    MatchVersion: 'bool' = False
+    AutomaticUPnP: 'bool' = False
+    UseHostModeNetwork: 'bool' = False
 
 @dataclass
 class LoginResponse:
@@ -1479,13 +1479,13 @@ class LoginResponse:
     :param success: Whether the login was successful
     :type success: bool
     """
-    permissions: 'list[str]'
-    rememberMeToken: 'str'
-    resultReason: 'str'
-    result: 'AuthenticationResult'
-    sessionID: 'str'
-    userInfo: 'UserInfoSummary'
-    success: 'bool'
+    permissions: 'list[str]' = field(default_factory=list)
+    rememberMeToken: 'str' = ""
+    resultReason: 'str' = ""
+    result: 'AuthenticationResult' = None
+    sessionID: 'str' = ""
+    userInfo: 'UserInfoSummary' = None
+    success: 'bool' = False
 
 class ManagementModes(Enum):
     """
@@ -1513,11 +1513,11 @@ class MethodInfoSummary:
     :param IsComplexType: Whether the method is a complex type
     :type IsComplexType: bool
     """
-    Description: 'str'
-    Parameters: 'list[MethodParameterSummary]'
-    ReturnTypeName: 'str'
-    Returns: 'str | None'
-    IsComplexType: 'bool'
+    Description: 'str' = ""
+    Parameters: 'list[MethodParameterSummary]' = field(default_factory=list)
+    ReturnTypeName: 'str' = ""
+    Returns: 'str | None' = None
+    IsComplexType: 'bool' = False
 
 @dataclass
 class MethodParameterSummary:
@@ -1534,11 +1534,11 @@ class MethodParameterSummary:
     :param Optional: Whether the parameter is optional
     :type Optional: bool
     """
-    Description: 'str'
-    Name: 'str'
-    ParamEnumValues: 'dict[str, Any] | None'
-    TypeName: 'str'
-    Optional: 'bool'
+    Description: 'str' = ""
+    Name: 'str' = ""
+    ParamEnumValues: 'dict[str, Any] | None' = field(default_factory=dict)
+    TypeName: 'str' = ""
+    Optional: 'bool' = False
 
 @dataclass
 class MetricInfo:
@@ -1561,14 +1561,14 @@ class MetricInfo:
     :param Units: The units
     :type Units: str
     """
-    Color: 'str'
-    MaxValue: 'int'
-    Percent: 'int'
-    RawValue: 'int'
-    Color2: 'str'
-    ShortName: 'str'
-    Color3: 'str'
-    Units: 'str'
+    Color: 'str' = ""
+    MaxValue: 'int' = 0
+    Percent: 'int' = 0
+    RawValue: 'int' = 0
+    Color2: 'str' = ""
+    ShortName: 'str' = ""
+    Color3: 'str' = ""
+    Units: 'str' = ""
 
 @dataclass
 class ModuleInfo:
@@ -1627,32 +1627,32 @@ class ModuleInfo:
     :param SupportsSleep: Whether the module supports sleep mode
     :type SupportsSleep: bool
     """
-    AMPBuild: 'str'
-    AMPVersion: 'str'
-    APIVersion: 'str'
-    AppName: 'str'
-    Author: 'str'
-    BasePort: 'int'
-    Branding: 'BrandingSettings'
-    BuildSpec: 'str'
-    DisplayBaseURI: 'str'
-    EndpointURI: 'str'
-    FeatureSet: 'list[str]'
-    FriendlyName: 'str'
-    InstanceId: 'str'
-    InstanceName: 'str'
-    LoadedPlugins: 'list[str]'
-    ModuleName: 'str'
-    Name: 'str'
-    PrimaryEndpoint: 'str'
-    Timestamp: 'str'
-    ToolsVersion: 'str'
-    VersionCodename: 'str'
-    Analytics: 'bool'
-    AllowRememberMe: 'bool'
-    IsRemoteInstance: 'bool'
-    RequiresFullLoad: 'bool'
-    SupportsSleep: 'bool'
+    AMPBuild: 'str' = ""
+    AMPVersion: 'str' = ""
+    APIVersion: 'str' = ""
+    AppName: 'str' = ""
+    Author: 'str' = ""
+    BasePort: 'int' = 0
+    Branding: 'BrandingSettings' = None
+    BuildSpec: 'str' = ""
+    DisplayBaseURI: 'str' = ""
+    EndpointURI: 'str' = ""
+    FeatureSet: 'list[str]' = field(default_factory=list)
+    FriendlyName: 'str' = ""
+    InstanceId: 'str' = ""
+    InstanceName: 'str' = ""
+    LoadedPlugins: 'list[str]' = field(default_factory=list)
+    ModuleName: 'str' = ""
+    Name: 'str' = ""
+    PrimaryEndpoint: 'str' = ""
+    Timestamp: 'str' = ""
+    ToolsVersion: 'str' = ""
+    VersionCodename: 'str' = ""
+    Analytics: 'bool' = False
+    AllowRememberMe: 'bool' = False
+    IsRemoteInstance: 'bool' = False
+    RequiresFullLoad: 'bool' = False
+    SupportsSleep: 'bool' = False
 
 @dataclass
 class OPEntry:
@@ -1665,9 +1665,9 @@ class OPEntry:
     :param Name: The name
     :type Name: str
     """
-    UUID: 'str'
-    Level: 'int'
-    Name: 'str'
+    UUID: 'str' = ""
+    Level: 'int' = 0
+    Name: 'str' = ""
 
 class PortProtocol(Enum):
     """
@@ -1698,11 +1698,11 @@ class PortSummary:
     :param Required: Whether the port is required
     :type Required: bool
     """
-    Name: 'str'
-    Port: 'int'
-    Protocol: 'PortProtocol'
-    IsDelayedOpen: 'bool'
-    Required: 'bool'
+    Name: 'str' = ""
+    Port: 'int' = 0
+    Protocol: 'PortProtocol' = None
+    IsDelayedOpen: 'bool' = False
+    Required: 'bool' = False
 
 @dataclass
 class PortUsage:
@@ -1723,13 +1723,13 @@ class PortUsage:
     :param Verified: Whether the port is verified
     :type Verified: bool
     """
-    Description: 'str'
-    PortNumber: 'int'
-    Protocol: 'PortProtocol'
-    ProvisionNodeName: 'str'
-    Range: 'int'
-    IsUserDefined: 'bool'
-    Verified: 'bool'
+    Description: 'str' = ""
+    PortNumber: 'int' = 0
+    Protocol: 'PortProtocol' = None
+    ProvisionNodeName: 'str' = ""
+    Range: 'int' = 0
+    IsUserDefined: 'bool' = False
+    Verified: 'bool' = False
 
 class PostCreateAppActions(Enum):
     """
@@ -1773,13 +1773,13 @@ class ProcessorInfo:
     :param TotalThreads: Total number of CPU threads
     :type TotalThreads: int
     """
-    ModelName: 'str'
-    Vendor: 'str'
-    Cores: 'int'
-    Sockets: 'int'
-    Threads: 'int'
-    TotalCores: 'int'
-    TotalThreads: 'int'
+    ModelName: 'str' = ""
+    Vendor: 'str' = ""
+    Cores: 'int' = 0
+    Sockets: 'int' = 0
+    Threads: 'int' = 0
+    TotalCores: 'int' = 0
+    TotalThreads: 'int' = 0
 
 @dataclass
 class ProvisionFitness:
@@ -1804,15 +1804,15 @@ class ProvisionFitness:
     :param FreeDiskMB: Unallocated disk space in MB
     :type FreeDiskMB: int
     """
-    Available: 'bool'
-    CPUServiceRatio: 'float'
-    Score: 'float'
-    LoadAvg: 'float'
-    RemainingInstanceSlots: 'int'
-    TotalServices: 'int'
-    ThreadQueueLength: 'int'
-    FreeRAMMB: 'int'
-    FreeDiskMB: 'int'
+    Available: 'bool' = False
+    CPUServiceRatio: 'float' = 0.0
+    Score: 'float' = 0.0
+    LoadAvg: 'float' = 0.0
+    RemainingInstanceSlots: 'int' = 0
+    TotalServices: 'int' = 0
+    ThreadQueueLength: 'int' = 0
+    FreeRAMMB: 'int' = 0
+    FreeDiskMB: 'int' = 0
 
 @dataclass
 class ProvisionSettingInfo:
@@ -1837,15 +1837,15 @@ class ProvisionSettingInfo:
     :param ValueRange: The value range
     :type ValueRange: int
     """
-    CustomFieldType: 'str'
-    DefaultValue: 'Any'
-    Description: 'str'
-    EndpointFormat: 'str'
-    EndpointName: 'str'
-    Node: 'str'
-    RelatedSetting: 'str'
-    Type: 'str'
-    ValueRange: 'int'
+    CustomFieldType: 'str' = ""
+    DefaultValue: 'Any' = None
+    Description: 'str' = ""
+    EndpointFormat: 'str' = ""
+    EndpointName: 'str' = ""
+    Node: 'str' = ""
+    RelatedSetting: 'str' = ""
+    Type: 'str' = ""
+    ValueRange: 'int' = 0
 
 @dataclass
 class PushedMessage:
@@ -1862,11 +1862,11 @@ class PushedMessage:
     :param Expired: Whether the message has expired
     :type Expired: bool
     """
-    AgeMinutes: 'int'
-    Id: 'str'
-    Message: 'str'
-    Source: 'str'
-    Expired: 'bool'
+    AgeMinutes: 'int' = 0
+    Id: 'str' = ""
+    Message: 'str' = ""
+    Source: 'str' = ""
+    Expired: 'bool' = False
 
 class RemoteInstanceState(Enum):
     """
@@ -1910,10 +1910,10 @@ class RemoteTargetInfo:
     :param DeploysInContainers: Whether the target deploys in containers
     :type DeploysInContainers: bool
     """
-    IPAddressList: 'list[str]'
-    Datastores: 'list[DatastoreSummary]'
-    PlatformInfo: 'IPlatformInfo'
-    DeploysInContainers: 'bool'
+    IPAddressList: 'list[str]' = field(default_factory=list)
+    Datastores: 'list[DatastoreSummary]' = field(default_factory=list)
+    PlatformInfo: 'IPlatformInfo' = None
+    DeploysInContainers: 'bool' = False
 
 @dataclass
 class RunningTask:
@@ -1958,25 +1958,25 @@ class RunningTask:
     :param DontPropagate: Whether the task should not propagate
     :type DontPropagate: bool
     """
-    Description: 'str'
-    EndTime: 'str | None'
-    LastUpdatePushed: 'str'
-    Name: 'str'
-    Origin: 'str'
-    ParentTaskId: 'str | None'
-    ProgressPercent: 'int'
-    RemoteInstanceId: 'str | None'
-    Speed: 'str'
-    StartTime: 'str'
-    StateMessage: 'str'
-    State: 'TaskState'
-    Id: 'str'
-    FastDismiss: 'bool'
-    IsCancellable: 'bool'
-    HideFromUI: 'bool'
-    IsIndeterminate: 'bool'
-    IsPrimaryTask: 'bool'
-    DontPropagate: 'bool'
+    Description: 'str' = ""
+    EndTime: 'str | None' = None
+    LastUpdatePushed: 'str' = ""
+    Name: 'str' = ""
+    Origin: 'str' = ""
+    ParentTaskId: 'str | None' = None
+    ProgressPercent: 'int' = 0
+    RemoteInstanceId: 'str | None' = None
+    Speed: 'str' = ""
+    StartTime: 'str' = ""
+    StateMessage: 'str' = ""
+    State: 'TaskState' = None
+    Id: 'str' = ""
+    FastDismiss: 'bool' = False
+    IsCancellable: 'bool' = False
+    HideFromUI: 'bool' = False
+    IsIndeterminate: 'bool' = False
+    IsPrimaryTask: 'bool' = False
+    DontPropagate: 'bool' = False
 
 class ScheduleEnabledState(Enum):
     """
@@ -2022,17 +2022,17 @@ class ScheduleEntryDefinition:
     :param WaitForComplete: Whether to wait for completion
     :type WaitForComplete: bool
     """
-    Id: 'str'
-    CreatedBy: 'str | None'
-    EnabledState: 'ScheduleEnabledState'
-    ErrorBehaviour: 'ScheduleErrorBehaviour'
-    LastErrorReason: 'str'
-    Order: 'int'
-    ParameterMapping: 'dict[str, str]'
-    TaskMethodName: 'str'
-    Locked: 'bool'
-    LastExecuteError: 'bool'
-    WaitForComplete: 'bool'
+    Id: 'str' = ""
+    CreatedBy: 'str | None' = None
+    EnabledState: 'ScheduleEnabledState' = None
+    ErrorBehaviour: 'ScheduleErrorBehaviour' = None
+    LastErrorReason: 'str' = ""
+    Order: 'int' = 0
+    ParameterMapping: 'dict[str, str]' = field(default_factory=dict)
+    TaskMethodName: 'str' = ""
+    Locked: 'bool' = False
+    LastExecuteError: 'bool' = False
+    WaitForComplete: 'bool' = False
 
 class ScheduleErrorBehaviour(Enum):
     """
@@ -2056,9 +2056,9 @@ class ScheduleInfo:
     :param PopulatedTriggers: The populated triggers
     :type PopulatedTriggers: list[TriggerInfo]
     """
-    AvailableMethods: 'list[APIMethodInfo]'
-    AvailableTriggers: 'list[TriggerInfo]'
-    PopulatedTriggers: 'list[TriggerInfo]'
+    AvailableMethods: 'list[APIMethodInfo]' = field(default_factory=list)
+    AvailableTriggers: 'list[TriggerInfo]' = field(default_factory=list)
+    PopulatedTriggers: 'list[TriggerInfo]' = field(default_factory=list)
 
 @dataclass
 class ScheduleTaskParameter:
@@ -2079,13 +2079,13 @@ class ScheduleTaskParameter:
     :param ValueType: The value type
     :type ValueType: str
     """
-    Description: 'str'
-    DisplayName: 'str'
-    EnumValues: 'dict[str, str] | None'
-    InputType: 'str'
-    Name: 'str'
-    SelectionSource: 'StringSelectionSourceAttribute'
-    ValueType: 'str'
+    Description: 'str' = ""
+    DisplayName: 'str' = ""
+    EnumValues: 'dict[str, str] | None' = field(default_factory=dict)
+    InputType: 'str' = ""
+    Name: 'str' = ""
+    SelectionSource: 'StringSelectionSourceAttribute' = None
+    ValueType: 'str' = ""
 
 @dataclass
 class ScheduleTrigger:
@@ -2104,12 +2104,12 @@ class ScheduleTrigger:
     :param Order: The order
     :type Order: int
     """
-    Id: 'str'
-    Description: 'str'
-    EnabledState: 'ScheduleEnabledState'
-    LastExecuted: 'str | None'
-    Name: 'str'
-    Order: 'int'
+    Id: 'str' = ""
+    Description: 'str' = ""
+    EnabledState: 'ScheduleEnabledState' = None
+    LastExecuted: 'str | None' = None
+    Name: 'str' = ""
+    Order: 'int' = 0
 
 @dataclass
 class SecurityCheckResult:
@@ -2128,12 +2128,12 @@ class SecurityCheckResult:
     :param Pass: Whether the check passed
     :type Pass: bool
     """
-    Description: 'str'
-    Resolution: 'str'
-    Severity: 'int'
-    Title: 'str'
-    Hidden: 'bool'
-    Pass: 'bool'
+    Description: 'str' = ""
+    Resolution: 'str' = ""
+    Severity: 'int' = 0
+    Title: 'str' = ""
+    Hidden: 'bool' = False
+    Pass: 'bool' = False
 
 @dataclass
 class SettingSpec:
@@ -2196,34 +2196,34 @@ class SettingSpec:
     :param RequiresRestart: Whether the setting requires a restart
     :type RequiresRestart: bool
     """
-    Actions: 'list[InlineActionAttribute]'
-    Attributes: 'Any'
-    Category: 'str'
-    CurrentValue: 'Any'
-    Description: 'str'
-    EnumValues: 'dict[str, str] | None'
-    InputType: 'str'
-    Keywords: 'str'
-    MaxLength: 'int'
-    MaxValue: 'float | None'
-    Meta: 'str'
-    MinValue: 'float | None'
-    Name: 'str'
-    Node: 'str'
-    Order: 'int'
-    Placeholder: 'str'
-    SelectionSource: 'StringSelectionSourceAttribute'
-    Subcategory: 'str'
-    Suffix: 'str'
-    Tag: 'str'
-    ValType: 'str'
-    EnumValuesAreDeferred: 'bool'
-    ReadOnlyProvision: 'bool'
-    IsProvisionSpec: 'bool'
-    AlwaysAllowRead: 'bool'
-    ReadOnly: 'bool'
-    Required: 'bool'
-    RequiresRestart: 'bool'
+    Actions: 'list[InlineActionAttribute]' = field(default_factory=list)
+    Attributes: 'Any' = None
+    Category: 'str' = ""
+    CurrentValue: 'Any' = None
+    Description: 'str' = ""
+    EnumValues: 'dict[str, str] | None' = field(default_factory=dict)
+    InputType: 'str' = ""
+    Keywords: 'str' = ""
+    MaxLength: 'int' = 0
+    MaxValue: 'float | None' = None
+    Meta: 'str' = ""
+    MinValue: 'float | None' = None
+    Name: 'str' = ""
+    Node: 'str' = ""
+    Order: 'int' = 0
+    Placeholder: 'str' = ""
+    SelectionSource: 'StringSelectionSourceAttribute' = None
+    Subcategory: 'str' = ""
+    Suffix: 'str' = ""
+    Tag: 'str' = ""
+    ValType: 'str' = ""
+    EnumValuesAreDeferred: 'bool' = False
+    ReadOnlyProvision: 'bool' = False
+    IsProvisionSpec: 'bool' = False
+    AlwaysAllowRead: 'bool' = False
+    ReadOnly: 'bool' = False
+    Required: 'bool' = False
+    RequiresRestart: 'bool' = False
 
 @dataclass
 class SimpleUser:
@@ -2250,16 +2250,16 @@ class SimpleUser:
     :param UserSessionId: The user session ID
     :type UserSessionId: str
     """
-    Id: 'str'
-    IPAddress: 'str'
-    UID: 'str'
-    JoinTime: 'str'
-    Name: 'str'
-    Port: 'int'
-    SessionID: 'str'
-    Tags: 'list[str]'
-    TimeLoggedIn: 'str'
-    UserSessionId: 'str'
+    Id: 'str' = ""
+    IPAddress: 'str' = ""
+    UID: 'str' = ""
+    JoinTime: 'str' = ""
+    Name: 'str' = ""
+    Port: 'int' = 0
+    SessionID: 'str' = ""
+    Tags: 'list[str]' = field(default_factory=list)
+    TimeLoggedIn: 'str' = ""
+    UserSessionId: 'str' = ""
 
 @dataclass
 class StatusResponse:
@@ -2272,9 +2272,9 @@ class StatusResponse:
     :param Uptime: The uptime of the instance
     :type Uptime: str
     """
-    Metrics: 'dict[str, MetricInfo]'
-    State: 'ApplicationState'
-    Uptime: 'str'
+    Metrics: 'dict[str, MetricInfo]' = field(default_factory=dict)
+    State: 'ApplicationState' = None
+    Uptime: 'str' = ""
 
 @dataclass
 class StringSelectionSourceAttribute:
@@ -2285,8 +2285,8 @@ class StringSelectionSourceAttribute:
     :param MustValidate: Whether the selection source must validate
     :type MustValidate: bool
     """
-    Deferred: 'bool'
-    MustValidate: 'bool'
+    Deferred: 'bool' = False
+    MustValidate: 'bool' = False
 
 class SupportedOS(Enum):
     """
@@ -2376,17 +2376,17 @@ class TimeIntervalTrigger:
     :param Order: The order
     :type Order: int
     """
-    Id: 'str'
-    Description: 'str'
-    EnabledState: 'ScheduleEnabledState'
-    LastExecuted: 'str | None'
-    MatchDaysOfMonth: 'list[int]'
-    MatchDays: 'list[int]'
-    MatchHours: 'list[int]'
-    MatchMinutes: 'list[int]'
-    MatchMonths: 'list[int]'
-    Name: 'str'
-    Order: 'int'
+    Id: 'str' = ""
+    Description: 'str' = ""
+    EnabledState: 'ScheduleEnabledState' = None
+    LastExecuted: 'str | None' = None
+    MatchDaysOfMonth: 'list[int]' = field(default_factory=list)
+    MatchDays: 'list[int]' = field(default_factory=list)
+    MatchHours: 'list[int]' = field(default_factory=list)
+    MatchMinutes: 'list[int]' = field(default_factory=list)
+    MatchMonths: 'list[int]' = field(default_factory=list)
+    Name: 'str' = ""
+    Order: 'int' = 0
 
 @dataclass
 class TriggerInfo:
@@ -2407,13 +2407,13 @@ class TriggerInfo:
     :param Type: The type
     :type Type: str
     """
-    Id: 'str'
-    Description: 'str'
-    Emits: 'list[str]'
-    EnabledState: 'ScheduleEnabledState'
-    Tasks: 'list[ScheduleEntryDefinition]'
-    TriggerType: 'str'
-    Type: 'str'
+    Id: 'str' = ""
+    Description: 'str' = ""
+    Emits: 'list[str]' = field(default_factory=list)
+    EnabledState: 'ScheduleEnabledState' = None
+    Tasks: 'list[ScheduleEntryDefinition]' = field(default_factory=list)
+    TriggerType: 'str' = ""
+    Type: 'str' = ""
 
 @dataclass
 class TwoFactorSetupInfo:
@@ -2424,8 +2424,8 @@ class TwoFactorSetupInfo:
     :param ManualKey: The manual key
     :type ManualKey: str
     """
-    Url: 'str'
-    ManualKey: 'str'
+    Url: 'str' = ""
+    ManualKey: 'str' = ""
 
 @dataclass
 class UpdateInfo:
@@ -2444,12 +2444,12 @@ class UpdateInfo:
     :param PatchOnly: Whether the update is a patch
     :type PatchOnly: bool
     """
-    ReleaseNotesURL: 'str'
-    Build: 'str'
-    ToolsVersion: 'str'
-    Version: 'str'
-    UpdateAvailable: 'bool'
-    PatchOnly: 'bool'
+    ReleaseNotesURL: 'str' = ""
+    Build: 'str' = ""
+    ToolsVersion: 'str' = ""
+    Version: 'str' = ""
+    UpdateAvailable: 'bool' = False
+    PatchOnly: 'bool' = False
 
 @dataclass
 class UpdateResponse:
@@ -2466,11 +2466,11 @@ class UpdateResponse:
     :param Tasks: The tasks of the server
     :type Tasks: list[RunningTask]
     """
-    ConsoleEntries: 'list[ConsoleEntry]'
-    Messages: 'list[PushedMessage]'
-    Ports: 'list[ListeningPortSummary]'
-    Status: 'StatusResponse'
-    Tasks: 'list[RunningTask]'
+    ConsoleEntries: 'list[ConsoleEntry]' = field(default_factory=list)
+    Messages: 'list[PushedMessage]' = field(default_factory=list)
+    Ports: 'list[ListeningPortSummary]' = field(default_factory=list)
+    Status: 'StatusResponse' = None
+    Tasks: 'list[RunningTask]' = field(default_factory=list)
 
 @dataclass
 class UserAccessData:
@@ -2481,8 +2481,8 @@ class UserAccessData:
     :param Whitelist: The whitelist
     :type Whitelist: list[WhitelistEntry]
     """
-    OPList: 'list[OPEntry]'
-    Whitelist: 'list[WhitelistEntry]'
+    OPList: 'list[OPEntry]' = field(default_factory=list)
+    Whitelist: 'list[WhitelistEntry]' = field(default_factory=list)
 
 @dataclass
 class UserInfo:
@@ -2519,21 +2519,21 @@ class UserInfo:
     :param IsTwoFactorEnabled: Whether two-factor is enabled
     :type IsTwoFactorEnabled: bool
     """
-    ID: 'str'
-    AvatarBase64: 'str'
-    EmailAddress: 'str'
-    GravatarHash: 'str'
-    LastLogin: 'str'
-    Name: 'str'
-    Permissions: 'list[str]'
-    Roles: 'list[str]'
-    CannotChangePassword: 'bool'
-    PasswordExpires: 'bool'
-    MustChangePassword: 'bool'
-    IsSuperUser: 'bool'
-    IsLDAPUser: 'bool'
-    Disabled: 'bool'
-    IsTwoFactorEnabled: 'bool'
+    ID: 'str' = ""
+    AvatarBase64: 'str' = ""
+    EmailAddress: 'str' = ""
+    GravatarHash: 'str' = ""
+    LastLogin: 'str' = ""
+    Name: 'str' = ""
+    Permissions: 'list[str]' = field(default_factory=list)
+    Roles: 'list[str]' = field(default_factory=list)
+    CannotChangePassword: 'bool' = False
+    PasswordExpires: 'bool' = False
+    MustChangePassword: 'bool' = False
+    IsSuperUser: 'bool' = False
+    IsLDAPUser: 'bool' = False
+    Disabled: 'bool' = False
+    IsTwoFactorEnabled: 'bool' = False
 
 @dataclass
 class UserInfoSummary:
@@ -2558,15 +2558,15 @@ class UserInfoSummary:
     :param Disabled: Whether the user is disabled
     :type Disabled: bool
     """
-    GravatarHash: 'str'
-    AvatarBase64: 'str'
-    EmailAddress: 'str'
-    LastLogin: 'str'
-    ID: 'str'
-    Username: 'str'
-    IsTwoFactorEnabled: 'bool'
-    IsLDAPUser: 'bool'
-    Disabled: 'bool'
+    GravatarHash: 'str' = ""
+    AvatarBase64: 'str' = ""
+    EmailAddress: 'str' = ""
+    LastLogin: 'str' = ""
+    ID: 'str' = ""
+    Username: 'str' = ""
+    IsTwoFactorEnabled: 'bool' = False
+    IsLDAPUser: 'bool' = False
+    Disabled: 'bool' = False
 
 @dataclass
 class Version:
@@ -2585,12 +2585,12 @@ class Version:
     :param Revision: The revision number
     :type Revision: int
     """
-    Build: 'int'
-    MajorRevision: 'int'
-    Major: 'int'
-    MinorRevision: 'int'
-    Minor: 'int'
-    Revision: 'int'
+    Build: 'int' = 0
+    MajorRevision: 'int' = 0
+    Major: 'int' = 0
+    MinorRevision: 'int' = 0
+    Minor: 'int' = 0
+    Revision: 'int' = 0
 
 class VirtualizationType(Enum):
     """
@@ -2649,10 +2649,10 @@ class WebauthnCredentialSummary:
     :param LastUsedUTC: The last used time
     :type LastUsedUTC: str
     """
-    ID: 'int'
-    CreatedUTC: 'str'
-    Description: 'str'
-    LastUsedUTC: 'str'
+    ID: 'int' = 0
+    CreatedUTC: 'str' = ""
+    Description: 'str' = ""
+    LastUsedUTC: 'str' = ""
 
 @dataclass
 class WebauthnLoginInfo:
@@ -2663,8 +2663,8 @@ class WebauthnLoginInfo:
     :param Challenge: The challenge
     :type Challenge: str
     """
-    Ids: 'list[str]'
-    Challenge: 'str'
+    Ids: 'list[str]' = field(default_factory=list)
+    Challenge: 'str' = ""
 
 @dataclass
 class WebSessionSummary:
@@ -2683,12 +2683,12 @@ class WebSessionSummary:
     :param Username: The username
     :type Username: str
     """
-    LastActivity: 'str'
-    SessionID: 'str'
-    SessionType: 'str'
-    Source: 'str'
-    StartTime: 'str'
-    Username: 'str'
+    LastActivity: 'str' = ""
+    SessionID: 'str' = ""
+    SessionType: 'str' = ""
+    Source: 'str' = ""
+    StartTime: 'str' = ""
+    Username: 'str' = ""
 
 @dataclass
 class WhitelistEntry:
@@ -2699,6 +2699,6 @@ class WhitelistEntry:
     :param Name: The name
     :type Name: str
     """
-    UUID: 'str'
-    Name: 'str'
+    UUID: 'str' = ""
+    Name: 'str' = ""
 

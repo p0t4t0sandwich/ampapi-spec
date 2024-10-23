@@ -3,5 +3,5 @@
         Name Description Optional
 {MethodParameterDocs}:returns: {ReturnType}
         """
-        return {ReturnType}(**self.api_call("{PluginName}/{MethodName}", {{MethodParameterArgs}}))
+        return json_to_obj(self.api_call("{PluginName}/{MethodName}", {{MethodParameterArgs}}), {ReturnType})
 

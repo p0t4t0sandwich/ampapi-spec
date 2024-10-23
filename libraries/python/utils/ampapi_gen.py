@@ -153,7 +153,20 @@ class CodeGen:
                 for field in type_def.Fields:
                     field.TypeName = self._convert_type(field.TypeName, field.Optional)
 
-                    field_text = f"    {field.Name}: '{field.TypeName}'"
+                    if field.TypeName == "str":
+                        field_text = f"    {field.Name}: '{field.TypeName}' = \"\""
+                    elif field.TypeName == "int":
+                        field_text = f"    {field.Name}: '{field.TypeName}' = 0"
+                    elif field.TypeName == "float":
+                        field_text = f"    {field.Name}: '{field.TypeName}' = 0.0"
+                    elif field.TypeName == "bool":
+                        field_text = f"    {field.Name}: '{field.TypeName}' = False"
+                    elif field.TypeName.startswith("dict"):
+                        field_text = f"    {field.Name}: '{field.TypeName}' = field(default_factory=dict)"
+                    elif field.TypeName.startswith("list"):
+                        field_text = f"    {field.Name}: '{field.TypeName}' = field(default_factory=list)"
+                    else:
+                        field_text = f"    {field.Name}: '{field.TypeName}' = None"
                     type_def_description += f"\n    :param {field.Name}: {field.Description}\n    :type {field.Name}: {field.TypeName}"
                     field_text += "\n"
 

@@ -2,6 +2,7 @@ import asyncio
 
 from libraries.python.ampapi.auth import BasicAuthProvider, BasicAuthProviderAsync
 from libraries.python.ampapi.modules import CommonAPI, CommonAPIAsync
+from libraries.python.ampapi.types import MetricInfo
 
 authProvider = BasicAuthProvider(
     panelUrl="http://localhost:8080",
@@ -11,7 +12,7 @@ authProvider = BasicAuthProvider(
 
 api = CommonAPI(authProvider)
 
-print(api.Core.GetStatus())
+print(api.Core.GetSettingsSpec())
 
 # authProvider = BasicAuthProviderAsync(
 #     panelUrl="http://localhost:8080",

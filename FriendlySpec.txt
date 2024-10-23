@@ -55,7 +55,7 @@ ADSModule.StopInstance(InstanceName: String) -> ActionResult
 ADSModule.TestADSLoginDetails(url: String, username: String, password: String, twoFactorToken: String) -> ActionResult
 ADSModule.UpdateDatastore(updatedDatastore: InstanceDatastore) -> ActionResult
 ADSModule.UpdateDeploymentTemplate(templateToUpdate: DeploymentTemplate) -> ActionResult
-ADSModule.UpdateInstanceInfo(InstanceId: String, FriendlyName: String, Description: String, StartOnBoot: Boolean, Suspended: Boolean, ExcludeFromFirewall: Boolean, RunInContainer: Boolean, ContainerMemory: Int32, MemoryPolicy: ContainerMemoryPolicy, ContainerMaxCPU: Single, ContainerImage: String, ContainerSwap: Int32, WelcomeMessage: String) -> ActionResult
+ADSModule.UpdateInstanceInfo(InstanceId: String, FriendlyName: String, Description: String, StartOnBoot: Boolean, Suspended: Boolean, ExcludeFromFirewall: Boolean, RunInContainer: Boolean, ContainerMemory: Int32, MemoryPolicy: ContainerMemoryPolicy, ContainerMaxCPU: Float, ContainerImage: String, ContainerSwap: Int32, WelcomeMessage: String) -> ActionResult
 ADSModule.UpdateTarget(TargetID: Guid) -> Void
 ADSModule.UpdateTargetInfo(Id: Guid, FriendlyName: String, Url: Uri, Description: String, Tags: List<String>) -> ActionResult
 ADSModule.UpgradeAllInstances(RestartRunning: Boolean, TargetADSInstance: Guid) -> ActionResult
@@ -64,7 +64,7 @@ AnalyticsPlugin.GetAnalyticsSummary(PeriodDays: Int32, StartDate: Nullable<DateT
 Core.AcknowledgeAMPUpdate() -> Void
 Core.ActivateAMPLicence(LicenceKey: String, QueryOnly: Boolean) -> ActionResult<LicenceInfo>
 Core.AddEventTrigger(triggerId: Guid) -> ActionResult
-Core.AddIntervalTrigger(months: Int32[], days: Int32[], hours: Int32[], minutes: Int32[], daysOfMonth: Int32[], description: String) -> ActionResult
+Core.AddIntervalTrigger(months: List<Int32>, days: List<Int32>, hours: List<Int32>, minutes: List<Int32>, daysOfMonth: List<Int32>, description: String) -> ActionResult
 Core.AddTask(TriggerID: Guid, MethodID: String, ParameterMapping: Dictionary<String, String>) -> ActionResult
 Core.AsyncTest() -> String
 Core.CancelTask(TaskId: Guid) -> ActionResult
@@ -83,7 +83,7 @@ Core.DeleteUser(Username: String) -> ActionResult
 Core.DisableTwoFactor(Password: String, TwoFactorCode: String) -> ActionResult
 Core.DismissAllTasks() -> ActionResult
 Core.DismissTask(TaskId: Guid) -> ActionResult
-Core.EditIntervalTrigger(Id: Guid, months: Int32[], days: Int32[], hours: Int32[], minutes: Int32[], daysOfMonth: Int32[], description: String) -> ActionResult
+Core.EditIntervalTrigger(Id: Guid, months: List<Int32>, days: List<Int32>, hours: List<Int32>, minutes: List<Int32>, daysOfMonth: List<Int32>, description: String) -> ActionResult
 Core.EditTask(TriggerID: Guid, TaskID: Guid, ParameterMapping: Dictionary<String, String>) -> ActionResult
 Core.EnableTwoFactor(Username: String, Password: String) -> ActionResult<TwoFactorSetupInfo>
 Core.EndUserSession(Id: Guid) -> Void
@@ -96,7 +96,7 @@ Core.GetAllAMPUserInfo() -> List<UserInfo>
 Core.GetAuditLogEntries(Before: Nullable<DateTime>, Count: Int32) -> List<IAuditLogEntry>
 Core.GetAuthenticationRequirements(username: String) -> List<AuthenticationRequirement>
 Core.GetConfig(node: String) -> SettingSpec
-Core.GetConfigs(nodes: String[]) -> List<SettingSpec>
+Core.GetConfigs(nodes: List<String>) -> List<SettingSpec>
 Core.GetDiagnosticsInfo() -> Dictionary<String, String>
 Core.GetModuleInfo() -> ModuleInfo
 Core.GetNewGuid() -> Guid
@@ -171,7 +171,7 @@ FileManagerPlugin.RenameFile(Filename: String, NewFilename: String) -> ActionRes
 FileManagerPlugin.TrashDirectory(DirectoryName: String) -> ActionResult
 FileManagerPlugin.TrashFile(Filename: String) -> ActionResult
 FileManagerPlugin.WriteFileChunk(Filename: String, Data: String, Offset: Int64, FinalChunk: Boolean) -> ActionResult
-GenericModule.ImportConfig(filename: String) -> IDictionary<String, String>
+GenericModule.ImportConfig(filename: String) -> Dictionary<String, String>
 GenericModule.ReloadGenericConfig() -> Void
 LocalFileBackupPlugin.DeleteFromS3(BackupId: Guid) -> ActionResult
 LocalFileBackupPlugin.DeleteLocalBackup(BackupId: Guid) -> Void
