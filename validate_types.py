@@ -192,15 +192,15 @@ if __name__ == "__main__":
     spec = {
         "ADSModule": {
             # "GetApplicationEndpoints": {"instanceId": "5fba16ec-9475-40f9-a517-33b4176c6def"},
-            # "GetDatastore": {"id": 1}
-            # "GetDatastoreInstances": {"datastoreId": 1}
+            # "GetDatastore": {"id": 1},
+#            # "GetDatastoreInstances": {"datastoreId": 1},
             # "GetDatastores": {},
             # "GetDeploymentTemplates": {},
-            # "GetGroup": {"GroupId": "5fba16ec-9475-40f9-a517-33b4176c6def"}, # Missing fields, needs further testing
-            # "GetInstance": {"InstanceId": "5fba16ec-9475-40f9-a517-33b4176c6def"}, # Missing fields, needs further testing
+#            # "GetGroup": {"GroupId": "5fba16ec-9475-40f9-a517-33b4176c6def"}, # Missing fields, needs further testing
+#            # "GetInstance": {"InstanceId": "5fba16ec-9475-40f9-a517-33b4176c6def"}, # Missing fields, needs further testing
             # "GetInstanceNetworkInfo": {"InstanceName": "ADS01"},
             # "GetInstanceStatuses": {},
-            # "GetInstances": {"ForceIncludeSelf": True},
+#            "GetInstances": {"ForceIncludeSelf": True},
             # "GetLocalInstances": {}, # Missing fields, needs further testing
             # "GetProvisionArguments": {"ModuleName": "Minecraft"}, # Missing fields, needs further testing
             # "GetProvisionFitness": {}
@@ -234,21 +234,21 @@ if __name__ == "__main__":
             # "GetModuleInfo": {}
             # "GetNewGuid": {}
             # "GetPermissionsSpec": {} # Recursive type, needs to be reworked. Could maybe just turn the inner value into Object?
-            # "GetPortSummaries": {}
-            # "GetProvisionSpec": {}
-            # "GetRemoteLoginToken": {"Description": "Test", "IsTemporary": True}
-            # "GetRole": {"RoleId": "57e8d684-88c1-43ab-9cae-48c795a7e012"}
-            # "GetRoleData": {}
+            # "GetPortSummaries": {},
+#            "GetProvisionSpec": {},
+            # "GetRemoteLoginToken": {"Description": "Test", "IsTemporary": True},
+            # "GetRole": {"RoleId": "57e8d684-88c1-43ab-9cae-48c795a7e012"},
+            # "GetRoleData": {},
             # "GetRoleIds": {} # Needs some work to convert Dictionary<Guid, String> to {str: str}
-            # "GetScheduleData": {}
+            # "GetScheduleData": {},
             # "GetSettingValues": {"SettingNode": "ADSModule.Network.DefaultAppIPBinding", "WithRefresh": True} # Apparently Dictionary<String, String> converted to {str: str} is a bit weird
             # "GetSettingsSpec": {} # Dictionary<String, SettingSpec> needs some work
             # "GetStatus": {},
             # "GetTasks": {}
             # "GetTimeIntervalTrigger": {"Id": "bd0ce7c3-ab80-48ac-b134-174b63acb04b"} # Needs some tinkering
-            # "GetUpdateInfo": {}
-            # "GetUpdates": {}
-            # "GetUserActionsSpec": {}
+            # "GetUpdateInfo": {},
+            # "GetUpdates": {},
+            # "GetUserActionsSpec": {},
             # "GetUserList": {} # Apparently Dictionary<String, String> converted to {str: str} is a bit weird
             # "GetWebauthnChallenge": {} # ActionResult<String> generic needs some more parsing
             # "GetWebauthnCredentialIDs": {"username": "api_user"}

@@ -8,15 +8,9 @@
                 "TypeName": "String"
             },
             {
-                "Description": "Result of the call",
-                "Name": "Result",
-                "Optional": true,
-                "TypeName": "Generic"
-            },
-            {
-                "Description": "Support URL",
-                "Name": "SupportURL",
-                "TypeName": "String"
+                "Description": "true if successful, false if not",
+                "Name": "Status",
+                "TypeName": "Boolean"
             },
             {
                 "Description": "Support title",
@@ -24,9 +18,15 @@
                 "TypeName": "String"
             },
             {
-                "Description": "true if successful, false if not",
-                "Name": "Status",
-                "TypeName": "Boolean"
+                "Description": "Support URL",
+                "Name": "SupportURL",
+                "TypeName": "String"
+            },
+            {
+                "Description": "Result of the call",
+                "Name": "Result",
+                "Optional": true,
+                "TypeName": "Generic"
             }
         ],
         "SpecialNote": "Can also be used in non-generic form, in such it uses SupportURL and SupportTitle",
@@ -43,17 +43,12 @@
             {
                 "Description": "The AMP version",
                 "Name": "AMPVersion",
-                "TypeName": "Version"
-            },
-            {
-                "Description": "The IP",
-                "Name": "IP",
                 "TypeName": "String"
             },
             {
-                "Description": "The OS",
-                "Name": "OS",
-                "TypeName": "SupportedOS"
+                "Description": "Whether to use automatic UPnP",
+                "Name": "AutomaticUPnP",
+                "TypeName": "Boolean"
             },
             {
                 "Description": "The container CPUs",
@@ -91,6 +86,16 @@
                 "TypeName": "List<PortUsage>"
             },
             {
+                "Description": "Whether the instance is a daemon",
+                "Name": "Daemon",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "Whether the daemon should autostart",
+                "Name": "DaemonAutostart",
+                "TypeName": "Boolean"
+            },
+            {
                 "Description": "The datastore ID",
                 "Name": "DatastoreId",
                 "TypeName": "Int32"
@@ -116,9 +121,24 @@
                 "TypeName": "String"
             },
             {
+                "Description": "Whether the Docker base is read-only",
+                "Name": "DockerBaseReadOnly",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "Whether to exclude from the firewall",
+                "Name": "ExcludeFromFirewall",
+                "TypeName": "Boolean"
+            },
+            {
                 "Description": "The extra container packages",
                 "Name": "ExtraContainerPackages",
                 "TypeName": "List<String>"
+            },
+            {
+                "Description": "Whether to force Docker",
+                "Name": "ForceDocker",
+                "TypeName": "Boolean"
             },
             {
                 "Description": "The friendly name",
@@ -128,6 +148,11 @@
             {
                 "Description": "The group",
                 "Name": "Group",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The IP",
+                "Name": "IP",
                 "TypeName": "String"
             },
             {
@@ -141,10 +166,14 @@
                 "TypeName": "String"
             },
             {
-                "Description": "The last reactivation attempt",
-                "Name": "LastReactivationAttempt",
-                "Optional": true,
-                "TypeName": "DateTime"
+                "Description": "Whether the instance is a container",
+                "Name": "IsContainerInstance",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "Whether the instance is HTTPS",
+                "Name": "IsHTTPS",
+                "TypeName": "Boolean"
             },
             {
                 "Description": "The management mode",
@@ -152,8 +181,18 @@
                 "TypeName": "ManagementModes"
             },
             {
+                "Description": "Whether to match the version",
+                "Name": "MatchVersion",
+                "TypeName": "Boolean"
+            },
+            {
                 "Description": "The metrics publishing HMAC",
                 "Name": "MetricsPublishingHMAC",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The module",
+                "Name": "Module",
                 "TypeName": "String"
             },
             {
@@ -162,9 +201,9 @@
                 "TypeName": "String"
             },
             {
-                "Description": "The module",
-                "Name": "Module",
-                "TypeName": "String"
+                "Description": "The OS",
+                "Name": "OS",
+                "TypeName": "SupportedOS"
             },
             {
                 "Description": "The overlay path",
@@ -199,7 +238,7 @@
             {
                 "Description": "The previous version",
                 "Name": "PreviousVersion",
-                "TypeName": "Version"
+                "TypeName": "String"
             },
             {
                 "Description": "The release stream",
@@ -212,6 +251,11 @@
                 "TypeName": "String"
             },
             {
+                "Description": "Whether the instance is suspended",
+                "Name": "Suspended",
+                "TypeName": "Boolean"
+            },
+            {
                 "Description": "The tag",
                 "Name": "Tag",
                 "TypeName": "String"
@@ -222,9 +266,19 @@
                 "TypeName": "List<String>"
             },
             {
+                "Description": "Whether tags are used for configuration",
+                "Name": "TagsUsedForConfiguration",
+                "TypeName": "Boolean"
+            },
+            {
                 "Description": "The target ID",
                 "Name": "TargetID",
                 "TypeName": "Guid"
+            },
+            {
+                "Description": "Whether to use host mode networking",
+                "Name": "UseHostModeNetwork",
+                "TypeName": "Boolean"
             },
             {
                 "Description": "The user",
@@ -237,64 +291,10 @@
                 "TypeName": "String"
             },
             {
-                "Description": "Whether tags are used for configuration",
-                "Name": "TagsUsedForConfiguration",
-                "TypeName": "Boolean"
-            },
-            {
-                "Description": "Whether the Docker base is read-only",
-                "Name": "DockerBaseReadOnly",
-                "TypeName": "Boolean"
-            },
-            {
-                "Description": "Whether the daemon should autostart",
-                "Name": "DaemonAutostart",
-                "TypeName": "Boolean"
-            },
-            {
-                "Description": "Whether the instance is HTTPS",
-                "Name": "IsHTTPS",
-                "TypeName": "Boolean"
-            },
-            {
-                "Description": "Whether the instance is a container",
-                "Name": "IsContainerInstance",
-                "TypeName": "Boolean"
-            },
-            {
-                "Description": "Whether the instance is a daemon",
-                "Name": "Daemon",
-                "TypeName": "Boolean"
-            },
-            {
-                "Description": "Whether the instance is suspended",
-                "Name": "Suspended",
-                "TypeName": "Boolean"
-            },
-            {
-                "Description": "Whether to exclude from the firewall",
-                "Name": "ExcludeFromFirewall",
-                "TypeName": "Boolean"
-            },
-            {
-                "Description": "Whether to force Docker",
-                "Name": "ForceDocker",
-                "TypeName": "Boolean"
-            },
-            {
-                "Description": "Whether to match the version",
-                "Name": "MatchVersion",
-                "TypeName": "Boolean"
-            },
-            {
-                "Description": "Whether to use automatic UPnP",
-                "Name": "AutomaticUPnP",
-                "TypeName": "Boolean"
-            },
-            {
-                "Description": "Whether to use host mode networking",
-                "Name": "UseHostModeNetwork",
-                "TypeName": "Boolean"
+                "Description": "The last reactivation attempt",
+                "Name": "LastReactivationAttempt",
+                "Optional": true,
+                "TypeName": "DateTime"
             }
         ]
     },
@@ -357,11 +357,6 @@
         "Description": "An error object",
         "Fields": [
             {
-                "Description": "The title of the error",
-                "Name": "Title",
-                "TypeName": "String"
-            },
-            {
                 "Description": "The error message",
                 "Name": "Message",
                 "TypeName": "String"
@@ -370,6 +365,11 @@
                 "Description": "The stack trace of the error",
                 "Name": "StackTrace",
                 "TypeName": "String"
+            },
+            {
+                "Description": "The title of the error",
+                "Name": "Title",
+                "TypeName": "String"
             }
         ]
     },
@@ -377,9 +377,9 @@
         "Description": "Information about an API method",
         "Fields": [
             {
-                "Description": "The ID",
-                "Name": "Id",
-                "TypeName": "String"
+                "Description": "The parameters",
+                "Name": "Consumes",
+                "TypeName": "List<ScheduleTaskParameter>"
             },
             {
                 "Description": "The description",
@@ -392,25 +392,20 @@
                 "TypeName": "String"
             },
             {
-                "Description": "The name",
-                "Name": "Name",
+                "Description": "The ID",
+                "Name": "Id",
                 "TypeName": "String"
             },
             {
-                "Description": "The parameters",
-                "Name": "Consumes",
-                "TypeName": "List<ScheduleTaskParameter>"
+                "Description": "The name",
+                "Name": "Name",
+                "TypeName": "String"
             }
         ]
     },
     "ApplicationSpec": {
         "Description": "A specification for an application",
         "Fields": [
-            {
-                "Description": "The ID",
-                "Name": "Id",
-                "TypeName": "Guid"
-            },
             {
                 "Description": "The author",
                 "Name": "Author",
@@ -452,9 +447,24 @@
                 "TypeName": "String"
             },
             {
+                "Description": "The ID",
+                "Name": "Id",
+                "TypeName": "Guid"
+            },
+            {
+                "Description": "Whether the spec is a service spec",
+                "Name": "IsServiceSpec",
+                "TypeName": "Boolean"
+            },
+            {
                 "Description": "The module name",
                 "Name": "ModuleName",
                 "TypeName": "String"
+            },
+            {
+                "Description": "Whether commercial usage is allowed",
+                "Name": "NoCommercialUsage",
+                "TypeName": "Boolean"
             },
             {
                 "Description": "The origin",
@@ -470,27 +480,12 @@
                 "Description": "The supported platforms",
                 "Name": "SupportedPlatforms",
                 "TypeName": "SupportedOS"
-            },
-            {
-                "Description": "Whether commercial usage is allowed",
-                "Name": "NoCommercialUsage",
-                "TypeName": "Boolean"
-            },
-            {
-                "Description": "Whether the spec is a service spec",
-                "Name": "IsServiceSpec",
-                "TypeName": "Boolean"
             }
         ]
     },
     "ApplicationSpecSummary": {
         "Description": "A summary of an application spec",
         "Fields": [
-            {
-                "Description": "The ID",
-                "Name": "Id",
-                "TypeName": "Guid"
-            },
             {
                 "Description": "The author",
                 "Name": "Author",
@@ -532,6 +527,21 @@
                 "TypeName": "String"
             },
             {
+                "Description": "The ID",
+                "Name": "Id",
+                "TypeName": "Guid"
+            },
+            {
+                "Description": "Whether the spec is a service spec",
+                "Name": "IsServiceSpec",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "Whether commercial usage is allowed",
+                "Name": "NoCommercialUsage",
+                "TypeName": "Boolean"
+            },
+            {
                 "Description": "The origin",
                 "Name": "Origin",
                 "TypeName": "String"
@@ -540,16 +550,6 @@
                 "Description": "The supported platforms",
                 "Name": "SupportedPlatforms",
                 "TypeName": "SupportedOS"
-            },
-            {
-                "Description": "Whether commercial usage is allowed",
-                "Name": "NoCommercialUsage",
-                "TypeName": "Boolean"
-            },
-            {
-                "Description": "Whether the spec is a service spec",
-                "Name": "IsServiceSpec",
-                "TypeName": "Boolean"
             }
         ]
     },
@@ -837,14 +837,39 @@
         "Description": "A summary of an authenticated role",
         "Fields": [
             {
+                "Description": "The description",
+                "Name": "Description",
+                "TypeName": "String"
+            },
+            {
+                "Description": "Whether edits are disabled",
+                "Name": "DisableEdits",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "Whether the role is hidden",
+                "Name": "Hidden",
+                "TypeName": "Boolean"
+            },
+            {
                 "Description": "The ID",
                 "Name": "ID",
                 "TypeName": "Guid"
             },
             {
-                "Description": "The description",
-                "Name": "Description",
-                "TypeName": "String"
+                "Description": "Whether the role is common",
+                "Name": "IsCommonRole",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "Whether the role is default",
+                "Name": "IsDefault",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "Whether the role is instance specific",
+                "Name": "IsInstanceSpecific",
+                "TypeName": "Boolean"
             },
             {
                 "Description": "The members",
@@ -860,31 +885,6 @@
                 "Description": "The permissions",
                 "Name": "Permissions",
                 "TypeName": "List<String>"
-            },
-            {
-                "Description": "Whether edits are disabled",
-                "Name": "DisableEdits",
-                "TypeName": "Boolean"
-            },
-            {
-                "Description": "Whether the role is common",
-                "Name": "IsCommonRole",
-                "TypeName": "Boolean"
-            },
-            {
-                "Description": "Whether the role is default",
-                "Name": "IsDefault",
-                "TypeName": "Boolean"
-            },
-            {
-                "Description": "Whether the role is hidden",
-                "Name": "Hidden",
-                "TypeName": "Boolean"
-            },
-            {
-                "Description": "Whether the role is instance specific",
-                "Name": "IsInstanceSpecific",
-                "TypeName": "Boolean"
             }
         ]
     },
@@ -907,9 +907,14 @@
         "Description": "A backup manifest",
         "Fields": [
             {
-                "Description": "The ID",
-                "Name": "Id",
-                "TypeName": "Guid"
+                "Description": "Whether the backup was created automatically",
+                "Name": "CreatedAutomatically",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "The description",
+                "Name": "Description",
+                "TypeName": "String"
             },
             {
                 "Description": "The SHA1 hash",
@@ -917,9 +922,9 @@
                 "TypeName": "String"
             },
             {
-                "Description": "The description",
-                "Name": "Description",
-                "TypeName": "String"
+                "Description": "The ID",
+                "Name": "Id",
+                "TypeName": "Guid"
             },
             {
                 "Description": "The meta",
@@ -937,12 +942,6 @@
                 "TypeName": "String"
             },
             {
-                "Description": "The parent manifest",
-                "Name": "ParentManifest",
-                "Optional": true,
-                "TypeName": "Guid"
-            },
-            {
                 "Description": "The remote store ID",
                 "Name": "RemoteStoreId",
                 "TypeName": "String"
@@ -951,21 +950,6 @@
                 "Description": "The source OS",
                 "Name": "SourceOS",
                 "TypeName": "SupportedOS"
-            },
-            {
-                "Description": "The timestamp",
-                "Name": "Timestamp",
-                "TypeName": "DateTime"
-            },
-            {
-                "Description": "The total size in bytes",
-                "Name": "TotalSizeBytes",
-                "TypeName": "Int64"
-            },
-            {
-                "Description": "The user who took the backup",
-                "Name": "TakenBy",
-                "TypeName": "String"
             },
             {
                 "Description": "Whether the backup is sticky",
@@ -983,9 +967,25 @@
                 "TypeName": "Boolean"
             },
             {
-                "Description": "Whether the backup was created automatically",
-                "Name": "CreatedAutomatically",
-                "TypeName": "Boolean"
+                "Description": "The user who took the backup",
+                "Name": "TakenBy",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The timestamp",
+                "Name": "Timestamp",
+                "TypeName": "DateTime"
+            },
+            {
+                "Description": "The total size in bytes",
+                "Name": "TotalSizeBytes",
+                "TypeName": "Int64"
+            },
+            {
+                "Description": "The parent manifest",
+                "Name": "ParentManifest",
+                "Optional": true,
+                "TypeName": "Guid"
             }
         ]
     },
@@ -993,11 +993,6 @@
         "Description": "Branding information",
         "Fields": [
             {
-                "Description": "The URL",
-                "Name": "URL",
-                "TypeName": "String"
-            },
-            {
                 "Description": "The background URL",
                 "Name": "BackgroundURL",
                 "TypeName": "String"
@@ -1011,6 +1006,11 @@
                 "Description": "The company name",
                 "Name": "CompanyName",
                 "TypeName": "String"
+            },
+            {
+                "Description": "Whether to display branding",
+                "Name": "DisplayBranding",
+                "TypeName": "Boolean"
             },
             {
                 "Description": "The forgot password URL",
@@ -1043,24 +1043,24 @@
                 "TypeName": "String"
             },
             {
+                "Description": "The support text",
+                "Name": "SupportText",
+                "TypeName": "String"
+            },
+            {
                 "Description": "The support URL",
                 "Name": "SupportURL",
                 "TypeName": "String"
             },
             {
-                "Description": "The support text",
-                "Name": "SupportText",
+                "Description": "The URL",
+                "Name": "URL",
                 "TypeName": "String"
             },
             {
                 "Description": "The welcome message",
                 "Name": "WelcomeMessage",
                 "TypeName": "String"
-            },
-            {
-                "Description": "Whether to display branding",
-                "Name": "DisplayBranding",
-                "TypeName": "Boolean"
             }
         ]
     },
@@ -1068,11 +1068,6 @@
         "Description": "Branding information",
         "Fields": [
             {
-                "Description": "The URL",
-                "Name": "URL",
-                "TypeName": "String"
-            },
-            {
                 "Description": "The background URL",
                 "Name": "BackgroundURL",
                 "TypeName": "String"
@@ -1086,6 +1081,11 @@
                 "Description": "The company name",
                 "Name": "CompanyName",
                 "TypeName": "String"
+            },
+            {
+                "Description": "Whether to display branding",
+                "Name": "DisplayBranding",
+                "TypeName": "Boolean"
             },
             {
                 "Description": "The forgot password URL",
@@ -1118,35 +1118,30 @@
                 "TypeName": "String"
             },
             {
+                "Description": "The support text",
+                "Name": "SupportText",
+                "TypeName": "String"
+            },
+            {
                 "Description": "The support URL",
                 "Name": "SupportURL",
                 "TypeName": "String"
             },
             {
-                "Description": "The support text",
-                "Name": "SupportText",
+                "Description": "The URL",
+                "Name": "URL",
                 "TypeName": "String"
             },
             {
                 "Description": "The welcome message",
                 "Name": "WelcomeMessage",
                 "TypeName": "String"
-            },
-            {
-                "Description": "Whether to display branding",
-                "Name": "DisplayBranding",
-                "TypeName": "Boolean"
             }
         ]
     },
     "ConsoleEntry": {
         "Description": "Type for Core.GetUpdates#ConsoleEntries",
         "Fields": [
-            {
-                "Description": "The ID of the message's source, eg from a player/user",
-                "Name": "SourceId",
-                "TypeName": "String"
-            },
             {
                 "Description": "The contents of the console entry",
                 "Name": "Contents",
@@ -1155,6 +1150,11 @@
             {
                 "Description": "The source of the console entry",
                 "Name": "Source",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The ID of the message's source, eg from a player/user",
+                "Name": "SourceId",
                 "TypeName": "String"
             },
             {
@@ -1271,14 +1271,14 @@
         "Description": "A datastore object",
         "Fields": [
             {
-                "Description": "The datastore ID",
-                "Name": "Id",
-                "TypeName": "Int32"
-            },
-            {
                 "Description": "The friendly name",
                 "Name": "FriendlyName",
                 "TypeName": "String"
+            },
+            {
+                "Description": "The datastore ID",
+                "Name": "Id",
+                "TypeName": "Int32"
             }
         ]
     },
@@ -1286,14 +1286,24 @@
         "Description": "A deployment template object",
         "Fields": [
             {
-                "Description": "The ID",
-                "Name": "Id",
-                "TypeName": "Int32"
+                "Description": "Whether to clone the role into the user",
+                "Name": "CloneRoleIntoUser",
+                "TypeName": "Boolean"
             },
             {
                 "Description": "The description",
                 "Name": "Description",
                 "TypeName": "String"
+            },
+            {
+                "Description": "The ID",
+                "Name": "Id",
+                "TypeName": "Int32"
+            },
+            {
+                "Description": "Whether to match datastore tags",
+                "Name": "MatchDatastoreTags",
+                "TypeName": "Boolean"
             },
             {
                 "Description": "The module",
@@ -1311,6 +1321,11 @@
                 "TypeName": "Dictionary<String, String>"
             },
             {
+                "Description": "Whether to start on boot",
+                "Name": "StartOnBoot",
+                "TypeName": "Boolean"
+            },
+            {
                 "Description": "The tags",
                 "Name": "Tags",
                 "TypeName": "List<String>"
@@ -1318,6 +1333,11 @@
             {
                 "Description": "The template base app",
                 "Name": "TemplateBaseApp",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The zip overlay path",
+                "Name": "ZipOverlayPath",
                 "TypeName": "String"
             },
             {
@@ -1331,26 +1351,6 @@
                 "Name": "TemplateRole",
                 "Optional": true,
                 "TypeName": "Guid"
-            },
-            {
-                "Description": "The zip overlay path",
-                "Name": "ZipOverlayPath",
-                "TypeName": "String"
-            },
-            {
-                "Description": "Whether to clone the role into the user",
-                "Name": "CloneRoleIntoUser",
-                "TypeName": "Boolean"
-            },
-            {
-                "Description": "Whether to match datastore tags",
-                "Name": "MatchDatastoreTags",
-                "TypeName": "Boolean"
-            },
-            {
-                "Description": "Whether to start on boot",
-                "Name": "StartOnBoot",
-                "TypeName": "Boolean"
             }
         ]
     },
@@ -1368,28 +1368,13 @@
                 "TypeName": "String"
             },
             {
-                "Description": "The modification date",
-                "Name": "Modified",
-                "TypeName": "DateTime"
-            },
-            {
-                "Description": "The size in bytes",
-                "Name": "SizeBytes",
-                "TypeName": "Int64"
+                "Description": "Whether the file is an archive",
+                "Name": "IsArchive",
+                "TypeName": "Boolean"
             },
             {
                 "Description": "Whether the file is a directory",
                 "Name": "IsDirectory",
-                "TypeName": "Boolean"
-            },
-            {
-                "Description": "Whether the file is a virtual directory",
-                "Name": "IsVirtualDirectory",
-                "TypeName": "Boolean"
-            },
-            {
-                "Description": "Whether the file is an archive",
-                "Name": "IsArchive",
                 "TypeName": "Boolean"
             },
             {
@@ -1406,17 +1391,27 @@
                 "Description": "Whether the file is excluded from backups",
                 "Name": "IsExcludedFromBackups",
                 "TypeName": "Boolean"
+            },
+            {
+                "Description": "Whether the file is a virtual directory",
+                "Name": "IsVirtualDirectory",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "The modification date",
+                "Name": "Modified",
+                "TypeName": "DateTime"
+            },
+            {
+                "Description": "The size in bytes",
+                "Name": "SizeBytes",
+                "TypeName": "Int64"
             }
         ]
     },
     "EndpointInfo": {
         "Description": "An application endpoint object",
         "Fields": [
-            {
-                "Description": "The URI of the endpoint",
-                "Name": "Uri",
-                "TypeName": "String"
-            },
             {
                 "Description": "The display name of the endpoint",
                 "Name": "DisplayName",
@@ -1425,6 +1420,11 @@
             {
                 "Description": "The endpoint address",
                 "Name": "Endpoint",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The URI of the endpoint",
+                "Name": "Uri",
                 "TypeName": "String"
             }
         ]
@@ -1444,41 +1444,6 @@
             }
         ]
     },
-    "GlibcInfo": {
-        "Description": "Glibc information object",
-        "Fields": [
-            {
-                "Description": "The build number",
-                "Name": "Build",
-                "TypeName": "Int32"
-            },
-            {
-                "Description": "The major revision number",
-                "Name": "MajorRevision",
-                "TypeName": "Int32"
-            },
-            {
-                "Description": "The major version number",
-                "Name": "Major",
-                "TypeName": "Int32"
-            },
-            {
-                "Description": "The minor revision number",
-                "Name": "MinorRevision",
-                "TypeName": "Int32"
-            },
-            {
-                "Description": "The minor version number",
-                "Name": "Minor",
-                "TypeName": "Int32"
-            },
-            {
-                "Description": "The revision number",
-                "Name": "Revision",
-                "TypeName": "Int32"
-            }
-        ]
-    },
     "IADSInstance": {
         "Description": "An ADS instance object",
         "Fields": [
@@ -1493,14 +1458,14 @@
                 "TypeName": "List<InstanceSummary>"
             },
             {
-                "Description": "The ID",
-                "Name": "Id",
-                "TypeName": "Int32"
+                "Description": "Whether the instance can be created",
+                "Name": "CanCreate",
+                "TypeName": "Boolean"
             },
             {
-                "Description": "The URL",
-                "Name": "URL",
-                "TypeName": "String"
+                "Description": "Whether the instance creates in containers",
+                "Name": "CreatesInContainers",
+                "TypeName": "Boolean"
             },
             {
                 "Description": "The datastores",
@@ -1511,6 +1476,11 @@
                 "Description": "The description",
                 "Name": "Description",
                 "TypeName": "String"
+            },
+            {
+                "Description": "Whether the instance is disabled",
+                "Name": "Disabled",
+                "TypeName": "Boolean"
             },
             {
                 "Description": "The fitness information object",
@@ -1528,6 +1498,11 @@
                 "TypeName": "String"
             },
             {
+                "Description": "The ID",
+                "Name": "Id",
+                "TypeName": "Int32"
+            },
+            {
                 "Description": "The instance ID",
                 "Name": "InstanceId",
                 "TypeName": "Guid"
@@ -1536,6 +1511,16 @@
                 "Description": "The instances",
                 "Name": "Instances",
                 "TypeName": "List<InstanceSummary>"
+            },
+            {
+                "Description": "Whether HTTPS is enabled",
+                "Name": "IsHTTPS",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "Whether the instance is remote",
+                "Name": "IsRemote",
+                "TypeName": "Boolean"
             },
             {
                 "Description": "The last updated date",
@@ -1553,18 +1538,13 @@
                 "TypeName": "Int32"
             },
             {
-                "Description": "The state reason",
-                "Name": "StateReason",
-                "TypeName": "String"
-            },
-            {
                 "Description": "The state",
                 "Name": "State",
                 "TypeName": "RemoteInstanceState"
             },
             {
-                "Description": "The tags list",
-                "Name": "TagsList",
+                "Description": "The state reason",
+                "Name": "StateReason",
                 "TypeName": "String"
             },
             {
@@ -1573,29 +1553,14 @@
                 "TypeName": "List<String>"
             },
             {
-                "Description": "Whether HTTPS is enabled",
-                "Name": "IsHTTPS",
-                "TypeName": "Boolean"
+                "Description": "The tags list",
+                "Name": "TagsList",
+                "TypeName": "String"
             },
             {
-                "Description": "Whether the instance can be created",
-                "Name": "CanCreate",
-                "TypeName": "Boolean"
-            },
-            {
-                "Description": "Whether the instance creates in containers",
-                "Name": "CreatesInContainers",
-                "TypeName": "Boolean"
-            },
-            {
-                "Description": "Whether the instance is disabled",
-                "Name": "Disabled",
-                "TypeName": "Boolean"
-            },
-            {
-                "Description": "Whether the instance is remote",
-                "Name": "IsRemote",
-                "TypeName": "Boolean"
+                "Description": "The URL",
+                "Name": "URL",
+                "TypeName": "String"
             }
         ]
     },
@@ -1603,14 +1568,14 @@
         "Description": "An audit log entry",
         "Fields": [
             {
-                "Description": "The ID",
-                "Name": "Id",
-                "TypeName": "Int32"
-            },
-            {
                 "Description": "The category",
                 "Name": "Category",
                 "TypeName": "String"
+            },
+            {
+                "Description": "The ID",
+                "Name": "Id",
+                "TypeName": "Int32"
             },
             {
                 "Description": "The message",
@@ -1648,6 +1613,11 @@
                 "TypeName": "String"
             },
             {
+                "Description": "Whether the action is client-side",
+                "Name": "IsClientSide",
+                "TypeName": "Boolean"
+            },
+            {
                 "Description": "The method",
                 "Name": "Method",
                 "TypeName": "String"
@@ -1656,11 +1626,6 @@
                 "Description": "The module",
                 "Name": "Module",
                 "TypeName": "String"
-            },
-            {
-                "Description": "Whether the action is client-side",
-                "Name": "IsClientSide",
-                "TypeName": "Boolean"
             }
         ]
     },
@@ -1668,14 +1633,14 @@
         "Description": "A datastore object",
         "Fields": [
             {
+                "Description": "Whether the datastore is active",
+                "Name": "Active",
+                "TypeName": "Boolean"
+            },
+            {
                 "Description": "The current usage in MB",
                 "Name": "CurrentUsageMB",
                 "TypeName": "Int64"
-            },
-            {
-                "Description": "The datastore ID",
-                "Name": "Id",
-                "TypeName": "Int32"
             },
             {
                 "Description": "The description",
@@ -1693,9 +1658,19 @@
                 "TypeName": "String"
             },
             {
+                "Description": "The datastore ID",
+                "Name": "Id",
+                "TypeName": "Int32"
+            },
+            {
                 "Description": "The instance limit",
                 "Name": "InstanceLimit",
                 "TypeName": "Int32"
+            },
+            {
+                "Description": "Whether the datastore is internal",
+                "Name": "IsInternal",
+                "TypeName": "Boolean"
             },
             {
                 "Description": "The priority",
@@ -1716,16 +1691,6 @@
                 "Description": "The tags",
                 "Name": "Tags",
                 "TypeName": "List<String>"
-            },
-            {
-                "Description": "Whether the datastore is active",
-                "Name": "Active",
-                "TypeName": "Boolean"
-            },
-            {
-                "Description": "Whether the datastore is internal",
-                "Name": "IsInternal",
-                "TypeName": "Boolean"
             }
         ]
     },
@@ -1750,22 +1715,17 @@
             {
                 "Description": "The AMP version",
                 "Name": "AMPVersion",
-                "TypeName": "Version"
-            },
-            {
-                "Description": "The IP address",
-                "Name": "IP",
                 "TypeName": "String"
-            },
-            {
-                "Description": "The application endpoints",
-                "Name": "ApplicationEndpoints",
-                "TypeName": "List<EndpointInfo>"
             },
             {
                 "Description": "The application state",
                 "Name": "AppState",
                 "TypeName": "ApplicationState"
+            },
+            {
+                "Description": "The application endpoints",
+                "Name": "ApplicationEndpoints",
+                "TypeName": "List<EndpointInfo>"
             },
             {
                 "Description": "The container CPUs",
@@ -1788,6 +1748,16 @@
                 "TypeName": "Int32"
             },
             {
+                "Description": "Whether the instance is a daemon",
+                "Name": "Daemon",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "Whether the instance daemon autostarts",
+                "Name": "DaemonAutostart",
+                "TypeName": "Boolean"
+            },
+            {
                 "Description": "The deployment arguments",
                 "Name": "DeploymentArgs",
                 "TypeName": "Dictionary<String, String>"
@@ -1808,8 +1778,18 @@
                 "TypeName": "String"
             },
             {
+                "Description": "Whether the instance is excluded from the firewall",
+                "Name": "ExcludeFromFirewall",
+                "TypeName": "Boolean"
+            },
+            {
                 "Description": "The friendly name",
                 "Name": "FriendlyName",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The IP address",
+                "Name": "IP",
                 "TypeName": "String"
             },
             {
@@ -1823,9 +1803,14 @@
                 "TypeName": "String"
             },
             {
-                "Description": "The instance's welcome message",
-                "Name": "WelcomeMessage",
-                "TypeName": "String"
+                "Description": "Whether the instance is a container instance",
+                "Name": "IsContainerInstance",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "Whether HTTPS is enabled",
+                "Name": "IsHTTPS",
+                "TypeName": "Boolean"
             },
             {
                 "Description": "The management mode",
@@ -1838,13 +1823,13 @@
                 "TypeName": "Dictionary<String, MetricInfo>"
             },
             {
-                "Description": "The module display name",
-                "Name": "ModuleDisplayName",
+                "Description": "The module",
+                "Name": "Module",
                 "TypeName": "String"
             },
             {
-                "Description": "The module",
-                "Name": "Module",
+                "Description": "The module display name",
+                "Name": "ModuleDisplayName",
                 "TypeName": "String"
             },
             {
@@ -1858,9 +1843,19 @@
                 "TypeName": "AMPReleaseStreams"
             },
             {
+                "Description": "Whether the instance is running",
+                "Name": "Running",
+                "TypeName": "Boolean"
+            },
+            {
                 "Description": "The specific Docker image",
                 "Name": "SpecificDockerImage",
                 "TypeName": "String"
+            },
+            {
+                "Description": "Whether the instance is suspended",
+                "Name": "Suspended",
+                "TypeName": "Boolean"
             },
             {
                 "Description": "The tags",
@@ -1873,44 +1868,14 @@
                 "TypeName": "Guid"
             },
             {
-                "Description": "Whether HTTPS is enabled",
-                "Name": "IsHTTPS",
-                "TypeName": "Boolean"
-            },
-            {
                 "Description": "Whether the container uses host mode network",
                 "Name": "UseHostModeNetwork",
                 "TypeName": "Boolean"
             },
             {
-                "Description": "Whether the instance daemon autostarts",
-                "Name": "DaemonAutostart",
-                "TypeName": "Boolean"
-            },
-            {
-                "Description": "Whether the instance is a container instance",
-                "Name": "IsContainerInstance",
-                "TypeName": "Boolean"
-            },
-            {
-                "Description": "Whether the instance is a daemon",
-                "Name": "Daemon",
-                "TypeName": "Boolean"
-            },
-            {
-                "Description": "Whether the instance is excluded from the firewall",
-                "Name": "ExcludeFromFirewall",
-                "TypeName": "Boolean"
-            },
-            {
-                "Description": "Whether the instance is running",
-                "Name": "Running",
-                "TypeName": "Boolean"
-            },
-            {
-                "Description": "Whether the instance is suspended",
-                "Name": "Suspended",
-                "TypeName": "Boolean"
+                "Description": "The instance's welcome message",
+                "Name": "WelcomeMessage",
+                "TypeName": "String"
             }
         ],
         "SpecialNote": "Summarizes AMPInstanceBase"
@@ -1957,14 +1922,19 @@
                 "TypeName": "ProcessorInfo"
             },
             {
-                "Description": "The OS",
-                "Name": "OS",
-                "TypeName": "SupportedOS"
+                "Description": "Whether the Docker network is in host mode",
+                "Name": "DockerNetworkIsHostMode",
+                "TypeName": "Boolean"
             },
             {
                 "Description": "The installed RAM in MB",
                 "Name": "InstalledRAMMB",
                 "TypeName": "Int32"
+            },
+            {
+                "Description": "The OS",
+                "Name": "OS",
+                "TypeName": "SupportedOS"
             },
             {
                 "Description": "The platform name",
@@ -1980,11 +1950,6 @@
                 "Description": "The virtualization type",
                 "Name": "Virtualization",
                 "TypeName": "VirtualizationType"
-            },
-            {
-                "Description": "Whether the Docker network is in host mode",
-                "Name": "DockerNetworkIsHostMode",
-                "TypeName": "Boolean"
             }
         ]
     },
@@ -1997,14 +1962,14 @@
                 "TypeName": "String"
             },
             {
-                "Description": "The grade name",
-                "Name": "GradeName",
-                "TypeName": "String"
-            },
-            {
                 "Description": "The grade",
                 "Name": "Grade",
                 "TypeName": "Guid"
+            },
+            {
+                "Description": "The grade name",
+                "Name": "GradeName",
+                "TypeName": "String"
             },
             {
                 "Description": "The licence key",
@@ -2012,14 +1977,14 @@
                 "TypeName": "Guid"
             },
             {
-                "Description": "The product name",
-                "Name": "ProductName",
-                "TypeName": "String"
-            },
-            {
                 "Description": "The product",
                 "Name": "Product",
                 "TypeName": "Guid"
+            },
+            {
+                "Description": "The product name",
+                "Name": "ProductName",
+                "TypeName": "String"
             },
             {
                 "Description": "The usage",
@@ -2035,6 +2000,16 @@
         ],
         "Fields": [
             {
+                "Description": "Whether the port is delayed open",
+                "Name": "IsDelayedOpen",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "Whether the port is listening",
+                "Name": "Listening",
+                "TypeName": "Boolean"
+            },
+            {
                 "Description": "The name",
                 "Name": "Name",
                 "TypeName": "String"
@@ -2048,16 +2023,6 @@
                 "Description": "The protocol",
                 "Name": "Protocol",
                 "TypeName": "PortProtocol"
-            },
-            {
-                "Description": "Whether the port is delayed open",
-                "Name": "IsDelayedOpen",
-                "TypeName": "Boolean"
-            },
-            {
-                "Description": "Whether the port is listening",
-                "Name": "Listening",
-                "TypeName": "Boolean"
             },
             {
                 "Description": "Whether the port is required",
@@ -2077,17 +2042,12 @@
             {
                 "Description": "The AMP version",
                 "Name": "AMPVersion",
-                "TypeName": "Version"
-            },
-            {
-                "Description": "The IP",
-                "Name": "IP",
                 "TypeName": "String"
             },
             {
-                "Description": "The OS",
-                "Name": "OS",
-                "TypeName": "SupportedOS"
+                "Description": "Whether to use automatic UPnP",
+                "Name": "AutomaticUPnP",
+                "TypeName": "Boolean"
             },
             {
                 "Description": "The container CPUs",
@@ -2125,6 +2085,16 @@
                 "TypeName": "List<PortUsage>"
             },
             {
+                "Description": "Whether the instance is a daemon",
+                "Name": "Daemon",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "Whether the daemon should autostart",
+                "Name": "DaemonAutostart",
+                "TypeName": "Boolean"
+            },
+            {
                 "Description": "The datastore ID",
                 "Name": "DatastoreId",
                 "TypeName": "Int32"
@@ -2150,9 +2120,24 @@
                 "TypeName": "String"
             },
             {
+                "Description": "Whether the Docker base is read-only",
+                "Name": "DockerBaseReadOnly",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "Whether to exclude from the firewall",
+                "Name": "ExcludeFromFirewall",
+                "TypeName": "Boolean"
+            },
+            {
                 "Description": "The extra container packages",
                 "Name": "ExtraContainerPackages",
                 "TypeName": "List<String>"
+            },
+            {
+                "Description": "Whether to force Docker",
+                "Name": "ForceDocker",
+                "TypeName": "Boolean"
             },
             {
                 "Description": "The friendly name",
@@ -2162,6 +2147,16 @@
             {
                 "Description": "The group",
                 "Name": "Group",
+                "TypeName": "String"
+            },
+            {
+                "Description": "Whether the instance has an overlay applied",
+                "Name": "HasOverlayApplied",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "The IP",
+                "Name": "IP",
                 "TypeName": "String"
             },
             {
@@ -2175,10 +2170,24 @@
                 "TypeName": "String"
             },
             {
-                "Description": "The last reactivation attempt",
-                "Name": "LastReactivationAttempt",
-                "Optional": true,
-                "TypeName": "DateTime"
+                "Description": "Whether the instance is a container",
+                "Name": "IsContainerInstance",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "Whether the instance is a daemon user managed",
+                "Name": "IsDaemonUserManaged",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "Whether the instance is HTTPS",
+                "Name": "IsHTTPS",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "Whether the instance is a shared instance",
+                "Name": "IsSharedInstance",
+                "TypeName": "Boolean"
             },
             {
                 "Description": "The management mode",
@@ -2186,13 +2195,13 @@
                 "TypeName": "ManagementModes"
             },
             {
-                "Description": "The metrics publishing HMAC",
-                "Name": "MetricsPublishingHMAC",
-                "TypeName": "String"
+                "Description": "Whether to match the version",
+                "Name": "MatchVersion",
+                "TypeName": "Boolean"
             },
             {
-                "Description": "The module display name",
-                "Name": "ModuleDisplayName",
+                "Description": "The metrics publishing HMAC",
+                "Name": "MetricsPublishingHMAC",
                 "TypeName": "String"
             },
             {
@@ -2201,13 +2210,23 @@
                 "TypeName": "String"
             },
             {
-                "Description": "The overlay URL",
-                "Name": "OverlayURL",
+                "Description": "The module display name",
+                "Name": "ModuleDisplayName",
                 "TypeName": "String"
+            },
+            {
+                "Description": "The OS",
+                "Name": "OS",
+                "TypeName": "SupportedOS"
             },
             {
                 "Description": "The overlay path",
                 "Name": "OverlayPath",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The overlay URL",
+                "Name": "OverlayURL",
                 "TypeName": "String"
             },
             {
@@ -2238,7 +2257,7 @@
             {
                 "Description": "The previous version",
                 "Name": "PreviousVersion",
-                "TypeName": "Version"
+                "TypeName": "String"
             },
             {
                 "Description": "The release stream",
@@ -2251,6 +2270,11 @@
                 "TypeName": "String"
             },
             {
+                "Description": "Whether the instance is suspended",
+                "Name": "Suspended",
+                "TypeName": "Boolean"
+            },
+            {
                 "Description": "The tag",
                 "Name": "Tag",
                 "TypeName": "String"
@@ -2261,9 +2285,19 @@
                 "TypeName": "List<String>"
             },
             {
+                "Description": "Whether tags are used for configuration",
+                "Name": "TagsUsedForConfiguration",
+                "TypeName": "Boolean"
+            },
+            {
                 "Description": "The target ID",
                 "Name": "TargetID",
                 "TypeName": "Guid"
+            },
+            {
+                "Description": "Whether to use host mode networking",
+                "Name": "UseHostModeNetwork",
+                "TypeName": "Boolean"
             },
             {
                 "Description": "The user",
@@ -2276,79 +2310,10 @@
                 "TypeName": "String"
             },
             {
-                "Description": "Whether tags are used for configuration",
-                "Name": "TagsUsedForConfiguration",
-                "TypeName": "Boolean"
-            },
-            {
-                "Description": "Whether the Docker base is read-only",
-                "Name": "DockerBaseReadOnly",
-                "TypeName": "Boolean"
-            },
-            {
-                "Description": "Whether the daemon should autostart",
-                "Name": "DaemonAutostart",
-                "TypeName": "Boolean"
-            },
-            {
-                "Description": "Whether the instance has an overlay applied",
-                "Name": "HasOverlayApplied",
-                "TypeName": "Boolean"
-            },
-            {
-                "Description": "Whether the instance is HTTPS",
-                "Name": "IsHTTPS",
-                "TypeName": "Boolean"
-            },
-            {
-                "Description": "Whether the instance is a container",
-                "Name": "IsContainerInstance",
-                "TypeName": "Boolean"
-            },
-            {
-                "Description": "Whether the instance is a daemon user managed",
-                "Name": "IsDaemonUserManaged",
-                "TypeName": "Boolean"
-            },
-            {
-                "Description": "Whether the instance is a daemon",
-                "Name": "Daemon",
-                "TypeName": "Boolean"
-            },
-            {
-                "Description": "Whether the instance is a shared instance",
-                "Name": "IsSharedInstance",
-                "TypeName": "Boolean"
-            },
-            {
-                "Description": "Whether the instance is suspended",
-                "Name": "Suspended",
-                "TypeName": "Boolean"
-            },
-            {
-                "Description": "Whether to exclude from the firewall",
-                "Name": "ExcludeFromFirewall",
-                "TypeName": "Boolean"
-            },
-            {
-                "Description": "Whether to force Docker",
-                "Name": "ForceDocker",
-                "TypeName": "Boolean"
-            },
-            {
-                "Description": "Whether to match the version",
-                "Name": "MatchVersion",
-                "TypeName": "Boolean"
-            },
-            {
-                "Description": "Whether to use automatic UPnP",
-                "Name": "AutomaticUPnP",
-                "TypeName": "Boolean"
-            },
-            {
-                "Description": "Whether to use host mode networking",
-                "Name": "UseHostModeNetwork",
-                "TypeName": "Boolean"
+                "Description": "The last reactivation attempt",
+                "Name": "LastReactivationAttempt",
+                "Optional": true,
+                "TypeName": "DateTime"
             }
         ],
         "SpecialNote": "Extends AMPInstanceBase"
@@ -2367,14 +2332,14 @@
                 "TypeName": "String"
             },
             {
-                "Description": "The result reason",
-                "Name": "resultReason",
-                "TypeName": "String"
-            },
-            {
                 "Description": "The result",
                 "Name": "result",
                 "TypeName": "AuthenticationResult"
+            },
+            {
+                "Description": "The result reason",
+                "Name": "resultReason",
+                "TypeName": "String"
             },
             {
                 "Description": "The session ID",
@@ -2382,14 +2347,14 @@
                 "TypeName": "String"
             },
             {
-                "Description": "The user info",
-                "Name": "userInfo",
-                "TypeName": "UserInfoSummary"
-            },
-            {
                 "Description": "Whether the login was successful",
                 "Name": "success",
                 "TypeName": "Boolean"
+            },
+            {
+                "Description": "The user info",
+                "Name": "userInfo",
+                "TypeName": "UserInfoSummary"
             }
         ]
     },
@@ -2421,6 +2386,11 @@
                 "TypeName": "String"
             },
             {
+                "Description": "Whether the method is a complex type",
+                "Name": "IsComplexType",
+                "TypeName": "Boolean"
+            },
+            {
                 "Description": "The parameters",
                 "Name": "Parameters",
                 "TypeName": "List<MethodParameterSummary>"
@@ -2435,11 +2405,6 @@
                 "Name": "Returns",
                 "Optional": true,
                 "TypeName": "String"
-            },
-            {
-                "Description": "Whether the method is a complex type",
-                "Name": "IsComplexType",
-                "TypeName": "Boolean"
             }
         ]
     },
@@ -2457,10 +2422,9 @@
                 "TypeName": "String"
             },
             {
-                "Description": "The parameter enum values",
-                "Name": "ParamEnumValues",
-                "Optional": true,
-                "TypeName": "Dictionary<String, Object>"
+                "Description": "Whether the parameter is optional",
+                "Name": "Optional",
+                "TypeName": "Boolean"
             },
             {
                 "Description": "The type name",
@@ -2468,9 +2432,10 @@
                 "TypeName": "String"
             },
             {
-                "Description": "Whether the parameter is optional",
-                "Name": "Optional",
-                "TypeName": "Boolean"
+                "Description": "The parameter enum values",
+                "Name": "ParamEnumValues",
+                "Optional": true,
+                "TypeName": "Dictionary<String, Object>"
             }
         ]
     },
@@ -2480,6 +2445,16 @@
             {
                 "Description": "The color",
                 "Name": "Color",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The second color",
+                "Name": "Color2",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The third color",
+                "Name": "Color3",
                 "TypeName": "String"
             },
             {
@@ -2498,18 +2473,8 @@
                 "TypeName": "Int32"
             },
             {
-                "Description": "The second color",
-                "Name": "Color2",
-                "TypeName": "String"
-            },
-            {
                 "Description": "The short name",
                 "Name": "ShortName",
-                "TypeName": "String"
-            },
-            {
-                "Description": "The third color",
-                "Name": "Color3",
                 "TypeName": "String"
             },
             {
@@ -2536,6 +2501,16 @@
                 "Description": "The API version",
                 "Name": "APIVersion",
                 "TypeName": "String"
+            },
+            {
+                "Description": "Whether remember me is allowed",
+                "Name": "AllowRememberMe",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "Whether analytics are enabled",
+                "Name": "Analytics",
+                "TypeName": "Boolean"
             },
             {
                 "Description": "The application name",
@@ -2593,6 +2568,11 @@
                 "TypeName": "String"
             },
             {
+                "Description": "Whether the instance is remote",
+                "Name": "IsRemoteInstance",
+                "TypeName": "Boolean"
+            },
+            {
                 "Description": "The loaded plugins",
                 "Name": "LoadedPlugins",
                 "TypeName": "List<String>"
@@ -2613,6 +2593,16 @@
                 "TypeName": "String"
             },
             {
+                "Description": "Whether the module requires a full load",
+                "Name": "RequiresFullLoad",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "Whether the module supports sleep mode",
+                "Name": "SupportsSleep",
+                "TypeName": "Boolean"
+            },
+            {
                 "Description": "The timestamp",
                 "Name": "Timestamp",
                 "TypeName": "String"
@@ -2626,42 +2616,12 @@
                 "Description": "The version codename",
                 "Name": "VersionCodename",
                 "TypeName": "String"
-            },
-            {
-                "Description": "Whether analytics are enabled",
-                "Name": "Analytics",
-                "TypeName": "Boolean"
-            },
-            {
-                "Description": "Whether remember me is allowed",
-                "Name": "AllowRememberMe",
-                "TypeName": "Boolean"
-            },
-            {
-                "Description": "Whether the instance is remote",
-                "Name": "IsRemoteInstance",
-                "TypeName": "Boolean"
-            },
-            {
-                "Description": "Whether the module requires a full load",
-                "Name": "RequiresFullLoad",
-                "TypeName": "Boolean"
-            },
-            {
-                "Description": "Whether the module supports sleep mode",
-                "Name": "SupportsSleep",
-                "TypeName": "Boolean"
             }
         ]
     },
     "OPEntry": {
         "Description": "An OP entry",
         "Fields": [
-            {
-                "Description": "The UUID",
-                "Name": "UUID",
-                "TypeName": "String"
-            },
             {
                 "Description": "The level",
                 "Name": "Level",
@@ -2670,6 +2630,11 @@
             {
                 "Description": "The name",
                 "Name": "Name",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The UUID",
+                "Name": "UUID",
                 "TypeName": "String"
             }
         ]
@@ -2703,6 +2668,11 @@
         "Description": "A port object",
         "Fields": [
             {
+                "Description": "Whether the port is delayed open",
+                "Name": "IsDelayedOpen",
+                "TypeName": "Boolean"
+            },
+            {
                 "Description": "The name",
                 "Name": "Name",
                 "TypeName": "String"
@@ -2718,11 +2688,6 @@
                 "TypeName": "PortProtocol"
             },
             {
-                "Description": "Whether the port is delayed open",
-                "Name": "IsDelayedOpen",
-                "TypeName": "Boolean"
-            },
-            {
                 "Description": "Whether the port is required",
                 "Name": "Required",
                 "TypeName": "Boolean"
@@ -2736,6 +2701,11 @@
                 "Description": "The description",
                 "Name": "Description",
                 "TypeName": "String"
+            },
+            {
+                "Description": "Whether the port is user-defined",
+                "Name": "IsUserDefined",
+                "TypeName": "Boolean"
             },
             {
                 "Description": "The port number",
@@ -2756,11 +2726,6 @@
                 "Description": "The range",
                 "Name": "Range",
                 "TypeName": "Int32"
-            },
-            {
-                "Description": "Whether the port is user-defined",
-                "Name": "IsUserDefined",
-                "TypeName": "Boolean"
             },
             {
                 "Description": "Whether the port is verified",
@@ -2816,19 +2781,14 @@
         "Description": "CPU information object",
         "Fields": [
             {
-                "Description": "CPU model name",
-                "Name": "ModelName",
-                "TypeName": "String"
-            },
-            {
-                "Description": "CPU vendor",
-                "Name": "Vendor",
-                "TypeName": "String"
-            },
-            {
                 "Description": "Number of CPU cores",
                 "Name": "Cores",
                 "TypeName": "Int32"
+            },
+            {
+                "Description": "CPU model name",
+                "Name": "ModelName",
+                "TypeName": "String"
             },
             {
                 "Description": "Number of CPU sockets",
@@ -2849,6 +2809,11 @@
                 "Description": "Total number of CPU threads",
                 "Name": "TotalThreads",
                 "TypeName": "Int32"
+            },
+            {
+                "Description": "CPU vendor",
+                "Name": "Vendor",
+                "TypeName": "String"
             }
         ]
     },
@@ -2866,9 +2831,14 @@
                 "TypeName": "Double"
             },
             {
-                "Description": "Fitness score",
-                "Name": "Score",
-                "TypeName": "Double"
+                "Description": "Unallocated disk space in MB",
+                "Name": "FreeDiskMB",
+                "TypeName": "Int64"
+            },
+            {
+                "Description": "Unallocated RAM in MB",
+                "Name": "FreeRAMMB",
+                "TypeName": "Int32"
             },
             {
                 "Description": "Load average",
@@ -2881,9 +2851,9 @@
                 "TypeName": "Int32"
             },
             {
-                "Description": "Service count",
-                "Name": "TotalServices",
-                "TypeName": "Int32"
+                "Description": "Fitness score",
+                "Name": "Score",
+                "TypeName": "Double"
             },
             {
                 "Description": "Thread queue length",
@@ -2891,14 +2861,9 @@
                 "TypeName": "Int32"
             },
             {
-                "Description": "Unallocated RAM in MB",
-                "Name": "FreeRAMMB",
+                "Description": "Service count",
+                "Name": "TotalServices",
                 "TypeName": "Int32"
-            },
-            {
-                "Description": "Unallocated disk space in MB",
-                "Name": "FreeDiskMB",
-                "TypeName": "Int64"
             }
         ]
     },
@@ -2961,6 +2926,11 @@
                 "TypeName": "Int32"
             },
             {
+                "Description": "Whether the message has expired",
+                "Name": "Expired",
+                "TypeName": "Boolean"
+            },
+            {
                 "Description": "The message ID",
                 "Name": "Id",
                 "TypeName": "Guid"
@@ -2974,11 +2944,6 @@
                 "Description": "The source of the message",
                 "Name": "Source",
                 "TypeName": "String"
-            },
-            {
-                "Description": "Whether the message has expired",
-                "Name": "Expired",
-                "TypeName": "Boolean"
             }
         ]
     },
@@ -3041,24 +3006,24 @@
         "Description": "Information about a remote target, returned by ADSModule#GetTargetInfo()",
         "Fields": [
             {
-                "Description": "The IP address list",
-                "Name": "IPAddressList",
-                "TypeName": "List<String>"
-            },
-            {
                 "Description": "The datastores",
                 "Name": "Datastores",
                 "TypeName": "List<DatastoreSummary>"
             },
             {
-                "Description": "The remote target's platform info",
-                "Name": "PlatformInfo",
-                "TypeName": "IPlatformInfo"
-            },
-            {
                 "Description": "Whether the target deploys in containers",
                 "Name": "DeploysInContainers",
                 "TypeName": "Boolean"
+            },
+            {
+                "Description": "The IP address list",
+                "Name": "IPAddressList",
+                "TypeName": "List<String>"
+            },
+            {
+                "Description": "The remote target's platform info",
+                "Name": "PlatformInfo",
+                "TypeName": "IPlatformInfo"
             }
         ]
     },
@@ -3071,10 +3036,39 @@
                 "TypeName": "String"
             },
             {
-                "Description": "The end time",
-                "Name": "EndTime",
-                "Optional": true,
-                "TypeName": "DateTime"
+                "Description": "Whether the task should not propagate",
+                "Name": "DontPropagate",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "Whether the task can be dismissed quickly",
+                "Name": "FastDismiss",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "Whether the task is hidden from the UI",
+                "Name": "HideFromUI",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "The task ID",
+                "Name": "Id",
+                "TypeName": "Guid"
+            },
+            {
+                "Description": "Whether the task is cancellable",
+                "Name": "IsCancellable",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "Whether the task is indeterminate",
+                "Name": "IsIndeterminate",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "Whether the task is primary",
+                "Name": "IsPrimaryTask",
+                "TypeName": "Boolean"
             },
             {
                 "Description": "The last update pushed",
@@ -3092,21 +3086,9 @@
                 "TypeName": "String"
             },
             {
-                "Description": "The parent task ID",
-                "Name": "ParentTaskId",
-                "Optional": true,
-                "TypeName": "Guid"
-            },
-            {
                 "Description": "The progress percentage",
                 "Name": "ProgressPercent",
                 "TypeName": "Int32"
-            },
-            {
-                "Description": "The remote instance ID",
-                "Name": "RemoteInstanceId",
-                "Optional": true,
-                "TypeName": "Guid"
             },
             {
                 "Description": "The speed",
@@ -3119,49 +3101,32 @@
                 "TypeName": "DateTime"
             },
             {
-                "Description": "The state message",
-                "Name": "StateMessage",
-                "TypeName": "String"
-            },
-            {
                 "Description": "The state",
                 "Name": "State",
                 "TypeName": "TaskState"
             },
             {
-                "Description": "The task ID",
-                "Name": "Id",
+                "Description": "The state message",
+                "Name": "StateMessage",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The remote instance ID",
+                "Name": "RemoteInstanceId",
+                "Optional": true,
                 "TypeName": "Guid"
             },
             {
-                "Description": "Whether the task can be dismissed quickly",
-                "Name": "FastDismiss",
-                "TypeName": "Boolean"
+                "Description": "The end time",
+                "Name": "EndTime",
+                "Optional": true,
+                "TypeName": "DateTime"
             },
             {
-                "Description": "Whether the task is cancellable",
-                "Name": "IsCancellable",
-                "TypeName": "Boolean"
-            },
-            {
-                "Description": "Whether the task is hidden from the UI",
-                "Name": "HideFromUI",
-                "TypeName": "Boolean"
-            },
-            {
-                "Description": "Whether the task is indeterminate",
-                "Name": "IsIndeterminate",
-                "TypeName": "Boolean"
-            },
-            {
-                "Description": "Whether the task is primary",
-                "Name": "IsPrimaryTask",
-                "TypeName": "Boolean"
-            },
-            {
-                "Description": "Whether the task should not propagate",
-                "Name": "DontPropagate",
-                "TypeName": "Boolean"
+                "Description": "The parent task ID",
+                "Name": "ParentTaskId",
+                "Optional": true,
+                "TypeName": "Guid"
             }
         ]
     },
@@ -3200,17 +3165,6 @@
         "Description": "A schedule entry definition",
         "Fields": [
             {
-                "Description": "The ID",
-                "Name": "Id",
-                "TypeName": "Guid"
-            },
-            {
-                "Description": "The creator",
-                "Name": "CreatedBy",
-                "Optional": true,
-                "TypeName": "Guid"
-            },
-            {
                 "Description": "The enabled state",
                 "Name": "EnabledState",
                 "TypeName": "ScheduleEnabledState"
@@ -3221,9 +3175,24 @@
                 "TypeName": "ScheduleErrorBehaviour"
             },
             {
+                "Description": "The ID",
+                "Name": "Id",
+                "TypeName": "Guid"
+            },
+            {
                 "Description": "The last error reason",
                 "Name": "LastErrorReason",
                 "TypeName": "String"
+            },
+            {
+                "Description": "Whether the last execution had an error",
+                "Name": "LastExecuteError",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "Whether the entry is locked",
+                "Name": "Locked",
+                "TypeName": "Boolean"
             },
             {
                 "Description": "The order",
@@ -3241,19 +3210,15 @@
                 "TypeName": "String"
             },
             {
-                "Description": "Whether the entry is locked",
-                "Name": "Locked",
-                "TypeName": "Boolean"
-            },
-            {
-                "Description": "Whether the last execution had an error",
-                "Name": "LastExecuteError",
-                "TypeName": "Boolean"
-            },
-            {
                 "Description": "Whether to wait for completion",
                 "Name": "WaitForComplete",
                 "TypeName": "Boolean"
+            },
+            {
+                "Description": "The creator",
+                "Name": "CreatedBy",
+                "Optional": true,
+                "TypeName": "Guid"
             }
         ]
     },
@@ -3310,12 +3275,6 @@
                 "TypeName": "String"
             },
             {
-                "Description": "The enum values",
-                "Name": "EnumValues",
-                "Optional": true,
-                "TypeName": "Dictionary<String, String>"
-            },
-            {
                 "Description": "The input type",
                 "Name": "InputType",
                 "TypeName": "String"
@@ -3334,17 +3293,18 @@
                 "Description": "The value type",
                 "Name": "ValueType",
                 "TypeName": "String"
+            },
+            {
+                "Description": "The enum values",
+                "Name": "EnumValues",
+                "Optional": true,
+                "TypeName": "Dictionary<String, String>"
             }
         ]
     },
     "ScheduleTrigger": {
         "Description": "A time interval trigger",
         "Fields": [
-            {
-                "Description": "The ID",
-                "Name": "Id",
-                "TypeName": "Guid"
-            },
             {
                 "Description": "The description",
                 "Name": "Description",
@@ -3356,10 +3316,9 @@
                 "TypeName": "ScheduleEnabledState"
             },
             {
-                "Description": "The last executed",
-                "Name": "LastExecuted",
-                "Optional": true,
-                "TypeName": "DateTime"
+                "Description": "The ID",
+                "Name": "Id",
+                "TypeName": "Guid"
             },
             {
                 "Description": "The name",
@@ -3370,6 +3329,12 @@
                 "Description": "The order",
                 "Name": "Order",
                 "TypeName": "Int32"
+            },
+            {
+                "Description": "The last executed",
+                "Name": "LastExecuted",
+                "Optional": true,
+                "TypeName": "DateTime"
             }
         ]
     },
@@ -3380,6 +3345,16 @@
                 "Description": "The description",
                 "Name": "Description",
                 "TypeName": "String"
+            },
+            {
+                "Description": "Whether the check is hidden",
+                "Name": "Hidden",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "Whether the check passed",
+                "Name": "Pass",
+                "TypeName": "Boolean"
             },
             {
                 "Description": "The resolution",
@@ -3395,16 +3370,6 @@
                 "Description": "The title",
                 "Name": "Title",
                 "TypeName": "String"
-            },
-            {
-                "Description": "Whether the check is hidden",
-                "Name": "Hidden",
-                "TypeName": "Boolean"
-            },
-            {
-                "Description": "Whether the check passed",
-                "Name": "Pass",
-                "TypeName": "Boolean"
             }
         ]
     },
@@ -3415,6 +3380,11 @@
                 "Description": "The actions",
                 "Name": "Actions",
                 "TypeName": "List<InlineActionAttribute>"
+            },
+            {
+                "Description": "Whether the setting is always allowed to be read",
+                "Name": "AlwaysAllowRead",
+                "TypeName": "Boolean"
             },
             {
                 "Description": "The attributes",
@@ -3437,15 +3407,19 @@
                 "TypeName": "String"
             },
             {
-                "Description": "The enum values",
-                "Name": "EnumValues",
-                "Optional": true,
-                "TypeName": "Dictionary<String, String>"
+                "Description": "Whether the enum values are deferred",
+                "Name": "EnumValuesAreDeferred",
+                "TypeName": "Boolean"
             },
             {
                 "Description": "The input type",
                 "Name": "InputType",
                 "TypeName": "String"
+            },
+            {
+                "Description": "Whether the setting is a provision spec",
+                "Name": "IsProvisionSpec",
+                "TypeName": "Boolean"
             },
             {
                 "Description": "The keywords",
@@ -3458,21 +3432,9 @@
                 "TypeName": "Int32"
             },
             {
-                "Description": "The max value",
-                "Name": "MaxValue",
-                "Optional": true,
-                "TypeName": "Float"
-            },
-            {
                 "Description": "The meta",
                 "Name": "Meta",
                 "TypeName": "String"
-            },
-            {
-                "Description": "The min value",
-                "Name": "MinValue",
-                "Optional": true,
-                "TypeName": "Float"
             },
             {
                 "Description": "The name",
@@ -3493,6 +3455,26 @@
                 "Description": "The placeholder",
                 "Name": "Placeholder",
                 "TypeName": "String"
+            },
+            {
+                "Description": "Whether the setting is read-only",
+                "Name": "ReadOnly",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "Whether the provision is read-only",
+                "Name": "ReadOnlyProvision",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "Whether the setting is required",
+                "Name": "Required",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "Whether the setting requires a restart",
+                "Name": "RequiresRestart",
+                "TypeName": "Boolean"
             },
             {
                 "Description": "The selection source",
@@ -3520,39 +3502,22 @@
                 "TypeName": "String"
             },
             {
-                "Description": "Whether the enum values are deferred",
-                "Name": "EnumValuesAreDeferred",
-                "TypeName": "Boolean"
+                "Description": "The enum values",
+                "Name": "EnumValues",
+                "Optional": true,
+                "TypeName": "Dictionary<String, String>"
             },
             {
-                "Description": "Whether the provision is read-only",
-                "Name": "ReadOnlyProvision",
-                "TypeName": "Boolean"
+                "Description": "The max value",
+                "Name": "MaxValue",
+                "Optional": true,
+                "TypeName": "Float"
             },
             {
-                "Description": "Whether the setting is a provision spec",
-                "Name": "IsProvisionSpec",
-                "TypeName": "Boolean"
-            },
-            {
-                "Description": "Whether the setting is always allowed to be read",
-                "Name": "AlwaysAllowRead",
-                "TypeName": "Boolean"
-            },
-            {
-                "Description": "Whether the setting is read-only",
-                "Name": "ReadOnly",
-                "TypeName": "Boolean"
-            },
-            {
-                "Description": "Whether the setting is required",
-                "Name": "Required",
-                "TypeName": "Boolean"
-            },
-            {
-                "Description": "Whether the setting requires a restart",
-                "Name": "RequiresRestart",
-                "TypeName": "Boolean"
+                "Description": "The min value",
+                "Name": "MinValue",
+                "Optional": true,
+                "TypeName": "Float"
             }
         ]
     },
@@ -3560,18 +3525,13 @@
         "Description": "A simple user object",
         "Fields": [
             {
-                "Description": "The ID",
-                "Name": "Id",
-                "TypeName": "String"
-            },
-            {
                 "Description": "The IP address",
                 "Name": "IPAddress",
                 "TypeName": "String"
             },
             {
-                "Description": "The UID",
-                "Name": "UID",
+                "Description": "The ID",
+                "Name": "Id",
                 "TypeName": "String"
             },
             {
@@ -3603,6 +3563,11 @@
                 "Description": "The time logged in",
                 "Name": "TimeLoggedIn",
                 "TypeName": "TimeSpan"
+            },
+            {
+                "Description": "The UID",
+                "Name": "UID",
+                "TypeName": "String"
             },
             {
                 "Description": "The user session ID",
@@ -3766,11 +3731,6 @@
         "Description": "A time interval trigger",
         "Fields": [
             {
-                "Description": "The ID",
-                "Name": "Id",
-                "TypeName": "Guid"
-            },
-            {
                 "Description": "The description",
                 "Name": "Description",
                 "TypeName": "String"
@@ -3781,35 +3741,9 @@
                 "TypeName": "ScheduleEnabledState"
             },
             {
-                "Description": "The last executed",
-                "Name": "LastExecuted",
-                "Optional": true,
-                "TypeName": "DateTime"
-            },
-            {
-                "Description": "The match days of month",
-                "Name": "MatchDaysOfMonth",
-                "TypeName": "List<Int32>"
-            },
-            {
-                "Description": "The match days",
-                "Name": "MatchDays",
-                "TypeName": "List<Int32>"
-            },
-            {
-                "Description": "The match hours",
-                "Name": "MatchHours",
-                "TypeName": "List<Int32>"
-            },
-            {
-                "Description": "The match minutes",
-                "Name": "MatchMinutes",
-                "TypeName": "List<Int32>"
-            },
-            {
-                "Description": "The match months",
-                "Name": "MatchMonths",
-                "TypeName": "List<Int32>"
+                "Description": "The ID",
+                "Name": "Id",
+                "TypeName": "Guid"
             },
             {
                 "Description": "The name",
@@ -3820,6 +3754,37 @@
                 "Description": "The order",
                 "Name": "Order",
                 "TypeName": "Int32"
+            },
+            {
+                "Description": "The match minutes",
+                "Name": "MatchMinutes",
+                "TypeName": "List<Int32>"
+            },
+            {
+                "Description": "The match hours",
+                "Name": "MatchHours",
+                "TypeName": "List<Int32>"
+            },
+            {
+                "Description": "The match days",
+                "Name": "MatchDays",
+                "TypeName": "List<Int32>"
+            },
+            {
+                "Description": "The match days of month",
+                "Name": "MatchDaysOfMonth",
+                "TypeName": "List<Int32>"
+            },
+            {
+                "Description": "The match months",
+                "Name": "MatchMonths",
+                "TypeName": "List<Int32>"
+            },
+            {
+                "Description": "The last executed",
+                "Name": "LastExecuted",
+                "Optional": true,
+                "TypeName": "DateTime"
             }
         ],
         "SpecialNote": "Extends ScheduleTrigger"
@@ -3827,11 +3792,6 @@
     "TriggerInfo": {
         "Description": "Information about a trigger",
         "Fields": [
-            {
-                "Description": "The ID",
-                "Name": "Id",
-                "TypeName": "String"
-            },
             {
                 "Description": "The description",
                 "Name": "Description",
@@ -3846,6 +3806,11 @@
                 "Description": "The enabled state",
                 "Name": "EnabledState",
                 "TypeName": "ScheduleEnabledState"
+            },
+            {
+                "Description": "The ID",
+                "Name": "Id",
+                "TypeName": "String"
             },
             {
                 "Description": "The tasks",
@@ -3868,13 +3833,13 @@
         "Description": "Information about two-factor setup",
         "Fields": [
             {
-                "Description": "The URL",
-                "Name": "Url",
+                "Description": "The manual key",
+                "Name": "ManualKey",
                 "TypeName": "String"
             },
             {
-                "Description": "The manual key",
-                "Name": "ManualKey",
+                "Description": "The URL",
+                "Name": "Url",
                 "TypeName": "String"
             }
         ]
@@ -3883,13 +3848,18 @@
         "Description": "A struct to represent the object returned by the Core.GetUpdateInfo() method",
         "Fields": [
             {
-                "Description": "The URL to the release notes",
-                "Name": "ReleaseNotesURL",
+                "Description": "The build of the update",
+                "Name": "Build",
                 "TypeName": "String"
             },
             {
-                "Description": "The build of the update",
-                "Name": "Build",
+                "Description": "Whether the update is a patch",
+                "Name": "PatchOnly",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "The URL to the release notes",
+                "Name": "ReleaseNotesURL",
                 "TypeName": "String"
             },
             {
@@ -3898,19 +3868,14 @@
                 "TypeName": "String"
             },
             {
-                "Description": "The version of the update",
-                "Name": "Version",
-                "TypeName": "String"
-            },
-            {
                 "Description": "Whether an update is available",
                 "Name": "UpdateAvailable",
                 "TypeName": "Boolean"
             },
             {
-                "Description": "Whether the update is a patch",
-                "Name": "PatchOnly",
-                "TypeName": "Boolean"
+                "Description": "The version of the update",
+                "Name": "Version",
+                "TypeName": "String"
             }
         ]
     },
@@ -3963,14 +3928,19 @@
         "Description": "Information about a user",
         "Fields": [
             {
-                "Description": "The ID",
-                "Name": "ID",
-                "TypeName": "Guid"
-            },
-            {
                 "Description": "The avatar base64",
                 "Name": "AvatarBase64",
                 "TypeName": "String"
+            },
+            {
+                "Description": "Whether the password cannot be changed",
+                "Name": "CannotChangePassword",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "Whether the user is disabled",
+                "Name": "Disabled",
+                "TypeName": "Boolean"
             },
             {
                 "Description": "The email address",
@@ -3983,14 +3953,44 @@
                 "TypeName": "String"
             },
             {
+                "Description": "The ID",
+                "Name": "ID",
+                "TypeName": "Guid"
+            },
+            {
+                "Description": "Whether the user is an LDAP user",
+                "Name": "IsLDAPUser",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "Whether the user is a super user",
+                "Name": "IsSuperUser",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "Whether two-factor is enabled",
+                "Name": "IsTwoFactorEnabled",
+                "TypeName": "Boolean"
+            },
+            {
                 "Description": "The last login",
                 "Name": "LastLogin",
                 "TypeName": "String"
             },
             {
+                "Description": "Whether the password must be changed",
+                "Name": "MustChangePassword",
+                "TypeName": "Boolean"
+            },
+            {
                 "Description": "The name",
                 "Name": "Name",
                 "TypeName": "String"
+            },
+            {
+                "Description": "Whether the password expires",
+                "Name": "PasswordExpires",
+                "TypeName": "Boolean"
             },
             {
                 "Description": "The permissions",
@@ -4001,41 +4001,6 @@
                 "Description": "The roles",
                 "Name": "Roles",
                 "TypeName": "List<Guid>"
-            },
-            {
-                "Description": "Whether the password cannot be changed",
-                "Name": "CannotChangePassword",
-                "TypeName": "Boolean"
-            },
-            {
-                "Description": "Whether the password expires",
-                "Name": "PasswordExpires",
-                "TypeName": "Boolean"
-            },
-            {
-                "Description": "Whether the password must be changed",
-                "Name": "MustChangePassword",
-                "TypeName": "Boolean"
-            },
-            {
-                "Description": "Whether the user is a super user",
-                "Name": "IsSuperUser",
-                "TypeName": "Boolean"
-            },
-            {
-                "Description": "Whether the user is an LDAP user",
-                "Name": "IsLDAPUser",
-                "TypeName": "Boolean"
-            },
-            {
-                "Description": "Whether the user is disabled",
-                "Name": "Disabled",
-                "TypeName": "Boolean"
-            },
-            {
-                "Description": "Whether two-factor is enabled",
-                "Name": "IsTwoFactorEnabled",
-                "TypeName": "Boolean"
             }
         ]
     },
@@ -4043,14 +4008,14 @@
         "Description": "Information about the user",
         "Fields": [
             {
-                "Description": "The Gravatar hash",
-                "Name": "GravatarHash",
-                "TypeName": "String"
-            },
-            {
                 "Description": "The avatar base64",
                 "Name": "AvatarBase64",
                 "TypeName": "String"
+            },
+            {
+                "Description": "Whether the user is disabled",
+                "Name": "Disabled",
+                "TypeName": "Boolean"
             },
             {
                 "Description": "The email address",
@@ -4058,8 +4023,8 @@
                 "TypeName": "String"
             },
             {
-                "Description": "The last login",
-                "Name": "LastLogin",
+                "Description": "The Gravatar hash",
+                "Name": "GravatarHash",
                 "TypeName": "String"
             },
             {
@@ -4068,9 +4033,9 @@
                 "TypeName": "Guid"
             },
             {
-                "Description": "The username",
-                "Name": "Username",
-                "TypeName": "String"
+                "Description": "Whether the user is an LDAP user",
+                "Name": "IsLDAPUser",
+                "TypeName": "Boolean"
             },
             {
                 "Description": "Whether 2FA is enabled",
@@ -4078,49 +4043,14 @@
                 "TypeName": "Boolean"
             },
             {
-                "Description": "Whether the user is an LDAP user",
-                "Name": "IsLDAPUser",
-                "TypeName": "Boolean"
+                "Description": "The last login",
+                "Name": "LastLogin",
+                "TypeName": "String"
             },
             {
-                "Description": "Whether the user is disabled",
-                "Name": "Disabled",
-                "TypeName": "Boolean"
-            }
-        ]
-    },
-    "Version": {
-        "Description": "AMP version information",
-        "Fields": [
-            {
-                "Description": "The build number",
-                "Name": "Build",
-                "TypeName": "Int32"
-            },
-            {
-                "Description": "The major revision number",
-                "Name": "MajorRevision",
-                "TypeName": "Int32"
-            },
-            {
-                "Description": "The major version number",
-                "Name": "Major",
-                "TypeName": "Int32"
-            },
-            {
-                "Description": "The minor revision number",
-                "Name": "MinorRevision",
-                "TypeName": "Int32"
-            },
-            {
-                "Description": "The minor version number",
-                "Name": "Minor",
-                "TypeName": "Int32"
-            },
-            {
-                "Description": "The revision number",
-                "Name": "Revision",
-                "TypeName": "Int32"
+                "Description": "The username",
+                "Name": "Username",
+                "TypeName": "String"
             }
         ]
     },
@@ -4213,11 +4143,6 @@
         "Description": "A summary of a WebAuthn credential",
         "Fields": [
             {
-                "Description": "The ID",
-                "Name": "ID",
-                "TypeName": "Int32"
-            },
-            {
                 "Description": "The created time",
                 "Name": "CreatedUTC",
                 "TypeName": "DateTime"
@@ -4226,6 +4151,11 @@
                 "Description": "The description",
                 "Name": "Description",
                 "TypeName": "String"
+            },
+            {
+                "Description": "The ID",
+                "Name": "ID",
+                "TypeName": "Int32"
             },
             {
                 "Description": "The last used time",
@@ -4238,14 +4168,14 @@
         "Description": "Information about a WebAuthn login",
         "Fields": [
             {
-                "Description": "The IDs",
-                "Name": "Ids",
-                "TypeName": "List<String>"
-            },
-            {
                 "Description": "The challenge",
                 "Name": "Challenge",
                 "TypeName": "String"
+            },
+            {
+                "Description": "The IDs",
+                "Name": "Ids",
+                "TypeName": "List<String>"
             }
         ]
     },
@@ -4288,13 +4218,13 @@
         "Description": "A whitelist entry",
         "Fields": [
             {
-                "Description": "The UUID",
-                "Name": "UUID",
+                "Description": "The name",
+                "Name": "Name",
                 "TypeName": "String"
             },
             {
-                "Description": "The name",
-                "Name": "Name",
+                "Description": "The UUID",
+                "Name": "UUID",
                 "TypeName": "String"
             }
         ]

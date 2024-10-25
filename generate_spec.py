@@ -33,7 +33,12 @@ class GenerateSpec:
                         instance_api: AMPAPI = api.InstanceLogin(instance_id)
 
                         if instance_api != None:
-                            self.log_module_plugins(instance_module, instance_api.Core_GetAPISpec())
+                            module_info = instance_api.Core_GetModuleInfo()
+                            if instance_module == "GenericModule":
+                                instance_module = module_info["AppName"]
+                            loaded_plugins = module_info["LoadedPlugins"]
+
+                            self.log_module_plugins(instance_module, instance_api.Core_GetAPISpec(), loaded_plugins)
                             catalogued_modules.append(instance_module)
                             self.apis.append(instance_api)
 
@@ -75,20 +80,26 @@ class GenerateSpec:
             version_file.close()
 
             # Set the github actions output
-            github_output = getenv('GITHUB_OUTPUT')
-            go_file = open(github_output, "a")
-            go_file.write("AMP_VERSION=" + latest_version)
-            go_file.close()
+            try:
+                github_output = getenv('GITHUB_OUTPUT')
+                go_file = open(github_output, "a")
+                go_file.write("AMP_VERSION=" + latest_version)
+                go_file.close()
+            except:
+                pass
 
 #             return True
 #         else:
 #             return False
         return True
 
-    def log_module_plugins(self, module: str, api_spec: dict[str, dict[str, Any]]) -> None:
+    def log_module_plugins(self, module: str, api_spec: dict[str, dict[str, Any]], loaded_plugins: list[str]) -> None:
         submodules: list[str] = []
         for submodule in api_spec.keys():
             submodules.append(submodule)
+        for plugin in loaded_plugins:
+            if plugin not in submodules:
+                submodules.append(plugin)
         submodules.sort()
         print(f"API Submodules for {module}: {submodules}")
         self.ModuleInheritance[module] = submodules

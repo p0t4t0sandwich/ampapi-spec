@@ -44,7 +44,7 @@ ADSModule.RegisterTarget(controllerUrl: String, myUrl: String, username: String,
 ADSModule.RepairDatastore(id: Int32) -> RunningTask
 ADSModule.RequestDatastoreSizeCalculation(datastoreId: Int32) -> RunningTask
 ADSModule.RestartInstance(InstanceName: String) -> ActionResult
-ADSModule.Servers(id: String, Data: JObject, RealIP: IPAddress) -> JSONRawResponse
+ADSModule.Servers(Data: JObject, RealIP: IPAddress) -> JSONRawResponse
 ADSModule.SetInstanceConfig(InstanceName: String, SettingNode: String, Value: String) -> ActionResult
 ADSModule.SetInstanceNetworkInfo(InstanceId: Guid, PortMappings: Dictionary<String, Int32>) -> ActionResult
 ADSModule.SetInstanceSuspended(InstanceName: String, Suspended: Boolean) -> ActionResult
@@ -121,7 +121,6 @@ Core.GetUserList() -> Dictionary<String, String>
 Core.GetWebauthnChallenge() -> ActionResult<String>
 Core.GetWebauthnCredentialIDs(username: String) -> WebauthnLoginInfo
 Core.GetWebauthnCredentialSummaries() -> List<WebauthnCredentialSummary>
-Core.GetWebserverMetrics() -> Object
 Core.Kill() -> Void
 Core.Login(username: String, password: String, token: String, rememberMe: Boolean) -> LoginResponse
 Core.Logout() -> Void

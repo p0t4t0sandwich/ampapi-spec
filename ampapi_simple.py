@@ -46,6 +46,9 @@ class AMPAPI:
     def Core_GetAPISpec(self) -> dict[str, Any]:
         return self.APICall("Core/GetAPISpec")
 
+    def Core_GetModuleInfo(self) -> dict[str, Any]:
+        return self.APICall("Core/GetModuleInfo")
+
     def Core_GetUpdateInfo(self) -> dict[str, Any]:
         return self.APICall("Core/GetUpdateInfo")
 

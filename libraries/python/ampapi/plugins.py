@@ -643,11 +643,9 @@ class ADSModule(AMPAPI):
             'InstanceName': InstanceName
         }), ActionResult)
 
-    def Servers(self, id: 'str', Data: 'dict[str, Any]', RealIP: 'str') -> dict[str, Any]:
+    def Servers(self, Data: 'dict[str, Any]', RealIP: 'str') -> dict[str, Any]:
         """
         Name Description Optional
-        :param id: 
-        :type id: str
         :param Data: 
         :type Data: dict[str, Any]
         :param RealIP: 
@@ -655,7 +653,6 @@ class ADSModule(AMPAPI):
         :returns: dict[str, Any]
         """
         return json_to_obj(self.api_call("ADSModule/Servers", {
-            'id': id,
             'Data': Data,
             'RealIP': RealIP
         }), dict[str, Any])
@@ -1536,11 +1533,9 @@ class ADSModuleAsync(AMPAPI):
             'InstanceName': InstanceName
         }), ActionResult)
 
-    async def Servers(self, id: 'str', Data: 'dict[str, Any]', RealIP: 'str') -> dict[str, Any]:
+    async def Servers(self, Data: 'dict[str, Any]', RealIP: 'str') -> dict[str, Any]:
         """
         Name Description Optional
-        :param id: 
-        :type id: str
         :param Data: 
         :type Data: dict[str, Any]
         :param RealIP: 
@@ -1548,7 +1543,6 @@ class ADSModuleAsync(AMPAPI):
         :returns: dict[str, Any]
         """
         return json_to_obj(self.api_call("ADSModule/Servers", {
-            'id': id,
             'Data': Data,
             'RealIP': RealIP
         }), dict[str, Any])
@@ -2504,14 +2498,6 @@ class Core(AMPAPI):
         :returns: list[WebauthnCredentialSummary]
         """
         return json_to_obj(self.api_call("Core/GetWebauthnCredentialSummaries", {}), list[WebauthnCredentialSummary])
-
-    def GetWebserverMetrics(self, ) -> Any:
-        """
-        Name Description Optional
-
-        :returns: Any
-        """
-        return json_to_obj(self.api_call("Core/GetWebserverMetrics", {}), Any)
 
     def Kill(self, ) -> None:
         """
@@ -3519,14 +3505,6 @@ class CoreAsync(AMPAPI):
         :returns: list[WebauthnCredentialSummary]
         """
         return json_to_obj(self.api_call("Core/GetWebauthnCredentialSummaries", {}), list[WebauthnCredentialSummary])
-
-    async def GetWebserverMetrics(self, ) -> Any:
-        """
-        Name Description Optional
-
-        :returns: Any
-        """
-        return json_to_obj(self.api_call("Core/GetWebserverMetrics", {}), Any)
 
     async def Kill(self, ) -> None:
         """

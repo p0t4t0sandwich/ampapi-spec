@@ -1,11 +1,14 @@
 {
   "ADSModule": {
     "AddDatastore": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "newDatastore",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "InstanceDatastore"
         }
       ],
@@ -13,23 +16,28 @@
       "IsComplexType": true
     },
     "ApplyInstanceConfiguration": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "InstanceID",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Guid"
         },
         {
           "Description": "",
           "Name": "Args",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Dictionary<String, String>"
         },
         {
           "Description": "",
           "Name": "RebuildConfiguration",
           "Optional": true,
+          "ParamEnumValues": null,
           "TypeName": "Boolean"
         }
       ],
@@ -44,30 +52,35 @@
           "Description": "",
           "Name": "InstanceID",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Guid"
         },
         {
           "Description": "",
           "Name": "TemplateID",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Int32"
         },
         {
           "Description": "",
           "Name": "NewFriendlyName",
           "Optional": true,
+          "ParamEnumValues": null,
           "TypeName": "String"
         },
         {
           "Description": "",
           "Name": "Secret",
           "Optional": true,
+          "ParamEnumValues": null,
           "TypeName": "String"
         },
         {
           "Description": "",
           "Name": "RestartIfPreviouslyRunning",
           "Optional": true,
+          "ParamEnumValues": null,
           "TypeName": "Boolean"
         }
       ],
@@ -75,35 +88,42 @@
       "IsComplexType": true
     },
     "AttachADS": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "Friendly",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         },
         {
           "Description": "",
           "Name": "IsHTTPS",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Boolean"
         },
         {
           "Description": "",
           "Name": "Host",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         },
         {
           "Description": "",
           "Name": "Port",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Int32"
         },
         {
           "Description": "",
           "Name": "InstanceID",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Guid"
         }
       ],
@@ -111,17 +131,21 @@
       "IsComplexType": true
     },
     "CloneTemplate": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "Id",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Int32"
         },
         {
           "Description": "",
           "Name": "NewName",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         }
       ],
@@ -129,11 +153,14 @@
       "IsComplexType": true
     },
     "CreateDeploymentTemplate": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "Name",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         }
       ],
@@ -141,71 +168,84 @@
       "IsComplexType": true
     },
     "CreateInstance": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "TargetADSInstance",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Guid"
         },
         {
           "Description": "",
           "Name": "NewInstanceId",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Guid"
         },
         {
           "Description": "",
           "Name": "Module",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         },
         {
           "Description": "",
           "Name": "InstanceName",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         },
         {
           "Description": "",
           "Name": "FriendlyName",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         },
         {
           "Description": "",
           "Name": "IPBinding",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         },
         {
           "Description": "",
           "Name": "PortNumber",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Int32"
         },
         {
           "Description": "",
           "Name": "AdminUsername",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         },
         {
           "Description": "",
           "Name": "AdminPassword",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         },
         {
           "Description": "",
           "Name": "ProvisionSettings",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Dictionary<String, String>"
         },
         {
           "Description": "When enabled, all settings other than the Module, Target and FriendlyName are ignored and replaced with automatically generated values.",
           "Name": "AutoConfigure",
           "Optional": true,
+          "ParamEnumValues": null,
           "TypeName": "Boolean"
         },
         {
@@ -226,18 +266,21 @@
           "Description": "",
           "Name": "StartOnBoot",
           "Optional": true,
+          "ParamEnumValues": null,
           "TypeName": "Boolean"
         },
         {
           "Description": "",
           "Name": "DisplayImageSource",
           "Optional": true,
+          "ParamEnumValues": null,
           "TypeName": "String"
         },
         {
           "Description": "",
           "Name": "TargetDatastore",
           "Optional": true,
+          "ParamEnumValues": null,
           "TypeName": "Int32"
         }
       ],
@@ -245,23 +288,28 @@
       "IsComplexType": true
     },
     "CreateInstanceFromSpec": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "SpecId",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Guid"
         },
         {
           "Description": "",
           "Name": "TargetADSInstance",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Guid"
         },
         {
           "Description": "",
           "Name": "FriendlyName",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         },
         {
@@ -282,12 +330,14 @@
           "Description": "",
           "Name": "StartOnBoot",
           "Optional": true,
+          "ParamEnumValues": null,
           "TypeName": "Boolean"
         },
         {
           "Description": "",
           "Name": "TargetDatastore",
           "Optional": true,
+          "ParamEnumValues": null,
           "TypeName": "Int32"
         }
       ],
@@ -295,11 +345,14 @@
       "IsComplexType": true
     },
     "CreateLocalInstance": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "Instance",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "LocalAMPInstance"
         },
         {
@@ -321,11 +374,14 @@
       "IsComplexType": true
     },
     "DeleteDatastore": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "id",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Int32"
         }
       ],
@@ -333,11 +389,14 @@
       "IsComplexType": true
     },
     "DeleteDeploymentTemplate": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "Id",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Int32"
         }
       ],
@@ -345,11 +404,14 @@
       "IsComplexType": true
     },
     "DeleteInstance": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "InstanceName",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         }
       ],
@@ -357,11 +419,14 @@
       "IsComplexType": true
     },
     "DeleteInstanceUsers": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "InstanceId",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Guid"
         }
       ],
@@ -369,53 +434,63 @@
       "IsComplexType": true
     },
     "DeployTemplate": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "The ID of the template to be deployed, as per the Template Management UI in AMP itself.",
           "Name": "TemplateID",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Int32"
         },
         {
           "Description": "If specified, AMP will create a new user with this name for this instance. Must be unique. If this user already exists, this will be ignored but the new instance will be assigned to this user.",
           "Name": "NewUsername",
           "Optional": true,
+          "ParamEnumValues": null,
           "TypeName": "String"
         },
         {
           "Description": "If 'NewUsername' is specified and the user doesn't already exist, the password that will be assigned to this user.",
           "Name": "NewPassword",
           "Optional": true,
+          "ParamEnumValues": null,
           "TypeName": "String"
         },
         {
           "Description": "If 'NewUsername' is specified and the user doesn't already exist, the email address that will be assigned to this user.",
           "Name": "NewEmail",
           "Optional": true,
+          "ParamEnumValues": null,
           "TypeName": "String"
         },
         {
           "Description": "If specified, AMP will only deploy this template to targets that have every single 'tag' specified in their target configuration. You can adjust this via the controller by clicking 'Edit' on the target settings.",
           "Name": "RequiredTags",
           "Optional": true,
+          "ParamEnumValues": null,
           "TypeName": "List<String>"
         },
         {
           "Description": "Unrelated to RequiredTags. This is to uniquely identify this instance to your own systems. It may be something like an order ID or service ID so you can find the associated instance again at a later time. If 'UseTagAsInstanceName' is enabled, then this will also be used as the instance name for the created instance - but it must be unique.",
           "Name": "Tag",
           "Optional": true,
+          "ParamEnumValues": null,
           "TypeName": "String"
         },
         {
           "Description": "A friendly name for this instance. If left blank, AMP will generate one for you.",
           "Name": "FriendlyName",
           "Optional": true,
+          "ParamEnumValues": null,
           "TypeName": "String"
         },
         {
           "Description": "Must be a non-empty strong in order to get a callback on deployment state change. This secret will be passed back to you in the callback so you can verify the request.",
           "Name": "Secret",
           "Optional": true,
+          "ParamEnumValues": null,
           "TypeName": "String"
         },
         {
@@ -436,6 +511,7 @@
           "Description": "A dictionary of setting nodes and values to create the new instance with. Identical in function to the provisioning arguments in the template itself.",
           "Name": "ExtraProvisionSettings",
           "Optional": true,
+          "ParamEnumValues": null,
           "TypeName": "Dictionary<String, String>"
         }
       ],
@@ -443,11 +519,14 @@
       "IsComplexType": true
     },
     "DetachTarget": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "Id",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Guid"
         }
       ],
@@ -455,11 +534,14 @@
       "IsComplexType": true
     },
     "ExtractEverywhere": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "SourceArchive",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         }
       ],
@@ -467,11 +549,14 @@
       "IsComplexType": true
     },
     "GetApplicationEndpoints": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "instanceId",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Guid"
         }
       ],
@@ -479,11 +564,14 @@
       "IsComplexType": true
     },
     "GetDatastore": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "id",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Int32"
         }
       ],
@@ -491,11 +579,14 @@
       "IsComplexType": true
     },
     "GetDatastoreInstances": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "datastoreId",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Int32"
         }
       ],
@@ -503,21 +594,28 @@
       "IsComplexType": true
     },
     "GetDatastores": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [],
       "ReturnTypeName": "IEnumerable<JObject>",
       "IsComplexType": true
     },
     "GetDeploymentTemplates": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [],
       "ReturnTypeName": "IEnumerable<JObject>",
       "IsComplexType": true
     },
     "GetGroup": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "GroupId",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Guid"
         }
       ],
@@ -525,11 +623,14 @@
       "IsComplexType": true
     },
     "GetInstance": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "InstanceId",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Guid"
         }
       ],
@@ -537,11 +638,14 @@
       "IsComplexType": true
     },
     "GetInstanceNetworkInfo": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "InstanceName",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         }
       ],
@@ -549,16 +653,21 @@
       "IsComplexType": true
     },
     "GetInstanceStatuses": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [],
       "ReturnTypeName": "IEnumerable<JObject>",
       "IsComplexType": true
     },
     "GetInstances": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "ForceIncludeSelf",
           "Optional": true,
+          "ParamEnumValues": null,
           "TypeName": "Boolean"
         }
       ],
@@ -566,16 +675,21 @@
       "IsComplexType": true
     },
     "GetLocalInstances": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [],
       "ReturnTypeName": "IEnumerable<JObject>",
       "IsComplexType": true
     },
     "GetProvisionArguments": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "ModuleName",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         }
       ],
@@ -583,43 +697,56 @@
       "IsComplexType": true
     },
     "GetProvisionFitness": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [],
       "ReturnTypeName": "JObject",
       "IsComplexType": true
     },
     "GetSupportedAppSummaries": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [],
       "ReturnTypeName": "IEnumerable<JObject>",
       "IsComplexType": true
     },
     "GetSupportedApplications": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [],
       "ReturnTypeName": "IEnumerable<JObject>",
       "IsComplexType": true
     },
     "GetTargetInfo": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [],
       "ReturnTypeName": "JObject",
       "IsComplexType": true
     },
     "HandoutInstanceConfigs": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "ForModule",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         },
         {
           "Description": "",
           "Name": "SettingNode",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         },
         {
           "Description": "",
           "Name": "Values",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "List<String>"
         }
       ],
@@ -627,11 +754,14 @@
       "IsComplexType": true
     },
     "ManageInstance": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "InstanceId",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Guid"
         }
       ],
@@ -639,23 +769,28 @@
       "IsComplexType": true
     },
     "ModifyCustomFirewallRule": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "instanceId",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Guid"
         },
         {
           "Description": "",
           "Name": "PortNumber",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Int32"
         },
         {
           "Description": "",
           "Name": "Range",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Int32"
         },
         {
@@ -673,12 +808,14 @@
           "Description": "",
           "Name": "Description",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         },
         {
           "Description": "",
           "Name": "Open",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Boolean"
         }
       ],
@@ -686,17 +823,21 @@
       "IsComplexType": true
     },
     "MoveInstanceDatastore": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "instanceId",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Guid"
         },
         {
           "Description": "",
           "Name": "datastoreId",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Int32"
         }
       ],
@@ -704,11 +845,14 @@
       "IsComplexType": true
     },
     "ReactivateInstance": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "instanceId",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Guid"
         }
       ],
@@ -716,21 +860,28 @@
       "IsComplexType": true
     },
     "ReactivateLocalInstances": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [],
       "ReturnTypeName": "RunningTask",
       "IsComplexType": true
     },
     "RefreshAppCache": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [],
       "ReturnTypeName": "Void",
       "IsComplexType": false
     },
     "RefreshGroup": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "GroupId",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Guid"
         }
       ],
@@ -738,11 +889,14 @@
       "IsComplexType": true
     },
     "RefreshInstanceConfig": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "InstanceId",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         }
       ],
@@ -750,11 +904,14 @@
       "IsComplexType": true
     },
     "RefreshRemoteConfigStores": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "force",
           "Optional": true,
+          "ParamEnumValues": null,
           "TypeName": "Boolean"
         }
       ],
@@ -762,41 +919,49 @@
       "IsComplexType": false
     },
     "RegisterTarget": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "controllerUrl",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         },
         {
           "Description": "",
           "Name": "myUrl",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         },
         {
           "Description": "",
           "Name": "username",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         },
         {
           "Description": "",
           "Name": "password",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         },
         {
           "Description": "",
           "Name": "twoFactorToken",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         },
         {
           "Description": "",
           "Name": "friendlyName",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         }
       ],
@@ -804,11 +969,14 @@
       "IsComplexType": true
     },
     "RepairDatastore": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "id",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Int32"
         }
       ],
@@ -816,11 +984,14 @@
       "IsComplexType": true
     },
     "RequestDatastoreSizeCalculation": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "datastoreId",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Int32"
         }
       ],
@@ -828,11 +999,14 @@
       "IsComplexType": true
     },
     "RestartInstance": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "InstanceName",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         }
       ],
@@ -840,23 +1014,21 @@
       "IsComplexType": true
     },
     "Servers": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
-        {
-          "Description": "",
-          "Name": "id",
-          "Optional": false,
-          "TypeName": "String"
-        },
         {
           "Description": "",
           "Name": "Data",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "JObject"
         },
         {
           "Description": "",
           "Name": "RealIP",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "IPAddress"
         }
       ],
@@ -864,23 +1036,28 @@
       "IsComplexType": true
     },
     "SetInstanceConfig": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "InstanceName",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         },
         {
           "Description": "",
           "Name": "SettingNode",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         },
         {
           "Description": "",
           "Name": "Value",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         }
       ],
@@ -888,17 +1065,21 @@
       "IsComplexType": true
     },
     "SetInstanceNetworkInfo": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "InstanceId",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Guid"
         },
         {
           "Description": "",
           "Name": "PortMappings",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Dictionary<String, Int32>"
         }
       ],
@@ -906,17 +1087,21 @@
       "IsComplexType": true
     },
     "SetInstanceSuspended": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "InstanceName",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         },
         {
           "Description": "",
           "Name": "Suspended",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Boolean"
         }
       ],
@@ -924,11 +1109,14 @@
       "IsComplexType": true
     },
     "StartAllInstances": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "TargetADSInstance",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Guid"
         }
       ],
@@ -936,11 +1124,14 @@
       "IsComplexType": true
     },
     "StartInstance": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "InstanceName",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         }
       ],
@@ -948,11 +1139,14 @@
       "IsComplexType": true
     },
     "StopAllInstances": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "TargetADSInstance",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Guid"
         }
       ],
@@ -960,11 +1154,14 @@
       "IsComplexType": true
     },
     "StopInstance": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "InstanceName",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         }
       ],
@@ -972,29 +1169,35 @@
       "IsComplexType": true
     },
     "TestADSLoginDetails": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "url",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         },
         {
           "Description": "",
           "Name": "username",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         },
         {
           "Description": "",
           "Name": "password",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         },
         {
           "Description": "",
           "Name": "twoFactorToken",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         }
       ],
@@ -1002,11 +1205,14 @@
       "IsComplexType": true
     },
     "UpdateDatastore": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "updatedDatastore",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "InstanceDatastore"
         }
       ],
@@ -1014,11 +1220,14 @@
       "IsComplexType": true
     },
     "UpdateDeploymentTemplate": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "templateToUpdate",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "DeploymentTemplate"
         }
       ],
@@ -1026,59 +1235,70 @@
       "IsComplexType": true
     },
     "UpdateInstanceInfo": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "InstanceId",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         },
         {
           "Description": "",
           "Name": "FriendlyName",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         },
         {
           "Description": "",
           "Name": "Description",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         },
         {
           "Description": "",
           "Name": "StartOnBoot",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Boolean"
         },
         {
           "Description": "",
           "Name": "Suspended",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Boolean"
         },
         {
           "Description": "",
           "Name": "ExcludeFromFirewall",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Boolean"
         },
         {
           "Description": "",
           "Name": "RunInContainer",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Boolean"
         },
         {
           "Description": "",
           "Name": "ContainerMemory",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Int32"
         },
         {
           "Description": "",
           "Name": "ContainerSwap",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Int32"
         },
         {
@@ -1096,18 +1316,21 @@
           "Description": "",
           "Name": "ContainerMaxCPU",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Single"
         },
         {
           "Description": "",
           "Name": "ContainerImage",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         },
         {
           "Description": "",
           "Name": "WelcomeMessage",
           "Optional": true,
+          "ParamEnumValues": null,
           "TypeName": "String"
         }
       ],
@@ -1115,11 +1338,14 @@
       "IsComplexType": true
     },
     "UpdateTarget": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "TargetID",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Guid"
         }
       ],
@@ -1127,35 +1353,42 @@
       "IsComplexType": false
     },
     "UpdateTargetInfo": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "Id",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Guid"
         },
         {
           "Description": "",
           "Name": "FriendlyName",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         },
         {
           "Description": "",
           "Name": "Url",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Uri"
         },
         {
           "Description": "",
           "Name": "Description",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         },
         {
           "Description": "",
           "Name": "Tags",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "List<String>"
         }
       ],
@@ -1163,17 +1396,21 @@
       "IsComplexType": true
     },
     "UpgradeAllInstances": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "TargetADSInstance",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Guid"
         },
         {
           "Description": "",
           "Name": "RestartRunning",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Boolean"
         }
       ],
@@ -1181,11 +1418,14 @@
       "IsComplexType": true
     },
     "UpgradeInstance": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "InstanceName",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         }
       ],
@@ -1195,23 +1435,28 @@
   },
   "AnalyticsPlugin": {
     "GetAnalyticsSummary": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "PeriodDays",
           "Optional": true,
+          "ParamEnumValues": null,
           "TypeName": "Int32"
         },
         {
           "Description": "",
           "Name": "StartDate",
           "Optional": true,
+          "ParamEnumValues": null,
           "TypeName": "Nullable<DateTime>"
         },
         {
           "Description": "",
           "Name": "Filters",
           "Optional": true,
+          "ParamEnumValues": null,
           "TypeName": "Dictionary<String, String>"
         }
       ],
@@ -1222,22 +1467,28 @@
   "CommonCorePlugin": {},
   "Core": {
     "AcknowledgeAMPUpdate": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [],
       "ReturnTypeName": "Void",
       "IsComplexType": false
     },
     "ActivateAMPLicence": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "LicenceKey",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         },
         {
           "Description": "",
           "Name": "QueryOnly",
           "Optional": true,
+          "ParamEnumValues": null,
           "TypeName": "Boolean"
         }
       ],
@@ -1245,11 +1496,14 @@
       "IsComplexType": true
     },
     "AddEventTrigger": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "triggerId",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Guid"
         }
       ],
@@ -1257,41 +1511,49 @@
       "IsComplexType": true
     },
     "AddIntervalTrigger": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "months",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Int32[]"
         },
         {
           "Description": "",
           "Name": "days",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Int32[]"
         },
         {
           "Description": "",
           "Name": "hours",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Int32[]"
         },
         {
           "Description": "",
           "Name": "minutes",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Int32[]"
         },
         {
           "Description": "",
           "Name": "daysOfMonth",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Int32[]"
         },
         {
           "Description": "",
           "Name": "description",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         }
       ],
@@ -1299,23 +1561,28 @@
       "IsComplexType": true
     },
     "AddTask": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "TriggerID",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Guid"
         },
         {
           "Description": "",
           "Name": "MethodID",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         },
         {
           "Description": "",
           "Name": "ParameterMapping",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Dictionary<String, String>"
         }
       ],
@@ -1330,11 +1597,14 @@
       "IsComplexType": false
     },
     "CancelTask": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "TaskId",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Guid"
         }
       ],
@@ -1342,23 +1612,28 @@
       "IsComplexType": true
     },
     "ChangeTaskOrder": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "TriggerID",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Guid"
         },
         {
           "Description": "",
           "Name": "TaskID",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Guid"
         },
         {
           "Description": "",
           "Name": "NewOrder",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Int32"
         }
       ],
@@ -1373,24 +1648,28 @@
           "Description": "",
           "Name": "Username",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         },
         {
           "Description": "",
           "Name": "OldPassword",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         },
         {
           "Description": "",
           "Name": "NewPassword",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         },
         {
           "Description": "",
           "Name": "TwoFactorPIN",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         }
       ],
@@ -1405,12 +1684,14 @@
           "Description": "",
           "Name": "Username",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         },
         {
           "Description": "",
           "Name": "TwoFactorCode",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         }
       ],
@@ -1418,17 +1699,21 @@
       "IsComplexType": true
     },
     "CreateRole": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "Name",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         },
         {
           "Description": "",
           "Name": "AsCommonRole",
           "Optional": true,
+          "ParamEnumValues": null,
           "TypeName": "Boolean"
         }
       ],
@@ -1443,11 +1728,14 @@
       "IsComplexType": false
     },
     "CreateUser": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "Username",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         }
       ],
@@ -1455,11 +1743,14 @@
       "IsComplexType": true
     },
     "CurrentSessionHasPermission": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "PermissionNode",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         }
       ],
@@ -1467,11 +1758,14 @@
       "IsComplexType": false
     },
     "DeleteInstanceUsers": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "InstanceId",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Guid"
         }
       ],
@@ -1479,11 +1773,14 @@
       "IsComplexType": true
     },
     "DeleteRole": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "RoleId",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Guid"
         }
       ],
@@ -1491,17 +1788,21 @@
       "IsComplexType": true
     },
     "DeleteTask": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "TriggerID",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Guid"
         },
         {
           "Description": "",
           "Name": "TaskID",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Guid"
         }
       ],
@@ -1509,11 +1810,14 @@
       "IsComplexType": true
     },
     "DeleteTrigger": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "TriggerID",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Guid"
         }
       ],
@@ -1521,11 +1825,14 @@
       "IsComplexType": true
     },
     "DeleteUser": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "Username",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         }
       ],
@@ -1533,17 +1840,21 @@
       "IsComplexType": true
     },
     "DisableTwoFactor": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "Password",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         },
         {
           "Description": "",
           "Name": "TwoFactorCode",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         }
       ],
@@ -1551,16 +1862,21 @@
       "IsComplexType": true
     },
     "DismissAllTasks": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [],
       "ReturnTypeName": "ActionResult",
       "IsComplexType": true
     },
     "DismissTask": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "TaskId",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Guid"
         }
       ],
@@ -1568,47 +1884,56 @@
       "IsComplexType": true
     },
     "EditIntervalTrigger": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "Id",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Guid"
         },
         {
           "Description": "",
           "Name": "months",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Int32[]"
         },
         {
           "Description": "",
           "Name": "days",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Int32[]"
         },
         {
           "Description": "",
           "Name": "hours",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Int32[]"
         },
         {
           "Description": "",
           "Name": "minutes",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Int32[]"
         },
         {
           "Description": "",
           "Name": "daysOfMonth",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Int32[]"
         },
         {
           "Description": "",
           "Name": "description",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         }
       ],
@@ -1616,23 +1941,28 @@
       "IsComplexType": true
     },
     "EditTask": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "TriggerID",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Guid"
         },
         {
           "Description": "",
           "Name": "TaskID",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Guid"
         },
         {
           "Description": "",
           "Name": "ParameterMapping",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Dictionary<String, String>"
         }
       ],
@@ -1647,12 +1977,14 @@
           "Description": "",
           "Name": "Username",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         },
         {
           "Description": "",
           "Name": "Password",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         }
       ],
@@ -1660,11 +1992,14 @@
       "IsComplexType": true
     },
     "EndUserSession": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "Id",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Guid"
         }
       ],
@@ -1672,11 +2007,14 @@
       "IsComplexType": false
     },
     "GetAMPRolePermissions": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "RoleId",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Guid"
         }
       ],
@@ -1684,11 +2022,14 @@
       "IsComplexType": false
     },
     "GetAMPUserInfo": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "Username",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         }
       ],
@@ -1696,37 +2037,49 @@
       "IsComplexType": true
     },
     "GetAMPUsersSummary": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [],
       "ReturnTypeName": "IEnumerable<UserInfoSummary>",
       "IsComplexType": true
     },
     "GetAPISpec": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [],
       "ReturnTypeName": "Dictionary<String, Dictionary<String, JObject>>",
       "IsComplexType": true
     },
     "GetActiveAMPSessions": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [],
       "ReturnTypeName": "IEnumerable<JObject>",
       "IsComplexType": true
     },
     "GetAllAMPUserInfo": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [],
       "ReturnTypeName": "IEnumerable<UserInfo>",
       "IsComplexType": true
     },
     "GetAuditLogEntries": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "Before",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Nullable<DateTime>"
         },
         {
           "Description": "",
           "Name": "Count",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Int32"
         }
       ],
@@ -1734,11 +2087,14 @@
       "IsComplexType": true
     },
     "GetAuthenticationRequirements": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "username",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         }
       ],
@@ -1746,11 +2102,14 @@
       "IsComplexType": true
     },
     "GetConfig": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "node",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         }
       ],
@@ -1758,11 +2117,14 @@
       "IsComplexType": true
     },
     "GetConfigs": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "nodes",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String[]"
         }
       ],
@@ -1770,47 +2132,63 @@
       "IsComplexType": true
     },
     "GetDiagnosticsInfo": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [],
       "ReturnTypeName": "Dictionary<String, String>",
       "IsComplexType": false
     },
     "GetModuleInfo": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [],
       "ReturnTypeName": "JObject",
       "IsComplexType": true
     },
     "GetNewGuid": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [],
       "ReturnTypeName": "Guid",
       "IsComplexType": false
     },
     "GetPermissionsSpec": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [],
       "ReturnTypeName": "IList<IPermissionsTreeNode>",
       "IsComplexType": true
     },
     "GetPortSummaries": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [],
       "ReturnTypeName": "IEnumerable<ListeningPortSummary>",
       "IsComplexType": true
     },
     "GetProvisionSpec": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [],
       "ReturnTypeName": "List<JObject>",
       "IsComplexType": true
     },
     "GetRemoteLoginToken": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "Description",
           "Optional": true,
+          "ParamEnumValues": null,
           "TypeName": "String"
         },
         {
           "Description": "",
           "Name": "IsTemporary",
           "Optional": true,
+          "ParamEnumValues": null,
           "TypeName": "Boolean"
         }
       ],
@@ -1818,11 +2196,14 @@
       "IsComplexType": false
     },
     "GetRole": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "RoleId",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Guid"
         }
       ],
@@ -1830,32 +2211,42 @@
       "IsComplexType": true
     },
     "GetRoleData": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [],
       "ReturnTypeName": "IEnumerable<AuthRoleSummary>",
       "IsComplexType": true
     },
     "GetRoleIds": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [],
       "ReturnTypeName": "IDictionary<Guid, String>",
       "IsComplexType": false
     },
     "GetScheduleData": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [],
       "ReturnTypeName": "JObject",
       "IsComplexType": true
     },
     "GetSettingValues": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "SettingNode",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         },
         {
           "Description": "",
           "Name": "WithRefresh",
           "Optional": true,
+          "ParamEnumValues": null,
           "TypeName": "Boolean"
         }
       ],
@@ -1863,26 +2254,35 @@
       "IsComplexType": false
     },
     "GetSettingsSpec": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [],
       "ReturnTypeName": "Dictionary<String, IEnumerable<JObject>>",
       "IsComplexType": true
     },
     "GetStatus": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [],
       "ReturnTypeName": "JObject",
       "IsComplexType": true
     },
     "GetTasks": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [],
       "ReturnTypeName": "IEnumerable<RunningTask>",
       "IsComplexType": true
     },
     "GetTimeIntervalTrigger": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "Id",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Guid"
         }
       ],
@@ -1890,6 +2290,8 @@
       "IsComplexType": true
     },
     "GetUpdateInfo": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [],
       "ReturnTypeName": "JObject",
       "IsComplexType": true
@@ -1902,6 +2304,8 @@
       "IsComplexType": true
     },
     "GetUserActionsSpec": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [],
       "ReturnTypeName": "Object",
       "IsComplexType": false
@@ -1914,6 +2318,7 @@
           "Description": "",
           "Name": "UID",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         }
       ],
@@ -1928,16 +2333,21 @@
       "IsComplexType": false
     },
     "GetWebauthnChallenge": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [],
       "ReturnTypeName": "ActionResult<String>",
       "IsComplexType": true
     },
     "GetWebauthnCredentialIDs": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "username",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         }
       ],
@@ -1945,44 +2355,49 @@
       "IsComplexType": true
     },
     "GetWebauthnCredentialSummaries": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [],
       "ReturnTypeName": "IEnumerable<WebauthnCredentialSummary>",
       "IsComplexType": true
     },
-    "GetWebserverMetrics": {
-      "Parameters": [],
-      "ReturnTypeName": "Object",
-      "IsComplexType": false
-    },
     "Kill": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [],
       "ReturnTypeName": "Void",
       "IsComplexType": false
     },
     "Login": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "username",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         },
         {
           "Description": "",
           "Name": "password",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         },
         {
           "Description": "",
           "Name": "token",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         },
         {
           "Description": "",
           "Name": "rememberMe",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Boolean"
         }
       ],
@@ -1990,16 +2405,21 @@
       "IsComplexType": true
     },
     "Logout": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [],
       "ReturnTypeName": "Void",
       "IsComplexType": false
     },
     "RefreshSettingValueList": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "Node",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         }
       ],
@@ -2007,22 +2427,28 @@
       "IsComplexType": true
     },
     "RefreshSettingsSourceCache": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [],
       "ReturnTypeName": "Void",
       "IsComplexType": false
     },
     "RenameRole": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "RoleId",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Guid"
         },
         {
           "Description": "",
           "Name": "NewName",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         }
       ],
@@ -2037,12 +2463,14 @@
           "Description": "",
           "Name": "Username",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         },
         {
           "Description": "",
           "Name": "NewPassword",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         }
       ],
@@ -2050,11 +2478,15 @@
       "IsComplexType": true
     },
     "Restart": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [],
       "ReturnTypeName": "ActionResult",
       "IsComplexType": true
     },
     "RestartAMP": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [],
       "ReturnTypeName": "Void",
       "IsComplexType": false
@@ -2067,11 +2499,14 @@
       "IsComplexType": false
     },
     "RevokeWebauthnCredential": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "ID",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Int32"
         }
       ],
@@ -2079,11 +2514,14 @@
       "IsComplexType": true
     },
     "RunEventTriggerImmediately": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "triggerId",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Guid"
         }
       ],
@@ -2091,16 +2529,21 @@
       "IsComplexType": true
     },
     "RunSecurityCheck": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [],
       "ReturnTypeName": "IEnumerable<JObject>",
       "IsComplexType": true
     },
     "SendConsoleMessage": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "message",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         }
       ],
@@ -2108,23 +2551,28 @@
       "IsComplexType": false
     },
     "SetAMPRolePermission": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "RoleId",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Guid"
         },
         {
           "Description": "",
           "Name": "PermissionNode",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         },
         {
           "Description": "",
           "Name": "Enabled",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Nullable<Boolean>"
         }
       ],
@@ -2132,23 +2580,28 @@
       "IsComplexType": true
     },
     "SetAMPUserRoleMembership": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "UserId",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Guid"
         },
         {
           "Description": "",
           "Name": "RoleId",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Guid"
         },
         {
           "Description": "",
           "Name": "IsMember",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Boolean"
         }
       ],
@@ -2156,17 +2609,21 @@
       "IsComplexType": true
     },
     "SetConfig": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "node",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         },
         {
           "Description": "",
           "Name": "value",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         }
       ],
@@ -2174,11 +2631,14 @@
       "IsComplexType": true
     },
     "SetConfigs": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "data",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Dictionary<String, String>"
         }
       ],
@@ -2186,17 +2646,21 @@
       "IsComplexType": false
     },
     "SetTriggerEnabled": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "Id",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Guid"
         },
         {
           "Description": "",
           "Name": "Enabled",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Boolean"
         }
       ],
@@ -2204,16 +2668,22 @@
       "IsComplexType": true
     },
     "Sleep": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [],
       "ReturnTypeName": "ActionResult",
       "IsComplexType": true
     },
     "Start": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [],
       "ReturnTypeName": "ActionResult",
       "IsComplexType": true
     },
     "Stop": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [],
       "ReturnTypeName": "Void",
       "IsComplexType": false
@@ -2226,22 +2696,28 @@
       "IsComplexType": false
     },
     "UpdateAMPInstance": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [],
       "ReturnTypeName": "Void",
       "IsComplexType": false
     },
     "UpdateAccountInfo": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "EmailAddress",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         },
         {
           "Description": "",
           "Name": "TwoFactorPIN",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         }
       ],
@@ -2249,46 +2725,56 @@
       "IsComplexType": true
     },
     "UpdateApplication": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [],
       "ReturnTypeName": "ActionResult",
       "IsComplexType": true
     },
     "UpdateUserInfo": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "Username",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         },
         {
           "Description": "",
           "Name": "Disabled",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Boolean"
         },
         {
           "Description": "",
           "Name": "PasswordExpires",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Boolean"
         },
         {
           "Description": "",
           "Name": "CannotChangePassword",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Boolean"
         },
         {
           "Description": "",
           "Name": "MustChangePassword",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Boolean"
         },
         {
           "Description": "",
           "Name": "EmailAddress",
           "Optional": true,
+          "ParamEnumValues": null,
           "TypeName": "String"
         }
       ],
@@ -2296,28 +2782,35 @@
       "IsComplexType": true
     },
     "UpgradeAMP": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [],
       "ReturnTypeName": "Void",
       "IsComplexType": false
     },
     "WebauthnRegister": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "attestationObject",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         },
         {
           "Description": "",
           "Name": "clientDataJSON",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         },
         {
           "Description": "",
           "Name": "description",
           "Optional": true,
+          "ParamEnumValues": null,
           "TypeName": "String"
         }
       ],
@@ -2327,6 +2820,8 @@
   },
   "EmailSenderPlugin": {
     "TestSMTPSettings": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [],
       "ReturnTypeName": "ActionResult",
       "IsComplexType": true
@@ -2334,23 +2829,28 @@
   },
   "FileManagerPlugin": {
     "AppendFileChunk": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "Filename",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         },
         {
           "Description": "",
           "Name": "Data",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         },
         {
           "Description": "",
           "Name": "Delete",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Boolean"
         }
       ],
@@ -2358,11 +2858,14 @@
       "IsComplexType": false
     },
     "CalculateFileMD5Sum": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "FilePath",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         }
       ],
@@ -2370,23 +2873,28 @@
       "IsComplexType": true
     },
     "ChangeExclusion": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "ModifyPath",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         },
         {
           "Description": "",
           "Name": "AsDirectory",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Boolean"
         },
         {
           "Description": "",
           "Name": "Exclude",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Boolean"
         }
       ],
@@ -2394,17 +2902,21 @@
       "IsComplexType": true
     },
     "CopyFile": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "Origin",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         },
         {
           "Description": "",
           "Name": "TargetDirectory",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         }
       ],
@@ -2412,11 +2924,14 @@
       "IsComplexType": true
     },
     "CreateArchive": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "PathToArchive",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         }
       ],
@@ -2431,6 +2946,7 @@
           "Description": "",
           "Name": "NewPath",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         }
       ],
@@ -2438,17 +2954,21 @@
       "IsComplexType": true
     },
     "DownloadFileFromURL": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "Source",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Uri"
         },
         {
           "Description": "",
           "Name": "TargetDirectory",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         }
       ],
@@ -2456,6 +2976,8 @@
       "IsComplexType": true
     },
     "Dummy": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [],
       "ReturnTypeName": "Void",
       "IsComplexType": false
@@ -2468,6 +2990,7 @@
           "Description": "",
           "Name": "TrashDirectoryName",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         }
       ],
@@ -2475,17 +2998,21 @@
       "IsComplexType": true
     },
     "ExtractArchive": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "ArchivePath",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         },
         {
           "Description": "",
           "Name": "DestinationPath",
           "Optional": true,
+          "ParamEnumValues": null,
           "TypeName": "String"
         }
       ],
@@ -2493,11 +3020,14 @@
       "IsComplexType": true
     },
     "GetDirectoryListing": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "Dir",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         }
       ],
@@ -2505,23 +3035,28 @@
       "IsComplexType": true
     },
     "GetFileChunk": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "Filename",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         },
         {
           "Description": "",
           "Name": "Position",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Int64"
         },
         {
           "Description": "",
           "Name": "Length",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Int32"
         }
       ],
@@ -2529,23 +3064,28 @@
       "IsComplexType": true
     },
     "ReadFileChunk": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "Filename",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         },
         {
           "Description": "",
           "Name": "Offset",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Int64"
         },
         {
           "Description": "",
           "Name": "ChunkSize",
           "Optional": true,
+          "ParamEnumValues": null,
           "TypeName": "Int64"
         }
       ],
@@ -2553,11 +3093,14 @@
       "IsComplexType": true
     },
     "ReleaseFileUploadLock": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "Filename",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         }
       ],
@@ -2572,12 +3115,14 @@
           "Description": "The full path to the old directory",
           "Name": "oldDirectory",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         },
         {
           "Description": "The name component of the new directory (not the full path)",
           "Name": "NewDirectoryName",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         }
       ],
@@ -2585,17 +3130,21 @@
       "IsComplexType": true
     },
     "RenameFile": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "Filename",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         },
         {
           "Description": "",
           "Name": "NewFilename",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         }
       ],
@@ -2610,6 +3159,7 @@
           "Description": "",
           "Name": "DirectoryName",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         }
       ],
@@ -2624,6 +3174,7 @@
           "Description": "",
           "Name": "Filename",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         }
       ],
@@ -2631,29 +3182,35 @@
       "IsComplexType": true
     },
     "WriteFileChunk": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "Filename",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         },
         {
           "Description": "",
           "Name": "Data",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         },
         {
           "Description": "",
           "Name": "Offset",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Int64"
         },
         {
           "Description": "",
           "Name": "FinalChunk",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Boolean"
         }
       ],
@@ -2663,11 +3220,14 @@
   },
   "GenericModule": {
     "ImportConfig": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "filename",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         }
       ],
@@ -2675,6 +3235,8 @@
       "IsComplexType": false
     },
     "ReloadGenericConfig": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [],
       "ReturnTypeName": "Void",
       "IsComplexType": false
@@ -2682,11 +3244,14 @@
   },
   "LocalFileBackupPlugin": {
     "DeleteFromS3": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "BackupId",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Guid"
         }
       ],
@@ -2694,11 +3259,14 @@
       "IsComplexType": true
     },
     "DeleteLocalBackup": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "BackupId",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Guid"
         }
       ],
@@ -2706,11 +3274,14 @@
       "IsComplexType": false
     },
     "DownloadFromS3": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "BackupId",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Guid"
         }
       ],
@@ -2718,27 +3289,35 @@
       "IsComplexType": true
     },
     "GetBackups": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [],
       "ReturnTypeName": "IEnumerable<JObject>",
       "IsComplexType": true
     },
     "RefreshBackupList": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [],
       "ReturnTypeName": "Void",
       "IsComplexType": false
     },
     "RestoreBackup": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "BackupId",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Guid"
         },
         {
           "Description": "",
           "Name": "DeleteExistingData",
           "Optional": true,
+          "ParamEnumValues": null,
           "TypeName": "Boolean"
         }
       ],
@@ -2746,17 +3325,21 @@
       "IsComplexType": true
     },
     "SetBackupSticky": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "BackupId",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Guid"
         },
         {
           "Description": "",
           "Name": "Sticky",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Boolean"
         }
       ],
@@ -2764,29 +3347,35 @@
       "IsComplexType": true
     },
     "TakeBackup": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "Title",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         },
         {
           "Description": "",
           "Name": "Description",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         },
         {
           "Description": "",
           "Name": "Sticky",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Boolean"
         },
         {
           "Description": "",
           "Name": "WasCreatedAutomatically",
           "Optional": true,
+          "ParamEnumValues": null,
           "TypeName": "Boolean"
         }
       ],
@@ -2794,11 +3383,14 @@
       "IsComplexType": true
     },
     "UploadToS3": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "BackupId",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Guid"
         }
       ],
@@ -2808,16 +3400,21 @@
   },
   "MinecraftModule": {
     "AcceptEULA": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [],
       "ReturnTypeName": "Boolean",
       "IsComplexType": false
     },
     "AddOPEntry": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "UserOrUUID",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         }
       ],
@@ -2825,11 +3422,14 @@
       "IsComplexType": true
     },
     "AddToWhitelist": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "UserOrUUID",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         }
       ],
@@ -2837,11 +3437,14 @@
       "IsComplexType": true
     },
     "BanUserByID": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "ID",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         }
       ],
@@ -2849,16 +3452,21 @@
       "IsComplexType": false
     },
     "BukGetCategories": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [],
       "ReturnTypeName": "JSONRawResponse",
       "IsComplexType": true
     },
     "BukGetInstallUpdatePlugin": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "pluginId",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Int32"
         }
       ],
@@ -2866,16 +3474,21 @@
       "IsComplexType": true
     },
     "BukGetInstalledPlugins": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [],
       "ReturnTypeName": "JSONRawResponse",
       "IsComplexType": true
     },
     "BukGetPluginInfo": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "PluginId",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Int32"
         }
       ],
@@ -2883,23 +3496,28 @@
       "IsComplexType": true
     },
     "BukGetPluginsForCategory": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "CategoryId",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         },
         {
           "Description": "",
           "Name": "PageNumber",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Int32"
         },
         {
           "Description": "",
           "Name": "PageSize",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Int32"
         }
       ],
@@ -2907,16 +3525,21 @@
       "IsComplexType": true
     },
     "BukGetPopularPlugins": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [],
       "ReturnTypeName": "JSONRawResponse",
       "IsComplexType": true
     },
     "BukGetRemovePlugin": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "PluginId",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Int32"
         }
       ],
@@ -2924,23 +3547,28 @@
       "IsComplexType": false
     },
     "BukGetSearch": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "Query",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         },
         {
           "Description": "",
           "Name": "PageNumber",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Int32"
         },
         {
           "Description": "",
           "Name": "PageSize",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "Int32"
         }
       ],
@@ -2948,11 +3576,14 @@
       "IsComplexType": true
     },
     "ClearInventoryByID": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "ID",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         }
       ],
@@ -2960,6 +3591,8 @@
       "IsComplexType": false
     },
     "GetFailureReason": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [],
       "ReturnTypeName": "String",
       "IsComplexType": false
@@ -2972,6 +3605,7 @@
           "Description": "",
           "Name": "id",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         }
       ],
@@ -2979,21 +3613,28 @@
       "IsComplexType": false
     },
     "GetOPWhitelist": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [],
       "ReturnTypeName": "JObject",
       "IsComplexType": true
     },
     "GetWhitelist": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [],
       "ReturnTypeName": "IEnumerable<JObject>",
       "IsComplexType": true
     },
     "KickUserByID": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "ID",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         }
       ],
@@ -3001,11 +3642,14 @@
       "IsComplexType": false
     },
     "KillByID": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "ID",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         }
       ],
@@ -3013,16 +3657,21 @@
       "IsComplexType": false
     },
     "LoadOPList": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [],
       "ReturnTypeName": "IEnumerable<JObject>",
       "IsComplexType": true
     },
     "RemoveOPEntry": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "UserOrUUID",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         }
       ],
@@ -3030,11 +3679,14 @@
       "IsComplexType": false
     },
     "RemoveWhitelistEntry": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "UserOrUUID",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         }
       ],
@@ -3049,6 +3701,7 @@
           "Description": "",
           "Name": "ID",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         }
       ],
@@ -3058,6 +3711,8 @@
   },
   "RCONPlugin": {
     "Dummy": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [],
       "ReturnTypeName": "Void",
       "IsComplexType": false
@@ -3065,16 +3720,21 @@
   },
   "steamcmdplugin": {
     "CancelSteamGuard": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [],
       "ReturnTypeName": "Void",
       "IsComplexType": false
     },
     "SteamGuardCode": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "code",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         }
       ],
@@ -3082,17 +3742,21 @@
       "IsComplexType": false
     },
     "SteamUsernamePassword": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [
         {
           "Description": "",
           "Name": "username",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         },
         {
           "Description": "",
           "Name": "password",
           "Optional": false,
+          "ParamEnumValues": null,
           "TypeName": "String"
         }
       ],

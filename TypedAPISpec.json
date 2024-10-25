@@ -843,12 +843,6 @@
       "Parameters": [
         {
           "Description": "",
-          "Name": "id",
-          "Optional": false,
-          "TypeName": "String"
-        },
-        {
-          "Description": "",
           "Name": "Data",
           "Optional": false,
           "TypeName": "JObject"
@@ -1948,11 +1942,6 @@
       "Parameters": [],
       "ReturnTypeName": "List<WebauthnCredentialSummary>",
       "IsComplexType": true
-    },
-    "GetWebserverMetrics": {
-      "Parameters": [],
-      "ReturnTypeName": "Object",
-      "IsComplexType": false
     },
     "Kill": {
       "Parameters": [],
