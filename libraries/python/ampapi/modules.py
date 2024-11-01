@@ -40,7 +40,7 @@ class ADSAsync(CommonAPIAsync):
         super().__init__(auth)
         self.ADSModule = ADSModuleAsync(self)
 
-class GenericModule(CommonAPI):
+class Factorio(CommonAPI):
     AnalyticsPlugin = Final[AnalyticsPlugin]
     GenericModule = Final[GenericModule]
     LocalFileBackupPlugin = Final[LocalFileBackupPlugin]
@@ -54,7 +54,7 @@ class GenericModule(CommonAPI):
         self.RCONPlugin = RCONPlugin(self)
         self.steamcmdplugin = steamcmdplugin(self)
 
-class GenericModuleAsync(CommonAPIAsync):
+class FactorioAsync(CommonAPIAsync):
     AnalyticsPlugin = Final[AnalyticsPluginAsync]
     GenericModule = Final[GenericModuleAsync]
     LocalFileBackupPlugin = Final[LocalFileBackupPluginAsync]

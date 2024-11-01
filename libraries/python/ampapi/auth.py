@@ -10,7 +10,7 @@ from typing import Any, Final, Mapping, overload
 from .types import *
 
 class APIException(Exception):
-    def __init__(self, error: APIError) -> None:
+    def __init__(self, error: ErrorResponse) -> None:
         super().__init__(f"{error.Title}: {error.Message}\n{error.StackTrace}")
 
 class LoginException(Exception):
@@ -81,7 +81,7 @@ def api_call(endpoint: str, requestMethod: str, args: dict) -> dict[str, Any]:
     response = sync_request(requestMethod, endpoint, headers=_headers, json=args)
     response_json: dict[str, Any] = response.json() # response.json(object_hook=json_object_hook)
     if isinstance(response_json, dict) and "StackTrace" in response_json.keys():
-        raise APIException(APIError(**response_json))
+        raise APIException(ErrorResponse(**response_json))
     return response_json
 
 async def api_call_async(endpoint: str, requestMethod: str, args: dict) -> dict[str, Any]:
@@ -99,7 +99,7 @@ async def api_call_async(endpoint: str, requestMethod: str, args: dict) -> dict[
         response = await session.request(requestMethod, endpoint, headers=_headers, json=args)
         response_json: dict[str, Any] = await response.json() # response.json(loads=ASYNC_JSON_DECODER)
         if isinstance(response_json, dict) and "StackTrace" in response_json.keys():
-            raise APIException(APIError(**response_json))
+            raise APIException(ErrorResponse(**response_json))
         return response_json
 
 class AuthProvider(metaclass=ABCMeta):

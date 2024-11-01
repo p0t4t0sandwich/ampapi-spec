@@ -216,21 +216,6 @@ class AMPReleaseStreams(Enum):
     Bleeding = 10000
 
 @dataclass
-class APIError:
-    """
-    An error object
-    :param Message: The error message
-    :type Message: str
-    :param StackTrace: The stack trace of the error
-    :type StackTrace: str
-    :param Title: The title of the error
-    :type Title: str
-    """
-    Message: 'str'
-    StackTrace: 'str'
-    Title: 'str'
-
-@dataclass
 class APIMethodInfo:
     """
     Information about an API method
@@ -871,6 +856,21 @@ class EndpointInfo:
     DisplayName: 'str'
     Endpoint: 'str'
     Uri: 'str'
+
+@dataclass
+class ErrorResponse:
+    """
+    An error object
+    :param Message: The error message
+    :type Message: str
+    :param StackTrace: The stack trace of the error
+    :type StackTrace: str
+    :param Title: The title of the error
+    :type Title: str
+    """
+    Message: 'str'
+    StackTrace: 'str'
+    Title: 'str'
 
 @dataclass
 class FileChunkData:
