@@ -2,13 +2,13 @@
 
 ## Note: This library is 95% generated code with no soul whatsoever. If you're more interested in a nicer developer experience, check out k8thekat's [AMPAPI_Python](<https://github.com/k8thekat/AMPAPI_Python>)
 
-[![License](https://img.shields.io/github/license/p0t4t0sandwich/ampapi-py?color=blue)](https://img.shields.io/github/downloads/p0t4t0sandwich/ampapi-py/LICENSE)
-[![Github](https://img.shields.io/github/stars/p0t4t0sandwich/ampapi-py)](https://github.com/p0t4t0sandwich/ampapi-py)
-[![Github Issues](https://img.shields.io/github/issues/p0t4t0sandwich/ampapi-py?label=Issues)](https://github.com/p0t4t0sandwich/ampapi-py/issues)
+[![License](https://img.shields.io/github/license/p0t4t0sandwich/ampapi?color=blue)](https://img.shields.io/github/downloads/p0t4t0sandwich/ampapi/LICENSE.md)
+[![Github](https://img.shields.io/github/stars/p0t4t0sandwich/ampapi)](https://github.com/p0t4t0sandwich/ampapi)
+[![Github Issues](https://img.shields.io/github/issues/p0t4t0sandwich/ampapi?label=Issues)](https://github.com/p0t4t0sandwich/ampapi/issues)
 [![Discord](https://img.shields.io/discord/1067482396246683708?color=7289da&logo=discord&logoColor=white)](https://discord.neuralnexus.dev)
-[![wakatime](https://wakatime.com/badge/github/p0t4t0sandwich/ampapi-py.svg)](https://wakatime.com/badge/github/p0t4t0sandwich/ampapi-py)
+[![wakatime](https://wakatime.com/badge/github/p0t4t0sandwich/ampapi.svg)](https://wakatime.com/badge/github/p0t4t0sandwich/ampapi)
 
-[![Github Releases](https://img.shields.io/github/downloads/p0t4t0sandwich/ampapi-py/total?label=Github&logo=github&color=181717)](https://github.com/p0t4t0sandwich/ampapi-py/releases)
+[![Github Releases](https://img.shields.io/github/downloads/p0t4t0sandwich/ampapi/total?label=Github&logo=github&color=181717)](https://github.com/p0t4t0sandwich/ampapi/releases)
 [![PyPI](https://img.shields.io/pypi/v/ampapi?label=PyPI&logo=pypi&color=3775A9)](https://pypi.org/project/ampapi/)
 [![PyPI - Downloads](https://img.shields.io/pypi/dm/ampapi?label=PyPI%20Downloads&logo=pypi&color=3775A9)](https://pypi.org/project/ampapi/)
 [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/ampapi?label=Python&logo=python&color=3775A9)](https://pypi.org/project/ampapi/)
@@ -36,6 +36,8 @@ pip install requests aiohttp json dataclass_wizard
 ```
 
 ## Examples
+
+**NOTE: THESE ARE CURRENTLY OUTDATED AFTER THE REWRITE**
 
 ### CommonAPI Example
 
