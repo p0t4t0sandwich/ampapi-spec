@@ -2297,7 +2297,7 @@
       "IsComplexType": true
     },
     "GetUpdates": {
-      "Description": "Gets changes to the server status, in addition to any notifications or console output that have occured since the last time GetUpdates() was called by the current session.",
+      "Description": "Gets changes to the server status, in addition to any notifications or console output that have occurred since the last time GetUpdates() was called by the current session.",
       "Returns": "",
       "Parameters": [],
       "ReturnTypeName": "JObject",
@@ -3711,6 +3711,52 @@
   },
   "RCONPlugin": {
     "Dummy": {
+      "Description": null,
+      "Returns": null,
+      "Parameters": [],
+      "ReturnTypeName": "Void",
+      "IsComplexType": false
+    }
+  },
+  "RustModule": {
+    "Ban": {
+      "Description": null,
+      "Returns": null,
+      "Parameters": [
+        {
+          "Description": "",
+          "Name": "ID",
+          "Optional": false,
+          "ParamEnumValues": null,
+          "TypeName": "String"
+        }
+      ],
+      "ReturnTypeName": "Void",
+      "IsComplexType": false
+    },
+    "Kick": {
+      "Description": null,
+      "Returns": null,
+      "Parameters": [
+        {
+          "Description": "",
+          "Name": "ID",
+          "Optional": false,
+          "ParamEnumValues": null,
+          "TypeName": "String"
+        }
+      ],
+      "ReturnTypeName": "Void",
+      "IsComplexType": false
+    },
+    "WipeBlueprints": {
+      "Description": null,
+      "Returns": null,
+      "Parameters": [],
+      "ReturnTypeName": "Void",
+      "IsComplexType": false
+    },
+    "WipeMap": {
       "Description": null,
       "Returns": null,
       "Parameters": [],

@@ -109,7 +109,7 @@ Core.GetRoleData() -> List<AuthRoleSummary>
 Core.GetRoleIds() -> Dictionary<Guid, String>
 Core.GetScheduleData() -> ScheduleInfo
 Core.GetSettingValues(SettingNode: String, WithRefresh: Boolean) -> Dictionary<String, String>
-Core.GetSettingsSpec() -> Dictionary<String, SettingSpec>
+Core.GetSettingsSpec() -> Dictionary<String, List<SettingSpec>>
 Core.GetStatus() -> StatusResponse
 Core.GetTasks() -> List<RunningTask>
 Core.GetTimeIntervalTrigger(Id: Guid) -> TimeIntervalTrigger
@@ -205,6 +205,10 @@ MinecraftModule.RemoveOPEntry(UserOrUUID: String) -> Void
 MinecraftModule.RemoveWhitelistEntry(UserOrUUID: String) -> Void
 MinecraftModule.SmiteByID(ID: String) -> Void
 RCONPlugin.Dummy() -> Void
+RustModule.Ban(ID: String) -> Void
+RustModule.Kick(ID: String) -> Void
+RustModule.WipeBlueprints() -> Void
+RustModule.WipeMap() -> Void
 steamcmdplugin.CancelSteamGuard() -> Void
 steamcmdplugin.SteamGuardCode(code: String) -> Void
 steamcmdplugin.SteamUsernamePassword(username: String, password: String) -> Void

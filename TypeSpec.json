@@ -3477,11 +3477,6 @@
                 "TypeName": "Boolean"
             },
             {
-                "Description": "The selection source",
-                "Name": "SelectionSource",
-                "TypeName": "StringSelectionSourceAttribute"
-            },
-            {
                 "Description": "The subcategory",
                 "Name": "Subcategory",
                 "TypeName": "String"
@@ -3518,6 +3513,12 @@
                 "Name": "MinValue",
                 "Optional": true,
                 "TypeName": "Float"
+            },
+            {
+                "Description": "The selection source",
+                "Name": "SelectionSource",
+                "Optional": true,
+                "TypeName": "StringSelectionSourceAttribute"
             }
         ]
     },

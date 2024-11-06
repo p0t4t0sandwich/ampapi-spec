@@ -2394,13 +2394,13 @@ class Core(AMPAPI):
             'WithRefresh': WithRefresh
         }), dict[str, str])
 
-    def GetSettingsSpec(self, ) -> dict[str, SettingSpec]:
+    def GetSettingsSpec(self, ) -> dict[str, list[SettingSpec]]:
         """
         Name Description Optional
 
-        :returns: dict[str, SettingSpec]
+        :returns: dict[str, list[SettingSpec]]
         """
-        return json_to_obj(self.api_call("Core/GetSettingsSpec", {}), dict[str, SettingSpec])
+        return json_to_obj(self.api_call("Core/GetSettingsSpec", {}), dict[str, list[SettingSpec]])
 
     def GetStatus(self, ) -> StatusResponse:
         """
@@ -3401,13 +3401,13 @@ class CoreAsync(AMPAPI):
             'WithRefresh': WithRefresh
         }), dict[str, str])
 
-    async def GetSettingsSpec(self, ) -> dict[str, SettingSpec]:
+    async def GetSettingsSpec(self, ) -> dict[str, list[SettingSpec]]:
         """
         Name Description Optional
 
-        :returns: dict[str, SettingSpec]
+        :returns: dict[str, list[SettingSpec]]
         """
-        return json_to_obj(self.api_call("Core/GetSettingsSpec", {}), dict[str, SettingSpec])
+        return json_to_obj(self.api_call("Core/GetSettingsSpec", {}), dict[str, list[SettingSpec]])
 
     async def GetStatus(self, ) -> StatusResponse:
         """
@@ -5163,6 +5163,90 @@ class RCONPluginAsync(AMPAPI):
         :returns: None
         """
         return json_to_obj(self.api_call("RCONPlugin/Dummy", {}), None)
+
+class RustModule(AMPAPI):
+    def __init__(self, authprovider: AuthProvider) -> None:
+        super().__init__(authprovider)
+
+    def Ban(self, ID: 'str') -> None:
+        """
+        Name Description Optional
+        :param ID: 
+        :type ID: str
+        :returns: None
+        """
+        return json_to_obj(self.api_call("RustModule/Ban", {
+            'ID': ID
+        }), None)
+
+    def Kick(self, ID: 'str') -> None:
+        """
+        Name Description Optional
+        :param ID: 
+        :type ID: str
+        :returns: None
+        """
+        return json_to_obj(self.api_call("RustModule/Kick", {
+            'ID': ID
+        }), None)
+
+    def WipeBlueprints(self, ) -> None:
+        """
+        Name Description Optional
+
+        :returns: None
+        """
+        return json_to_obj(self.api_call("RustModule/WipeBlueprints", {}), None)
+
+    def WipeMap(self, ) -> None:
+        """
+        Name Description Optional
+
+        :returns: None
+        """
+        return json_to_obj(self.api_call("RustModule/WipeMap", {}), None)
+
+class RustModuleAsync(AMPAPI):
+    def __init__(self, authprovider: AuthProvider) -> None:
+        super().__init__(authprovider)
+
+    async def Ban(self, ID: 'str') -> None:
+        """
+        Name Description Optional
+        :param ID: 
+        :type ID: str
+        :returns: None
+        """
+        return json_to_obj(self.api_call("RustModule/Ban", {
+            'ID': ID
+        }), None)
+
+    async def Kick(self, ID: 'str') -> None:
+        """
+        Name Description Optional
+        :param ID: 
+        :type ID: str
+        :returns: None
+        """
+        return json_to_obj(self.api_call("RustModule/Kick", {
+            'ID': ID
+        }), None)
+
+    async def WipeBlueprints(self, ) -> None:
+        """
+        Name Description Optional
+
+        :returns: None
+        """
+        return json_to_obj(self.api_call("RustModule/WipeBlueprints", {}), None)
+
+    async def WipeMap(self, ) -> None:
+        """
+        Name Description Optional
+
+        :returns: None
+        """
+        return json_to_obj(self.api_call("RustModule/WipeMap", {}), None)
 
 class steamcmdplugin(AMPAPI):
     def __init__(self, authprovider: AuthProvider) -> None:

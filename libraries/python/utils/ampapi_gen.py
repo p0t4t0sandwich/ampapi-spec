@@ -90,7 +90,8 @@ class CodeGen:
                 converted_type = type_name
 
         if optional:
-            converted_type += " | None"
+            # converted_type += " | None"
+            converted_type = f"Optional[{converted_type}]"
 
         return converted_type
 
@@ -227,6 +228,8 @@ class CodeGen:
                 method_text = method_text.replace("{MethodParameterArgs}", parameter_args)
                 method_text = method_text.replace("{MethodParameterDocs}", parameter_docs)
                 method_text = method_text.replace("{MethodName}", method_name)
+                if method_def.get("Description") is None:
+                    method_def["Description"] = ""
                 method_text = method_text.replace("{MethodDescription}", method_def.get("Description", ""))
                 method_text = method_text.replace("{ReturnType}", self._convert_type(method_def["ReturnTypeName"]))
 

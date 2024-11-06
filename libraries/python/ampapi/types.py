@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 from enum import Enum
-from typing import Any, Generic, TypeVar
+from typing import Any, Generic, Optional, TypeVar
 
 T = TypeVar('T')
 
@@ -16,13 +16,13 @@ class ActionResult(Generic[T]):
     :param SupportURL: Support URL
     :type SupportURL: str
     :param Result: Result of the call
-    :type Result: T | None
+    :type Result: Optional[T]
     """
     Reason: 'str'
     Status: 'bool'
     SupportTitle: 'str'
     SupportURL: 'str'
-    Result: 'T | None'
+    Result: 'Optional[T]'
 
 @dataclass
 class AMPInstanceBase:
@@ -131,7 +131,7 @@ class AMPInstanceBase:
     :param WelcomeMessage: The welcome message
     :type WelcomeMessage: str
     :param LastReactivationAttempt: The last reactivation attempt
-    :type LastReactivationAttempt: str | None
+    :type LastReactivationAttempt: Optional[str]
     """
     AMPBuild: 'str'
     AMPVersion: 'str'
@@ -184,7 +184,7 @@ class AMPInstanceBase:
     UseHostModeNetwork: 'bool'
     User: 'str'
     WelcomeMessage: 'str'
-    LastReactivationAttempt: 'str | None'
+    LastReactivationAttempt: 'Optional[str]'
 
 class AMPReleaseStreams(Enum):
     """
@@ -561,7 +561,7 @@ class BackupManifest:
     :param TotalSizeBytes: The total size in bytes
     :type TotalSizeBytes: int
     :param ParentManifest: The parent manifest
-    :type ParentManifest: str | None
+    :type ParentManifest: Optional[str]
     """
     CreatedAutomatically: 'bool'
     Description: 'str'
@@ -578,7 +578,7 @@ class BackupManifest:
     TakenBy: 'str'
     Timestamp: 'str'
     TotalSizeBytes: 'int'
-    ParentManifest: 'str | None'
+    ParentManifest: 'Optional[str]'
 
 @dataclass
 class Branding:
@@ -788,9 +788,9 @@ class DeploymentTemplate:
     :param ZipOverlayPath: The zip overlay path
     :type ZipOverlayPath: str
     :param TemplateInstance: The template instance
-    :type TemplateInstance: str | None
+    :type TemplateInstance: Optional[str]
     :param TemplateRole: The template role
-    :type TemplateRole: str | None
+    :type TemplateRole: Optional[str]
     """
     CloneRoleIntoUser: 'bool'
     Description: 'str'
@@ -803,8 +803,8 @@ class DeploymentTemplate:
     Tags: 'list[str]'
     TemplateBaseApp: 'str'
     ZipOverlayPath: 'str'
-    TemplateInstance: 'str | None'
-    TemplateRole: 'str | None'
+    TemplateInstance: 'Optional[str]'
+    TemplateRole: 'Optional[str]'
 
 @dataclass
 class DirectoryListing:
@@ -1377,7 +1377,7 @@ class LocalAMPInstance:
     :param WelcomeMessage: The welcome message
     :type WelcomeMessage: str
     :param LastReactivationAttempt: The last reactivation attempt
-    :type LastReactivationAttempt: str | None
+    :type LastReactivationAttempt: Optional[str]
     """
     AMPBuild: 'str'
     AMPVersion: 'str'
@@ -1434,7 +1434,7 @@ class LocalAMPInstance:
     UseHostModeNetwork: 'bool'
     User: 'str'
     WelcomeMessage: 'str'
-    LastReactivationAttempt: 'str | None'
+    LastReactivationAttempt: 'Optional[str]'
 
 @dataclass
 class LoginResponse:
@@ -1487,13 +1487,13 @@ class MethodInfoSummary:
     :param ReturnTypeName: The return type name
     :type ReturnTypeName: str
     :param Returns: The methods return value (deprecated)
-    :type Returns: str | None
+    :type Returns: Optional[str]
     """
     Description: 'str'
     IsComplexType: 'bool'
     Parameters: 'list[MethodParameterSummary]'
     ReturnTypeName: 'str'
-    Returns: 'str | None'
+    Returns: 'Optional[str]'
 
 @dataclass
 class MethodParameterSummary:
@@ -1508,13 +1508,13 @@ class MethodParameterSummary:
     :param TypeName: The type name
     :type TypeName: str
     :param ParamEnumValues: The parameter enum values
-    :type ParamEnumValues: dict[str, Any] | None
+    :type ParamEnumValues: Optional[dict[str, Any]]
     """
     Description: 'str'
     Name: 'str'
     Optional: 'bool'
     TypeName: 'str'
-    ParamEnumValues: 'dict[str, Any] | None'
+    ParamEnumValues: 'Optional[dict[str, Any]]'
 
 @dataclass
 class MetricInfo:
@@ -1928,11 +1928,11 @@ class RunningTask:
     :param StateMessage: The state message
     :type StateMessage: str
     :param RemoteInstanceId: The remote instance ID
-    :type RemoteInstanceId: str | None
+    :type RemoteInstanceId: Optional[str]
     :param EndTime: The end time
-    :type EndTime: str | None
+    :type EndTime: Optional[str]
     :param ParentTaskId: The parent task ID
-    :type ParentTaskId: str | None
+    :type ParentTaskId: Optional[str]
     """
     Description: 'str'
     DontPropagate: 'bool'
@@ -1950,9 +1950,9 @@ class RunningTask:
     StartTime: 'str'
     State: 'TaskState'
     StateMessage: 'str'
-    RemoteInstanceId: 'str | None'
-    EndTime: 'str | None'
-    ParentTaskId: 'str | None'
+    RemoteInstanceId: 'Optional[str]'
+    EndTime: 'Optional[str]'
+    ParentTaskId: 'Optional[str]'
 
 class ScheduleEnabledState(Enum):
     """
@@ -1996,7 +1996,7 @@ class ScheduleEntryDefinition:
     :param WaitForComplete: Whether to wait for completion
     :type WaitForComplete: bool
     :param CreatedBy: The creator
-    :type CreatedBy: str | None
+    :type CreatedBy: Optional[str]
     """
     EnabledState: 'ScheduleEnabledState'
     ErrorBehaviour: 'ScheduleErrorBehaviour'
@@ -2008,7 +2008,7 @@ class ScheduleEntryDefinition:
     ParameterMapping: 'dict[str, str]'
     TaskMethodName: 'str'
     WaitForComplete: 'bool'
-    CreatedBy: 'str | None'
+    CreatedBy: 'Optional[str]'
 
 class ScheduleErrorBehaviour(Enum):
     """
@@ -2053,7 +2053,7 @@ class ScheduleTaskParameter:
     :param ValueType: The value type
     :type ValueType: str
     :param EnumValues: The enum values
-    :type EnumValues: dict[str, str] | None
+    :type EnumValues: Optional[dict[str, str]]
     """
     Description: 'str'
     DisplayName: 'str'
@@ -2061,7 +2061,7 @@ class ScheduleTaskParameter:
     Name: 'str'
     SelectionSource: 'StringSelectionSourceAttribute'
     ValueType: 'str'
-    EnumValues: 'dict[str, str] | None'
+    EnumValues: 'Optional[dict[str, str]]'
 
 @dataclass
 class ScheduleTrigger:
@@ -2078,14 +2078,14 @@ class ScheduleTrigger:
     :param Order: The order
     :type Order: int
     :param LastExecuted: The last executed
-    :type LastExecuted: str | None
+    :type LastExecuted: Optional[str]
     """
     Description: 'str'
     EnabledState: 'ScheduleEnabledState'
     Id: 'str'
     Name: 'str'
     Order: 'int'
-    LastExecuted: 'str | None'
+    LastExecuted: 'Optional[str]'
 
 @dataclass
 class SecurityCheckResult:
@@ -2155,8 +2155,6 @@ class SettingSpec:
     :type Required: bool
     :param RequiresRestart: Whether the setting requires a restart
     :type RequiresRestart: bool
-    :param SelectionSource: The selection source
-    :type SelectionSource: StringSelectionSourceAttribute
     :param Subcategory: The subcategory
     :type Subcategory: str
     :param Suffix: The suffix
@@ -2166,11 +2164,13 @@ class SettingSpec:
     :param ValType: The value type
     :type ValType: str
     :param EnumValues: The enum values
-    :type EnumValues: dict[str, str] | None
+    :type EnumValues: Optional[dict[str, str]]
     :param MaxValue: The max value
-    :type MaxValue: float | None
+    :type MaxValue: Optional[float]
     :param MinValue: The min value
-    :type MinValue: float | None
+    :type MinValue: Optional[float]
+    :param SelectionSource: The selection source
+    :type SelectionSource: Optional[StringSelectionSourceAttribute]
     """
     Actions: 'list[InlineActionAttribute]'
     AlwaysAllowRead: 'bool'
@@ -2192,14 +2192,14 @@ class SettingSpec:
     ReadOnlyProvision: 'bool'
     Required: 'bool'
     RequiresRestart: 'bool'
-    SelectionSource: 'StringSelectionSourceAttribute'
     Subcategory: 'str'
     Suffix: 'str'
     Tag: 'str'
     ValType: 'str'
-    EnumValues: 'dict[str, str] | None'
-    MaxValue: 'float | None'
-    MinValue: 'float | None'
+    EnumValues: 'Optional[dict[str, str]]'
+    MaxValue: 'Optional[float]'
+    MinValue: 'Optional[float]'
+    SelectionSource: 'Optional[StringSelectionSourceAttribute]'
 
 @dataclass
 class SimpleUser:
@@ -2350,7 +2350,7 @@ class TimeIntervalTrigger:
     :param MatchMonths: The match months
     :type MatchMonths: list[int]
     :param LastExecuted: The last executed
-    :type LastExecuted: str | None
+    :type LastExecuted: Optional[str]
     """
     Description: 'str'
     EnabledState: 'ScheduleEnabledState'
@@ -2362,7 +2362,7 @@ class TimeIntervalTrigger:
     MatchDays: 'list[int]'
     MatchDaysOfMonth: 'list[int]'
     MatchMonths: 'list[int]'
-    LastExecuted: 'str | None'
+    LastExecuted: 'Optional[str]'
 
 @dataclass
 class TriggerInfo:

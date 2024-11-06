@@ -6,7 +6,7 @@
     "EmailSenderPlugin",
     "FileManagerPlugin"
   ],
-  "Factorio": [
+  "GenericModule": [
     "AnalyticsPlugin",
     "CommonCorePlugin",
     "Core",
@@ -26,26 +26,15 @@
     "LocalFileBackupPlugin",
     "MinecraftModule"
   ],
-  "Seven Days To Die": [
+  "Rust": [
     "AnalyticsPlugin",
     "CommonCorePlugin",
     "Core",
     "EmailSenderPlugin",
     "FileManagerPlugin",
-    "GenericModule",
     "LocalFileBackupPlugin",
     "RCONPlugin",
-    "steamcmdplugin"
-  ],
-  "TShock": [
-    "AnalyticsPlugin",
-    "CommonCorePlugin",
-    "Core",
-    "EmailSenderPlugin",
-    "FileManagerPlugin",
-    "GenericModule",
-    "LocalFileBackupPlugin",
-    "RCONPlugin",
+    "RustModule",
     "steamcmdplugin"
   ]
 }

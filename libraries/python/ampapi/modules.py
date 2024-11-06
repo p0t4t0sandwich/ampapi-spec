@@ -40,7 +40,7 @@ class ADSAsync(CommonAPIAsync):
         super().__init__(auth)
         self.ADSModule = ADSModuleAsync(self)
 
-class Factorio(CommonAPI):
+class GenericModule(CommonAPI):
     AnalyticsPlugin = Final[AnalyticsPlugin]
     GenericModule = Final[GenericModule]
     LocalFileBackupPlugin = Final[LocalFileBackupPlugin]
@@ -54,7 +54,7 @@ class Factorio(CommonAPI):
         self.RCONPlugin = RCONPlugin(self)
         self.steamcmdplugin = steamcmdplugin(self)
 
-class FactorioAsync(CommonAPIAsync):
+class GenericModuleAsync(CommonAPIAsync):
     AnalyticsPlugin = Final[AnalyticsPluginAsync]
     GenericModule = Final[GenericModuleAsync]
     LocalFileBackupPlugin = Final[LocalFileBackupPluginAsync]
@@ -89,3 +89,32 @@ class MinecraftAsync(CommonAPIAsync):
         self.AnalyticsPlugin = AnalyticsPluginAsync(self)
         self.LocalFileBackupPlugin = LocalFileBackupPluginAsync(self)
         self.MinecraftModule = MinecraftModuleAsync(self)
+
+class Rust(CommonAPI):
+    AnalyticsPlugin = Final[AnalyticsPlugin]
+    LocalFileBackupPlugin = Final[LocalFileBackupPlugin]
+    RCONPlugin = Final[RCONPlugin]
+    RustModule = Final[RustModule]
+    steamcmdplugin = Final[steamcmdplugin]
+    def __init__(self, auth: AuthProvider):
+        super().__init__(auth)
+        self.AnalyticsPlugin = AnalyticsPlugin(self)
+        self.LocalFileBackupPlugin = LocalFileBackupPlugin(self)
+        self.RCONPlugin = RCONPlugin(self)
+        self.RustModule = RustModule(self)
+        self.steamcmdplugin = steamcmdplugin(self)
+
+class RustAsync(CommonAPIAsync):
+    AnalyticsPlugin = Final[AnalyticsPluginAsync]
+    LocalFileBackupPlugin = Final[LocalFileBackupPluginAsync]
+    RCONPlugin = Final[RCONPluginAsync]
+    RustModule = Final[RustModuleAsync]
+    steamcmdplugin = Final[steamcmdpluginAsync]
+
+    def __init__(self, auth: AuthProvider):
+        super().__init__(auth)
+        self.AnalyticsPlugin = AnalyticsPluginAsync(self)
+        self.LocalFileBackupPlugin = LocalFileBackupPluginAsync(self)
+        self.RCONPlugin = RCONPluginAsync(self)
+        self.RustModule = RustModuleAsync(self)
+        self.steamcmdplugin = steamcmdpluginAsync(self)

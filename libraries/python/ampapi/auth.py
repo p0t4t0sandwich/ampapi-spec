@@ -1,13 +1,12 @@
 from abc import ABCMeta, abstractmethod
 from aiohttp import ClientSession as async_request
-from dataclass_wizard import fromdict, fromlist
-from json import loads
+from dataclass_wizard import LoadMeta, fromdict, fromlist
 from requests import request as sync_request
-from sys import modules
-from types import SimpleNamespace
-from typing import Any, Final, Mapping, overload
+from time import time
+from typing import Any, Final, overload
+from types import MethodType
 
-from .types import *
+from .types import ErrorResponse, LoginResponse
 
 class APIException(Exception):
     def __init__(self, error: ErrorResponse) -> None:
@@ -17,49 +16,43 @@ class LoginException(Exception):
     def __init__(self, login_response: LoginResponse) -> None:
         super().__init__(login_response.resultReason + ": " + login_response.result + "\n" + login_response)
 
-class JsonObj(SimpleNamespace, Mapping):
-    def __getitem__(self, key: str) -> Any:
-        return self.__getattribute__(key)
-
-    def __setitem__(self, key: str, value: Any) -> None:
-        self.__setattr__(key, value)
-
-    def __delitem__(self, key: str) -> None:
-        self.__delattr__(key)
-
-    def __repr__(self) -> str:
-        return self.__dict__.__repr__()
-
-    def __iter__(self):
-        return self.__dict__.__iter__()
-
-    def __len__(self) -> int:
-        return self.__dict__.__len__()
-
-def json_object_hook(dct: dict[Any, Any]) -> Any:
-    new_dct = {}
-    for key, value in dct.items():
-        if isinstance(value, dict):
-            new_dct[key] = json_object_hook(value)
-        elif isinstance(value, list):
-            new_dct[key] = [json_object_hook(item) if isinstance(item, dict) else item for item in value]
-        else:
-            new_dct[key] = value
-    return JsonObj(**new_dct)
-
-ASYNC_JSON_DECODER = lambda x: loads(x, object_hook=json_object_hook)
-
-# getattr(modules[__name__], ret_class.__annotations__[key])
 def json_to_obj(json: dict[str, Any] | list[Any] | Any, ret_class: type) -> Any:
+    if ret_class is None:
+        return None
+    elif ret_class in [str, int, float, bool]:
+        return ret_class(json)
+    elif isinstance(json, dict):
+        # Check to see if ret_class is a nested dict
+        if hasattr(ret_class, "__args__") and len(ret_class.__args__) == 2:
+            val_type = ret_class.__args__[1]
+            dct = {}
+            for key, value in json.items():
+                dct[key] = json_to_obj(value, val_type)
+            return dct
+    elif isinstance(json, list):
+        # Get list inner type
+        inner_type = ret_class.__args__[0]
+        return fromlist(inner_type, json)
+    return fromdict(ret_class, json)
+
+def strict_json_to_obj(json: dict[str, Any], ret_class: type) -> Any:
+    LoadMeta(raise_on_unknown_json_key=True,debug_enabled=True).bind_to(ret_class)
     if ret_class in [str, int, float, bool]:
         return ret_class(json)
-    if isinstance(json, dict):
-        for key, value in json.items():
-            if key in ret_class.__annotations__.keys():
-                json[key] = json_to_obj(value, ret_class.__annotations__[key])
+    elif isinstance(json, dict):
+        # Check to see if ret_class is a nested dict
+        if hasattr(ret_class, "__args__") and len(ret_class.__args__) == 2:
+            val_type = ret_class.__args__[1]
+            dct = {}
+            for key, value in json.items():
+                dct[key] = json_to_obj(value, val_type)
+            return dct
     elif isinstance(json, list):
-        json = fromlist(json, getattr(modules[__name__], ret_class.__args__[0]))
-    return fromdict(json, ret_class)
+        # Get list inner type
+        inner_type = ret_class.__args__[0]
+        LoadMeta(raise_on_unknown_json_key=True,debug_enabled=True).bind_to(inner_type)
+        return fromlist(inner_type, json)
+    return fromdict(ret_class, json)
 
 _headers: dict[str, str] = {
     "Content-Type": "application/json",
@@ -79,9 +72,9 @@ def api_call(endpoint: str, requestMethod: str, args: dict) -> dict[str, Any]:
     :returns: json dict with the result of the API call
     """
     response = sync_request(requestMethod, endpoint, headers=_headers, json=args)
-    response_json: dict[str, Any] = response.json() # response.json(object_hook=json_object_hook)
+    response_json: dict[str, Any] = response.json()
     if isinstance(response_json, dict) and "StackTrace" in response_json.keys():
-        raise APIException(ErrorResponse(**response_json))
+        raise APIException(fromdict(ErrorResponse, response_json))
     return response_json
 
 async def api_call_async(endpoint: str, requestMethod: str, args: dict) -> dict[str, Any]:
@@ -97,9 +90,9 @@ async def api_call_async(endpoint: str, requestMethod: str, args: dict) -> dict[
     """
     async with async_request() as session:
         response = await session.request(requestMethod, endpoint, headers=_headers, json=args)
-        response_json: dict[str, Any] = await response.json() # response.json(loads=ASYNC_JSON_DECODER)
+        response_json: dict[str, Any] = await response.json()
         if isinstance(response_json, dict) and "StackTrace" in response_json.keys():
-            raise APIException(ErrorResponse(**response_json))
+            raise APIException(fromdict(ErrorResponse, response_json))
         return response_json
 
 class AuthProvider(metaclass=ABCMeta):
@@ -157,7 +150,14 @@ class AuthStore:
         del self._authProviders[instanceId]
 
 class BasicAuthProvider(AuthProvider):
-    def __init__(self, panelUrl: str = "", requestMethod: str = "POST", username: str = "", password: str = "", token: str = "", rememberMe: bool = False, sessionId: str = "") -> None:
+    def __init__(self,
+                panelUrl: str = "",
+                requestMethod: str = "POST",
+                username: str = "",
+                password: str = "",
+                token: str = "",
+                rememberMe: bool = False,
+                sessionId: str = "") -> None:
         if panelUrl == "":
             raise ValueError("Panel URL must be defined")
         if username == "" and sessionId == "":
@@ -191,14 +191,21 @@ class BasicAuthProvider(AuthProvider):
             "rememberMe": False
         }
         response: dict[str, Any] = api_call(self.dataSource + "Core/Login", self.requestMethod, args)
-        login_response = LoginResponse(**response)
+        login_response = fromdict(LoginResponse, response)
         if not login_response.success:
             raise LoginException(login_response)
         self.sessionId = login_response.sessionID
         return login_response
 
 class BasicAuthProviderAsync(AuthProvider):
-    def __init__(self, panelUrl: str = "", requestMethod: str = "POST", username: str = "", password: str = "", token: str = "", rememberMe: bool = False, sessionId: str = "") -> None:
+    def __init__(self,
+                panelUrl: str = "",
+                requestMethod: str = "POST",
+                username: str = "",
+                password: str = "",
+                token: str = "",
+                rememberMe: bool = False,
+                sessionId: str = "") -> None:
         if panelUrl == "":
             raise ValueError("Panel URL must be defined")
         if username == "" and sessionId == "":
@@ -229,8 +236,139 @@ class BasicAuthProviderAsync(AuthProvider):
             "rememberMe": False
         }
         response: dict[str, Any] = await api_call_async(self.dataSource + "Core/Login", self.requestMethod, args)
-        login_response = LoginResponse(**response)
+        login_response = fromdict(LoginResponse, response)
         if not login_response.success:
             raise LoginException(login_response)
+        self.sessionId = login_response.sessionID
+        return login_response
+
+class RefreshingAuthProvider(AuthProvider):
+    relogInterval: Final[int]
+    relogCallback: MethodType
+    _lastCall: int = round(time())
+
+    def __init__(self,
+                panelUrl: str = "",
+                requestMethod: str = "POST",
+                username: str = "",
+                password: str = "",
+                token: str = "",
+                rememberMe: bool = True,
+                sessionId: str = "",
+                relogInterval: int = 60 * 5,
+                relogCallback: MethodType = None) -> None:
+        if panelUrl == "":
+            raise ValueError("Panel URL must be defined")
+        if username == "" and sessionId == "":
+            raise ValueError("Username must be defined for refreshing auth")
+        if password == "" and token == "" and sessionId == "":
+            raise ValueError("You must provide a Password or a valid RememberMe Token for refreshing auth")
+        if not panelUrl.endswith("/"):
+            panelUrl += "/"
+        self.relogInterval = relogInterval
+        if not relogCallback is None:
+            self.relogCallback = relogCallback
+        else:
+            self.relogCallback = self.Login
+        self.dataSource = panelUrl + "API/"
+        self.requestMethod = requestMethod
+        self.username = username
+        self.password = password
+        self.token = token
+        self.rememberMe = rememberMe
+        self.sessionId = sessionId
+
+    def api_call(self, endpoint: str, args: dict = {}) -> dict[str, Any]:
+        now: int = round(time())
+        if now - self._lastCall > self.relogInterval:
+            print("Relogging")
+            self.relogCallback()
+
+        self._lastCall = now
+        if self.sessionId == "":
+            self.Login()
+        args["SESSIONID"] = self.sessionId
+        return api_call(self.dataSource + endpoint, self.requestMethod, args)
+
+    def Login(self, rememberMe: bool = True) -> LoginResponse:
+        args: dict[str, Any] = { "username": self.username }
+        if rememberMe and self.token != "":
+            args["password"] = ""
+            args["token"] = self.token
+        else:
+            args["password"] = self.password
+            args["token"] = ""
+        args["rememberMe"] = rememberMe
+
+        response: dict[str, Any] = api_call(self.dataSource + "Core/Login", self.requestMethod, args)
+        login_response = fromdict(LoginResponse, response)
+        if not login_response.success:
+            raise LoginException(login_response)
+        self.token = login_response.rememberMeToken
+        self.sessionId = login_response.sessionID
+        return login_response
+
+class RefreshingAuthProviderAsync(AuthProvider):
+    relogInterval: Final[int]
+    relogCallback: MethodType
+    _lastCall: int = round(time())
+
+    def __init__(self,
+                panelUrl: str = "",
+                requestMethod: str = "POST",
+                username: str = "",
+                password: str = "",
+                token: str = "",
+                rememberMe: bool = True,
+                sessionId: str = "",
+                relogInterval: int = 60 * 5,
+                relogCallback: MethodType = None) -> None:
+        if panelUrl == "":
+            raise ValueError("Panel URL must be defined")
+        if username == "" and sessionId == "":
+            raise ValueError("Username must be defined for refreshing auth")
+        if password == "" and token == "" and sessionId == "":
+            raise ValueError("You must provide a Password or a valid RememberMe Token for refreshing auth")
+        if not panelUrl.endswith("/"):
+            panelUrl += "/"
+        self.relogInterval = relogInterval
+        if not relogCallback is None:
+            self.relogCallback = relogCallback
+        else:
+            self.relogCallback = self.Login
+        self.dataSource = panelUrl + "API/"
+        self.requestMethod = requestMethod
+        self.username = username
+        self.password = password
+        self.token = token
+        self.rememberMe = rememberMe
+        self.sessionId = sessionId
+
+    async def api_call(self, endpoint: str, args: dict = {}) -> dict[str, Any]:
+        now: int = round(time())
+        if now - self._lastCall > self.relogInterval:
+            await self.relogCallback()
+
+        self._lastCall = now
+        if self.sessionId == "":
+            await self.Login()
+        args["SESSIONID"] = self.sessionId
+        return await api_call_async(self.dataSource + endpoint, self.requestMethod, args)
+
+    async def Login(self, rememberMe: bool = True) -> LoginResponse:
+        args: dict[str, Any] = { "username": self.username }
+        if rememberMe and self.token != "":
+            args["password"] = ""
+            args["token"] = self.token
+        else:
+            args["password"] = self.password
+            args["token"] = ""
+        args["rememberMe"] = rememberMe
+
+        response: dict[str, Any] = await api_call_async(self.dataSource + "Core/Login", self.requestMethod, args)
+        login_response = fromdict(LoginResponse, response)
+        if not login_response.success:
+            raise LoginException(login_response)
+        self.token = login_response.rememberMeToken
         self.sessionId = login_response.sessionID
         return login_response

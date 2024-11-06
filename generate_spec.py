@@ -34,8 +34,8 @@ class GenerateSpec:
 
                         if instance_api != None:
                             module_info = instance_api.Core_GetModuleInfo()
-                            if instance_module == "GenericModule":
-                                instance_module = module_info["AppName"]
+                            # if instance_module == "GenericModule":
+                                # instance_module = module_info["AppName"]
                             loaded_plugins = module_info["LoadedPlugins"]
 
                             self.log_module_plugins(instance_module, instance_api.Core_GetAPISpec(), loaded_plugins)
@@ -97,9 +97,9 @@ class GenerateSpec:
         submodules: list[str] = []
         for submodule in api_spec.keys():
             submodules.append(submodule)
-        for plugin in loaded_plugins:
-            if plugin not in submodules:
-                submodules.append(plugin)
+        # for plugin in loaded_plugins:
+        #     if plugin not in submodules:
+        #         submodules.append(plugin)
         submodules.sort()
         print(f"API Submodules for {module}: {submodules}")
         self.ModuleInheritance[module] = submodules

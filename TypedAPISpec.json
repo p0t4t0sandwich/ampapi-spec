@@ -1858,7 +1858,7 @@
     },
     "GetSettingsSpec": {
       "Parameters": [],
-      "ReturnTypeName": "Dictionary<String, SettingSpec>",
+      "ReturnTypeName": "Dictionary<String, List<SettingSpec>>",
       "IsComplexType": true
     },
     "GetStatus": {
@@ -3047,6 +3047,52 @@
   },
   "RCONPlugin": {
     "Dummy": {
+      "Parameters": [],
+      "ReturnTypeName": "Void",
+      "IsComplexType": false
+    }
+  },
+  "RustModule": {
+    "Ban": {
+      "Description": null,
+      "Returns": null,
+      "Parameters": [
+        {
+          "Description": "",
+          "Name": "ID",
+          "Optional": false,
+          "ParamEnumValues": null,
+          "TypeName": "String"
+        }
+      ],
+      "ReturnTypeName": "Void",
+      "IsComplexType": false
+    },
+    "Kick": {
+      "Description": null,
+      "Returns": null,
+      "Parameters": [
+        {
+          "Description": "",
+          "Name": "ID",
+          "Optional": false,
+          "ParamEnumValues": null,
+          "TypeName": "String"
+        }
+      ],
+      "ReturnTypeName": "Void",
+      "IsComplexType": false
+    },
+    "WipeBlueprints": {
+      "Description": null,
+      "Returns": null,
+      "Parameters": [],
+      "ReturnTypeName": "Void",
+      "IsComplexType": false
+    },
+    "WipeMap": {
+      "Description": null,
+      "Returns": null,
       "Parameters": [],
       "ReturnTypeName": "Void",
       "IsComplexType": false

@@ -29,21 +29,11 @@ Support:
 pip install ampapi
 ```
 
-or
-
-```bash
-pip install 'ampapi @ git+https://github.com/p0t4t0sandwich/ampapi-py.git'
-```
-
 You also need the following packages installed:
 
 ```bash
-pip install requests aiohttp json
+pip install requests aiohttp json dataclass_wizard
 ```
-
-## Notes
-
-I've redone the return types, most should work, but if you find any that don't, please let me know.
 
 ## Examples
 
