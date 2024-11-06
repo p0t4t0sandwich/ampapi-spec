@@ -30,7 +30,7 @@ ADSModule.GetProvisionFitness() -> ProvisionFitness
 ADSModule.GetSupportedAppSummaries() -> List<ApplicationSpecSummary>
 ADSModule.GetSupportedApplications() -> List<ApplicationSpec>
 ADSModule.GetTargetInfo() -> RemoteTargetInfo
-ADSModule.HandoutInstanceConfigs(ForModule: String, SettingNode: String, Values: List<String>) -> ActionResult
+ADSModule.HandoutInstanceConfigs(SettingNode: String, ForModule: String, SettingNode: String, Values: List<String>) -> ActionResult
 ADSModule.ManageInstance(InstanceId: Guid) -> ActionResult<String>
 ADSModule.ModifyCustomFirewallRule(instanceId: Guid, PortNumber: Int32, Range: Int32, Protocol: PortProtocol, Description: String, Open: Boolean) -> ActionResult
 ADSModule.MoveInstanceDatastore(instanceId: Guid, datastoreId: Int32) -> RunningTask
@@ -38,9 +38,9 @@ ADSModule.ReactivateInstance(instanceId: Guid) -> RunningTask
 ADSModule.ReactivateLocalInstances() -> RunningTask
 ADSModule.RefreshAppCache() -> Void
 ADSModule.RefreshGroup(GroupId: Guid) -> ActionResult
-ADSModule.RefreshInstanceConfig(InstanceId: String) -> ActionResult
+ADSModule.RefreshInstanceConfig(AndUpdateInstance: Boolean, InstanceId: String) -> ActionResult
 ADSModule.RefreshRemoteConfigStores(force: Boolean) -> Void
-ADSModule.RegisterTarget(controllerUrl: String, myUrl: String, username: String, password: String, twoFactorToken: String, friendlyName: String) -> ActionResult
+ADSModule.RegisterTarget(myUrl: String, password: String, friendlyName: String, controllerUrl: String, myUrl: String, username: String, password: String, twoFactorToken: String, friendlyName: String) -> ActionResult
 ADSModule.RepairDatastore(id: Int32) -> RunningTask
 ADSModule.RequestDatastoreSizeCalculation(datastoreId: Int32) -> RunningTask
 ADSModule.RestartInstance(InstanceName: String) -> ActionResult
@@ -52,35 +52,35 @@ ADSModule.StartAllInstances(TargetADSInstance: Guid) -> ActionResult
 ADSModule.StartInstance(InstanceName: String) -> ActionResult
 ADSModule.StopAllInstances(TargetADSInstance: Guid) -> ActionResult
 ADSModule.StopInstance(InstanceName: String) -> ActionResult
-ADSModule.TestADSLoginDetails(url: String, username: String, password: String, twoFactorToken: String) -> ActionResult
+ADSModule.TestADSLoginDetails(username: String, twoFactorToken: String, url: String, username: String, password: String, twoFactorToken: String) -> ActionResult
 ADSModule.UpdateDatastore(updatedDatastore: InstanceDatastore) -> ActionResult
 ADSModule.UpdateDeploymentTemplate(templateToUpdate: DeploymentTemplate) -> ActionResult
 ADSModule.UpdateInstanceInfo(InstanceId: String, FriendlyName: String, Description: String, StartOnBoot: Boolean, Suspended: Boolean, ExcludeFromFirewall: Boolean, RunInContainer: Boolean, ContainerMemory: Int32, MemoryPolicy: ContainerMemoryPolicy, ContainerMaxCPU: Float, ContainerImage: String, ContainerSwap: Int32, WelcomeMessage: String) -> ActionResult
 ADSModule.UpdateTarget(TargetID: Guid) -> Void
-ADSModule.UpdateTargetInfo(Id: Guid, FriendlyName: String, Url: Uri, Description: String, Tags: List<String>) -> ActionResult
-ADSModule.UpgradeAllInstances(RestartRunning: Boolean, TargetADSInstance: Guid) -> ActionResult
+ADSModule.UpdateTargetInfo(FriendlyName: String, Description: String, Id: Guid, FriendlyName: String, Url: Uri, Description: String, Tags: List<String>) -> ActionResult
+ADSModule.UpgradeAllInstances(TargetADSInstance: Guid, TargetADSInstance: Guid, RestartRunning: Boolean) -> ActionResult
 ADSModule.UpgradeInstance(InstanceName: String) -> ActionResult
 AnalyticsPlugin.GetAnalyticsSummary(PeriodDays: Int32, StartDate: Nullable<DateTime>, Filters: Dictionary<String, String>) -> Object
 Core.AcknowledgeAMPUpdate() -> Void
-Core.ActivateAMPLicence(LicenceKey: String, QueryOnly: Boolean) -> ActionResult<LicenceInfo>
+Core.ActivateAMPLicence(QueryOnly: Boolean, LicenceKey: String, QueryOnly: Boolean) -> ActionResult<LicenceInfo>
 Core.AddEventTrigger(triggerId: Guid) -> ActionResult
 Core.AddIntervalTrigger(months: List<Int32>, days: List<Int32>, hours: List<Int32>, minutes: List<Int32>, daysOfMonth: List<Int32>, description: String) -> ActionResult
 Core.AddTask(TriggerID: Guid, MethodID: String, ParameterMapping: Dictionary<String, String>) -> ActionResult
 Core.AsyncTest() -> String
 Core.CancelTask(TaskId: Guid) -> ActionResult
-Core.ChangeTaskOrder(TriggerID: Guid, TaskID: Guid, NewOrder: Int32) -> ActionResult
-Core.ChangeUserPassword(Username: String, OldPassword: String, NewPassword: String, TwoFactorPIN: String) -> ActionResult
-Core.ConfirmTwoFactorSetup(Username: String, TwoFactorCode: String) -> ActionResult
-Core.CreateRole(Name: String, AsCommonRole: Boolean) -> ActionResult<Guid>
+Core.ChangeTaskOrder(TaskID: Guid, TriggerID: Guid, TaskID: Guid, NewOrder: Int32) -> ActionResult
+Core.ChangeUserPassword(OldPassword: String, TwoFactorPIN: String, Username: String, OldPassword: String, NewPassword: String, TwoFactorPIN: String) -> ActionResult
+Core.ConfirmTwoFactorSetup(TwoFactorCode: String, Username: String, TwoFactorCode: String) -> ActionResult
+Core.CreateRole(AsCommonRole: Boolean, Name: String, AsCommonRole: Boolean) -> ActionResult<Guid>
 Core.CreateTestTask() -> Void
 Core.CreateUser(Username: String) -> ActionResult<Guid>
 Core.CurrentSessionHasPermission(PermissionNode: String) -> Boolean
 Core.DeleteInstanceUsers(InstanceId: Guid) -> ActionResult
 Core.DeleteRole(RoleId: Guid) -> ActionResult
-Core.DeleteTask(TriggerID: Guid, TaskID: Guid) -> ActionResult
+Core.DeleteTask(TaskID: Guid, TriggerID: Guid, TaskID: Guid) -> ActionResult
 Core.DeleteTrigger(TriggerID: Guid) -> ActionResult
 Core.DeleteUser(Username: String) -> ActionResult
-Core.DisableTwoFactor(Password: String, TwoFactorCode: String) -> ActionResult
+Core.DisableTwoFactor(TwoFactorCode: String, Password: String, TwoFactorCode: String) -> ActionResult
 Core.DismissAllTasks() -> ActionResult
 Core.DismissTask(TaskId: Guid) -> ActionResult
 Core.EditIntervalTrigger(Id: Guid, months: List<Int32>, days: List<Int32>, hours: List<Int32>, minutes: List<Int32>, daysOfMonth: List<Int32>, description: String) -> ActionResult
@@ -126,8 +126,8 @@ Core.Login(username: String, password: String, token: String, rememberMe: Boolea
 Core.Logout() -> Void
 Core.RefreshSettingValueList(Node: String) -> ActionResult
 Core.RefreshSettingsSourceCache() -> Void
-Core.RenameRole(RoleId: Guid, NewName: String) -> ActionResult
-Core.ResetUserPassword(Username: String, NewPassword: String) -> ActionResult
+Core.RenameRole(NewName: String, RoleId: Guid, NewName: String) -> ActionResult
+Core.ResetUserPassword(NewPassword: String, Username: String, NewPassword: String) -> ActionResult
 Core.Restart() -> ActionResult
 Core.RestartAMP() -> Void
 Core.Resume() -> Void
@@ -135,29 +135,29 @@ Core.RevokeWebauthnCredential(ID: Int32) -> ActionResult
 Core.RunEventTriggerImmediately(triggerId: Guid) -> ActionResult
 Core.RunSecurityCheck() -> List<SecurityCheckResult>
 Core.SendConsoleMessage(message: String) -> Void
-Core.SetAMPRolePermission(RoleId: Guid, PermissionNode: String, Enabled: Nullable<Boolean>) -> ActionResult
-Core.SetAMPUserRoleMembership(UserId: Guid, RoleId: Guid, IsMember: Boolean) -> ActionResult
-Core.SetConfig(node: String, value: String) -> ActionResult
+Core.SetAMPRolePermission(PermissionNode: String, RoleId: Guid, PermissionNode: String, Enabled: Nullable<Boolean>) -> ActionResult
+Core.SetAMPUserRoleMembership(RoleId: Guid, UserId: Guid, RoleId: Guid, IsMember: Boolean) -> ActionResult
+Core.SetConfig(value: String, node: String, value: String) -> ActionResult
 Core.SetConfigs(data: Dictionary<String, String>) -> Boolean
-Core.SetTriggerEnabled(Id: Guid, Enabled: Boolean) -> ActionResult
+Core.SetTriggerEnabled(Enabled: Boolean, Id: Guid, Enabled: Boolean) -> ActionResult
 Core.Sleep() -> ActionResult
 Core.Start() -> ActionResult
 Core.Stop() -> Void
 Core.Suspend() -> Void
 Core.UpdateAMPInstance() -> Void
-Core.UpdateAccountInfo(EmailAddress: String, TwoFactorPIN: String) -> ActionResult
+Core.UpdateAccountInfo(TwoFactorPIN: String, EmailAddress: String, TwoFactorPIN: String) -> ActionResult
 Core.UpdateApplication() -> ActionResult
-Core.UpdateUserInfo(Username: String, Disabled: Boolean, PasswordExpires: Boolean, CannotChangePassword: Boolean, MustChangePassword: Boolean, EmailAddress: String) -> ActionResult
+Core.UpdateUserInfo(Disabled: Boolean, CannotChangePassword: Boolean, EmailAddress: String, Username: String, Disabled: Boolean, PasswordExpires: Boolean, CannotChangePassword: Boolean, MustChangePassword: Boolean, EmailAddress: String) -> ActionResult
 Core.UpgradeAMP() -> Void
 Core.WebauthnRegister(attestationObject: String, clientDataJSON: String, description: String) -> ActionResult
 EmailSenderPlugin.TestSMTPSettings() -> ActionResult
-FileManagerPlugin.AppendFileChunk(Filename: String, Data: String, Delete: Boolean) -> Void
+FileManagerPlugin.AppendFileChunk(Data: String, Filename: String, Data: String, Delete: Boolean) -> Void
 FileManagerPlugin.CalculateFileMD5Sum(FilePath: String) -> ActionResult<String>
-FileManagerPlugin.ChangeExclusion(ModifyPath: String, AsDirectory: Boolean, Exclude: Boolean) -> ActionResult
-FileManagerPlugin.CopyFile(Origin: String, TargetDirectory: String) -> ActionResult
+FileManagerPlugin.ChangeExclusion(AsDirectory: Boolean, ModifyPath: String, AsDirectory: Boolean, Exclude: Boolean) -> ActionResult
+FileManagerPlugin.CopyFile(TargetDirectory: String, Origin: String, TargetDirectory: String) -> ActionResult
 FileManagerPlugin.CreateArchive(PathToArchive: String) -> ActionResult
 FileManagerPlugin.CreateDirectory(NewPath: String) -> ActionResult
-FileManagerPlugin.DownloadFileFromURL(Source: Uri, TargetDirectory: String) -> ActionResult
+FileManagerPlugin.DownloadFileFromURL(TargetDirectory: String, Source: Uri, TargetDirectory: String) -> ActionResult
 FileManagerPlugin.Dummy() -> Void
 FileManagerPlugin.EmptyTrash(TrashDirectoryName: String) -> ActionResult
 FileManagerPlugin.ExtractArchive(ArchivePath: String, DestinationPath: String) -> ActionResult
