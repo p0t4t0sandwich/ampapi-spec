@@ -5,21 +5,14 @@ ADSModule.AttachADS(Friendly: String, IsHTTPS: Boolean, Host: String, Port: Int3
 ADSModule.CloneTemplate(Id: Int32, NewName: String) -> ActionResult
 ADSModule.CreateDeploymentTemplate(Name: String) -> ActionResult
 ADSModule.CreateInstance(TargetADSInstance: Guid, NewInstanceId: Guid, Module: String, InstanceName: String, FriendlyName: String, IPBinding: String, PortNumber: Int32, AdminUsername: String, AdminPassword: String, ProvisionSettings: Dictionary<String, String>, AutoConfigure: Boolean, StartOnBoot: Boolean, DisplayImageSource: String, TargetDatastore: Int32, PostCreate: PostCreateAppActions) -> ActionResult
-<<<<<<< HEAD
 ADSModule.CreateInstanceFromSpec(SpecId: Guid, TargetADSInstance: Guid, FriendlyName: String, PostCreate: PostCreateAppActions, StartOnBoot: Boolean, TargetDatastore: Int32) -> ActionResult
-=======
->>>>>>> main
 ADSModule.CreateLocalInstance(Instance: LocalAMPInstance, PostCreate: PostCreateAppActions) -> ActionResult
 ADSModule.DeleteDatastore(id: Int32) -> ActionResult
 ADSModule.DeleteDeploymentTemplate(Id: Int32) -> ActionResult
 ADSModule.DeleteInstance(InstanceName: String) -> RunningTask
 ADSModule.DeleteInstanceUsers(InstanceId: Guid) -> ActionResult
 ADSModule.DeployTemplate(TemplateID: Int32, NewUsername: String, NewPassword: String, NewEmail: String, RequiredTags: List<String>, Tag: String, FriendlyName: String, Secret: String, ExtraProvisionSettings: Dictionary<String, String>, PostCreate: PostCreateAppActions) -> RunningTask
-<<<<<<< HEAD
 ADSModule.DetachTarget(Id: Guid) -> ActionResult
-=======
-ADSModule.DetatchTarget(Id: Guid) -> ActionResult
->>>>>>> main
 ADSModule.ExtractEverywhere(SourceArchive: String) -> ActionResult
 ADSModule.GetApplicationEndpoints(instanceId: Guid) -> List<EndpointInfo>
 ADSModule.GetDatastore(id: Int32) -> InstanceDatastore
@@ -27,7 +20,6 @@ ADSModule.GetDatastoreInstances(datastoreId: Int32) -> List<InstanceSummary>
 ADSModule.GetDatastores() -> List<InstanceDatastore>
 ADSModule.GetDeploymentTemplates() -> List<DeploymentTemplate>
 ADSModule.GetGroup(GroupId: Guid) -> IADSInstance
-<<<<<<< HEAD
 ADSModule.GetInstance(InstanceId: Guid) -> InstanceSummary
 ADSModule.GetInstanceNetworkInfo(InstanceName: String) -> List<PortUsage>
 ADSModule.GetInstanceStatuses() -> List<InstanceStatus>
@@ -37,16 +29,6 @@ ADSModule.GetProvisionArguments(ModuleName: String) -> List<ProvisionSettingInfo
 ADSModule.GetProvisionFitness() -> ProvisionFitness
 ADSModule.GetSupportedAppSummaries() -> List<ApplicationSpecSummary>
 ADSModule.GetSupportedApplications() -> List<ApplicationSpec>
-=======
-ADSModule.GetInstance(InstanceId: Guid) -> Instance
-ADSModule.GetInstanceNetworkInfo(InstanceName: String) -> IEnumerable<PortUsage>
-ADSModule.GetInstanceStatuses() -> IEnumerable<InstanceStatus>
-ADSModule.GetInstances(ForceIncludeSelf: Boolean) -> IEnumerable<IADSInstance>
-ADSModule.GetLocalInstances() -> IEnumerable<JObject>
-ADSModule.GetProvisionArguments(ModuleName: String) -> IEnumerable<JObject>
-ADSModule.GetProvisionFitness() -> JObject
-ADSModule.GetSupportedApplications() -> IEnumerable<ApplicationSpec>
->>>>>>> main
 ADSModule.GetTargetInfo() -> RemoteTargetInfo
 ADSModule.HandoutInstanceConfigs(SettingNode: String, ForModule: String, SettingNode: String, Values: List<String>) -> ActionResult
 ADSModule.ManageInstance(InstanceId: Guid) -> ActionResult<String>
@@ -56,21 +38,13 @@ ADSModule.ReactivateInstance(instanceId: Guid) -> RunningTask
 ADSModule.ReactivateLocalInstances() -> RunningTask
 ADSModule.RefreshAppCache() -> Void
 ADSModule.RefreshGroup(GroupId: Guid) -> ActionResult
-<<<<<<< HEAD
 ADSModule.RefreshInstanceConfig(AndUpdateInstance: Boolean, InstanceId: String) -> ActionResult
-=======
-ADSModule.RefreshInstanceConfig(InstanceId: String, AndUpdateInstance: Boolean) -> ActionResult
->>>>>>> main
 ADSModule.RefreshRemoteConfigStores(force: Boolean) -> Void
 ADSModule.RegisterTarget(myUrl: String, password: String, friendlyName: String, controllerUrl: String, myUrl: String, username: String, password: String, twoFactorToken: String, friendlyName: String) -> ActionResult
 ADSModule.RepairDatastore(id: Int32) -> RunningTask
 ADSModule.RequestDatastoreSizeCalculation(datastoreId: Int32) -> RunningTask
 ADSModule.RestartInstance(InstanceName: String) -> ActionResult
-<<<<<<< HEAD
 ADSModule.Servers(Data: JObject, RealIP: IPAddress) -> JSONRawResponse
-=======
-ADSModule.Servers(id: String, Data: JObject, RealIP: IPAddress) -> JObject
->>>>>>> main
 ADSModule.SetInstanceConfig(InstanceName: String, SettingNode: String, Value: String) -> ActionResult
 ADSModule.SetInstanceNetworkInfo(InstanceId: Guid, PortMappings: Dictionary<String, Int32>) -> ActionResult
 ADSModule.SetInstanceSuspended(InstanceName: String, Suspended: Boolean) -> ActionResult
@@ -78,7 +52,6 @@ ADSModule.StartAllInstances(TargetADSInstance: Guid) -> ActionResult
 ADSModule.StartInstance(InstanceName: String) -> ActionResult
 ADSModule.StopAllInstances(TargetADSInstance: Guid) -> ActionResult
 ADSModule.StopInstance(InstanceName: String) -> ActionResult
-<<<<<<< HEAD
 ADSModule.TestADSLoginDetails(username: String, twoFactorToken: String, url: String, username: String, password: String, twoFactorToken: String) -> ActionResult
 ADSModule.UpdateDatastore(updatedDatastore: InstanceDatastore) -> ActionResult
 ADSModule.UpdateDeploymentTemplate(templateToUpdate: DeploymentTemplate) -> ActionResult
@@ -86,15 +59,6 @@ ADSModule.UpdateInstanceInfo(InstanceId: String, FriendlyName: String, Descripti
 ADSModule.UpdateTarget(TargetID: Guid) -> Void
 ADSModule.UpdateTargetInfo(FriendlyName: String, Description: String, Id: Guid, FriendlyName: String, Url: Uri, Description: String, Tags: List<String>) -> ActionResult
 ADSModule.UpgradeAllInstances(TargetADSInstance: Guid, TargetADSInstance: Guid, RestartRunning: Boolean) -> ActionResult
-=======
-ADSModule.TestADSLoginDetails(url: String, username: String, password: String, twoFactorToken: String) -> ActionResult
-ADSModule.UpdateDatastore(updatedDatastore: InstanceDatastore) -> ActionResult
-ADSModule.UpdateDeploymentTemplate(templateToUpdate: DeploymentTemplate) -> ActionResult
-ADSModule.UpdateInstanceInfo(InstanceId: String, FriendlyName: String, Description: String, StartOnBoot: Boolean, Suspended: Boolean, ExcludeFromFirewall: Boolean, RunInContainer: Boolean, ContainerMemory: Int32, MemoryPolicy: ContainerMemoryPolicy, ContainerMaxCPU: Single, ContainerImage: String, ContainerSwap: Int32, WelcomeMessage: String) -> ActionResult
-ADSModule.UpdateTarget(TargetID: Guid) -> Void
-ADSModule.UpdateTargetInfo(Id: Guid, FriendlyName: String, Url: Uri, Description: String, Tags: List<String>) -> ActionResult
-ADSModule.UpgradeAllInstances(RestartRunning: Boolean, TargetADSInstance: Guid) -> ActionResult
->>>>>>> main
 ADSModule.UpgradeInstance(InstanceName: String) -> ActionResult
 AnalyticsPlugin.GetAnalyticsSummary(PeriodDays: Int32, StartDate: Nullable<DateTime>, Filters: Dictionary<String, String>) -> Object
 Core.AcknowledgeAMPUpdate() -> Void

@@ -209,7 +209,6 @@
           "TypeName": "Boolean"
         },
         {
-<<<<<<< HEAD:TypedAPISpec.json
           "Description": "",
           "Name": "StartOnBoot",
           "Optional": true,
@@ -281,8 +280,6 @@
         },
         {
           "Description": "",
-=======
->>>>>>> main:OldAPISpec.json
           "Name": "StartOnBoot",
           "Optional": true,
           "TypeName": "Boolean"
@@ -290,28 +287,8 @@
         {
           "Description": "",
           "Name": "TargetDatastore",
-<<<<<<< HEAD:TypedAPISpec.json
           "Optional": true,
           "TypeName": "Int32"
-=======
-          "TypeName": "Int32",
-          "Description": "",
-          "Optional": true
-        },
-        {
-          "Name": "PostCreate",
-          "TypeName": "PostCreateAppActions",
-          "Description": "",
-          "Optional": true,
-          "ParamEnumValues": {
-            "DoNothing": 0,
-            "UpdateOnce": 1,
-            "UpdateAlways": 2,
-            "UpdateAndStartOnce": 3,
-            "UpdateAndStartAlways": 4,
-            "StartAlways": 5
-          }
->>>>>>> main:OldAPISpec.json
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -326,11 +303,6 @@
           "TypeName": "LocalAMPInstance"
         },
         {
-<<<<<<< HEAD:TypedAPISpec.json
-=======
-          "Name": "PostCreate",
-          "TypeName": "PostCreateAppActions",
->>>>>>> main:OldAPISpec.json
           "Description": "",
           "Name": "PostCreate",
           "Optional": true,
@@ -341,12 +313,8 @@
             "UpdateAndStartOnce": 3,
             "UpdateAndStartAlways": 4,
             "StartAlways": 5
-<<<<<<< HEAD:TypedAPISpec.json
           },
           "TypeName": "PostCreateAppActions"
-=======
-          }
->>>>>>> main:OldAPISpec.json
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -451,7 +419,6 @@
           "TypeName": "String"
         },
         {
-<<<<<<< HEAD:TypedAPISpec.json
           "Description": "A dictionary of setting nodes and values to create the new instance with. Identical in function to the provisioning arguments in the template itself.",
           "Name": "ExtraProvisionSettings",
           "Optional": true,
@@ -460,17 +427,6 @@
         {
           "Description": "0: Do Nothing, 1: Update Once, 2: Update Always, 3: Update and Start Once, 4: Update and Start Always, 5. Start Always",
           "Name": "PostCreate",
-=======
-          "Name": "ExtraProvisionSettings",
-          "TypeName": "Dictionary<String, String>",
-          "Description": "A dictionary of setting nodes and values to create the new instance with. Identical in function to the provisioning arguments in the template itself.",
-          "Optional": true
-        },
-        {
-          "Name": "PostCreate",
-          "TypeName": "PostCreateAppActions",
-          "Description": "0: Do Nothing, 1: Update Once, 2: Update Always, 3: Update and Start Once, 4: Update and Start Always, 5. Start Always",
->>>>>>> main:OldAPISpec.json
           "Optional": true,
           "ParamEnumValues": {
             "DoNothing": 0,
@@ -479,12 +435,8 @@
             "UpdateAndStartOnce": 3,
             "UpdateAndStartAlways": 4,
             "StartAlways": 5
-<<<<<<< HEAD:TypedAPISpec.json
           },
           "TypeName": "PostCreateAppActions"
-=======
-          }
->>>>>>> main:OldAPISpec.json
         }
       ],
       "ReturnTypeName": "RunningTask",
@@ -604,7 +556,6 @@
     "GetInstances": {
       "Parameters": [
         {
-<<<<<<< HEAD:TypedAPISpec.json
           "Description": "",
           "Name": "ForceIncludeSelf",
           "Optional": true,
@@ -612,15 +563,6 @@
         }
       ],
       "ReturnTypeName": "List<IADSInstance>",
-=======
-          "Name": "ForceIncludeSelf",
-          "TypeName": "Boolean",
-          "Description": "",
-          "Optional": true
-        }
-      ],
-      "ReturnTypeName": "IEnumerable<IADSInstance>",
->>>>>>> main:OldAPISpec.json
       "IsComplexType": true
     },
     "GetLocalInstances": {
@@ -637,11 +579,7 @@
           "TypeName": "String"
         }
       ],
-<<<<<<< HEAD:TypedAPISpec.json
       "ReturnTypeName": "List<ProvisionSettingInfo>",
-=======
-      "ReturnTypeName": "IEnumerable<ProvisionSettingInfo>",
->>>>>>> main:OldAPISpec.json
       "IsComplexType": true
     },
     "GetProvisionFitness": {
@@ -803,19 +741,9 @@
       "Parameters": [
         {
           "Description": "",
-<<<<<<< HEAD:TypedAPISpec.json
           "Name": "InstanceId",
           "Optional": false,
           "TypeName": "String"
-=======
-          "Optional": false
-        },
-        {
-          "Name": "AndUpdateInstance",
-          "TypeName": "Boolean",
-          "Description": "",
-          "Optional": true
->>>>>>> main:OldAPISpec.json
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -920,17 +848,6 @@
           "TypeName": "JObject"
         },
         {
-<<<<<<< HEAD:TypedAPISpec.json
-=======
-          "Name": "Data",
-          "TypeName": "JObject",
-          "Description": "",
-          "Optional": false
-        },
-        {
-          "Name": "RealIP",
-          "TypeName": "IPAddress",
->>>>>>> main:OldAPISpec.json
           "Description": "",
           "Name": "RealIP",
           "Optional": false,
@@ -1003,17 +920,10 @@
     "StartAllInstances": {
       "Parameters": [
         {
-<<<<<<< HEAD:TypedAPISpec.json
           "Description": "",
           "Name": "TargetADSInstance",
           "Optional": false,
           "TypeName": "Guid"
-=======
-          "Name": "TargetADSInstance",
-          "TypeName": "Guid",
-          "Description": "",
-          "Optional": false
->>>>>>> main:OldAPISpec.json
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -1034,17 +944,10 @@
     "StopAllInstances": {
       "Parameters": [
         {
-<<<<<<< HEAD:TypedAPISpec.json
           "Description": "",
           "Name": "TargetADSInstance",
           "Optional": false,
           "TypeName": "Guid"
-=======
-          "Name": "TargetADSInstance",
-          "TypeName": "Guid",
-          "Description": "",
-          "Optional": false
->>>>>>> main:OldAPISpec.json
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -1078,7 +981,6 @@
         },
         {
           "Description": "",
-<<<<<<< HEAD:TypedAPISpec.json
           "Name": "password",
           "Optional": false,
           "TypeName": "String"
@@ -1088,15 +990,6 @@
           "Name": "twoFactorToken",
           "Optional": false,
           "TypeName": "String"
-=======
-          "Optional": false
-        },
-        {
-          "Name": "twoFactorToken",
-          "TypeName": "String",
-          "Description": "",
-          "Optional": false
->>>>>>> main:OldAPISpec.json
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -1195,7 +1088,6 @@
         },
         {
           "Description": "",
-<<<<<<< HEAD:TypedAPISpec.json
           "Name": "ContainerImage",
           "Optional": false,
           "TypeName": "String"
@@ -1211,21 +1103,6 @@
           "Name": "WelcomeMessage",
           "Optional": true,
           "TypeName": "String"
-=======
-          "Optional": false
-        },
-        {
-          "Name": "ContainerSwap",
-          "TypeName": "Int32",
-          "Description": "",
-          "Optional": false
-        },
-        {
-          "Name": "WelcomeMessage",
-          "TypeName": "String",
-          "Description": "",
-          "Optional": true
->>>>>>> main:OldAPISpec.json
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -1283,7 +1160,6 @@
       "Parameters": [
         {
           "Description": "",
-<<<<<<< HEAD:TypedAPISpec.json
           "Name": "RestartRunning",
           "Optional": false,
           "TypeName": "Boolean"
@@ -1293,15 +1169,6 @@
           "Name": "TargetADSInstance",
           "Optional": false,
           "TypeName": "Guid"
-=======
-          "Optional": false
-        },
-        {
-          "Name": "TargetADSInstance",
-          "TypeName": "Guid",
-          "Description": "",
-          "Optional": false
->>>>>>> main:OldAPISpec.json
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -1318,111 +1185,6 @@
       ],
       "ReturnTypeName": "ActionResult",
       "IsComplexType": true
-    },
-    "CreateInstanceFromSpec": {
-      "Parameters": [
-        {
-          "Name": "SpecId",
-          "TypeName": "Guid",
-          "Description": "",
-          "Optional": false
-        },
-        {
-          "Name": "TargetADSInstance",
-          "TypeName": "Guid",
-          "Description": "",
-          "Optional": false
-        },
-        {
-          "Name": "FriendlyName",
-          "TypeName": "String",
-          "Description": "",
-          "Optional": false
-        },
-        {
-          "Name": "PostCreate",
-          "TypeName": "PostCreateAppActions",
-          "Description": "",
-          "Optional": true,
-          "ParamEnumValues": {
-            "DoNothing": 0,
-            "UpdateOnce": 1,
-            "UpdateAlways": 2,
-            "UpdateAndStartOnce": 3,
-            "UpdateAndStartAlways": 4,
-            "StartAlways": 5
-          }
-        },
-        {
-          "Name": "StartOnBoot",
-          "TypeName": "Boolean",
-          "Description": "",
-          "Optional": true
-        },
-        {
-          "Name": "TargetDatastore",
-          "TypeName": "Int32",
-          "Description": "",
-          "Optional": true
-        }
-      ],
-      "ReturnTypeName": "ActionResult",
-      "IsComplexType": true
-    },
-    "DetachTarget": {
-      "Parameters": [
-        {
-          "Name": "Id",
-          "TypeName": "Guid",
-          "Description": "",
-          "Optional": false
-        }
-      ],
-      "ReturnTypeName": "ActionResult",
-      "IsComplexType": true
-    },
-    "GetSupportedAppSummaries": {
-      "Parameters": [],
-      "ReturnTypeName": "IEnumerable<JObject>",
-      "IsComplexType": true
-    },
-    "ReactivateInstance": {
-      "Parameters": [
-        {
-          "Name": "instanceId",
-          "TypeName": "Guid",
-          "Description": "",
-          "Optional": false
-        }
-      ],
-      "ReturnTypeName": "RunningTask",
-      "IsComplexType": true
-    }
-  },
-  "AnalyticsPlugin": {
-    "GetAnalyticsSummary": {
-      "Parameters": [
-        {
-          "Name": "PeriodDays",
-          "TypeName": "Int32",
-          "Description": "",
-          "Optional": true
-        },
-        {
-          "Name": "StartDate",
-          "TypeName": "Nullable<DateTime>",
-          "Description": "",
-          "Optional": true
-        },
-        {
-          "Name": "Filters",
-          "TypeName": "Dictionary<String, String>",
-          "Description": "",
-          "Optional": true
-        }
-      ],
-      "ReturnTypeName": "Object",
-      "IsComplexType": false
     }
   },
   "AnalyticsPlugin": {
@@ -2550,23 +2312,6 @@
       ],
       "ReturnTypeName": "ActionResult",
       "IsComplexType": true
-    },
-    "GetAuthenticationRequirements": {
-      "Parameters": [
-        {
-          "Name": "username",
-          "TypeName": "String",
-          "Description": "",
-          "Optional": false
-        }
-      ],
-      "ReturnTypeName": "IEnumerable<AuthenticationRequirement>",
-      "IsComplexType": true
-    },
-    "RunSecurityCheck": {
-      "Parameters": [],
-      "ReturnTypeName": "IEnumerable<JObject>",
-      "IsComplexType": true
     }
   },
   "EmailSenderPlugin": {
@@ -2903,18 +2648,6 @@
       ],
       "ReturnTypeName": "ActionResult",
       "IsComplexType": false
-    },
-    "ReleaseFileUploadLock": {
-      "Parameters": [
-        {
-          "Name": "Filename",
-          "TypeName": "String",
-          "Description": "",
-          "Optional": false
-        }
-      ],
-      "ReturnTypeName": "ActionResult",
-      "IsComplexType": true
     }
   },
   "GenericModule": {
@@ -2928,11 +2661,6 @@
         }
       ],
       "ReturnTypeName": "Dictionary<String, String>",
-      "IsComplexType": false
-    },
-    "ReloadGenericConfig": {
-      "Parameters": [],
-      "ReturnTypeName": "Void",
       "IsComplexType": false
     },
     "ReloadGenericConfig": {
@@ -3040,7 +2768,6 @@
         },
         {
           "Description": "",
-<<<<<<< HEAD:TypedAPISpec.json
           "Name": "Sticky",
           "Optional": false,
           "TypeName": "Boolean"
@@ -3050,15 +2777,6 @@
           "Name": "WasCreatedAutomatically",
           "Optional": true,
           "TypeName": "Boolean"
-=======
-          "Optional": false
-        },
-        {
-          "Name": "WasCreatedAutomatically",
-          "TypeName": "Boolean",
-          "Description": "",
-          "Optional": true
->>>>>>> main:OldAPISpec.json
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -3075,11 +2793,6 @@
       ],
       "ReturnTypeName": "RunningTask",
       "IsComplexType": true
-    },
-    "RefreshBackupList": {
-      "Parameters": [],
-      "ReturnTypeName": "Void",
-      "IsComplexType": false
     }
   },
   "MinecraftModule": {

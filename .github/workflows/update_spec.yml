@@ -1,29 +1,29 @@
 ---
-  name: Build new AMP API Spec
-  
-  on:
-    push:
-      branches:
-        - main
-    schedule:
-      - cron: "0 0/4 * * *"
+name: Build new AMP API Spec
 
-  jobs:
-    update_spec:
-      name: Update AMP API Spec
-      runs-on: ubuntu-latest
+on: {}
+#   push:
+#     branches:
+#       - main
+#   schedule:
+#     - cron: "0 0/4 * * *"
 
-      steps:
-        - uses: actions/checkout@v3
-          with:
-            ref: dev
+jobs:
+  update_spec:
+    name: Update AMP API Spec
+    runs-on: ubuntu-latest
 
-        - name: Run the Python script
-          id: generate-spec
-          run: python3 generate_spec.py ${{ secrets.AMP_URL }} ${{ secrets.AMP_USERNAME }} ${{ secrets.AMP_PASSWORD }}
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: dev
 
-        - uses: EndBug/add-and-commit@v9
-          with:
-            message: "Update to v${{ steps.generate-spec.outputs.AMP_VERSION }}"
-            push: origin HEAD:dev
-            add: '["APISpec.json", "AMPVersion.txt", "FriendlySpec.txt", "ModuleInheritance.json, OldAPISpec.json"]'
+      - name: Run the Python script
+        id: generate-spec
+        run: python3 generate_spec.py ${{ secrets.AMP_URL }} ${{ secrets.AMP_USERNAME }} ${{ secrets.AMP_PASSWORD }}
+
+      - uses: EndBug/add-and-commit@v9
+        with:
+          message: "Update to v${{ steps.generate-spec.outputs.AMP_VERSION }}"
+          push: origin HEAD:dev
+          add: '["APISpec.json", "AMPVersion.txt", "FriendlySpec.txt", "ModuleInheritance.json, OldAPISpec.json"]'
