@@ -5,6 +5,18 @@
     "Core",
     "EmailSenderPlugin",
     "FileManagerPlugin"
+<<<<<<< HEAD
+=======
+  ],
+  "Minecraft": [
+    "AnalyticsPlugin",
+    "CommonCorePlugin",
+    "Core",
+    "EmailSenderPlugin",
+    "FileManagerPlugin",
+    "LocalFileBackupPlugin",
+    "MinecraftModule"
+>>>>>>> main
   ],
   "GenericModule": [
     "AnalyticsPlugin",
