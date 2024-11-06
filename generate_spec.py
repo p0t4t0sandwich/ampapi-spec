@@ -58,92 +58,10 @@ class GenerateSpec:
                     if method_name not in self.NewAPISpec[module_name]:
                         self.NewAPISpec[module_name][method_name] = method
 
-<<<<<<< HEAD
     def __init__(self, args: list) -> None:
         self._load_apis(args)
         self._load_typed_api_spec()
         self._load_api_spec()
-=======
-        # Write the ModuleInheritance.json file
-        with open("ModuleInheritance.json", "a") as outfile:
-            outfile.write(json.dumps(self.ModuleInheritance, indent=2))
-            outfile.write("\n")
-            outfile.close()
-
-        # Write the friendly spec to a file
-        with open("FriendlySpec.txt", "w") as outfile:
-            old_api_spec_file = open("OldAPISpec.json", "r")
-            old_api_spec = json.load(old_api_spec_file)
-            old_api_spec_file.close()
-
-            # Non-destructively add new methods to the old API spec
-            for module in self.APISpec:
-                if not module in old_api_spec.keys():
-                    old_api_spec[module] = {}
-                for method in self.APISpec[module]:
-                    if not method in old_api_spec[module].keys():
-                        old_api_spec[module][method] = self.APISpec[module][method]
-
-                    # Now to update any new or removed Parameters
-                    else:
-                        for parameter in self.APISpec[module][method]["Parameters"]:
-                            if not parameter in old_api_spec[module][method]["Parameters"]:
-                                old_api_spec[module][method]["Parameters"].append(parameter)
-                        for parameter in old_api_spec[module][method]["Parameters"]:
-                            if not parameter in self.APISpec[module][method]["Parameters"]:
-                                old_api_spec[module][method]["Parameters"].remove(parameter)
-
-            # Alphabetize the old API spec and all of the methods
-            old_api_spec = dict(sorted(old_api_spec.items()))
-
-            # Save the old API spec
-            with open("OldAPISpec.json", "w") as old_api_spec_file:
-                json.dump(old_api_spec, old_api_spec_file, indent=2)
-                old_api_spec_file.write("\n")
-                old_api_spec_file.close()
-
-            for module in old_api_spec:
-                for method in old_api_spec[module]:
-                    outfile.write(self.parse_friendly_method(module, method, old_api_spec[module][method]) + "\n")
-            outfile.close()
-
-        # Save any new methods to the OldAPISpec.json file
-        with open("OldAPISpec.json", "w") as old_api_spec_file:
-            for module in self.APISpec:
-                for method in self.APISpec[module]:
-                    if not module in old_api_spec.keys():
-                        old_api_spec[module] = {}
-                    if not method in old_api_spec[module].keys():
-                        old_api_spec[module][method] = self.APISpec[module][method]
-
-            # Alphabetize the old API spec and all of the methods
-            old_api_spec = dict(sorted(old_api_spec.items()))
-
-            # Save the old API spec
-            json.dump(old_api_spec, old_api_spec_file, indent=2)
-
-    def parse_friendly_method(self, module: str, method_name: str, method: dict) -> str:
-        """Method to parse the method
-        :param module: The module the method is in
-        :type module: str
-        :param method: The method to parse
-        :type method: dict
-        :returns: The method in a friendly format
-        :rtype: str
-        """
-
-        # Get the method parameters
-        parameters = ""
-        if "Parameters" in method.keys():
-            for parameter in method["Parameters"]:
-                parameters += f"{parameter['Name']}: {parameter['TypeName']}, "
-            parameters = parameters[:-2]
-
-        # Get the method return type
-        return_type = method["ReturnTypeName"]
-
-        return f"{module}.{method_name}({parameters}) -> {return_type}"
->>>>>>> main
 
     def check_if_new_version(self):
         # Read the current version from the file
