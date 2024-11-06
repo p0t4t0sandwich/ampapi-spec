@@ -5,11 +5,11 @@
       "Returns": null,
       "Parameters": [
         {
-          "Name": "newDatastore",
-          "TypeName": "InstanceDatastore",
           "Description": "",
+          "Name": "newDatastore",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "InstanceDatastore"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -20,25 +20,25 @@
       "Returns": null,
       "Parameters": [
         {
+          "Description": "",
           "Name": "InstanceID",
-          "TypeName": "Guid",
-          "Description": "",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Guid"
         },
         {
+          "Description": "",
           "Name": "Args",
-          "TypeName": "Dictionary<String, String>",
-          "Description": "",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Dictionary<String, String>"
         },
         {
-          "Name": "RebuildConfiguration",
-          "TypeName": "Boolean",
           "Description": "",
+          "Name": "RebuildConfiguration",
           "Optional": true,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Boolean"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -49,39 +49,39 @@
       "Returns": "",
       "Parameters": [
         {
+          "Description": "",
           "Name": "InstanceID",
-          "TypeName": "Guid",
-          "Description": "",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Guid"
         },
         {
+          "Description": "",
           "Name": "TemplateID",
-          "TypeName": "Int32",
-          "Description": "",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Int32"
         },
         {
+          "Description": "",
           "Name": "NewFriendlyName",
-          "TypeName": "String",
-          "Description": "",
           "Optional": true,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         },
         {
+          "Description": "",
           "Name": "Secret",
-          "TypeName": "String",
-          "Description": "",
           "Optional": true,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         },
         {
-          "Name": "RestartIfPreviouslyRunning",
-          "TypeName": "Boolean",
           "Description": "",
+          "Name": "RestartIfPreviouslyRunning",
           "Optional": true,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Boolean"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -92,39 +92,39 @@
       "Returns": null,
       "Parameters": [
         {
+          "Description": "",
           "Name": "Friendly",
-          "TypeName": "String",
-          "Description": "",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         },
         {
+          "Description": "",
           "Name": "IsHTTPS",
-          "TypeName": "Boolean",
-          "Description": "",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Boolean"
         },
         {
+          "Description": "",
           "Name": "Host",
-          "TypeName": "String",
-          "Description": "",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         },
         {
+          "Description": "",
           "Name": "Port",
-          "TypeName": "Int32",
-          "Description": "",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Int32"
         },
         {
-          "Name": "InstanceID",
-          "TypeName": "Guid",
           "Description": "",
+          "Name": "InstanceID",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Guid"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -135,18 +135,18 @@
       "Returns": null,
       "Parameters": [
         {
-          "Name": "Id",
-          "TypeName": "Int32",
           "Description": "",
+          "Name": "Id",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Int32"
         },
         {
-          "Name": "NewName",
-          "TypeName": "String",
           "Description": "",
+          "Name": "NewName",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -157,11 +157,11 @@
       "Returns": null,
       "Parameters": [
         {
-          "Name": "Name",
-          "TypeName": "String",
           "Description": "",
+          "Name": "Name",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -172,86 +172,85 @@
       "Returns": null,
       "Parameters": [
         {
+          "Description": "",
           "Name": "TargetADSInstance",
-          "TypeName": "Guid",
-          "Description": "",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Guid"
         },
         {
+          "Description": "",
           "Name": "NewInstanceId",
-          "TypeName": "Guid",
-          "Description": "",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Guid"
         },
         {
+          "Description": "",
           "Name": "Module",
-          "TypeName": "String",
-          "Description": "",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         },
         {
+          "Description": "",
           "Name": "InstanceName",
-          "TypeName": "String",
-          "Description": "",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         },
         {
+          "Description": "",
           "Name": "FriendlyName",
-          "TypeName": "String",
-          "Description": "",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         },
         {
+          "Description": "",
           "Name": "IPBinding",
-          "TypeName": "String",
-          "Description": "",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         },
         {
+          "Description": "",
           "Name": "PortNumber",
-          "TypeName": "Int32",
-          "Description": "",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Int32"
         },
         {
+          "Description": "",
           "Name": "AdminUsername",
-          "TypeName": "String",
-          "Description": "",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         },
         {
+          "Description": "",
           "Name": "AdminPassword",
-          "TypeName": "String",
-          "Description": "",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         },
         {
+          "Description": "",
           "Name": "ProvisionSettings",
-          "TypeName": "Dictionary<String, String>",
-          "Description": "",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Dictionary<String, String>"
         },
         {
-          "Name": "AutoConfigure",
-          "TypeName": "Boolean",
           "Description": "When enabled, all settings other than the Module, Target and FriendlyName are ignored and replaced with automatically generated values.",
+          "Name": "AutoConfigure",
           "Optional": true,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Boolean"
         },
         {
-          "Name": "PostCreate",
-          "TypeName": "PostCreateAppActions",
           "Description": "",
+          "Name": "PostCreate",
           "Optional": true,
           "ParamEnumValues": {
             "DoNothing": 0,
@@ -260,28 +259,29 @@
             "UpdateAndStartOnce": 3,
             "UpdateAndStartAlways": 4,
             "StartAlways": 5
-          }
+          },
+          "TypeName": "PostCreateAppActions"
         },
         {
+          "Description": "",
           "Name": "StartOnBoot",
-          "TypeName": "Boolean",
-          "Description": "",
           "Optional": true,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Boolean"
         },
         {
+          "Description": "",
           "Name": "DisplayImageSource",
-          "TypeName": "String",
-          "Description": "",
           "Optional": true,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         },
         {
-          "Name": "TargetDatastore",
-          "TypeName": "Int32",
           "Description": "",
+          "Name": "TargetDatastore",
           "Optional": true,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Int32"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -292,30 +292,29 @@
       "Returns": null,
       "Parameters": [
         {
+          "Description": "",
           "Name": "SpecId",
-          "TypeName": "Guid",
-          "Description": "",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Guid"
         },
         {
+          "Description": "",
           "Name": "TargetADSInstance",
-          "TypeName": "Guid",
-          "Description": "",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Guid"
         },
         {
+          "Description": "",
           "Name": "FriendlyName",
-          "TypeName": "String",
-          "Description": "",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         },
         {
-          "Name": "PostCreate",
-          "TypeName": "PostCreateAppActions",
           "Description": "",
+          "Name": "PostCreate",
           "Optional": true,
           "ParamEnumValues": {
             "DoNothing": 0,
@@ -324,21 +323,22 @@
             "UpdateAndStartOnce": 3,
             "UpdateAndStartAlways": 4,
             "StartAlways": 5
-          }
+          },
+          "TypeName": "PostCreateAppActions"
         },
         {
+          "Description": "",
           "Name": "StartOnBoot",
-          "TypeName": "Boolean",
-          "Description": "",
           "Optional": true,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Boolean"
         },
         {
-          "Name": "TargetDatastore",
-          "TypeName": "Int32",
           "Description": "",
+          "Name": "TargetDatastore",
           "Optional": true,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Int32"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -349,16 +349,15 @@
       "Returns": null,
       "Parameters": [
         {
-          "Name": "Instance",
-          "TypeName": "LocalAMPInstance",
           "Description": "",
+          "Name": "Instance",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "LocalAMPInstance"
         },
         {
-          "Name": "PostCreate",
-          "TypeName": "PostCreateAppActions",
           "Description": "",
+          "Name": "PostCreate",
           "Optional": true,
           "ParamEnumValues": {
             "DoNothing": 0,
@@ -367,7 +366,8 @@
             "UpdateAndStartOnce": 3,
             "UpdateAndStartAlways": 4,
             "StartAlways": 5
-          }
+          },
+          "TypeName": "PostCreateAppActions"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -378,11 +378,11 @@
       "Returns": null,
       "Parameters": [
         {
-          "Name": "id",
-          "TypeName": "Int32",
           "Description": "",
+          "Name": "id",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Int32"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -393,11 +393,11 @@
       "Returns": null,
       "Parameters": [
         {
-          "Name": "Id",
-          "TypeName": "Int32",
           "Description": "",
+          "Name": "Id",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Int32"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -408,11 +408,11 @@
       "Returns": null,
       "Parameters": [
         {
-          "Name": "InstanceName",
-          "TypeName": "String",
           "Description": "",
+          "Name": "InstanceName",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "RunningTask",
@@ -423,11 +423,11 @@
       "Returns": null,
       "Parameters": [
         {
-          "Name": "InstanceId",
-          "TypeName": "Guid",
           "Description": "",
+          "Name": "InstanceId",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Guid"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -438,65 +438,64 @@
       "Returns": null,
       "Parameters": [
         {
-          "Name": "TemplateID",
-          "TypeName": "Int32",
           "Description": "The ID of the template to be deployed, as per the Template Management UI in AMP itself.",
+          "Name": "TemplateID",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Int32"
         },
         {
-          "Name": "NewUsername",
-          "TypeName": "String",
           "Description": "If specified, AMP will create a new user with this name for this instance. Must be unique. If this user already exists, this will be ignored but the new instance will be assigned to this user.",
+          "Name": "NewUsername",
           "Optional": true,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         },
         {
-          "Name": "NewPassword",
-          "TypeName": "String",
           "Description": "If 'NewUsername' is specified and the user doesn't already exist, the password that will be assigned to this user.",
+          "Name": "NewPassword",
           "Optional": true,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         },
         {
-          "Name": "NewEmail",
-          "TypeName": "String",
           "Description": "If 'NewUsername' is specified and the user doesn't already exist, the email address that will be assigned to this user.",
+          "Name": "NewEmail",
           "Optional": true,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         },
         {
-          "Name": "RequiredTags",
-          "TypeName": "List<String>",
           "Description": "If specified, AMP will only deploy this template to targets that have every single 'tag' specified in their target configuration. You can adjust this via the controller by clicking 'Edit' on the target settings.",
+          "Name": "RequiredTags",
           "Optional": true,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "List<String>"
         },
         {
-          "Name": "Tag",
-          "TypeName": "String",
           "Description": "Unrelated to RequiredTags. This is to uniquely identify this instance to your own systems. It may be something like an order ID or service ID so you can find the associated instance again at a later time. If 'UseTagAsInstanceName' is enabled, then this will also be used as the instance name for the created instance - but it must be unique.",
+          "Name": "Tag",
           "Optional": true,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         },
         {
-          "Name": "FriendlyName",
-          "TypeName": "String",
           "Description": "A friendly name for this instance. If left blank, AMP will generate one for you.",
+          "Name": "FriendlyName",
           "Optional": true,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         },
         {
-          "Name": "Secret",
-          "TypeName": "String",
           "Description": "Must be a non-empty strong in order to get a callback on deployment state change. This secret will be passed back to you in the callback so you can verify the request.",
+          "Name": "Secret",
           "Optional": true,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         },
         {
-          "Name": "PostCreate",
-          "TypeName": "PostCreateAppActions",
           "Description": "0: Do Nothing, 1: Update Once, 2: Update Always, 3: Update and Start Once, 4: Update and Start Always, 5. Start Always",
+          "Name": "PostCreate",
           "Optional": true,
           "ParamEnumValues": {
             "DoNothing": 0,
@@ -505,14 +504,15 @@
             "UpdateAndStartOnce": 3,
             "UpdateAndStartAlways": 4,
             "StartAlways": 5
-          }
+          },
+          "TypeName": "PostCreateAppActions"
         },
         {
-          "Name": "ExtraProvisionSettings",
-          "TypeName": "Dictionary<String, String>",
           "Description": "A dictionary of setting nodes and values to create the new instance with. Identical in function to the provisioning arguments in the template itself.",
+          "Name": "ExtraProvisionSettings",
           "Optional": true,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Dictionary<String, String>"
         }
       ],
       "ReturnTypeName": "RunningTask",
@@ -523,11 +523,11 @@
       "Returns": null,
       "Parameters": [
         {
-          "Name": "Id",
-          "TypeName": "Guid",
           "Description": "",
+          "Name": "Id",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Guid"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -538,11 +538,11 @@
       "Returns": null,
       "Parameters": [
         {
-          "Name": "SourceArchive",
-          "TypeName": "String",
           "Description": "",
+          "Name": "SourceArchive",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -553,11 +553,11 @@
       "Returns": null,
       "Parameters": [
         {
-          "Name": "instanceId",
-          "TypeName": "Guid",
           "Description": "",
+          "Name": "instanceId",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Guid"
         }
       ],
       "ReturnTypeName": "IEnumerable<JObject>",
@@ -568,11 +568,11 @@
       "Returns": null,
       "Parameters": [
         {
-          "Name": "id",
-          "TypeName": "Int32",
           "Description": "",
+          "Name": "id",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Int32"
         }
       ],
       "ReturnTypeName": "JObject",
@@ -583,11 +583,11 @@
       "Returns": null,
       "Parameters": [
         {
-          "Name": "datastoreId",
-          "TypeName": "Int32",
           "Description": "",
+          "Name": "datastoreId",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Int32"
         }
       ],
       "ReturnTypeName": "IEnumerable<JObject>",
@@ -612,11 +612,11 @@
       "Returns": null,
       "Parameters": [
         {
-          "Name": "GroupId",
-          "TypeName": "Guid",
           "Description": "",
+          "Name": "GroupId",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Guid"
         }
       ],
       "ReturnTypeName": "JObject",
@@ -627,11 +627,11 @@
       "Returns": null,
       "Parameters": [
         {
-          "Name": "InstanceId",
-          "TypeName": "Guid",
           "Description": "",
+          "Name": "InstanceId",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Guid"
         }
       ],
       "ReturnTypeName": "JObject",
@@ -642,11 +642,11 @@
       "Returns": null,
       "Parameters": [
         {
-          "Name": "InstanceName",
-          "TypeName": "String",
           "Description": "",
+          "Name": "InstanceName",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "IEnumerable<JObject>",
@@ -664,11 +664,11 @@
       "Returns": null,
       "Parameters": [
         {
-          "Name": "ForceIncludeSelf",
-          "TypeName": "Boolean",
           "Description": "",
+          "Name": "ForceIncludeSelf",
           "Optional": true,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Boolean"
         }
       ],
       "ReturnTypeName": "IEnumerable<JObject>",
@@ -686,11 +686,11 @@
       "Returns": null,
       "Parameters": [
         {
-          "Name": "ModuleName",
-          "TypeName": "String",
           "Description": "",
+          "Name": "ModuleName",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "IEnumerable<ProvisionSettingInfo>",
@@ -729,25 +729,25 @@
       "Returns": null,
       "Parameters": [
         {
+          "Description": "",
           "Name": "ForModule",
-          "TypeName": "String",
-          "Description": "",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         },
         {
+          "Description": "",
           "Name": "SettingNode",
-          "TypeName": "String",
-          "Description": "",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         },
         {
-          "Name": "Values",
-          "TypeName": "List<String>",
           "Description": "",
+          "Name": "Values",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "List<String>"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -758,11 +758,11 @@
       "Returns": null,
       "Parameters": [
         {
-          "Name": "InstanceId",
-          "TypeName": "Guid",
           "Description": "",
+          "Name": "InstanceId",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Guid"
         }
       ],
       "ReturnTypeName": "ActionResult<String>",
@@ -773,50 +773,50 @@
       "Returns": null,
       "Parameters": [
         {
+          "Description": "",
           "Name": "instanceId",
-          "TypeName": "Guid",
-          "Description": "",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Guid"
         },
         {
+          "Description": "",
           "Name": "PortNumber",
-          "TypeName": "Int32",
-          "Description": "",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Int32"
         },
         {
+          "Description": "",
           "Name": "Range",
-          "TypeName": "Int32",
-          "Description": "",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Int32"
         },
         {
-          "Name": "Protocol",
-          "TypeName": "PortProtocol",
           "Description": "",
+          "Name": "Protocol",
           "Optional": false,
           "ParamEnumValues": {
             "TCP": 0,
             "UDP": 1,
             "Both": 2
-          }
+          },
+          "TypeName": "PortProtocol"
         },
         {
+          "Description": "",
           "Name": "Description",
-          "TypeName": "String",
-          "Description": "",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         },
         {
-          "Name": "Open",
-          "TypeName": "Boolean",
           "Description": "",
+          "Name": "Open",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Boolean"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -827,18 +827,18 @@
       "Returns": null,
       "Parameters": [
         {
-          "Name": "instanceId",
-          "TypeName": "Guid",
           "Description": "",
+          "Name": "instanceId",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Guid"
         },
         {
-          "Name": "datastoreId",
-          "TypeName": "Int32",
           "Description": "",
+          "Name": "datastoreId",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Int32"
         }
       ],
       "ReturnTypeName": "RunningTask",
@@ -849,11 +849,11 @@
       "Returns": null,
       "Parameters": [
         {
-          "Name": "instanceId",
-          "TypeName": "Guid",
           "Description": "",
+          "Name": "instanceId",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Guid"
         }
       ],
       "ReturnTypeName": "RunningTask",
@@ -878,11 +878,11 @@
       "Returns": null,
       "Parameters": [
         {
-          "Name": "GroupId",
-          "TypeName": "Guid",
           "Description": "",
+          "Name": "GroupId",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Guid"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -893,11 +893,11 @@
       "Returns": null,
       "Parameters": [
         {
-          "Name": "InstanceId",
-          "TypeName": "String",
           "Description": "",
+          "Name": "InstanceId",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -908,11 +908,11 @@
       "Returns": null,
       "Parameters": [
         {
-          "Name": "force",
-          "TypeName": "Boolean",
           "Description": "",
+          "Name": "force",
           "Optional": true,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Boolean"
         }
       ],
       "ReturnTypeName": "Void",
@@ -923,46 +923,46 @@
       "Returns": null,
       "Parameters": [
         {
+          "Description": "",
           "Name": "controllerUrl",
-          "TypeName": "String",
-          "Description": "",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         },
         {
+          "Description": "",
           "Name": "myUrl",
-          "TypeName": "String",
-          "Description": "",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         },
         {
+          "Description": "",
           "Name": "username",
-          "TypeName": "String",
-          "Description": "",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         },
         {
+          "Description": "",
           "Name": "password",
-          "TypeName": "String",
-          "Description": "",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         },
         {
+          "Description": "",
           "Name": "twoFactorToken",
-          "TypeName": "String",
-          "Description": "",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         },
         {
-          "Name": "friendlyName",
-          "TypeName": "String",
           "Description": "",
+          "Name": "friendlyName",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -973,11 +973,11 @@
       "Returns": null,
       "Parameters": [
         {
-          "Name": "id",
-          "TypeName": "Int32",
           "Description": "",
+          "Name": "id",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Int32"
         }
       ],
       "ReturnTypeName": "RunningTask",
@@ -988,11 +988,11 @@
       "Returns": null,
       "Parameters": [
         {
-          "Name": "datastoreId",
-          "TypeName": "Int32",
           "Description": "",
+          "Name": "datastoreId",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Int32"
         }
       ],
       "ReturnTypeName": "RunningTask",
@@ -1003,11 +1003,11 @@
       "Returns": null,
       "Parameters": [
         {
-          "Name": "InstanceName",
-          "TypeName": "String",
           "Description": "",
+          "Name": "InstanceName",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -1018,18 +1018,18 @@
       "Returns": null,
       "Parameters": [
         {
-          "Name": "Data",
-          "TypeName": "JObject",
           "Description": "",
+          "Name": "Data",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "JObject"
         },
         {
-          "Name": "RealIP",
-          "TypeName": "IPAddress",
           "Description": "",
+          "Name": "RealIP",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "IPAddress"
         }
       ],
       "ReturnTypeName": "JSONRawResponse",
@@ -1040,25 +1040,25 @@
       "Returns": null,
       "Parameters": [
         {
+          "Description": "",
           "Name": "InstanceName",
-          "TypeName": "String",
-          "Description": "",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         },
         {
+          "Description": "",
           "Name": "SettingNode",
-          "TypeName": "String",
-          "Description": "",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         },
         {
-          "Name": "Value",
-          "TypeName": "String",
           "Description": "",
+          "Name": "Value",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -1069,18 +1069,18 @@
       "Returns": null,
       "Parameters": [
         {
-          "Name": "InstanceId",
-          "TypeName": "Guid",
           "Description": "",
+          "Name": "InstanceId",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Guid"
         },
         {
-          "Name": "PortMappings",
-          "TypeName": "Dictionary<String, Int32>",
           "Description": "",
+          "Name": "PortMappings",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Dictionary<String, Int32>"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -1091,18 +1091,18 @@
       "Returns": null,
       "Parameters": [
         {
-          "Name": "InstanceName",
-          "TypeName": "String",
           "Description": "",
+          "Name": "InstanceName",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         },
         {
-          "Name": "Suspended",
-          "TypeName": "Boolean",
           "Description": "",
+          "Name": "Suspended",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Boolean"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -1113,11 +1113,11 @@
       "Returns": null,
       "Parameters": [
         {
-          "Name": "TargetADSInstance",
-          "TypeName": "Guid",
           "Description": "",
+          "Name": "TargetADSInstance",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Guid"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -1128,11 +1128,11 @@
       "Returns": null,
       "Parameters": [
         {
-          "Name": "InstanceName",
-          "TypeName": "String",
           "Description": "",
+          "Name": "InstanceName",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -1143,11 +1143,11 @@
       "Returns": null,
       "Parameters": [
         {
-          "Name": "TargetADSInstance",
-          "TypeName": "Guid",
           "Description": "",
+          "Name": "TargetADSInstance",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Guid"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -1158,11 +1158,11 @@
       "Returns": null,
       "Parameters": [
         {
-          "Name": "InstanceName",
-          "TypeName": "String",
           "Description": "",
+          "Name": "InstanceName",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -1173,32 +1173,32 @@
       "Returns": null,
       "Parameters": [
         {
+          "Description": "",
           "Name": "url",
-          "TypeName": "String",
-          "Description": "",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         },
         {
+          "Description": "",
           "Name": "username",
-          "TypeName": "String",
-          "Description": "",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         },
         {
+          "Description": "",
           "Name": "password",
-          "TypeName": "String",
-          "Description": "",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         },
         {
-          "Name": "twoFactorToken",
-          "TypeName": "String",
           "Description": "",
+          "Name": "twoFactorToken",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -1209,11 +1209,11 @@
       "Returns": null,
       "Parameters": [
         {
-          "Name": "updatedDatastore",
-          "TypeName": "InstanceDatastore",
           "Description": "",
+          "Name": "updatedDatastore",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "InstanceDatastore"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -1224,11 +1224,11 @@
       "Returns": null,
       "Parameters": [
         {
-          "Name": "templateToUpdate",
-          "TypeName": "DeploymentTemplate",
           "Description": "",
+          "Name": "templateToUpdate",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "DeploymentTemplate"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -1239,99 +1239,99 @@
       "Returns": null,
       "Parameters": [
         {
+          "Description": "",
           "Name": "InstanceId",
-          "TypeName": "String",
-          "Description": "",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         },
         {
+          "Description": "",
           "Name": "FriendlyName",
-          "TypeName": "String",
-          "Description": "",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         },
         {
+          "Description": "",
           "Name": "Description",
-          "TypeName": "String",
-          "Description": "",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         },
         {
+          "Description": "",
           "Name": "StartOnBoot",
-          "TypeName": "Boolean",
-          "Description": "",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Boolean"
         },
         {
+          "Description": "",
           "Name": "Suspended",
-          "TypeName": "Boolean",
-          "Description": "",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Boolean"
         },
         {
+          "Description": "",
           "Name": "ExcludeFromFirewall",
-          "TypeName": "Boolean",
-          "Description": "",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Boolean"
         },
         {
+          "Description": "",
           "Name": "RunInContainer",
-          "TypeName": "Boolean",
-          "Description": "",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Boolean"
         },
         {
+          "Description": "",
           "Name": "ContainerMemory",
-          "TypeName": "Int32",
-          "Description": "",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Int32"
         },
         {
+          "Description": "",
           "Name": "ContainerSwap",
-          "TypeName": "Int32",
-          "Description": "",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Int32"
         },
         {
-          "Name": "MemoryPolicy",
-          "TypeName": "ContainerMemoryPolicy",
           "Description": "",
+          "Name": "MemoryPolicy",
           "Optional": false,
           "ParamEnumValues": {
             "NotSpecified": 0,
             "Reserve": 100,
             "Restrict": 200
-          }
+          },
+          "TypeName": "ContainerMemoryPolicy"
         },
         {
+          "Description": "",
           "Name": "ContainerMaxCPU",
-          "TypeName": "Single",
-          "Description": "",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Single"
         },
         {
+          "Description": "",
           "Name": "ContainerImage",
-          "TypeName": "String",
-          "Description": "",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         },
         {
-          "Name": "WelcomeMessage",
-          "TypeName": "String",
           "Description": "",
+          "Name": "WelcomeMessage",
           "Optional": true,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -1342,11 +1342,11 @@
       "Returns": null,
       "Parameters": [
         {
-          "Name": "TargetID",
-          "TypeName": "Guid",
           "Description": "",
+          "Name": "TargetID",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Guid"
         }
       ],
       "ReturnTypeName": "Void",
@@ -1357,39 +1357,39 @@
       "Returns": null,
       "Parameters": [
         {
+          "Description": "",
           "Name": "Id",
-          "TypeName": "Guid",
-          "Description": "",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Guid"
         },
         {
+          "Description": "",
           "Name": "FriendlyName",
-          "TypeName": "String",
-          "Description": "",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         },
         {
+          "Description": "",
           "Name": "Url",
-          "TypeName": "Uri",
-          "Description": "",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Uri"
         },
         {
+          "Description": "",
           "Name": "Description",
-          "TypeName": "String",
-          "Description": "",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         },
         {
-          "Name": "Tags",
-          "TypeName": "List<String>",
           "Description": "",
+          "Name": "Tags",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "List<String>"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -1400,18 +1400,18 @@
       "Returns": null,
       "Parameters": [
         {
-          "Name": "TargetADSInstance",
-          "TypeName": "Guid",
           "Description": "",
+          "Name": "TargetADSInstance",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Guid"
         },
         {
-          "Name": "RestartRunning",
-          "TypeName": "Boolean",
           "Description": "",
+          "Name": "RestartRunning",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Boolean"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -1422,15 +1422,46 @@
       "Returns": null,
       "Parameters": [
         {
-          "Name": "InstanceName",
-          "TypeName": "String",
           "Description": "",
+          "Name": "InstanceName",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "ActionResult",
       "IsComplexType": true
+    }
+  },
+  "AnalyticsPlugin": {
+    "GetAnalyticsSummary": {
+      "Description": null,
+      "Returns": null,
+      "Parameters": [
+        {
+          "Description": "",
+          "Name": "PeriodDays",
+          "Optional": true,
+          "ParamEnumValues": null,
+          "TypeName": "Int32"
+        },
+        {
+          "Description": "",
+          "Name": "StartDate",
+          "Optional": true,
+          "ParamEnumValues": null,
+          "TypeName": "Nullable<DateTime>"
+        },
+        {
+          "Description": "",
+          "Name": "Filters",
+          "Optional": true,
+          "ParamEnumValues": null,
+          "TypeName": "Dictionary<String, String>"
+        }
+      ],
+      "ReturnTypeName": "Object",
+      "IsComplexType": false
     }
   },
   "CommonCorePlugin": {},
@@ -1447,18 +1478,18 @@
       "Returns": null,
       "Parameters": [
         {
-          "Name": "LicenceKey",
-          "TypeName": "String",
           "Description": "",
+          "Name": "LicenceKey",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         },
         {
-          "Name": "QueryOnly",
-          "TypeName": "Boolean",
           "Description": "",
+          "Name": "QueryOnly",
           "Optional": true,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Boolean"
         }
       ],
       "ReturnTypeName": "ActionResult<JObject>",
@@ -1469,11 +1500,11 @@
       "Returns": null,
       "Parameters": [
         {
-          "Name": "triggerId",
-          "TypeName": "Guid",
           "Description": "",
+          "Name": "triggerId",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Guid"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -1484,46 +1515,46 @@
       "Returns": null,
       "Parameters": [
         {
+          "Description": "",
           "Name": "months",
-          "TypeName": "Int32[]",
-          "Description": "",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Int32[]"
         },
         {
+          "Description": "",
           "Name": "days",
-          "TypeName": "Int32[]",
-          "Description": "",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Int32[]"
         },
         {
+          "Description": "",
           "Name": "hours",
-          "TypeName": "Int32[]",
-          "Description": "",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Int32[]"
         },
         {
+          "Description": "",
           "Name": "minutes",
-          "TypeName": "Int32[]",
-          "Description": "",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Int32[]"
         },
         {
+          "Description": "",
           "Name": "daysOfMonth",
-          "TypeName": "Int32[]",
-          "Description": "",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Int32[]"
         },
         {
-          "Name": "description",
-          "TypeName": "String",
           "Description": "",
+          "Name": "description",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -1534,25 +1565,25 @@
       "Returns": null,
       "Parameters": [
         {
+          "Description": "",
           "Name": "TriggerID",
-          "TypeName": "Guid",
-          "Description": "",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Guid"
         },
         {
+          "Description": "",
           "Name": "MethodID",
-          "TypeName": "String",
-          "Description": "",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         },
         {
-          "Name": "ParameterMapping",
-          "TypeName": "Dictionary<String, String>",
           "Description": "",
+          "Name": "ParameterMapping",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Dictionary<String, String>"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -1570,11 +1601,11 @@
       "Returns": null,
       "Parameters": [
         {
-          "Name": "TaskId",
-          "TypeName": "Guid",
           "Description": "",
+          "Name": "TaskId",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Guid"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -1585,25 +1616,25 @@
       "Returns": null,
       "Parameters": [
         {
+          "Description": "",
           "Name": "TriggerID",
-          "TypeName": "Guid",
-          "Description": "",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Guid"
         },
         {
+          "Description": "",
           "Name": "TaskID",
-          "TypeName": "Guid",
-          "Description": "",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Guid"
         },
         {
-          "Name": "NewOrder",
-          "TypeName": "Int32",
           "Description": "",
+          "Name": "NewOrder",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Int32"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -1614,32 +1645,32 @@
       "Returns": "",
       "Parameters": [
         {
+          "Description": "",
           "Name": "Username",
-          "TypeName": "String",
-          "Description": "",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         },
         {
+          "Description": "",
           "Name": "OldPassword",
-          "TypeName": "String",
-          "Description": "",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         },
         {
+          "Description": "",
           "Name": "NewPassword",
-          "TypeName": "String",
-          "Description": "",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         },
         {
-          "Name": "TwoFactorPIN",
-          "TypeName": "String",
           "Description": "",
+          "Name": "TwoFactorPIN",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -1650,18 +1681,18 @@
       "Returns": "",
       "Parameters": [
         {
-          "Name": "Username",
-          "TypeName": "String",
           "Description": "",
+          "Name": "Username",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         },
         {
-          "Name": "TwoFactorCode",
-          "TypeName": "String",
           "Description": "",
+          "Name": "TwoFactorCode",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -1672,18 +1703,18 @@
       "Returns": null,
       "Parameters": [
         {
-          "Name": "Name",
-          "TypeName": "String",
           "Description": "",
+          "Name": "Name",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         },
         {
-          "Name": "AsCommonRole",
-          "TypeName": "Boolean",
           "Description": "",
+          "Name": "AsCommonRole",
           "Optional": true,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Boolean"
         }
       ],
       "ReturnTypeName": "ActionResult<Guid>",
@@ -1701,11 +1732,11 @@
       "Returns": null,
       "Parameters": [
         {
-          "Name": "Username",
-          "TypeName": "String",
           "Description": "",
+          "Name": "Username",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "ActionResult<Guid>",
@@ -1716,11 +1747,11 @@
       "Returns": null,
       "Parameters": [
         {
-          "Name": "PermissionNode",
-          "TypeName": "String",
           "Description": "",
+          "Name": "PermissionNode",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "Boolean",
@@ -1731,11 +1762,11 @@
       "Returns": null,
       "Parameters": [
         {
-          "Name": "InstanceId",
-          "TypeName": "Guid",
           "Description": "",
+          "Name": "InstanceId",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Guid"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -1746,11 +1777,11 @@
       "Returns": null,
       "Parameters": [
         {
-          "Name": "RoleId",
-          "TypeName": "Guid",
           "Description": "",
+          "Name": "RoleId",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Guid"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -1761,18 +1792,18 @@
       "Returns": null,
       "Parameters": [
         {
-          "Name": "TriggerID",
-          "TypeName": "Guid",
           "Description": "",
+          "Name": "TriggerID",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Guid"
         },
         {
-          "Name": "TaskID",
-          "TypeName": "Guid",
           "Description": "",
+          "Name": "TaskID",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Guid"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -1783,11 +1814,11 @@
       "Returns": null,
       "Parameters": [
         {
-          "Name": "TriggerID",
-          "TypeName": "Guid",
           "Description": "",
+          "Name": "TriggerID",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Guid"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -1798,11 +1829,11 @@
       "Returns": null,
       "Parameters": [
         {
-          "Name": "Username",
-          "TypeName": "String",
           "Description": "",
+          "Name": "Username",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -1813,18 +1844,18 @@
       "Returns": null,
       "Parameters": [
         {
-          "Name": "Password",
-          "TypeName": "String",
           "Description": "",
+          "Name": "Password",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         },
         {
-          "Name": "TwoFactorCode",
-          "TypeName": "String",
           "Description": "",
+          "Name": "TwoFactorCode",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -1842,11 +1873,11 @@
       "Returns": null,
       "Parameters": [
         {
-          "Name": "TaskId",
-          "TypeName": "Guid",
           "Description": "",
+          "Name": "TaskId",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Guid"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -1857,53 +1888,53 @@
       "Returns": null,
       "Parameters": [
         {
+          "Description": "",
           "Name": "Id",
-          "TypeName": "Guid",
-          "Description": "",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Guid"
         },
         {
+          "Description": "",
           "Name": "months",
-          "TypeName": "Int32[]",
-          "Description": "",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Int32[]"
         },
         {
+          "Description": "",
           "Name": "days",
-          "TypeName": "Int32[]",
-          "Description": "",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Int32[]"
         },
         {
+          "Description": "",
           "Name": "hours",
-          "TypeName": "Int32[]",
-          "Description": "",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Int32[]"
         },
         {
+          "Description": "",
           "Name": "minutes",
-          "TypeName": "Int32[]",
-          "Description": "",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Int32[]"
         },
         {
+          "Description": "",
           "Name": "daysOfMonth",
-          "TypeName": "Int32[]",
-          "Description": "",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Int32[]"
         },
         {
-          "Name": "description",
-          "TypeName": "String",
           "Description": "",
+          "Name": "description",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -1914,25 +1945,25 @@
       "Returns": null,
       "Parameters": [
         {
+          "Description": "",
           "Name": "TriggerID",
-          "TypeName": "Guid",
-          "Description": "",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Guid"
         },
         {
+          "Description": "",
           "Name": "TaskID",
-          "TypeName": "Guid",
-          "Description": "",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Guid"
         },
         {
-          "Name": "ParameterMapping",
-          "TypeName": "Dictionary<String, String>",
           "Description": "",
+          "Name": "ParameterMapping",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Dictionary<String, String>"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -1943,18 +1974,18 @@
       "Returns": "Data container the URI for a QR code that should be scanned by a mobile authenticator.",
       "Parameters": [
         {
-          "Name": "Username",
-          "TypeName": "String",
           "Description": "",
+          "Name": "Username",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         },
         {
-          "Name": "Password",
-          "TypeName": "String",
           "Description": "",
+          "Name": "Password",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "ActionResult<TwoFactorSetupInfo>",
@@ -1965,11 +1996,11 @@
       "Returns": null,
       "Parameters": [
         {
-          "Name": "Id",
-          "TypeName": "Guid",
           "Description": "",
+          "Name": "Id",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Guid"
         }
       ],
       "ReturnTypeName": "Void",
@@ -1980,11 +2011,11 @@
       "Returns": null,
       "Parameters": [
         {
-          "Name": "RoleId",
-          "TypeName": "Guid",
           "Description": "",
+          "Name": "RoleId",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Guid"
         }
       ],
       "ReturnTypeName": "IEnumerable<String>",
@@ -1995,11 +2026,11 @@
       "Returns": null,
       "Parameters": [
         {
-          "Name": "Username",
-          "TypeName": "String",
           "Description": "",
+          "Name": "Username",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "UserInfo",
@@ -2038,18 +2069,18 @@
       "Returns": null,
       "Parameters": [
         {
-          "Name": "Before",
-          "TypeName": "Nullable<DateTime>",
           "Description": "",
+          "Name": "Before",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Nullable<DateTime>"
         },
         {
-          "Name": "Count",
-          "TypeName": "Int32",
           "Description": "",
+          "Name": "Count",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Int32"
         }
       ],
       "ReturnTypeName": "IEnumerable<IAuditLogEntry>",
@@ -2060,11 +2091,11 @@
       "Returns": null,
       "Parameters": [
         {
-          "Name": "username",
-          "TypeName": "String",
           "Description": "",
+          "Name": "username",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "IEnumerable<AuthenticationRequirement>",
@@ -2075,11 +2106,11 @@
       "Returns": null,
       "Parameters": [
         {
-          "Name": "node",
-          "TypeName": "String",
           "Description": "",
+          "Name": "node",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "JObject",
@@ -2090,11 +2121,11 @@
       "Returns": null,
       "Parameters": [
         {
-          "Name": "nodes",
-          "TypeName": "String[]",
           "Description": "",
+          "Name": "nodes",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String[]"
         }
       ],
       "ReturnTypeName": "IEnumerable<JObject>",
@@ -2147,18 +2178,18 @@
       "Returns": null,
       "Parameters": [
         {
-          "Name": "Description",
-          "TypeName": "String",
           "Description": "",
+          "Name": "Description",
           "Optional": true,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         },
         {
-          "Name": "IsTemporary",
-          "TypeName": "Boolean",
           "Description": "",
+          "Name": "IsTemporary",
           "Optional": true,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Boolean"
         }
       ],
       "ReturnTypeName": "String",
@@ -2169,11 +2200,11 @@
       "Returns": null,
       "Parameters": [
         {
-          "Name": "RoleId",
-          "TypeName": "Guid",
           "Description": "",
+          "Name": "RoleId",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Guid"
         }
       ],
       "ReturnTypeName": "AuthRoleSummary",
@@ -2205,18 +2236,18 @@
       "Returns": null,
       "Parameters": [
         {
-          "Name": "SettingNode",
-          "TypeName": "String",
           "Description": "",
+          "Name": "SettingNode",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         },
         {
-          "Name": "WithRefresh",
-          "TypeName": "Boolean",
           "Description": "",
+          "Name": "WithRefresh",
           "Optional": true,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Boolean"
         }
       ],
       "ReturnTypeName": "IDictionary<String, String>",
@@ -2248,11 +2279,11 @@
       "Returns": null,
       "Parameters": [
         {
-          "Name": "Id",
-          "TypeName": "Guid",
           "Description": "",
+          "Name": "Id",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Guid"
         }
       ],
       "ReturnTypeName": "JObject",
@@ -2284,11 +2315,11 @@
       "Returns": "",
       "Parameters": [
         {
-          "Name": "UID",
-          "TypeName": "String",
           "Description": "",
+          "Name": "UID",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "SimpleUser",
@@ -2313,11 +2344,11 @@
       "Returns": null,
       "Parameters": [
         {
-          "Name": "username",
-          "TypeName": "String",
           "Description": "",
+          "Name": "username",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "JObject",
@@ -2342,32 +2373,32 @@
       "Returns": null,
       "Parameters": [
         {
+          "Description": "",
           "Name": "username",
-          "TypeName": "String",
-          "Description": "",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         },
         {
+          "Description": "",
           "Name": "password",
-          "TypeName": "String",
-          "Description": "",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         },
         {
+          "Description": "",
           "Name": "token",
-          "TypeName": "String",
-          "Description": "",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         },
         {
-          "Name": "rememberMe",
-          "TypeName": "Boolean",
           "Description": "",
+          "Name": "rememberMe",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Boolean"
         }
       ],
       "ReturnTypeName": "JObject",
@@ -2385,11 +2416,11 @@
       "Returns": null,
       "Parameters": [
         {
-          "Name": "Node",
-          "TypeName": "String",
           "Description": "",
+          "Name": "Node",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -2407,18 +2438,18 @@
       "Returns": null,
       "Parameters": [
         {
-          "Name": "RoleId",
-          "TypeName": "Guid",
           "Description": "",
+          "Name": "RoleId",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Guid"
         },
         {
-          "Name": "NewName",
-          "TypeName": "String",
           "Description": "",
+          "Name": "NewName",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -2429,18 +2460,18 @@
       "Returns": "",
       "Parameters": [
         {
-          "Name": "Username",
-          "TypeName": "String",
           "Description": "",
+          "Name": "Username",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         },
         {
-          "Name": "NewPassword",
-          "TypeName": "String",
           "Description": "",
+          "Name": "NewPassword",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -2472,11 +2503,11 @@
       "Returns": null,
       "Parameters": [
         {
-          "Name": "ID",
-          "TypeName": "Int32",
           "Description": "",
+          "Name": "ID",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Int32"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -2487,11 +2518,11 @@
       "Returns": null,
       "Parameters": [
         {
-          "Name": "triggerId",
-          "TypeName": "Guid",
           "Description": "",
+          "Name": "triggerId",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Guid"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -2509,11 +2540,11 @@
       "Returns": null,
       "Parameters": [
         {
-          "Name": "message",
-          "TypeName": "String",
           "Description": "",
+          "Name": "message",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "Void",
@@ -2524,25 +2555,25 @@
       "Returns": null,
       "Parameters": [
         {
+          "Description": "",
           "Name": "RoleId",
-          "TypeName": "Guid",
-          "Description": "",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Guid"
         },
         {
+          "Description": "",
           "Name": "PermissionNode",
-          "TypeName": "String",
-          "Description": "",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         },
         {
-          "Name": "Enabled",
-          "TypeName": "Nullable<Boolean>",
           "Description": "",
+          "Name": "Enabled",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Nullable<Boolean>"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -2553,25 +2584,25 @@
       "Returns": null,
       "Parameters": [
         {
+          "Description": "",
           "Name": "UserId",
-          "TypeName": "Guid",
-          "Description": "",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Guid"
         },
         {
+          "Description": "",
           "Name": "RoleId",
-          "TypeName": "Guid",
-          "Description": "",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Guid"
         },
         {
-          "Name": "IsMember",
-          "TypeName": "Boolean",
           "Description": "",
+          "Name": "IsMember",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Boolean"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -2582,18 +2613,18 @@
       "Returns": null,
       "Parameters": [
         {
-          "Name": "node",
-          "TypeName": "String",
           "Description": "",
+          "Name": "node",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         },
         {
-          "Name": "value",
-          "TypeName": "String",
           "Description": "",
+          "Name": "value",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -2604,11 +2635,11 @@
       "Returns": null,
       "Parameters": [
         {
-          "Name": "data",
-          "TypeName": "Dictionary<String, String>",
           "Description": "",
+          "Name": "data",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Dictionary<String, String>"
         }
       ],
       "ReturnTypeName": "Boolean",
@@ -2619,18 +2650,18 @@
       "Returns": null,
       "Parameters": [
         {
-          "Name": "Id",
-          "TypeName": "Guid",
           "Description": "",
+          "Name": "Id",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Guid"
         },
         {
-          "Name": "Enabled",
-          "TypeName": "Boolean",
           "Description": "",
+          "Name": "Enabled",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Boolean"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -2676,18 +2707,18 @@
       "Returns": null,
       "Parameters": [
         {
-          "Name": "EmailAddress",
-          "TypeName": "String",
           "Description": "",
+          "Name": "EmailAddress",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         },
         {
-          "Name": "TwoFactorPIN",
-          "TypeName": "String",
           "Description": "",
+          "Name": "TwoFactorPIN",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -2705,46 +2736,46 @@
       "Returns": null,
       "Parameters": [
         {
+          "Description": "",
           "Name": "Username",
-          "TypeName": "String",
-          "Description": "",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         },
         {
+          "Description": "",
           "Name": "Disabled",
-          "TypeName": "Boolean",
-          "Description": "",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Boolean"
         },
         {
+          "Description": "",
           "Name": "PasswordExpires",
-          "TypeName": "Boolean",
-          "Description": "",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Boolean"
         },
         {
+          "Description": "",
           "Name": "CannotChangePassword",
-          "TypeName": "Boolean",
-          "Description": "",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Boolean"
         },
         {
+          "Description": "",
           "Name": "MustChangePassword",
-          "TypeName": "Boolean",
-          "Description": "",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Boolean"
         },
         {
-          "Name": "EmailAddress",
-          "TypeName": "String",
           "Description": "",
+          "Name": "EmailAddress",
           "Optional": true,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -2762,25 +2793,25 @@
       "Returns": null,
       "Parameters": [
         {
+          "Description": "",
           "Name": "attestationObject",
-          "TypeName": "String",
-          "Description": "",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         },
         {
+          "Description": "",
           "Name": "clientDataJSON",
-          "TypeName": "String",
-          "Description": "",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         },
         {
-          "Name": "description",
-          "TypeName": "String",
           "Description": "",
+          "Name": "description",
           "Optional": true,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -2802,25 +2833,25 @@
       "Returns": null,
       "Parameters": [
         {
+          "Description": "",
           "Name": "Filename",
-          "TypeName": "String",
-          "Description": "",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         },
         {
+          "Description": "",
           "Name": "Data",
-          "TypeName": "String",
-          "Description": "",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         },
         {
-          "Name": "Delete",
-          "TypeName": "Boolean",
           "Description": "",
+          "Name": "Delete",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Boolean"
         }
       ],
       "ReturnTypeName": "Void",
@@ -2831,11 +2862,11 @@
       "Returns": null,
       "Parameters": [
         {
-          "Name": "FilePath",
-          "TypeName": "String",
           "Description": "",
+          "Name": "FilePath",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "ActionResult<String>",
@@ -2846,25 +2877,25 @@
       "Returns": null,
       "Parameters": [
         {
+          "Description": "",
           "Name": "ModifyPath",
-          "TypeName": "String",
-          "Description": "",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         },
         {
+          "Description": "",
           "Name": "AsDirectory",
-          "TypeName": "Boolean",
-          "Description": "",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Boolean"
         },
         {
-          "Name": "Exclude",
-          "TypeName": "Boolean",
           "Description": "",
+          "Name": "Exclude",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Boolean"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -2875,18 +2906,18 @@
       "Returns": null,
       "Parameters": [
         {
-          "Name": "Origin",
-          "TypeName": "String",
           "Description": "",
+          "Name": "Origin",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         },
         {
-          "Name": "TargetDirectory",
-          "TypeName": "String",
           "Description": "",
+          "Name": "TargetDirectory",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -2897,11 +2928,11 @@
       "Returns": null,
       "Parameters": [
         {
-          "Name": "PathToArchive",
-          "TypeName": "String",
           "Description": "",
+          "Name": "PathToArchive",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -2912,11 +2943,11 @@
       "Returns": "",
       "Parameters": [
         {
-          "Name": "NewPath",
-          "TypeName": "String",
           "Description": "",
+          "Name": "NewPath",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -2927,18 +2958,18 @@
       "Returns": null,
       "Parameters": [
         {
-          "Name": "Source",
-          "TypeName": "Uri",
           "Description": "",
+          "Name": "Source",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Uri"
         },
         {
-          "Name": "TargetDirectory",
-          "TypeName": "String",
           "Description": "",
+          "Name": "TargetDirectory",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -2956,11 +2987,11 @@
       "Returns": "",
       "Parameters": [
         {
-          "Name": "TrashDirectoryName",
-          "TypeName": "String",
           "Description": "",
+          "Name": "TrashDirectoryName",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -2971,18 +3002,18 @@
       "Returns": null,
       "Parameters": [
         {
-          "Name": "ArchivePath",
-          "TypeName": "String",
           "Description": "",
+          "Name": "ArchivePath",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         },
         {
-          "Name": "DestinationPath",
-          "TypeName": "String",
           "Description": "",
+          "Name": "DestinationPath",
           "Optional": true,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -2993,11 +3024,11 @@
       "Returns": null,
       "Parameters": [
         {
-          "Name": "Dir",
-          "TypeName": "String",
           "Description": "",
+          "Name": "Dir",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "IEnumerable<JObject>",
@@ -3008,25 +3039,25 @@
       "Returns": null,
       "Parameters": [
         {
+          "Description": "",
           "Name": "Filename",
-          "TypeName": "String",
-          "Description": "",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         },
         {
+          "Description": "",
           "Name": "Position",
-          "TypeName": "Int64",
-          "Description": "",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Int64"
         },
         {
-          "Name": "Length",
-          "TypeName": "Int32",
           "Description": "",
+          "Name": "Length",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Int32"
         }
       ],
       "ReturnTypeName": "JObject",
@@ -3037,25 +3068,25 @@
       "Returns": null,
       "Parameters": [
         {
+          "Description": "",
           "Name": "Filename",
-          "TypeName": "String",
-          "Description": "",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         },
         {
+          "Description": "",
           "Name": "Offset",
-          "TypeName": "Int64",
-          "Description": "",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Int64"
         },
         {
-          "Name": "ChunkSize",
-          "TypeName": "Int64",
           "Description": "",
+          "Name": "ChunkSize",
           "Optional": true,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Int64"
         }
       ],
       "ReturnTypeName": "ActionResult<String>",
@@ -3066,11 +3097,11 @@
       "Returns": null,
       "Parameters": [
         {
-          "Name": "Filename",
-          "TypeName": "String",
           "Description": "",
+          "Name": "Filename",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -3081,18 +3112,18 @@
       "Returns": "",
       "Parameters": [
         {
-          "Name": "oldDirectory",
-          "TypeName": "String",
           "Description": "The full path to the old directory",
+          "Name": "oldDirectory",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         },
         {
-          "Name": "NewDirectoryName",
-          "TypeName": "String",
           "Description": "The name component of the new directory (not the full path)",
+          "Name": "NewDirectoryName",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -3103,18 +3134,18 @@
       "Returns": null,
       "Parameters": [
         {
-          "Name": "Filename",
-          "TypeName": "String",
           "Description": "",
+          "Name": "Filename",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         },
         {
-          "Name": "NewFilename",
-          "TypeName": "String",
           "Description": "",
+          "Name": "NewFilename",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -3125,11 +3156,11 @@
       "Returns": "",
       "Parameters": [
         {
-          "Name": "DirectoryName",
-          "TypeName": "String",
           "Description": "",
+          "Name": "DirectoryName",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -3140,11 +3171,11 @@
       "Returns": "",
       "Parameters": [
         {
-          "Name": "Filename",
-          "TypeName": "String",
           "Description": "",
+          "Name": "Filename",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         }
       ],
       "ReturnTypeName": "ActionResult",
@@ -3155,36 +3186,628 @@
       "Returns": null,
       "Parameters": [
         {
+          "Description": "",
           "Name": "Filename",
-          "TypeName": "String",
-          "Description": "",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         },
         {
+          "Description": "",
           "Name": "Data",
-          "TypeName": "String",
-          "Description": "",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "String"
         },
         {
+          "Description": "",
           "Name": "Offset",
-          "TypeName": "Int64",
-          "Description": "",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Int64"
         },
         {
-          "Name": "FinalChunk",
-          "TypeName": "Boolean",
           "Description": "",
+          "Name": "FinalChunk",
           "Optional": false,
-          "ParamEnumValues": null
+          "ParamEnumValues": null,
+          "TypeName": "Boolean"
         }
       ],
       "ReturnTypeName": "ActionResult",
       "IsComplexType": true
+    }
+  },
+  "GenericModule": {
+    "ImportConfig": {
+      "Description": null,
+      "Returns": null,
+      "Parameters": [
+        {
+          "Description": "",
+          "Name": "filename",
+          "Optional": false,
+          "ParamEnumValues": null,
+          "TypeName": "String"
+        }
+      ],
+      "ReturnTypeName": "IDictionary<String, String>",
+      "IsComplexType": false
+    },
+    "ReloadGenericConfig": {
+      "Description": null,
+      "Returns": null,
+      "Parameters": [],
+      "ReturnTypeName": "Void",
+      "IsComplexType": false
+    }
+  },
+  "LocalFileBackupPlugin": {
+    "DeleteFromS3": {
+      "Description": null,
+      "Returns": null,
+      "Parameters": [
+        {
+          "Description": "",
+          "Name": "BackupId",
+          "Optional": false,
+          "ParamEnumValues": null,
+          "TypeName": "Guid"
+        }
+      ],
+      "ReturnTypeName": "ActionResult",
+      "IsComplexType": true
+    },
+    "DeleteLocalBackup": {
+      "Description": null,
+      "Returns": null,
+      "Parameters": [
+        {
+          "Description": "",
+          "Name": "BackupId",
+          "Optional": false,
+          "ParamEnumValues": null,
+          "TypeName": "Guid"
+        }
+      ],
+      "ReturnTypeName": "Void",
+      "IsComplexType": false
+    },
+    "DownloadFromS3": {
+      "Description": null,
+      "Returns": null,
+      "Parameters": [
+        {
+          "Description": "",
+          "Name": "BackupId",
+          "Optional": false,
+          "ParamEnumValues": null,
+          "TypeName": "Guid"
+        }
+      ],
+      "ReturnTypeName": "RunningTask",
+      "IsComplexType": true
+    },
+    "GetBackups": {
+      "Description": null,
+      "Returns": null,
+      "Parameters": [],
+      "ReturnTypeName": "IEnumerable<JObject>",
+      "IsComplexType": true
+    },
+    "RefreshBackupList": {
+      "Description": null,
+      "Returns": null,
+      "Parameters": [],
+      "ReturnTypeName": "Void",
+      "IsComplexType": false
+    },
+    "RestoreBackup": {
+      "Description": null,
+      "Returns": null,
+      "Parameters": [
+        {
+          "Description": "",
+          "Name": "BackupId",
+          "Optional": false,
+          "ParamEnumValues": null,
+          "TypeName": "Guid"
+        },
+        {
+          "Description": "",
+          "Name": "DeleteExistingData",
+          "Optional": true,
+          "ParamEnumValues": null,
+          "TypeName": "Boolean"
+        }
+      ],
+      "ReturnTypeName": "ActionResult",
+      "IsComplexType": true
+    },
+    "SetBackupSticky": {
+      "Description": null,
+      "Returns": null,
+      "Parameters": [
+        {
+          "Description": "",
+          "Name": "BackupId",
+          "Optional": false,
+          "ParamEnumValues": null,
+          "TypeName": "Guid"
+        },
+        {
+          "Description": "",
+          "Name": "Sticky",
+          "Optional": false,
+          "ParamEnumValues": null,
+          "TypeName": "Boolean"
+        }
+      ],
+      "ReturnTypeName": "ActionResult",
+      "IsComplexType": true
+    },
+    "TakeBackup": {
+      "Description": null,
+      "Returns": null,
+      "Parameters": [
+        {
+          "Description": "",
+          "Name": "Title",
+          "Optional": false,
+          "ParamEnumValues": null,
+          "TypeName": "String"
+        },
+        {
+          "Description": "",
+          "Name": "Description",
+          "Optional": false,
+          "ParamEnumValues": null,
+          "TypeName": "String"
+        },
+        {
+          "Description": "",
+          "Name": "Sticky",
+          "Optional": false,
+          "ParamEnumValues": null,
+          "TypeName": "Boolean"
+        },
+        {
+          "Description": "",
+          "Name": "WasCreatedAutomatically",
+          "Optional": true,
+          "ParamEnumValues": null,
+          "TypeName": "Boolean"
+        }
+      ],
+      "ReturnTypeName": "ActionResult",
+      "IsComplexType": true
+    },
+    "UploadToS3": {
+      "Description": null,
+      "Returns": null,
+      "Parameters": [
+        {
+          "Description": "",
+          "Name": "BackupId",
+          "Optional": false,
+          "ParamEnumValues": null,
+          "TypeName": "Guid"
+        }
+      ],
+      "ReturnTypeName": "RunningTask",
+      "IsComplexType": true
+    }
+  },
+  "MinecraftModule": {
+    "AcceptEULA": {
+      "Description": null,
+      "Returns": null,
+      "Parameters": [],
+      "ReturnTypeName": "Boolean",
+      "IsComplexType": false
+    },
+    "AddOPEntry": {
+      "Description": null,
+      "Returns": null,
+      "Parameters": [
+        {
+          "Description": "",
+          "Name": "UserOrUUID",
+          "Optional": false,
+          "ParamEnumValues": null,
+          "TypeName": "String"
+        }
+      ],
+      "ReturnTypeName": "ActionResult",
+      "IsComplexType": true
+    },
+    "AddToWhitelist": {
+      "Description": null,
+      "Returns": null,
+      "Parameters": [
+        {
+          "Description": "",
+          "Name": "UserOrUUID",
+          "Optional": false,
+          "ParamEnumValues": null,
+          "TypeName": "String"
+        }
+      ],
+      "ReturnTypeName": "ActionResult",
+      "IsComplexType": true
+    },
+    "BanUserByID": {
+      "Description": null,
+      "Returns": null,
+      "Parameters": [
+        {
+          "Description": "",
+          "Name": "ID",
+          "Optional": false,
+          "ParamEnumValues": null,
+          "TypeName": "String"
+        }
+      ],
+      "ReturnTypeName": "Void",
+      "IsComplexType": false
+    },
+    "BukGetCategories": {
+      "Description": null,
+      "Returns": null,
+      "Parameters": [],
+      "ReturnTypeName": "JSONRawResponse",
+      "IsComplexType": true
+    },
+    "BukGetInstallUpdatePlugin": {
+      "Description": null,
+      "Returns": null,
+      "Parameters": [
+        {
+          "Description": "",
+          "Name": "pluginId",
+          "Optional": false,
+          "ParamEnumValues": null,
+          "TypeName": "Int32"
+        }
+      ],
+      "ReturnTypeName": "RunningTask",
+      "IsComplexType": true
+    },
+    "BukGetInstalledPlugins": {
+      "Description": null,
+      "Returns": null,
+      "Parameters": [],
+      "ReturnTypeName": "JSONRawResponse",
+      "IsComplexType": true
+    },
+    "BukGetPluginInfo": {
+      "Description": null,
+      "Returns": null,
+      "Parameters": [
+        {
+          "Description": "",
+          "Name": "PluginId",
+          "Optional": false,
+          "ParamEnumValues": null,
+          "TypeName": "Int32"
+        }
+      ],
+      "ReturnTypeName": "JSONRawResponse",
+      "IsComplexType": true
+    },
+    "BukGetPluginsForCategory": {
+      "Description": null,
+      "Returns": null,
+      "Parameters": [
+        {
+          "Description": "",
+          "Name": "CategoryId",
+          "Optional": false,
+          "ParamEnumValues": null,
+          "TypeName": "String"
+        },
+        {
+          "Description": "",
+          "Name": "PageNumber",
+          "Optional": false,
+          "ParamEnumValues": null,
+          "TypeName": "Int32"
+        },
+        {
+          "Description": "",
+          "Name": "PageSize",
+          "Optional": false,
+          "ParamEnumValues": null,
+          "TypeName": "Int32"
+        }
+      ],
+      "ReturnTypeName": "JSONRawResponse",
+      "IsComplexType": true
+    },
+    "BukGetPopularPlugins": {
+      "Description": null,
+      "Returns": null,
+      "Parameters": [],
+      "ReturnTypeName": "JSONRawResponse",
+      "IsComplexType": true
+    },
+    "BukGetRemovePlugin": {
+      "Description": null,
+      "Returns": null,
+      "Parameters": [
+        {
+          "Description": "",
+          "Name": "PluginId",
+          "Optional": false,
+          "ParamEnumValues": null,
+          "TypeName": "Int32"
+        }
+      ],
+      "ReturnTypeName": "Void",
+      "IsComplexType": false
+    },
+    "BukGetSearch": {
+      "Description": null,
+      "Returns": null,
+      "Parameters": [
+        {
+          "Description": "",
+          "Name": "Query",
+          "Optional": false,
+          "ParamEnumValues": null,
+          "TypeName": "String"
+        },
+        {
+          "Description": "",
+          "Name": "PageNumber",
+          "Optional": false,
+          "ParamEnumValues": null,
+          "TypeName": "Int32"
+        },
+        {
+          "Description": "",
+          "Name": "PageSize",
+          "Optional": false,
+          "ParamEnumValues": null,
+          "TypeName": "Int32"
+        }
+      ],
+      "ReturnTypeName": "JSONRawResponse",
+      "IsComplexType": true
+    },
+    "ClearInventoryByID": {
+      "Description": null,
+      "Returns": null,
+      "Parameters": [
+        {
+          "Description": "",
+          "Name": "ID",
+          "Optional": false,
+          "ParamEnumValues": null,
+          "TypeName": "String"
+        }
+      ],
+      "ReturnTypeName": "Void",
+      "IsComplexType": false
+    },
+    "GetFailureReason": {
+      "Description": null,
+      "Returns": null,
+      "Parameters": [],
+      "ReturnTypeName": "String",
+      "IsComplexType": false
+    },
+    "GetHeadByUUID": {
+      "Description": "Get a skin as a base64 string",
+      "Returns": "",
+      "Parameters": [
+        {
+          "Description": "",
+          "Name": "id",
+          "Optional": false,
+          "ParamEnumValues": null,
+          "TypeName": "String"
+        }
+      ],
+      "ReturnTypeName": "String",
+      "IsComplexType": false
+    },
+    "GetOPWhitelist": {
+      "Description": null,
+      "Returns": null,
+      "Parameters": [],
+      "ReturnTypeName": "JObject",
+      "IsComplexType": true
+    },
+    "GetWhitelist": {
+      "Description": null,
+      "Returns": null,
+      "Parameters": [],
+      "ReturnTypeName": "IEnumerable<JObject>",
+      "IsComplexType": true
+    },
+    "KickUserByID": {
+      "Description": null,
+      "Returns": null,
+      "Parameters": [
+        {
+          "Description": "",
+          "Name": "ID",
+          "Optional": false,
+          "ParamEnumValues": null,
+          "TypeName": "String"
+        }
+      ],
+      "ReturnTypeName": "Void",
+      "IsComplexType": false
+    },
+    "KillByID": {
+      "Description": null,
+      "Returns": null,
+      "Parameters": [
+        {
+          "Description": "",
+          "Name": "ID",
+          "Optional": false,
+          "ParamEnumValues": null,
+          "TypeName": "String"
+        }
+      ],
+      "ReturnTypeName": "Void",
+      "IsComplexType": false
+    },
+    "LoadOPList": {
+      "Description": null,
+      "Returns": null,
+      "Parameters": [],
+      "ReturnTypeName": "IEnumerable<JObject>",
+      "IsComplexType": true
+    },
+    "RemoveOPEntry": {
+      "Description": null,
+      "Returns": null,
+      "Parameters": [
+        {
+          "Description": "",
+          "Name": "UserOrUUID",
+          "Optional": false,
+          "ParamEnumValues": null,
+          "TypeName": "String"
+        }
+      ],
+      "ReturnTypeName": "Void",
+      "IsComplexType": false
+    },
+    "RemoveWhitelistEntry": {
+      "Description": null,
+      "Returns": null,
+      "Parameters": [
+        {
+          "Description": "",
+          "Name": "UserOrUUID",
+          "Optional": false,
+          "ParamEnumValues": null,
+          "TypeName": "String"
+        }
+      ],
+      "ReturnTypeName": "Void",
+      "IsComplexType": false
+    },
+    "SmiteByID": {
+      "Description": "Strike a player with lightning",
+      "Returns": "",
+      "Parameters": [
+        {
+          "Description": "",
+          "Name": "ID",
+          "Optional": false,
+          "ParamEnumValues": null,
+          "TypeName": "String"
+        }
+      ],
+      "ReturnTypeName": "Void",
+      "IsComplexType": false
+    }
+  },
+  "RCONPlugin": {
+    "Dummy": {
+      "Description": null,
+      "Returns": null,
+      "Parameters": [],
+      "ReturnTypeName": "Void",
+      "IsComplexType": false
+    }
+  },
+  "RustModule": {
+    "Ban": {
+      "Description": null,
+      "Returns": null,
+      "Parameters": [
+        {
+          "Description": "",
+          "Name": "ID",
+          "Optional": false,
+          "ParamEnumValues": null,
+          "TypeName": "String"
+        }
+      ],
+      "ReturnTypeName": "Void",
+      "IsComplexType": false
+    },
+    "Kick": {
+      "Description": null,
+      "Returns": null,
+      "Parameters": [
+        {
+          "Description": "",
+          "Name": "ID",
+          "Optional": false,
+          "ParamEnumValues": null,
+          "TypeName": "String"
+        }
+      ],
+      "ReturnTypeName": "Void",
+      "IsComplexType": false
+    },
+    "WipeBlueprints": {
+      "Description": null,
+      "Returns": null,
+      "Parameters": [],
+      "ReturnTypeName": "Void",
+      "IsComplexType": false
+    },
+    "WipeMap": {
+      "Description": null,
+      "Returns": null,
+      "Parameters": [],
+      "ReturnTypeName": "Void",
+      "IsComplexType": false
+    }
+  },
+  "steamcmdplugin": {
+    "CancelSteamGuard": {
+      "Description": null,
+      "Returns": null,
+      "Parameters": [],
+      "ReturnTypeName": "Void",
+      "IsComplexType": false
+    },
+    "SteamGuardCode": {
+      "Description": null,
+      "Returns": null,
+      "Parameters": [
+        {
+          "Description": "",
+          "Name": "code",
+          "Optional": false,
+          "ParamEnumValues": null,
+          "TypeName": "String"
+        }
+      ],
+      "ReturnTypeName": "Void",
+      "IsComplexType": false
+    },
+    "SteamUsernamePassword": {
+      "Description": null,
+      "Returns": null,
+      "Parameters": [
+        {
+          "Description": "",
+          "Name": "username",
+          "Optional": false,
+          "ParamEnumValues": null,
+          "TypeName": "String"
+        },
+        {
+          "Description": "",
+          "Name": "password",
+          "Optional": false,
+          "ParamEnumValues": null,
+          "TypeName": "String"
+        }
+      ],
+      "ReturnTypeName": "Void",
+      "IsComplexType": false
     }
   }
 }

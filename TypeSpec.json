@@ -1,0 +1,4233 @@
+{
+    "ActionResult": {
+        "Description": "Generic response type for calls that return a result and a reason for failure",
+        "Fields": [
+            {
+                "Description": "Reason for failure",
+                "Name": "Reason",
+                "TypeName": "String"
+            },
+            {
+                "Description": "true if successful, false if not",
+                "Name": "Status",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "Support title",
+                "Name": "SupportTitle",
+                "TypeName": "String"
+            },
+            {
+                "Description": "Support URL",
+                "Name": "SupportURL",
+                "TypeName": "String"
+            },
+            {
+                "Description": "Result of the call",
+                "Name": "Result",
+                "Optional": true,
+                "TypeName": "Generic"
+            }
+        ],
+        "SpecialNote": "Can also be used in non-generic form, in such it uses SupportURL and SupportTitle",
+        "SpecialType": "Generic"
+    },
+    "AMPInstanceBase": {
+        "Description": "Base class for an AMP instance",
+        "Fields": [
+            {
+                "Description": "The AMP build",
+                "Name": "AMPBuild",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The AMP version",
+                "Name": "AMPVersion",
+                "TypeName": "String"
+            },
+            {
+                "Description": "Whether to use automatic UPnP",
+                "Name": "AutomaticUPnP",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "The container CPUs",
+                "Name": "ContainerCPUs",
+                "TypeName": "Float"
+            },
+            {
+                "Description": "The container memory in MB",
+                "Name": "ContainerMemoryMB",
+                "TypeName": "Int32"
+            },
+            {
+                "Description": "The container memory policy",
+                "Name": "ContainerMemoryPolicy",
+                "TypeName": "ContainerMemoryPolicy"
+            },
+            {
+                "Description": "The container swap in MB",
+                "Name": "ContainerSwapMB",
+                "TypeName": "Int32"
+            },
+            {
+                "Description": "The creator ID",
+                "Name": "CreatedBy",
+                "TypeName": "Guid"
+            },
+            {
+                "Description": "The custom mount binds",
+                "Name": "CustomMountBinds",
+                "TypeName": "Dictionary<String, String>"
+            },
+            {
+                "Description": "The custom ports",
+                "Name": "CustomPorts",
+                "TypeName": "List<PortUsage>"
+            },
+            {
+                "Description": "Whether the instance is a daemon",
+                "Name": "Daemon",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "Whether the daemon should autostart",
+                "Name": "DaemonAutostart",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "The datastore ID",
+                "Name": "DatastoreId",
+                "TypeName": "Int32"
+            },
+            {
+                "Description": "The deployment arguments",
+                "Name": "DeploymentArgs",
+                "TypeName": "Dictionary<String, String>"
+            },
+            {
+                "Description": "The description",
+                "Name": "Description",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The disk usage in MB",
+                "Name": "DiskUsageMB",
+                "TypeName": "Int32"
+            },
+            {
+                "Description": "The display image source",
+                "Name": "DisplayImageSource",
+                "TypeName": "String"
+            },
+            {
+                "Description": "Whether the Docker base is read-only",
+                "Name": "DockerBaseReadOnly",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "Whether to exclude from the firewall",
+                "Name": "ExcludeFromFirewall",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "The extra container packages",
+                "Name": "ExtraContainerPackages",
+                "TypeName": "List<String>"
+            },
+            {
+                "Description": "Whether to force Docker",
+                "Name": "ForceDocker",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "The friendly name",
+                "Name": "FriendlyName",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The group",
+                "Name": "Group",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The IP",
+                "Name": "IP",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The instance ID",
+                "Name": "InstanceID",
+                "TypeName": "Guid"
+            },
+            {
+                "Description": "The instance name",
+                "Name": "InstanceName",
+                "TypeName": "String"
+            },
+            {
+                "Description": "Whether the instance is a container",
+                "Name": "IsContainerInstance",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "Whether the instance is HTTPS",
+                "Name": "IsHTTPS",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "The management mode",
+                "Name": "ManagementMode",
+                "TypeName": "ManagementModes"
+            },
+            {
+                "Description": "Whether to match the version",
+                "Name": "MatchVersion",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "The metrics publishing HMAC",
+                "Name": "MetricsPublishingHMAC",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The module",
+                "Name": "Module",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The module display name",
+                "Name": "ModuleDisplayName",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The OS",
+                "Name": "OS",
+                "TypeName": "SupportedOS"
+            },
+            {
+                "Description": "The overlay path",
+                "Name": "OverlayPath",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The path",
+                "Name": "Path",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The pending setting changes",
+                "Name": "PendingSettingChanges",
+                "TypeName": "Dictionary<String, String>"
+            },
+            {
+                "Description": "The plugins",
+                "Name": "Plugins",
+                "TypeName": "List<String>"
+            },
+            {
+                "Description": "The port",
+                "Name": "Port",
+                "TypeName": "Int32"
+            },
+            {
+                "Description": "The previous build",
+                "Name": "PreviousBuild",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The previous version",
+                "Name": "PreviousVersion",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The release stream",
+                "Name": "ReleaseStream",
+                "TypeName": "AMPReleaseStreams"
+            },
+            {
+                "Description": "The specific Docker image",
+                "Name": "SpecificDockerImage",
+                "TypeName": "String"
+            },
+            {
+                "Description": "Whether the instance is suspended",
+                "Name": "Suspended",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "The tag",
+                "Name": "Tag",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The tags",
+                "Name": "Tags",
+                "TypeName": "List<String>"
+            },
+            {
+                "Description": "Whether tags are used for configuration",
+                "Name": "TagsUsedForConfiguration",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "The target ID",
+                "Name": "TargetID",
+                "TypeName": "Guid"
+            },
+            {
+                "Description": "Whether to use host mode networking",
+                "Name": "UseHostModeNetwork",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "The user",
+                "Name": "User",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The welcome message",
+                "Name": "WelcomeMessage",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The last reactivation attempt",
+                "Name": "LastReactivationAttempt",
+                "Optional": true,
+                "TypeName": "DateTime"
+            }
+        ]
+    },
+    "AMPReleaseStreams": {
+        "Description": "Represents the AMP release streams",
+        "Fields": [
+            {
+                "Description": "Not specified",
+                "Name": "NotSpecified",
+                "TypeName": "Int32",
+                "Value": 0
+            },
+            {
+                "Description": "LTS",
+                "Name": "LTS",
+                "TypeName": "Int32",
+                "Value": 5
+            },
+            {
+                "Description": "Mainline",
+                "Name": "Mainline",
+                "TypeName": "Int32",
+                "Value": 10
+            },
+            {
+                "Description": "Preview",
+                "Name": "Preview",
+                "TypeName": "Int32",
+                "Value": 15
+            },
+            {
+                "Description": "Development",
+                "Name": "Development",
+                "TypeName": "Int32",
+                "Value": 20
+            },
+            {
+                "Description": "Fast track",
+                "Name": "FastTrack",
+                "TypeName": "Int32",
+                "Value": 100
+            },
+            {
+                "Description": "Nightly",
+                "Name": "Nightly",
+                "TypeName": "Int32",
+                "Value": 1000
+            },
+            {
+                "Description": "Bleeding",
+                "Name": "Bleeding",
+                "TypeName": "Int32",
+                "Value": 10000
+            }
+        ],
+        "SerializesAs": "Int32",
+        "SpecialType": "Enum"
+    },
+    "APIMethodInfo": {
+        "Description": "Information about an API method",
+        "Fields": [
+            {
+                "Description": "The parameters",
+                "Name": "Consumes",
+                "TypeName": "List<ScheduleTaskParameter>"
+            },
+            {
+                "Description": "The description",
+                "Name": "Description",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The display format",
+                "Name": "DisplayFormat",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The ID",
+                "Name": "Id",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The name",
+                "Name": "Name",
+                "TypeName": "String"
+            }
+        ]
+    },
+    "ApplicationSpec": {
+        "Description": "A specification for an application",
+        "Fields": [
+            {
+                "Description": "The author",
+                "Name": "Author",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The container reason",
+                "Name": "ContainerReason",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The container support",
+                "Name": "ContainerSupport",
+                "TypeName": "ContainerSupport"
+            },
+            {
+                "Description": "The deprecated reason",
+                "Name": "DeprecatedReason",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The description",
+                "Name": "Description",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The display image source",
+                "Name": "DisplayImageSource",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The extra setup steps URI",
+                "Name": "ExtraSetupStepsURI",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The friendly name",
+                "Name": "FriendlyName",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The ID",
+                "Name": "Id",
+                "TypeName": "Guid"
+            },
+            {
+                "Description": "Whether the spec is a service spec",
+                "Name": "IsServiceSpec",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "The module name",
+                "Name": "ModuleName",
+                "TypeName": "String"
+            },
+            {
+                "Description": "Whether commercial usage is allowed",
+                "Name": "NoCommercialUsage",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "The origin",
+                "Name": "Origin",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The settings",
+                "Name": "Settings",
+                "TypeName": "Dictionary<String, String>"
+            },
+            {
+                "Description": "The supported platforms",
+                "Name": "SupportedPlatforms",
+                "TypeName": "SupportedOS"
+            }
+        ]
+    },
+    "ApplicationSpecSummary": {
+        "Description": "A summary of an application spec",
+        "Fields": [
+            {
+                "Description": "The author",
+                "Name": "Author",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The container reason",
+                "Name": "ContainerReason",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The container support",
+                "Name": "ContainerSupport",
+                "TypeName": "ContainerSupport"
+            },
+            {
+                "Description": "The deprecated reason",
+                "Name": "DeprecatedReason",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The description",
+                "Name": "Description",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The display image source",
+                "Name": "DisplayImageSource",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The extra setup steps URI",
+                "Name": "ExtraSetupStepsURI",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The friendly name",
+                "Name": "FriendlyName",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The ID",
+                "Name": "Id",
+                "TypeName": "Guid"
+            },
+            {
+                "Description": "Whether the spec is a service spec",
+                "Name": "IsServiceSpec",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "Whether commercial usage is allowed",
+                "Name": "NoCommercialUsage",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "The origin",
+                "Name": "Origin",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The supported platforms",
+                "Name": "SupportedPlatforms",
+                "TypeName": "SupportedOS"
+            }
+        ]
+    },
+    "ApplicationState": {
+        "Description": "Represents the state of an instance's application",
+        "Fields": [
+            {
+                "Description": "Undefined",
+                "Name": "Undefined",
+                "TypeName": "Int32",
+                "Value": -1
+            },
+            {
+                "Description": "Stopped",
+                "Name": "Stopped",
+                "TypeName": "Int32",
+                "Value": 0
+            },
+            {
+                "Description": "The server is performing some first-time-start configuration.",
+                "Name": "PreStart",
+                "TypeName": "Int32",
+                "Value": 5
+            },
+            {
+                "Description": "The server is performing some first-time-start configuration.",
+                "Name": "Configuring",
+                "TypeName": "Int32",
+                "Value": 7
+            },
+            {
+                "Description": "Starting",
+                "Name": "Starting",
+                "TypeName": "Int32",
+                "Value": 10
+            },
+            {
+                "Description": "Ready",
+                "Name": "Ready",
+                "TypeName": "Int32",
+                "Value": 20
+            },
+            {
+                "Description": "Server is in the middle of stopping, but once shutdown has finished it will automatically restart.",
+                "Name": "Restarting",
+                "TypeName": "Int32",
+                "Value": 30
+            },
+            {
+                "Description": "Stopping",
+                "Name": "Stopping",
+                "TypeName": "Int32",
+                "Value": 40
+            },
+            {
+                "Description": "Preparing for sleep",
+                "Name": "PreparingForSleep",
+                "TypeName": "Int32",
+                "Value": 45
+            },
+            {
+                "Description": "The application should be able to be resumed quickly if using this state. Otherwise use Stopped.",
+                "Name": "Sleeping",
+                "TypeName": "Int32",
+                "Value": 50
+            },
+            {
+                "Description": "The application is waiting for some external service/application to respond/become available.",
+                "Name": "Waiting",
+                "TypeName": "Int32",
+                "Value": 60
+            },
+            {
+                "Description": "Installing",
+                "Name": "Installing",
+                "TypeName": "Int32",
+                "Value": 70
+            },
+            {
+                "Description": "Updating",
+                "Name": "Updating",
+                "TypeName": "Int32",
+                "Value": 75
+            },
+            {
+                "Description": "Used during installation, means that some user input is required to complete setup (authentication etc).",
+                "Name": "AwaitingUserInput",
+                "TypeName": "Int32",
+                "Value": 80
+            },
+            {
+                "Description": "Failed",
+                "Name": "Failed",
+                "TypeName": "Int32",
+                "Value": 100
+            },
+            {
+                "Description": "Suspended",
+                "Name": "Suspended",
+                "TypeName": "Int32",
+                "Value": 200
+            },
+            {
+                "Description": "Maintainence",
+                "Name": "Maintainence",
+                "TypeName": "Int32",
+                "Value": 250
+            },
+            {
+                "Description": "The state is unknown, or doesn't apply (for modules that don't start an external process)",
+                "Name": "Indeterminate",
+                "TypeName": "Int32",
+                "Value": 999
+            }
+        ],
+        "SerializesAs": "Int32",
+        "SpecialType": "Enum"
+    },
+    "Architecture": {
+        "Description": "Represents the architecture",
+        "Fields": [
+            {
+                "Description": "Unknown",
+                "Name": "Unknown",
+                "TypeName": "Int32",
+                "Value": 0
+            },
+            {
+                "Description": "x86_64",
+                "Name": "x86_64",
+                "TypeName": "Int32",
+                "Value": 1
+            },
+            {
+                "Description": "aarch64",
+                "Name": "aarch64",
+                "TypeName": "Int32",
+                "Value": 2
+            },
+            {
+                "Description": "All",
+                "Name": "All",
+                "TypeName": "Int32",
+                "Value": 3
+            }
+        ],
+        "SerializesAs": "Int32",
+        "SpecialType": "Enum"
+    },
+    "AuthenticationRequirement": {
+        "Description": "Represents the authentication requirement",
+        "Fields": [
+            {
+                "Description": "None",
+                "Name": "None",
+                "TypeName": "Int32",
+                "Value": 0
+            },
+            {
+                "Description": "Username",
+                "Name": "Username",
+                "TypeName": "Int32",
+                "Value": 1
+            },
+            {
+                "Description": "Password",
+                "Name": "Password",
+                "TypeName": "Int32",
+                "Value": 2
+            },
+            {
+                "Description": "TOTP",
+                "Name": "TOTP",
+                "TypeName": "Int32",
+                "Value": 4
+            },
+            {
+                "Description": "Passkeys",
+                "Name": "Passkeys",
+                "TypeName": "Int32",
+                "Value": 8
+            }
+        ],
+        "SerializesAs": "Int32",
+        "SpecialType": "Enum"
+    },
+    "AuthenticationResult": {
+        "Description": "Represents the authentication result",
+        "Fields": [
+            {
+                "Description": "Failure",
+                "Name": "Failure",
+                "TypeName": "Int32",
+                "Value": 0
+            },
+            {
+                "Description": "Token rejected",
+                "Name": "TokenRejected",
+                "TypeName": "Int32",
+                "Value": 1
+            },
+            {
+                "Description": "Full login required",
+                "Name": "FullLoginRequired",
+                "TypeName": "Int32",
+                "Value": 2
+            },
+            {
+                "Description": "No instance access",
+                "Name": "NoInstanceAccess",
+                "TypeName": "Int32",
+                "Value": 5
+            },
+            {
+                "Description": "Instance suspended",
+                "Name": "InstanceSuspended",
+                "TypeName": "Int32",
+                "Value": 6
+            },
+            {
+                "Description": "Success",
+                "Name": "Success",
+                "TypeName": "Int32",
+                "Value": 10
+            },
+            {
+                "Description": "Password change required",
+                "Name": "PasswordChangeRequired",
+                "TypeName": "Int32",
+                "Value": 20
+            },
+            {
+                "Description": "Account disabled",
+                "Name": "AccountDisabled",
+                "TypeName": "Int32",
+                "Value": 25
+            },
+            {
+                "Description": "Ignored",
+                "Name": "Ignored",
+                "TypeName": "Int32",
+                "Value": 30
+            },
+            {
+                "Description": "Two-factor challenge",
+                "Name": "TwoFactorChallenge",
+                "TypeName": "Int32",
+                "Value": 40
+            },
+            {
+                "Description": "Two-factor setup required",
+                "Name": "TwoFactorSetupRequired",
+                "TypeName": "Int32",
+                "Value": 45
+            },
+            {
+                "Description": "Two-factor failed",
+                "Name": "TwoFactorFailed",
+                "TypeName": "Int32",
+                "Value": 50
+            },
+            {
+                "Description": "Passthru disabled",
+                "Name": "PassthruDisabled",
+                "TypeName": "Int32",
+                "Value": 100
+            },
+            {
+                "Description": "Passthru rejected",
+                "Name": "PassthruRejected",
+                "TypeName": "Int32",
+                "Value": 110
+            },
+            {
+                "Description": "Login server unavailable",
+                "Name": "LoginServerUnavailable",
+                "TypeName": "Int32",
+                "Value": 500
+            }
+        ],
+        "SerializesAs": "Int32",
+        "SpecialType": "Enum"
+    },
+    "AuthRoleSummary": {
+        "Description": "A summary of an authenticated role",
+        "Fields": [
+            {
+                "Description": "The description",
+                "Name": "Description",
+                "TypeName": "String"
+            },
+            {
+                "Description": "Whether edits are disabled",
+                "Name": "DisableEdits",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "Whether the role is hidden",
+                "Name": "Hidden",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "The ID",
+                "Name": "ID",
+                "TypeName": "Guid"
+            },
+            {
+                "Description": "Whether the role is common",
+                "Name": "IsCommonRole",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "Whether the role is default",
+                "Name": "IsDefault",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "Whether the role is instance specific",
+                "Name": "IsInstanceSpecific",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "The members",
+                "Name": "Members",
+                "TypeName": "List<AuthUserSummary>"
+            },
+            {
+                "Description": "The name",
+                "Name": "Name",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The permissions",
+                "Name": "Permissions",
+                "TypeName": "List<String>"
+            }
+        ]
+    },
+    "AuthUserSummary": {
+        "Description": "A summary of an authenticated user",
+        "Fields": [
+            {
+                "Description": "The ID",
+                "Name": "ID",
+                "TypeName": "Guid"
+            },
+            {
+                "Description": "The name",
+                "Name": "Name",
+                "TypeName": "String"
+            }
+        ]
+    },
+    "BackupManifest": {
+        "Description": "A backup manifest",
+        "Fields": [
+            {
+                "Description": "Whether the backup was created automatically",
+                "Name": "CreatedAutomatically",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "The description",
+                "Name": "Description",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The SHA1 hash",
+                "Name": "HashSHA1",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The ID",
+                "Name": "Id",
+                "TypeName": "Guid"
+            },
+            {
+                "Description": "The meta",
+                "Name": "META",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The module name",
+                "Name": "ModuleName",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The name",
+                "Name": "Name",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The remote store ID",
+                "Name": "RemoteStoreId",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The source OS",
+                "Name": "SourceOS",
+                "TypeName": "SupportedOS"
+            },
+            {
+                "Description": "Whether the backup is sticky",
+                "Name": "Sticky",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "Whether the backup is stored locally",
+                "Name": "StoredLocally",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "Whether the backup is stored remotely",
+                "Name": "StoredRemotely",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "The user who took the backup",
+                "Name": "TakenBy",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The timestamp",
+                "Name": "Timestamp",
+                "TypeName": "DateTime"
+            },
+            {
+                "Description": "The total size in bytes",
+                "Name": "TotalSizeBytes",
+                "TypeName": "Int64"
+            },
+            {
+                "Description": "The parent manifest",
+                "Name": "ParentManifest",
+                "Optional": true,
+                "TypeName": "Guid"
+            }
+        ]
+    },
+    "Branding": {
+        "Description": "Branding information",
+        "Fields": [
+            {
+                "Description": "The background URL",
+                "Name": "BackgroundURL",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The branding message",
+                "Name": "BrandingMessage",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The company name",
+                "Name": "CompanyName",
+                "TypeName": "String"
+            },
+            {
+                "Description": "Whether to display branding",
+                "Name": "DisplayBranding",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "The forgot password URL",
+                "Name": "ForgotPasswordURL",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The logo URL",
+                "Name": "LogoURL",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The page title",
+                "Name": "PageTitle",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The short branding message",
+                "Name": "ShortBrandingMessage",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The splash frame URL",
+                "Name": "SplashFrameURL",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The submit ticket URL",
+                "Name": "SubmitTicketURL",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The support text",
+                "Name": "SupportText",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The support URL",
+                "Name": "SupportURL",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The URL",
+                "Name": "URL",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The welcome message",
+                "Name": "WelcomeMessage",
+                "TypeName": "String"
+            }
+        ]
+    },
+    "BrandingSettings": {
+        "Description": "Branding information",
+        "Fields": [
+            {
+                "Description": "The background URL",
+                "Name": "BackgroundURL",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The branding message",
+                "Name": "BrandingMessage",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The company name",
+                "Name": "CompanyName",
+                "TypeName": "String"
+            },
+            {
+                "Description": "Whether to display branding",
+                "Name": "DisplayBranding",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "The forgot password URL",
+                "Name": "ForgotPasswordURL",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The logo URL",
+                "Name": "LogoURL",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The page title",
+                "Name": "PageTitle",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The short branding message",
+                "Name": "ShortBrandingMessage",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The splash frame URL",
+                "Name": "SplashFrameURL",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The submit ticket URL",
+                "Name": "SubmitTicketURL",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The support text",
+                "Name": "SupportText",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The support URL",
+                "Name": "SupportURL",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The URL",
+                "Name": "URL",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The welcome message",
+                "Name": "WelcomeMessage",
+                "TypeName": "String"
+            }
+        ]
+    },
+    "ConsoleEntry": {
+        "Description": "Type for Core.GetUpdates#ConsoleEntries",
+        "Fields": [
+            {
+                "Description": "The contents of the console entry",
+                "Name": "Contents",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The source of the console entry",
+                "Name": "Source",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The ID of the message's source, eg from a player/user",
+                "Name": "SourceId",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The timestamp of the console entry",
+                "Name": "Timestamp",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The type of the console entry",
+                "Name": "Type",
+                "TypeName": "String"
+            }
+        ]
+    },
+    "ContainerMemoryPolicy": {
+        "Description": "Represents the container memory policy",
+        "Fields": [
+            {
+                "Description": "Not specified",
+                "Name": "NotSpecified",
+                "TypeName": "Int32",
+                "Value": 0
+            },
+            {
+                "Description": "Reserve",
+                "Name": "Reserve",
+                "TypeName": "Int32",
+                "Value": 100
+            },
+            {
+                "Description": "Restrict",
+                "Name": "Restrict",
+                "TypeName": "Int32",
+                "Value": 200
+            }
+        ],
+        "SerializesAs": "Int32",
+        "SpecialType": "Enum"
+    },
+    "ContainerSupport": {
+        "Description": "Represents the container support",
+        "Fields": [
+            {
+                "Description": "No preference",
+                "Name": "NoPreference",
+                "TypeName": "Int32",
+                "Value": 0
+            },
+            {
+                "Description": "Not supported",
+                "Name": "NotSupported",
+                "TypeName": "Int32",
+                "Value": 1
+            },
+            {
+                "Description": "Supported on Linux",
+                "Name": "SupportedOnLinux",
+                "TypeName": "Int32",
+                "Value": 2
+            },
+            {
+                "Description": "Supported on Windows",
+                "Name": "SupportedOnWindows",
+                "TypeName": "Int32",
+                "Value": 4
+            },
+            {
+                "Description": "Supported",
+                "Name": "Supported",
+                "TypeName": "Int32",
+                "Value": 6
+            },
+            {
+                "Description": "Recommended on Linux",
+                "Name": "RecommendedOnLinux",
+                "TypeName": "Int32",
+                "Value": 8
+            },
+            {
+                "Description": "Recommended on Windows",
+                "Name": "RecommendedOnWindows",
+                "TypeName": "Int32",
+                "Value": 16
+            },
+            {
+                "Description": "Recommended",
+                "Name": "Recommended",
+                "TypeName": "Int32",
+                "Value": 24
+            },
+            {
+                "Description": "Required on Linux",
+                "Name": "RequiredOnLinux",
+                "TypeName": "Int32",
+                "Value": 32
+            },
+            {
+                "Description": "Required on Windows",
+                "Name": "RequiredOnWindows",
+                "TypeName": "Int32",
+                "Value": 64
+            },
+            {
+                "Description": "Required",
+                "Name": "Required",
+                "TypeName": "Int32",
+                "Value": 96
+            }
+        ],
+        "SerializesAs": "Int32",
+        "SpecialType": "Enum"
+    },
+    "DatastoreSummary": {
+        "Description": "A datastore object",
+        "Fields": [
+            {
+                "Description": "The friendly name",
+                "Name": "FriendlyName",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The datastore ID",
+                "Name": "Id",
+                "TypeName": "Int32"
+            }
+        ]
+    },
+    "DeploymentTemplate": {
+        "Description": "A deployment template object",
+        "Fields": [
+            {
+                "Description": "Whether to clone the role into the user",
+                "Name": "CloneRoleIntoUser",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "The description",
+                "Name": "Description",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The ID",
+                "Name": "Id",
+                "TypeName": "Int32"
+            },
+            {
+                "Description": "Whether to match datastore tags",
+                "Name": "MatchDatastoreTags",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "The module",
+                "Name": "Module",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The name",
+                "Name": "Name",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The setting mappings",
+                "Name": "SettingMappings",
+                "TypeName": "Dictionary<String, String>"
+            },
+            {
+                "Description": "Whether to start on boot",
+                "Name": "StartOnBoot",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "The tags",
+                "Name": "Tags",
+                "TypeName": "List<String>"
+            },
+            {
+                "Description": "The template base app",
+                "Name": "TemplateBaseApp",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The zip overlay path",
+                "Name": "ZipOverlayPath",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The template instance",
+                "Name": "TemplateInstance",
+                "Optional": true,
+                "TypeName": "Guid"
+            },
+            {
+                "Description": "The template role",
+                "Name": "TemplateRole",
+                "Optional": true,
+                "TypeName": "Guid"
+            }
+        ]
+    },
+    "DirectoryListing": {
+        "Description": "A file directory object",
+        "Fields": [
+            {
+                "Description": "The creation date",
+                "Name": "Created",
+                "TypeName": "DateTime"
+            },
+            {
+                "Description": "The filename",
+                "Name": "Filename",
+                "TypeName": "String"
+            },
+            {
+                "Description": "Whether the file is an archive",
+                "Name": "IsArchive",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "Whether the file is a directory",
+                "Name": "IsDirectory",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "Whether the file is downloadable",
+                "Name": "IsDownloadable",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "Whether the file is editable",
+                "Name": "IsEditable",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "Whether the file is excluded from backups",
+                "Name": "IsExcludedFromBackups",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "Whether the file is a virtual directory",
+                "Name": "IsVirtualDirectory",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "The modification date",
+                "Name": "Modified",
+                "TypeName": "DateTime"
+            },
+            {
+                "Description": "The size in bytes",
+                "Name": "SizeBytes",
+                "TypeName": "Int64"
+            }
+        ]
+    },
+    "EndpointInfo": {
+        "Description": "An application endpoint object",
+        "Fields": [
+            {
+                "Description": "The display name of the endpoint",
+                "Name": "DisplayName",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The endpoint address",
+                "Name": "Endpoint",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The URI of the endpoint",
+                "Name": "Uri",
+                "TypeName": "String"
+            }
+        ]
+    },
+    "ErrorResponse": {
+        "Description": "An error object",
+        "Fields": [
+            {
+                "Description": "The error message",
+                "Name": "Message",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The stack trace of the error",
+                "Name": "StackTrace",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The title of the error",
+                "Name": "Title",
+                "TypeName": "String"
+            }
+        ]
+    },
+    "FileChunkData": {
+        "Description": "A chunk of file data",
+        "Fields": [
+            {
+                "Description": "The base64 data",
+                "Name": "Base64Data",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The length of the data in bytes",
+                "Name": "BytesLength",
+                "TypeName": "Int32"
+            }
+        ]
+    },
+    "IADSInstance": {
+        "Description": "An ADS instance object",
+        "Fields": [
+            {
+                "Description": "Available IPs",
+                "Name": "AvailableIPs",
+                "TypeName": "List<String>"
+            },
+            {
+                "Description": "Available instances",
+                "Name": "AvailableInstances",
+                "TypeName": "List<InstanceSummary>"
+            },
+            {
+                "Description": "Whether the instance can be created",
+                "Name": "CanCreate",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "Whether the instance creates in containers",
+                "Name": "CreatesInContainers",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "The datastores",
+                "Name": "Datastores",
+                "TypeName": "List<DatastoreSummary>"
+            },
+            {
+                "Description": "The description",
+                "Name": "Description",
+                "TypeName": "String"
+            },
+            {
+                "Description": "Whether the instance is disabled",
+                "Name": "Disabled",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "The fitness information object",
+                "Name": "Fitness",
+                "TypeName": "ProvisionFitness"
+            },
+            {
+                "Description": "The friendly name",
+                "Name": "FriendlyName",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The host",
+                "Name": "Host",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The ID",
+                "Name": "Id",
+                "TypeName": "Int32"
+            },
+            {
+                "Description": "The instance ID",
+                "Name": "InstanceId",
+                "TypeName": "Guid"
+            },
+            {
+                "Description": "The instances",
+                "Name": "Instances",
+                "TypeName": "List<InstanceSummary>"
+            },
+            {
+                "Description": "Whether HTTPS is enabled",
+                "Name": "IsHTTPS",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "Whether the instance is remote",
+                "Name": "IsRemote",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "The last updated date",
+                "Name": "LastUpdated",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The platform information object",
+                "Name": "Platform",
+                "TypeName": "IPlatformInfo"
+            },
+            {
+                "Description": "The port",
+                "Name": "Port",
+                "TypeName": "Int32"
+            },
+            {
+                "Description": "The state",
+                "Name": "State",
+                "TypeName": "RemoteInstanceState"
+            },
+            {
+                "Description": "The state reason",
+                "Name": "StateReason",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The tags",
+                "Name": "Tags",
+                "TypeName": "List<String>"
+            },
+            {
+                "Description": "The tags list",
+                "Name": "TagsList",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The URL",
+                "Name": "URL",
+                "TypeName": "String"
+            }
+        ]
+    },
+    "IAuditLogEntry": {
+        "Description": "An audit log entry",
+        "Fields": [
+            {
+                "Description": "The category",
+                "Name": "Category",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The ID",
+                "Name": "Id",
+                "TypeName": "Int32"
+            },
+            {
+                "Description": "The message",
+                "Name": "Message",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The source",
+                "Name": "Source",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The timestamp",
+                "Name": "Timestamp",
+                "TypeName": "DateTime"
+            },
+            {
+                "Description": "The user",
+                "Name": "User",
+                "TypeName": "String"
+            }
+        ]
+    },
+    "InlineActionAttribute": {
+        "Description": "An inline action object",
+        "Fields": [
+            {
+                "Description": "The argument",
+                "Name": "Argument",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The caption",
+                "Name": "Caption",
+                "TypeName": "String"
+            },
+            {
+                "Description": "Whether the action is client-side",
+                "Name": "IsClientSide",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "The method",
+                "Name": "Method",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The module",
+                "Name": "Module",
+                "TypeName": "String"
+            }
+        ]
+    },
+    "InstanceDatastore": {
+        "Description": "A datastore object",
+        "Fields": [
+            {
+                "Description": "Whether the datastore is active",
+                "Name": "Active",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "The current usage in MB",
+                "Name": "CurrentUsageMB",
+                "TypeName": "Int64"
+            },
+            {
+                "Description": "The description",
+                "Name": "Description",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The directory",
+                "Name": "Directory",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The friendly name",
+                "Name": "FriendlyName",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The datastore ID",
+                "Name": "Id",
+                "TypeName": "Int32"
+            },
+            {
+                "Description": "The instance limit",
+                "Name": "InstanceLimit",
+                "TypeName": "Int32"
+            },
+            {
+                "Description": "Whether the datastore is internal",
+                "Name": "IsInternal",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "The priority",
+                "Name": "Priority",
+                "TypeName": "Int32"
+            },
+            {
+                "Description": "The sanitised name",
+                "Name": "SanitisedName",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The soft limit in MB",
+                "Name": "SoftLimitMB",
+                "TypeName": "Int64"
+            },
+            {
+                "Description": "The tags",
+                "Name": "Tags",
+                "TypeName": "List<String>"
+            }
+        ]
+    },
+    "InstanceStatus": {
+        "Description": "An instance status object",
+        "Fields": [
+            {
+                "Description": "The instance ID",
+                "Name": "InstanceID",
+                "TypeName": "Guid"
+            },
+            {
+                "Description": "Whether the instance is running",
+                "Name": "Running",
+                "TypeName": "Boolean"
+            }
+        ]
+    },
+    "InstanceSummary": {
+        "Description": "An instance object",
+        "Fields": [
+            {
+                "Description": "The AMP version",
+                "Name": "AMPVersion",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The application state",
+                "Name": "AppState",
+                "TypeName": "ApplicationState"
+            },
+            {
+                "Description": "The application endpoints",
+                "Name": "ApplicationEndpoints",
+                "TypeName": "List<EndpointInfo>"
+            },
+            {
+                "Description": "The container CPUs",
+                "Name": "ContainerCPUs",
+                "TypeName": "Float"
+            },
+            {
+                "Description": "The container memory in MB",
+                "Name": "ContainerMemoryMB",
+                "TypeName": "Int32"
+            },
+            {
+                "Description": "The container memory policy",
+                "Name": "ContainerMemoryPolicy",
+                "TypeName": "ContainerMemoryPolicy"
+            },
+            {
+                "Description": "The container swap in MB",
+                "Name": "ContainerSwapMB",
+                "TypeName": "Int32"
+            },
+            {
+                "Description": "Whether the instance is a daemon",
+                "Name": "Daemon",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "Whether the instance daemon autostarts",
+                "Name": "DaemonAutostart",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "The deployment arguments",
+                "Name": "DeploymentArgs",
+                "TypeName": "Dictionary<String, String>"
+            },
+            {
+                "Description": "The description",
+                "Name": "Description",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The disk usage in MB",
+                "Name": "DiskUsageMB",
+                "TypeName": "Int32"
+            },
+            {
+                "Description": "The display image source",
+                "Name": "DisplayImageSource",
+                "TypeName": "String"
+            },
+            {
+                "Description": "Whether the instance is excluded from the firewall",
+                "Name": "ExcludeFromFirewall",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "The friendly name",
+                "Name": "FriendlyName",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The IP address",
+                "Name": "IP",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The instance ID",
+                "Name": "InstanceID",
+                "TypeName": "Guid"
+            },
+            {
+                "Description": "The instance name",
+                "Name": "InstanceName",
+                "TypeName": "String"
+            },
+            {
+                "Description": "Whether the instance is a container instance",
+                "Name": "IsContainerInstance",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "Whether HTTPS is enabled",
+                "Name": "IsHTTPS",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "The management mode",
+                "Name": "ManagementMode",
+                "TypeName": "ManagementModes"
+            },
+            {
+                "Description": "The metrics",
+                "Name": "Metrics",
+                "TypeName": "Dictionary<String, MetricInfo>"
+            },
+            {
+                "Description": "The module",
+                "Name": "Module",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The module display name",
+                "Name": "ModuleDisplayName",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The port",
+                "Name": "Port",
+                "TypeName": "Int32"
+            },
+            {
+                "Description": "The release stream",
+                "Name": "ReleaseStream",
+                "TypeName": "AMPReleaseStreams"
+            },
+            {
+                "Description": "Whether the instance is running",
+                "Name": "Running",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "The specific Docker image",
+                "Name": "SpecificDockerImage",
+                "TypeName": "String"
+            },
+            {
+                "Description": "Whether the instance is suspended",
+                "Name": "Suspended",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "The tags",
+                "Name": "Tags",
+                "TypeName": "List<String>"
+            },
+            {
+                "Description": "The target ID",
+                "Name": "TargetID",
+                "TypeName": "Guid"
+            },
+            {
+                "Description": "Whether the container uses host mode network",
+                "Name": "UseHostModeNetwork",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "The instance's welcome message",
+                "Name": "WelcomeMessage",
+                "TypeName": "String"
+            }
+        ],
+        "SpecialNote": "Summarizes AMPInstanceBase"
+    },
+    "IPermissionsTreeNode": {
+        "Description": "A permissions tree node",
+        "Fields": [
+            {
+                "Description": "The children",
+                "Name": "Children",
+                "TypeName": "List<IPermissionsTreeNode>"
+            },
+            {
+                "Description": "The description",
+                "Name": "Description",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The display name",
+                "Name": "DisplayName",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The name",
+                "Name": "Name",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The node",
+                "Name": "Node",
+                "TypeName": "String"
+            }
+        ]
+    },
+    "IPlatformInfo": {
+        "AlternateNames": [
+            "RemotePlatformInfo"
+        ],
+        "Description": "Platform information object",
+        "Fields": [
+            {
+                "Description": "The CPU information object",
+                "Name": "CPUInfo",
+                "TypeName": "ProcessorInfo"
+            },
+            {
+                "Description": "Whether the Docker network is in host mode",
+                "Name": "DockerNetworkIsHostMode",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "The installed RAM in MB",
+                "Name": "InstalledRAMMB",
+                "TypeName": "Int32"
+            },
+            {
+                "Description": "The OS",
+                "Name": "OS",
+                "TypeName": "SupportedOS"
+            },
+            {
+                "Description": "The platform name",
+                "Name": "PlatformName",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The system type",
+                "Name": "SystemType",
+                "TypeName": "Architecture"
+            },
+            {
+                "Description": "The virtualization type",
+                "Name": "Virtualization",
+                "TypeName": "VirtualizationType"
+            }
+        ]
+    },
+    "LicenceInfo": {
+        "Description": "A struct to represent the object returned by Core#ActivateAMPLicence(Guid, Boolean)",
+        "Fields": [
+            {
+                "Description": "The expiry date",
+                "Name": "Expires",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The grade",
+                "Name": "Grade",
+                "TypeName": "Guid"
+            },
+            {
+                "Description": "The grade name",
+                "Name": "GradeName",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The licence key",
+                "Name": "LicenceKey",
+                "TypeName": "Guid"
+            },
+            {
+                "Description": "The product",
+                "Name": "Product",
+                "TypeName": "Guid"
+            },
+            {
+                "Description": "The product name",
+                "Name": "ProductName",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The usage",
+                "Name": "Usage",
+                "TypeName": "Int32"
+            }
+        ]
+    },
+    "ListeningPortSummary": {
+        "Description": "A listening port object",
+        "Extends": [
+            "PortSummary"
+        ],
+        "Fields": [
+            {
+                "Description": "Whether the port is delayed open",
+                "Name": "IsDelayedOpen",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "Whether the port is listening",
+                "Name": "Listening",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "The name",
+                "Name": "Name",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The port",
+                "Name": "Port",
+                "TypeName": "Int32"
+            },
+            {
+                "Description": "The protocol",
+                "Name": "Protocol",
+                "TypeName": "PortProtocol"
+            },
+            {
+                "Description": "Whether the port is required",
+                "Name": "Required",
+                "TypeName": "Boolean"
+            }
+        ]
+    },
+    "LocalAMPInstance": {
+        "Description": "A local AMP instance object",
+        "Fields": [
+            {
+                "Description": "The AMP build",
+                "Name": "AMPBuild",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The AMP version",
+                "Name": "AMPVersion",
+                "TypeName": "String"
+            },
+            {
+                "Description": "Whether to use automatic UPnP",
+                "Name": "AutomaticUPnP",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "The container CPUs",
+                "Name": "ContainerCPUs",
+                "TypeName": "Float"
+            },
+            {
+                "Description": "The container memory in MB",
+                "Name": "ContainerMemoryMB",
+                "TypeName": "Int32"
+            },
+            {
+                "Description": "The container memory policy",
+                "Name": "ContainerMemoryPolicy",
+                "TypeName": "ContainerMemoryPolicy"
+            },
+            {
+                "Description": "The container swap in MB",
+                "Name": "ContainerSwapMB",
+                "TypeName": "Int32"
+            },
+            {
+                "Description": "The creator ID",
+                "Name": "CreatedBy",
+                "TypeName": "Guid"
+            },
+            {
+                "Description": "The custom mount binds",
+                "Name": "CustomMountBinds",
+                "TypeName": "Dictionary<String, String>"
+            },
+            {
+                "Description": "The custom ports",
+                "Name": "CustomPorts",
+                "TypeName": "List<PortUsage>"
+            },
+            {
+                "Description": "Whether the instance is a daemon",
+                "Name": "Daemon",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "Whether the daemon should autostart",
+                "Name": "DaemonAutostart",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "The datastore ID",
+                "Name": "DatastoreId",
+                "TypeName": "Int32"
+            },
+            {
+                "Description": "The deployment arguments",
+                "Name": "DeploymentArgs",
+                "TypeName": "Dictionary<String, String>"
+            },
+            {
+                "Description": "The description",
+                "Name": "Description",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The disk usage in MB",
+                "Name": "DiskUsageMB",
+                "TypeName": "Int32"
+            },
+            {
+                "Description": "The display image source",
+                "Name": "DisplayImageSource",
+                "TypeName": "String"
+            },
+            {
+                "Description": "Whether the Docker base is read-only",
+                "Name": "DockerBaseReadOnly",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "Whether to exclude from the firewall",
+                "Name": "ExcludeFromFirewall",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "The extra container packages",
+                "Name": "ExtraContainerPackages",
+                "TypeName": "List<String>"
+            },
+            {
+                "Description": "Whether to force Docker",
+                "Name": "ForceDocker",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "The friendly name",
+                "Name": "FriendlyName",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The group",
+                "Name": "Group",
+                "TypeName": "String"
+            },
+            {
+                "Description": "Whether the instance has an overlay applied",
+                "Name": "HasOverlayApplied",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "The IP",
+                "Name": "IP",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The instance ID",
+                "Name": "InstanceID",
+                "TypeName": "Guid"
+            },
+            {
+                "Description": "The instance name",
+                "Name": "InstanceName",
+                "TypeName": "String"
+            },
+            {
+                "Description": "Whether the instance is a container",
+                "Name": "IsContainerInstance",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "Whether the instance is a daemon user managed",
+                "Name": "IsDaemonUserManaged",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "Whether the instance is HTTPS",
+                "Name": "IsHTTPS",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "Whether the instance is a shared instance",
+                "Name": "IsSharedInstance",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "The management mode",
+                "Name": "ManagementMode",
+                "TypeName": "ManagementModes"
+            },
+            {
+                "Description": "Whether to match the version",
+                "Name": "MatchVersion",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "The metrics publishing HMAC",
+                "Name": "MetricsPublishingHMAC",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The module",
+                "Name": "Module",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The module display name",
+                "Name": "ModuleDisplayName",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The OS",
+                "Name": "OS",
+                "TypeName": "SupportedOS"
+            },
+            {
+                "Description": "The overlay path",
+                "Name": "OverlayPath",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The overlay URL",
+                "Name": "OverlayURL",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The path",
+                "Name": "Path",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The pending setting changes",
+                "Name": "PendingSettingChanges",
+                "TypeName": "Dictionary<String, String>"
+            },
+            {
+                "Description": "The plugins",
+                "Name": "Plugins",
+                "TypeName": "List<String>"
+            },
+            {
+                "Description": "The port",
+                "Name": "Port",
+                "TypeName": "Int32"
+            },
+            {
+                "Description": "The previous build",
+                "Name": "PreviousBuild",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The previous version",
+                "Name": "PreviousVersion",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The release stream",
+                "Name": "ReleaseStream",
+                "TypeName": "AMPReleaseStreams"
+            },
+            {
+                "Description": "The specific Docker image",
+                "Name": "SpecificDockerImage",
+                "TypeName": "String"
+            },
+            {
+                "Description": "Whether the instance is suspended",
+                "Name": "Suspended",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "The tag",
+                "Name": "Tag",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The tags",
+                "Name": "Tags",
+                "TypeName": "List<String>"
+            },
+            {
+                "Description": "Whether tags are used for configuration",
+                "Name": "TagsUsedForConfiguration",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "The target ID",
+                "Name": "TargetID",
+                "TypeName": "Guid"
+            },
+            {
+                "Description": "Whether to use host mode networking",
+                "Name": "UseHostModeNetwork",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "The user",
+                "Name": "User",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The welcome message",
+                "Name": "WelcomeMessage",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The last reactivation attempt",
+                "Name": "LastReactivationAttempt",
+                "Optional": true,
+                "TypeName": "DateTime"
+            }
+        ],
+        "SpecialNote": "Extends AMPInstanceBase"
+    },
+    "LoginResponse": {
+        "Description": "Type for the result of Core.Login",
+        "Fields": [
+            {
+                "Description": "The permissions",
+                "Name": "permissions",
+                "TypeName": "List<String>"
+            },
+            {
+                "Description": "The remember me token",
+                "Name": "rememberMeToken",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The result",
+                "Name": "result",
+                "TypeName": "AuthenticationResult"
+            },
+            {
+                "Description": "The result reason",
+                "Name": "resultReason",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The session ID",
+                "Name": "sessionID",
+                "TypeName": "String"
+            },
+            {
+                "Description": "Whether the login was successful",
+                "Name": "success",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "The user info",
+                "Name": "userInfo",
+                "TypeName": "UserInfoSummary"
+            }
+        ]
+    },
+    "ManagementModes": {
+        "Description": "Represents the management modes",
+        "Fields": [
+            {
+                "Description": "Standalone",
+                "Name": "Standalone",
+                "TypeName": "Int32",
+                "Value": 0
+            },
+            {
+                "Description": "Via ADS",
+                "Name": "ViaADS",
+                "TypeName": "Int32",
+                "Value": 10
+            }
+        ],
+        "SerializesAs": "Int32",
+        "SpecialType": "Enum"
+    },
+    "MethodInfoSummary": {
+        "Description": "A summary of a method",
+        "Fields": [
+            {
+                "Description": "The description",
+                "Name": "Description",
+                "TypeName": "String"
+            },
+            {
+                "Description": "Whether the method is a complex type",
+                "Name": "IsComplexType",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "The parameters",
+                "Name": "Parameters",
+                "TypeName": "List<MethodParameterSummary>"
+            },
+            {
+                "Description": "The return type name",
+                "Name": "ReturnTypeName",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The methods return value (deprecated)",
+                "Name": "Returns",
+                "Optional": true,
+                "TypeName": "String"
+            }
+        ]
+    },
+    "MethodParameterSummary": {
+        "Description": "A summary of a method parameter",
+        "Fields": [
+            {
+                "Description": "The description",
+                "Name": "Description",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The name",
+                "Name": "Name",
+                "TypeName": "String"
+            },
+            {
+                "Description": "Whether the parameter is optional",
+                "Name": "Optional",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "The type name",
+                "Name": "TypeName",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The parameter enum values",
+                "Name": "ParamEnumValues",
+                "Optional": true,
+                "TypeName": "Dictionary<String, Object>"
+            }
+        ]
+    },
+    "MetricInfo": {
+        "Description": "A metric info object",
+        "Fields": [
+            {
+                "Description": "The color",
+                "Name": "Color",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The second color",
+                "Name": "Color2",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The third color",
+                "Name": "Color3",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The maximum value",
+                "Name": "MaxValue",
+                "TypeName": "Int32"
+            },
+            {
+                "Description": "The percentage",
+                "Name": "Percent",
+                "TypeName": "Int32"
+            },
+            {
+                "Description": "The raw value",
+                "Name": "RawValue",
+                "TypeName": "Int32"
+            },
+            {
+                "Description": "The short name",
+                "Name": "ShortName",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The units",
+                "Name": "Units",
+                "TypeName": "String"
+            }
+        ]
+    },
+    "ModuleInfo": {
+        "Description": "A struct to represent the object returned by the Core.GetModuleInfo() method",
+        "Fields": [
+            {
+                "Description": "The AMP build",
+                "Name": "AMPBuild",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The AMP version",
+                "Name": "AMPVersion",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The API version",
+                "Name": "APIVersion",
+                "TypeName": "String"
+            },
+            {
+                "Description": "Whether remember me is allowed",
+                "Name": "AllowRememberMe",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "Whether analytics are enabled",
+                "Name": "Analytics",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "The application name",
+                "Name": "AppName",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The author of the module",
+                "Name": "Author",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The base port",
+                "Name": "BasePort",
+                "TypeName": "Int32"
+            },
+            {
+                "Description": "The branding object",
+                "Name": "Branding",
+                "TypeName": "BrandingSettings"
+            },
+            {
+                "Description": "The build spec",
+                "Name": "BuildSpec",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The display base URI",
+                "Name": "DisplayBaseURI",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The endpoint URI",
+                "Name": "EndpointURI",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The feature set",
+                "Name": "FeatureSet",
+                "TypeName": "List<String>"
+            },
+            {
+                "Description": "The friendly name",
+                "Name": "FriendlyName",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The instance ID",
+                "Name": "InstanceId",
+                "TypeName": "Guid"
+            },
+            {
+                "Description": "The instance name",
+                "Name": "InstanceName",
+                "TypeName": "String"
+            },
+            {
+                "Description": "Whether the instance is remote",
+                "Name": "IsRemoteInstance",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "The loaded plugins",
+                "Name": "LoadedPlugins",
+                "TypeName": "List<String>"
+            },
+            {
+                "Description": "The module name",
+                "Name": "ModuleName",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The name of the module",
+                "Name": "Name",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The primary endpoint",
+                "Name": "PrimaryEndpoint",
+                "TypeName": "String"
+            },
+            {
+                "Description": "Whether the module requires a full load",
+                "Name": "RequiresFullLoad",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "Whether the module supports sleep mode",
+                "Name": "SupportsSleep",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "The timestamp",
+                "Name": "Timestamp",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The tools version",
+                "Name": "ToolsVersion",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The version codename",
+                "Name": "VersionCodename",
+                "TypeName": "String"
+            }
+        ]
+    },
+    "OPEntry": {
+        "Description": "An OP entry",
+        "Fields": [
+            {
+                "Description": "The level",
+                "Name": "Level",
+                "TypeName": "Int32"
+            },
+            {
+                "Description": "The name",
+                "Name": "Name",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The UUID",
+                "Name": "UUID",
+                "TypeName": "String"
+            }
+        ]
+    },
+    "PortProtocol": {
+        "Description": "Represents the port protocol",
+        "Fields": [
+            {
+                "Description": "TCP",
+                "Name": "TCP",
+                "TypeName": "Int32",
+                "Value": 0
+            },
+            {
+                "Description": "UDP",
+                "Name": "UDP",
+                "TypeName": "Int32",
+                "Value": 1
+            },
+            {
+                "Description": "Both",
+                "Name": "Both",
+                "TypeName": "Int32",
+                "Value": 2
+            }
+        ],
+        "SerializesAs": "Int32",
+        "SpecialType": "Enum"
+    },
+    "PortSummary": {
+        "Description": "A port object",
+        "Fields": [
+            {
+                "Description": "Whether the port is delayed open",
+                "Name": "IsDelayedOpen",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "The name",
+                "Name": "Name",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The port",
+                "Name": "Port",
+                "TypeName": "Int32"
+            },
+            {
+                "Description": "The protocol",
+                "Name": "Protocol",
+                "TypeName": "PortProtocol"
+            },
+            {
+                "Description": "Whether the port is required",
+                "Name": "Required",
+                "TypeName": "Boolean"
+            }
+        ]
+    },
+    "PortUsage": {
+        "Description": "A port usage object",
+        "Fields": [
+            {
+                "Description": "The description",
+                "Name": "Description",
+                "TypeName": "String"
+            },
+            {
+                "Description": "Whether the port is user-defined",
+                "Name": "IsUserDefined",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "The port number",
+                "Name": "PortNumber",
+                "TypeName": "Int32"
+            },
+            {
+                "Description": "The protocol",
+                "Name": "Protocol",
+                "TypeName": "PortProtocol"
+            },
+            {
+                "Description": "The provision node name",
+                "Name": "ProvisionNodeName",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The range",
+                "Name": "Range",
+                "TypeName": "Int32"
+            },
+            {
+                "Description": "Whether the port is verified",
+                "Name": "Verified",
+                "TypeName": "Boolean"
+            }
+        ]
+    },
+    "PostCreateAppActions": {
+        "Description": "Represents the post create app actions",
+        "Fields": [
+            {
+                "Description": "Do nothing",
+                "Name": "DoNothing",
+                "TypeName": "Int32",
+                "Value": 0
+            },
+            {
+                "Description": "Update once",
+                "Name": "UpdateOnce",
+                "TypeName": "Int32",
+                "Value": 1
+            },
+            {
+                "Description": "Update always",
+                "Name": "UpdateAlways",
+                "TypeName": "Int32",
+                "Value": 2
+            },
+            {
+                "Description": "Update and start once",
+                "Name": "UpdateAndStartOnce",
+                "TypeName": "Int32",
+                "Value": 3
+            },
+            {
+                "Description": "Update and start always",
+                "Name": "UpdateAndStartAlways",
+                "TypeName": "Int32",
+                "Value": 4
+            },
+            {
+                "Description": "Start always",
+                "Name": "StartAlways",
+                "TypeName": "Int32",
+                "Value": 5
+            }
+        ],
+        "SerializesAs": "Int32",
+        "SpecialType": "Enum"
+    },
+    "ProcessorInfo": {
+        "Description": "CPU information object",
+        "Fields": [
+            {
+                "Description": "Number of CPU cores",
+                "Name": "Cores",
+                "TypeName": "Int32"
+            },
+            {
+                "Description": "CPU model name",
+                "Name": "ModelName",
+                "TypeName": "String"
+            },
+            {
+                "Description": "Number of CPU sockets",
+                "Name": "Sockets",
+                "TypeName": "Int32"
+            },
+            {
+                "Description": "Number of CPU threads",
+                "Name": "Threads",
+                "TypeName": "Int32"
+            },
+            {
+                "Description": "Total number of CPU cores",
+                "Name": "TotalCores",
+                "TypeName": "Int32"
+            },
+            {
+                "Description": "Total number of CPU threads",
+                "Name": "TotalThreads",
+                "TypeName": "Int32"
+            },
+            {
+                "Description": "CPU vendor",
+                "Name": "Vendor",
+                "TypeName": "String"
+            }
+        ]
+    },
+    "ProvisionFitness": {
+        "Description": "Fitness information object",
+        "Fields": [
+            {
+                "Description": "Availability",
+                "Name": "Available",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "CPU service ratio",
+                "Name": "CPUServiceRatio",
+                "TypeName": "Double"
+            },
+            {
+                "Description": "Unallocated disk space in MB",
+                "Name": "FreeDiskMB",
+                "TypeName": "Int64"
+            },
+            {
+                "Description": "Unallocated RAM in MB",
+                "Name": "FreeRAMMB",
+                "TypeName": "Int32"
+            },
+            {
+                "Description": "Load average",
+                "Name": "LoadAvg",
+                "TypeName": "Float"
+            },
+            {
+                "Description": "Remaining instance slots",
+                "Name": "RemainingInstanceSlots",
+                "TypeName": "Int32"
+            },
+            {
+                "Description": "Fitness score",
+                "Name": "Score",
+                "TypeName": "Double"
+            },
+            {
+                "Description": "Thread queue length",
+                "Name": "ThreadQueueLength",
+                "TypeName": "Int32"
+            },
+            {
+                "Description": "Service count",
+                "Name": "TotalServices",
+                "TypeName": "Int32"
+            }
+        ]
+    },
+    "ProvisionSettingInfo": {
+        "Description": "A provision setting object",
+        "Fields": [
+            {
+                "Description": "The custom field type",
+                "Name": "CustomFieldType",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The default value",
+                "Name": "DefaultValue",
+                "TypeName": "Object"
+            },
+            {
+                "Description": "The description",
+                "Name": "Description",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The endpoint format",
+                "Name": "EndpointFormat",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The endpoint name",
+                "Name": "EndpointName",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The node",
+                "Name": "Node",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The related setting",
+                "Name": "RelatedSetting",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The type",
+                "Name": "Type",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The value range",
+                "Name": "ValueRange",
+                "TypeName": "Int32"
+            }
+        ]
+    },
+    "PushedMessage": {
+        "Description": "Type for API.Core.GetUpdates#Messages[i] (along with WS keep alive)",
+        "Fields": [
+            {
+                "Description": "The age of the message in minutes",
+                "Name": "AgeMinutes",
+                "TypeName": "Int32"
+            },
+            {
+                "Description": "Whether the message has expired",
+                "Name": "Expired",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "The message ID",
+                "Name": "Id",
+                "TypeName": "Guid"
+            },
+            {
+                "Description": "The message",
+                "Name": "Message",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The source of the message",
+                "Name": "Source",
+                "TypeName": "String"
+            }
+        ]
+    },
+    "RemoteInstanceState": {
+        "Description": "Represents the state of a remote instance",
+        "Fields": [
+            {
+                "Description": "Pending",
+                "Name": "Pending",
+                "TypeName": "Int32",
+                "Value": 0
+            },
+            {
+                "Description": "Connecting",
+                "Name": "Connecting",
+                "TypeName": "Int32",
+                "Value": 5
+            },
+            {
+                "Description": "Offline",
+                "Name": "Offline",
+                "TypeName": "Int32",
+                "Value": 10
+            },
+            {
+                "Description": "Unavailable",
+                "Name": "Unavailable",
+                "TypeName": "Int32",
+                "Value": 15
+            },
+            {
+                "Description": "Authentication failure",
+                "Name": "AuthFailure",
+                "TypeName": "Int32",
+                "Value": 16
+            },
+            {
+                "Description": "Online",
+                "Name": "Online",
+                "TypeName": "Int32",
+                "Value": 20
+            },
+            {
+                "Description": "Disabled",
+                "Name": "Disabled",
+                "TypeName": "Int32",
+                "Value": 30
+            },
+            {
+                "Description": "Update in progress",
+                "Name": "UpdateInProgress",
+                "TypeName": "Int32",
+                "Value": 100
+            }
+        ],
+        "SerializesAs": "Int32",
+        "SpecialType": "Enum"
+    },
+    "RemoteTargetInfo": {
+        "Description": "Information about a remote target, returned by ADSModule#GetTargetInfo()",
+        "Fields": [
+            {
+                "Description": "The datastores",
+                "Name": "Datastores",
+                "TypeName": "List<DatastoreSummary>"
+            },
+            {
+                "Description": "Whether the target deploys in containers",
+                "Name": "DeploysInContainers",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "The IP address list",
+                "Name": "IPAddressList",
+                "TypeName": "List<String>"
+            },
+            {
+                "Description": "The remote target's platform info",
+                "Name": "PlatformInfo",
+                "TypeName": "IPlatformInfo"
+            }
+        ]
+    },
+    "RunningTask": {
+        "Description": "A running task object",
+        "Fields": [
+            {
+                "Description": "The description",
+                "Name": "Description",
+                "TypeName": "String"
+            },
+            {
+                "Description": "Whether the task should not propagate",
+                "Name": "DontPropagate",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "Whether the task can be dismissed quickly",
+                "Name": "FastDismiss",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "Whether the task is hidden from the UI",
+                "Name": "HideFromUI",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "The task ID",
+                "Name": "Id",
+                "TypeName": "Guid"
+            },
+            {
+                "Description": "Whether the task is cancellable",
+                "Name": "IsCancellable",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "Whether the task is indeterminate",
+                "Name": "IsIndeterminate",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "Whether the task is primary",
+                "Name": "IsPrimaryTask",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "The last update pushed",
+                "Name": "LastUpdatePushed",
+                "TypeName": "DateTime"
+            },
+            {
+                "Description": "The name",
+                "Name": "Name",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The origin",
+                "Name": "Origin",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The progress percentage",
+                "Name": "ProgressPercent",
+                "TypeName": "Int32"
+            },
+            {
+                "Description": "The speed",
+                "Name": "Speed",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The start time",
+                "Name": "StartTime",
+                "TypeName": "DateTime"
+            },
+            {
+                "Description": "The state",
+                "Name": "State",
+                "TypeName": "TaskState"
+            },
+            {
+                "Description": "The state message",
+                "Name": "StateMessage",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The remote instance ID",
+                "Name": "RemoteInstanceId",
+                "Optional": true,
+                "TypeName": "Guid"
+            },
+            {
+                "Description": "The end time",
+                "Name": "EndTime",
+                "Optional": true,
+                "TypeName": "DateTime"
+            },
+            {
+                "Description": "The parent task ID",
+                "Name": "ParentTaskId",
+                "Optional": true,
+                "TypeName": "Guid"
+            }
+        ]
+    },
+    "ScheduleEnabledState": {
+        "Description": "Represents the schedule enabled state",
+        "Fields": [
+            {
+                "Description": "Disabled",
+                "Name": "Disabled",
+                "TypeName": "Int32",
+                "Value": 0
+            },
+            {
+                "Description": "Enabled",
+                "Name": "Enabled",
+                "TypeName": "Int32",
+                "Value": 1
+            },
+            {
+                "Description": "Run once",
+                "Name": "RunOnce",
+                "TypeName": "Int32",
+                "Value": 2
+            },
+            {
+                "Description": "Delete on run",
+                "Name": "DeleteOnRun",
+                "TypeName": "Int32",
+                "Value": 4
+            }
+        ],
+        "SerializesAs": "Int32",
+        "SpecialType": "Enum"
+    },
+    "ScheduleEntryDefinition": {
+        "Description": "A schedule entry definition",
+        "Fields": [
+            {
+                "Description": "The enabled state",
+                "Name": "EnabledState",
+                "TypeName": "ScheduleEnabledState"
+            },
+            {
+                "Description": "The error behaviour",
+                "Name": "ErrorBehaviour",
+                "TypeName": "ScheduleErrorBehaviour"
+            },
+            {
+                "Description": "The ID",
+                "Name": "Id",
+                "TypeName": "Guid"
+            },
+            {
+                "Description": "The last error reason",
+                "Name": "LastErrorReason",
+                "TypeName": "String"
+            },
+            {
+                "Description": "Whether the last execution had an error",
+                "Name": "LastExecuteError",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "Whether the entry is locked",
+                "Name": "Locked",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "The order",
+                "Name": "Order",
+                "TypeName": "Int32"
+            },
+            {
+                "Description": "The parameter mapping",
+                "Name": "ParameterMapping",
+                "TypeName": "Dictionary<String, String>"
+            },
+            {
+                "Description": "The task method name",
+                "Name": "TaskMethodName",
+                "TypeName": "String"
+            },
+            {
+                "Description": "Whether to wait for completion",
+                "Name": "WaitForComplete",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "The creator",
+                "Name": "CreatedBy",
+                "Optional": true,
+                "TypeName": "Guid"
+            }
+        ]
+    },
+    "ScheduleErrorBehaviour": {
+        "Description": "Represents the schedule error behaviour",
+        "Fields": [
+            {
+                "Description": "Normal",
+                "Name": "Normal",
+                "TypeName": "Int32",
+                "Value": 0
+            },
+            {
+                "Description": "Continue silently",
+                "Name": "ContinueSilently",
+                "TypeName": "Int32",
+                "Value": 1
+            }
+        ],
+        "SerializesAs": "Int32",
+        "SpecialType": "Enum"
+    },
+    "ScheduleInfo": {
+        "Description": "Information about a schedule",
+        "Fields": [
+            {
+                "Description": "The available methods",
+                "Name": "AvailableMethods",
+                "TypeName": "List<APIMethodInfo>"
+            },
+            {
+                "Description": "The available triggers",
+                "Name": "AvailableTriggers",
+                "TypeName": "List<TriggerInfo>"
+            },
+            {
+                "Description": "The populated triggers",
+                "Name": "PopulatedTriggers",
+                "TypeName": "List<TriggerInfo>"
+            }
+        ]
+    },
+    "ScheduleTaskParameter": {
+        "Description": "A parameter for a scheduled task",
+        "Fields": [
+            {
+                "Description": "The description",
+                "Name": "Description",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The display name",
+                "Name": "DisplayName",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The input type",
+                "Name": "InputType",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The name",
+                "Name": "Name",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The selection source",
+                "Name": "SelectionSource",
+                "TypeName": "StringSelectionSourceAttribute"
+            },
+            {
+                "Description": "The value type",
+                "Name": "ValueType",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The enum values",
+                "Name": "EnumValues",
+                "Optional": true,
+                "TypeName": "Dictionary<String, String>"
+            }
+        ]
+    },
+    "ScheduleTrigger": {
+        "Description": "A time interval trigger",
+        "Fields": [
+            {
+                "Description": "The description",
+                "Name": "Description",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The enabled state",
+                "Name": "EnabledState",
+                "TypeName": "ScheduleEnabledState"
+            },
+            {
+                "Description": "The ID",
+                "Name": "Id",
+                "TypeName": "Guid"
+            },
+            {
+                "Description": "The name",
+                "Name": "Name",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The order",
+                "Name": "Order",
+                "TypeName": "Int32"
+            },
+            {
+                "Description": "The last executed",
+                "Name": "LastExecuted",
+                "Optional": true,
+                "TypeName": "DateTime"
+            }
+        ]
+    },
+    "SecurityCheckResult": {
+        "Description": "A security check result",
+        "Fields": [
+            {
+                "Description": "The description",
+                "Name": "Description",
+                "TypeName": "String"
+            },
+            {
+                "Description": "Whether the check is hidden",
+                "Name": "Hidden",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "Whether the check passed",
+                "Name": "Pass",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "The resolution",
+                "Name": "Resolution",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The severity",
+                "Name": "Severity",
+                "TypeName": "Int32"
+            },
+            {
+                "Description": "The title",
+                "Name": "Title",
+                "TypeName": "String"
+            }
+        ]
+    },
+    "SettingSpec": {
+        "Description": "A setting specification object",
+        "Fields": [
+            {
+                "Description": "The actions",
+                "Name": "Actions",
+                "TypeName": "List<InlineActionAttribute>"
+            },
+            {
+                "Description": "Whether the setting is always allowed to be read",
+                "Name": "AlwaysAllowRead",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "The attributes",
+                "Name": "Attributes",
+                "TypeName": "Object"
+            },
+            {
+                "Description": "The category",
+                "Name": "Category",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The current value",
+                "Name": "CurrentValue",
+                "TypeName": "Object"
+            },
+            {
+                "Description": "The description",
+                "Name": "Description",
+                "TypeName": "String"
+            },
+            {
+                "Description": "Whether the enum values are deferred",
+                "Name": "EnumValuesAreDeferred",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "The input type",
+                "Name": "InputType",
+                "TypeName": "String"
+            },
+            {
+                "Description": "Whether the setting is a provision spec",
+                "Name": "IsProvisionSpec",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "The keywords",
+                "Name": "Keywords",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The max length",
+                "Name": "MaxLength",
+                "TypeName": "Int32"
+            },
+            {
+                "Description": "The meta",
+                "Name": "Meta",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The name",
+                "Name": "Name",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The node",
+                "Name": "Node",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The order",
+                "Name": "Order",
+                "TypeName": "Int32"
+            },
+            {
+                "Description": "The placeholder",
+                "Name": "Placeholder",
+                "TypeName": "String"
+            },
+            {
+                "Description": "Whether the setting is read-only",
+                "Name": "ReadOnly",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "Whether the provision is read-only",
+                "Name": "ReadOnlyProvision",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "Whether the setting is required",
+                "Name": "Required",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "Whether the setting requires a restart",
+                "Name": "RequiresRestart",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "The subcategory",
+                "Name": "Subcategory",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The suffix",
+                "Name": "Suffix",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The tag",
+                "Name": "Tag",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The value type",
+                "Name": "ValType",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The enum values",
+                "Name": "EnumValues",
+                "Optional": true,
+                "TypeName": "Dictionary<String, String>"
+            },
+            {
+                "Description": "The max value",
+                "Name": "MaxValue",
+                "Optional": true,
+                "TypeName": "Float"
+            },
+            {
+                "Description": "The min value",
+                "Name": "MinValue",
+                "Optional": true,
+                "TypeName": "Float"
+            },
+            {
+                "Description": "The selection source",
+                "Name": "SelectionSource",
+                "Optional": true,
+                "TypeName": "StringSelectionSourceAttribute"
+            }
+        ]
+    },
+    "SimpleUser": {
+        "Description": "A simple user object",
+        "Fields": [
+            {
+                "Description": "The IP address",
+                "Name": "IPAddress",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The ID",
+                "Name": "Id",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The join time",
+                "Name": "JoinTime",
+                "TypeName": "DateTime"
+            },
+            {
+                "Description": "The name",
+                "Name": "Name",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The port",
+                "Name": "Port",
+                "TypeName": "Int32"
+            },
+            {
+                "Description": "The session ID",
+                "Name": "SessionID",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The tags",
+                "Name": "Tags",
+                "TypeName": "List<String>"
+            },
+            {
+                "Description": "The time logged in",
+                "Name": "TimeLoggedIn",
+                "TypeName": "TimeSpan"
+            },
+            {
+                "Description": "The UID",
+                "Name": "UID",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The user session ID",
+                "Name": "UserSessionId",
+                "TypeName": "Guid"
+            }
+        ]
+    },
+    "StatusResponse": {
+        "Description": "Type for the result of Core.GetStatus",
+        "Fields": [
+            {
+                "Description": "The metrics",
+                "Name": "Metrics",
+                "TypeName": "Dictionary<String, MetricInfo>"
+            },
+            {
+                "Description": "The state of the instance",
+                "Name": "State",
+                "TypeName": "ApplicationState"
+            },
+            {
+                "Description": "The uptime of the instance",
+                "Name": "Uptime",
+                "TypeName": "String"
+            }
+        ]
+    },
+    "StringSelectionSourceAttribute": {
+        "Description": "A string selection source object",
+        "Fields": [
+            {
+                "Description": "Whether the selection source is deferred",
+                "Name": "Deferred",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "Whether the selection source must validate",
+                "Name": "MustValidate",
+                "TypeName": "Boolean"
+            }
+        ]
+    },
+    "SupportedOS": {
+        "Description": "Represents the supported OS",
+        "Fields": [
+            {
+                "Description": "None",
+                "Name": "None",
+                "TypeName": "Int32",
+                "Value": 0
+            },
+            {
+                "Description": "Windows",
+                "Name": "Windows",
+                "TypeName": "Int32",
+                "Value": 1
+            },
+            {
+                "Description": "Linux",
+                "Name": "Linux",
+                "TypeName": "Int32",
+                "Value": 2
+            },
+            {
+                "Description": "MacOS",
+                "Name": "MacOS",
+                "TypeName": "Int32",
+                "Value": 4
+            },
+            {
+                "Description": "BSD",
+                "Name": "BSD",
+                "TypeName": "Int32",
+                "Value": 8
+            },
+            {
+                "Description": "Other",
+                "Name": "Other",
+                "TypeName": "Int32",
+                "Value": 16
+            },
+            {
+                "Description": "All",
+                "Name": "All",
+                "TypeName": "Int32",
+                "Value": 31
+            }
+        ],
+        "SerializesAs": "Int32",
+        "SpecialType": "Enum"
+    },
+    "TaskState": {
+        "Description": "Represents the state of a task",
+        "Fields": [
+            {
+                "Description": "Running",
+                "Name": "Running",
+                "TypeName": "Int32",
+                "Value": 0
+            },
+            {
+                "Description": "Waiting",
+                "Name": "Waiting",
+                "TypeName": "Int32",
+                "Value": 1
+            },
+            {
+                "Description": "Queued",
+                "Name": "Queued",
+                "TypeName": "Int32",
+                "Value": 2
+            },
+            {
+                "Description": "Failed",
+                "Name": "Failed",
+                "TypeName": "Int32",
+                "Value": 3
+            },
+            {
+                "Description": "Finished",
+                "Name": "Finished",
+                "TypeName": "Int32",
+                "Value": 4
+            },
+            {
+                "Description": "Pending cancellation",
+                "Name": "PendingCancellation",
+                "TypeName": "Int32",
+                "Value": 5
+            },
+            {
+                "Description": "Cancelled",
+                "Name": "Cancelled",
+                "TypeName": "Int32",
+                "Value": 6
+            },
+            {
+                "Description": "Acknowledged",
+                "Name": "Acknowledged",
+                "TypeName": "Int32",
+                "Value": 7
+            },
+            {
+                "Description": "User action required",
+                "Name": "UserActionRequired",
+                "TypeName": "Int32",
+                "Value": 100
+            },
+            {
+                "Description": "Timed out",
+                "Name": "TimedOut",
+                "TypeName": "Int32",
+                "Value": 254
+            }
+        ],
+        "SerializesAs": "Int32",
+        "SpecialType": "Enum"
+    },
+    "TimeIntervalTrigger": {
+        "Description": "A time interval trigger",
+        "Fields": [
+            {
+                "Description": "The description",
+                "Name": "Description",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The enabled state",
+                "Name": "EnabledState",
+                "TypeName": "ScheduleEnabledState"
+            },
+            {
+                "Description": "The ID",
+                "Name": "Id",
+                "TypeName": "Guid"
+            },
+            {
+                "Description": "The name",
+                "Name": "Name",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The order",
+                "Name": "Order",
+                "TypeName": "Int32"
+            },
+            {
+                "Description": "The match minutes",
+                "Name": "MatchMinutes",
+                "TypeName": "List<Int32>"
+            },
+            {
+                "Description": "The match hours",
+                "Name": "MatchHours",
+                "TypeName": "List<Int32>"
+            },
+            {
+                "Description": "The match days",
+                "Name": "MatchDays",
+                "TypeName": "List<Int32>"
+            },
+            {
+                "Description": "The match days of month",
+                "Name": "MatchDaysOfMonth",
+                "TypeName": "List<Int32>"
+            },
+            {
+                "Description": "The match months",
+                "Name": "MatchMonths",
+                "TypeName": "List<Int32>"
+            },
+            {
+                "Description": "The last executed",
+                "Name": "LastExecuted",
+                "Optional": true,
+                "TypeName": "DateTime"
+            }
+        ],
+        "SpecialNote": "Extends ScheduleTrigger"
+    },
+    "TriggerInfo": {
+        "Description": "Information about a trigger",
+        "Fields": [
+            {
+                "Description": "The description",
+                "Name": "Description",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The emits",
+                "Name": "Emits",
+                "TypeName": "List<String>"
+            },
+            {
+                "Description": "The enabled state",
+                "Name": "EnabledState",
+                "TypeName": "ScheduleEnabledState"
+            },
+            {
+                "Description": "The ID",
+                "Name": "Id",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The tasks",
+                "Name": "Tasks",
+                "TypeName": "List<ScheduleEntryDefinition>"
+            },
+            {
+                "Description": "The trigger type",
+                "Name": "TriggerType",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The type",
+                "Name": "Type",
+                "TypeName": "String"
+            }
+        ]
+    },
+    "TwoFactorSetupInfo": {
+        "Description": "Information about two-factor setup",
+        "Fields": [
+            {
+                "Description": "The manual key",
+                "Name": "ManualKey",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The URL",
+                "Name": "Url",
+                "TypeName": "String"
+            }
+        ]
+    },
+    "UpdateInfo": {
+        "Description": "A struct to represent the object returned by the Core.GetUpdateInfo() method",
+        "Fields": [
+            {
+                "Description": "The build of the update",
+                "Name": "Build",
+                "TypeName": "String"
+            },
+            {
+                "Description": "Whether the update is a patch",
+                "Name": "PatchOnly",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "The URL to the release notes",
+                "Name": "ReleaseNotesURL",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The version of the tools",
+                "Name": "ToolsVersion",
+                "TypeName": "String"
+            },
+            {
+                "Description": "Whether an update is available",
+                "Name": "UpdateAvailable",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "The version of the update",
+                "Name": "Version",
+                "TypeName": "String"
+            }
+        ]
+    },
+    "UpdateResponse": {
+        "Description": "Response type for Core.GetUpdates",
+        "Fields": [
+            {
+                "Description": "The console entries of the server",
+                "Name": "ConsoleEntries",
+                "TypeName": "List<ConsoleEntry>"
+            },
+            {
+                "Description": "The messages of the server",
+                "Name": "Messages",
+                "TypeName": "List<PushedMessage>"
+            },
+            {
+                "Description": "The ports of the server",
+                "Name": "Ports",
+                "TypeName": "List<ListeningPortSummary>"
+            },
+            {
+                "Description": "The status of the server",
+                "Name": "Status",
+                "TypeName": "StatusResponse"
+            },
+            {
+                "Description": "The tasks of the server",
+                "Name": "Tasks",
+                "TypeName": "List<RunningTask>"
+            }
+        ]
+    },
+    "UserAccessData": {
+        "Description": "User access data",
+        "Fields": [
+            {
+                "Description": "The OP list",
+                "Name": "OPList",
+                "TypeName": "List<OPEntry>"
+            },
+            {
+                "Description": "The whitelist",
+                "Name": "Whitelist",
+                "TypeName": "List<WhitelistEntry>"
+            }
+        ]
+    },
+    "UserInfo": {
+        "Description": "Information about a user",
+        "Fields": [
+            {
+                "Description": "The avatar base64",
+                "Name": "AvatarBase64",
+                "TypeName": "String"
+            },
+            {
+                "Description": "Whether the password cannot be changed",
+                "Name": "CannotChangePassword",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "Whether the user is disabled",
+                "Name": "Disabled",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "The email address",
+                "Name": "EmailAddress",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The gravatar hash",
+                "Name": "GravatarHash",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The ID",
+                "Name": "ID",
+                "TypeName": "Guid"
+            },
+            {
+                "Description": "Whether the user is an LDAP user",
+                "Name": "IsLDAPUser",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "Whether the user is a super user",
+                "Name": "IsSuperUser",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "Whether two-factor is enabled",
+                "Name": "IsTwoFactorEnabled",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "The last login",
+                "Name": "LastLogin",
+                "TypeName": "String"
+            },
+            {
+                "Description": "Whether the password must be changed",
+                "Name": "MustChangePassword",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "The name",
+                "Name": "Name",
+                "TypeName": "String"
+            },
+            {
+                "Description": "Whether the password expires",
+                "Name": "PasswordExpires",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "The permissions",
+                "Name": "Permissions",
+                "TypeName": "List<String>"
+            },
+            {
+                "Description": "The roles",
+                "Name": "Roles",
+                "TypeName": "List<Guid>"
+            }
+        ]
+    },
+    "UserInfoSummary": {
+        "Description": "Information about the user",
+        "Fields": [
+            {
+                "Description": "The avatar base64",
+                "Name": "AvatarBase64",
+                "TypeName": "String"
+            },
+            {
+                "Description": "Whether the user is disabled",
+                "Name": "Disabled",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "The email address",
+                "Name": "EmailAddress",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The Gravatar hash",
+                "Name": "GravatarHash",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The user ID",
+                "Name": "ID",
+                "TypeName": "Guid"
+            },
+            {
+                "Description": "Whether the user is an LDAP user",
+                "Name": "IsLDAPUser",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "Whether 2FA is enabled",
+                "Name": "IsTwoFactorEnabled",
+                "TypeName": "Boolean"
+            },
+            {
+                "Description": "The last login",
+                "Name": "LastLogin",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The username",
+                "Name": "Username",
+                "TypeName": "String"
+            }
+        ]
+    },
+    "VirtualizationType": {
+        "Description": "Represents the virtualization type",
+        "Fields": [
+            {
+                "Description": "None/Bare Metal",
+                "Name": "None",
+                "TypeName": "Int32",
+                "Value": 0
+            },
+            {
+                "Description": "VMware",
+                "Name": "VMware",
+                "TypeName": "Int32",
+                "Value": 1
+            },
+            {
+                "Description": "VMware ESX",
+                "Name": "VMwareESX",
+                "TypeName": "Int32",
+                "Value": 2
+            },
+            {
+                "Description": "VirtualBox",
+                "Name": "VirtualBox",
+                "TypeName": "Int32",
+                "Value": 3
+            },
+            {
+                "Description": "Xen",
+                "Name": "Xen",
+                "TypeName": "Int32",
+                "Value": 4
+            },
+            {
+                "Description": "QEMU KVM",
+                "Name": "QEMU_KVM",
+                "TypeName": "Int32",
+                "Value": 5
+            },
+            {
+                "Description": "OpenVZ",
+                "Name": "OpenVZ",
+                "TypeName": "Int32",
+                "Value": 6
+            },
+            {
+                "Description": "HyperV",
+                "Name": "HyperV",
+                "TypeName": "Int32",
+                "Value": 7
+            },
+            {
+                "Description": "Docker",
+                "Name": "Docker",
+                "TypeName": "Int32",
+                "Value": 8
+            },
+            {
+                "Description": "LXC",
+                "Name": "LXC",
+                "TypeName": "Int32",
+                "Value": 9
+            },
+            {
+                "Description": "Windows Subsystem for Linux",
+                "Name": "WSL",
+                "TypeName": "Int32",
+                "Value": 10
+            },
+            {
+                "Description": "ProxmoxVM",
+                "Name": "ProxmoxVM",
+                "TypeName": "Int32",
+                "Value": 11
+            },
+            {
+                "Description": "Proxmox LXC Container",
+                "Name": "ProxmoxLXC",
+                "TypeName": "Int32",
+                "Value": 12
+            }
+        ],
+        "SerializesAs": "Int32",
+        "SpecialType": "Enum"
+    },
+    "WebauthnCredentialSummary": {
+        "Description": "A summary of a WebAuthn credential",
+        "Fields": [
+            {
+                "Description": "The created time",
+                "Name": "CreatedUTC",
+                "TypeName": "DateTime"
+            },
+            {
+                "Description": "The description",
+                "Name": "Description",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The ID",
+                "Name": "ID",
+                "TypeName": "Int32"
+            },
+            {
+                "Description": "The last used time",
+                "Name": "LastUsedUTC",
+                "TypeName": "DateTime"
+            }
+        ]
+    },
+    "WebauthnLoginInfo": {
+        "Description": "Information about a WebAuthn login",
+        "Fields": [
+            {
+                "Description": "The challenge",
+                "Name": "Challenge",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The IDs",
+                "Name": "Ids",
+                "TypeName": "List<String>"
+            }
+        ]
+    },
+    "WebSessionSummary": {
+        "Description": "A summary of a web session",
+        "Fields": [
+            {
+                "Description": "The last activity",
+                "Name": "LastActivity",
+                "TypeName": "DateTime"
+            },
+            {
+                "Description": "The session ID",
+                "Name": "SessionID",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The session type",
+                "Name": "SessionType",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The source",
+                "Name": "Source",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The start time",
+                "Name": "StartTime",
+                "TypeName": "DateTime"
+            },
+            {
+                "Description": "The username",
+                "Name": "Username",
+                "TypeName": "String"
+            }
+        ]
+    },
+    "WhitelistEntry": {
+        "Description": "A whitelist entry",
+        "Fields": [
+            {
+                "Description": "The name",
+                "Name": "Name",
+                "TypeName": "String"
+            },
+            {
+                "Description": "The UUID",
+                "Name": "UUID",
+                "TypeName": "String"
+            }
+        ]
+    }
+}

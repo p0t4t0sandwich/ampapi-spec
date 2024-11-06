@@ -1,0 +1,18 @@
+from __future__ import annotations
+
+from typing import Final
+
+from .ampapi import AMPAPI, AMPAPIAsync
+from .auth import AuthProvider
+from .plugins import *
+
+class CommonAPI(AMPAPI):
+{LoadedPlugins}
+    def __init__(self, auth: AuthProvider):
+        super().__init__(auth)
+{PluginInit}
+class CommonAPIAsync(AMPAPIAsync):
+{LoadedPluginsAsync}
+    def __init__(self, auth: AuthProvider):
+        super().__init__(auth)
+{PluginInitAsync}
