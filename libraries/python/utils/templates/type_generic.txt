@@ -1,0 +1,5 @@
+class {TypeName}(Generic[T]):
+    """
+    {TypeDescription}
+    """
+{TypeFields}

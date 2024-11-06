@@ -1,0 +1,7 @@
+    def {MethodName}(self, {MethodParameters}) -> {ReturnType}:
+        """{MethodDescription}
+        Name Description Optional
+{MethodParameterDocs}:returns: {ReturnType}
+        """
+        return json_to_obj(self.api_call("{PluginName}/{MethodName}", {{MethodParameterArgs}}), {ReturnType})
+

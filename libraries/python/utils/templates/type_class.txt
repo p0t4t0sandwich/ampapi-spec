@@ -1,0 +1,6 @@
+@dataclass
+class {TypeName}:
+    """
+    {TypeDescription}
+    """
+{TypeFields}

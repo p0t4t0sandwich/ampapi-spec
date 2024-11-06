@@ -3,23 +3,41 @@ ADSModule.ApplyInstanceConfiguration(InstanceID: Guid, Args: Dictionary<String, 
 ADSModule.ApplyTemplate(InstanceID: Guid, TemplateID: Int32, NewFriendlyName: String, Secret: String, RestartIfPreviouslyRunning: Boolean) -> ActionResult
 ADSModule.AttachADS(Friendly: String, IsHTTPS: Boolean, Host: String, Port: Int32, InstanceID: Guid) -> ActionResult
 ADSModule.CloneTemplate(Id: Int32, NewName: String) -> ActionResult
-ADSModule.ConvertToManaged(InstanceName: String) -> ActionResult
 ADSModule.CreateDeploymentTemplate(Name: String) -> ActionResult
 ADSModule.CreateInstance(TargetADSInstance: Guid, NewInstanceId: Guid, Module: String, InstanceName: String, FriendlyName: String, IPBinding: String, PortNumber: Int32, AdminUsername: String, AdminPassword: String, ProvisionSettings: Dictionary<String, String>, AutoConfigure: Boolean, StartOnBoot: Boolean, DisplayImageSource: String, TargetDatastore: Int32, PostCreate: PostCreateAppActions) -> ActionResult
+<<<<<<< HEAD
+ADSModule.CreateInstanceFromSpec(SpecId: Guid, TargetADSInstance: Guid, FriendlyName: String, PostCreate: PostCreateAppActions, StartOnBoot: Boolean, TargetDatastore: Int32) -> ActionResult
+=======
+>>>>>>> main
 ADSModule.CreateLocalInstance(Instance: LocalAMPInstance, PostCreate: PostCreateAppActions) -> ActionResult
 ADSModule.DeleteDatastore(id: Int32) -> ActionResult
 ADSModule.DeleteDeploymentTemplate(Id: Int32) -> ActionResult
 ADSModule.DeleteInstance(InstanceName: String) -> RunningTask
 ADSModule.DeleteInstanceUsers(InstanceId: Guid) -> ActionResult
 ADSModule.DeployTemplate(TemplateID: Int32, NewUsername: String, NewPassword: String, NewEmail: String, RequiredTags: List<String>, Tag: String, FriendlyName: String, Secret: String, ExtraProvisionSettings: Dictionary<String, String>, PostCreate: PostCreateAppActions) -> RunningTask
+<<<<<<< HEAD
+ADSModule.DetachTarget(Id: Guid) -> ActionResult
+=======
 ADSModule.DetatchTarget(Id: Guid) -> ActionResult
+>>>>>>> main
 ADSModule.ExtractEverywhere(SourceArchive: String) -> ActionResult
-ADSModule.GetApplicationEndpoints(instanceId: Guid) -> IEnumerable<EndpointInfo>
+ADSModule.GetApplicationEndpoints(instanceId: Guid) -> List<EndpointInfo>
 ADSModule.GetDatastore(id: Int32) -> InstanceDatastore
-ADSModule.GetDatastoreInstances(datastoreId: Int32) -> IEnumerable<JObject>
-ADSModule.GetDatastores() -> IEnumerable<InstanceDatastore>
-ADSModule.GetDeploymentTemplates() -> IEnumerable<DeploymentTemplate>
+ADSModule.GetDatastoreInstances(datastoreId: Int32) -> List<InstanceSummary>
+ADSModule.GetDatastores() -> List<InstanceDatastore>
+ADSModule.GetDeploymentTemplates() -> List<DeploymentTemplate>
 ADSModule.GetGroup(GroupId: Guid) -> IADSInstance
+<<<<<<< HEAD
+ADSModule.GetInstance(InstanceId: Guid) -> InstanceSummary
+ADSModule.GetInstanceNetworkInfo(InstanceName: String) -> List<PortUsage>
+ADSModule.GetInstanceStatuses() -> List<InstanceStatus>
+ADSModule.GetInstances(ForceIncludeSelf: Boolean) -> List<IADSInstance>
+ADSModule.GetLocalInstances() -> List<InstanceSummary>
+ADSModule.GetProvisionArguments(ModuleName: String) -> List<ProvisionSettingInfo>
+ADSModule.GetProvisionFitness() -> ProvisionFitness
+ADSModule.GetSupportedAppSummaries() -> List<ApplicationSpecSummary>
+ADSModule.GetSupportedApplications() -> List<ApplicationSpec>
+=======
 ADSModule.GetInstance(InstanceId: Guid) -> Instance
 ADSModule.GetInstanceNetworkInfo(InstanceName: String) -> IEnumerable<PortUsage>
 ADSModule.GetInstanceStatuses() -> IEnumerable<InstanceStatus>
@@ -28,21 +46,31 @@ ADSModule.GetLocalInstances() -> IEnumerable<JObject>
 ADSModule.GetProvisionArguments(ModuleName: String) -> IEnumerable<JObject>
 ADSModule.GetProvisionFitness() -> JObject
 ADSModule.GetSupportedApplications() -> IEnumerable<ApplicationSpec>
+>>>>>>> main
 ADSModule.GetTargetInfo() -> RemoteTargetInfo
-ADSModule.HandoutInstanceConfigs(ForModule: String, SettingNode: String, Values: List<String>) -> ActionResult
+ADSModule.HandoutInstanceConfigs(SettingNode: String, ForModule: String, SettingNode: String, Values: List<String>) -> ActionResult
 ADSModule.ManageInstance(InstanceId: Guid) -> ActionResult<String>
 ADSModule.ModifyCustomFirewallRule(instanceId: Guid, PortNumber: Int32, Range: Int32, Protocol: PortProtocol, Description: String, Open: Boolean) -> ActionResult
 ADSModule.MoveInstanceDatastore(instanceId: Guid, datastoreId: Int32) -> RunningTask
+ADSModule.ReactivateInstance(instanceId: Guid) -> RunningTask
 ADSModule.ReactivateLocalInstances() -> RunningTask
 ADSModule.RefreshAppCache() -> Void
 ADSModule.RefreshGroup(GroupId: Guid) -> ActionResult
+<<<<<<< HEAD
+ADSModule.RefreshInstanceConfig(AndUpdateInstance: Boolean, InstanceId: String) -> ActionResult
+=======
 ADSModule.RefreshInstanceConfig(InstanceId: String, AndUpdateInstance: Boolean) -> ActionResult
+>>>>>>> main
 ADSModule.RefreshRemoteConfigStores(force: Boolean) -> Void
-ADSModule.RegisterTarget(controllerUrl: String, myUrl: String, username: String, password: String, twoFactorToken: String, friendlyName: String) -> ActionResult
+ADSModule.RegisterTarget(myUrl: String, password: String, friendlyName: String, controllerUrl: String, myUrl: String, username: String, password: String, twoFactorToken: String, friendlyName: String) -> ActionResult
 ADSModule.RepairDatastore(id: Int32) -> RunningTask
 ADSModule.RequestDatastoreSizeCalculation(datastoreId: Int32) -> RunningTask
 ADSModule.RestartInstance(InstanceName: String) -> ActionResult
+<<<<<<< HEAD
+ADSModule.Servers(Data: JObject, RealIP: IPAddress) -> JSONRawResponse
+=======
 ADSModule.Servers(id: String, Data: JObject, RealIP: IPAddress) -> JObject
+>>>>>>> main
 ADSModule.SetInstanceConfig(InstanceName: String, SettingNode: String, Value: String) -> ActionResult
 ADSModule.SetInstanceNetworkInfo(InstanceId: Guid, PortMappings: Dictionary<String, Int32>) -> ActionResult
 ADSModule.SetInstanceSuspended(InstanceName: String, Suspended: Boolean) -> ActionResult
@@ -50,6 +78,15 @@ ADSModule.StartAllInstances(TargetADSInstance: Guid) -> ActionResult
 ADSModule.StartInstance(InstanceName: String) -> ActionResult
 ADSModule.StopAllInstances(TargetADSInstance: Guid) -> ActionResult
 ADSModule.StopInstance(InstanceName: String) -> ActionResult
+<<<<<<< HEAD
+ADSModule.TestADSLoginDetails(username: String, twoFactorToken: String, url: String, username: String, password: String, twoFactorToken: String) -> ActionResult
+ADSModule.UpdateDatastore(updatedDatastore: InstanceDatastore) -> ActionResult
+ADSModule.UpdateDeploymentTemplate(templateToUpdate: DeploymentTemplate) -> ActionResult
+ADSModule.UpdateInstanceInfo(InstanceId: String, FriendlyName: String, Description: String, StartOnBoot: Boolean, Suspended: Boolean, ExcludeFromFirewall: Boolean, RunInContainer: Boolean, ContainerMemory: Int32, MemoryPolicy: ContainerMemoryPolicy, ContainerMaxCPU: Float, ContainerImage: String, ContainerSwap: Int32, WelcomeMessage: String) -> ActionResult
+ADSModule.UpdateTarget(TargetID: Guid) -> Void
+ADSModule.UpdateTargetInfo(FriendlyName: String, Description: String, Id: Guid, FriendlyName: String, Url: Uri, Description: String, Tags: List<String>) -> ActionResult
+ADSModule.UpgradeAllInstances(TargetADSInstance: Guid, TargetADSInstance: Guid, RestartRunning: Boolean) -> ActionResult
+=======
 ADSModule.TestADSLoginDetails(url: String, username: String, password: String, twoFactorToken: String) -> ActionResult
 ADSModule.UpdateDatastore(updatedDatastore: InstanceDatastore) -> ActionResult
 ADSModule.UpdateDeploymentTemplate(templateToUpdate: DeploymentTemplate) -> ActionResult
@@ -57,158 +94,157 @@ ADSModule.UpdateInstanceInfo(InstanceId: String, FriendlyName: String, Descripti
 ADSModule.UpdateTarget(TargetID: Guid) -> Void
 ADSModule.UpdateTargetInfo(Id: Guid, FriendlyName: String, Url: Uri, Description: String, Tags: List<String>) -> ActionResult
 ADSModule.UpgradeAllInstances(RestartRunning: Boolean, TargetADSInstance: Guid) -> ActionResult
+>>>>>>> main
 ADSModule.UpgradeInstance(InstanceName: String) -> ActionResult
-ADSModule.CreateInstanceFromSpec(SpecId: Guid, TargetADSInstance: Guid, FriendlyName: String, PostCreate: PostCreateAppActions, StartOnBoot: Boolean, TargetDatastore: Int32) -> ActionResult
-ADSModule.DetachTarget(Id: Guid) -> ActionResult
-ADSModule.GetSupportedAppSummaries() -> IEnumerable<JObject>
-ADSModule.ReactivateInstance(instanceId: Guid) -> RunningTask
 AnalyticsPlugin.GetAnalyticsSummary(PeriodDays: Int32, StartDate: Nullable<DateTime>, Filters: Dictionary<String, String>) -> Object
 Core.AcknowledgeAMPUpdate() -> Void
-Core.ActivateAMPLicence(LicenceKey: String, QueryOnly: Boolean) -> ActionResult<LicenceInfo>
+Core.ActivateAMPLicence(QueryOnly: Boolean, LicenceKey: String, QueryOnly: Boolean) -> ActionResult<LicenceInfo>
 Core.AddEventTrigger(triggerId: Guid) -> ActionResult
-Core.AddIntervalTrigger(months: Int32[], days: Int32[], hours: Int32[], minutes: Int32[], daysOfMonth: Int32[], description: String) -> ActionResult
+Core.AddIntervalTrigger(months: List<Int32>, days: List<Int32>, hours: List<Int32>, minutes: List<Int32>, daysOfMonth: List<Int32>, description: String) -> ActionResult
 Core.AddTask(TriggerID: Guid, MethodID: String, ParameterMapping: Dictionary<String, String>) -> ActionResult
 Core.AsyncTest() -> String
 Core.CancelTask(TaskId: Guid) -> ActionResult
-Core.ChangeTaskOrder(TriggerID: Guid, TaskID: Guid, NewOrder: Int32) -> ActionResult
-Core.ChangeUserPassword(Username: String, OldPassword: String, NewPassword: String, TwoFactorPIN: String) -> ActionResult
-Core.ConfirmTwoFactorSetup(Username: String, TwoFactorCode: String) -> ActionResult
-Core.CreateRole(Name: String, AsCommonRole: Boolean) -> ActionResult<Guid>
+Core.ChangeTaskOrder(TaskID: Guid, TriggerID: Guid, TaskID: Guid, NewOrder: Int32) -> ActionResult
+Core.ChangeUserPassword(OldPassword: String, TwoFactorPIN: String, Username: String, OldPassword: String, NewPassword: String, TwoFactorPIN: String) -> ActionResult
+Core.ConfirmTwoFactorSetup(TwoFactorCode: String, Username: String, TwoFactorCode: String) -> ActionResult
+Core.CreateRole(AsCommonRole: Boolean, Name: String, AsCommonRole: Boolean) -> ActionResult<Guid>
 Core.CreateTestTask() -> Void
 Core.CreateUser(Username: String) -> ActionResult<Guid>
 Core.CurrentSessionHasPermission(PermissionNode: String) -> Boolean
 Core.DeleteInstanceUsers(InstanceId: Guid) -> ActionResult
 Core.DeleteRole(RoleId: Guid) -> ActionResult
-Core.DeleteTask(TriggerID: Guid, TaskID: Guid) -> ActionResult
+Core.DeleteTask(TaskID: Guid, TriggerID: Guid, TaskID: Guid) -> ActionResult
 Core.DeleteTrigger(TriggerID: Guid) -> ActionResult
 Core.DeleteUser(Username: String) -> ActionResult
-Core.DisableTwoFactor(Password: String, TwoFactorCode: String) -> ActionResult
+Core.DisableTwoFactor(TwoFactorCode: String, Password: String, TwoFactorCode: String) -> ActionResult
 Core.DismissAllTasks() -> ActionResult
 Core.DismissTask(TaskId: Guid) -> ActionResult
-Core.EditIntervalTrigger(Id: Guid, months: Int32[], days: Int32[], hours: Int32[], minutes: Int32[], daysOfMonth: Int32[], description: String) -> ActionResult
+Core.EditIntervalTrigger(Id: Guid, months: List<Int32>, days: List<Int32>, hours: List<Int32>, minutes: List<Int32>, daysOfMonth: List<Int32>, description: String) -> ActionResult
 Core.EditTask(TriggerID: Guid, TaskID: Guid, ParameterMapping: Dictionary<String, String>) -> ActionResult
 Core.EnableTwoFactor(Username: String, Password: String) -> ActionResult<TwoFactorSetupInfo>
 Core.EndUserSession(Id: Guid) -> Void
-Core.GetAMPRolePermissions(RoleId: Guid) -> IEnumerable<String>
+Core.GetAMPRolePermissions(RoleId: Guid) -> List<String>
 Core.GetAMPUserInfo(Username: String) -> UserInfo
-Core.GetAMPUsersSummary() -> IEnumerable<UserInfoSummary>
+Core.GetAMPUsersSummary() -> List<UserInfoSummary>
 Core.GetAPISpec() -> Dictionary<String, Dictionary<String, MethodInfoSummary>>
-Core.GetActiveAMPSessions() -> IEnumerable<WebSessionSummary>
-Core.GetAllAMPUserInfo() -> IEnumerable<UserInfo>
-Core.GetAuditLogEntries(Before: Nullable<DateTime>, Count: Int32) -> IEnumerable<IAuditLogEntry>
-Core.GetConfig(node: String) -> JObject
-Core.GetConfigs(nodes: String[]) -> IEnumerable<JObject>
+Core.GetActiveAMPSessions() -> List<WebSessionSummary>
+Core.GetAllAMPUserInfo() -> List<UserInfo>
+Core.GetAuditLogEntries(Before: Nullable<DateTime>, Count: Int32) -> List<IAuditLogEntry>
+Core.GetAuthenticationRequirements(username: String) -> List<AuthenticationRequirement>
+Core.GetConfig(node: String) -> SettingSpec
+Core.GetConfigs(nodes: List<String>) -> List<SettingSpec>
 Core.GetDiagnosticsInfo() -> Dictionary<String, String>
 Core.GetModuleInfo() -> ModuleInfo
 Core.GetNewGuid() -> Guid
-Core.GetPermissionsSpec() -> IList<IPermissionsTreeNode>
-Core.GetPortSummaries() -> IEnumerable<ListeningPortSummary>
-Core.GetProvisionSpec() -> List<JObject>
+Core.GetPermissionsSpec() -> List<IPermissionsTreeNode>
+Core.GetPortSummaries() -> List<ListeningPortSummary>
+Core.GetProvisionSpec() -> List<SettingSpec>
 Core.GetRemoteLoginToken(Description: String, IsTemporary: Boolean) -> String
 Core.GetRole(RoleId: Guid) -> AuthRoleSummary
-Core.GetRoleData() -> IEnumerable<AuthRoleSummary>
-Core.GetRoleIds() -> IDictionary<Guid, String>
+Core.GetRoleData() -> List<AuthRoleSummary>
+Core.GetRoleIds() -> Dictionary<Guid, String>
 Core.GetScheduleData() -> ScheduleInfo
-Core.GetSettingValues(SettingNode: String, WithRefresh: Boolean) -> IDictionary<String, String>
-Core.GetSettingsSpec() -> Dictionary<String, SettingSpec>
-Core.GetStatus() -> Status
-Core.GetTasks() -> IEnumerable<RunningTask>
+Core.GetSettingValues(SettingNode: String, WithRefresh: Boolean) -> Dictionary<String, String>
+Core.GetSettingsSpec() -> Dictionary<String, List<SettingSpec>>
+Core.GetStatus() -> StatusResponse
+Core.GetTasks() -> List<RunningTask>
 Core.GetTimeIntervalTrigger(Id: Guid) -> TimeIntervalTrigger
 Core.GetUpdateInfo() -> UpdateInfo
-Core.GetUpdates() -> Updates
+Core.GetUpdates() -> UpdateResponse
 Core.GetUserActionsSpec() -> Object
 Core.GetUserInfo(UID: String) -> SimpleUser
 Core.GetUserList() -> Dictionary<String, String>
 Core.GetWebauthnChallenge() -> ActionResult<String>
 Core.GetWebauthnCredentialIDs(username: String) -> WebauthnLoginInfo
-Core.GetWebauthnCredentialSummaries() -> IEnumerable<WebauthnCredentialSummary>
-Core.GetWebserverMetrics() -> Object
+Core.GetWebauthnCredentialSummaries() -> List<WebauthnCredentialSummary>
 Core.Kill() -> Void
-Core.Login(username: String, password: String, token: String, rememberMe: Boolean) -> LoginResult
+Core.Login(username: String, password: String, token: String, rememberMe: Boolean) -> LoginResponse
 Core.Logout() -> Void
 Core.RefreshSettingValueList(Node: String) -> ActionResult
 Core.RefreshSettingsSourceCache() -> Void
-Core.RenameRole(RoleId: Guid, NewName: String) -> ActionResult
-Core.ResetUserPassword(Username: String, NewPassword: String) -> ActionResult
+Core.RenameRole(NewName: String, RoleId: Guid, NewName: String) -> ActionResult
+Core.ResetUserPassword(NewPassword: String, Username: String, NewPassword: String) -> ActionResult
 Core.Restart() -> ActionResult
 Core.RestartAMP() -> Void
 Core.Resume() -> Void
 Core.RevokeWebauthnCredential(ID: Int32) -> ActionResult
 Core.RunEventTriggerImmediately(triggerId: Guid) -> ActionResult
+Core.RunSecurityCheck() -> List<SecurityCheckResult>
 Core.SendConsoleMessage(message: String) -> Void
-Core.SetAMPRolePermission(RoleId: Guid, PermissionNode: String, Enabled: Nullable<Boolean>) -> ActionResult
-Core.SetAMPUserRoleMembership(UserId: Guid, RoleId: Guid, IsMember: Boolean) -> ActionResult
-Core.SetConfig(node: String, value: String) -> ActionResult
+Core.SetAMPRolePermission(PermissionNode: String, RoleId: Guid, PermissionNode: String, Enabled: Nullable<Boolean>) -> ActionResult
+Core.SetAMPUserRoleMembership(RoleId: Guid, UserId: Guid, RoleId: Guid, IsMember: Boolean) -> ActionResult
+Core.SetConfig(value: String, node: String, value: String) -> ActionResult
 Core.SetConfigs(data: Dictionary<String, String>) -> Boolean
-Core.SetTriggerEnabled(Id: Guid, Enabled: Boolean) -> ActionResult
+Core.SetTriggerEnabled(Enabled: Boolean, Id: Guid, Enabled: Boolean) -> ActionResult
 Core.Sleep() -> ActionResult
 Core.Start() -> ActionResult
 Core.Stop() -> Void
 Core.Suspend() -> Void
 Core.UpdateAMPInstance() -> Void
-Core.UpdateAccountInfo(EmailAddress: String, TwoFactorPIN: String) -> ActionResult
+Core.UpdateAccountInfo(TwoFactorPIN: String, EmailAddress: String, TwoFactorPIN: String) -> ActionResult
 Core.UpdateApplication() -> ActionResult
-Core.UpdateUserInfo(Username: String, Disabled: Boolean, PasswordExpires: Boolean, CannotChangePassword: Boolean, MustChangePassword: Boolean, EmailAddress: String) -> ActionResult
+Core.UpdateUserInfo(Disabled: Boolean, CannotChangePassword: Boolean, EmailAddress: String, Username: String, Disabled: Boolean, PasswordExpires: Boolean, CannotChangePassword: Boolean, MustChangePassword: Boolean, EmailAddress: String) -> ActionResult
 Core.UpgradeAMP() -> Void
 Core.WebauthnRegister(attestationObject: String, clientDataJSON: String, description: String) -> ActionResult
-Core.GetAuthencationRequirements(username: String) -> IEnumerable<AuthencationRequirement>
-Core.GetAuthenticationRequirements(username: String) -> IEnumerable<AuthenticationRequirement>
-Core.RunSecurityCheck() -> IEnumerable<JObject>
 EmailSenderPlugin.TestSMTPSettings() -> ActionResult
-FileManagerPlugin.AppendFileChunk(Filename: String, Data: String, Delete: Boolean) -> Void
+FileManagerPlugin.AppendFileChunk(Data: String, Filename: String, Data: String, Delete: Boolean) -> Void
 FileManagerPlugin.CalculateFileMD5Sum(FilePath: String) -> ActionResult<String>
-FileManagerPlugin.ChangeExclusion(ModifyPath: String, AsDirectory: Boolean, Exclude: Boolean) -> ActionResult
-FileManagerPlugin.CopyFile(Origin: String, TargetDirectory: String) -> ActionResult
+FileManagerPlugin.ChangeExclusion(AsDirectory: Boolean, ModifyPath: String, AsDirectory: Boolean, Exclude: Boolean) -> ActionResult
+FileManagerPlugin.CopyFile(TargetDirectory: String, Origin: String, TargetDirectory: String) -> ActionResult
 FileManagerPlugin.CreateArchive(PathToArchive: String) -> ActionResult
 FileManagerPlugin.CreateDirectory(NewPath: String) -> ActionResult
-FileManagerPlugin.DownloadFileFromURL(Source: Uri, TargetDirectory: String) -> ActionResult
+FileManagerPlugin.DownloadFileFromURL(TargetDirectory: String, Source: Uri, TargetDirectory: String) -> ActionResult
 FileManagerPlugin.Dummy() -> Void
 FileManagerPlugin.EmptyTrash(TrashDirectoryName: String) -> ActionResult
 FileManagerPlugin.ExtractArchive(ArchivePath: String, DestinationPath: String) -> ActionResult
-FileManagerPlugin.GetDirectoryListing(Dir: String) -> IEnumerable<FileDirectory>
+FileManagerPlugin.GetDirectoryListing(Dir: String) -> List<DirectoryListing>
 FileManagerPlugin.GetFileChunk(Filename: String, Position: Int64, Length: Int32) -> FileChunkData
 FileManagerPlugin.ReadFileChunk(Filename: String, Offset: Int64, ChunkSize: Int64) -> ActionResult<String>
+FileManagerPlugin.ReleaseFileUploadLock(Filename: String) -> ActionResult
 FileManagerPlugin.RenameDirectory(oldDirectory: String, NewDirectoryName: String) -> ActionResult
 FileManagerPlugin.RenameFile(Filename: String, NewFilename: String) -> ActionResult
 FileManagerPlugin.TrashDirectory(DirectoryName: String) -> ActionResult
 FileManagerPlugin.TrashFile(Filename: String) -> ActionResult
 FileManagerPlugin.WriteFileChunk(Filename: String, Data: String, Offset: Int64, FinalChunk: Boolean) -> ActionResult
-FileManagerPlugin.ReleaseFileUploadLock(Filename: String) -> ActionResult
-GenericModule.ImportConfig(filename: String) -> IDictionary<String, String>
+GenericModule.ImportConfig(filename: String) -> Dictionary<String, String>
 GenericModule.ReloadGenericConfig() -> Void
 LocalFileBackupPlugin.DeleteFromS3(BackupId: Guid) -> ActionResult
 LocalFileBackupPlugin.DeleteLocalBackup(BackupId: Guid) -> Void
 LocalFileBackupPlugin.DownloadFromS3(BackupId: Guid) -> RunningTask
-LocalFileBackupPlugin.GetBackups() -> IEnumerable<BackupManifest>
+LocalFileBackupPlugin.GetBackups() -> List<BackupManifest>
+LocalFileBackupPlugin.RefreshBackupList() -> Void
 LocalFileBackupPlugin.RestoreBackup(BackupId: Guid, DeleteExistingData: Boolean) -> ActionResult
 LocalFileBackupPlugin.SetBackupSticky(BackupId: Guid, Sticky: Boolean) -> Void
 LocalFileBackupPlugin.TakeBackup(Title: String, Description: String, Sticky: Boolean, WasCreatedAutomatically: Boolean) -> ActionResult
 LocalFileBackupPlugin.UploadToS3(BackupId: Guid) -> RunningTask
-LocalFileBackupPlugin.RefreshBackupList() -> Void
 MinecraftModule.AcceptEULA() -> Boolean
 MinecraftModule.AddOPEntry(UserOrUUID: String) -> ActionResult
 MinecraftModule.AddToWhitelist(UserOrUUID: String) -> ActionResult
 MinecraftModule.BanUserByID(ID: String) -> Void
-MinecraftModule.BukGetCategories() -> JObject
+MinecraftModule.BukGetCategories() -> JSONRawResponse
 MinecraftModule.BukGetInstallUpdatePlugin(pluginId: Int32) -> RunningTask
-MinecraftModule.BukGetInstalledPlugins() -> JObject
-MinecraftModule.BukGetPluginInfo(PluginId: Int32) -> JObject
-MinecraftModule.BukGetPluginsForCategory(CategoryId: String, PageNumber: Int32, PageSize: Int32) -> JObject
-MinecraftModule.BukGetPopularPlugins() -> JObject
+MinecraftModule.BukGetInstalledPlugins() -> JSONRawResponse
+MinecraftModule.BukGetPluginInfo(PluginId: Int32) -> JSONRawResponse
+MinecraftModule.BukGetPluginsForCategory(CategoryId: String, PageNumber: Int32, PageSize: Int32) -> JSONRawResponse
+MinecraftModule.BukGetPopularPlugins() -> JSONRawResponse
 MinecraftModule.BukGetRemovePlugin(PluginId: Int32) -> Void
-MinecraftModule.BukGetSearch(Query: String, PageNumber: Int32, PageSize: Int32) -> JObject
+MinecraftModule.BukGetSearch(Query: String, PageNumber: Int32, PageSize: Int32) -> JSONRawResponse
 MinecraftModule.ClearInventoryByID(ID: String) -> Void
 MinecraftModule.GetFailureReason() -> String
 MinecraftModule.GetHeadByUUID(id: String) -> String
-MinecraftModule.GetOPWhitelist() -> JObject
-MinecraftModule.GetWhitelist() -> IEnumerable<JObject>
+MinecraftModule.GetOPWhitelist() -> UserAccessData
+MinecraftModule.GetWhitelist() -> List<WhitelistEntry>
 MinecraftModule.KickUserByID(ID: String) -> Void
 MinecraftModule.KillByID(ID: String) -> Void
-MinecraftModule.LoadOPList() -> IEnumerable<JObject>
+MinecraftModule.LoadOPList() -> List<OPEntry>
 MinecraftModule.RemoveOPEntry(UserOrUUID: String) -> Void
 MinecraftModule.RemoveWhitelistEntry(UserOrUUID: String) -> Void
 MinecraftModule.SmiteByID(ID: String) -> Void
 RCONPlugin.Dummy() -> Void
+RustModule.Ban(ID: String) -> Void
+RustModule.Kick(ID: String) -> Void
+RustModule.WipeBlueprints() -> Void
+RustModule.WipeMap() -> Void
 steamcmdplugin.CancelSteamGuard() -> Void
 steamcmdplugin.SteamGuardCode(code: String) -> Void
 steamcmdplugin.SteamUsernamePassword(username: String, password: String) -> Void
