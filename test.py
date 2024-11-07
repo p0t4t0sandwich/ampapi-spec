@@ -6,7 +6,7 @@ from libraries.python.ampapi.modules import CommonAPI, CommonAPIAsync
 from libraries.python.ampapi.types import MetricInfo
 
 authProvider = RefreshingAuthProvider(
-    panelUrl="http://localhost:8080",
+    panelUrl="http://localhost:8080/API/ADSModule/Servers/TestServer01/",
     username="api_user",
     password="api_user123!"
 )

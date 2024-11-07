@@ -3,10 +3,10 @@ from aiohttp import ClientSession as async_request
 from dataclass_wizard import LoadMeta, fromdict, fromlist
 from requests import request as sync_request
 from time import time
-from typing import Any, Final, overload
-from types import MethodType
+from typing import Any, Final, _GenericAlias, overload
+from types import GenericAlias, MethodType, NoneType
 
-from .types import ErrorResponse, LoginResponse
+from .types import ActionResult, ErrorResponse, LoginResponse
 
 class APIException(Exception):
     def __init__(self, error: ErrorResponse) -> None:
@@ -17,7 +17,7 @@ class LoginException(Exception):
         super().__init__(login_response.resultReason + ": " + login_response.result + "\n" + login_response)
 
 def json_to_obj(json: dict[str, Any] | list[Any] | Any, ret_class: type) -> Any:
-    if ret_class is None:
+    if ret_class is None or isinstance(ret_class, NoneType):
         return None
     elif ret_class in [str, int, float, bool]:
         return ret_class(json)
@@ -29,6 +29,18 @@ def json_to_obj(json: dict[str, Any] | list[Any] | Any, ret_class: type) -> Any:
             for key, value in json.items():
                 dct[key] = json_to_obj(value, val_type)
             return dct
+        # Handle ActionResult
+        elif issubclass(type(ret_class), (_GenericAlias, GenericAlias)) and ret_class.__origin__ == ActionResult:
+            args = ret_class.__args__
+            ret_class = ActionResult
+            if "result" in json.keys():
+                if len(args) >= 1:
+                    inner_type = args[0]
+                    json["result"] = json_to_obj(json["result"], inner_type)
+            else:
+                json["result"] = None
+        elif issubclass(ret_class, ActionResult):
+            json["result"] = None
     elif isinstance(json, list):
         # Get list inner type
         inner_type = ret_class.__args__[0]
@@ -37,7 +49,9 @@ def json_to_obj(json: dict[str, Any] | list[Any] | Any, ret_class: type) -> Any:
 
 def strict_json_to_obj(json: dict[str, Any], ret_class: type) -> Any:
     LoadMeta(raise_on_unknown_json_key=True,debug_enabled=True).bind_to(ret_class)
-    if ret_class in [str, int, float, bool]:
+    if ret_class is None or isinstance(ret_class, NoneType):
+        return None
+    elif ret_class in [str, int, float, bool]:
         return ret_class(json)
     elif isinstance(json, dict):
         # Check to see if ret_class is a nested dict
@@ -47,6 +61,19 @@ def strict_json_to_obj(json: dict[str, Any], ret_class: type) -> Any:
             for key, value in json.items():
                 dct[key] = json_to_obj(value, val_type)
             return dct
+        # Handle ActionResult
+        elif issubclass(type(ret_class), (_GenericAlias, GenericAlias)) and ret_class.__origin__ == ActionResult:
+            args = ret_class.__args__
+            ret_class = ActionResult
+            if "result" in json.keys():
+                if len(args) >= 1:
+                    inner_type = args[0]
+                    LoadMeta(raise_on_unknown_json_key=True,debug_enabled=True).bind_to(inner_type)
+                    json["result"] = json_to_obj(json["result"], inner_type)
+            else:
+                json["result"] = None
+        elif issubclass(ret_class, ActionResult):
+            json["result"] = None
     elif isinstance(json, list):
         # Get list inner type
         inner_type = ret_class.__args__[0]
@@ -136,18 +163,18 @@ class AuthStore:
     def __init__(self) -> None:
         pass
 
-    def get(self, instanceId: str) -> AuthProvider:
-        return self._authProviders[instanceId]
+    def get(self, instanceName: str) -> AuthProvider:
+        return self._authProviders[instanceName]
 
     @overload
     def add(self, authProvider: AuthProvider) -> None:
-        self.add(authProvider.instanceId, authProvider)
+        self.add(authProvider.instanceName, authProvider)
 
-    def add(self, instanceId: str, authProvider: AuthProvider) -> None:
-        self._authProviders[instanceId] = authProvider
+    def add(self, instanceName: str, authProvider: AuthProvider) -> None:
+        self._authProviders[instanceName] = authProvider
 
-    def remove(self, instanceId: str) -> None:
-        del self._authProviders[instanceId]
+    def remove(self, instanceName: str) -> None:
+        del self._authProviders[instanceName]
 
 class BasicAuthProvider(AuthProvider):
     def __init__(self,

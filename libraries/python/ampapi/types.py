@@ -4,6 +4,7 @@ from typing import Any, Generic, Optional, TypeVar
 
 T = TypeVar('T')
 
+@dataclass
 class ActionResult(Generic[T]):
     """
     Generic response type for calls that return a result and a reason for failure

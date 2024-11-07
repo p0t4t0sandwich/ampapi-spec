@@ -1,3 +1,4 @@
+@dataclass
 class {TypeName}(Generic[T]):
     """
     {TypeDescription}
