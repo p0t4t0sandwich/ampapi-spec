@@ -6,7 +6,7 @@ from time import time
 from typing import Any, Final, _GenericAlias, overload
 from types import GenericAlias, MethodType, NoneType
 
-from .types import ActionResult, ErrorResponse, LoginResponse
+from .types import ActionResult, ErrorResponse, LoginResponse, ModuleInfo
 
 class APIException(Exception):
     def __init__(self, error: ErrorResponse) -> None:
@@ -133,8 +133,36 @@ class AuthProvider(metaclass=ABCMeta):
     token: str
     rememberMe: Final[bool]
     sessionId: str
-    instanceName: str
-    instanceId: str
+    _instanceName: str = ""
+    _instanceId: str = ""
+
+    @property
+    def instanceName(self) -> str:
+        if self._instanceName == "":
+            self.UpdateModuleInfo()
+        return self._instanceName
+
+    @instanceName.setter
+    def instanceName(self, value: str) -> None:
+        self._instanceName = value
+
+    @instanceName.deleter
+    def instanceName(self) -> None:
+        self._instanceName = ""
+
+    @property
+    def instanceId(self) -> str:
+        if self._instanceId == "":
+            self.UpdateModuleInfo()
+        return self._instanceId
+
+    @instanceId.setter
+    def instanceId(self, value: str) -> None:
+        self._instanceId = value
+
+    @instanceId.deleter
+    def instanceId(self) -> None:
+        self._instanceId = ""
 
     @abstractmethod
     def __init__(self, panelUrl: str = "", requestMethod = "", username: str = "", password: str = "", token: str = "", rememberMe: bool = False, sessionId: str = "") -> None:
@@ -157,24 +185,41 @@ class AuthProvider(metaclass=ABCMeta):
     def Login(self, rememberMe: bool = False) -> LoginResponse:
         pass
 
+    @abstractmethod
+    def UpdateModuleInfo(self) -> ModuleInfo:
+        pass
+
+class AuthProviderAsync(AuthProvider, metaclass=ABCMeta):
+    @property
+    async def instanceName(self) -> str:
+        if self._instanceName == "":
+            await self.UpdateModuleInfo()
+        return self._instanceName
+
+    @property
+    async def instanceId(self) -> str:
+        if self._instanceId == "":
+            await self.UpdateModuleInfo()
+        return self._instanceId
+
 class AuthStore:
     _authProviders: dict[str, AuthProvider] = {}
 
     def __init__(self) -> None:
         pass
 
-    def get(self, instanceName: str) -> AuthProvider:
-        return self._authProviders[instanceName]
+    def get(self, instanceId: str) -> AuthProvider:
+        return self._authProviders[instanceId]
 
     @overload
     def add(self, authProvider: AuthProvider) -> None:
-        self.add(authProvider.instanceName, authProvider)
+        self.add(authProvider.instanceId, authProvider)
 
-    def add(self, instanceName: str, authProvider: AuthProvider) -> None:
-        self._authProviders[instanceName] = authProvider
+    def add(self, instanceId: str, authProvider: AuthProvider) -> None:
+        self._authProviders[instanceId] = authProvider
 
-    def remove(self, instanceName: str) -> None:
-        del self._authProviders[instanceName]
+    def remove(self, instanceId: str) -> None:
+        del self._authProviders[instanceId]
 
 class BasicAuthProvider(AuthProvider):
     def __init__(self,
@@ -224,7 +269,14 @@ class BasicAuthProvider(AuthProvider):
         self.sessionId = login_response.sessionID
         return login_response
 
-class BasicAuthProviderAsync(AuthProvider):
+    def UpdateModuleInfo(self) -> ModuleInfo:
+        response: dict[str, Any] = self.api_call("Core/GetModuleInfo")
+        module_info = fromdict(ModuleInfo, response)
+        self.instanceName = module_info.InstanceName
+        self.instanceId = module_info.InstanceId
+        return module_info
+
+class BasicAuthProviderAsync(AuthProviderAsync):
     def __init__(self,
                 panelUrl: str = "",
                 requestMethod: str = "POST",
@@ -269,7 +321,14 @@ class BasicAuthProviderAsync(AuthProvider):
         self.sessionId = login_response.sessionID
         return login_response
 
-class RefreshingAuthProvider(AuthProvider):
+    async def UpdateModuleInfo(self) -> ModuleInfo:
+        response: dict[str, Any] = await self.api_call("Core/ModuleInfo")
+        module_info = fromdict(ModuleInfo, response)
+        self.instanceName = module_info.InstanceName
+        self.instanceId = module_info.InstanceId
+        return module_info
+
+class RefreshingAuthProvider(BasicAuthProvider):
     relogInterval: Final[int]
     relogCallback: MethodType
     _lastCall: int = round(time())
@@ -335,7 +394,7 @@ class RefreshingAuthProvider(AuthProvider):
         self.sessionId = login_response.sessionID
         return login_response
 
-class RefreshingAuthProviderAsync(AuthProvider):
+class RefreshingAuthProviderAsync(BasicAuthProviderAsync):
     relogInterval: Final[int]
     relogCallback: MethodType
     _lastCall: int = round(time())
