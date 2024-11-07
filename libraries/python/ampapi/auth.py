@@ -272,8 +272,8 @@ class BasicAuthProvider(AuthProvider):
     def UpdateModuleInfo(self) -> ModuleInfo:
         response: dict[str, Any] = self.api_call("Core/GetModuleInfo")
         module_info = fromdict(ModuleInfo, response)
-        self.instanceName = module_info.InstanceName
-        self.instanceId = module_info.InstanceId
+        self._instanceName = module_info.InstanceName
+        self._instanceId = module_info.InstanceId
         return module_info
 
 class BasicAuthProviderAsync(AuthProviderAsync):
@@ -322,10 +322,10 @@ class BasicAuthProviderAsync(AuthProviderAsync):
         return login_response
 
     async def UpdateModuleInfo(self) -> ModuleInfo:
-        response: dict[str, Any] = await self.api_call("Core/ModuleInfo")
+        response: dict[str, Any] = await self.api_call("Core/GetModuleInfo")
         module_info = fromdict(ModuleInfo, response)
-        self.instanceName = module_info.InstanceName
-        self.instanceId = module_info.InstanceId
+        self._instanceName = module_info.InstanceName
+        self._instanceId = module_info.InstanceId
         return module_info
 
 class RefreshingAuthProvider(BasicAuthProvider):

@@ -5,25 +5,44 @@ from libraries.python.ampapi.auth import BasicAuthProvider, BasicAuthProviderAsy
 from libraries.python.ampapi.modules import CommonAPI, CommonAPIAsync
 from libraries.python.ampapi.types import MetricInfo
 
-authProvider = RefreshingAuthProvider(
-    panelUrl="http://localhost:8080/API/ADSModule/Servers/TestServer01/",
-    username="api_user",
-    password="api_user123!"
-)
+PANEL_URL = "http://localhost:8080/API/ADSModule/Servers/TestServer01/"
+USERNAME = "api_user"
+PASSWORD = "api_user123!"
 
-api = CommonAPI(authProvider)
+def main():
+    authProvider = RefreshingAuthProvider(
+        panelUrl=PANEL_URL,
+        username=USERNAME,
+        password=PASSWORD
+    )
 
-print(api.Core.GetStatus().State)
+    api = CommonAPI(authProvider)
 
-# authProvider = BasicAuthProviderAsync(
-#     panelUrl="http://localhost:8080",
-#     username="api_user",
-#     password="api_user123!"
-# )
+    print(authProvider.instanceName)
+    print(authProvider.instanceId)
 
-# api = CommonAPIAsync(authProvider)
+    print(api.Core.GetStatus().State)
 
-# async def main():
-#     print(await api.Core.GetStatus())
+async def async_main():
+    authProvider = BasicAuthProviderAsync(
+        panelUrl=PANEL_URL,
+        username=USERNAME,
+        password=PASSWORD
+    )
 
-# asyncio.run(main())
+    api = CommonAPIAsync(authProvider)
+
+    print(await authProvider.instanceName)
+    print(await authProvider.instanceId)
+
+    print((await api.Core.GetStatus()).State)
+
+now = time.time()
+main()
+print("Sync time:", time.time() - now)
+print("--------------------------------")
+
+now = time.time()
+asyncio.run(async_main())
+print("Async time:", time.time() - now)
+print("--------------------------------")

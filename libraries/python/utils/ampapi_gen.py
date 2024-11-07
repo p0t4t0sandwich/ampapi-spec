@@ -233,13 +233,9 @@ class CodeGen:
                 method_text = method_text.replace("{MethodDescription}", method_def.get("Description", ""))
                 method_text = method_text.replace("{ReturnType}", self._convert_type(method_def["ReturnTypeName"]))
 
-                # TODO: Find a nicer way to handle this?
-                if "return None(**" in method_text:
-                    method_text = method_text.replace("return None(**", "").replace("}))", "})")
-
                 plugin_methods += method_text
 
-            async_plugin_methods = plugin_methods.replace("def ", "async def ").replace("(**", "(**await ")
+            async_plugin_methods = plugin_methods.replace("def ", "async def ").replace("json_to_obj(", "json_to_obj(await ")
 
             plugin_class = plugin_class.replace("{PluginMethods}", plugin_methods)
             plugin_class = plugin_class.replace("{AsyncPluginMethods}", async_plugin_methods)
