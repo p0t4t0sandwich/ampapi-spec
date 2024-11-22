@@ -40,20 +40,28 @@ pip install requests aiohttp json dataclass_wizard
 ### CommonAPI Example
 
 ```python
-from ampapi.modules.CommonAPI import CommonAPI
+from ampapi.auth import BasicAuthProvider
+from ampapi.modules import CommonAPI
+from ampapi.types import MetricInfo, StatusResponse
 
 def main():
+    # You can also use a RefreshingAuthProvider for long-lived scripts
+    authProvider = BasicAuthProvider(
+        panelUrl="http://localhost:8080/",
+        username="admin",
+        password="myfancypassword123"
+    )
+
     # If you know the module that the instance is using, specify it instead of CommonAPI
-    API = CommonAPI("http://localhost:8080/", "admin", "myfancypassword123")
-    API.Login()
+    API = CommonAPI(authProvider)
 
     # API call parameters are simply in the same order as shown in the documentation.
     API.Core.SendConsoleMessage("say Hello Everyone, this message was sent from the Python API!")
 
-    currentStatus = API.Core.GetStatus()
-    CPUUsagePercent = currentStatus.Metrics["CPU Usage"].Percent
+    currentStatus: Status = API.Core.GetStatus()
+    cpuUsage: MetricInfo = currentStatus.Metrics.get("CPU Usage")
 
-    print(f"Current CPU usage is: {CPUUsagePercent}%")
+    print(f"Current CPU usage is: {cpuUsage.Percent}%")
 
 main()
 ```
@@ -62,23 +70,33 @@ main()
 
 ```python
 import asyncio
-from ampapi.modules.CommonAPI import CommonAPI
+from ampapi.auth import BasicAuthProviderAsync
+from ampapi.modules import CommonAPIAsync
+from ampapi.types import MetricInfo, StatusResponse
 
 async def main():
+    # You can also use a RefreshingAuthProvider for long-lived scripts
+    authProvider = BasicAuthProviderAsync(
+        panelUrl="http://localhost:8080/",
+        username="admin",
+        password="myfancypassword123"
+    )
+
     # If you know the module that the instance is using, specify it instead of CommonAPI
-    API = CommonAPI("http://localhost:8080/", "admin", "myfancypassword123")
-    await API.LoginAsync()
+    API = CommonAPIAsync(authProvider)
 
     # API call parameters are simply in the same order as shown in the documentation.
-    await API.Core.SendConsoleMessageAsync("say Hello Everyone, this message was sent from the Python API!")
+    await API.Core.SendConsoleMessage("say Hello Everyone, this message was sent from the Python API!")
 
-    currentStatus = await API.Core.GetStatusAsync()
-    CPUUsagePercent = currentStatus.Metrics["CPU Usage"].Percent
+    currentStatus: Status = await API.Core.GetStatus()
+    cpuUsage: MetricInfo = currentStatus.Metrics.get("CPU Usage")
 
-    print(f"Current CPU usage is: {CPUUsagePercent}%")
+    print(f"Current CPU usage is: {cpuUsage.Percent}%")
 
 asyncio.run(main())
 ```
+
+** THE BELOW EXAMPLES ARE OUTDATED **
 
 ### Example using the ADS to manage an instance
 
