@@ -1,4 +1,6 @@
 #!/bin/python3
+"""Python CodeGen implementation"""
+
 from json import loads
 from typing import Any
 
@@ -29,19 +31,21 @@ cs_to_py = {
     "Generic": "T",
 }
 
+
 class CodeGen:
+    """CodeGen Class"""
     APISpec: dict[str, dict[str, Any]] = {}
     TypeSpec: dict[str, TypeDef] = {}
     ModuleInheritance: dict[str, list[str]] = {}
 
     def _load_api_spec(self) -> None:
-        with open("../../../TypedAPISpec.json") as f:
-            json_str: str = f.read()
+        with open("../../../TypedAPISpec.json", encoding="UTF-8") as file:
+            json_str: str = file.read()
             self.APISpec = loads(json_str)
 
     def _load_type_spec(self) -> None:
-        with open("../../../TypeSpec.json") as f:
-            json_str: str = f.read()
+        with open("../../../TypeSpec.json", encoding="UTF-8") as file:
+            json_str: str = file.read()
             for type_name, type_def in loads(json_str).items():
                 self.TypeSpec[type_name] = TypeDef(
                     Description=type_def["Description"],
@@ -52,8 +56,8 @@ class CodeGen:
                 )
 
     def _load_module_inheritance(self) -> None:
-        with open("../../../ModuleInheritance.json") as f:
-            json_str: str = f.read()
+        with open("../../../ModuleInheritance.json", encoding="UTF-8") as file:
+            json_str: str = file.read()
             self.ModuleInheritance = loads(json_str)
 
     def __init__(self) -> None:
@@ -96,21 +100,22 @@ class CodeGen:
         return converted_type
 
     def generate_types(self) -> None:
+        """Generates API Types"""
         text = ""
-        with open("./templates/type_base.txt") as f:
-            text = f.read()
+        with open("./templates/type_base.txt", encoding="UTF-8") as file:
+            text = file.read()
 
         class_text_template = ""
-        with open("./templates/type_class.txt") as f:
-            class_text_template = f.read()
+        with open("./templates/type_class.txt", encoding="UTF-8")as file:
+            class_text_template = file.read()
 
         enum_text_template = ""
-        with open("./templates/type_enum.txt") as f:
-            enum_text_template = f.read()
+        with open("./templates/type_enum.txt", encoding="UTF-8") as file:
+            enum_text_template = file.read()
 
         generic_text_template = ""
-        with open("./templates/type_generic.txt") as f:
-            generic_text_template = f.read()
+        with open("./templates/type_generic.txt", encoding="UTF-8") as file:
+            generic_text_template = file.read()
 
         for type_name, type_def in self.TypeSpec.items():
             class_text = class_text_template
@@ -166,21 +171,21 @@ class CodeGen:
 
                 text += class_text
 
-        with open(f"../ampapi/types.py", "w") as f:
-            f.write(text)
+        with open("../ampapi/types.py", "w", encoding="UTF-8") as file:
+            file.write(text)
 
     def generate_plugins(self) -> None:
         text = ""
-        with open("./templates/plugin_base.txt") as f:
-            text = f.read()
+        with open("./templates/plugin_base.txt", encoding="UTF-8") as file:
+            text = file.read()
 
         plugin_class_template = ""
-        with open("./templates/plugin_class.txt") as f:
-            plugin_class_template = f.read()
+        with open("./templates/plugin_class.txt", encoding="UTF-8") as file:
+            plugin_class_template = file.read()
 
         plugin_method_template = ""
-        with open("./templates/plugin_method.txt") as f:
-            plugin_method_template = f.read()
+        with open("./templates/plugin_method.txt", encoding="UTF-8") as file:
+            plugin_method_template = file.read()
 
         for plugin_name, method_spec in self.APISpec.items():
             if plugin_name == "CommonCorePlugin":
@@ -245,17 +250,17 @@ class CodeGen:
 
             text += plugin_class
 
-        with open(f"../ampapi/plugins.py", "w") as f:
-            f.write(text)
+        with open("../ampapi/plugins.py", "w", encoding="UTF-8") as file:
+            file.write(text)
 
     def generate_modules(self) -> None:
         text = ""
-        with open("./templates/module_base.txt") as f:
-            text = f.read()
+        with open("./templates/module_base.txt", encoding="UTF-8") as file:
+            text = file.read()
 
         module_class_template = ""
-        with open("./templates/module_class.txt") as f:
-            module_class_template = f.read()
+        with open("./templates/module_class.txt", encoding="UTF-8") as file:
+            module_class_template = file.read()
 
         common_plugins = []
         for plugin_list in self.ModuleInheritance.values():
@@ -319,10 +324,11 @@ class CodeGen:
 
         text = text[:-1]
 
-        with open(f"../ampapi/modules.py", "w") as f:
-            f.write(text)
+        with open("../ampapi/modules.py", "w", encoding="UTF-8") as file:
+            file.write(text)
 
     def generate(self) -> None:
+        """Generate Code"""
         self.generate_types()
         self.generate_plugins()
         self.generate_modules()

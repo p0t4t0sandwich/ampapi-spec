@@ -37,8 +37,6 @@ pip install requests aiohttp json dataclass_wizard
 
 ## Examples
 
-**NOTE: THESE ARE CURRENTLY OUTDATED AFTER THE REWRITE**
-
 ### CommonAPI Example
 
 ```python
