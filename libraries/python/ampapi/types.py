@@ -903,28 +903,18 @@ class IADSInstance:
     :type Description: str
     :param Disabled: Whether the instance is disabled
     :type Disabled: bool
-    :param Fitness: The fitness information object
-    :type Fitness: ProvisionFitness
     :param FriendlyName: The friendly name
     :type FriendlyName: str
-    :param Host: The host
-    :type Host: str
     :param Id: The ID
     :type Id: int
     :param InstanceId: The instance ID
     :type InstanceId: str
-    :param Instances: The instances
-    :type Instances: list[InstanceSummary]
-    :param IsHTTPS: Whether HTTPS is enabled
-    :type IsHTTPS: bool
     :param IsRemote: Whether the instance is remote
     :type IsRemote: bool
     :param LastUpdated: The last updated date
     :type LastUpdated: str
     :param Platform: The platform information object
     :type Platform: IPlatformInfo
-    :param Port: The port
-    :type Port: int
     :param State: The state
     :type State: RemoteInstanceState
     :param StateReason: The state reason
@@ -935,6 +925,8 @@ class IADSInstance:
     :type TagsList: str
     :param URL: The URL
     :type URL: str
+    :param Fitness: The fitness information object
+    :type Fitness: Optional[ProvisionFitness]
     """
     AvailableIPs: 'list[str]'
     AvailableInstances: 'list[InstanceSummary]'
@@ -943,22 +935,18 @@ class IADSInstance:
     Datastores: 'list[DatastoreSummary]'
     Description: 'str'
     Disabled: 'bool'
-    Fitness: 'ProvisionFitness'
     FriendlyName: 'str'
-    Host: 'str'
     Id: 'int'
     InstanceId: 'str'
-    Instances: 'list[InstanceSummary]'
-    IsHTTPS: 'bool'
     IsRemote: 'bool'
     LastUpdated: 'str'
     Platform: 'IPlatformInfo'
-    Port: 'int'
     State: 'RemoteInstanceState'
     StateReason: 'str'
     Tags: 'list[str]'
     TagsList: 'str'
     URL: 'str'
+    Fitness: 'Optional[ProvisionFitness]'
 
 @dataclass
 class IAuditLogEntry:

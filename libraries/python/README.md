@@ -58,7 +58,7 @@ def main():
     # API call parameters are simply in the same order as shown in the documentation.
     API.Core.SendConsoleMessage("say Hello Everyone, this message was sent from the Python API!")
 
-    currentStatus: Status = API.Core.GetStatus()
+    currentStatus: StatusResponse = API.Core.GetStatus()
     cpuUsage: MetricInfo = currentStatus.Metrics.get("CPU Usage")
 
     print(f"Current CPU usage is: {cpuUsage.Percent}%")
@@ -88,7 +88,7 @@ async def main():
     # API call parameters are simply in the same order as shown in the documentation.
     await API.Core.SendConsoleMessage("say Hello Everyone, this message was sent from the Python API!")
 
-    currentStatus: Status = await API.Core.GetStatus()
+    currentStatus: StatusResponse = await API.Core.GetStatus()
     cpuUsage: MetricInfo = currentStatus.Metrics.get("CPU Usage")
 
     print(f"Current CPU usage is: {cpuUsage.Percent}%")
@@ -96,7 +96,7 @@ async def main():
 asyncio.run(main())
 ```
 
-** THE BELOW EXAMPLES ARE OUTDATED **
+**THE BELOW EXAMPLES ARE OUTDATED**
 
 ### Example using the ADS to manage an instance
 

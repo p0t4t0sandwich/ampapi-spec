@@ -2,10 +2,10 @@ import asyncio
 import time
 
 from libraries.python.ampapi.auth import BasicAuthProvider, BasicAuthProviderAsync, RefreshingAuthProvider
-from libraries.python.ampapi.modules import CommonAPI, CommonAPIAsync
+from libraries.python.ampapi.modules import CommonAPI, CommonAPIAsync, ADSAsync
 from libraries.python.ampapi.types import MetricInfo
 
-PANEL_URL = "http://localhost:8080/API/ADSModule/Servers/TestServer01/"
+PANEL_URL = "http://localhost:8080"
 USERNAME = "api_user"
 PASSWORD = "api_user123!"
 
@@ -30,12 +30,15 @@ async def async_main():
         password=PASSWORD
     )
 
-    api = CommonAPIAsync(authProvider)
+    api = ADSAsync(authProvider)
 
-    print(await authProvider.instanceName)
-    print(await authProvider.instanceId)
+#    print(await authProvider.instanceName)
+#    print(await authProvider.instanceId)
 
-    print((await api.Core.GetStatus()).State)
+#    print((await api.Core.GetStatus()).State)
+
+    instances = await api.ADSModule.GetInstances(ForceIncludeSelf=False)
+    print(instances)
 
 now = time.time()
 main()

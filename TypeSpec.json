@@ -1483,18 +1483,8 @@
                 "TypeName": "Boolean"
             },
             {
-                "Description": "The fitness information object",
-                "Name": "Fitness",
-                "TypeName": "ProvisionFitness"
-            },
-            {
                 "Description": "The friendly name",
                 "Name": "FriendlyName",
-                "TypeName": "String"
-            },
-            {
-                "Description": "The host",
-                "Name": "Host",
                 "TypeName": "String"
             },
             {
@@ -1506,16 +1496,6 @@
                 "Description": "The instance ID",
                 "Name": "InstanceId",
                 "TypeName": "Guid"
-            },
-            {
-                "Description": "The instances",
-                "Name": "Instances",
-                "TypeName": "List<InstanceSummary>"
-            },
-            {
-                "Description": "Whether HTTPS is enabled",
-                "Name": "IsHTTPS",
-                "TypeName": "Boolean"
             },
             {
                 "Description": "Whether the instance is remote",
@@ -1531,11 +1511,6 @@
                 "Description": "The platform information object",
                 "Name": "Platform",
                 "TypeName": "IPlatformInfo"
-            },
-            {
-                "Description": "The port",
-                "Name": "Port",
-                "TypeName": "Int32"
             },
             {
                 "Description": "The state",
@@ -1561,6 +1536,12 @@
                 "Description": "The URL",
                 "Name": "URL",
                 "TypeName": "String"
+            },
+            {
+                "Description": "The fitness information object",
+                "Name": "Fitness",
+                "TypeName": "ProvisionFitness",
+                "Optional": true
             }
         ]
     },
